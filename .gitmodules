@@ -1,0 +1,6 @@
+[submodule "firecrawl"]
+	path = firecrawl
+	url = https://github.com/DLozF/firecrawl
+[submodule "hermes-agent"]
+	path = hermes-agent
+	url = https://github.com/DLozF/hermes-agent.git
