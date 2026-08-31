@@ -16,12 +16,13 @@ x-ollama: &service-ollama
     - ./ollama_storage:/root/.ollama
   environment:
     - OLLAMA_KEEP_ALIVE=24H
-    - OLLAMA_CONTEXT_LENGTH=64000
+    - OLLAMA_CONTEXT_LENGTH=100000
   healthcheck:
-    test: ["CMD", "ollama", "list"]
+    test: ["CMD-SHELL", "[ $(ollama list | wc -l) -gt 1 ]" ]
     interval: 10s
-    timeout: 5s
+    timeout: 10s
     retries: 10
+    start_period: 60s
 
 x-init-ollama: &init-ollama
   image: ollama/ollama:latest
@@ -32,17 +33,20 @@ x-init-ollama: &init-ollama
     - ./ollama_storage:/root/.ollama
   environment:
     - OLLAMA_HOST=ollama:11434
-    - OLLAMA_CONTEXT_LENGTH=64000
+    - OLLAMA_CONTEXT_LENGTH=100000
 
   entrypoint: /bin/sh
   command:
     - "-c"
-    - "sleep 10; ollama pull qwen3.5:4b; ollama pull llama3.2:3b; ollama pull nomic-embed-text; ollama pull qwen3:4b; ollama pull qwen3:1.7b; ollama pull gemma4:12b"
+    - "sleep 10; ollama pull nomic-embed-text; ollama pull qwen3.5:4b; ollama pull llama3.2:3b; ollama pull gemma4:12b"
 
 services:
   ollama:
     <<: *service-ollama
     gpus: all
+    labels:
+      autoheal: "true"
+   
 
   ollama-init:
     <<: *init-ollama
@@ -51,11 +55,19 @@ services:
       ollama:
         condition: service_healthy
       
-  api:
+  autoheal:
+    image: willfarrell/autoheal:latest
+    container_name: autoheal
+    restart: unless-stopped
+    networks:
+      - backend
     environment:
-      MODEL_NAME: ${MODEL_NAME:-qwen3.5:4b}
-      MODEL_EMBEDDING_NAME: ${MODEL_EMBEDDING_NAME:-nomic-embed-text}
-      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://ollama:11434}
+      AUTOHEAL_CONTAINER_LABEL: all
+      AUTOHEAL_INTERVAL: 30
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+
 volumes:
   ollama_storage:
 

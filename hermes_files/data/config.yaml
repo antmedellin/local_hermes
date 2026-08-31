@@ -73,6 +73,11 @@ display:
   cleanup_progress: false
   long_running_notifications: true
   busy_ack_detail: true
+dashboard:
+  basic_auth:
+    username: admin
+    password_hash: scrypt$16384$8$1$aTHeAY6juWcw6FgNuZFzrA==$x4Za/B9IdV3k5Htwcu7iulRfHIqjFQEFILbVwiNvDDI=
+    secret: AK7YFsyE3o5lsSEzl1t1MpsBwJG+qLNT1G8FGvQeabg=
 stt:
   enabled: true
   language: en
@@ -91,6 +96,7 @@ delegation:
   max_iterations: 250
 skills:
   creation_nudge_interval: 15
+  disabled: []
 kanban:
   review_dispatch: true
 code_execution:
@@ -98,6 +104,10 @@ code_execution:
   max_tool_calls: 50
 streaming:
   enabled: false
+onboarding:
+  seen:
+    busy_input_prompt: true
+    tool_progress_prompt: true
 telemetry:
   shared_metrics:
     enabled: false
@@ -128,6 +138,7 @@ platform_toolsets:
     - skills
     - terminal
     - todo
+    - vision
     - web
   telegram:
     - hermes-telegram
@@ -155,7 +166,7 @@ custom_providers:
     model: gemma4:12b
     models:
       gemma4:12b:
-        context_length: 64000
+        context_length: 100000
 known_plugin_toolsets:
   cli:
     - a2a
