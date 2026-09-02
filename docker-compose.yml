@@ -3,6 +3,7 @@ name: local-hermes
 include:
   - ./firecrawl/docker-compose.yaml
   - ./hermes-agent/docker-compose.windows.yml
+  - ./LightRAG/docker-compose-full.yml
 
 x-ollama: &service-ollama
   image: ollama/ollama:latest
@@ -38,7 +39,7 @@ x-init-ollama: &init-ollama
   entrypoint: /bin/sh
   command:
     - "-c"
-    - "sleep 10; ollama pull nomic-embed-text; ollama pull qwen3.5:4b; ollama pull llama3.2:3b; ollama pull gemma4:12b"
+    - "sleep 10; ollama pull nomic-embed-text; ollama pull qwen3.5:4b; ollama pull llama3.2:3b; ollama pull gemma4:12b; ollama pull qwen3-embedding:8b;"
 
 services:
   ollama:
@@ -51,9 +52,6 @@ services:
   ollama-init:
     <<: *init-ollama
     gpus: all
-    depends_on:
-      ollama:
-        condition: service_healthy
       
   autoheal:
     image: willfarrell/autoheal:latest

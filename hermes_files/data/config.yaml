@@ -117,7 +117,7 @@ updates:
   non_interactive_local_changes: stash
 computer_use:
   backend: cua
-_config_version: 39
+_config_version: 40
 session_reset:
   mode: none
   idle_minutes: 1440

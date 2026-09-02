@@ -4,3 +4,6 @@
 [submodule "hermes-agent"]
 	path = hermes-agent
 	url = https://github.com/DLozF/hermes-agent.git
+[submodule "LightRAG"]
+	path = LightRAG
+	url = https://github.com/HKUDS/LightRAG.git
