@@ -6,4 +6,4 @@
 	url = https://github.com/DLozF/hermes-agent.git
 [submodule "LightRAG"]
 	path = LightRAG
-	url = https://github.com/HKUDS/LightRAG.git
+	url = https://github.com/DLozF/LightRAG.git
