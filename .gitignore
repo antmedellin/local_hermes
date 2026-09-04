@@ -1,3 +1,14 @@
 .venv/
 ollama_storage/
-hermes_files/
+# hermes_files/
+hermes_files/ai_files
+
+
+# Ignore everything under data
+hermes_files/data/**
+# Allow skills tree
+!hermes_files/data/skills/
+!hermes_files/data/skills/**
+# Ignore Hermes skill manager metadata
+hermes_files/data/skills/.hub/
+hermes_files/data/skills/.usage.json
