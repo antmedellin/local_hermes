@@ -11,7 +11,7 @@ claude-code:11185c8a90b5600cafe267fff856c427
 claude-design:a839ed75e38167058cb363f63b64c6a3
 codebase-inspection:29f67c87df868dd08e76c57b86c7a5c6
 codex:8822d280c3de7ad5827937b83afa0a88
-competitor-news-monitor:1fe587a5a000cd68ca8b9742b2c2df9b
+competitor-news-monitor:c9852e669f65b7015a90512fdb6593db
 computer-use:aca681aed20bf2b9c4625011fb037db0
 design-md:91a8976ef5d37db2451721db9c2b93da
 document-to-action-items:ddd27a7470703b3f90cd188af9ac3f02
@@ -21,9 +21,9 @@ email-inbox-triage:454170991ce34a12d2b738d02e3f5ec5
 findmy:1d7dd3ae39cf25357a374c6bfb956442
 gif-search:12dbdb5d4a04f05aeb20bebcb7d3f60a
 github:976f378faa0897d84c68737c2332f873
-google-workspace:b6b14e6ca1da50016958588acae22827
-grounded-citations:d194531dac85000a3e109f4d78a1799a
-hermes-agent:be506ae1dba10be98034c9cd5c64f7ac
+google-workspace:29b5caf5f662ce02a746d447b4f9e90b
+grounded-citations:bb1ff42fb3153d8f64fb678474b8f3be
+hermes-agent:a5deb6a2b6447b5e54a70259aa203c25
 hermes-agent-skill-authoring:2ac48f56c490196e4275b5c5f3eed687
 himalaya:d215ffaa3c1aecbc68a326e45d6927c8
 humanizer:b3fa12781b41b4008fba21073632e3d0
@@ -43,7 +43,9 @@ popular-web-designs:b3fd685e8fbcf981755609ce98a4eea9
 powerpoint:ff44da32358cd5dc2c12ab8dfb331d7d
 product-price-monitor:7dd11fd1609f3bec2486d925ad924714
 python-debugpy:76a10139bbd9860b863c16bb987c60d8
+reddit-reading:9b40de01a8deeb12e591082508a13905
 requesting-code-review:f7e902570802e21f340955384385abda
+rss-feeds:57e18ee0703f63ae97b4735e3043f557
 sdlc-review:4a4be11e979ac444fdc9c277b8500a81
 simplify-code:de754e6efb064ff88405d6c40229ef3b
 songsee:644dc0f267b6661a3df6c76ce80d7f1f
