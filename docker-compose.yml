@@ -4,6 +4,7 @@ include:
   - ./firecrawl/docker-compose.yaml
   - ./hermes-agent/docker-compose.windows.yml
   - ./LightRAG/docker-compose-full.yml
+  - ./MinerU/docker-compose.yml
 
 x-ollama: &service-ollama
   image: ollama/ollama:latest
