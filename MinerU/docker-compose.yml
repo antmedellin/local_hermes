@@ -1,5 +1,8 @@
 services:
   mineru-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: mineru:latest
     container_name: mineru-api
     restart: unless-stopped
