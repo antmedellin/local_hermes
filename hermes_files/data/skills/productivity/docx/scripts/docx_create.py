@@ -40,12 +40,91 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 
 from docx import Document
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_BREAK
 from docx.shared import Mm, Pt, RGBColor
+
+#argument is only ever allowed to name a file inside this directory
+#hopefully this never lets a file "go missing"
+OUTPUT_DIR = os.environ.get("HERMES_DOCUMENT_DIR", "/opt/ai_files/documents")
+DEFAULT_OUTPUT_NAME = "output.docx"
+
+KNOWN_BLOCK_TYPES = {
+    "heading", "paragraph", "bullet_list", "numbered_list",
+    "table", "image", "page_break", "toc",
+}
+
+class SpecError(ValueError):
+    """Raised for a malformed spec, with all problems collected up front."""
+
+def resolve_output_path(raw: str | None) -> str:
+    """Force the output file to live inside OUTPUT_DIR.
+    - None / empty -> OUTPUT_DIR/output.docx
+    - bare filename ("report.docx") -> OUTPUT_DIR/report.docx
+    - path already inside OUTPUT_DIR -> used as-is (still confined)
+    - anything else (absolute path elsewhere, "../" escape, etc.) -> error
+    """
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    base = os.path.realpath(OUTPUT_DIR)
+ 
+    if not raw:
+        return os.path.join(base, DEFAULT_OUTPUT_NAME)
+
+        # A bare filename (no path separators) always resolves under OUTPUT_DIR.
+    if os.path.basename(raw) == raw:
+        return os.path.join(base, raw)
+ 
+    candidate = os.path.realpath(os.path.join(base, raw) if not os.path.isabs(raw) else raw)
+    if os.path.commonpath([base, candidate]) != base:
+        raise SpecError(
+            f"output path {raw!r} resolves outside the allowed directory "
+            f"{OUTPUT_DIR}; pass a bare filename instead (e.g. 'output.docx')"
+        )
+    return candidate
+
+def validate_spec(spec: dict) -> list[str]:
+    """Return a list of human-readable problems; empty list means OK.
+ 
+    Checked up front, before any docx work happens, so a malformed spec
+    (like a block missing "type") fails fast with one clear message
+    instead of an opaque KeyError partway through generation.
+    """
+    problems = []
+    if not isinstance(spec, dict):
+        return ["spec must be a JSON object"]
+ 
+    blocks = spec.get("blocks", [])
+    if not isinstance(blocks, list):
+        problems.append('"blocks" must be a list')
+        blocks = []
+ 
+    for i, block in enumerate(blocks):
+        if not isinstance(block, dict):
+            problems.append(f"blocks[{i}] must be an object, got {type(block).__name__}")
+            continue
+        btype = block.get("type")
+        if btype is None:
+            # Catches exactly the {"paragraph": {...}} mistake instead of
+            # {"type": "paragraph", ...}: name the block's own keys back
+            # to the caller so the fix is obvious.
+            problems.append(
+                f'blocks[{i}] is missing required "type" key '
+                f"(found keys: {list(block.keys())}); "
+                f'did you mean {{"type": "{next(iter(block), "...")}", ...}}?'
+            )
+        elif btype not in KNOWN_BLOCK_TYPES:
+            problems.append(
+                f'blocks[{i}] has unknown "type": {btype!r}; '
+                f"must be one of {sorted(KNOWN_BLOCK_TYPES)}"
+            )
+        elif btype == "image" and "path" not in block:
+            problems.append(f'blocks[{i}] (type "image") is missing "path"')
+ 
+    return problems
 
 
 def apply_page(doc, page: dict) -> None:
@@ -93,7 +172,7 @@ def add_runs(para, block: dict) -> None:
 
 
 def add_block(doc, block: dict) -> None:
-    btype = block["type"]
+    btype = block["type"] #validate_spec() already guarantees this exists
     if btype == "heading":
         doc.add_heading(block.get("text", ""), level=block.get("level", 1))
     elif btype == "paragraph":
@@ -135,20 +214,10 @@ def add_block(doc, block: dict) -> None:
                    "Table of contents - open in Word/LibreOffice and "
                    "update fields to populate.")
     else:
+        #unreachable given validate_spec(), kept as a safety net
         raise ValueError(f"unknown block type: {btype}")
 
-
-def main() -> int:
-    ap = argparse.ArgumentParser(
-        description="Create a .docx from a JSON spec.",
-        epilog="See the module docstring (top of this file) for the spec format.")
-    ap.add_argument("spec", help="path to JSON spec file")
-    ap.add_argument("output", help="path of .docx to write")
-    args = ap.parse_args()
-
-    with open(args.spec, encoding="utf-8") as f:
-        spec = json.load(f)
-
+def build(spec: dict) -> Document:
     doc = Document()
     if spec.get("page"):
         apply_page(doc, spec["page"])
@@ -167,8 +236,51 @@ def main() -> int:
         _add_field(para, " PAGE ", "1")
         para.add_run(" of ")
         _add_field(para, " NUMPAGES ", "1")
-    doc.save(args.output)
-    print(json.dumps({"ok": True, "output": args.output,
+    return doc
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(
+        description="Create a .docx from a JSON spec.",
+        epilog="See the module docstring (top of this file) for the spec format.")
+    ap.add_argument("spec", help="path to JSON spec file")
+    ap.add_argument("output", nargs="?", default=None,
+                     help=f"filename for the .docx (always written under {OUTPUT_DIR}); "
+                          f"defaults to {DEFAULT_OUTPUT_NAME}")
+    args = ap.parse_args()
+ 
+    try:
+        with open(args.spec, encoding="utf-8") as f:
+            spec = json.load(f)
+    except (OSError, json.JSONDecodeError) as e:
+        print(json.dumps({"ok": False, "error": f"could not read spec: {e}"}))
+        return 1
+ 
+    problems = validate_spec(spec)
+    try:
+        out_path = resolve_output_path(args.output)
+    except SpecError as e:
+        problems.append(str(e))
+        out_path = None
+ 
+    if problems:
+        print(json.dumps({"ok": False, "errors": problems}, indent=2))
+        return 1
+ 
+    try:
+        doc = build(spec)
+    except Exception as e:  # noqa: BLE001 - surface any python-docx error cleanly
+        print(json.dumps({"ok": False, "error": f"{type(e).__name__}: {e}"}))
+        return 1
+ 
+    # Write to a temp file in the same directory, then atomically replace,
+    # so a crash mid-save never leaves a corrupt/partial output.docx behind
+    # and a concurrent reader never sees a half-written file.
+    tmp_path = out_path + ".tmp"
+    doc.save(tmp_path)
+    os.replace(tmp_path, out_path)
+ 
+    print(json.dumps({"ok": True, "output": out_path,
                       "blocks": len(spec.get("blocks", []))}))
     return 0
 
