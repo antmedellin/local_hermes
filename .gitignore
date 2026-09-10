@@ -12,3 +12,7 @@ hermes_files/data/**
 # Ignore Hermes skill manager metadata
 hermes_files/data/skills/.hub/
 hermes_files/data/skills/.usage.json
+
+# Allow memories tree
+!hermes_files/data/memories/
+!hermes_files/data/memories/**

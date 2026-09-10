@@ -36,11 +36,7 @@ fields, and package health checks. It does not render documents itself
 
 ## Prerequisites
 
-- Python 3.10+ with `python-docx` installed:
-  `pip install python-docx` (import name is `docx`; lxml comes with it).
-- Comments `add` uses the native API on python-docx >= 1.2 and an XML
-  fallback on older versions — both are automatic.
-- For image blocks: the image files must exist locally (PNG/JPEG).
+The default location to save documents is /opt/ai_files/. Note: python-docx is available via the terminal tool, but NOT in the execute_code sandbox. Use the terminal tool for any operations requiring python-docx.
 
 ## How to Run
 
