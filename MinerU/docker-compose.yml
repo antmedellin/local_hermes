@@ -3,7 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: mineru:latest
     container_name: mineru-api
     restart: unless-stopped
 
@@ -32,5 +31,4 @@ services:
 
 networks:
   backend:
-    external: true
     name: local-hermes_backend

@@ -46,3 +46,7 @@ git remote -v
 git fetch upstream
 git checkout main
 git merge upstream/main
+
+
+wsl -d Ubuntu -- bash -lc "cd ~/test/local_hermes/hermes-agent ; docker compose -f docker-compose.windows.yml build"
+make sure memory is updated so references correct location
