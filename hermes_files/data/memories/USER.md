@@ -1,0 +1,1 @@
+User is a researcher/student focused on the Manufacturing and Industrial Engineering (MAIE) department at UTRGV.

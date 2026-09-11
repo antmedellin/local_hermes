@@ -530,14 +530,14 @@
     "created_by": null,
     "last_patched_at": null,
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-09-03T12:39:14.646382+00:00",
-    "last_viewed_at": "2026-09-03T12:39:14.640717+00:00",
+    "last_used_at": "2026-09-11T14:12:41.646984+00:00",
+    "last_viewed_at": "2026-09-11T14:12:41.643657+00:00",
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 4,
-    "view_count": 4
+    "use_count": 7,
+    "view_count": 7
   },
   "llm-wiki": {
     "archived_at": null,
