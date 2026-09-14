@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "description": "Diagnosis of MAIE authorship names associated with current Digital Measures faculty IDs.",
+    "faculty_count": 14,
+    "maie_faculty_id_author_entries": 0,
+    "non_exact_entries": 0
+  },
+  "category_counts": {
+    "EXACT": 0,
+    "SAME_FIRST_LAST": 0,
+    "SAME_LAST_FIRST_INITIAL": 0,
+    "INITIALS_VARIANT": 0,
+    "HIGH_SIMILARITY": 0,
+    "MODERATE_SIMILARITY": 0,
+    "POSSIBLE_MISMATCH": 0,
+    "UNKNOWN": 0
+  },
+  "diagnosis": []
+}

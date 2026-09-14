@@ -1,0 +1,5498 @@
+{
+  "input_file": "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/maie_faculty_enriched.json",
+  "metadata": {
+    "institution": "University of Texas Rio Grande Valley",
+    "college": "College of Engineering and Computer Science",
+    "department": "Department of Manufacturing and Industrial Engineering",
+    "faculty_count": 14,
+    "publication_count": 459,
+    "source": "UTRGV Digital Measures API",
+    "api_endpoint": "https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMuser?username=",
+    "generated_at": "2026-09-14T16:24:14Z"
+  },
+  "summary": {
+    "faculty_count": 14,
+    "publication_objects": 495,
+    "metadata_publication_count": 459,
+    "publication_count_mismatch": true,
+    "unique_doi_values": 113,
+    "doi_duplicate_groups": 12,
+    "title_year_duplicate_groups": 36,
+    "recoverable_dois": 23,
+    "bad_urls": 30,
+    "missing_abstracts": 401,
+    "missing_full_text": 446,
+    "faculty_with_no_publications": 2,
+    "faculty_missing_research": 14,
+    "total_authors": 1774,
+    "maie_faculty_author_entries": 567,
+    "suspicious_faculty_author_entries": 0
+  },
+  "faculty_with_no_publications": [
+    "",
+    ""
+  ],
+  "faculty_missing_research": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "faculty_publication_counts": [
+    {
+      "name": null,
+      "user_id": "1592411",
+      "publication_count": 91
+    },
+    {
+      "name": null,
+      "user_id": "1450741",
+      "publication_count": 74
+    },
+    {
+      "name": null,
+      "user_id": "1451022",
+      "publication_count": 68
+    },
+    {
+      "name": null,
+      "user_id": "1391271",
+      "publication_count": 66
+    },
+    {
+      "name": null,
+      "user_id": "2270795",
+      "publication_count": 62
+    },
+    {
+      "name": null,
+      "user_id": "1478901",
+      "publication_count": 33
+    },
+    {
+      "name": null,
+      "user_id": "1451016",
+      "publication_count": 31
+    },
+    {
+      "name": null,
+      "user_id": "1991449",
+      "publication_count": 27
+    },
+    {
+      "name": null,
+      "user_id": "2449251",
+      "publication_count": 19
+    },
+    {
+      "name": null,
+      "user_id": "2526916",
+      "publication_count": 19
+    },
+    {
+      "name": null,
+      "user_id": "1962780",
+      "publication_count": 3
+    },
+    {
+      "name": null,
+      "user_id": "2375313",
+      "publication_count": 2
+    },
+    {
+      "name": null,
+      "user_id": "2204130",
+      "publication_count": 0
+    },
+    {
+      "name": null,
+      "user_id": "2526918",
+      "publication_count": 0
+    }
+  ],
+  "publication_field_completeness": {
+    "title": {
+      "present": 495,
+      "missing": 0,
+      "percent_present": 100.0
+    },
+    "year": {
+      "present": 495,
+      "missing": 0,
+      "percent_present": 100.0
+    },
+    "type": {
+      "present": 493,
+      "missing": 2,
+      "percent_present": 99.6
+    },
+    "status": {
+      "present": 473,
+      "missing": 22,
+      "percent_present": 95.6
+    },
+    "refereed": {
+      "present": 272,
+      "missing": 223,
+      "percent_present": 54.9
+    },
+    "publisher": {
+      "present": 384,
+      "missing": 111,
+      "percent_present": 77.6
+    },
+    "volume": {
+      "present": 249,
+      "missing": 246,
+      "percent_present": 50.3
+    },
+    "issue": {
+      "present": 150,
+      "missing": 345,
+      "percent_present": 30.3
+    },
+    "pages": {
+      "present": 267,
+      "missing": 228,
+      "percent_present": 53.9
+    },
+    "url": {
+      "present": 124,
+      "missing": 371,
+      "percent_present": 25.1
+    },
+    "isbn_issn": {
+      "present": 66,
+      "missing": 429,
+      "percent_present": 13.3
+    },
+    "pmcid": {
+      "present": 2,
+      "missing": 493,
+      "percent_present": 0.4
+    },
+    "doi": {
+      "present": 103,
+      "missing": 392,
+      "percent_present": 20.8
+    },
+    "abstract": {
+      "present": 94,
+      "missing": 401,
+      "percent_present": 19.0
+    },
+    "full_text": {
+      "present": 49,
+      "missing": 446,
+      "percent_present": 9.9
+    },
+    "impact": {
+      "present": 30,
+      "missing": 465,
+      "percent_present": 6.1
+    },
+    "authors": {
+      "present": 495,
+      "missing": 0,
+      "percent_present": 100.0
+    }
+  },
+  "profile_field_completeness": {
+    "bio": {
+      "present": 0,
+      "missing": 14
+    },
+    "building": {
+      "present": 0,
+      "missing": 14
+    },
+    "campus": {
+      "present": 0,
+      "missing": 14
+    },
+    "email": {
+      "present": 0,
+      "missing": 14
+    },
+    "first_name": {
+      "present": 0,
+      "missing": 14
+    },
+    "full_name": {
+      "present": 0,
+      "missing": 14
+    },
+    "last_name": {
+      "present": 0,
+      "missing": 14
+    },
+    "middle_name": {
+      "present": 0,
+      "missing": 14
+    },
+    "phone": {
+      "present": 0,
+      "missing": 14
+    },
+    "photo": {
+      "present": 0,
+      "missing": 14
+    },
+    "prefix": {
+      "present": 0,
+      "missing": 14
+    },
+    "research_interests": {
+      "present": 0,
+      "missing": 14
+    },
+    "room": {
+      "present": 0,
+      "missing": 14
+    },
+    "structured_research_interests": {
+      "present": 0,
+      "missing": 14
+    },
+    "vita_available": {
+      "present": 0,
+      "missing": 14
+    }
+  },
+  "status_distribution": {
+    "Published": 380,
+    "Submitted": 69,
+    "UNKNOWN": 22,
+    "Accepted": 15,
+    "In Preparation; Not Yet Submitted": 6,
+    "Working Paper": 1,
+    "Revising to Resubmit": 2
+  },
+  "publication_type_distribution": {
+    "Conference Proceeding": 222,
+    "Technical Report": 30,
+    "Journal Article, Academic Journal": 204,
+    "Research Report": 8,
+    "UNKNOWN": 2,
+    "Other": 7,
+    "Magazine/Trade Publication": 3,
+    "Manuscript": 1,
+    "Book, Chapter in Scholarly Book-New": 13,
+    "Book, Edited-New": 5
+  },
+  "recoverable_dois": [
+    {
+      "index": 0,
+      "title": "Using Statistical Clustering of Trajectory Data to Support Analysis of Subject Movement in a Virtual Environment",
+      "year": 2025,
+      "doi": "10.1017/pds.2025.10350",
+      "source_field": "isbn_issn"
+    },
+    {
+      "index": 4,
+      "title": "A Study of Human Balance and Coordination Using a Head Mounted Display",
+      "year": 2021,
+      "doi": "10.1115/1.4050788",
+      "source_field": "url"
+    },
+    {
+      "index": 84,
+      "title": "Modeling Residual Thermal Stresses in Layer-by-Layer Formation of Direct Metal Laser Sintering Process for Different Scanning Patterns for 316L Stainless Steel",
+      "year": 2024,
+      "doi": "10.1108/rpj-10-2021-0268",
+      "source_field": "url"
+    },
+    {
+      "index": 87,
+      "title": "3D metal lattice structure manufacturing with continuous rods",
+      "year": 2024,
+      "doi": "10.1038/s41598-020-79826-6",
+      "source_field": "url"
+    },
+    {
+      "index": 88,
+      "title": "A Novel Rapid Manufacturing Process for Metal Lattice Structure",
+      "year": 2024,
+      "doi": "10.1089/3dp.2020.0184",
+      "source_field": "url"
+    },
+    {
+      "index": 89,
+      "title": "Characterizing novel honeycomb infill pattern for additive manufacturing",
+      "year": 2024,
+      "doi": "10.1115/1.4048044",
+      "source_field": "url"
+    },
+    {
+      "index": 90,
+      "title": "Dip Coating from Density Mismatching Mixture",
+      "year": 2024,
+      "doi": "10.1115/1.4051260",
+      "source_field": "url"
+    },
+    {
+      "index": 108,
+      "title": "“Investigations into Internal Surface Finishing of Titanium (Grade 2) Pipe with Extended Magnetic Tool",
+      "year": 2018,
+      "doi": "10.1016/j.promfg.2018.07.025",
+      "source_field": "url"
+    },
+    {
+      "index": 122,
+      "title": "Effect of cutting edge preparation of coated tools on their performance in milling various materials",
+      "year": 2017,
+      "doi": "10.1016/j.cirpj.2014.05.003",
+      "source_field": "url"
+    },
+    {
+      "index": 135,
+      "title": "Modeling and interpretation of fiber orientation-based failure mechanisms in machining of carbon fiber reinforced polymer composites",
+      "year": 2017,
+      "doi": "10.1016/j.jmapro.2011.09.005",
+      "source_field": "url"
+    },
+    {
+      "index": 176,
+      "title": "Analysis of rigid-disk wear during robotic grinding",
+      "year": 2017,
+      "doi": "10.1016/0890-6955(90)90004-3",
+      "source_field": "url"
+    },
+    {
+      "index": 178,
+      "title": "A simple analysis for evaluating grinding wheel loading",
+      "year": 2017,
+      "doi": "10.1016/0890-6955(88)90029-6",
+      "source_field": "url"
+    },
+    {
+      "index": 179,
+      "title": "A new technique for evaluating wheel loading",
+      "year": 2017,
+      "doi": "10.1016/0020-7357(85)90055-1",
+      "source_field": "url"
+    },
+    {
+      "index": 189,
+      "title": "Using Statistical Clustering of Trajectory Data to Support Analysis of Subject Movement in a Virtual Environment",
+      "year": 2025,
+      "doi": "10.1017/pds.2025.10350",
+      "source_field": "isbn_issn"
+    },
+    {
+      "index": 192,
+      "title": "A Study of Human Balance and Coordination Using a Head Mounted Display",
+      "year": 2021,
+      "doi": "10.1115/1.4050788",
+      "source_field": "url"
+    },
+    {
+      "index": 255,
+      "title": "A machine learning approach to detect pores in laser powder bed fusion additive manufacturing",
+      "year": 2025,
+      "doi": "10.1016/j.mfglet.2025.06.117",
+      "source_field": "url"
+    },
+    {
+      "index": 259,
+      "title": "Development of boron-enhanced inconel 718 with superior thermomechanical properties for high-temperature concentrated solar power applications",
+      "year": 2025,
+      "doi": "10.1016/j.solmat.2025.113787",
+      "source_field": "url"
+    },
+    {
+      "index": 260,
+      "title": "Molecular Dynamics-Based Two-Dimensional Simulation of Powder Bed Additive Manufacturing Process for Unimodal and Bimodal Systems",
+      "year": 2023,
+      "doi": "10.3390/jmmp9010009",
+      "source_field": "url"
+    },
+    {
+      "index": 322,
+      "title": "Reshaping the Landscape of Future Manufacturing: Software Defined Manufacturing",
+      "year": 2021,
+      "doi": "10.1109/mc.2021.3074851",
+      "source_field": "url"
+    },
+    {
+      "index": 352,
+      "title": "Hybrid dye-quantum dot solar cell with liquid polysulfide electrolyte with enhanced energy conversion",
+      "year": 2026,
+      "doi": "10.1016/j.jpowsour.2026.239625",
+      "source_field": "url"
+    },
+    {
+      "index": 354,
+      "title": "A machine learning approach to detect pores in laser powder bed fusion additive manufacturing",
+      "year": 2025,
+      "doi": "10.1016/j.mfglet.2025.06.117",
+      "source_field": "url"
+    },
+    {
+      "index": 357,
+      "title": "Development of boron-enhanced inconel 718 with superior thermomechanical properties for high-temperature concentrated solar power applications",
+      "year": 2025,
+      "doi": "10.1016/j.solmat.2025.113787",
+      "source_field": "url"
+    },
+    {
+      "index": 389,
+      "title": "Framework for an Optimization Model for Light Design in Retail Stores.",
+      "year": 2017,
+      "doi": "10.1061/9780784479827.115",
+      "source_field": "url"
+    }
+  ],
+  "bad_urls": [
+    {
+      "index": 0,
+      "title": "Using Statistical Clustering of Trajectory Data to Support Analysis of Subject Movement in a Virtual Environment",
+      "url": "University of Texas Rio Grande Valley"
+    },
+    {
+      "index": 2,
+      "title": "A New Course in Manufacturing – An Introduction to Shipbuilding",
+      "url": "Manufacturing & Industrial Engineering"
+    },
+    {
+      "index": 3,
+      "title": "A Report to the American Bureau of Shipping on Research & Development Funds Acquisition",
+      "url": "Manufacturing & Industrial Engineering"
+    },
+    {
+      "index": 5,
+      "title": "A Study of Human Balance and Coordination using a Head Mounted Display",
+      "url": "904 Lexington Cir"
+    },
+    {
+      "index": 99,
+      "title": "Modeling and optimization of process parameters in face-milling of Ti6Al4V alloy using Taguchi and gray relational analysis",
+      "url": "1201 W University Dr"
+    },
+    {
+      "index": 102,
+      "title": "Effects of Chemically Assisted Magnetic Abrasive Finishing Process Parameters on Material Removal of Inconel 625 tubes",
+      "url": "www.sciencedirect.com"
+    },
+    {
+      "index": 105,
+      "title": "Optimization and analysis of surface roughness for INVAR-36 in end milling operations",
+      "url": "materialstoday.com/proceedings"
+    },
+    {
+      "index": 120,
+      "title": "Role of phase transformation in chip segmentation during high speed machining of dual phase titanium alloys",
+      "url": "elsevier.com/locate/jmatprotec"
+    },
+    {
+      "index": 122,
+      "title": "Effect of cutting edge preparation of coated tools on their performance in milling various materials",
+      "url": "dx.doi.org/10.1016/j.cirpj.2014.05.003"
+    },
+    {
+      "index": 133,
+      "title": "Design and evaluation of an atomized-based cutting fluid spray system in turning of titanium alloy",
+      "url": "www.elsevier.com/locate/manpro"
+    },
+    {
+      "index": 135,
+      "title": "Modeling and interpretation of fiber orientation-based failure mechanisms in machining of carbon fiber reinforced polymer composites",
+      "url": "dx.doi.org/10.1016/j.jmapro.2011.09.005"
+    },
+    {
+      "index": 176,
+      "title": "Analysis of rigid-disk wear during robotic grinding",
+      "url": "dx.doi.org/10.1016/0890-6955(90)90004-3"
+    },
+    {
+      "index": 178,
+      "title": "A simple analysis for evaluating grinding wheel loading",
+      "url": "dx.doi.org/10.1016/0890-6955(88)90029-6"
+    },
+    {
+      "index": 179,
+      "title": "A new technique for evaluating wheel loading",
+      "url": "dx.doi.org/10.1016/0020-7357(85)90055-1"
+    },
+    {
+      "index": 189,
+      "title": "Using Statistical Clustering of Trajectory Data to Support Analysis of Subject Movement in a Virtual Environment",
+      "url": "University of Texas Rio Grande Valley"
+    },
+    {
+      "index": 194,
+      "title": "A Study of Human Balance and Coordination using a Head Mounted Display",
+      "url": "904 Lexington Cir"
+    },
+    {
+      "index": 322,
+      "title": "Reshaping the Landscape of Future Manufacturing: Software Defined Manufacturing",
+      "url": "DOI: 10.1109/MC.2021.3074851"
+    },
+    {
+      "index": 336,
+      "title": "A Deterministic Equivalent Problem to Study the Effects of Security Policies",
+      "url": "link.springer.com/book/10.1007%2F978-3-319-93488-4"
+    },
+    {
+      "index": 364,
+      "title": "A molecular dynamic study of atomic diffusion effects on thermomechanical properties applying laser additive alloying process for the Cantor High Entropy Alloy",
+      "url": "1201 W University Dr"
+    },
+    {
+      "index": 389,
+      "title": "Framework for an Optimization Model for Light Design in Retail Stores.",
+      "url": "ascelibrary.org/doi/abs/10.1061/9780784479827.115"
+    },
+    {
+      "index": 472,
+      "title": "A Perspective on Bioprocessing for Biofuels, Biobased chemicals and Bioproducts",
+      "url": "www.sciencedirect.com/science/article/pii/B9780128179413000012"
+    },
+    {
+      "index": 474,
+      "title": "Advances in Feedstock Conversion Technologies for Alternative fuels and bioproducts",
+      "url": "www.elsevier.com/books/advances-in-feedstock-conversion-technologies-for-alternative-fuels-and-bioproducts/hosseini/978-0-12-817937-6"
+    },
+    {
+      "index": 475,
+      "title": "Algae as a Source of Microcrystalline Cellulose",
+      "url": "www.sciencedirect.com/science/article/pii/B9780128179413000176"
+    },
+    {
+      "index": 476,
+      "title": "Cell Wall Disruption: A Critical Up-stream Process for Biofuel Production",
+      "url": "www.sciencedirect.com/science/article/pii/B9780128179376000023"
+    },
+    {
+      "index": 477,
+      "title": "Fatty Acid Profiling of Biofuels Produced from Microalgae, Vegetable Oil, and Waste Vegetable Oil",
+      "url": "www.sciencedirect.com/science/article/pii/B9780128179376000138"
+    },
+    {
+      "index": 478,
+      "title": "Multipurpose Use of Microalgae to Treat Municipal Wastewater and Produce Biofuels",
+      "url": "www.sciencedirect.com/science/article/pii/B9780128179413000164"
+    },
+    {
+      "index": 479,
+      "title": "Production of Microalgae-Derived High-Protein Biomass to Enhance Food for Animal Feedstock and Human Consumption",
+      "url": "www.sciencedirect.com/science/article/pii/B9780128179413000206"
+    },
+    {
+      "index": 480,
+      "title": "Recent Advances in Lipid Extraction for Biodiesel Production",
+      "url": "www.sciencedirect.com/science/article/pii/B9780128179376000102"
+    },
+    {
+      "index": 487,
+      "title": "Treatment/Cleaning of Oily Water/Wastewater Using Algae",
+      "url": "www.google.com/patents/US20160167995"
+    },
+    {
+      "index": 493,
+      "title": "Method and System for Reducing Free Fatty Acid Content of a Feedstock",
+      "url": "www.google.com/patents/US20150037852"
+    }
+  ],
+  "missing_abstracts": [
+    {
+      "index": 0,
+      "title": "Using Statistical Clustering of Trajectory Data to Support Analysis of Subject Movement in a Virtual Environment",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 6,
+      "title": "Final Report for An Expert Systems Approach to Feature Recognition for Maritime ROV Operation with Virtual Reality",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 7,
+      "title": "“Competitive Usability Analysis of Immersive Virtual Environments in Engineering Design Review”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 8,
+      "title": "“Final Report for Evaluating the Effectiveness of Immersive Interfaces for Combat Training”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 9,
+      "title": "“Benefits of Implementing Automated Costing in a Small Machine Shop: A Case Study”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 10,
+      "title": "“Finding the Value of Immersive Virtual Environments using Competitive Usability Analysis”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 11,
+      "title": "Distance Education – Experience & Implementation",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 12,
+      "title": "“Integrated Actuator – Rudder System for LCAC”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 14,
+      "title": "“Virtual Reality Enhancements for New Orleans Area Universities”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 15,
+      "title": "“Thermal Modeling, A Shipbuilding, Cost, and Reliability Perspective”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 16,
+      "title": "“Improving Shipyard Assembly”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 17,
+      "title": "“Integrated Structural Building Blocks (ISBB), An Initial Investigation”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 18,
+      "title": "“Initial Test Plan for LCAC Rudder-Actuator System”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 19,
+      "title": "“Return on Investment (ROI) Analysis for the Implementation of a STEP AP 227 Format for Interoperable HVAC Design”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 20,
+      "title": "“Maintenance Cost, Reliability, and Financial Return Analysis for LCAC Rudder Actuator and Rudder Systems”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 21,
+      "title": "“Marine Composites Affordability – A Knowledgebased Approach”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 23,
+      "title": "“Lean Six Sigma in Shipbuilding (Year 2)\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 24,
+      "title": "“Design of Jigs and Fixtures to Improve Shipyard Productivity”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 25,
+      "title": "“Research in Affordability Measurement and Prediction Methods to Support Affordable Design of Ship Systems”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 26,
+      "title": "“Features as an Abstraction for Designer Convenience in the Design of Ships”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 27,
+      "title": "“Reliability Analysis for Elements of a Marine Diesel Propulsion System”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 28,
+      "title": "“Usability Analysis for Virtual Environment Interfaces in Ship Design”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 29,
+      "title": "“3M Processors for Dual Use”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 30,
+      "title": "“Approximate Reasoning for Location of Underground Utilities”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 31,
+      "title": "“Assessing Maintenance Cost for Design or Re-Design of Complex Machinery”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 32,
+      "title": "“Design Synthesis in a Virtual Environment”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 33,
+      "title": "“Estimating Technology Insertion Risk using Fuzzy Logic”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 34,
+      "title": "“Developing an Artificial Neural Network for Modeling Heavy Vehicle Rollover”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 35,
+      "title": "“An Artificial Neural Network Simulation of Tank Trucks”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 36,
+      "title": "“Features as an Abstraction for Designer Convenience in the Design of Complex Products”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 37,
+      "title": "“Research in Affordability Measurement and Prediction Methods to Support Affordable Design of Ship Systems,\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 38,
+      "title": "“A Comparative Study of Uncertainty Methods for Legal Reasoning”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 39,
+      "title": "“Research in Affordability Measurement and Prediction Methods to Support Affordable Design of Ship Systems\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 40,
+      "title": "“Development of a Feature Based Design System using Virtual Reality”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 41,
+      "title": "“A Potential Field Method for Path Planning into Cavities Defined by B-Splines”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 42,
+      "title": "“Development of a Voronoi Tree for Cavities by Hodograph-Hodograph Intersection”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 43,
+      "title": "“A Fuzzy Model of Legal Reasoning for Concurrent Engineering”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 44,
+      "title": "“A Modular Approach for Environmentally Conscious Machining Process”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 45,
+      "title": "“Robot Path Planning into Cavities Defined by Splines”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 46,
+      "title": "“A Feasibility Study: The Heating and Drying of Coal Particles using Fluidized Bed Technology”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 47,
+      "title": "“System Design for Heating Coal”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 48,
+      "title": "\"A Concurrent Engineering System for Legal Reasoning about Defective Design\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 50,
+      "title": "\"General Layout Design Synthesis Using Fuzzy Logic\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 52,
+      "title": "\"A Fuzzy Decision Model for Environmental Risk Assessment\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 53,
+      "title": "\"Computer Aided Design/Engineering of Bearing Systems Using the Dempster-Shafer Theory\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 54,
+      "title": "\"Fuzzy Computer-Aided Design of Process Manufacturing Facilities\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 55,
+      "title": "\"Legacy Costing, Fuzzy Systems Theory, and Environmentally Conscious Manufacturing\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 56,
+      "title": "\"Modeling Uncertainty in Preliminary Design: a Short Review\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 57,
+      "title": "\"Motion Planning Using Fuzzy Logic Control with Minimum Sensors\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 58,
+      "title": "\"An Adaptive Fuzzy Logic Controller for Poly-Tree Structured Workcell Layouts\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 59,
+      "title": "\"An Evaluation of Alternate Technologies for the Manufacture of Coal Logs\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 60,
+      "title": "\"Instructor's Guide for a Proprietary Short Course on Manufacturing Cost, Budgets, and Investment,\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 61,
+      "title": "\"Manufacturing Cost, Budgets, and Investments\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 62,
+      "title": "\"Use of a CAD System to Develop Product Market Information\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 63,
+      "title": "\"Using Bayesian Belief Networks for Automated Legal Reasoning about Defective Design\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 64,
+      "title": "\"Vacuum and Thermal Techniques for the Manufacture of Coal Logs\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 65,
+      "title": "\"An Analysis of Research Programs in Intelligent Software Agents\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 66,
+      "title": "\"Control of a Kamyr Wood Digester with the Purdue Digester Model\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 67,
+      "title": "\"A Strategy for Machining Fluid Waste Minimization for Environmentally Conscious Manufacturing\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 70,
+      "title": "\"A Discussion of Accounting Theory from an Engineering Design and Manufacturing Perspective\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 72,
+      "title": "\"Reliability Analysis of Complex Systems Using Symbolic Logic\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 73,
+      "title": "\"A Description and User's Guide for the Purdue Kamyr Digester Model\"",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 74,
+      "title": "Atomistic insights into microstructure evolution and mechanical response of TiTaNb medium-entropy alloy fabricated by laser powder bed fusion",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 75,
+      "title": "Tribological performance of additively manufactured MoB reinforced AlSi7Mg alloy composites",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 76,
+      "title": "Phase stability and intrinsic properties of equimolar TiNbTa refractory medium-entropy alloy: An integrated CALPHAD, Scheil, and first-principles assessment",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 77,
+      "title": "A Review of Ceramic-Reinforced Nickel-Based Superalloys: Processing, Properties, and Applications",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 78,
+      "title": "A Novel Hexagonal-Zigzag Cellular Infill Structure for Additive Manufacturing",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 79,
+      "title": "Electrochemical Performance of Direct Ink Writing Fabricated Batteries: A Comprehensive Review",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 80,
+      "title": "A Review of The Ceramic Reinforced Ni-Based Superalloys",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 81,
+      "title": "An Island Type Novel Scan Pattern with Non-Linear Island Intersections for Laser Powder Bed Fusion Additive Manufacturing Processes",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 82,
+      "title": "Modeling and Characterizing a Novel Hybrid Infill Pattern for Additive Manufacturing",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 83,
+      "title": "Modeling Maximum Stresses in each Layer for Layer-by-Layer Deposition of the Direct Metal Laser Sintering Process for Different Scanning Patterns",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 84,
+      "title": "Modeling Residual Thermal Stresses in Layer-by-Layer Formation of Direct Metal Laser Sintering Process for Different Scanning Patterns for 316L Stainless Steel",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 85,
+      "title": "Modeling the Interplay between Process Parameters and Part Attributes in Additive Manufacturing Process with Artificial Neural Network",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 86,
+      "title": "Modeling Thermal Behavior and Residual Stress for Layer-by-Layer Rotated Scan Direction in Laser Powder Bed Fusion Process",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 87,
+      "title": "3D metal lattice structure manufacturing with continuous rods",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 88,
+      "title": "A Novel Rapid Manufacturing Process for Metal Lattice Structure",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 89,
+      "title": "Characterizing novel honeycomb infill pattern for additive manufacturing",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 90,
+      "title": "Dip Coating from Density Mismatching Mixture",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 91,
+      "title": "Solid Transfer of Large Particles by Dipping in a Heterogeneous Mixture",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 92,
+      "title": "The alteration in learning attitude of Engineering students due to instruction modality change caused by COVID-19 social environmental restrictions",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 93,
+      "title": "A Graphical Representation of Sensor Mapping for Machine Tool Fault Monitoring and Prognostics for Smart Manufacturing",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 94,
+      "title": "Prediction of Tool Wear and Surface Finish using ANFIS Modelling during Turning of Carbon Fiber Reinforced Plastic (CFRP) Composites",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 95,
+      "title": "“Explainable AI (XAI)-Driven  Vibration  Sensing  Scheme  for  Surface Quality  Monitoring  in  a  Smart  Surface  Grinding  Process",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 96,
+      "title": "Turning of Carbon Fiber Reinforced Polymer (CFRP) Composites: Process Modeling and Optimization using Taguchi Analysis and Multi-Objective Genetic Algorithm",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 97,
+      "title": "Ultrafast Laser Ablation of Inconel 718 for Surface Improvement",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 98,
+      "title": "Enhanced Hybrid Model to Predict the Surface Roughness of Honed Cylinder Bore",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 106,
+      "title": "Investigations into Internal Surface Finishing of Titanium (Grade 2) Pipe with Extended Magnetic Tool",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 107,
+      "title": "“Application of Optimized Laser Surface Re-melting Process on Selective Laser Melted 316L Stainless Steel Inclined Parts”, Elsevier: SME Journal of Manufacturing Processes, 2018 (Submitted),",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 111,
+      "title": "Parametric Investigations into Internal Surface Modification of Brass Tubes with Alternating Magnetic Field",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 112,
+      "title": "An Integrated Approach to Sustainable Bioenergy/Biofuels Resources and Supply Chain Management: Modeling, Techno-economic Analysis, Challenges and Future Outlook",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 113,
+      "title": "Internal Surface Modification of Brass Tubes with the Help of Alternating Magnetic Field",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 114,
+      "title": "Microstructure Sensitive Flow Stress Based on Self Consistent Method",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 115,
+      "title": "Chip Fracture Behavior in the High Speed Machining of Titanium Alloys",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 116,
+      "title": "Grinding investigations of Ti-6Al-4V parts produced using direct metal laser sintering technology",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 117,
+      "title": "Investigations into the Removal of EDM Recast Layer with Magnetic Abrasive Machining",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 118,
+      "title": "Role of Tool Flank Wear and Machining Speed in Developing of Residual Stress in Machined Surface During High Speed Machining of Titanium Alloys",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 119,
+      "title": "Investigation of Material Transformations and their Role in Residual Stress Development in Machined Surfaces",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 121,
+      "title": "Magnetic Abrasive Finishing of cutting tools for high-speed machining of titanium alloys",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 123,
+      "title": "Investigations for Safe Grinding of Ti-6Al-4V Parts Produced by Direct Metal Laser Sintering (DMLS) Technology",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 124,
+      "title": "Stress Triaxiality in Chip Segmentation During High Speed Machining of Titanium Alloy",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 125,
+      "title": "Study of Droplet Spray Behavior of an Atomization-Based Cutting Fluid Spray System for Machining Titanium Alloys",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 126,
+      "title": "Effect of fluid concentration in titanium machining with an atomization-based cutting fluid (ACF) spray system",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 127,
+      "title": "Effect of fluid concentration in titanium machining with an atomized-based cutting fluid (ACF) spray system",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 128,
+      "title": "Multi-Constraint Optimization for Grinding Nickel-Based Alloys",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 129,
+      "title": "Rapid Finite Element Prediction on Machining Process",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 130,
+      "title": "Magnetic Abrasive Finishing of Cutting Tools for Machining of Titanium Alloys",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 131,
+      "title": "Rotary Ultrasonic Machining of CFRP Composites: A Study on Power Consumption",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 132,
+      "title": "Droplet Spray Behavior of an Atomization-Based Cutting Fluid (ACF) System for Machining of Titanium Alloys",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 134,
+      "title": "Design and evaluation of an atomozed based cutting fluid spray system in turning of titanium alloy",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 136,
+      "title": "Ti-6Al-4V High-Speed Dry Cutting Process Experiment and Finite Element Modeling",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 137,
+      "title": "Predicting Ti-6AL-4V Alloy High-speed Dry Cutting Process using Finite Element Method Incorporating the Chip-Tool-Work Friction Coefficients by Experimental Forces",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 138,
+      "title": "Tornitura del Titanio",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 139,
+      "title": "An Experimental Investigation Into the High Speed Turning of Ti-6Al-4V Titanium Alloy",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 140,
+      "title": "Hard Turning with Variable Micro-Geometry PcBN Tools",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 141,
+      "title": "Investigations on The Effects of Multi-Layered Coated Inserts in Machining Ti-6Al-4V Alloy with Experiments and Finite Element Simulations",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 142,
+      "title": "Failure Mechanisms Encountered in Micro-Milling of Aligned Carbon Fiber Reinforced Polymers",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 143,
+      "title": "Finite Element Simulation of High Speed Machining Ti-6Al-4V Alloy Using Modified Material Models",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 144,
+      "title": "A Study on Electrolytic In-Process Dressing (ELID) Grinding of Sapphire With Acoustic Emission",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 145,
+      "title": "Machinability Assessment while Drilling into Powder Metals (P/M)",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 146,
+      "title": "An Experimental Investigation on the Machinability of Powder Metal Steel",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 147,
+      "title": "In-Process Measurement and Monitoring for Intelligent Optimization and Control of Grinding Processes",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 148,
+      "title": "Monitoring and Model Generation for Intelligent Optimization and Control of Surface Grinding Processes",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 149,
+      "title": "Application of Knowledge Based System for Grinding Process Optimization",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 150,
+      "title": "An experimental investigation of temperatures during conventional and CBN grinding",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 151,
+      "title": "An Experimental Investigation of Temperatures during Conventional and CBN Grinding",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 152,
+      "title": "Accumulation, speciation and cellular localization of copper in Sesbania drummondii.",
+      "year": 2016,
+      "faculty": ""
+    },
+    {
+      "index": 153,
+      "title": "Finite Element Modeling of Plunge Hard Turning of Disks Made of AISI 1137 Steel",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 154,
+      "title": "Focus: From Production to Profit",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 155,
+      "title": "Manufacturing Profitability through Well-Maintained Cutting Tools",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 156,
+      "title": "An Experimental Investigation on the Machinability of Powder Metal Steels",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 157,
+      "title": "Sensor Assisted Monitoring of Surface Grinding Process",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 158,
+      "title": "Experimental Investigations into Turning of AerMet 100 Alloy using Uncoated and TiAlN Coated Inserts",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 159,
+      "title": "Thermo-mechanical Modeling of Metal Cutting Using Marc Mentat",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 160,
+      "title": "Tool/Work Material/Cutting Fluid Interaction while Tapping into AA-319 and AA-A356 T6 Lost Foam Aluminum Castings",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 161,
+      "title": "A New Approach to Characterize the Machinability of Powder Metals",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 162,
+      "title": "Interrupted Cutting FEM Model for Face Milling of Titanium Alloys",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 163,
+      "title": "Microstructure-Mechanics Interactions in Modeling Chip Segmentation During Titanium Machining",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 164,
+      "title": "Mechanics of Chip Formation during the Machining of Hardened Steel",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 165,
+      "title": "Machining of Advanced and Engineered Materials",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 166,
+      "title": "Control Strategy for Multi-Pass Robotic Grinding",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 167,
+      "title": "Modelling of Geometric and Thermal Errors in a Five-Axis CNC Machine Tool",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 168,
+      "title": "Optimal Planning of an Adaptively Controlled Robotic Disk Grinding Process",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 169,
+      "title": "An Investigation of Grinding Wheel Loading",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 170,
+      "title": "Analysis of the Robotic Disk Grinding Process",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 171,
+      "title": "Surface Finish in Robotic Disk Grinding",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 172,
+      "title": "Workpiece Burn and Surface Finish during Controlled Force Robotic Disk Grinding Process",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 173,
+      "title": "Adaptive Force Control for Robotic Disk Grinding",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 174,
+      "title": "Modelling of the PUMA Robot for Control of Grinding Applications",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 175,
+      "title": "Force Control for Robotic Rigid Disk Grinding",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 177,
+      "title": "Force Modelling of the Robotic Disk Grinding Process",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 180,
+      "title": "An Experimental Study of Loading Phenomenon in Grinding",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 181,
+      "title": "X Ray Fluorescence Technique for the Study of Grinding Wheel Performance",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 182,
+      "title": "Workpiece Burn in Fine Grinding",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 183,
+      "title": "Evaluation of Grinding Wheel Loading using X Ray Fluorescence Technique",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 186,
+      "title": "A Magnitude Robust Control Chart for the Level Parameter of an AR(1) Process",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 187,
+      "title": "Change Point Estimates for the Parameters of an AR(1) Process",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 188,
+      "title": "The Impact of Classroom Performance System on Student Success in Engineering Statistics",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 189,
+      "title": "Using Statistical Clustering of Trajectory Data to Support Analysis of Subject Movement in a Virtual Environment",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 191,
+      "title": "Machine Learning optimization with Hyper-parameter tuning approach",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 197,
+      "title": "Models for the Residual Life of Railroad Bearing Grease in Laboratory and Industry Applications",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 198,
+      "title": "Practitioner Advice: ERLDAT - A Web-based Tool to Design and Analyze EWMA Control Charts",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 199,
+      "title": "Developing Empirical Models of Railroad Bearing Grease",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 200,
+      "title": "ERLDAT2: A web-based application for the analysis of the run length distribution of the EWMA control chart with estimated parameters",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 201,
+      "title": "Performance-based design of EWMA control charts utilizing the run length distribution",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 203,
+      "title": "The EWMA run length distribution analysis tool (ERLDAT)",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 204,
+      "title": "AC 2010-881: Teaching Process Improvement using the Mouse Factory",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 205,
+      "title": "AC 2010-884: Teaching Control Charts for Variables using the Mouse Factory",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 206,
+      "title": "Teaching Control Charts for Variables using the Mouse Factory",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 207,
+      "title": "Teaching Process Improvement using the Mouse Factory",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 208,
+      "title": "Study of Processing Variables on the Electrical Resistivity of Conductive Adhesives",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 209,
+      "title": "Study of Processing Variables on the Electrical Resistivity of Conductive Adhesives",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 210,
+      "title": "Study of Processing Variables on the Electrical Resistivity of Conductive Adhesives,",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 211,
+      "title": "A Control Chart for Detecting and Estimating Step Changes in the Mean of Autocorrelated Processes",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 212,
+      "title": "Distance Education – Experience & Implementation",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 213,
+      "title": "A Simulation Optimization Method for Reverse Manufacturing System",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 214,
+      "title": "A Suitability Measure for Mass Customization of a Product",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 215,
+      "title": "An Information Technology Suitability Index for Mass Customization",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 216,
+      "title": "Modeling Nano Reinforced Polymers",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 217,
+      "title": "Reverse Logistics: Problems, Framework, Models and Applications",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 218,
+      "title": "Teaching Rapid Response Engineering in Dispersed Engineering Design Teams",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 219,
+      "title": "Web-based Applications for Teaching Statistical Quality Control",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 220,
+      "title": "A Simulation Optimization Method for Reverse Manufacturing System",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 221,
+      "title": "A Suitability Measure for Mass Customization of a Product",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 222,
+      "title": "An Information Technology Suitability Index for Mass Customization",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 223,
+      "title": "Reverse Logistics: Problems, Framework, Models and Applications",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 224,
+      "title": "Web-based Applications for Teaching Statistical Quality Control",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 225,
+      "title": "A Magnitude Robust Control Chart for Detecting a Linear Trend",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 226,
+      "title": "A Magnitude Robust Control Chart for the Autocovariance and Autoregressive Parameters of an AR(1) Process",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 227,
+      "title": "A Web-based Tool for Teaching Aerobic, Anaerobic and MSUC",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 228,
+      "title": "Confidence Intervals for the Parameters of the Xbar and S Control Charts",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 229,
+      "title": "Experiences with Teaching Mass Customization in Dispersed Engineering Design Teams",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 230,
+      "title": "INTEnD: A Dispersed, Virtual Engineering Design Team Approach to Globalize Engineering Education",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 231,
+      "title": "Web-based Advanced Cardiac Life Support Training and Evaluation",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 232,
+      "title": "A Magnitude Robust control Chart for Detecting a Linear Trend",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 233,
+      "title": "A Web-Based Tool for Teaching Aerobic, Anaerobic, and Muscle Static Work Capacity Based on the Legacy Cycle",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 234,
+      "title": "Confidence Intervals for the Parameters of the Control Chart Limits",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 235,
+      "title": "Web-Based Advanced Cardiac Life Support Training and Evaluation System",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 236,
+      "title": "Addressing the Deficiencies of the Moving Average Control Chart",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 237,
+      "title": "Analysis of Performance Capacity through an Integrated Learning and Forgetting Curve Model",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 238,
+      "title": "Confidence Intervals for the Control Limits of the X-bar and R Control Charts",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 239,
+      "title": "Experiences with Dispersed Engineering Design Teams in International Production",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 240,
+      "title": "Hard Disk Drive Failure Analysis Expert System Development",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 241,
+      "title": "The Effects of Nationality in the Intercultural Relationship in a Maquila Environment, Cultural Dimensions A Practical Approach",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 242,
+      "title": "Analysis of Performance Capacity through an Integrated Learning and Forgetting Curve Model",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 243,
+      "title": "Hard Disk Drive Failure Analysis Expert System Development",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 244,
+      "title": "Incorporation of WebCT in Engineering Instruction",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 245,
+      "title": "An Analysis of the Reliability of an Incandescent Light Bulb",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 246,
+      "title": "Applying an AR(1) CUSUM Control Chart to Data from a Chemical Process",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 247,
+      "title": "Implementing Control Charts within a Meat Processing Plant",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 248,
+      "title": "Implementing Control Charts Within a Meat Processing Plant",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 249,
+      "title": "Estimating the Reliability Properties of a Product Using Accelerated Life Testing",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 250,
+      "title": "The Development and Evaluation of CUSUM-based Control Charts for an AR(1) Process",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 251,
+      "title": "A Control Chart for Detecting a Change in the Level Parameter of a First Order Autoregressive Process",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 255,
+      "title": "A machine learning approach to detect pores in laser powder bed fusion additive manufacturing",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 256,
+      "title": "Pyrolytic Carbon Formation on Additively Manufactured Inconel 718 for Enhanced Surface Characteristics",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 257,
+      "title": "Additive Manufacturing of Passive Electronic Components",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 258,
+      "title": "Enhancement of diffusivity and plastic deformation in ultrasound-assisted cold spray of tungsten: a molecular dynamics study",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 259,
+      "title": "Development of boron-enhanced inconel 718 with superior thermomechanical properties for high-temperature concentrated solar power applications",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 260,
+      "title": "Molecular Dynamics-Based Two-Dimensional Simulation of Powder Bed Additive Manufacturing Process for Unimodal and Bimodal Systems",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 261,
+      "title": "Data-driven roughness estimation of additively manufactured samples using build angles",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 262,
+      "title": "Design and analysis of performance parameters for achieving high efficient ITO/PEDOT:PSS/P3HT:PCBM/Al organic solar cell",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 263,
+      "title": "Spectral Behavior of Fiber Bragg Gratings During Embedding in 3D Printed Metal Tensile Coupons and Cyclic Loading",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 264,
+      "title": "Light intensity and efficiency enhancement of n-ZnO/NiO/p-GaN heterojunction-based white light-emitting diodes using micro-pillar array",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 265,
+      "title": "Ultrafast Laser Ablation of Inconel 718 for Surface Improvement",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 266,
+      "title": "Glucose Level Measurement Using Photonic Crystal Fiber–based Plasmonic Sensor",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 267,
+      "title": "Synthesizing and Printing of Tin Oxide Nanoparticles Using a Single Ultrafast Laser System: A Feasibility Study",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 270,
+      "title": "Influence of Pore Formation and Its Role on the Tensile Properties of 17-4 PH Stainless Steel Fabricated by Laser Powder Bed Fusion",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 271,
+      "title": "Improvement of light intensity and efficiency of n-ZnO/NiO/p-GaN heterojunction-based white light emitting diodes using micro-/nanolens array",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 272,
+      "title": "Distributed Residual Strain Measurement in Additively Manufactured Stainless-Steel Cantilever using Fiber Optic Sensors",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 273,
+      "title": "Embedding Optical Sensors in Additively Manufactured Parts for Enhanced Functionality",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 274,
+      "title": "Hollow-Core Photonic Crystal Fiber Mach--Zehnder Interferometer for Gas Sensing",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 275,
+      "title": "Internal surface roughness enhancement of parts made by laser powder-bed fusion additive manufacturing",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 276,
+      "title": "2D printing of graphene: a review",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 277,
+      "title": "Experimental comparison of the effect of the structure on MZI fiber gas sensor performance",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 278,
+      "title": "Graphene oxide humidity sensor built entirely by additive manufacturing approaches",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 279,
+      "title": "Identification and characterization of spatter particles and their effect on surface roughness, density and mechanical response of 17-4 PH stainless steel laser powder-bed fusion parts",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 280,
+      "title": "Monitoring of Carbon Dioxide Using Hollow-Core Photonic Crystal Fiber Mach--Zehnder Interferometer",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 281,
+      "title": "Tapered fiber-optic mach-zehnder interferometer for ultra-high sensitivity measurement of refractive index",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 282,
+      "title": "Study of powder recycling and its effect on printed parts during laser powder-bed fusion of 17-4 PH stainless steel",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 283,
+      "title": "Application of FBG optical sensors to in-situ monitoring the thermo-mechanical behaviour of cold spray coated samples",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 284,
+      "title": "Characterization of long period grating with a screw shape fabricated by a single-path scanning of femtosecond laser",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 285,
+      "title": "Measurement of in-fiber refractive index change using a Mach--Zehnder interferometer",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 286,
+      "title": "Fabrication of a screw-shaped long-period fiber grating for refractive index sensing",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 287,
+      "title": "Interferometric measurement of refractive index modification in a single mode microfiber",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 288,
+      "title": "Miniature Dual Flame-based Tapering Process and System Development for Fabrication of Optical Fiber Sensors",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 289,
+      "title": "Photonic Crystal Fiber Based Refractive Index Sensors",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 290,
+      "title": "Bragg grating embedded in Mach-Zehnder interferometer for refractive index and temperature sensing",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 291,
+      "title": "Miniaturized tapered photonic crystal fiber Mach--Zehnder interferometer for enhanced refractive index sensing",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 292,
+      "title": "Numerical Approach to Modeling and Characterization of Refractive Index Changes for a Long-Period Fiber Grating Fabricated by Femtosecond Laser",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 293,
+      "title": "Bowtie-shaped hole array for fiber-optic refractive index sensing in telecom-wavelengths",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 294,
+      "title": "Bragg grating fabrication in microfiber by femtosecond pulse filamentation induced periodic refractive index modification",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 295,
+      "title": "Characterization of refractive index change and fabrication of long period gratings in pure silica fiber by femtosecond laser radiation",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 296,
+      "title": "Development of fiber optic sensors using femtosecond laser for refractive index and temperature measurements",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 297,
+      "title": "Formation mechanism of self-organized nano-ripples on quartz surface using femtosecond laser pulses",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 298,
+      "title": "Microfiber Bragg grating sandwiched between standard optical fibers for enhanced temperature sensing",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 299,
+      "title": "Tapered photonic crystal fiber based Mach-Zehnder interferometer for enhanced refractive index sensing",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 300,
+      "title": "Design and fabrication of stent with negative Poisson’s ratio",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 301,
+      "title": "Fabrication of poly (ϵ-caprolactone) microfiber scaffolds with varying topography and mechanical properties for stem cell-based tissue engineering applications",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 302,
+      "title": "Filament-based fabrication and performance analysis of fiber Bragg grating sensors using ultrashort pulse laser",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 303,
+      "title": "Mach-Zehnder Interferometer using Small Diameter Single Mode Fiber for Refractive Index Sensing",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 304,
+      "title": "Near-field modification of femtosecond laser beam to enhance single-shot pulse filamentation in glass medium",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 305,
+      "title": "THz field enhancement by antenna coupling to a tapered thick slot waveguide",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 306,
+      "title": "Characterization of femtosecond laser filament-fringes in titanium",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 307,
+      "title": "Femtosecond laser based in-fiber long period grating fabrication for improved solution sensing",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 308,
+      "title": "Distributed All-Optical Sensor to Detect dCO2 in Aqueous Environments",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 309,
+      "title": "Long period grating inscribed by femtosecond laser for refractive index measurements in aqueous environments",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 310,
+      "title": "Towards high throughput tissue engineering: development of chitosan-calcium phosphate scaffolds for engineering bone tissue from embryonic stem cells",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 311,
+      "title": "Colorizing stainless steel surface by femtosecond laser induced micro/nano-structures",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 312,
+      "title": "Display glass cutting by femtosecond laser induced single shot periodic void array",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 313,
+      "title": "Far rear surface focusing of femtosecond laser pulses for dicing display glass plates",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 314,
+      "title": "Display glass plate dicing by femtosecond laser induced surface and internal cavities",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 315,
+      "title": "Femtosecond laser induced material modification in bulk for dicing display glass plates",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 316,
+      "title": "Micromachining of grooves for cutting fused silica plates with femtosecond laser pulses",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 321,
+      "title": "Machine Learning optimization with Hyper-parameter tuning approach",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 322,
+      "title": "Reshaping the Landscape of Future Manufacturing: Software Defined Manufacturing",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 323,
+      "title": "U.S. Ports of Entry’s Decision Model with an Anti-Human Trafficking Focus",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 340,
+      "title": "A renewable energy undergraduate course underlining the analysis of collected solar radiation",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 341,
+      "title": "Practitioner Advice: ERLDAT - A Web-based Tool to Design and Analyze EWMA Control Charts",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 342,
+      "title": "A U-line assessment heuristic & evaluation model",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 343,
+      "title": "ERLDAT2: A web-based application for the analysis of the run length distribution of the EWMA control chart with estimated parameters",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 344,
+      "title": "Performance-based design of EWMA control charts utilizing the run length distribution",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 345,
+      "title": "Rate of false positive on specific border cargo detection",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 346,
+      "title": "Rate of false positives as a security performance measure",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 347,
+      "title": "The EWMA run length distribution analysis tool (ERLDAT)",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 348,
+      "title": "On Coxian phased distributions to approximate the border crossing port of entry (POE)",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 349,
+      "title": "Transient queueing models for border crossing ports of entry: A non-stationary dynamic reallocation policy",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 350,
+      "title": "Tribological performance of additively manufactured MoB reinforced AlSi7Mg alloy composites",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 351,
+      "title": "A Review of Ceramic-Reinforced Nickel-Based Superalloys: Processing, Properties, and Applications",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 352,
+      "title": "Hybrid dye-quantum dot solar cell with liquid polysulfide electrolyte with enhanced energy conversion",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 353,
+      "title": "Hybrid dye-quantum dot solar cell with liquid polysulfide electrolyte with enhanced energy conversion",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 354,
+      "title": "A machine learning approach to detect pores in laser powder bed fusion additive manufacturing",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 355,
+      "title": "Additive Manufacturing of Passive Electronic Components",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 356,
+      "title": "Enhancement of diffusivity and plastic deformation in ultrasound-assisted cold spray of tungsten: a molecular dynamics study",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 357,
+      "title": "Development of boron-enhanced inconel 718 with superior thermomechanical properties for high-temperature concentrated solar power applications",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 358,
+      "title": "Laser-induced forward transfer (LIFT) based bioprinting of the collagen I with retina photoreceptor cells",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 361,
+      "title": "A molecular dynamics study of atomic diffusion effects on thermomechanical properties applying laser additive alloying process for the Cantor high entropy alloy",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 363,
+      "title": "Ultrafast Laser Ablation of Inconel 718 for Surface Improvement",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 364,
+      "title": "A molecular dynamic study of atomic diffusion effects on thermomechanical properties applying laser additive alloying process for the Cantor High Entropy Alloy",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 365,
+      "title": "Synthesizing and Printing of Tin Oxide Nanoparticles Using a Single Ultrafast Laser System: A Feasibility Study",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 368,
+      "title": "Surface modified hybrid ZnSnO3 nanocubes for enhanced piezoelectric power generation and wireless sensory application",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 369,
+      "title": "Direct Selective Laser Synthesis of CuCrFeTiNiAl High Entropy Alloy from Elemental Powders through Selective Laser Melting",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 370,
+      "title": "Numerical simulation of the melting and alloying processes of elemental titanium and boron powders using selective laser alloying",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 371,
+      "title": "Printing quality improvement for laser-induced forward transfer bioprinting: Numerical modeling and experimental validation",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 372,
+      "title": "A Framework of Dynamic Data Driven Digital Twin for Complex Engineering Products: the Example of Aircraft Engine Health Management",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 373,
+      "title": "Numerical study of fully coupled fluid-structure interaction of stent ureter by varying the stent-side holes",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 374,
+      "title": "Laser Assisted Bioprinting: A State-of-the-Art Review and Future Trend",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 376,
+      "title": "Highly Sensitive Triboelectric Motion Sensor with Sustainable Materials",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 377,
+      "title": "Numerical and Experimental Study of Bioink Transfer Process in Laser Induced Forward Transfer (LIFT) 3d Bioprinting",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 378,
+      "title": "Synthesis and fabrication of self-sustainable triboelectric energy case for powering smart electronic devices",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 379,
+      "title": "Decentralized triboelectric electronic health monitoring flexible microdevice",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 380,
+      "title": "A Smart Decision Making Tool for Cleaning Process Planning in Remanufacturing",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 381,
+      "title": "Grow Local Manufacturing along US/Mexico Border Region for an Integrated Supply Chain in the Post COVID-19 Era",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 389,
+      "title": "Framework for an Optimization Model for Light Design in Retail Stores.",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 391,
+      "title": "Remanufacturing Processes, Planning and Control",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 392,
+      "title": "Consumer initial acceptance and continued use of recommendation agents: literature review and proposed conceptual framework",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 394,
+      "title": "Sensor Deployment Based on Fuzzy Graph Considering Heterogeneity and Multiple-objectives to Diagnose Manufacturing System",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 395,
+      "title": "The Analysis of Scenario Characteristics in Life Cycle Assessment",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 396,
+      "title": "A New LCA Method Based on Multi-Scenarios Coexistence",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 397,
+      "title": "A Product Selective Disassembly Model Based on Hybrid Directed Graph",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 398,
+      "title": "A Product Selective Disassembly Model Based on Hybrid Directed Graph",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 400,
+      "title": "Study of Processing Variables on the Electrical Resistivity of Conductive Adhesives",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 401,
+      "title": "Study of Processing Variables on the Electrical Resistivity of Conductive Adhesives,",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 403,
+      "title": "A product Life Cycle Assessment model based on AHP methodology in support of Green Design",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 404,
+      "title": "A product Life Cycle Assessment model based on AHP methodology in support of Green Design",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 405,
+      "title": "Application of Neural Network on Environmental Impact Assessment Tools",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 406,
+      "title": "A Multi-Objective Fuzzy Graph Approach for Modular Formulation Considering End-Of-Life Issues",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 407,
+      "title": "A LCIA weighting system based on China environmental policy and local manufacturing industry situation",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 409,
+      "title": "Green design-oriented product AHP life cycle environmental impact assessment model",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 410,
+      "title": "Monotonous Property of Non-oscillations of the Damped Duffing's Equation",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 411,
+      "title": "A Framework for Environmental Impact Assessment Tools: Comparison Validation and Application Using Case Study of Electronic Products",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 412,
+      "title": "Evaluating Obsolete Electronic Products for Disassembly, Material Recovery and Environmental Impact through a Decision Support System",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 413,
+      "title": "A Distributed Design Methodology for Extensible Product Life Cycle Strategy",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 415,
+      "title": "Printed Circuit Board Recycling: A State-of-the-Art Survey",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 417,
+      "title": "Plug & Play Information Sharing Architecture and Its Application in Green Supply Chain Management",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 418,
+      "title": "“Explainable AI (XAI)-Driven  Vibration  Sensing  Scheme  for  Surface Quality  Monitoring  in  a  Smart  Surface  Grinding  Process",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 422,
+      "title": "Empirical study on the influence of targeting function of Google Adwords on target evaluation",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 424,
+      "title": "Gas-Assisted Powder Injection Molding: Mold Cavity Effects on Residual Wall Thickness",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 425,
+      "title": "Gas-Assisted Powder Injection Molding of Polymer and Powder Metal Feedstock in a Stereolithography Mold",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 426,
+      "title": "Dextran/Plga DoubleLayered Microspheres for Sustained Release of Doxorubicin",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 427,
+      "title": "Improvement of Efficiency in IT -conjugated Polymer Based on Phenothiazine by Introduction of Oxadiazole Pendant as a Side Chain",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 428,
+      "title": "MlcroneedleMedicated Transdermal Delivery of Chondroitin Sulfate",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 429,
+      "title": "Enhancement of surface replication by micro-gasinjection molding",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 430,
+      "title": "Gas-Assisted Powder Injection Molding: A Study On The Effect Of Processing Variables On Gas Penetration",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 431,
+      "title": "A fully functional, packaged active microscaffold system with fluid perfusion and electrical stimulation/recording functionalities for 3-D neuronal culture studies",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 432,
+      "title": "Stereolithography Mold Life Extension using Gas-Assisted Injection",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 433,
+      "title": "Stereolithography Mold Life Extension Using GasAssisted Injection",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 434,
+      "title": "Design of a new aRC IV detonator",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 435,
+      "title": "Design of a new QRC IV detonator",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 436,
+      "title": "leaking Study of Betadyne Connector",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 437,
+      "title": "Redesign of aRC III Detonator",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 438,
+      "title": "Redesign of QRC III Detonator Body",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 439,
+      "title": "Redesign of QRC III Detonator",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 440,
+      "title": "Diffusion coefficient and solubility of vinyl acetate molecules in poly(vinyl acetate) matrices",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 441,
+      "title": "Devolatalization of Vinyl Acetate Vapor form Ethylene-Vinyl Acetate Copolymer Matrix, Part 3",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 442,
+      "title": "A Study on the Synthesis of Poly(phenylene sulfide), Part 3",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 443,
+      "title": "Devolatalization of Vinyl Acetate Vapor form Ethylene-Vinyl Acetate Copolymer Matrix, Part 1",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 444,
+      "title": "Devolatalization of Vinyl Acetate Vapor form Ethylene-Vinyl Acetate Copolymer Matrix, Part 2",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 445,
+      "title": "A Study on the Synthesis of Poly(phenylene sulfide), Part 2",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 446,
+      "title": "Determination of the Composition and Mass Transfer Resistance of the Ethylene-Propylene Copolymerization in the Solvent Slurry Reactor",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 447,
+      "title": "Determination of the composition of the reaction mixtures for the slurry random copolymerization of ethylene and propyllene",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 448,
+      "title": "Polymerization of propylene",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 449,
+      "title": "Bridging Human Data, Computational Modeling, and Immersion in XR Healthcare: A Scoping Review. Frontiers in Virtual Reality",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 450,
+      "title": "Bridging Physical and Virtual Workspaces: Immersive Visualization of Multi-View Machine Vision for Additive Manufacturing Monitoring",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 451,
+      "title": "Exploring working memory strategies, real-world resilience, and the potential of engaging VR",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 452,
+      "title": "Extended Reality and Physical Offloading Methods for Astronaut Training in Partial Gravity: A Targeted Scoping Review",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 453,
+      "title": "Incorporating VR to support students' knowledge of scale, proportion, and quantity in a middle school unit on energy production. Journal of Research in Science Teaching",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 454,
+      "title": "Large language models and digital twins in neurological disorders: A scoping review of opportunities and challenges",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 455,
+      "title": "FRAME-AD: A Tabular Foundation Model Framework for Multimodal Alzheimer’s Disease Classification",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 456,
+      "title": "Human Factors Extended Reality Showcase",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 457,
+      "title": "Marker-Based Real Time Motion Tracking for Sense of Virtual Body Ownership in Virtual Reality",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 458,
+      "title": "Sense of Presence and the Illusion of Self-scaling in Virtual Learning Environments",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 459,
+      "title": "Gender Swap in Virtual Reality for Supporting Inclusion and Implications in the Workplace",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 465,
+      "title": "Shrink or grow the kids? Scale cognition in an immersive virtual environment for K-12 summer camp",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 468,
+      "title": "Artificial Intelligence in Biofuels: Progress, Trends, and Directions",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 469,
+      "title": "Drug-based therapeutic strategies for COVID-19-infected patients and their challenges",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 470,
+      "title": "Materials with Extreme Wetting Properties: Methods and Emerging Industrial Applications",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 471,
+      "title": "Superhydrophobic Textiles Using Nanoparticles",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 472,
+      "title": "A Perspective on Bioprocessing for Biofuels, Biobased chemicals and Bioproducts",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 473,
+      "title": "Advanced Bioprocessing for Alternative fuels, biobased chemicals, and bioproducts",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 474,
+      "title": "Advances in Feedstock Conversion Technologies for Alternative fuels and bioproducts",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 475,
+      "title": "Algae as a Source of Microcrystalline Cellulose",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 476,
+      "title": "Cell Wall Disruption: A Critical Up-stream Process for Biofuel Production",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 477,
+      "title": "Fatty Acid Profiling of Biofuels Produced from Microalgae, Vegetable Oil, and Waste Vegetable Oil",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 478,
+      "title": "Multipurpose Use of Microalgae to Treat Municipal Wastewater and Produce Biofuels",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 479,
+      "title": "Production of Microalgae-Derived High-Protein Biomass to Enhance Food for Animal Feedstock and Human Consumption",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 480,
+      "title": "Recent Advances in Lipid Extraction for Biodiesel Production",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 481,
+      "title": "Mesoporous Silica Nanoparticles: Synthesis, Pharmaceutical Applications, Biodistribution, and Biosafety Assessment",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 482,
+      "title": "Advanced Materials for the Conservation of Stone",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 483,
+      "title": "Superhydrophobic coatings for the protection of natural stone",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 484,
+      "title": "Use of solvent mixtures for total lipid extraction of Chlorella vulgaris and gas chromatography FAME analysis",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 485,
+      "title": "Thin chitosan films containing super-paramagnetic nanoparticles with contrasting capability in magnetic resonance imaging",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 486,
+      "title": "Industrial Applications for Intelligent Polymers and Coatings",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 487,
+      "title": "Treatment/Cleaning of Oily Water/Wastewater Using Algae",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 488,
+      "title": "Smart Stimuli-Responsive Nano-sized Hosts for Drug Delivery",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 489,
+      "title": "Smart Polymeric-Based Microencapsulation: A Promising Synergic Combination",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 490,
+      "title": "Additive-free harvesting of oleaginous phagotrophic microalga by oil and air flotation",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 491,
+      "title": "Phosphinite-functionalized silica and hexagonal mesoporous silica containing palladium nanoparticles in Heck coupling reaction: synthesis, characterization, and catalytic activity",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 492,
+      "title": "Controlled size synthesis and application of nanosphere MCM-41 as potent adsorber of drugs: A novel approach to new antidote agent for intoxication",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 493,
+      "title": "Method and System for Reducing Free Fatty Acid Content of a Feedstock",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 494,
+      "title": "Use of Phagotrophic Microalga Ochromonas danica to Pretreat Waste Cooking Oil for Biodiesel Production",
+      "year": 2017,
+      "faculty": ""
+    }
+  ],
+  "missing_full_text": [
+    {
+      "index": 3,
+      "title": "A Report to the American Bureau of Shipping on Research & Development Funds Acquisition",
+      "year": 2022
+    },
+    {
+      "index": 7,
+      "title": "“Competitive Usability Analysis of Immersive Virtual Environments in Engineering Design Review”",
+      "year": 2017
+    },
+    {
+      "index": 8,
+      "title": "“Final Report for Evaluating the Effectiveness of Immersive Interfaces for Combat Training”",
+      "year": 2017
+    },
+    {
+      "index": 9,
+      "title": "“Benefits of Implementing Automated Costing in a Small Machine Shop: A Case Study”",
+      "year": 2017
+    },
+    {
+      "index": 10,
+      "title": "“Finding the Value of Immersive Virtual Environments using Competitive Usability Analysis”",
+      "year": 2017
+    },
+    {
+      "index": 11,
+      "title": "Distance Education – Experience & Implementation",
+      "year": 2013
+    },
+    {
+      "index": 12,
+      "title": "“Integrated Actuator – Rudder System for LCAC”",
+      "year": 2017
+    },
+    {
+      "index": 13,
+      "title": "“Navy-Industry Networks of Virtual Environments for Shipbuilding”",
+      "year": 2017
+    },
+    {
+      "index": 14,
+      "title": "“Virtual Reality Enhancements for New Orleans Area Universities”",
+      "year": 2017
+    },
+    {
+      "index": 15,
+      "title": "“Thermal Modeling, A Shipbuilding, Cost, and Reliability Perspective”",
+      "year": 2017
+    },
+    {
+      "index": 16,
+      "title": "“Improving Shipyard Assembly”",
+      "year": 2017
+    },
+    {
+      "index": 17,
+      "title": "“Integrated Structural Building Blocks (ISBB), An Initial Investigation”",
+      "year": 2017
+    },
+    {
+      "index": 18,
+      "title": "“Initial Test Plan for LCAC Rudder-Actuator System”",
+      "year": 2017
+    },
+    {
+      "index": 19,
+      "title": "“Return on Investment (ROI) Analysis for the Implementation of a STEP AP 227 Format for Interoperable HVAC Design”",
+      "year": 2017
+    },
+    {
+      "index": 20,
+      "title": "“Maintenance Cost, Reliability, and Financial Return Analysis for LCAC Rudder Actuator and Rudder Systems”",
+      "year": 2017
+    },
+    {
+      "index": 21,
+      "title": "“Marine Composites Affordability – A Knowledgebased Approach”",
+      "year": 2017
+    },
+    {
+      "index": 22,
+      "title": "“Collaborative Virtual Design, Manufacturing, and Training”",
+      "year": 2017
+    },
+    {
+      "index": 23,
+      "title": "“Lean Six Sigma in Shipbuilding (Year 2)\"",
+      "year": 2017
+    },
+    {
+      "index": 24,
+      "title": "“Design of Jigs and Fixtures to Improve Shipyard Productivity”",
+      "year": 2017
+    },
+    {
+      "index": 25,
+      "title": "“Research in Affordability Measurement and Prediction Methods to Support Affordable Design of Ship Systems”",
+      "year": 2017
+    },
+    {
+      "index": 26,
+      "title": "“Features as an Abstraction for Designer Convenience in the Design of Ships”",
+      "year": 2017
+    },
+    {
+      "index": 27,
+      "title": "“Reliability Analysis for Elements of a Marine Diesel Propulsion System”",
+      "year": 2017
+    },
+    {
+      "index": 28,
+      "title": "“Usability Analysis for Virtual Environment Interfaces in Ship Design”",
+      "year": 2017
+    },
+    {
+      "index": 29,
+      "title": "“3M Processors for Dual Use”",
+      "year": 2017
+    },
+    {
+      "index": 30,
+      "title": "“Approximate Reasoning for Location of Underground Utilities”",
+      "year": 2017
+    },
+    {
+      "index": 31,
+      "title": "“Assessing Maintenance Cost for Design or Re-Design of Complex Machinery”",
+      "year": 2017
+    },
+    {
+      "index": 32,
+      "title": "“Design Synthesis in a Virtual Environment”",
+      "year": 2017
+    },
+    {
+      "index": 33,
+      "title": "“Estimating Technology Insertion Risk using Fuzzy Logic”",
+      "year": 2017
+    },
+    {
+      "index": 34,
+      "title": "“Developing an Artificial Neural Network for Modeling Heavy Vehicle Rollover”",
+      "year": 2017
+    },
+    {
+      "index": 35,
+      "title": "“An Artificial Neural Network Simulation of Tank Trucks”",
+      "year": 2017
+    },
+    {
+      "index": 36,
+      "title": "“Features as an Abstraction for Designer Convenience in the Design of Complex Products”",
+      "year": 2017
+    },
+    {
+      "index": 37,
+      "title": "“Research in Affordability Measurement and Prediction Methods to Support Affordable Design of Ship Systems,\"",
+      "year": 2017
+    },
+    {
+      "index": 38,
+      "title": "“A Comparative Study of Uncertainty Methods for Legal Reasoning”",
+      "year": 2017
+    },
+    {
+      "index": 39,
+      "title": "“Research in Affordability Measurement and Prediction Methods to Support Affordable Design of Ship Systems\"",
+      "year": 2017
+    },
+    {
+      "index": 40,
+      "title": "“Development of a Feature Based Design System using Virtual Reality”",
+      "year": 2017
+    },
+    {
+      "index": 41,
+      "title": "“A Potential Field Method for Path Planning into Cavities Defined by B-Splines”",
+      "year": 2017
+    },
+    {
+      "index": 42,
+      "title": "“Development of a Voronoi Tree for Cavities by Hodograph-Hodograph Intersection”",
+      "year": 2017
+    },
+    {
+      "index": 43,
+      "title": "“A Fuzzy Model of Legal Reasoning for Concurrent Engineering”",
+      "year": 2017
+    },
+    {
+      "index": 44,
+      "title": "“A Modular Approach for Environmentally Conscious Machining Process”",
+      "year": 2017
+    },
+    {
+      "index": 45,
+      "title": "“Robot Path Planning into Cavities Defined by Splines”",
+      "year": 2017
+    },
+    {
+      "index": 46,
+      "title": "“A Feasibility Study: The Heating and Drying of Coal Particles using Fluidized Bed Technology”",
+      "year": 2017
+    },
+    {
+      "index": 47,
+      "title": "“System Design for Heating Coal”",
+      "year": 2017
+    },
+    {
+      "index": 48,
+      "title": "\"A Concurrent Engineering System for Legal Reasoning about Defective Design\"",
+      "year": 2017
+    },
+    {
+      "index": 49,
+      "title": "\"Computer Aided Design using Parallel Computation\"",
+      "year": 2017
+    },
+    {
+      "index": 50,
+      "title": "\"General Layout Design Synthesis Using Fuzzy Logic\"",
+      "year": 2017
+    },
+    {
+      "index": 51,
+      "title": "\"Teaching Written Communication Skills in a Capstone Engineering Design Course\"",
+      "year": 2017
+    },
+    {
+      "index": 52,
+      "title": "\"A Fuzzy Decision Model for Environmental Risk Assessment\"",
+      "year": 2017
+    },
+    {
+      "index": 53,
+      "title": "\"Computer Aided Design/Engineering of Bearing Systems Using the Dempster-Shafer Theory\"",
+      "year": 2017
+    },
+    {
+      "index": 54,
+      "title": "\"Fuzzy Computer-Aided Design of Process Manufacturing Facilities\"",
+      "year": 2017
+    },
+    {
+      "index": 55,
+      "title": "\"Legacy Costing, Fuzzy Systems Theory, and Environmentally Conscious Manufacturing\"",
+      "year": 2017
+    },
+    {
+      "index": 56,
+      "title": "\"Modeling Uncertainty in Preliminary Design: a Short Review\"",
+      "year": 2017
+    },
+    {
+      "index": 57,
+      "title": "\"Motion Planning Using Fuzzy Logic Control with Minimum Sensors\"",
+      "year": 2017
+    },
+    {
+      "index": 58,
+      "title": "\"An Adaptive Fuzzy Logic Controller for Poly-Tree Structured Workcell Layouts\"",
+      "year": 2017
+    },
+    {
+      "index": 59,
+      "title": "\"An Evaluation of Alternate Technologies for the Manufacture of Coal Logs\"",
+      "year": 2017
+    },
+    {
+      "index": 60,
+      "title": "\"Instructor's Guide for a Proprietary Short Course on Manufacturing Cost, Budgets, and Investment,\"",
+      "year": 2017
+    },
+    {
+      "index": 61,
+      "title": "\"Manufacturing Cost, Budgets, and Investments\"",
+      "year": 2017
+    },
+    {
+      "index": 62,
+      "title": "\"Use of a CAD System to Develop Product Market Information\"",
+      "year": 2017
+    },
+    {
+      "index": 63,
+      "title": "\"Using Bayesian Belief Networks for Automated Legal Reasoning about Defective Design\"",
+      "year": 2017
+    },
+    {
+      "index": 64,
+      "title": "\"Vacuum and Thermal Techniques for the Manufacture of Coal Logs\"",
+      "year": 2017
+    },
+    {
+      "index": 65,
+      "title": "\"An Analysis of Research Programs in Intelligent Software Agents\"",
+      "year": 2017
+    },
+    {
+      "index": 66,
+      "title": "\"Control of a Kamyr Wood Digester with the Purdue Digester Model\"",
+      "year": 2017
+    },
+    {
+      "index": 67,
+      "title": "\"A Strategy for Machining Fluid Waste Minimization for Environmentally Conscious Manufacturing\"",
+      "year": 2017
+    },
+    {
+      "index": 68,
+      "title": "\"An Examination of Collaborative Workspace Technology for C4I\"",
+      "year": 2017
+    },
+    {
+      "index": 69,
+      "title": "\"Teaching Innovation, Creativity, and Design Conceptualization - Experiences from the Development of a New Course\"",
+      "year": 2017
+    },
+    {
+      "index": 70,
+      "title": "\"A Discussion of Accounting Theory from an Engineering Design and Manufacturing Perspective\"",
+      "year": 2017
+    },
+    {
+      "index": 71,
+      "title": "\"A Survey of Technology in Computer Integrated Manufacturing of Piping Systems in Shipbuilding\"",
+      "year": 2017
+    },
+    {
+      "index": 72,
+      "title": "\"Reliability Analysis of Complex Systems Using Symbolic Logic\"",
+      "year": 2017
+    },
+    {
+      "index": 73,
+      "title": "\"A Description and User's Guide for the Purdue Kamyr Digester Model\"",
+      "year": 2017
+    },
+    {
+      "index": 74,
+      "title": "Atomistic insights into microstructure evolution and mechanical response of TiTaNb medium-entropy alloy fabricated by laser powder bed fusion",
+      "year": 2026
+    },
+    {
+      "index": 75,
+      "title": "Tribological performance of additively manufactured MoB reinforced AlSi7Mg alloy composites",
+      "year": 2026
+    },
+    {
+      "index": 76,
+      "title": "Phase stability and intrinsic properties of equimolar TiNbTa refractory medium-entropy alloy: An integrated CALPHAD, Scheil, and first-principles assessment",
+      "year": 2026
+    },
+    {
+      "index": 77,
+      "title": "A Review of Ceramic-Reinforced Nickel-Based Superalloys: Processing, Properties, and Applications",
+      "year": 2025
+    },
+    {
+      "index": 78,
+      "title": "A Novel Hexagonal-Zigzag Cellular Infill Structure for Additive Manufacturing",
+      "year": 2024
+    },
+    {
+      "index": 79,
+      "title": "Electrochemical Performance of Direct Ink Writing Fabricated Batteries: A Comprehensive Review",
+      "year": 2025
+    },
+    {
+      "index": 82,
+      "title": "Modeling and Characterizing a Novel Hybrid Infill Pattern for Additive Manufacturing",
+      "year": 2024
+    },
+    {
+      "index": 83,
+      "title": "Modeling Maximum Stresses in each Layer for Layer-by-Layer Deposition of the Direct Metal Laser Sintering Process for Different Scanning Patterns",
+      "year": 2024
+    },
+    {
+      "index": 84,
+      "title": "Modeling Residual Thermal Stresses in Layer-by-Layer Formation of Direct Metal Laser Sintering Process for Different Scanning Patterns for 316L Stainless Steel",
+      "year": 2024
+    },
+    {
+      "index": 85,
+      "title": "Modeling the Interplay between Process Parameters and Part Attributes in Additive Manufacturing Process with Artificial Neural Network",
+      "year": 2024
+    },
+    {
+      "index": 86,
+      "title": "Modeling Thermal Behavior and Residual Stress for Layer-by-Layer Rotated Scan Direction in Laser Powder Bed Fusion Process",
+      "year": 2024
+    },
+    {
+      "index": 87,
+      "title": "3D metal lattice structure manufacturing with continuous rods",
+      "year": 2024
+    },
+    {
+      "index": 88,
+      "title": "A Novel Rapid Manufacturing Process for Metal Lattice Structure",
+      "year": 2024
+    },
+    {
+      "index": 89,
+      "title": "Characterizing novel honeycomb infill pattern for additive manufacturing",
+      "year": 2024
+    },
+    {
+      "index": 90,
+      "title": "Dip Coating from Density Mismatching Mixture",
+      "year": 2024
+    },
+    {
+      "index": 91,
+      "title": "Solid Transfer of Large Particles by Dipping in a Heterogeneous Mixture",
+      "year": 2024
+    },
+    {
+      "index": 92,
+      "title": "The alteration in learning attitude of Engineering students due to instruction modality change caused by COVID-19 social environmental restrictions",
+      "year": 2024
+    },
+    {
+      "index": 93,
+      "title": "A Graphical Representation of Sensor Mapping for Machine Tool Fault Monitoring and Prognostics for Smart Manufacturing",
+      "year": 2024
+    },
+    {
+      "index": 94,
+      "title": "Prediction of Tool Wear and Surface Finish using ANFIS Modelling during Turning of Carbon Fiber Reinforced Plastic (CFRP) Composites",
+      "year": 2024
+    },
+    {
+      "index": 95,
+      "title": "“Explainable AI (XAI)-Driven  Vibration  Sensing  Scheme  for  Surface Quality  Monitoring  in  a  Smart  Surface  Grinding  Process",
+      "year": 2024
+    },
+    {
+      "index": 96,
+      "title": "Turning of Carbon Fiber Reinforced Polymer (CFRP) Composites: Process Modeling and Optimization using Taguchi Analysis and Multi-Objective Genetic Algorithm",
+      "year": 2024
+    },
+    {
+      "index": 97,
+      "title": "Ultrafast Laser Ablation of Inconel 718 for Surface Improvement",
+      "year": 2022
+    },
+    {
+      "index": 103,
+      "title": "Application of optimized laser surface re-melting process on selective laser melted 316L stainless steel inclined parts",
+      "year": 2020
+    },
+    {
+      "index": 105,
+      "title": "Optimization and analysis of surface roughness for INVAR-36 in end milling operations",
+      "year": 2018
+    },
+    {
+      "index": 106,
+      "title": "Investigations into Internal Surface Finishing of Titanium (Grade 2) Pipe with Extended Magnetic Tool",
+      "year": 2019
+    },
+    {
+      "index": 107,
+      "title": "“Application of Optimized Laser Surface Re-melting Process on Selective Laser Melted 316L Stainless Steel Inclined Parts”, Elsevier: SME Journal of Manufacturing Processes, 2018 (Submitted),",
+      "year": 2019
+    },
+    {
+      "index": 108,
+      "title": "“Investigations into Internal Surface Finishing of Titanium (Grade 2) Pipe with Extended Magnetic Tool",
+      "year": 2018
+    },
+    {
+      "index": 109,
+      "title": "Finish Turning of Ti-6Al-4V with the Atomization-Based Cutting Fluid (ACF) Spray System",
+      "year": 2017
+    },
+    {
+      "index": 110,
+      "title": "A New Microstructure-Sensitive Flow Stress Model for the High Speed Machining of Titanium Alloy Ti-6Al-4V",
+      "year": 2017
+    },
+    {
+      "index": 111,
+      "title": "Parametric Investigations into Internal Surface Modification of Brass Tubes with Alternating Magnetic Field",
+      "year": 2017
+    },
+    {
+      "index": 112,
+      "title": "An Integrated Approach to Sustainable Bioenergy/Biofuels Resources and Supply Chain Management: Modeling, Techno-economic Analysis, Challenges and Future Outlook",
+      "year": 2018
+    },
+    {
+      "index": 113,
+      "title": "Internal Surface Modification of Brass Tubes with the Help of Alternating Magnetic Field",
+      "year": 2017
+    },
+    {
+      "index": 114,
+      "title": "Microstructure Sensitive Flow Stress Based on Self Consistent Method",
+      "year": 2017
+    },
+    {
+      "index": 115,
+      "title": "Chip Fracture Behavior in the High Speed Machining of Titanium Alloys",
+      "year": 2017
+    },
+    {
+      "index": 116,
+      "title": "Grinding investigations of Ti-6Al-4V parts produced using direct metal laser sintering technology",
+      "year": 2017
+    },
+    {
+      "index": 117,
+      "title": "Investigations into the Removal of EDM Recast Layer with Magnetic Abrasive Machining",
+      "year": 2017
+    },
+    {
+      "index": 118,
+      "title": "Role of Tool Flank Wear and Machining Speed in Developing of Residual Stress in Machined Surface During High Speed Machining of Titanium Alloys",
+      "year": 2017
+    },
+    {
+      "index": 119,
+      "title": "Investigation of Material Transformations and their Role in Residual Stress Development in Machined Surfaces",
+      "year": 2017
+    },
+    {
+      "index": 120,
+      "title": "Role of phase transformation in chip segmentation during high speed machining of dual phase titanium alloys",
+      "year": 2017
+    },
+    {
+      "index": 121,
+      "title": "Magnetic Abrasive Finishing of cutting tools for high-speed machining of titanium alloys",
+      "year": 2017
+    },
+    {
+      "index": 122,
+      "title": "Effect of cutting edge preparation of coated tools on their performance in milling various materials",
+      "year": 2017
+    },
+    {
+      "index": 123,
+      "title": "Investigations for Safe Grinding of Ti-6Al-4V Parts Produced by Direct Metal Laser Sintering (DMLS) Technology",
+      "year": 2017
+    },
+    {
+      "index": 124,
+      "title": "Stress Triaxiality in Chip Segmentation During High Speed Machining of Titanium Alloy",
+      "year": 2017
+    },
+    {
+      "index": 125,
+      "title": "Study of Droplet Spray Behavior of an Atomization-Based Cutting Fluid Spray System for Machining Titanium Alloys",
+      "year": 2017
+    },
+    {
+      "index": 126,
+      "title": "Effect of fluid concentration in titanium machining with an atomization-based cutting fluid (ACF) spray system",
+      "year": 2017
+    },
+    {
+      "index": 127,
+      "title": "Effect of fluid concentration in titanium machining with an atomized-based cutting fluid (ACF) spray system",
+      "year": 2017
+    },
+    {
+      "index": 128,
+      "title": "Multi-Constraint Optimization for Grinding Nickel-Based Alloys",
+      "year": 2017
+    },
+    {
+      "index": 129,
+      "title": "Rapid Finite Element Prediction on Machining Process",
+      "year": 2017
+    },
+    {
+      "index": 130,
+      "title": "Magnetic Abrasive Finishing of Cutting Tools for Machining of Titanium Alloys",
+      "year": 2014
+    },
+    {
+      "index": 131,
+      "title": "Rotary Ultrasonic Machining of CFRP Composites: A Study on Power Consumption",
+      "year": 2014
+    },
+    {
+      "index": 132,
+      "title": "Droplet Spray Behavior of an Atomization-Based Cutting Fluid (ACF) System for Machining of Titanium Alloys",
+      "year": 2017
+    },
+    {
+      "index": 133,
+      "title": "Design and evaluation of an atomized-based cutting fluid spray system in turning of titanium alloy",
+      "year": 2017
+    },
+    {
+      "index": 134,
+      "title": "Design and evaluation of an atomozed based cutting fluid spray system in turning of titanium alloy",
+      "year": 2017
+    },
+    {
+      "index": 135,
+      "title": "Modeling and interpretation of fiber orientation-based failure mechanisms in machining of carbon fiber reinforced polymer composites",
+      "year": 2017
+    },
+    {
+      "index": 136,
+      "title": "Ti-6Al-4V High-Speed Dry Cutting Process Experiment and Finite Element Modeling",
+      "year": 2017
+    },
+    {
+      "index": 137,
+      "title": "Predicting Ti-6AL-4V Alloy High-speed Dry Cutting Process using Finite Element Method Incorporating the Chip-Tool-Work Friction Coefficients by Experimental Forces",
+      "year": 2017
+    },
+    {
+      "index": 138,
+      "title": "Tornitura del Titanio",
+      "year": 2017
+    },
+    {
+      "index": 139,
+      "title": "An Experimental Investigation Into the High Speed Turning of Ti-6Al-4V Titanium Alloy",
+      "year": 2017
+    },
+    {
+      "index": 140,
+      "title": "Hard Turning with Variable Micro-Geometry PcBN Tools",
+      "year": 2014
+    },
+    {
+      "index": 141,
+      "title": "Investigations on The Effects of Multi-Layered Coated Inserts in Machining Ti-6Al-4V Alloy with Experiments and Finite Element Simulations",
+      "year": 2014
+    },
+    {
+      "index": 142,
+      "title": "Failure Mechanisms Encountered in Micro-Milling of Aligned Carbon Fiber Reinforced Polymers",
+      "year": 2017
+    },
+    {
+      "index": 143,
+      "title": "Finite Element Simulation of High Speed Machining Ti-6Al-4V Alloy Using Modified Material Models",
+      "year": 2017
+    },
+    {
+      "index": 144,
+      "title": "A Study on Electrolytic In-Process Dressing (ELID) Grinding of Sapphire With Acoustic Emission",
+      "year": 2017
+    },
+    {
+      "index": 145,
+      "title": "Machinability Assessment while Drilling into Powder Metals (P/M)",
+      "year": 2017
+    },
+    {
+      "index": 146,
+      "title": "An Experimental Investigation on the Machinability of Powder Metal Steel",
+      "year": 2014
+    },
+    {
+      "index": 147,
+      "title": "In-Process Measurement and Monitoring for Intelligent Optimization and Control of Grinding Processes",
+      "year": 2017
+    },
+    {
+      "index": 148,
+      "title": "Monitoring and Model Generation for Intelligent Optimization and Control of Surface Grinding Processes",
+      "year": 2017
+    },
+    {
+      "index": 149,
+      "title": "Application of Knowledge Based System for Grinding Process Optimization",
+      "year": 2017
+    },
+    {
+      "index": 150,
+      "title": "An experimental investigation of temperatures during conventional and CBN grinding",
+      "year": 2017
+    },
+    {
+      "index": 151,
+      "title": "An Experimental Investigation of Temperatures during Conventional and CBN Grinding",
+      "year": 2014
+    },
+    {
+      "index": 152,
+      "title": "Accumulation, speciation and cellular localization of copper in Sesbania drummondii.",
+      "year": 2016
+    },
+    {
+      "index": 153,
+      "title": "Finite Element Modeling of Plunge Hard Turning of Disks Made of AISI 1137 Steel",
+      "year": 2014
+    },
+    {
+      "index": 154,
+      "title": "Focus: From Production to Profit",
+      "year": 2017
+    },
+    {
+      "index": 155,
+      "title": "Manufacturing Profitability through Well-Maintained Cutting Tools",
+      "year": 2017
+    },
+    {
+      "index": 156,
+      "title": "An Experimental Investigation on the Machinability of Powder Metal Steels",
+      "year": 2017
+    },
+    {
+      "index": 157,
+      "title": "Sensor Assisted Monitoring of Surface Grinding Process",
+      "year": 2017
+    },
+    {
+      "index": 158,
+      "title": "Experimental Investigations into Turning of AerMet 100 Alloy using Uncoated and TiAlN Coated Inserts",
+      "year": 2017
+    },
+    {
+      "index": 159,
+      "title": "Thermo-mechanical Modeling of Metal Cutting Using Marc Mentat",
+      "year": 2017
+    },
+    {
+      "index": 160,
+      "title": "Tool/Work Material/Cutting Fluid Interaction while Tapping into AA-319 and AA-A356 T6 Lost Foam Aluminum Castings",
+      "year": 2017
+    },
+    {
+      "index": 161,
+      "title": "A New Approach to Characterize the Machinability of Powder Metals",
+      "year": 2017
+    },
+    {
+      "index": 162,
+      "title": "Interrupted Cutting FEM Model for Face Milling of Titanium Alloys",
+      "year": 2017
+    },
+    {
+      "index": 163,
+      "title": "Microstructure-Mechanics Interactions in Modeling Chip Segmentation During Titanium Machining",
+      "year": 2014
+    },
+    {
+      "index": 164,
+      "title": "Mechanics of Chip Formation during the Machining of Hardened Steel",
+      "year": 2014
+    },
+    {
+      "index": 165,
+      "title": "Machining of Advanced and Engineered Materials",
+      "year": 2017
+    },
+    {
+      "index": 166,
+      "title": "Control Strategy for Multi-Pass Robotic Grinding",
+      "year": 2014
+    },
+    {
+      "index": 167,
+      "title": "Modelling of Geometric and Thermal Errors in a Five-Axis CNC Machine Tool",
+      "year": 2014
+    },
+    {
+      "index": 168,
+      "title": "Optimal Planning of an Adaptively Controlled Robotic Disk Grinding Process",
+      "year": 2014
+    },
+    {
+      "index": 169,
+      "title": "An Investigation of Grinding Wheel Loading",
+      "year": 2017
+    },
+    {
+      "index": 170,
+      "title": "Analysis of the Robotic Disk Grinding Process",
+      "year": 2014
+    },
+    {
+      "index": 171,
+      "title": "Surface Finish in Robotic Disk Grinding",
+      "year": 2014
+    },
+    {
+      "index": 172,
+      "title": "Workpiece Burn and Surface Finish during Controlled Force Robotic Disk Grinding Process",
+      "year": 2014
+    },
+    {
+      "index": 173,
+      "title": "Adaptive Force Control for Robotic Disk Grinding",
+      "year": 2014
+    },
+    {
+      "index": 174,
+      "title": "Modelling of the PUMA Robot for Control of Grinding Applications",
+      "year": 2017
+    },
+    {
+      "index": 175,
+      "title": "Force Control for Robotic Rigid Disk Grinding",
+      "year": 2017
+    },
+    {
+      "index": 176,
+      "title": "Analysis of rigid-disk wear during robotic grinding",
+      "year": 2017
+    },
+    {
+      "index": 177,
+      "title": "Force Modelling of the Robotic Disk Grinding Process",
+      "year": 2017
+    },
+    {
+      "index": 178,
+      "title": "A simple analysis for evaluating grinding wheel loading",
+      "year": 2017
+    },
+    {
+      "index": 179,
+      "title": "A new technique for evaluating wheel loading",
+      "year": 2017
+    },
+    {
+      "index": 180,
+      "title": "An Experimental Study of Loading Phenomenon in Grinding",
+      "year": 2017
+    },
+    {
+      "index": 181,
+      "title": "X Ray Fluorescence Technique for the Study of Grinding Wheel Performance",
+      "year": 2017
+    },
+    {
+      "index": 182,
+      "title": "Workpiece Burn in Fine Grinding",
+      "year": 2017
+    },
+    {
+      "index": 183,
+      "title": "Evaluation of Grinding Wheel Loading using X Ray Fluorescence Technique",
+      "year": 2017
+    },
+    {
+      "index": 186,
+      "title": "A Magnitude Robust Control Chart for the Level Parameter of an AR(1) Process",
+      "year": 2013
+    },
+    {
+      "index": 187,
+      "title": "Change Point Estimates for the Parameters of an AR(1) Process",
+      "year": 2013
+    },
+    {
+      "index": 188,
+      "title": "The Impact of Classroom Performance System on Student Success in Engineering Statistics",
+      "year": 2013
+    },
+    {
+      "index": 191,
+      "title": "Machine Learning optimization with Hyper-parameter tuning approach",
+      "year": 2021
+    },
+    {
+      "index": 193,
+      "title": "Assessing the Feasibility of a Biofilter in Medium-to-High Scale Industries",
+      "year": 2020
+    },
+    {
+      "index": 196,
+      "title": "Annual Expected Cost of High Blood Pressure in Young Adults",
+      "year": 2017
+    },
+    {
+      "index": 197,
+      "title": "Models for the Residual Life of Railroad Bearing Grease in Laboratory and Industry Applications",
+      "year": 2017
+    },
+    {
+      "index": 198,
+      "title": "Practitioner Advice: ERLDAT - A Web-based Tool to Design and Analyze EWMA Control Charts",
+      "year": 2017
+    },
+    {
+      "index": 199,
+      "title": "Developing Empirical Models of Railroad Bearing Grease",
+      "year": 2017
+    },
+    {
+      "index": 200,
+      "title": "ERLDAT2: A web-based application for the analysis of the run length distribution of the EWMA control chart with estimated parameters",
+      "year": 2018
+    },
+    {
+      "index": 201,
+      "title": "Performance-based design of EWMA control charts utilizing the run length distribution",
+      "year": 2018
+    },
+    {
+      "index": 202,
+      "title": "Modeling and optimization of the molten salt cleaning process",
+      "year": 2019
+    },
+    {
+      "index": 203,
+      "title": "The EWMA run length distribution analysis tool (ERLDAT)",
+      "year": 2018
+    },
+    {
+      "index": 204,
+      "title": "AC 2010-881: Teaching Process Improvement using the Mouse Factory",
+      "year": 2013
+    },
+    {
+      "index": 205,
+      "title": "AC 2010-884: Teaching Control Charts for Variables using the Mouse Factory",
+      "year": 2013
+    },
+    {
+      "index": 206,
+      "title": "Teaching Control Charts for Variables using the Mouse Factory",
+      "year": 2013
+    },
+    {
+      "index": 207,
+      "title": "Teaching Process Improvement using the Mouse Factory",
+      "year": 2013
+    },
+    {
+      "index": 208,
+      "title": "Study of Processing Variables on the Electrical Resistivity of Conductive Adhesives",
+      "year": 2013
+    },
+    {
+      "index": 209,
+      "title": "Study of Processing Variables on the Electrical Resistivity of Conductive Adhesives",
+      "year": 2013
+    },
+    {
+      "index": 210,
+      "title": "Study of Processing Variables on the Electrical Resistivity of Conductive Adhesives,",
+      "year": 2013
+    },
+    {
+      "index": 211,
+      "title": "A Control Chart for Detecting and Estimating Step Changes in the Mean of Autocorrelated Processes",
+      "year": 2013
+    },
+    {
+      "index": 212,
+      "title": "Distance Education – Experience & Implementation",
+      "year": 2013
+    },
+    {
+      "index": 213,
+      "title": "A Simulation Optimization Method for Reverse Manufacturing System",
+      "year": 2013
+    },
+    {
+      "index": 214,
+      "title": "A Suitability Measure for Mass Customization of a Product",
+      "year": 2013
+    },
+    {
+      "index": 215,
+      "title": "An Information Technology Suitability Index for Mass Customization",
+      "year": 2013
+    },
+    {
+      "index": 216,
+      "title": "Modeling Nano Reinforced Polymers",
+      "year": 2013
+    },
+    {
+      "index": 217,
+      "title": "Reverse Logistics: Problems, Framework, Models and Applications",
+      "year": 2013
+    },
+    {
+      "index": 218,
+      "title": "Teaching Rapid Response Engineering in Dispersed Engineering Design Teams",
+      "year": 2013
+    },
+    {
+      "index": 219,
+      "title": "Web-based Applications for Teaching Statistical Quality Control",
+      "year": 2013
+    },
+    {
+      "index": 220,
+      "title": "A Simulation Optimization Method for Reverse Manufacturing System",
+      "year": 2014
+    },
+    {
+      "index": 221,
+      "title": "A Suitability Measure for Mass Customization of a Product",
+      "year": 2014
+    },
+    {
+      "index": 222,
+      "title": "An Information Technology Suitability Index for Mass Customization",
+      "year": 2014
+    },
+    {
+      "index": 223,
+      "title": "Reverse Logistics: Problems, Framework, Models and Applications",
+      "year": 2014
+    },
+    {
+      "index": 224,
+      "title": "Web-based Applications for Teaching Statistical Quality Control",
+      "year": 2014
+    },
+    {
+      "index": 225,
+      "title": "A Magnitude Robust Control Chart for Detecting a Linear Trend",
+      "year": 2013
+    },
+    {
+      "index": 226,
+      "title": "A Magnitude Robust Control Chart for the Autocovariance and Autoregressive Parameters of an AR(1) Process",
+      "year": 2013
+    },
+    {
+      "index": 227,
+      "title": "A Web-based Tool for Teaching Aerobic, Anaerobic and MSUC",
+      "year": 2013
+    },
+    {
+      "index": 228,
+      "title": "Confidence Intervals for the Parameters of the Xbar and S Control Charts",
+      "year": 2013
+    },
+    {
+      "index": 229,
+      "title": "Experiences with Teaching Mass Customization in Dispersed Engineering Design Teams",
+      "year": 2013
+    },
+    {
+      "index": 230,
+      "title": "INTEnD: A Dispersed, Virtual Engineering Design Team Approach to Globalize Engineering Education",
+      "year": 2013
+    },
+    {
+      "index": 231,
+      "title": "Web-based Advanced Cardiac Life Support Training and Evaluation",
+      "year": 2013
+    },
+    {
+      "index": 232,
+      "title": "A Magnitude Robust control Chart for Detecting a Linear Trend",
+      "year": 2014
+    },
+    {
+      "index": 233,
+      "title": "A Web-Based Tool for Teaching Aerobic, Anaerobic, and Muscle Static Work Capacity Based on the Legacy Cycle",
+      "year": 2013
+    },
+    {
+      "index": 234,
+      "title": "Confidence Intervals for the Parameters of the Control Chart Limits",
+      "year": 2014
+    },
+    {
+      "index": 235,
+      "title": "Web-Based Advanced Cardiac Life Support Training and Evaluation System",
+      "year": 2014
+    },
+    {
+      "index": 236,
+      "title": "Addressing the Deficiencies of the Moving Average Control Chart",
+      "year": 2013
+    },
+    {
+      "index": 237,
+      "title": "Analysis of Performance Capacity through an Integrated Learning and Forgetting Curve Model",
+      "year": 2013
+    },
+    {
+      "index": 238,
+      "title": "Confidence Intervals for the Control Limits of the X-bar and R Control Charts",
+      "year": 2013
+    },
+    {
+      "index": 239,
+      "title": "Experiences with Dispersed Engineering Design Teams in International Production",
+      "year": 2013
+    },
+    {
+      "index": 240,
+      "title": "Hard Disk Drive Failure Analysis Expert System Development",
+      "year": 2013
+    },
+    {
+      "index": 241,
+      "title": "The Effects of Nationality in the Intercultural Relationship in a Maquila Environment, Cultural Dimensions A Practical Approach",
+      "year": 2013
+    },
+    {
+      "index": 242,
+      "title": "Analysis of Performance Capacity through an Integrated Learning and Forgetting Curve Model",
+      "year": 2014
+    },
+    {
+      "index": 243,
+      "title": "Hard Disk Drive Failure Analysis Expert System Development",
+      "year": 2014
+    },
+    {
+      "index": 244,
+      "title": "Incorporation of WebCT in Engineering Instruction",
+      "year": 2013
+    },
+    {
+      "index": 245,
+      "title": "An Analysis of the Reliability of an Incandescent Light Bulb",
+      "year": 2013
+    },
+    {
+      "index": 246,
+      "title": "Applying an AR(1) CUSUM Control Chart to Data from a Chemical Process",
+      "year": 2013
+    },
+    {
+      "index": 247,
+      "title": "Implementing Control Charts within a Meat Processing Plant",
+      "year": 2013
+    },
+    {
+      "index": 248,
+      "title": "Implementing Control Charts Within a Meat Processing Plant",
+      "year": 2014
+    },
+    {
+      "index": 249,
+      "title": "Estimating the Reliability Properties of a Product Using Accelerated Life Testing",
+      "year": 2013
+    },
+    {
+      "index": 250,
+      "title": "The Development and Evaluation of CUSUM-based Control Charts for an AR(1) Process",
+      "year": 2013
+    },
+    {
+      "index": 251,
+      "title": "A Control Chart for Detecting a Change in the Level Parameter of a First Order Autoregressive Process",
+      "year": 2013
+    },
+    {
+      "index": 252,
+      "title": "NSF EEC: Establishing UTRGV's Center for Broadening Participation in Engineering: Engage, Educate, Enrich",
+      "year": 2025
+    },
+    {
+      "index": 253,
+      "title": "Work in Progress: Development of A Boostcamp for Freshman Student Success During COVID-19 Transition",
+      "year": 2025
+    },
+    {
+      "index": 255,
+      "title": "A machine learning approach to detect pores in laser powder bed fusion additive manufacturing",
+      "year": 2025
+    },
+    {
+      "index": 256,
+      "title": "Pyrolytic Carbon Formation on Additively Manufactured Inconel 718 for Enhanced Surface Characteristics",
+      "year": 2025
+    },
+    {
+      "index": 257,
+      "title": "Additive Manufacturing of Passive Electronic Components",
+      "year": 2025
+    },
+    {
+      "index": 258,
+      "title": "Enhancement of diffusivity and plastic deformation in ultrasound-assisted cold spray of tungsten: a molecular dynamics study",
+      "year": 2025
+    },
+    {
+      "index": 259,
+      "title": "Development of boron-enhanced inconel 718 with superior thermomechanical properties for high-temperature concentrated solar power applications",
+      "year": 2025
+    },
+    {
+      "index": 260,
+      "title": "Molecular Dynamics-Based Two-Dimensional Simulation of Powder Bed Additive Manufacturing Process for Unimodal and Bimodal Systems",
+      "year": 2023
+    },
+    {
+      "index": 261,
+      "title": "Data-driven roughness estimation of additively manufactured samples using build angles",
+      "year": 2024
+    },
+    {
+      "index": 262,
+      "title": "Design and analysis of performance parameters for achieving high efficient ITO/PEDOT:PSS/P3HT:PCBM/Al organic solar cell",
+      "year": 2024
+    },
+    {
+      "index": 263,
+      "title": "Spectral Behavior of Fiber Bragg Gratings During Embedding in 3D Printed Metal Tensile Coupons and Cyclic Loading",
+      "year": 2024
+    },
+    {
+      "index": 264,
+      "title": "Light intensity and efficiency enhancement of n-ZnO/NiO/p-GaN heterojunction-based white light-emitting diodes using micro-pillar array",
+      "year": 2024
+    },
+    {
+      "index": 265,
+      "title": "Ultrafast Laser Ablation of Inconel 718 for Surface Improvement",
+      "year": 2022
+    },
+    {
+      "index": 266,
+      "title": "Glucose Level Measurement Using Photonic Crystal Fiber–based Plasmonic Sensor",
+      "year": 2021
+    },
+    {
+      "index": 267,
+      "title": "Synthesizing and Printing of Tin Oxide Nanoparticles Using a Single Ultrafast Laser System: A Feasibility Study",
+      "year": 2022
+    },
+    {
+      "index": 268,
+      "title": "A Numerical Study on the Powder Flowability, Spreadability, Packing Fraction in Powder Bed Additive Manufacturing",
+      "year": 2023
+    },
+    {
+      "index": 269,
+      "title": "Ultrafast Laser Direct Writing of Conductive Patterns on Polyimide Substrate",
+      "year": 2023
+    },
+    {
+      "index": 270,
+      "title": "Influence of Pore Formation and Its Role on the Tensile Properties of 17-4 PH Stainless Steel Fabricated by Laser Powder Bed Fusion",
+      "year": 2021
+    },
+    {
+      "index": 271,
+      "title": "Improvement of light intensity and efficiency of n-ZnO/NiO/p-GaN heterojunction-based white light emitting diodes using micro-/nanolens array",
+      "year": 2021
+    },
+    {
+      "index": 272,
+      "title": "Distributed Residual Strain Measurement in Additively Manufactured Stainless-Steel Cantilever using Fiber Optic Sensors",
+      "year": 2020
+    },
+    {
+      "index": 273,
+      "title": "Embedding Optical Sensors in Additively Manufactured Parts for Enhanced Functionality",
+      "year": 2020
+    },
+    {
+      "index": 274,
+      "title": "Hollow-Core Photonic Crystal Fiber Mach--Zehnder Interferometer for Gas Sensing",
+      "year": 2020
+    },
+    {
+      "index": 275,
+      "title": "Internal surface roughness enhancement of parts made by laser powder-bed fusion additive manufacturing",
+      "year": 2020
+    },
+    {
+      "index": 276,
+      "title": "2D printing of graphene: a review",
+      "year": 2020
+    },
+    {
+      "index": 277,
+      "title": "Experimental comparison of the effect of the structure on MZI fiber gas sensor performance",
+      "year": 2020
+    },
+    {
+      "index": 278,
+      "title": "Graphene oxide humidity sensor built entirely by additive manufacturing approaches",
+      "year": 2020
+    },
+    {
+      "index": 279,
+      "title": "Identification and characterization of spatter particles and their effect on surface roughness, density and mechanical response of 17-4 PH stainless steel laser powder-bed fusion parts",
+      "year": 2020
+    },
+    {
+      "index": 280,
+      "title": "Monitoring of Carbon Dioxide Using Hollow-Core Photonic Crystal Fiber Mach--Zehnder Interferometer",
+      "year": 2020
+    },
+    {
+      "index": 281,
+      "title": "Tapered fiber-optic mach-zehnder interferometer for ultra-high sensitivity measurement of refractive index",
+      "year": 2020
+    },
+    {
+      "index": 282,
+      "title": "Study of powder recycling and its effect on printed parts during laser powder-bed fusion of 17-4 PH stainless steel",
+      "year": 2020
+    },
+    {
+      "index": 283,
+      "title": "Application of FBG optical sensors to in-situ monitoring the thermo-mechanical behaviour of cold spray coated samples",
+      "year": 2020
+    },
+    {
+      "index": 284,
+      "title": "Characterization of long period grating with a screw shape fabricated by a single-path scanning of femtosecond laser",
+      "year": 2020
+    },
+    {
+      "index": 285,
+      "title": "Measurement of in-fiber refractive index change using a Mach--Zehnder interferometer",
+      "year": 2020
+    },
+    {
+      "index": 286,
+      "title": "Fabrication of a screw-shaped long-period fiber grating for refractive index sensing",
+      "year": 2020
+    },
+    {
+      "index": 287,
+      "title": "Interferometric measurement of refractive index modification in a single mode microfiber",
+      "year": 2020
+    },
+    {
+      "index": 288,
+      "title": "Miniature Dual Flame-based Tapering Process and System Development for Fabrication of Optical Fiber Sensors",
+      "year": 2020
+    },
+    {
+      "index": 289,
+      "title": "Photonic Crystal Fiber Based Refractive Index Sensors",
+      "year": 2020
+    },
+    {
+      "index": 290,
+      "title": "Bragg grating embedded in Mach-Zehnder interferometer for refractive index and temperature sensing",
+      "year": 2020
+    },
+    {
+      "index": 291,
+      "title": "Miniaturized tapered photonic crystal fiber Mach--Zehnder interferometer for enhanced refractive index sensing",
+      "year": 2020
+    },
+    {
+      "index": 292,
+      "title": "Numerical Approach to Modeling and Characterization of Refractive Index Changes for a Long-Period Fiber Grating Fabricated by Femtosecond Laser",
+      "year": 2020
+    },
+    {
+      "index": 293,
+      "title": "Bowtie-shaped hole array for fiber-optic refractive index sensing in telecom-wavelengths",
+      "year": 2020
+    },
+    {
+      "index": 294,
+      "title": "Bragg grating fabrication in microfiber by femtosecond pulse filamentation induced periodic refractive index modification",
+      "year": 2020
+    },
+    {
+      "index": 295,
+      "title": "Characterization of refractive index change and fabrication of long period gratings in pure silica fiber by femtosecond laser radiation",
+      "year": 2020
+    },
+    {
+      "index": 296,
+      "title": "Development of fiber optic sensors using femtosecond laser for refractive index and temperature measurements",
+      "year": 2020
+    },
+    {
+      "index": 297,
+      "title": "Formation mechanism of self-organized nano-ripples on quartz surface using femtosecond laser pulses",
+      "year": 2020
+    },
+    {
+      "index": 298,
+      "title": "Microfiber Bragg grating sandwiched between standard optical fibers for enhanced temperature sensing",
+      "year": 2020
+    },
+    {
+      "index": 299,
+      "title": "Tapered photonic crystal fiber based Mach-Zehnder interferometer for enhanced refractive index sensing",
+      "year": 2020
+    },
+    {
+      "index": 300,
+      "title": "Design and fabrication of stent with negative Poisson’s ratio",
+      "year": 2020
+    },
+    {
+      "index": 301,
+      "title": "Fabrication of poly (ϵ-caprolactone) microfiber scaffolds with varying topography and mechanical properties for stem cell-based tissue engineering applications",
+      "year": 2020
+    },
+    {
+      "index": 302,
+      "title": "Filament-based fabrication and performance analysis of fiber Bragg grating sensors using ultrashort pulse laser",
+      "year": 2020
+    },
+    {
+      "index": 303,
+      "title": "Mach-Zehnder Interferometer using Small Diameter Single Mode Fiber for Refractive Index Sensing",
+      "year": 2020
+    },
+    {
+      "index": 304,
+      "title": "Near-field modification of femtosecond laser beam to enhance single-shot pulse filamentation in glass medium",
+      "year": 2020
+    },
+    {
+      "index": 305,
+      "title": "THz field enhancement by antenna coupling to a tapered thick slot waveguide",
+      "year": 2020
+    },
+    {
+      "index": 306,
+      "title": "Characterization of femtosecond laser filament-fringes in titanium",
+      "year": 2020
+    },
+    {
+      "index": 307,
+      "title": "Femtosecond laser based in-fiber long period grating fabrication for improved solution sensing",
+      "year": 2020
+    },
+    {
+      "index": 308,
+      "title": "Distributed All-Optical Sensor to Detect dCO2 in Aqueous Environments",
+      "year": 2020
+    },
+    {
+      "index": 309,
+      "title": "Long period grating inscribed by femtosecond laser for refractive index measurements in aqueous environments",
+      "year": 2020
+    },
+    {
+      "index": 310,
+      "title": "Towards high throughput tissue engineering: development of chitosan-calcium phosphate scaffolds for engineering bone tissue from embryonic stem cells",
+      "year": 2020
+    },
+    {
+      "index": 311,
+      "title": "Colorizing stainless steel surface by femtosecond laser induced micro/nano-structures",
+      "year": 2020
+    },
+    {
+      "index": 312,
+      "title": "Display glass cutting by femtosecond laser induced single shot periodic void array",
+      "year": 2020
+    },
+    {
+      "index": 313,
+      "title": "Far rear surface focusing of femtosecond laser pulses for dicing display glass plates",
+      "year": 2020
+    },
+    {
+      "index": 314,
+      "title": "Display glass plate dicing by femtosecond laser induced surface and internal cavities",
+      "year": 2020
+    },
+    {
+      "index": 315,
+      "title": "Femtosecond laser induced material modification in bulk for dicing display glass plates",
+      "year": 2020
+    },
+    {
+      "index": 316,
+      "title": "Micromachining of grooves for cutting fused silica plates with femtosecond laser pulses",
+      "year": 2020
+    },
+    {
+      "index": 321,
+      "title": "Machine Learning optimization with Hyper-parameter tuning approach",
+      "year": 2021
+    },
+    {
+      "index": 322,
+      "title": "Reshaping the Landscape of Future Manufacturing: Software Defined Manufacturing",
+      "year": 2021
+    },
+    {
+      "index": 323,
+      "title": "U.S. Ports of Entry’s Decision Model with an Anti-Human Trafficking Focus",
+      "year": 2021
+    },
+    {
+      "index": 324,
+      "title": "Assessing the Feasibility of a Biofilter in Medium-to-High Scale Industries",
+      "year": 2020
+    },
+    {
+      "index": 325,
+      "title": "Evaluating Cross-Border Logistics and Compliance at the US Texas Border",
+      "year": 2020
+    },
+    {
+      "index": 326,
+      "title": "Reducing Wait Times at Laredo POE through CBP Officer Staffing",
+      "year": 2020
+    },
+    {
+      "index": 337,
+      "title": "Annual Expected Cost of High Blood Pressure in Young Adults",
+      "year": 2017
+    },
+    {
+      "index": 340,
+      "title": "A renewable energy undergraduate course underlining the analysis of collected solar radiation",
+      "year": 2018
+    },
+    {
+      "index": 341,
+      "title": "Practitioner Advice: ERLDAT - A Web-based Tool to Design and Analyze EWMA Control Charts",
+      "year": 2017
+    },
+    {
+      "index": 342,
+      "title": "A U-line assessment heuristic & evaluation model",
+      "year": 2018
+    },
+    {
+      "index": 343,
+      "title": "ERLDAT2: A web-based application for the analysis of the run length distribution of the EWMA control chart with estimated parameters",
+      "year": 2018
+    },
+    {
+      "index": 344,
+      "title": "Performance-based design of EWMA control charts utilizing the run length distribution",
+      "year": 2018
+    },
+    {
+      "index": 345,
+      "title": "Rate of false positive on specific border cargo detection",
+      "year": 2018
+    },
+    {
+      "index": 346,
+      "title": "Rate of false positives as a security performance measure",
+      "year": 2018
+    },
+    {
+      "index": 347,
+      "title": "The EWMA run length distribution analysis tool (ERLDAT)",
+      "year": 2018
+    },
+    {
+      "index": 348,
+      "title": "On Coxian phased distributions to approximate the border crossing port of entry (POE)",
+      "year": 2018
+    },
+    {
+      "index": 349,
+      "title": "Transient queueing models for border crossing ports of entry: A non-stationary dynamic reallocation policy",
+      "year": 2018
+    },
+    {
+      "index": 350,
+      "title": "Tribological performance of additively manufactured MoB reinforced AlSi7Mg alloy composites",
+      "year": 2026
+    },
+    {
+      "index": 351,
+      "title": "A Review of Ceramic-Reinforced Nickel-Based Superalloys: Processing, Properties, and Applications",
+      "year": 2025
+    },
+    {
+      "index": 352,
+      "title": "Hybrid dye-quantum dot solar cell with liquid polysulfide electrolyte with enhanced energy conversion",
+      "year": 2026
+    },
+    {
+      "index": 353,
+      "title": "Hybrid dye-quantum dot solar cell with liquid polysulfide electrolyte with enhanced energy conversion",
+      "year": 2026
+    },
+    {
+      "index": 354,
+      "title": "A machine learning approach to detect pores in laser powder bed fusion additive manufacturing",
+      "year": 2025
+    },
+    {
+      "index": 355,
+      "title": "Additive Manufacturing of Passive Electronic Components",
+      "year": 2025
+    },
+    {
+      "index": 356,
+      "title": "Enhancement of diffusivity and plastic deformation in ultrasound-assisted cold spray of tungsten: a molecular dynamics study",
+      "year": 2025
+    },
+    {
+      "index": 357,
+      "title": "Development of boron-enhanced inconel 718 with superior thermomechanical properties for high-temperature concentrated solar power applications",
+      "year": 2025
+    },
+    {
+      "index": 358,
+      "title": "Laser-induced forward transfer (LIFT) based bioprinting of the collagen I with retina photoreceptor cells",
+      "year": 2023
+    },
+    {
+      "index": 359,
+      "title": "Numerical Study of Solar Receiver Tube With Modified Surface Roughness for Enhanced and Selective Absorptivity in Concentrated Solar Power Tower",
+      "year": 2023
+    },
+    {
+      "index": 360,
+      "title": "Experimental investigation of various energy-absorbing layer materials and sodium alginate viscosities on the jet formation in laser-induced-forward-transfer (LIFT) bioprinting",
+      "year": 2023
+    },
+    {
+      "index": 361,
+      "title": "A molecular dynamics study of atomic diffusion effects on thermomechanical properties applying laser additive alloying process for the Cantor high entropy alloy",
+      "year": 2023
+    },
+    {
+      "index": 362,
+      "title": "Study of the Graphene Energy Absorbing Layer and the Viscosity of Sodium Alginate in Laser-Induced-Forward-Transfer (LIFT) Bioprinting",
+      "year": 2023
+    },
+    {
+      "index": 363,
+      "title": "Ultrafast Laser Ablation of Inconel 718 for Surface Improvement",
+      "year": 2022
+    },
+    {
+      "index": 364,
+      "title": "A molecular dynamic study of atomic diffusion effects on thermomechanical properties applying laser additive alloying process for the Cantor High Entropy Alloy",
+      "year": 2022
+    },
+    {
+      "index": 365,
+      "title": "Synthesizing and Printing of Tin Oxide Nanoparticles Using a Single Ultrafast Laser System: A Feasibility Study",
+      "year": 2022
+    },
+    {
+      "index": 366,
+      "title": "A Numerical Study on the Powder Flowability, Spreadability, Packing Fraction in Powder Bed Additive Manufacturing",
+      "year": 2023
+    },
+    {
+      "index": 367,
+      "title": "Ultrafast Laser Direct Writing of Conductive Patterns on Polyimide Substrate",
+      "year": 2023
+    },
+    {
+      "index": 368,
+      "title": "Surface modified hybrid ZnSnO3 nanocubes for enhanced piezoelectric power generation and wireless sensory application",
+      "year": 2023
+    },
+    {
+      "index": 369,
+      "title": "Direct Selective Laser Synthesis of CuCrFeTiNiAl High Entropy Alloy from Elemental Powders through Selective Laser Melting",
+      "year": 2021
+    },
+    {
+      "index": 370,
+      "title": "Numerical simulation of the melting and alloying processes of elemental titanium and boron powders using selective laser alloying",
+      "year": 2021
+    },
+    {
+      "index": 371,
+      "title": "Printing quality improvement for laser-induced forward transfer bioprinting: Numerical modeling and experimental validation",
+      "year": 2021
+    },
+    {
+      "index": 372,
+      "title": "A Framework of Dynamic Data Driven Digital Twin for Complex Engineering Products: the Example of Aircraft Engine Health Management",
+      "year": 2021
+    },
+    {
+      "index": 373,
+      "title": "Numerical study of fully coupled fluid-structure interaction of stent ureter by varying the stent-side holes",
+      "year": 2021
+    },
+    {
+      "index": 374,
+      "title": "Laser Assisted Bioprinting: A State-of-the-Art Review and Future Trend",
+      "year": 2021
+    },
+    {
+      "index": 375,
+      "title": "Analysis of the operating conditions of pulse electric field–assisted EHD for sodium alginate printing using design of experiment approach",
+      "year": 2021
+    },
+    {
+      "index": 376,
+      "title": "Highly Sensitive Triboelectric Motion Sensor with Sustainable Materials",
+      "year": 2020
+    },
+    {
+      "index": 377,
+      "title": "Numerical and Experimental Study of Bioink Transfer Process in Laser Induced Forward Transfer (LIFT) 3d Bioprinting",
+      "year": 2020
+    },
+    {
+      "index": 378,
+      "title": "Synthesis and fabrication of self-sustainable triboelectric energy case for powering smart electronic devices",
+      "year": 2019
+    },
+    {
+      "index": 379,
+      "title": "Decentralized triboelectric electronic health monitoring flexible microdevice",
+      "year": 2019
+    },
+    {
+      "index": 380,
+      "title": "A Smart Decision Making Tool for Cleaning Process Planning in Remanufacturing",
+      "year": 2018
+    },
+    {
+      "index": 381,
+      "title": "Grow Local Manufacturing along US/Mexico Border Region for an Integrated Supply Chain in the Post COVID-19 Era",
+      "year": 2021
+    },
+    {
+      "index": 382,
+      "title": "Reducing Wait Times at Laredo POE through CBP Officer Staffing",
+      "year": 2020
+    },
+    {
+      "index": 383,
+      "title": "Application of optimized laser surface re-melting process on selective laser melted 316L stainless steel inclined parts",
+      "year": 2020
+    },
+    {
+      "index": 384,
+      "title": "Experimental Study of Evaporation and Crystallization of Brine Droplets under Different Temperatures and Humidity Levels",
+      "year": 2019
+    },
+    {
+      "index": 385,
+      "title": "Zinc ferrite based gas sensors: A review",
+      "year": 2019
+    },
+    {
+      "index": 386,
+      "title": "Selective Laser Melting of Mechanically Alloyed Metastable Al5Fe2 Powders",
+      "year": 2018
+    },
+    {
+      "index": 390,
+      "title": "Ultra-short Laser Melting of Copper Nanoparticles: A Molecular Dynamics Study",
+      "year": 2017
+    },
+    {
+      "index": 391,
+      "title": "Remanufacturing Processes, Planning and Control",
+      "year": 2017
+    },
+    {
+      "index": 392,
+      "title": "Consumer initial acceptance and continued use of recommendation agents: literature review and proposed conceptual framework",
+      "year": 2014
+    },
+    {
+      "index": 393,
+      "title": "Modeling and optimization of the molten salt cleaning process",
+      "year": 2019
+    },
+    {
+      "index": 395,
+      "title": "The Analysis of Scenario Characteristics in Life Cycle Assessment",
+      "year": 2017
+    },
+    {
+      "index": 396,
+      "title": "A New LCA Method Based on Multi-Scenarios Coexistence",
+      "year": 2017
+    },
+    {
+      "index": 397,
+      "title": "A Product Selective Disassembly Model Based on Hybrid Directed Graph",
+      "year": 2013
+    },
+    {
+      "index": 398,
+      "title": "A Product Selective Disassembly Model Based on Hybrid Directed Graph",
+      "year": 2020
+    },
+    {
+      "index": 400,
+      "title": "Study of Processing Variables on the Electrical Resistivity of Conductive Adhesives",
+      "year": 2013
+    },
+    {
+      "index": 401,
+      "title": "Study of Processing Variables on the Electrical Resistivity of Conductive Adhesives,",
+      "year": 2013
+    },
+    {
+      "index": 403,
+      "title": "A product Life Cycle Assessment model based on AHP methodology in support of Green Design",
+      "year": 2013
+    },
+    {
+      "index": 404,
+      "title": "A product Life Cycle Assessment model based on AHP methodology in support of Green Design",
+      "year": 2020
+    },
+    {
+      "index": 405,
+      "title": "Application of Neural Network on Environmental Impact Assessment Tools",
+      "year": 2013
+    },
+    {
+      "index": 406,
+      "title": "A Multi-Objective Fuzzy Graph Approach for Modular Formulation Considering End-Of-Life Issues",
+      "year": 2013
+    },
+    {
+      "index": 407,
+      "title": "A LCIA weighting system based on China environmental policy and local manufacturing industry situation",
+      "year": 2017
+    },
+    {
+      "index": 408,
+      "title": "Experimental Studies on Cryogenic Recycling of Printed Circuit Board",
+      "year": 2013
+    },
+    {
+      "index": 409,
+      "title": "Green design-oriented product AHP life cycle environmental impact assessment model",
+      "year": 2013
+    },
+    {
+      "index": 410,
+      "title": "Monotonous Property of Non-oscillations of the Damped Duffing's Equation",
+      "year": 2013
+    },
+    {
+      "index": 411,
+      "title": "A Framework for Environmental Impact Assessment Tools: Comparison Validation and Application Using Case Study of Electronic Products",
+      "year": 2013
+    },
+    {
+      "index": 412,
+      "title": "Evaluating Obsolete Electronic Products for Disassembly, Material Recovery and Environmental Impact through a Decision Support System",
+      "year": 2013
+    },
+    {
+      "index": 413,
+      "title": "A Distributed Design Methodology for Extensible Product Life Cycle Strategy",
+      "year": 2013
+    },
+    {
+      "index": 415,
+      "title": "Printed Circuit Board Recycling: A State-of-the-Art Survey",
+      "year": 2013
+    },
+    {
+      "index": 416,
+      "title": "Using Fuzzy Multi-Agent Decision-Making in Environmentally Conscious Supplier Management",
+      "year": 2013
+    },
+    {
+      "index": 417,
+      "title": "Plug & Play Information Sharing Architecture and Its Application in Green Supply Chain Management",
+      "year": 2013
+    },
+    {
+      "index": 418,
+      "title": "“Explainable AI (XAI)-Driven  Vibration  Sensing  Scheme  for  Surface Quality  Monitoring  in  a  Smart  Surface  Grinding  Process",
+      "year": 2024
+    },
+    {
+      "index": 423,
+      "title": "Gas-Assisted Powder Injection Molding: A Study About Residual Wall Thickness",
+      "year": 2014
+    },
+    {
+      "index": 424,
+      "title": "Gas-Assisted Powder Injection Molding: Mold Cavity Effects on Residual Wall Thickness",
+      "year": 2014
+    },
+    {
+      "index": 425,
+      "title": "Gas-Assisted Powder Injection Molding of Polymer and Powder Metal Feedstock in a Stereolithography Mold",
+      "year": 2014
+    },
+    {
+      "index": 426,
+      "title": "Dextran/Plga DoubleLayered Microspheres for Sustained Release of Doxorubicin",
+      "year": 2013
+    },
+    {
+      "index": 427,
+      "title": "Improvement of Efficiency in IT -conjugated Polymer Based on Phenothiazine by Introduction of Oxadiazole Pendant as a Side Chain",
+      "year": 2013
+    },
+    {
+      "index": 428,
+      "title": "MlcroneedleMedicated Transdermal Delivery of Chondroitin Sulfate",
+      "year": 2013
+    },
+    {
+      "index": 429,
+      "title": "Enhancement of surface replication by micro-gasinjection molding",
+      "year": 2013
+    },
+    {
+      "index": 430,
+      "title": "Gas-Assisted Powder Injection Molding: A Study On The Effect Of Processing Variables On Gas Penetration",
+      "year": 2013
+    },
+    {
+      "index": 431,
+      "title": "A fully functional, packaged active microscaffold system with fluid perfusion and electrical stimulation/recording functionalities for 3-D neuronal culture studies",
+      "year": 2017
+    },
+    {
+      "index": 432,
+      "title": "Stereolithography Mold Life Extension using Gas-Assisted Injection",
+      "year": 2013
+    },
+    {
+      "index": 433,
+      "title": "Stereolithography Mold Life Extension Using GasAssisted Injection",
+      "year": 2013
+    },
+    {
+      "index": 434,
+      "title": "Design of a new aRC IV detonator",
+      "year": 2014
+    },
+    {
+      "index": 435,
+      "title": "Design of a new QRC IV detonator",
+      "year": 2013
+    },
+    {
+      "index": 436,
+      "title": "leaking Study of Betadyne Connector",
+      "year": 2013
+    },
+    {
+      "index": 437,
+      "title": "Redesign of aRC III Detonator",
+      "year": 2014
+    },
+    {
+      "index": 438,
+      "title": "Redesign of QRC III Detonator Body",
+      "year": 2013
+    },
+    {
+      "index": 439,
+      "title": "Redesign of QRC III Detonator",
+      "year": 2013
+    },
+    {
+      "index": 440,
+      "title": "Diffusion coefficient and solubility of vinyl acetate molecules in poly(vinyl acetate) matrices",
+      "year": 2013
+    },
+    {
+      "index": 441,
+      "title": "Devolatalization of Vinyl Acetate Vapor form Ethylene-Vinyl Acetate Copolymer Matrix, Part 3",
+      "year": 2013
+    },
+    {
+      "index": 442,
+      "title": "A Study on the Synthesis of Poly(phenylene sulfide), Part 3",
+      "year": 2013
+    },
+    {
+      "index": 443,
+      "title": "Devolatalization of Vinyl Acetate Vapor form Ethylene-Vinyl Acetate Copolymer Matrix, Part 1",
+      "year": 2013
+    },
+    {
+      "index": 444,
+      "title": "Devolatalization of Vinyl Acetate Vapor form Ethylene-Vinyl Acetate Copolymer Matrix, Part 2",
+      "year": 2013
+    },
+    {
+      "index": 445,
+      "title": "A Study on the Synthesis of Poly(phenylene sulfide), Part 2",
+      "year": 2013
+    },
+    {
+      "index": 446,
+      "title": "Determination of the Composition and Mass Transfer Resistance of the Ethylene-Propylene Copolymerization in the Solvent Slurry Reactor",
+      "year": 2013
+    },
+    {
+      "index": 447,
+      "title": "Determination of the composition of the reaction mixtures for the slurry random copolymerization of ethylene and propyllene",
+      "year": 2013
+    },
+    {
+      "index": 448,
+      "title": "Polymerization of propylene",
+      "year": 2013
+    },
+    {
+      "index": 449,
+      "title": "Bridging Human Data, Computational Modeling, and Immersion in XR Healthcare: A Scoping Review. Frontiers in Virtual Reality",
+      "year": 2026
+    },
+    {
+      "index": 450,
+      "title": "Bridging Physical and Virtual Workspaces: Immersive Visualization of Multi-View Machine Vision for Additive Manufacturing Monitoring",
+      "year": 2026
+    },
+    {
+      "index": 451,
+      "title": "Exploring working memory strategies, real-world resilience, and the potential of engaging VR",
+      "year": 2026
+    },
+    {
+      "index": 452,
+      "title": "Extended Reality and Physical Offloading Methods for Astronaut Training in Partial Gravity: A Targeted Scoping Review",
+      "year": 2026
+    },
+    {
+      "index": 453,
+      "title": "Incorporating VR to support students' knowledge of scale, proportion, and quantity in a middle school unit on energy production. Journal of Research in Science Teaching",
+      "year": 2026
+    },
+    {
+      "index": 454,
+      "title": "Large language models and digital twins in neurological disorders: A scoping review of opportunities and challenges",
+      "year": 2026
+    },
+    {
+      "index": 455,
+      "title": "FRAME-AD: A Tabular Foundation Model Framework for Multimodal Alzheimer’s Disease Classification",
+      "year": 2026
+    },
+    {
+      "index": 456,
+      "title": "Human Factors Extended Reality Showcase",
+      "year": 2025
+    },
+    {
+      "index": 457,
+      "title": "Marker-Based Real Time Motion Tracking for Sense of Virtual Body Ownership in Virtual Reality",
+      "year": 2025
+    },
+    {
+      "index": 458,
+      "title": "Sense of Presence and the Illusion of Self-scaling in Virtual Learning Environments",
+      "year": 2025
+    },
+    {
+      "index": 459,
+      "title": "Gender Swap in Virtual Reality for Supporting Inclusion and Implications in the Workplace",
+      "year": 2025
+    },
+    {
+      "index": 460,
+      "title": "Embodiment of Virtual Body and Extremities With Movement Control in Reaching Tasks Using Virtual Reality",
+      "year": 2025
+    },
+    {
+      "index": 461,
+      "title": "Examining the Effects of Embodiment on Working Memory Performance in VR",
+      "year": 2025
+    },
+    {
+      "index": 462,
+      "title": "Learning Scale in Virtual Reality: Experiences and Perception of Immersive Technology at a Public Middle School",
+      "year": 2025
+    },
+    {
+      "index": 463,
+      "title": "Examining the Effects of Gender Transfer in Virtual Reality on Implicit Gender Bias",
+      "year": 2025
+    },
+    {
+      "index": 464,
+      "title": "Scale Worlds: Iterative refinement, evaluation, and theory-usability balance of an immersive virtual learning environment",
+      "year": 2025
+    },
+    {
+      "index": 465,
+      "title": "Shrink or grow the kids? Scale cognition in an immersive virtual environment for K-12 summer camp",
+      "year": 2025
+    },
+    {
+      "index": 466,
+      "title": "Immersive virtual environment for scale cognition and learning: Expert-based evaluation for balancing usability versus cognitive theories",
+      "year": 2025
+    },
+    {
+      "index": 467,
+      "title": "Effect of body-gender transfer in virtual reality on the perception of sexual harassment",
+      "year": 2025
+    },
+    {
+      "index": 468,
+      "title": "Artificial Intelligence in Biofuels: Progress, Trends, and Directions",
+      "year": 2024
+    },
+    {
+      "index": 469,
+      "title": "Drug-based therapeutic strategies for COVID-19-infected patients and their challenges",
+      "year": 2022
+    },
+    {
+      "index": 470,
+      "title": "Materials with Extreme Wetting Properties: Methods and Emerging Industrial Applications",
+      "year": 2019
+    },
+    {
+      "index": 471,
+      "title": "Superhydrophobic Textiles Using Nanoparticles",
+      "year": 2020
+    },
+    {
+      "index": 472,
+      "title": "A Perspective on Bioprocessing for Biofuels, Biobased chemicals and Bioproducts",
+      "year": 2018
+    },
+    {
+      "index": 473,
+      "title": "Advanced Bioprocessing for Alternative fuels, biobased chemicals, and bioproducts",
+      "year": 2018
+    },
+    {
+      "index": 474,
+      "title": "Advances in Feedstock Conversion Technologies for Alternative fuels and bioproducts",
+      "year": 2018
+    },
+    {
+      "index": 475,
+      "title": "Algae as a Source of Microcrystalline Cellulose",
+      "year": 2018
+    },
+    {
+      "index": 476,
+      "title": "Cell Wall Disruption: A Critical Up-stream Process for Biofuel Production",
+      "year": 2018
+    },
+    {
+      "index": 477,
+      "title": "Fatty Acid Profiling of Biofuels Produced from Microalgae, Vegetable Oil, and Waste Vegetable Oil",
+      "year": 2018
+    },
+    {
+      "index": 478,
+      "title": "Multipurpose Use of Microalgae to Treat Municipal Wastewater and Produce Biofuels",
+      "year": 2018
+    },
+    {
+      "index": 479,
+      "title": "Production of Microalgae-Derived High-Protein Biomass to Enhance Food for Animal Feedstock and Human Consumption",
+      "year": 2018
+    },
+    {
+      "index": 480,
+      "title": "Recent Advances in Lipid Extraction for Biodiesel Production",
+      "year": 2018
+    },
+    {
+      "index": 481,
+      "title": "Mesoporous Silica Nanoparticles: Synthesis, Pharmaceutical Applications, Biodistribution, and Biosafety Assessment",
+      "year": 2018
+    },
+    {
+      "index": 482,
+      "title": "Advanced Materials for the Conservation of Stone",
+      "year": 2017
+    },
+    {
+      "index": 483,
+      "title": "Superhydrophobic coatings for the protection of natural stone",
+      "year": 2017
+    },
+    {
+      "index": 484,
+      "title": "Use of solvent mixtures for total lipid extraction of Chlorella vulgaris and gas chromatography FAME analysis",
+      "year": 2017
+    },
+    {
+      "index": 485,
+      "title": "Thin chitosan films containing super-paramagnetic nanoparticles with contrasting capability in magnetic resonance imaging",
+      "year": 2017
+    },
+    {
+      "index": 486,
+      "title": "Industrial Applications for Intelligent Polymers and Coatings",
+      "year": 2017
+    },
+    {
+      "index": 487,
+      "title": "Treatment/Cleaning of Oily Water/Wastewater Using Algae",
+      "year": 2017
+    },
+    {
+      "index": 488,
+      "title": "Smart Stimuli-Responsive Nano-sized Hosts for Drug Delivery",
+      "year": 2017
+    },
+    {
+      "index": 489,
+      "title": "Smart Polymeric-Based Microencapsulation: A Promising Synergic Combination",
+      "year": 2017
+    },
+    {
+      "index": 490,
+      "title": "Additive-free harvesting of oleaginous phagotrophic microalga by oil and air flotation",
+      "year": 2017
+    },
+    {
+      "index": 491,
+      "title": "Phosphinite-functionalized silica and hexagonal mesoporous silica containing palladium nanoparticles in Heck coupling reaction: synthesis, characterization, and catalytic activity",
+      "year": 2017
+    },
+    {
+      "index": 492,
+      "title": "Controlled size synthesis and application of nanosphere MCM-41 as potent adsorber of drugs: A novel approach to new antidote agent for intoxication",
+      "year": 2017
+    },
+    {
+      "index": 493,
+      "title": "Method and System for Reducing Free Fatty Acid Content of a Feedstock",
+      "year": 2017
+    },
+    {
+      "index": 494,
+      "title": "Use of Phagotrophic Microalga Ochromonas danica to Pretreat Waste Cooking Oil for Biodiesel Production",
+      "year": 2017
+    }
+  ],
+  "duplicate_doi_groups": {
+    "10.1017/pds.2025.10350": [
+      0,
+      189
+    ],
+    "10.21125/edulearn.2024": [
+      1,
+      184
+    ],
+    "10.1115/1.4050788": [
+      4,
+      192
+    ],
+    "10.1016/j.mfglet.2022.07.054": [
+      97,
+      265,
+      363
+    ],
+    "10.1016/j.jmapro.2020.05.025": [
+      103,
+      383
+    ],
+    "10.1016/j.jclepro.2013.12.075": [
+      202,
+      393
+    ],
+    "10.1016/j.ijadhadh.2008.10.003": [
+      209,
+      400
+    ],
+    "10.1016/j.mfglet.2025.06.117": [
+      255,
+      354
+    ],
+    "10.1016/j.solmat.2025.113787": [
+      259,
+      357
+    ],
+    "10.1115/msec2022-85323": [
+      268,
+      366
+    ],
+    "10.1115/msec2022-85684": [
+      269,
+      367
+    ],
+    "10.1016/j.jpowsour.2026.239625": [
+      352,
+      353
+    ]
+  },
+  "duplicate_title_year_groups": {
+    "using statistical clustering of trajectory data to support analysis of subject movement in a virtual environment|2025": [
+      0,
+      189
+    ],
+    "a quantitative competitive study of virtual world language learning compared to classical classroom training|2024": [
+      1,
+      184
+    ],
+    "a study of human balance and coordination using a head mounted display|2021": [
+      4,
+      192
+    ],
+    "a study of human balance and coordination using a head mounted display|2020": [
+      5,
+      194
+    ],
+    "distance education experience implementation|2013": [
+      11,
+      212
+    ],
+    "research in affordability measurement and prediction methods to support affordable design of ship systems|2017": [
+      25,
+      37,
+      39
+    ],
+    "tribological performance of additively manufactured mob reinforced alsi7mg alloy composites|2026": [
+      75,
+      350
+    ],
+    "a review of ceramic reinforced nickel based superalloys processing properties and applications|2025": [
+      77,
+      351
+    ],
+    "explainable ai xai driven vibration sensing scheme for surface quality monitoring in a smart surface grinding process|2024": [
+      95,
+      418
+    ],
+    "ultrafast laser ablation of inconel 718 for surface improvement|2022": [
+      97,
+      265,
+      363
+    ],
+    "application of optimized laser surface re melting process on selective laser melted 316l stainless steel inclined parts|2020": [
+      103,
+      383
+    ],
+    "renewable energies reducing cost by expansion of the rgv electric utility companies|2019": [
+      104,
+      329
+    ],
+    "a dedicated lane analysis for supply chain resilience in the us mexico border|2023": [
+      185,
+      320
+    ],
+    "development of a small business data management pull system a case study|2023": [
+      190,
+      318
+    ],
+    "machine learning optimization with hyper parameter tuning approach|2021": [
+      191,
+      321
+    ],
+    "assessing the feasibility of a biofilter in medium to high scale industries|2020": [
+      193,
+      324
+    ],
+    "risk factor simulation and cost estimation of undiagnosed high blood pressure in young adults|2018": [
+      195,
+      330
+    ],
+    "annual expected cost of high blood pressure in young adults|2017": [
+      196,
+      337
+    ],
+    "practitioner advice erldat a web based tool to design and analyze ewma control charts|2017": [
+      198,
+      341
+    ],
+    "erldat2 a web based application for the analysis of the run length distribution of the ewma control chart with estimated parameters|2018": [
+      200,
+      343
+    ],
+    "performance based design of ewma control charts utilizing the run length distribution|2018": [
+      201,
+      344
+    ],
+    "modeling and optimization of the molten salt cleaning process|2019": [
+      202,
+      393
+    ],
+    "the ewma run length distribution analysis tool erldat|2018": [
+      203,
+      347
+    ],
+    "study of processing variables on the electrical resistivity of conductive adhesives|2013": [
+      208,
+      209,
+      210,
+      400,
+      401
+    ],
+    "a machine learning approach to detect pores in laser powder bed fusion additive manufacturing|2025": [
+      255,
+      354
+    ],
+    "additive manufacturing of passive electronic components|2025": [
+      257,
+      355
+    ],
+    "enhancement of diffusivity and plastic deformation in ultrasound assisted cold spray of tungsten a molecular dynamics study|2025": [
+      258,
+      356
+    ],
+    "development of boron enhanced inconel 718 with superior thermomechanical properties for high temperature concentrated solar power applications|2025": [
+      259,
+      357
+    ],
+    "synthesizing and printing of tin oxide nanoparticles using a single ultrafast laser system a feasibility study|2022": [
+      267,
+      365
+    ],
+    "a numerical study on the powder flowability spreadability packing fraction in powder bed additive manufacturing|2023": [
+      268,
+      366
+    ],
+    "ultrafast laser direct writing of conductive patterns on polyimide substrate|2023": [
+      269,
+      367
+    ],
+    "reducing wait times at laredo poe through cbp officer staffing|2020": [
+      326,
+      382
+    ],
+    "feasibility of biofilters to reduce pollutant emissions in diesel engines|2019": [
+      328,
+      419
+    ],
+    "missing energy considerations in industry operational improvements two case studies|2018": [
+      333,
+      421
+    ],
+    "wind energy an assessment of alternative sources for texas municipalities|2018": [
+      335,
+      387
+    ],
+    "hybrid dye quantum dot solar cell with liquid polysulfide electrolyte with enhanced energy conversion|2026": [
+      352,
+      353
+    ]
+  },
+  "unknown_faculty_ids": {
+    "1450690": 2,
+    "1451305": 4,
+    "1450754": 4,
+    "1587302": 3,
+    "1451138": 1,
+    "1451295": 3,
+    "1450988": 5,
+    "1450921": 41,
+    "1451023": 1,
+    "1451041": 6,
+    "1450724": 11,
+    "1223080": 1,
+    "2109038": 2,
+    "1950282": 4,
+    "1450876": 2,
+    "1811321": 1,
+    "1478906": 1,
+    "1478887": 1,
+    "1941904": 1,
+    "1662382": 2,
+    "2200732": 1,
+    "1811184": 1,
+    "1919494": 1,
+    "316431": 1,
+    "1451178": 1,
+    "1451238": 1,
+    "2124034": 3,
+    "1450820": 1,
+    "1811566": 1,
+    "1811570": 6,
+    "1950257": 8,
+    "2023489": 3,
+    "1811597": 1,
+    "1766079": 1,
+    "509739": 1,
+    "316499": 1,
+    "1451114": 12,
+    "1478888": 1,
+    "2366549": 1,
+    "2526905": 1
+  },
+  "suspicious_faculty_author_entries": [],
+  "placeholder_records": {
+    "education": 0,
+    "previous_positions": 0,
+    "awards": 0
+  }
+}
