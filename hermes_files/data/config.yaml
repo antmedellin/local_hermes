@@ -25,7 +25,7 @@ terminal:
 web:
   backend: firecrawl
 browser:
-  backend: browser-use
+  backend: "off"
   inactivity_timeout: 120
   extension_control:
     enabled: false
@@ -103,6 +103,8 @@ kanban:
   dispatch_interval_seconds: 60
   heartbeat_timeout: 300
   max_retries: 5
+  default_assignee: default
+  orchestrator_profile: default
 code_execution:
   timeout: 300
   max_tool_calls: 50

@@ -72,7 +72,7 @@ python -m pip install --upgrade pip setuptools wheel
 python -m pip install arxiv semanticscholar requests habanero numpy scipy matplotlib SciencePlots
 ```
 
-Use the venv interpreter when running project scripts:
+Use the venv interpreter when running project scripts. `.venv/bin/python` **is** the interpreter — invoke it directly, never prefix it with another `python3`/`python` (`python3 .venv/bin/python script.py` runs the venv's *binary* as a text script and crashes with `SyntaxError: source code cannot contain null bytes`):
 
 ```bash
 .venv/bin/python scripts/document_rag_search.py "<query>"
@@ -80,6 +80,38 @@ Use the venv interpreter when running project scripts:
 .venv/bin/python scripts/normalize_paper_filename.py --first-author "<Author>" --year 2026 --title "<Title>" paper.pdf
 .venv/bin/python scripts/smoke_test.py
 ```
+
+### Script signatures (do not guess flags — these are exhaustive)
+
+Two of the four scripts only operate on **one PDF per invocation**; loop over them instead of searching for a `--dir`/batch flag that does not exist:
+
+| Script | Args | Batch? |
+|---|---|---|
+| `normalize_paper_filename.py` | positional `pdf_path`, required `--first-author`, `--year`, `--title`, optional `--dry-run` | No — one call per PDF |
+| `document_ingest.py` | positional `<path/to/paper.pdf>` only | No — one call per PDF |
+| `document_rescan.py` | positional `paths` (one or more files or directory roots) | Yes — pass a whole directory |
+| `document_rag_search.py` | positional free-text `query`, optional `--mode`, `--json` | N/A (read-only query) |
+| `build_manifest_from_arxiv_ids.py` | positional `<pdf_dir>` — prints manifest rows to stdout | Yes — one pass over a directory |
+
+`normalize_paper_filename.py` needs the first author, year, and title as literal strings — it cannot infer them from the PDF, and **you must never fabricate them** (no `"Unknown"` author, no year guessed from an arXiv-ID prefix, no filename-as-title). If the source PDFs are already named by bare arXiv ID (e.g. `2306.14048v3.pdf`, which is what raw downloads/leaderboard exports look like), resolve the real metadata with `build_manifest_from_arxiv_ids.py` — it queries the arXiv API via the `arxiv` package (already in Project Environment) and skips (reporting on stderr, never guessing) any file it can't resolve:
+
+```bash
+.venv/bin/python scripts/build_manifest_from_arxiv_ids.py /opt/ai_files/kv_paper > documents/manifests/manifest.tsv
+```
+
+For sources that aren't on arXiv, build the manifest by hand from the Discovery phase's recorded title/authors/year — still never a placeholder. Once you have a manifest (from either path), drive the rename + ingest loop from it, e.g.:
+
+```bash
+# manifest.tsv: one line per paper — "path<TAB>first_author<TAB>year<TAB>title"
+while IFS=$'\t' read -r path author year title; do
+  renamed=$(.venv/bin/python scripts/normalize_paper_filename.py --first-author "$author" --year "$year" --title "$title" "$path")
+  mv "$path" "$renamed"
+  .venv/bin/python scripts/document_ingest.py "$renamed"
+done < manifest.tsv
+.venv/bin/python scripts/document_rescan.py documents/renamed/
+```
+
+Never use `python3 -c "..."` one-liners or the `execute_code` tool for corpus/manifest logic — both are blocked by this install's guardrails for autonomous kanban workers and the call will just fail. Any one-off logic (parsing filenames, building a manifest, checking installed packages) goes in a real file under `scripts/`, run via `.venv/bin/python scripts/<name>.py` through `terminal`, same as every other script here.
 
 Install LaTeX dependencies on the host system before compiling the template. The practical minimum is `latexmk`, `texlive-latex-recommended`, `texlive-latex-extra`, `texlive-fonts-recommended`, `texlive-science`, `ghostscript`, and `bibtex`. If those packages are not available individually, install a full TeX Live distribution.
 
@@ -111,6 +143,12 @@ Use any legitimate source that improves coverage:
 - publisher pages
 - university repositories
 - author pages
+
+### Dynamic Pages (JS-rendered dashboards, leaderboards)
+
+`web_extract` only sees the raw/pre-hydration HTML, so JS-heavy pages (Gradio/Streamlit Spaces, React dashboards) can come back as an empty shell (e.g. a "Refreshing" placeholder). For those, use `browser_navigate` to the URL followed by `browser_snapshot` instead of retrying `web_extract`. Do not use `browser_exec`/Browser Use mode for this — it drives the page through model-written Python and has no API for reading the accessibility tree, so it hallucinates non-existent helper modules. Set `browser.backend: "off"` in config.yaml so the model gets the discrete `browser_navigate`/`browser_snapshot`/`browser_click` tools directly.
+
+Per-item detail panels (e.g. a leaderboard where clicking a method/model card reveals its paper link) require one `browser_click` + `browser_snapshot` per item, not a single snapshot of the whole page. Gradio panels also lag by one render cycle: the snapshot returned immediately after a click can still show the *previous* selection's details. If a panel looks stale, call `browser_snapshot` again (or click the next item and read the previous item's result from that response) before recording the link.
 
 ### Access Fallbacks
 
@@ -176,25 +214,42 @@ Default survey structure:
 
 Use the kanban board as the primary task controller.
 
+`kanban_*` tools (e.g. `kanban_create`) are opt-in: they only exist in the schema for dispatcher-spawned workers, or for a profile that explicitly lists `kanban` in its toolsets (`all`/`*` does not enable it). If `kanban_create` calls have no visible effect, run `hermes tools enable kanban` and `/reset` before continuing.
+
+### Step 0: confirm the assignee before creating anything
+
+The dispatcher **silently fails on unknown assignee names** — a task assigned to a profile that doesn't exist just sits in `ready` forever with nothing polling it ("This task has been ready for Nm but nothing has claimed it"). Never invent an assignee name (e.g. a plausible-sounding role like `development-lead`).
+
+1. Run `hermes profile list` (or check `kanban_list` for assignees already in use) before creating the first card.
+2. On a single-profile install (no extra profiles beyond `default`), assign **every** card to `default`. Do not invent per-role profile names unless those profiles actually exist on this machine.
+3. If dedicated worker profiles genuinely exist, only use exactly those names.
+
+### Task Workspace
+
+On Docker installs, `write_file`/`patch` are hard-restricted to `HERMES_WRITE_SAFE_ROOT`. A kanban task's default `scratch` workspace lives under `$HERMES_HOME/kanban/workspaces/<id>/` — if that path is outside the write-safe root, every write in the task silently fails, the worker can't create the Canonical Project Layout at all, and it degrades to dumping one flat file wherever it *can* write. Before creating the parent card, confirm the workspace will actually be writable:
+
+- Pin an explicit, persistent workspace with `--workspace dir:<absolute path under a writable root>` (e.g. `dir:/opt/ai_files/<project-slug>`) instead of relying on the default `scratch` workspace. This also means the project survives task completion instead of being deleted.
+- If `write_file` calls still return `Write denied: ... is outside HERMES_WRITE_SAFE_ROOT`, that's an infrastructure problem, not a task problem — flag it back to the user rather than routing around it by writing loose files outside the project folder.
+
 ### Board Setup
 
-Create:
+Keep it flat and concrete — this matters more on smaller/local models, which lose track of abstract multi-step task bodies. Each card should describe **one action**, not a numbered list of phases:
 
-- one parent card for the survey
-- parent cards for corpus building, synthesis, drafting, bibliography, and verification
-- child cards for search, download, rename, ingest, rescan, outline, related work, figures, and final review
+1. Create one parent card for the survey (title = the survey topic, assignee = confirmed per Step 0, `--workspace dir:<path>` per Task Workspace above, `--skill research/literature_review` so the worker gets this skill's full text injected instead of having to rediscover it mid-task via trial-and-error `skill_view` calls on guessed names like `research` or `mlops/research` — the skill name is always the full `<category>/<name>` path shown by `skills_list`, never the category alone).
+2. Create one child card per phase, each linked to the parent with `kanban_link`, each with a single concrete deliverable, each also carrying `--skill research/literature_review`:
+   - "Set up project venv and folder structure at `<project_dir>`"
+   - "Discover and record candidate papers for `<topic>`"
+   - "Download and rename PDFs into `documents/downloads/`"
+   - "Ingest PDFs into LightRAG and rescan until fully processed"
+   - "Query LightRAG and draft the outline"
+   - "Draft manuscript sections from LightRAG output"
+   - "Verify citations and compile the bibliography"
+   - "Final technical review and smoke test"
+3. A card's own worker **can** call `kanban_create` to spawn further child/follow-up cards mid-task (e.g. the ingest card discovers a corrupt PDF and spawns a "re-download paper X" card) — this is expected and encouraged. What must never happen is cramming multiple phases' worth of steps into a single card's body instead of creating separate cards.
 
 ### Assignees
 
-Create role-based assignees at the start of the project:
-
-- Corpus Curator
-- LightRAG Ingestor
-- Survey Writer
-- Citation Verifier
-- Template Maintainer
-- Build Checker
-- Reviewer Response Owner
+On a single-profile install, every card's assignee is the confirmed profile from Step 0 (usually `default`) — do not fabricate role names. Only introduce named assignees (e.g. `Corpus Curator`, `LightRAG Ingestor`, `Survey Writer`) if the user has actually created those profiles (`hermes profile list` shows them); otherwise route all cards to the same confirmed profile.
 
 ### Statuses
 
@@ -208,12 +263,14 @@ Use these statuses only:
 
 ### Task Rules
 
-- Assign each card to exactly one role.
-- Split cross-functional work into child cards.
+- Assign each card to exactly one confirmed profile (Step 0).
+- One action per card — split multi-step descriptions into separate child cards instead of listing steps in the body.
+- If a claimed task's own body already contains multiple numbered phases (e.g. a legacy task created before this card was split up), the first action is to `kanban_create` one child per phase and `kanban_link` them to the current task, then work only the first child — never execute every phase inline in one run just because they're listed in one body.
 - When a card is blocked, create a blocker card with the dependency and owner.
-- When a card finishes and creates more work, create follow-up cards immediately.
+- When a card finishes and creates more work, create follow-up cards immediately (see Board Setup #3).
 - When a branch is unproductive, create a decision card for rerun, expansion, reframing, or stop.
 - Use specialized sub-agents only for a child card that is isolated enough to hand off cleanly.
+
 
 ## Survey Draft Smoke Test
 

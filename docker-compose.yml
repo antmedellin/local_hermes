@@ -40,7 +40,7 @@ x-init-ollama: &init-ollama
   entrypoint: /bin/sh
   command:
     - "-c"
-    - "sleep 10; ollama pull nomic-embed-text; ollama pull qwen3.5:4b; ollama pull llama3.2:3b; ollama pull gemma4:12b; ollama pull qwen3-embedding:8b;"
+    - "sleep 10; ollama pull nomic-embed-text; ollama pull qwen3.5:9b; ollama pull llama3.2:3b; ollama pull gemma4:12b; ollama pull qwen3-embedding:8b;"
 
 services:
   ollama:

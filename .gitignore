@@ -16,3 +16,11 @@ hermes_files/data/skills/.usage.json
 # Allow memories tree
 !hermes_files/data/memories/
 !hermes_files/data/memories/**
+
+# Allow cron/watchdog scripts tree
+!hermes_files/data/scripts/
+!hermes_files/data/scripts/**
+
+# Allow cron job definitions (not execution history/locks/heartbeats)
+!hermes_files/data/cron/
+!hermes_files/data/cron/jobs.json
