@@ -2,18 +2,1523 @@
   "metadata": {
     "description": "Diagnosis of MAIE authorship names associated with current Digital Measures faculty IDs.",
     "faculty_count": 14,
-    "maie_faculty_id_author_entries": 0,
-    "non_exact_entries": 0
+    "publication_count": 455,
+    "maie_faculty_id_author_entries": 490,
+    "non_exact_entries": 167
   },
   "category_counts": {
-    "EXACT": 0,
-    "SAME_FIRST_LAST": 0,
-    "SAME_LAST_FIRST_INITIAL": 0,
+    "EXACT": 323,
+    "SAME_FIRST_LAST": 68,
+    "SAME_LAST_FIRST_INITIAL": 42,
     "INITIALS_VARIANT": 0,
     "HIGH_SIMILARITY": 0,
-    "MODERATE_SIMILARITY": 0,
-    "POSSIBLE_MISMATCH": 0,
+    "MODERATE_SIMILARITY": 4,
+    "POSSIBLE_MISMATCH": 53,
     "UNKNOWN": 0
   },
-  "diagnosis": []
+  "diagnosis": [
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "A. Sherif El Gizawy",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“A Modular Approach for Environmentally Conscious Machining Process”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Bahadir Inozu",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Lean Six Sigma in Shipbuilding (Year 2)\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Bahadir Inozu",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“3M Processors for Dual Use”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Benito A Gonzalez",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Benefits of Implementing Automated Costing in a Small Machine Shop: A Case Study”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Carol Lawrence",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "\"A Fuzzy Decision Model for Environmental Risk Assessment\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Carol Lawrence",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "\"Legacy Costing, Fuzzy Systems Theory, and Environmentally Conscious Manufacturing\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Daniel Gracia De Luna",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "A Study of Human Balance and Coordination Using a Head Mounted Display",
+      "publication_year": 2021,
+      "doi": "10.1115/1.4050788"
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "David Woerner",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Developing an Artificial Neural Network for Modeling Heavy Vehicle Rollover”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "David Woerner",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“An Artificial Neural Network Simulation of Tank Trucks”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "David Woerner",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“A Fuzzy Model of Legal Reasoning for Concurrent Engineering”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "David Woerner",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "\"Teaching Written Communication Skills in a Capstone Engineering Design Course\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "David Woernet",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“A Comparative Study of Uncertainty Methods for Legal Reasoning”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Don Yates",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Estimating Technology Insertion Risk using Fuzzy Logic”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Douglas Hancock",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "\"Use of a CAD System to Develop Product Market Information\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Douglas Maxwell",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Design Synthesis in a Virtual Environment”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Edward Williams",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Initial Test Plan for LCAC Rudder-Actuator System”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "H. Yim",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "\"A Concurrent Engineering System for Legal Reasoning about Defective Design\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "H. Yim",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "\"An Adaptive Fuzzy Logic Controller for Poly-Tree Structured Workcell Layouts\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Ho Yim",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "\"Computer Aided Design using Parallel Computation\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Ho Yim",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "\"General Layout Design Synthesis Using Fuzzy Logic\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Ho Yim",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "\"Motion Planning Using Fuzzy Logic Control with Minimum Sensors\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "John Hurd",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Research in Affordability Measurement and Prediction Methods to Support Affordable Design of Ship Systems”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Joshua Summers",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Features as an Abstraction for Designer Convenience in the Design of Ships”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Joshua Summers",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Features as an Abstraction for Designer Convenience in the Design of Complex Products”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Joshua Summers",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Development of a Feature Based Design System using Virtual Reality”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Joshua Summers",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“A Feasibility Study: The Heating and Drying of Coal Particles using Fluidized Bed Technology”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Kevin Sullivan",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Research in Affordability Measurement and Prediction Methods to Support Affordable Design of Ship Systems”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Kurt Satter",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Competitive Usability Analysis of Immersive Virtual Environments in Engineering Design Review”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Kurt Satter",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Finding the Value of Immersive Virtual Environments using Competitive Usability Analysis”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Kurt Satter",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Usability Analysis for Virtual Environment Interfaces in Ship Design”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Muralidhar Lanka",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Approximate Reasoning for Location of Underground Utilities”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Ravi Vinnekota",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Development of a Voronoi Tree for Cavities by Hodograph-Hodograph Intersection”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Samir Armaly",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "\"Using Bayesian Belief Networks for Automated Legal Reasoning about Defective Design\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Shashikant Suthar",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Design of Jigs and Fixtures to Improve Shipyard Productivity”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Shensheng Wang",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“System Design for Heating Coal”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K.",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "Mechanics of Chip Formation during the Machining of Hardened Steel",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "B. J. Ulrich",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "Force Control for Robotic Rigid Disk Grinding",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "B. J. Ulrich",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "Force Modelling of the Robotic Disk Grinding Process",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Edmond Ilia",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "A New Approach to Characterize the Machinability of Powder Metals",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "H. Dai",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "Modelling of the PUMA Robot for Control of Grinding Applications",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "J. Hua",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "Interrupted Cutting FEM Model for Face Milling of Titanium Alloys",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Jafar Ghorbani",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "“Application of Optimized Laser Surface Re-melting Process on Selective Laser Melted 316L Stainless Steel Inclined Parts”, Elsevier: SME Journal of Manufacturing Processes, 2018 (Submitted),",
+      "publication_year": 2019,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "K A. Calzada",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "Failure Mechanisms Encountered in Micro-Milling of Aligned Carbon Fiber Reinforced Polymers",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "M. Hosseini",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "An Integrated Approach to Sustainable Bioenergy/Biofuels Resources and Supply Chain Management: Modeling, Techno-economic Analysis, Challenges and Future Outlook",
+      "publication_year": 2018,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Michael E. Finn",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "Machining of Advanced and Engineered Materials",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Navneet Khanna",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "Optimization and analysis of surface roughness for INVAR-36 in end milling operations",
+      "publication_year": 2018,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "R. Pavel",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "In-Process Measurement and Monitoring for Intelligent Optimization and Control of Grinding Processes",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "R. Pavel",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "Sensor Assisted Monitoring of Surface Grinding Process",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "R. Pavel",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "Thermo-mechanical Modeling of Metal Cutting Using Marc Mentat",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "T. Ozel",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "Finite Element Simulation of High Speed Machining Ti-6Al-4V Alloy Using Modified Material Models",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "X. P. Zhang",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "A New Microstructure-Sensitive Flow Stress Model for the High Speed Machining of Titanium Alloy Ti-6Al-4V",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Xi Zhang",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "Predicting Ti-6AL-4V Alloy High-speed Dry Cutting Process using Finite Element Method Incorporating the Chip-Tool-Work Friction Coefficients by Experimental Forces",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Claudia Lopez",
+      "category": "POSSIBLE_MISMATCH",
+      "publication_title": "INDIRECT ANALYSIS OF INJECTION MOLDING USING FLOW SIMULATION",
+      "publication_year": 2019,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "CDR Alley C. Butler, USNR",
+      "category": "MODERATE_SIMILARITY",
+      "publication_title": "\"An Analysis of Research Programs in Intelligent Software Agents\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "CDR Alley C. Butler, USNR",
+      "category": "MODERATE_SIMILARITY",
+      "publication_title": "\"An Examination of Collaborative Workspace Technology for C4I\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "CDR Alley C. Butler, USNR",
+      "category": "MODERATE_SIMILARITY",
+      "publication_title": "\"A Survey of Technology in Computer Integrated Manufacturing of Piping Systems in Shipbuilding\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1962780",
+      "current_faculty_name": "Edna I Orozco-Leonhardt",
+      "historical_author_name": "Edna I Orozco Lopez",
+      "category": "MODERATE_SIMILARITY",
+      "publication_title": "At-Risk Freshmen Student Retention After STEM Intervention",
+      "publication_year": 2024,
+      "doi": "10.5281/zenodo.10876017"
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "A. C. Butler",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "\"A Description and User's Guide for the Purdue Kamyr Digester Model\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "A. K. Srivastava",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Finish Turning of Ti-6Al-4V with the Atomization-Based Cutting Fluid (ACF) Spray System",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "A. K. Srivastava",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Tornitura del Titanio",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "A. K. Srivastava",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Hard Turning with Variable Micro-Geometry PcBN Tools",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "A. K. Srivastava",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Microstructure-Mechanics Interactions in Modeling Chip Segmentation During Titanium Machining",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "A. K. Srivastava",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "An Investigation of Grinding Wheel Loading",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "A. K. Srivastava",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Surface Finish in Robotic Disk Grinding",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "A. K. Srivastava",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Workpiece Burn and Surface Finish during Controlled Force Robotic Disk Grinding Process",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "A. K. Srivastava",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "X Ray Fluorescence Technique for the Study of Grinding Wheel Performance",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "A. K. Srivastava",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Evaluation of Grinding Wheel Loading using X Ray Fluorescence Technique",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451022",
+      "current_faculty_name": "Jianzhi Li",
+      "historical_author_name": "James Li",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Application of optimized laser surface re-melting process on selective laser melted 316L stainless steel inclined parts",
+      "publication_year": 2020,
+      "doi": "10.1016/j.jmapro.2020.05.025"
+    },
+    {
+      "faculty_id": "1451022",
+      "current_faculty_name": "Jianzhi Li",
+      "historical_author_name": "James Li",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "A Framework of Dynamic Data Driven Digital Twin for Complex Engineering Products: the Example of Aircraft Engine Health Management",
+      "publication_year": 2021,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "“Explainable AI (XAI)-Driven Vibration Sensing Scheme for Surface Quality Monitoring in a Smart Surface Grinding Process",
+      "publication_year": 2024,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Feasibility of Biofilters to Reduce Pollutant Emissions in Diesel Engines",
+      "publication_year": 2019,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Missing Energy Considerations in Industry Operational Improvements: Two Case Studies",
+      "publication_year": 2018,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Empirical study on the influence of targeting function of Google Adwords on target evaluation",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Gas-Assisted Powder Injection Molding: A Study About Residual Wall Thickness",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Gas-Assisted Powder Injection Molding: Mold Cavity Effects on Residual Wall Thickness",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Gas-Assisted Powder Injection Molding of Polymer and Powder Metal Feedstock in a Stereolithography Mold",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Dextran/Plga DoubleLayered Microspheres for Sustained Release of Doxorubicin",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Improvement of Efficiency in IT -conjugated Polymer Based on Phenothiazine by Introduction of Oxadiazole Pendant as a Side Chain",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "MlcroneedleMedicated Transdermal Delivery of Chondroitin Sulfate",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Enhancement of surface replication by micro-gasinjection molding",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Gas-Assisted Powder Injection Molding: A Study On The Effect Of Processing Variables On Gas Penetration",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "A fully functional, packaged active microscaffold system with fluid perfusion and electrical stimulation/recording functionalities for 3-D neuronal culture studies",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Stereolithography Mold Life Extension using Gas-Assisted Injection",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Stereolithography Mold Life Extension Using GasAssisted Injection",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Design of a new aRC IV detonator",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Design of a new QRC IV detonator",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "leaking Study of Betadyne Connector",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Redesign of aRC III Detonator",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Redesign of QRC III Detonator Body",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Redesign of QRC III Detonator",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Diffusion coefficient and solubility of vinyl acetate molecules in poly(vinyl acetate) matrices",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Devolatalization of Vinyl Acetate Vapor form Ethylene-Vinyl Acetate Copolymer Matrix, Part 3",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "A Study on the Synthesis of Poly(phenylene sulfide), Part 3",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Devolatalization of Vinyl Acetate Vapor form Ethylene-Vinyl Acetate Copolymer Matrix, Part 1",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Devolatalization of Vinyl Acetate Vapor form Ethylene-Vinyl Acetate Copolymer Matrix, Part 2",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "A Study on the Synthesis of Poly(phenylene sulfide), Part 2",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Determination of the Composition and Mass Transfer Resistance of the Ethylene-Propylene Copolymerization in the Solvent Slurry Reactor",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Determination of the composition of the reaction mixtures for the slurry random copolymerization of ethylene and propyllene",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1451016",
+      "current_faculty_name": "Kyehwan Lee",
+      "historical_author_name": "Kye-Hwan Lee",
+      "category": "SAME_LAST_FIRST_INITIAL",
+      "publication_title": "Polymerization of propylene",
+      "publication_year": 2013,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "A Study of Human Balance and Coordination using a Head Mounted Display",
+      "publication_year": 2020,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Final Report for An Expert Systems Approach to Feature Recognition for Maritime ROV Operation with Virtual Reality",
+      "publication_year": 2019,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Final Report for Evaluating the Effectiveness of Immersive Interfaces for Combat Training”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Integrated Actuator – Rudder System for LCAC”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Navy-Industry Networks of Virtual Environments for Shipbuilding”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Virtual Reality Enhancements for New Orleans Area Universities”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Thermal Modeling, A Shipbuilding, Cost, and Reliability Perspective”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Improving Shipyard Assembly”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Integrated Structural Building Blocks (ISBB), An Initial Investigation”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Return on Investment (ROI) Analysis for the Implementation of a STEP AP 227 Format for Interoperable HVAC Design”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Maintenance Cost, Reliability, and Financial Return Analysis for LCAC Rudder Actuator and Rudder Systems”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Marine Composites Affordability – A Knowledgebased Approach”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Collaborative Virtual Design, Manufacturing, and Training”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Reliability Analysis for Elements of a Marine Diesel Propulsion System”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Assessing Maintenance Cost for Design or Re-Design of Complex Machinery”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "\"Vacuum and Thermal Techniques for the Manufacture of Coal Logs\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "\"A Strategy for Machining Fluid Waste Minimization for Environmentally Conscious Manufacturing\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "\"Teaching Innovation, Creativity, and Design Conceptualization - Experiences from the Development of a New Course\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "\"A Discussion of Accounting Theory from an Engineering Design and Manufacturing Perspective\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley C Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "\"Computer Aided Design/Engineering of Bearing Systems Using the Dempster-Shafer Theory\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley C Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "\"Fuzzy Computer-Aided Design of Process Manufacturing Facilities\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley C Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "\"Modeling Uncertainty in Preliminary Design: a Short Review\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley C Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "\"Control of a Kamyr Wood Digester with the Purdue Digester Model\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley C Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "\"Reliability Analysis of Complex Systems Using Symbolic Logic\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley C. Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "A Study of Human Balance and Coordination Using a Head Mounted Display",
+      "publication_year": 2021,
+      "doi": "10.1115/1.4050788"
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley C. Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“A Potential Field Method for Path Planning into Cavities Defined by B-Splines”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley C. Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Robot Path Planning into Cavities Defined by Splines”",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley C. Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "\"An Evaluation of Alternate Technologies for the Manufacture of Coal Logs\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley C. Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "\"Instructor's Guide for a Proprietary Short Course on Manufacturing Cost, Budgets, and Investment,\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1450741",
+      "current_faculty_name": "Alley Cowan Butler",
+      "historical_author_name": "Alley C. Butler",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "\"Manufacturing Cost, Budgets, and Investments\"",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Modeling and optimization of process parameters in face milling of Ti6Al4V alloy using Taguchi and grey relational analysis",
+      "publication_year": 2021,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Grinding investigations of Ti-6Al-4V parts produced using direct metal laser sintering technology",
+      "publication_year": 2017,
+      "doi": "10.1504/ijmms.2015.073566"
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Rapid Finite Element Prediction on Machining Process",
+      "publication_year": 2017,
+      "doi": "10.1115/msec2013-1012"
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Magnetic Abrasive Finishing of Cutting Tools for Machining of Titanium Alloys",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Rotary Ultrasonic Machining of CFRP Composites: A Study on Power Consumption",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Modeling and interpretation of fiber orientation-based failure mechanisms in machining of carbon fiber reinforced polymer composites",
+      "publication_year": 2017,
+      "doi": "10.1016/j.jmapro.2011.09.005"
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "An Experimental Investigation Into the High Speed Turning of Ti-6Al-4V Titanium Alloy",
+      "publication_year": 2017,
+      "doi": "10.1115/msec2010-34205"
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Application of Knowledge Based System for Grinding Process Optimization",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "An experimental investigation of temperatures during conventional and CBN grinding",
+      "publication_year": 2017,
+      "doi": "10.1007/s00170-006-0771-4"
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "An Experimental Investigation of Temperatures during Conventional and CBN Grinding",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "An Experimental Investigation on the Machinability of Powder Metal Steels",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Tool/Work Material/Cutting Fluid Interaction while Tapping into AA-319 and AA-A356 T6 Lost Foam Aluminum Castings",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Analysis of rigid-disk wear during robotic grinding",
+      "publication_year": 2017,
+      "doi": "10.1016/0890-6955(90)90004-3"
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Investigations into Internal Surface Finishing of Titanium (Grade 2) Pipe with Extended Magnetic Tool",
+      "publication_year": 2019,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "“Investigations into Internal Surface Finishing of Titanium (Grade 2) Pipe with Extended Magnetic Tool",
+      "publication_year": 2018,
+      "doi": "10.1016/j.promfg.2018.07.025"
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Ti-6Al-4V High-Speed Dry Cutting Process Experiment and Finite Element Modeling",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Investigations on The Effects of Multi-Layered Coated Inserts in Machining Ti-6Al-4V Alloy with Experiments and Finite Element Simulations",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "A Study on Electrolytic In-Process Dressing (ELID) Grinding of Sapphire With Acoustic Emission",
+      "publication_year": 2017,
+      "doi": "10.1115/msec2009-84084"
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Machinability Assessment while Drilling into Powder Metals (P/M)",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "An Experimental Investigation on the Machinability of Powder Metal Steel",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Monitoring and Model Generation for Intelligent Optimization and Control of Surface Grinding Processes",
+      "publication_year": 2017,
+      "doi": "10.1115/msec2007-31092"
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Finite Element Modeling of Plunge Hard Turning of Disks Made of AISI 1137 Steel",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Focus: From Production to Profit",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Manufacturing Profitability through Well-Maintained Cutting Tools",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Experimental Investigations into Turning of AerMet 100 Alloy using Uncoated and TiAlN Coated Inserts",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Control Strategy for Multi-Pass Robotic Grinding",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Modelling of Geometric and Thermal Errors in a Five-Axis CNC Machine Tool",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Optimal Planning of an Adaptively Controlled Robotic Disk Grinding Process",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Analysis of the Robotic Disk Grinding Process",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Adaptive Force Control for Robotic Disk Grinding",
+      "publication_year": 2014,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "A simple analysis for evaluating grinding wheel loading",
+      "publication_year": 2017,
+      "doi": "10.1016/0890-6955(88)90029-6"
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "A new technique for evaluating wheel loading",
+      "publication_year": 2017,
+      "doi": "10.1016/0020-7357(85)90055-1"
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "An Experimental Study of Loading Phenomenon in Grinding",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil K. Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Workpiece Burn in Fine Grinding",
+      "publication_year": 2017,
+      "doi": null
+    },
+    {
+      "faculty_id": "1592411",
+      "current_faculty_name": "Anil Kumar Srivastava",
+      "historical_author_name": "Anil Srivastava",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Ultrafast Laser Ablation of Inconel 718 for Surface Improvement",
+      "publication_year": 2022,
+      "doi": "10.1016/j.mfglet.2022.07.054"
+    },
+    {
+      "faculty_id": "1391271",
+      "current_faculty_name": "Douglas H Timmer",
+      "historical_author_name": "DOuglas Timmer",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "A Study of Human Balance and Coordination Using a Head Mounted Display",
+      "publication_year": 2021,
+      "doi": "10.1115/1.4050788"
+    },
+    {
+      "faculty_id": "1391271",
+      "current_faculty_name": "Douglas H Timmer",
+      "historical_author_name": "Douglas Timmer",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "A Study of Human Balance and Coordination using a Head Mounted Display",
+      "publication_year": 2020,
+      "doi": null
+    },
+    {
+      "faculty_id": "1391271",
+      "current_faculty_name": "Douglas H Timmer",
+      "historical_author_name": "Douglas Timmer",
+      "category": "SAME_FIRST_LAST",
+      "publication_title": "Assessing the Feasibility of a Biofilter in Medium-to-High Scale Industries",
+      "publication_year": 2020,
+      "doi": null
+    }
+  ]
 }
