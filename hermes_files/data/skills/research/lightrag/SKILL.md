@@ -46,6 +46,16 @@ For literature research, follow this pipeline:
 6. INGEST INTO LIGHTRAG
 7. POLL PROCESSING
 8. VERIFY RETRIEVAL
+   - Run a LightRAG `/query` that requests a generated answer, not context only.
+   - Make the query document-specific by including the paper's exact title,
+     arXiv ID, or exact ingested filename.
+   - Confirm that the generated answer is about the requested paper and,
+     when references are returned, that they point to the requested document.
+   - If the response is context only, fails, times out, mixes in another
+     document, or does not clearly identify the requested paper, verification
+     has failed. Do NOT mark the task complete.
+   - Successful upload or `processed` status alone does NOT mean the task
+     is complete.
 9. RESEARCH / COMPARE / SYNTHESIZE
 
 Do not stop simply because the first website is inaccessible.
@@ -158,6 +168,30 @@ Try:
 - alternative official institutional pages
 - institutional repositories
 - publicly indexed documents
+
+---
+
+# DOWNLOAD AND VALIDATE PDFS
+
+When downloading a PDF from a direct URL:
+
+1. Follow HTTP redirects. For example, use `curl -L --fail` rather than
+   plain `curl` when retrieving a direct PDF URL.
+2. Save the downloaded file under `/opt/ai_files`.
+3. Before calling the LightRAG ingestion script, verify that the file is
+   actually a PDF and not an HTML redirect, error page, or other content.
+4. If PDF validation fails, do NOT rename the file and retry ingestion.
+   Search for another legitimate full-text source or redownload using
+   a method that follows redirects.
+5. Only pass a validated PDF to `lightrag_ingest.py`.
+
+Example:
+
+    curl -L --fail --retry 3 -o /opt/ai_files/paper.pdf <PDF_URL>
+
+Do not assume that a file ending in `.pdf` is actually a PDF.
+
+---
 
 FACULTY / RESEARCHER DOCUMENT WORKFLOW
 

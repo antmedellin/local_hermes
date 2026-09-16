@@ -323,6 +323,26 @@ def main():
 
         sys.exit(1)
 
+    # Verify that the file is actually a PDF.
+    # This catches HTML redirect/error pages saved with a .pdf extension.
+    try:
+        with open(file_path, "rb") as f:
+            pdf_header = f.read(5)
+    except OSError as error:
+        print(
+            f"Could not read PDF file: {error}",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    if pdf_header != b"%PDF-":
+        print(
+            "Error: file does not contain a valid PDF header "
+            "(expected %PDF-).",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
     file_size = os.path.getsize(file_path)
 
     print(f"Paper: {file_path}")
