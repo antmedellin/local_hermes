@@ -58,6 +58,35 @@ For literature research, follow this pipeline:
      is complete.
 9. RESEARCH / COMPARE / SYNTHESIZE
 
+---
+
+## MANDATORY LIGHTRAG INGESTION PROCEDURE
+
+When importing a paper into LightRAG, follow this procedure exactly:
+
+1. Download the paper and validate that it is a real PDF.
+2. Run `lightrag_ingest.py` on the validated PDF with the terminal timeout set to 600 seconds.
+3. If ingestion succeeds or the script reports that a duplicate resolves to
+   an already processed document, proceed to retrieval verification.
+4. If LightRAG reports a duplicate:
+   - Do NOT rename the PDF.
+   - Do NOT upload the same paper again under another filename.
+   - Do NOT repeatedly retry ingestion.
+   - Use the duplicate information to identify the original document.
+   - Continue only when the original document is confirmed as processed.
+5. Run `lightrag_search.py` with a document-specific query containing the
+   paper's exact arXiv ID, exact title, or exact ingested filename.
+6. The query must request a generated answer, not context only.
+7. Confirm that the returned answer actually describes the requested paper.
+8. If the answer is missing, times out, is unrelated, or refers to another
+   document, retrieval verification has failed.
+9. Do NOT mark the Kanban task complete unless retrieval verification succeeds.
+10. Do NOT claim that a summary was generated unless the LightRAG query
+    actually returned a generated summary.
+
+The task completion decision must be based on the actual LightRAG query
+result, not on an assumption that ingestion succeeded.
+
 Do not stop simply because the first website is inaccessible.
 
 ---
@@ -190,6 +219,14 @@ Example:
     curl -L --fail --retry 3 -o /opt/ai_files/paper.pdf <PDF_URL>
 
 Do not assume that a file ending in `.pdf` is actually a PDF.
+
+When LightRAG reports that a document is a duplicate:
+
+- Do NOT rename the PDF and upload it again.
+- Do NOT repeatedly retry the same document under different filenames.
+- Treat the ingestion as successful only if the duplicate record resolves to an already processed original document.
+- Proceed to retrieval verification using the processed document.
+- If the duplicate chain does not resolve to a processed document, report the ingestion failure and do not mark the task complete.
 
 ---
 
