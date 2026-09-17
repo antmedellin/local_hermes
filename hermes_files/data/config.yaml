@@ -2,6 +2,8 @@ model:
   default: gemma4:12b
   provider: custom
   base_url: http://ollama:11434/v1
+toolsets:
+  - kanban
 database:
   journal_mode: wal
 runtime:
@@ -25,7 +27,7 @@ terminal:
 web:
   backend: firecrawl
 browser:
-  backend: "off"
+  backend: 'off'
   inactivity_timeout: 120
   extension_control:
     enabled: false
@@ -92,8 +94,6 @@ memory:
   memory_char_limit: 2200
   user_char_limit: 1375
   nudge_interval: 10
-toolsets:
-  - kanban
 delegation:
   max_iterations: 250
 skills:
@@ -101,10 +101,11 @@ skills:
   disabled: []
 kanban:
   dispatch_interval_seconds: 60
+  orchestrator_profile: default
+  default_assignee: default
+  auto_decompose: false
   heartbeat_timeout: 300
   max_retries: 5
-  default_assignee: default
-  orchestrator_profile: default
 code_execution:
   timeout: 300
   max_tool_calls: 50

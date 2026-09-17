@@ -530,14 +530,34 @@
     "created_by": null,
     "last_patched_at": null,
     "last_reused_patch_generation": 0,
+<<<<<<< HEAD
     "last_used_at": "2026-09-17T14:16:08.067973+00:00",
     "last_viewed_at": "2026-09-17T14:16:08.060730+00:00",
+=======
+<<<<<<< HEAD
+    "last_used_at": "2026-09-16T14:59:09.312756+00:00",
+    "last_viewed_at": "2026-09-16T14:59:09.302124+00:00",
+=======
+    "last_used_at": "2026-09-16T16:55:27.601136+00:00",
+    "last_viewed_at": "2026-09-16T16:55:27.594481+00:00",
+>>>>>>> 0f512bc991fa1841eb8fcebef58b1984d28e57d8
+>>>>>>> c509c798c10f90bdc06a2b17209809739a6c27ea
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
+<<<<<<< HEAD
     "use_count": 24,
     "view_count": 22
+=======
+<<<<<<< HEAD
+    "use_count": 26,
+    "view_count": 26
+=======
+    "use_count": 23,
+    "view_count": 21
+>>>>>>> 0f512bc991fa1841eb8fcebef58b1984d28e57d8
+>>>>>>> c509c798c10f90bdc06a2b17209809739a6c27ea
   },
   "literature-review": {
     "archived_at": null,
@@ -545,14 +565,14 @@
     "created_by": null,
     "last_patched_at": null,
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-09-14T03:53:37.944435+00:00",
-    "last_viewed_at": "2026-09-14T03:53:37.936564+00:00",
+    "last_used_at": "2026-09-16T17:21:07.791182+00:00",
+    "last_viewed_at": "2026-09-16T14:57:11.218387+00:00",
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 7,
-    "view_count": 3
+    "use_count": 46,
+    "view_count": 17
   },
   "llm-wiki": {
     "archived_at": null,
@@ -824,6 +844,16 @@
     "use_count": 2,
     "view_count": 1
   },
+<<<<<<< HEAD
+  "research/literature_review": {
+    "archived_at": null,
+    "created_at": "2026-09-15T15:42:53.302158+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-09-15T15:42:53.305987+00:00",
+    "last_viewed_at": "2026-09-15T15:42:53.302173+00:00",
+=======
   "research/lightrag": {
     "archived_at": null,
     "created_at": "2026-09-15T17:28:53.400808+00:00",
@@ -832,6 +862,7 @@
     "last_reused_patch_generation": 0,
     "last_used_at": "2026-09-15T17:28:53.403907+00:00",
     "last_viewed_at": "2026-09-15T17:28:53.400819+00:00",
+>>>>>>> 0f512bc991fa1841eb8fcebef58b1984d28e57d8
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
