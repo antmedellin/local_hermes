@@ -4,21 +4,24 @@ import json
 import sys
 import urllib.request
 
-def search(query: str, mode: str = "hybrid") -> str:
+def search(query: str, mode: str = "mix") -> str:
     url = "http://local-hermes-lightrag-1:9621/query"
     payload = json.dumps({
         "query": query,
         "mode": mode,
-        "only_need_context": True
+        "include_references": True,
+        "response_type": "Multiple Paragraphs",
+        "top_k": 10
     }).encode()
     
     req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        with urllib.request.urlopen(req, timeout=120) as resp:
             result = json.loads(resp.read())
             return result.get("response", result.get("data", str(result)))
     except Exception as e:
-        return f"LightRAG query failed: {e}"
+        print(f"LightRAG query failed: {e}", file=sys.stderr)
+        sys.exit(1)
 
 if __name__ == "__main__":
     query = " ".join(sys.argv[1:]) if len(sys.argv) > 1 else ""

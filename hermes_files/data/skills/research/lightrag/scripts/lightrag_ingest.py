@@ -127,6 +127,18 @@ def upload_document(file_path):
             errors="replace",
         )
 
+        if error.code == 409:
+            print(
+                "LightRAG upload conflict: document may already exist.",
+                file=sys.stderr,
+            )
+            print(error_body, file=sys.stderr)
+
+            return {
+                "status": "conflict",
+                "error": error_body,
+            }
+
         print(
             f"LightRAG upload failed: HTTP {error.code}",
             file=sys.stderr,
@@ -187,6 +199,78 @@ def get_status(track_id):
 
         return None
 
+
+def get_document(doc_id):
+    """
+    Find a LightRAG document by its document ID.
+    """
+
+    url = f"{LIGHTRAG_URL}/documents/paginated"
+
+    payload = json.dumps(
+        {
+            "page": 1,
+            "page_size": 200,
+            "sort_field": "created_at",
+            "sort_direction": "desc",
+        }
+    ).encode("utf-8")
+
+    request = urllib.request.Request(
+        url,
+        data=payload,
+        method="POST",
+        headers={
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        },
+    )
+
+    try:
+
+        with urllib.request.urlopen(request, timeout=30) as response:
+
+            response_body = response.read().decode("utf-8")
+            data = json.loads(response_body)
+
+            for document in data.get("documents", []):
+                if document.get("id") == doc_id:
+                    return document
+
+    except (urllib.error.HTTPError, urllib.error.URLError, json.JSONDecodeError):
+
+        return None
+
+    return None
+
+def duplicate_resolves_to_processed(document):
+    """
+    Follow duplicate records until we find the original processed document.
+    """
+
+    current = document
+
+    for _ in range(5):
+
+        if current.get("status") == "processed":
+            return True
+
+        metadata = current.get("metadata") or {}
+
+        if not metadata.get("is_duplicate"):
+            return False
+
+        original_doc_id = metadata.get("original_doc_id")
+
+        if not original_doc_id:
+            return False
+
+        current = get_document(original_doc_id)
+
+        if current is None:
+            return False
+
+    return False
 
 def extract_status(response):
     #extract the processing status from the LightRAG response.
@@ -278,6 +362,35 @@ def wait_for_completion(track_id):
                     file=sys.stderr,
                 )
 
+                documents = response.get("documents", [])
+
+                for document in documents:
+
+                    metadata = document.get("metadata") or {}
+
+                    if metadata.get("is_duplicate"):
+
+                        print(
+                            "LightRAG reports this document is a duplicate."
+                        )
+
+                        if duplicate_resolves_to_processed(document):
+
+                            print(
+                                "The duplicate resolves to an already "
+                                "processed document."
+                            )
+
+                            return True
+
+                        print(
+                            "The duplicate does not resolve to a "
+                            "processed document.",
+                            file=sys.stderr,
+                        )
+
+                        break
+
                 print(
                     json.dumps(
                         response,
@@ -323,6 +436,26 @@ def main():
 
         sys.exit(1)
 
+    # Verify that the file is actually a PDF.
+    # This catches HTML redirect/error pages saved with a .pdf extension.
+    try:
+        with open(file_path, "rb") as f:
+            pdf_header = f.read(5)
+    except OSError as error:
+        print(
+            f"Could not read PDF file: {error}",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    if pdf_header != b"%PDF-":
+        print(
+            "Error: file does not contain a valid PDF header "
+            "(expected %PDF-).",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
     file_size = os.path.getsize(file_path)
 
     print(f"Paper: {file_path}")
@@ -351,6 +484,12 @@ def main():
             indent=2,
         )
     )
+
+    if result.get("status") == "conflict":
+        print()
+        print("LightRAG reports that this document already exists.")
+        print("Proceeding to retrieval verification.")
+        return
 
     track_id = (
         result.get("track_id")

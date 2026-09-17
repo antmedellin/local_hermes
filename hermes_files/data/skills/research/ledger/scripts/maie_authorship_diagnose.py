@@ -12,20 +12,29 @@ BASE_DIR = Path(
     "hermes_files/data/skills/research/ledger"
 )
 
-INPUT_FILE = BASE_DIR / "data" / "maie_faculty_normalized.json"
-OUTPUT_FILE = BASE_DIR / "data" / "maie_authorship_diagnosis.json"
+INPUT_FILE = (
+    BASE_DIR
+    / "data"
+    / "maie_faculty_normalized.json"
+)
+
+OUTPUT_FILE = (
+    BASE_DIR
+    / "data"
+    / "maie_authorship_diagnosis.json"
+)
 
 
 # -------------------------------------------------------
-# Name normalization helpers
+# Name normalization
 # -------------------------------------------------------
 
 def clean_name(name):
     """
-    Make a name easier to compare.
+    Create a simplified version of a name for comparison.
 
-    We intentionally DO NOT completely replace the
-    original author name. This is only for comparison.
+    This DOES NOT modify the original name stored in our
+    research data. It is only used for comparison.
     """
 
     if not name:
@@ -58,28 +67,46 @@ def clean_name(name):
             flags=re.IGNORECASE,
         )
 
-    # Remove text in parentheses.
+    # Remove parenthetical names.
+    #
     # Example:
-    # Jianzhi (James) Li -> Jianzhi Li
-    name = re.sub(r"\([^)]*\)", " ", name)
+    # Jianzhi (James) Li
+    #
+    # becomes:
+    # Jianzhi Li
+    name = re.sub(
+        r"\([^)]*\)",
+        " ",
+        name,
+    )
 
-    # Remove commas and periods.
+    # Remove punctuation that does not matter for
+    # identity comparison.
     name = name.replace(",", " ")
     name = name.replace(".", " ")
 
-    # Normalize hyphens.
+    # Normalize different dash characters.
     name = name.replace("–", "-")
     name = name.replace("—", "-")
 
-    # Collapse whitespace.
-    name = re.sub(r"\s+", " ", name).strip()
+    # Collapse multiple spaces.
+    name = re.sub(
+        r"\s+",
+        " ",
+        name,
+    ).strip()
 
     return name.lower()
 
 
 def name_parts(name):
     """
-    Break a cleaned name into first/middle/last components.
+    Split a name into parts.
+
+    Returns:
+        parts
+        first name
+        last name
     """
 
     cleaned = clean_name(name)
@@ -98,27 +125,9 @@ def name_parts(name):
     return parts, first, last
 
 
-def initials(name):
-    """
-    Return initials from the cleaned name.
-
-    Example:
-        Anil Kumar Srivastava
-        -> aks
-
-    Example:
-        A K Srivastava
-        -> aks
-    """
-
-    parts, _, _ = name_parts(name)
-
-    return "".join(part[0] for part in parts if part)
-
-
 def first_initial(name):
     """
-    Return the first-name initial.
+    Get the first initial of a name.
     """
 
     _, first, _ = name_parts(name)
@@ -129,70 +138,143 @@ def first_initial(name):
     return ""
 
 
+def initials(name):
+    """
+    Get all initials from a name.
+
+    Example:
+
+        Anil Kumar Srivastava
+
+    becomes:
+
+        aks
+    """
+
+    parts, _, _ = name_parts(name)
+
+    return "".join(
+        part[0]
+        for part in parts
+        if part
+    )
+
+
 # -------------------------------------------------------
-# Comparison logic
+# Name comparison
 # -------------------------------------------------------
 
-def classify_name_match(author_name, canonical_name):
+def classify_name_match(
+    historical_name,
+    current_name,
+):
     """
-    Classify how closely an historical author name matches
-    the current MAIE faculty name.
+    Determine how closely a historical author name
+    matches the current faculty name.
 
     IMPORTANT:
-    This function does not modify either name.
+    This function only classifies the names.
+
+    It does NOT modify either name.
     """
 
-    author_clean = clean_name(author_name)
-    canonical_clean = clean_name(canonical_name)
+    historical_clean = clean_name(
+        historical_name
+    )
 
-    if not author_clean or not canonical_clean:
+    current_clean = clean_name(
+        current_name
+    )
+
+    if not historical_clean or not current_clean:
         return "UNKNOWN"
 
-    # Exact normalized match.
-    if author_clean == canonical_clean:
+    # ---------------------------------------------------
+    # Exact normalized match
+    # ---------------------------------------------------
+
+    if historical_clean == current_clean:
         return "EXACT"
 
-    author_parts, author_first, author_last = name_parts(author_name)
-    canon_parts, canon_first, canon_last = name_parts(canonical_name)
+    # ---------------------------------------------------
+    # Compare first and last names
+    # ---------------------------------------------------
 
-    # Same first and last name, possibly different middle names.
+    (
+        historical_parts,
+        historical_first,
+        historical_last,
+    ) = name_parts(historical_name)
+
+    (
+        current_parts,
+        current_first,
+        current_last,
+    ) = name_parts(current_name)
+
+    # Same first + last name.
+    #
+    # This allows middle-name differences.
+    #
+    # Example:
+    # Douglas Timmer
+    # Douglas H Timmer
     if (
-        author_first == canon_first
-        and author_last == canon_last
+        historical_first == current_first
+        and historical_last == current_last
     ):
         return "SAME_FIRST_LAST"
 
-    # Same surname and same first initial.
+    # ---------------------------------------------------
+    # Same last name + first initial
+    # ---------------------------------------------------
+
     if (
-        author_last == canon_last
-        and first_initial(author_name) == first_initial(canonical_name)
+        historical_last == current_last
+        and first_initial(historical_name)
+        == first_initial(current_name)
     ):
         return "SAME_LAST_FIRST_INITIAL"
 
-    # Compare complete initials.
-    author_initials = initials(author_name)
-    canon_initials = initials(canonical_name)
+    # ---------------------------------------------------
+    # Initials comparison
+    # ---------------------------------------------------
+
+    historical_initials = initials(
+        historical_name
+    )
+
+    current_initials = initials(
+        current_name
+    )
 
     if (
-        author_initials
-        and canon_initials
-        and author_last == canon_last
+        historical_initials
+        and current_initials
+        and historical_last == current_last
         and (
-            author_initials == canon_initials
-            or author_initials.startswith(canon_initials[:1])
-            or canon_initials.startswith(author_initials[:1])
+            historical_initials
+            == current_initials
+            or historical_initials.startswith(
+                current_initials[:1]
+            )
+            or current_initials.startswith(
+                historical_initials[:1]
+            )
         )
     ):
         return "INITIALS_VARIANT"
 
-    # Similarity score as a secondary signal.
+    # ---------------------------------------------------
+    # General string similarity
+    # ---------------------------------------------------
+
     similarity = SequenceMatcher(
         None,
-        author_clean,
-        canonical_clean,
+        historical_clean,
+        current_clean,
     ).ratio()
 
-    # Strongly similar strings.
     if similarity >= 0.85:
         return "HIGH_SIMILARITY"
 
@@ -210,38 +292,72 @@ print()
 print("Loading normalized MAIE data...")
 print(f"Input: {INPUT_FILE}")
 
-with INPUT_FILE.open("r", encoding="utf-8") as f:
+with INPUT_FILE.open(
+    "r",
+    encoding="utf-8",
+) as f:
+
     data = json.load(f)
 
 
-faculty_records = data.get("faculty", [])
+faculty_records = data.get(
+    "faculty",
+    []
+)
 
-print(f"Faculty records: {len(faculty_records)}")
+publications = data.get(
+    "publications",
+    [] 
+)
+
+print(
+    f"Faculty records: {len(faculty_records)}"
+)
+
+print(
+    f"Publication records: {len(publications)}"
+)
 
 
 # -------------------------------------------------------
-# Build faculty ID -> canonical name map
+# Build current faculty ID map
 # -------------------------------------------------------
 
 faculty_id_map = {}
 
-for record in faculty_records:
+for faculty in faculty_records:
 
-    faculty = record.get("faculty", {})
+    # IMPORTANT:
+    #
+    # In the normalized file, the faculty record
+    # itself contains user_id.
+    #
+    # It is NOT nested inside faculty["faculty"].
 
-    faculty_id = faculty.get("faculty_id")
+    faculty_id = (
+        faculty.get("user_id")
+        or faculty.get("dm_user_id")
+    )
 
-    name = faculty.get("name")
+    faculty_name = faculty.get(
+        "name"
+    )
 
-    if faculty_id and name:
-        faculty_id_map[str(faculty_id)] = name
+    if faculty_id and faculty_name:
+
+        faculty_id_map[
+            str(faculty_id)
+        ] = faculty_name
 
 
-print(f"Faculty IDs available: {len(faculty_id_map)}")
+print(
+    f"Faculty IDs available: "
+    f"{len(faculty_id_map)}"
+)
 
 
 # -------------------------------------------------------
-# Examine every authorship record
+# Examine authorship records
 # -------------------------------------------------------
 
 diagnosis = []
@@ -257,74 +373,92 @@ category_counts = {
     "UNKNOWN": 0,
 }
 
-
 total_maie_authors = 0
 
 
-for faculty_record in faculty_records:
+# -------------------------------------------------------
+# IMPORTANT:
+#
+# The normalized file has publications at the TOP LEVEL.
+#
+# Therefore we inspect:
+#
+# data["publications"]
+#
+# rather than looking inside each faculty record.
+# -------------------------------------------------------
 
-    faculty = faculty_record.get("faculty", {})
+for publication in publications:
 
-    publications = faculty_record.get(
-        "publications",
+    title = publication.get(
+        "title"
+    )
+
+    year = publication.get(
+        "year"
+    )
+
+    doi = publication.get(
+        "doi"
+    )
+
+    authors = publication.get(
+        "authors",
         []
     )
 
-    for publication in publications:
+    for author in authors:
 
-        title = publication.get("title")
-
-        authors = publication.get(
-            "authors",
-            []
+        faculty_id = author.get(
+            "faculty_id"
         )
 
-        for author in authors:
+        author_name = author.get(
+            "name"
+        )
 
-            faculty_id = author.get("faculty_id")
+        if not faculty_id:
+            continue
 
-            author_name = author.get("name")
+        faculty_id = str(
+            faculty_id
+        )
 
-            # We only diagnose authors that have a
-            # faculty ID corresponding to a current MAIE
-            # faculty member.
-            if not faculty_id:
-                continue
+        # Only analyze authors whose faculty ID
+        # corresponds to one of our current MAIE
+        # faculty members.
+        if faculty_id not in faculty_id_map:
+            continue
 
-            faculty_id = str(faculty_id)
+        total_maie_authors += 1
 
-            if faculty_id not in faculty_id_map:
-                continue
+        current_name = faculty_id_map[
+            faculty_id
+        ]
 
-            total_maie_authors += 1
+        category = classify_name_match(
+            author_name,
+            current_name,
+        )
 
-            canonical_name = faculty_id_map[faculty_id]
+        category_counts[
+            category
+        ] += 1
 
-            category = classify_name_match(
-                author_name,
-                canonical_name,
+        # Save only non-exact matches.
+        if category != "EXACT":
+
+            diagnosis.append(
+                {
+                    "faculty_id": faculty_id,
+                    "current_faculty_name": current_name,
+                    "historical_author_name": author_name,
+                    "category": category,
+                    "publication_title": title,
+                    "publication_year": year,
+                    "doi": doi,
+                }
             )
-
-            category_counts[category] += 1
-
-            # Only save non-exact matches.
-            if category != "EXACT":
-
-                diagnosis.append(
-                    {
-                        "faculty_id": faculty_id,
-                        "current_faculty_name": canonical_name,
-                        "historical_author_name": author_name,
-                        "category": category,
-                        "publication_title": title,
-                        "publication_year": publication.get(
-                            "year"
-                        ),
-                        "doi": publication.get(
-                            "doi"
-                        ),
-                    }
-                )
 
 
 # -------------------------------------------------------
@@ -362,37 +496,38 @@ print("=" * 60)
 print("AUTHORSHIP DIAGNOSIS")
 print("=" * 60)
 
-print(f"MAIE faculty-ID author entries: {total_maie_authors}")
+print(
+    f"MAIE faculty-ID author entries: "
+    f"{total_maie_authors}"
+)
 
 print()
 print("Category counts:")
 
 for category, count in category_counts.items():
-    print(f"  {category:<30} {count}")
+
+    print(
+        f"  {category:<30} {count}"
+    )
 
 
 print()
 print(
-    f"Non-exact entries requiring review: {len(diagnosis)}"
+    "Non-exact entries requiring review: "
+    f"{len(diagnosis)}"
 )
 
 
 # -------------------------------------------------------
-# Print suspicious / major mismatches
+# Possible mismatches
 # -------------------------------------------------------
 
 major = [
     item
     for item in diagnosis
-    if item["category"] == "POSSIBLE_MISMATCH"
+    if item["category"]
+    == "POSSIBLE_MISMATCH"
 ]
-
-moderate = [
-    item
-    for item in diagnosis
-    if item["category"] == "MODERATE_SIMILARITY"
-]
-
 
 print()
 print("=" * 60)
@@ -400,37 +535,57 @@ print("POSSIBLE MISMATCHES")
 print("=" * 60)
 
 if not major:
+
     print("None found.")
+
 else:
 
     for item in major[:50]:
 
         print()
         print(
-            f"Faculty ID: {item['faculty_id']}"
+            f"Faculty ID: "
+            f"{item['faculty_id']}"
         )
 
         print(
-            f"Current name:    {item['current_faculty_name']}"
+            f"Current name:    "
+            f"{item['current_faculty_name']}"
         )
 
         print(
-            f"Historical name: {item['historical_author_name']}"
+            f"Historical name: "
+            f"{item['historical_author_name']}"
         )
 
         print(
-            f"Publication:     {item['publication_title']}"
+            f"Publication:     "
+            f"{item['publication_title']}"
         )
 
         print(
-            f"Year:            {item['publication_year']}"
+            f"Year:            "
+            f"{item['publication_year']}"
         )
 
         if item["doi"]:
+
             print(
-                f"DOI:             {item['doi']}"
+                f"DOI:             "
+                f"{item['doi']}"
             )
 
+
+# -------------------------------------------------------
+# Moderate similarity
+# -------------------------------------------------------
+
+moderate = [
+    item
+    for item in diagnosis
+    if item["category"]
+    == "MODERATE_SIMILARITY"
+]
 
 print()
 print("=" * 60)
@@ -438,26 +593,32 @@ print("MODERATE SIMILARITY")
 print("=" * 60)
 
 if not moderate:
+
     print("None found.")
+
 else:
 
     for item in moderate[:30]:
 
         print()
         print(
-            f"Faculty ID: {item['faculty_id']}"
+            f"Faculty ID: "
+            f"{item['faculty_id']}"
         )
 
         print(
-            f"Current name:    {item['current_faculty_name']}"
+            f"Current name:    "
+            f"{item['current_faculty_name']}"
         )
 
         print(
-            f"Historical name: {item['historical_author_name']}"
+            f"Historical name: "
+            f"{item['historical_author_name']}"
         )
 
         print(
-            f"Publication:     {item['publication_title']}"
+            f"Publication:     "
+            f"{item['publication_title']}"
         )
 
 
@@ -468,15 +629,25 @@ else:
 output = {
     "metadata": {
         "description": (
-            "Diagnosis of MAIE authorship names associated "
-            "with current Digital Measures faculty IDs."
+            "Diagnosis of MAIE authorship names "
+            "associated with current Digital "
+            "Measures faculty IDs."
         ),
-        "faculty_count": len(faculty_records),
-        "maie_faculty_id_author_entries": total_maie_authors,
-        "non_exact_entries": len(diagnosis),
+        "faculty_count": len(
+            faculty_records
+        ),
+        "publication_count": len(
+            publications
+        ),
+        "maie_faculty_id_author_entries":
+            total_maie_authors,
+        "non_exact_entries":
+            len(diagnosis),
     },
-    "category_counts": category_counts,
-    "diagnosis": diagnosis,
+    "category_counts":
+        category_counts,
+    "diagnosis":
+        diagnosis,
 }
 
 
@@ -498,8 +669,13 @@ print("=" * 60)
 print("OUTPUT")
 print("=" * 60)
 
-print(f"Diagnosis written to:")
-print(OUTPUT_FILE)
+print(
+    "Diagnosis written to:"
+)
+
+print(
+    OUTPUT_FILE
+)
 
 print()
 print("Done.")

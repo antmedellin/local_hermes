@@ -530,14 +530,24 @@
     "created_by": null,
     "last_patched_at": null,
     "last_reused_patch_generation": 0,
+<<<<<<< HEAD
     "last_used_at": "2026-09-16T14:59:09.312756+00:00",
     "last_viewed_at": "2026-09-16T14:59:09.302124+00:00",
+=======
+    "last_used_at": "2026-09-16T16:55:27.601136+00:00",
+    "last_viewed_at": "2026-09-16T16:55:27.594481+00:00",
+>>>>>>> 0f512bc991fa1841eb8fcebef58b1984d28e57d8
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
+<<<<<<< HEAD
     "use_count": 26,
     "view_count": 26
+=======
+    "use_count": 23,
+    "view_count": 21
+>>>>>>> 0f512bc991fa1841eb8fcebef58b1984d28e57d8
   },
   "literature-review": {
     "archived_at": null,
@@ -824,6 +834,7 @@
     "use_count": 2,
     "view_count": 1
   },
+<<<<<<< HEAD
   "research/literature_review": {
     "archived_at": null,
     "created_at": "2026-09-15T15:42:53.302158+00:00",
@@ -832,6 +843,16 @@
     "last_reused_patch_generation": 0,
     "last_used_at": "2026-09-15T15:42:53.305987+00:00",
     "last_viewed_at": "2026-09-15T15:42:53.302173+00:00",
+=======
+  "research/lightrag": {
+    "archived_at": null,
+    "created_at": "2026-09-15T17:28:53.400808+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-09-15T17:28:53.403907+00:00",
+    "last_viewed_at": "2026-09-15T17:28:53.400819+00:00",
+>>>>>>> 0f512bc991fa1841eb8fcebef58b1984d28e57d8
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
