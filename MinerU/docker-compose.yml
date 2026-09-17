@@ -5,6 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: mineru-api
     restart: unless-stopped
+    gpus: all
 
     ports:
       - "8000:8000"
