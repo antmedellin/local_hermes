@@ -1,6 +1,6 @@
 # Survey Paper Template
 
-This directory contains the IEEE-style template used by the literature_review skill for survey and literature review manuscripts.
+This directory contains the IEEE-style template used by the literature-review skill for survey and literature review manuscripts.
 
 ## Compiling LaTeX to PDF via Command Line
 

@@ -3,6 +3,8 @@ ollama_storage/
 # hermes_files/
 hermes_files/ai_files
 
+__pycache__/
+
 
 # Ignore everything under data
 hermes_files/data/**
@@ -12,6 +14,13 @@ hermes_files/data/**
 # Ignore Hermes skill manager metadata
 hermes_files/data/skills/.hub/
 hermes_files/data/skills/.usage.json
+
+# Re-ignore Python cache under skills
+hermes_files/data/skills/**/__pycache__/
+hermes_files/data/skills/.curator_state
+hermes_files/data/skills/.usage.json
+
+
 
 # Allow memories tree
 !hermes_files/data/memories/

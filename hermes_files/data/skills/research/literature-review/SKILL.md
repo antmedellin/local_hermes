@@ -34,6 +34,74 @@ Unless the user specifies otherwise, produce a 5-page literature review or surve
 5. Keep the manuscript organized by themes, methods, or open problems rather than paper-by-paper summaries.
 6. Keep the board explicit: one parent task, clear child tasks, one owner per task.
 
+
+## Project Isolation Rules
+
+Every literature review MUST be executed inside a newly created project directory.
+
+Never reuse an existing project directory unless the user explicitly identifies it.
+
+### Required Behavior
+
+1. Generate a project slug from the research topic.
+
+Example:
+
+Topic:
+"Event Camera Based Metrology"
+
+Project folder:
+event-camera-based-metrology
+
+2. Create a timestamped project root.
+
+Example:
+
+projects/
+  20260921_event-camera-based-metrology/
+
+3. All work for the survey MUST occur within that directory.
+
+4. Never read:
+   - previous survey folders
+   - previous manifests
+   - previous download directories
+   - previous draft folders
+   - previous bibliography files
+
+unless the user explicitly requests continuation of an existing project.
+
+5. Before creating the project, verify that the target directory does not already exist.
+
+If it exists:
+
+- create a new directory with a numeric suffix
+
+Example:
+
+20260921_event-camera-based-metrology
+20260921_event-camera-based-metrology-2
+20260921_event-camera-based-metrology-3
+
+6. Store the project directory path in the parent kanban card description.
+
+All child tasks must use that exact path.
+
+### Continuation Mode
+
+Only continue an existing survey if the user explicitly provides:
+
+- a project path
+- a project name
+
+Examples:
+
+"Continue the event camera survey"
+"Open project 20260921_event-camera-based-metrology"
+
+Otherwise always create a new project.
+
+
 ## Canonical Project Layout
 
 Create this structure inside the project folder:
@@ -63,16 +131,20 @@ project/
 
 ## Project Environment
 
-Always create and use a virtual environment inside the project folder.
+Always create and use a virtual environment inside the project folder, and always copy this skill's own scripts into the project (the canonical layout's `scripts/` folder does not populate itself):
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip setuptools wheel
 python -m pip install arxiv semanticscholar requests habanero numpy scipy matplotlib SciencePlots
+test -x .venv/bin/python || echo "BROKEN VENV: .venv/bin/python missing/not executable — recreate with python3 -m venv .venv, do not try to work around a missing interpreter"
+cp /opt/data/skills/research/literature-review/scripts/*.py scripts/
 ```
 
-Use the venv interpreter when running project scripts. `.venv/bin/python` **is** the interpreter — invoke it directly, never prefix it with another `python3`/`python` (`python3 .venv/bin/python script.py` runs the venv's *binary* as a text script and crashes with `SyntaxError: source code cannot contain null bytes`):
+This skill's scripts live at `/opt/data/skills/research/literature-review/scripts/` on disk (that's what `scripts/document_ingest.py` etc. resolve to in this doc) — they are never auto-copied into a new project folder, so a project's `scripts/` directory is empty until you run the `cp` above. If a script "goes missing" partway through a task, re-run the `cp`; do not write a substitute script from scratch and do not search other directories for it.
+
+Use the venv interpreter when running project scripts. `.venv/bin/python` **is** the interpreter — invoke it directly, never prefix it with another `python3`/`python` (`python3 .venv/bin/python script.py` runs the venv's *binary* as a text script and crashes with `SyntaxError: source code cannot contain null bytes`). Before running anything, confirm `.venv/bin/python` actually exists and runs (`.venv/bin/python --version`) — a venv created by copying/rsyncing another environment can end up missing the interpreter binary entirely while still having `pip`/site-packages; the fix is to recreate the venv with `python3 -m venv .venv`, never to invoke a system/global `python3` "just this once".
 
 ```bash
 .venv/bin/python scripts/document_rag_search.py "<query>"
@@ -113,7 +185,9 @@ done < manifest.tsv
 
 Never use `python3 -c "..."` one-liners or the `execute_code` tool for corpus/manifest logic — both are blocked by this install's guardrails for autonomous kanban workers and the call will just fail. Any one-off logic (parsing filenames, building a manifest, checking installed packages) goes in a real file under `scripts/`, run via `.venv/bin/python scripts/<name>.py` through `terminal`, same as every other script here.
 
-Install LaTeX dependencies on the host system before compiling the template. The practical minimum is `latexmk`, `texlive-latex-recommended`, `texlive-latex-extra`, `texlive-fonts-recommended`, `texlive-science`, `ghostscript`, and `bibtex`. If those packages are not available individually, install a full TeX Live distribution.
+Install LaTeX dependencies on the host system before compiling the template. The practical minimum is `latexmk`, `texlive-latex-recommended`, `texlive-latex-extra`, `texlive-fonts-recommended`, `texlive-science`, `ghostscript`, and `bibtex`. If those packages are not available individually, install a full TeX Live distribution. See `references/phase5-paper-drafting.md` for container-specific gotchas (a lying `which`, `.bib` math-escaping errors, `\url` needing `usepackage{url}`, and the iterative page-count-check loop for hitting an exact length target). Before compiling, run `.venv/bin/python scripts/check_bib_math_escapes.py bibliography/references.bib` to catch the escaped-dollar mistake before it produces confusing `main.bbl` errors; then run `.venv/bin/python scripts/compile_latex.py writing/drafts/main.tex --target-pages 5` (or whatever length was requested) to compile and verify the page count in one step instead of manually cycling `pdflatex`/`bibtex`.
+
+If a manifest's `build_manifest_from_arxiv_ids.py` pass leaves some PDFs unresolved (reported as `Unknown_<year>_<id>.pdf` under `documents/renamed/`), don't re-run discovery/download for those — resolve their real title/authors/year by hand (e.g. from the arXiv ID itself, cross-checked against a search) and rename them directly per the manifest format; a handful of well-known, unambiguous papers (e.g. a field-defining method already discussed elsewhere in the corpus) don't need a fresh API round-trip to confirm.
 
 ## Corpus Workflow
 
@@ -148,7 +222,7 @@ Use any legitimate source that improves coverage:
 
 `web_extract` only sees the raw/pre-hydration HTML, so JS-heavy pages (Gradio/Streamlit Spaces, React dashboards) can come back as an empty shell (e.g. a "Refreshing" placeholder). For those, use `browser_navigate` to the URL followed by `browser_snapshot` instead of retrying `web_extract`. Do not use `browser_exec`/Browser Use mode for this — it drives the page through model-written Python and has no API for reading the accessibility tree, so it hallucinates non-existent helper modules. Set `browser.backend: "off"` in config.yaml so the model gets the discrete `browser_navigate`/`browser_snapshot`/`browser_click` tools directly.
 
-Per-item detail panels (e.g. a leaderboard where clicking a method/model card reveals its paper link) require one `browser_click` + `browser_snapshot` per item, not a single snapshot of the whole page. Gradio panels also lag by one render cycle: the snapshot returned immediately after a click can still show the *previous* selection's details. If a panel looks stale, call `browser_snapshot` again (or click the next item and read the previous item's result from that response) before recording the link.
+Per-item detail panels (e.g. a leaderboard where clicking a method/model card reveals its paper link) require one `browser_click` + `browser_snapshot` per item, not a single snapshot of the whole page. Gradio panels also lag by one render cycle: the snapshot returned immediately after a click can still show the *previous* selection's details. If a panel looks stale, call `browser_snapshot` again (or click the next item and read the previous item's result from that response) before recording the link. If all you need from the page is the method/model roster or taxonomy (not every individual paper link), a single `browser_navigate` + `browser_snapshot` of the default tab is enough — don't click through every card just to confirm the roster.
 
 ### Access Fallbacks
 
@@ -235,9 +309,11 @@ On Docker installs, `write_file`/`patch` are hard-restricted to `HERMES_WRITE_SA
 
 Keep it flat and concrete — this matters more on smaller/local models, which lose track of abstract multi-step task bodies. Each card should describe **one action**, not a numbered list of phases:
 
-1. Create one parent card for the survey (title = the survey topic, assignee = confirmed per Step 0, `--workspace dir:<path>` per Task Workspace above, `--skill research/literature_review` so the worker gets this skill's full text injected instead of having to rediscover it mid-task via trial-and-error `skill_view` calls on guessed names like `research` or `mlops/research` — the skill name is always the full `<category>/<name>` path shown by `skills_list`, never the category alone).
-2. Create one child card per phase, each linked to the parent with `kanban_link`, each with a single concrete deliverable, each also carrying `--skill research/literature_review`:
-   - "Set up project venv and folder structure at `<project_dir>`"
+Prefer running `.venv/bin/python scripts/create_kanban_board.py --topic "<topic>" --workspace-dir <path> --assignee <confirmed profile> [--corpus-done]` over creating cards one at a time by hand — it implements the exact recipe below, always links children to the parent, and (with `--corpus-done`) marks the discovery/download/ingest cards complete in one pass when the corpus was already built in a prior session, keeping the board an accurate record instead of leaving stale `ready` cards for already-finished work. The manual recipe it encodes:
+
+1. Create one parent card for the survey (title = the survey topic, assignee = confirmed per Step 0, `--workspace dir:<path>` per Task Workspace above, `--skill research/literature-review` so the worker gets this skill's full text injected instead of having to rediscover it mid-task via trial-and-error `skill_view` calls on guessed names like `research` or `mlops/research` — the skill name is always the full `<category>/<name>` path shown by `skills_list`, never the category alone).
+2. Create one child card per phase, each linked to the parent with `kanban_link`, each with a single concrete deliverable, each also carrying `--skill research/literature-review`:
+   - "Set up project venv, folder structure, and copy this skill's scripts/ at `<project_dir>` (see Project Environment)"
    - "Discover and record candidate papers for `<topic>`"
    - "Download and rename PDFs into `documents/downloads/`"
    - "Ingest PDFs into LightRAG and rescan until fully processed"
@@ -276,12 +352,13 @@ Use these statuses only:
 
 The skill is test-ready when these checks pass:
 
-1. The project venv exists and can import the base Python dependencies.
-2. The paper-renaming script works on a sample PDF path.
-3. The rescan script can enumerate PDFs without crashing.
-4. The query script can call LightRAG or fails with a clear error.
-5. The IEEE-style template compiles with BibTeX using the local bibliography file.
-6. The checklist stays survey-only and contains no venue-specific sections.
+1. The project venv exists, `.venv/bin/python --version` runs successfully, and can import the base Python dependencies.
+2. `scripts/` contains all five scripts copied from this skill's own `scripts/` directory (not just leftover logs).
+3. The paper-renaming script works on a sample PDF path.
+4. The rescan script can enumerate PDFs without crashing.
+5. The query script can call LightRAG or fails with a clear error.
+6. The IEEE-style template compiles with BibTeX using the local bibliography file.
+7. The checklist stays survey-only and contains no venue-specific sections.
 
 ## Reference Files
 
@@ -297,4 +374,8 @@ The skill is test-ready when these checks pass:
 - [scripts/document_rag_search.py](scripts/document_rag_search.py) - query LightRAG and preserve citations
 - [scripts/document_rescan.py](scripts/document_rescan.py) - rescan a corpus and retry failures
 - [scripts/normalize_paper_filename.py](scripts/normalize_paper_filename.py) - rename PDFs into the canonical pattern
+- [scripts/build_manifest_from_arxiv_ids.py](scripts/build_manifest_from_arxiv_ids.py) - resolve bare-arXiv-ID PDFs into a rename/ingest manifest
+- [scripts/create_kanban_board.py](scripts/create_kanban_board.py) - create the standard parent + phase-card kanban board for a survey project
+- [scripts/check_bib_math_escapes.py](scripts/check_bib_math_escapes.py) - lint a `.bib` file for escaped-dollar math that breaks BibTeX styles
+- [scripts/compile_latex.py](scripts/compile_latex.py) - run the full pdflatex/bibtex cycle and verify the final page count
 - [scripts/smoke_test.py](scripts/smoke_test.py) - verify the local survey workflow
