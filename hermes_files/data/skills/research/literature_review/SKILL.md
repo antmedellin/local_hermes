@@ -2,7 +2,7 @@
 name: literature-review
 title: Literature Review and Survey Papers
 description: "Discover, download, normalize, ingest, query, and synthesize research papers into survey and literature review manuscripts backed by LightRAG citations."
-version: 2.0.0
+version: 2.2.0
 author: Hermes Agent
 license: MIT
 dependencies: [arxiv, semanticscholar, requests, habanero, numpy, scipy, matplotlib, SciencePlots]
@@ -32,7 +32,7 @@ Unless the user specifies otherwise, produce a 5-page literature review or surve
 3. Never invent citations from memory.
 4. Write only from LightRAG query output and verified source metadata.
 5. Keep the manuscript organized by themes, methods, or open problems rather than paper-by-paper summaries.
-6. Keep the board explicit: one parent task, clear child tasks, one owner per task.
+6. Keep the board explicit: one board per project, cards chained in order (each card's parent is the card before it), one owner per card.
 
 ## Canonical Project Layout
 
@@ -63,14 +63,14 @@ project/
 
 ## Project Environment
 
-Always create and use a virtual environment inside the project folder.
+
+Phase 1 is one command. It creates the Canonical Project Layout, copies this skill's scripts and templates into the project, builds `.venv` with `uv` from the skill's pinned `requirements.txt`, and installs the LaTeX compiler. It is safe to rerun and never overwrites existing files.
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip setuptools wheel
-python -m pip install arxiv semanticscholar requests habanero numpy scipy matplotlib SciencePlots
+/opt/data/skills/research/literature_review/scripts/setup_project.sh <project-slug>
 ```
+
+The project root is then `/opt/ai_files/<project-slug>`. Run every later script from that folder. Do not create the venv by hand, and do not use `pip` directly (it is not available in this container; `setup_project.sh` uses `uv`).
 
 Use the venv interpreter when running project scripts. `.venv/bin/python` **is** the interpreter — invoke it directly, never prefix it with another `python3`/`python` (`python3 .venv/bin/python script.py` runs the venv's *binary* as a text script and crashes with `SyntaxError: source code cannot contain null bytes`):
 
@@ -83,7 +83,7 @@ Use the venv interpreter when running project scripts. `.venv/bin/python` **is**
 
 ### Script signatures (do not guess flags — these are exhaustive)
 
-Two of the four scripts only operate on **one PDF per invocation**; loop over them instead of searching for a `--dir`/batch flag that does not exist:
+Two of these scripts only operate on **one PDF per invocation**; loop over them instead of searching for a `--dir`/batch flag that does not exist:
 
 | Script | Args | Batch? |
 |---|---|---|
@@ -92,6 +92,11 @@ Two of the four scripts only operate on **one PDF per invocation**; loop over th
 | `document_rescan.py` | positional `paths` (one or more files or directory roots) | Yes — pass a whole directory |
 | `document_rag_search.py` | positional free-text `query`, optional `--mode`, `--json` | N/A (read-only query) |
 | `build_manifest_from_arxiv_ids.py` | positional `<pdf_dir>` — prints manifest rows to stdout | Yes — one pass over a directory |
+| `setup_project.sh` | positional `<project-slug>` | N/A (run once per project, Phase 1) |
+| `discover_papers.py` | required `--seed <arXiv ID>` | Yes — writes `documents/manifests/manifest.tsv` and `missing_pdfs.tsv` |
+| `download_papers.py` | none (reads `manifest.tsv`) | Yes — downloads every manifest row, skips existing files, rejects non-PDF responses |
+
+Note on `document_rescan.py`: it re-uploads each file. A document that is already processed returns `HTTP 409 ... (Status: processed)`, and the script counts that as a failure. A 409 with `Status: processed` means the document is already ingested correctly. Do not delete and re-ingest it.
 
 `normalize_paper_filename.py` needs the first author, year, and title as literal strings — it cannot infer them from the PDF, and **you must never fabricate them** (no `"Unknown"` author, no year guessed from an arXiv-ID prefix, no filename-as-title). If the source PDFs are already named by bare arXiv ID (e.g. `2306.14048v3.pdf`, which is what raw downloads/leaderboard exports look like), resolve the real metadata with `build_manifest_from_arxiv_ids.py` — it queries the arXiv API via the `arxiv` package (already in Project Environment) and skips (reporting on stderr, never guessing) any file it can't resolve:
 
@@ -113,13 +118,17 @@ done < manifest.tsv
 
 Never use `python3 -c "..."` one-liners or the `execute_code` tool for corpus/manifest logic — both are blocked by this install's guardrails for autonomous kanban workers and the call will just fail. Any one-off logic (parsing filenames, building a manifest, checking installed packages) goes in a real file under `scripts/`, run via `.venv/bin/python scripts/<name>.py` through `terminal`, same as every other script here.
 
-Install LaTeX dependencies on the host system before compiling the template. The practical minimum is `latexmk`, `texlive-latex-recommended`, `texlive-latex-extra`, `texlive-fonts-recommended`, `texlive-science`, `ghostscript`, and `bibtex`. If those packages are not available individually, install a full TeX Live distribution.
+LaTeX is provided by Tectonic, installed by `setup_project.sh`. Do not install TeX Live. Compile from the project root with:
+
+`/opt/data/skills/research/literature_review/bin/tectonic writing/drafts/main.tex`
+
+The first compile downloads the LaTeX packages it needs and is slow; later compiles are fast.
 
 ## Corpus Workflow
 
 Follow this loop for every survey project:
 
-1. Discover papers from legitimate sources.
+1. Discover papers from the seed paper's reference list with `discover_papers.py --seed <arXiv ID>`. Do not discover by keyword search: shared terms like "capacity-constrained" match unrelated fields. Before downloading, read the titles in `manifest.tsv` and move any off-topic paper out of the manifest.
 2. Record title, authors, year, venue or preprint source, DOI, URL, and any accessible PDF link.
 3. Download every paper you plan to cite.
 4. Rename each PDF to `FirstAuthorLastName_Year_DocumentTitle.pdf`.
@@ -233,19 +242,23 @@ On Docker installs, `write_file`/`patch` are hard-restricted to `HERMES_WRITE_SA
 
 ### Board Setup
 
-Keep it flat and concrete — this matters more on smaller/local models, which lose track of abstract multi-step task bodies. Each card should describe **one action**, not a numbered list of phases:
+Create the board with the script. Do not build cards by hand or with `kanban_create` unless a card is missing:
 
-1. Create one parent card for the survey (title = the survey topic, assignee = confirmed per Step 0, `--workspace dir:<path>` per Task Workspace above, `--skill research/literature_review` so the worker gets this skill's full text injected instead of having to rediscover it mid-task via trial-and-error `skill_view` calls on guessed names like `research` or `mlops/research` — the skill name is always the full `<category>/<name>` path shown by `skills_list`, never the category alone).
-2. Create one child card per phase, each linked to the parent with `kanban_link`, each with a single concrete deliverable, each also carrying `--skill research/literature_review`:
-   - "Set up project venv and folder structure at `<project_dir>`"
-   - "Discover and record candidate papers for `<topic>`"
-   - "Download and rename PDFs into `documents/downloads/`"
-   - "Ingest PDFs into LightRAG and rescan until fully processed"
-   - "Query LightRAG and draft the outline"
-   - "Draft manuscript sections from LightRAG output"
-   - "Verify citations and compile the bibliography"
-   - "Final technical review and smoke test"
-3. A card's own worker **can** call `kanban_create` to spawn further child/follow-up cards mid-task (e.g. the ingest card discovers a corrupt PDF and spawns a "re-download paper X" card) — this is expected and encouraged. What must never happen is cramming multiple phases' worth of steps into a single card's body instead of creating separate cards.
+```bash
+/opt/data/skills/research/literature_review/scripts/create_board.sh <project-slug> <seed-arxiv-id>
+```
+
+It creates one board per project and 9 cards chained parent to child: Setup, Discover, HUMAN review, Download, Ingest, Outline, Draft, Bibliography, Compile and test. On this Kanban a parent means "must finish first," so the chain runs strictly in order. There is no umbrella parent card; an umbrella parent blocks every child until it is done.
+
+Full details, the card table, and troubleshooting commands are in [references/kanban-setup.md](references/kanban-setup.md).
+
+Rules for any card created by hand:
+
+1. Skill names are folder paths: `research/literature_review`, `research/lightrag`. `research/literature-review` does not resolve and fails silently.
+2. Never use `--triage`. It hands the card to a specifier that rewrites the body.
+3. Write a full body: project root, exact command, and what "done" means.
+4. Set `--parent` to the previous card so the chain order holds.
+5. A worker may create a follow-up card mid-task (e.g. "re-download paper X"). Give it the current card as its parent and a full body. Never put several phases into one card.
 
 ### Assignees
 
@@ -265,7 +278,7 @@ Use these statuses only:
 
 - Assign each card to exactly one confirmed profile (Step 0).
 - One action per card — split multi-step descriptions into separate child cards instead of listing steps in the body.
-- If a claimed task's own body already contains multiple numbered phases (e.g. a legacy task created before this card was split up), the first action is to `kanban_create` one child per phase and `kanban_link` them to the current task, then work only the first child — never execute every phase inline in one run just because they're listed in one body.
+- If a claimed task's body contains multiple numbered phases (a legacy task), do not run them inline. Block the task and report that the board should be recreated with `create_board.sh`.
 - When a card is blocked, create a blocker card with the dependency and owner.
 - When a card finishes and creates more work, create follow-up cards immediately (see Board Setup #3).
 - When a branch is unproductive, create a decision card for rerun, expansion, reframing, or stop.
@@ -290,6 +303,7 @@ The skill is test-ready when these checks pass:
 - [references/experiment-patterns.md](references/experiment-patterns.md) - corpus and analysis patterns
 - [templates/README.md](templates/README.md) - IEEE-style survey template usage
 - [templates/IEEE_Conference_Template/IEEE.bib](templates/IEEE_Conference_Template/IEEE.bib) - bibliography file
+- [references/kanban-setup.md](references/kanban-setup.md) - Kanban board structure, human review gate, troubleshooting
 
 ## Scripts
 
@@ -298,3 +312,7 @@ The skill is test-ready when these checks pass:
 - [scripts/document_rescan.py](scripts/document_rescan.py) - rescan a corpus and retry failures
 - [scripts/normalize_paper_filename.py](scripts/normalize_paper_filename.py) - rename PDFs into the canonical pattern
 - [scripts/smoke_test.py](scripts/smoke_test.py) - verify the local survey workflow
+- [scripts/setup_project.sh](scripts/setup_project.sh) - Phase 1: create the project layout, venv, and LaTeX compiler
+- [scripts/discover_papers.py](scripts/discover_papers.py) - Phase 2: build the manifest from a seed paper's references
+- [scripts/download_papers.py](scripts/download_papers.py) - Phase 3: download every PDF in the manifest
+- [scripts/create_board.sh](scripts/create_board.sh) - create the Kanban board: one board per project, 9 chained cards

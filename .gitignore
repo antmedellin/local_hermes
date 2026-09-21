@@ -24,3 +24,4 @@ hermes_files/data/skills/.usage.json
 # Allow cron job definitions (not execution history/locks/heartbeats)
 !hermes_files/data/cron/
 !hermes_files/data/cron/jobs.json
+hermes_files/data/skills/research/literature_review/bin/
