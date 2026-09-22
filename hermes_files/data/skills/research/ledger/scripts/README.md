@@ -36,3 +36,5 @@ maie_reconcile.py:
 maie_key_reconcile.py:
     earlier investigation/reconciliation utility for identifying key/record relationships. (archive/diagnostic)
 
+maie_db_import.py:
+    one postgresql transaction, if anything faild, rollback everything. idempotent, uses maie_faculty_reconciled.json and maie_athorship_reconciliation.json.
