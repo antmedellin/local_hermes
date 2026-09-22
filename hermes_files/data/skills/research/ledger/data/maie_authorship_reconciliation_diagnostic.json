@@ -1,0 +1,110 @@
+{
+  "summary": {
+    "enriched_publication_objects": 495,
+    "normalized_unique_publications": 455,
+    "enriched_author_entries": 1774,
+    "normalized_author_entries": 1624,
+    "author_entry_difference": 150,
+    "source_unique_dm_record_ids": 459,
+    "normalized_unique_dm_record_ids": 459,
+    "removed_source_publication_objects": 0,
+    "authors_in_removed_source_objects": 0,
+    "reconciliation_review_items": 0
+  },
+  "current_maie_faculty": [
+    {
+      "name": "Alley Cowan Butler",
+      "user_id": "1450741"
+    },
+    {
+      "name": "AMM Nazmul Ahsan",
+      "user_id": "2449251"
+    },
+    {
+      "name": "Anil Kumar Srivastava",
+      "user_id": "1592411"
+    },
+    {
+      "name": "Benjamin Peters",
+      "user_id": "2375313"
+    },
+    {
+      "name": "Douglas H Timmer",
+      "user_id": "1391271"
+    },
+    {
+      "name": "Edna I Orozco-Leonhardt",
+      "user_id": "1962780"
+    },
+    {
+      "name": "Farid Ahmed",
+      "user_id": "2270795"
+    },
+    {
+      "name": "Hiram Moya",
+      "user_id": "1478901"
+    },
+    {
+      "name": "Jianzhi Li",
+      "user_id": "1451022"
+    },
+    {
+      "name": "Kyehwan Lee",
+      "user_id": "1451016"
+    },
+    {
+      "name": "Lesly Orozco-Zarate",
+      "user_id": "2204130"
+    },
+    {
+      "name": "Linfeng Wu",
+      "user_id": "2526916"
+    },
+    {
+      "name": "Majid Hosseini",
+      "user_id": "1991449"
+    },
+    {
+      "name": "Monsuru Olalekan Ramoni",
+      "user_id": "2526918"
+    }
+  ],
+  "review_cases": [],
+  "review_cases_by_faculty_id": {},
+  "removed_source_records": [],
+  "author_count_histograms": {
+    "enriched": {
+      "1": 43,
+      "2": 110,
+      "3": 140,
+      "4": 95,
+      "5": 48,
+      "6": 26,
+      "7": 15,
+      "8": 3,
+      "9": 2,
+      "10": 7,
+      "11": 1,
+      "13": 1,
+      "15": 2,
+      "18": 1,
+      "26": 1
+    },
+    "normalized": {
+      "1": 43,
+      "2": 105,
+      "3": 125,
+      "4": 88,
+      "5": 42,
+      "6": 21,
+      "7": 15,
+      "8": 3,
+      "9": 3,
+      "10": 5,
+      "11": 1,
+      "18": 1,
+      "21": 1,
+      "26": 2
+    }
+  }
+}

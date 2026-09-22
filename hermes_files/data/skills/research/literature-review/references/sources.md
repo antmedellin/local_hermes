@@ -1,6 +1,6 @@
 # Source Bibliography
 
-This document lists authoritative sources and tools used to build and run the literature_review skill.
+This document lists authoritative sources and tools used to build and run the literature-review skill.
 
 ---
 

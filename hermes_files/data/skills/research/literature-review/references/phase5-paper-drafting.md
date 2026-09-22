@@ -99,7 +99,34 @@ Use the local venv for every project command that runs Python code:
 
 ## LaTeX Setup
 
-Install the host LaTeX dependencies before compiling the template. The practical minimum is `latexmk`, `texlive-latex-recommended`, `texlive-latex-extra`, `texlive-fonts-recommended`, `texlive-science`, `ghostscript`, and `bibtex`.
+Install the host LaTeX dependencies before compiling the template. The practical minimum is `latexmk`, `texlive-latex-recommended`, `texlive-latex-extra`, `texlive-fonts-recommended`, `texlive-science`, `ghostscript`, and `bibtex`. There is no `bibtex-base` package — `bibtex` itself ships inside `texlive-latex-recommended`; do not add it to the install list or the whole `apt-get install` fails on that one bad name. Before installing, check whether the packages are already present (`apt-get install` is fast and idempotent, so just run it — a stack rebuilt from the repo's Dockerfile often already has TeX Live baked in, and the install command reports `is already the newest version` instead of downloading anything).
+
+**`which` can lie inside a container.** `which pdflatex`/`bibtex`/`latexmk` can report "not found" via `bash -lc` even when the binaries are installed and on `PATH`, because `pdflatex` is a symlink (`/usr/bin/pdflatex -> pdftex`) and some minimal container images don't ship a `which` binary at all. Confirm with `ls -la /usr/bin/pdflatex /usr/bin/bibtex /usr/bin/latexmk` and then just invoke the absolute path (`/usr/bin/pdflatex -interaction=nonstopmode main.tex`) — don't conclude LaTeX is missing and reinstall based on `which` alone.
+
+**Never hand-escape `$` inside a `.bib` title field.** Writing `title={H\$_2\$O: ...}` or `\$L_2\$` to get subscript math renders correctly as *math* but breaks the moment `ieeetr`/similar `.bst` styles emit that title inside a `{\em ...}` text run in the reference list — you get `! Missing $ inserted.` followed by `! LaTeX Error: Command \itshape invalid in math mode.` and `! Extra }, or forgotten \endgroup.`, all pointing at `main.bbl`, not `main.tex`, which makes the real cause (the `.bib` file) easy to miss. Use plain unescaped `$_2$` (BibTeX copies the title field verbatim, so real math delimiters are fine) or `\textsubscript{2}` instead.
+
+**`\url{}` in a `.bib` entry needs `\usepackage{url}` (or `hyperref`) in the main document**, even though the template's default packages don't include it — a `@misc` citation for a web source (e.g. a leaderboard page) with `howpublished={\url{https://...}}` will fail with `! Undefined control sequence.` at the `\url` inside `main.bbl` otherwise.
+
+**Hitting an exact page-count target is iterative, not a one-shot estimate.** After the first clean compile, check the actual page count with `grep -o 'Output written on main.pdf ([0-9]* pages' <pdflatex.log>` (the log line, not a guess from word count) and add or remove whole subsections — not sentence-level edits — to move by roughly a full page per subsection in a two-column IEEE conference layout. Recompile the full `pdflatex -> bibtex -> pdflatex -> pdflatex` cycle after every content change, since bibtex must rerun whenever citations move pages/citation keys change, and check the log for `^!` (any error) and `undefined` (unresolved citations/refs) each time, not just the page count.
+
+Full recompile cycle, using absolute paths per the `which` gotcha above:
+
+```bash
+/usr/bin/pdflatex -interaction=nonstopmode main.tex
+/usr/bin/bibtex main
+/usr/bin/pdflatex -interaction=nonstopmode main.tex
+/usr/bin/pdflatex -interaction=nonstopmode main.tex
+```
+
+## Running Project Scripts From Outside the Container
+
+When the project's `.venv` and `scripts/` live inside a mounted volume (e.g. `/opt/ai_files/<project>` inside the `gateway` container, host-mapped from `hermes_files/ai_files/<project>`), and you are driving the workflow from outside the container (host shell, another agent), invoke the venv interpreter with its in-container absolute path through `docker compose exec -T gateway`, not a locally-installed Python:
+
+```bash
+docker compose exec -T gateway /opt/ai_files/<project>/.venv/bin/python /opt/ai_files/<project>/scripts/document_rag_search.py "<query>"
+```
+
+The `-T` flag is required for non-interactive/scripted calls (no pseudo-TTY) — omitting it fails with "the input device is not a TTY" when run from a script or subagent rather than an interactive terminal. `docker compose exec` resolves the service name (`gateway`) to whichever container actually implements it, so this works even if `docker ps` shows a container name that doesn't literally match the service name in `docker-compose.yml`.
 
 ## Board Workflow
 

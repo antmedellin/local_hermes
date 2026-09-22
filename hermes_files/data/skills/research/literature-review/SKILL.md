@@ -34,6 +34,74 @@ Unless the user specifies otherwise, produce a 5-page literature review or surve
 5. Keep the manuscript organized by themes, methods, or open problems rather than paper-by-paper summaries.
 6. Keep the board explicit: one board per project, cards chained in order (each card's parent is the card before it), one owner per card.
 
+
+## Project Isolation Rules
+
+Every literature review MUST be executed inside a newly created project directory.
+
+Never reuse an existing project directory unless the user explicitly identifies it.
+
+### Required Behavior
+
+1. Generate a project slug from the research topic.
+
+Example:
+
+Topic:
+"Event Camera Based Metrology"
+
+Project folder:
+event-camera-based-metrology
+
+2. Create a timestamped project root.
+
+Example:
+
+projects/
+  20260921_event-camera-based-metrology/
+
+3. All work for the survey MUST occur within that directory.
+
+4. Never read:
+   - previous survey folders
+   - previous manifests
+   - previous download directories
+   - previous draft folders
+   - previous bibliography files
+
+unless the user explicitly requests continuation of an existing project.
+
+5. Before creating the project, verify that the target directory does not already exist.
+
+If it exists:
+
+- create a new directory with a numeric suffix
+
+Example:
+
+20260921_event-camera-based-metrology
+20260921_event-camera-based-metrology-2
+20260921_event-camera-based-metrology-3
+
+6. Store the project directory path in the parent kanban card description.
+
+All child tasks must use that exact path.
+
+### Continuation Mode
+
+Only continue an existing survey if the user explicitly provides:
+
+- a project path
+- a project name
+
+Examples:
+
+"Continue the event camera survey"
+"Open project 20260921_event-camera-based-metrology"
+
+Otherwise always create a new project.
+
+
 ## Canonical Project Layout
 
 Create this structure inside the project folder:
@@ -157,7 +225,7 @@ Use any legitimate source that improves coverage:
 
 `web_extract` only sees the raw/pre-hydration HTML, so JS-heavy pages (Gradio/Streamlit Spaces, React dashboards) can come back as an empty shell (e.g. a "Refreshing" placeholder). For those, use `browser_navigate` to the URL followed by `browser_snapshot` instead of retrying `web_extract`. Do not use `browser_exec`/Browser Use mode for this — it drives the page through model-written Python and has no API for reading the accessibility tree, so it hallucinates non-existent helper modules. Set `browser.backend: "off"` in config.yaml so the model gets the discrete `browser_navigate`/`browser_snapshot`/`browser_click` tools directly.
 
-Per-item detail panels (e.g. a leaderboard where clicking a method/model card reveals its paper link) require one `browser_click` + `browser_snapshot` per item, not a single snapshot of the whole page. Gradio panels also lag by one render cycle: the snapshot returned immediately after a click can still show the *previous* selection's details. If a panel looks stale, call `browser_snapshot` again (or click the next item and read the previous item's result from that response) before recording the link.
+Per-item detail panels (e.g. a leaderboard where clicking a method/model card reveals its paper link) require one `browser_click` + `browser_snapshot` per item, not a single snapshot of the whole page. Gradio panels also lag by one render cycle: the snapshot returned immediately after a click can still show the *previous* selection's details. If a panel looks stale, call `browser_snapshot` again (or click the next item and read the previous item's result from that response) before recording the link. If all you need from the page is the method/model roster or taxonomy (not every individual paper link), a single `browser_navigate` + `browser_snapshot` of the default tab is enough — don't click through every card just to confirm the roster.
 
 ### Access Fallbacks
 
@@ -289,12 +357,13 @@ Use these statuses only:
 
 The skill is test-ready when these checks pass:
 
-1. The project venv exists and can import the base Python dependencies.
-2. The paper-renaming script works on a sample PDF path.
-3. The rescan script can enumerate PDFs without crashing.
-4. The query script can call LightRAG or fails with a clear error.
-5. The IEEE-style template compiles with BibTeX using the local bibliography file.
-6. The checklist stays survey-only and contains no venue-specific sections.
+1. The project venv exists, `.venv/bin/python --version` runs successfully, and can import the base Python dependencies.
+2. `scripts/` contains all five scripts copied from this skill's own `scripts/` directory (not just leftover logs).
+3. The paper-renaming script works on a sample PDF path.
+4. The rescan script can enumerate PDFs without crashing.
+5. The query script can call LightRAG or fails with a clear error.
+6. The IEEE-style template compiles with BibTeX using the local bibliography file.
+7. The checklist stays survey-only and contains no venue-specific sections.
 
 ## Reference Files
 
@@ -311,6 +380,10 @@ The skill is test-ready when these checks pass:
 - [scripts/document_rag_search.py](scripts/document_rag_search.py) - query LightRAG and preserve citations
 - [scripts/document_rescan.py](scripts/document_rescan.py) - rescan a corpus and retry failures
 - [scripts/normalize_paper_filename.py](scripts/normalize_paper_filename.py) - rename PDFs into the canonical pattern
+- [scripts/build_manifest_from_arxiv_ids.py](scripts/build_manifest_from_arxiv_ids.py) - resolve bare-arXiv-ID PDFs into a rename/ingest manifest
+- [scripts/create_kanban_board.py](scripts/create_kanban_board.py) - create the standard parent + phase-card kanban board for a survey project
+- [scripts/check_bib_math_escapes.py](scripts/check_bib_math_escapes.py) - lint a `.bib` file for escaped-dollar math that breaks BibTeX styles
+- [scripts/compile_latex.py](scripts/compile_latex.py) - run the full pdflatex/bibtex cycle and verify the final page count
 - [scripts/smoke_test.py](scripts/smoke_test.py) - verify the local survey workflow
 - [scripts/setup_project.sh](scripts/setup_project.sh) - Phase 1: create the project layout, venv, and LaTeX compiler
 - [scripts/discover_papers.py](scripts/discover_papers.py) - Phase 2: build the manifest from a seed paper's references

@@ -22,6 +22,10 @@ REQUIRED_FILES = [
     ROOT / "scripts" / "document_rag_search.py",
     ROOT / "scripts" / "document_rescan.py",
     ROOT / "scripts" / "normalize_paper_filename.py",
+    ROOT / "scripts" / "build_manifest_from_arxiv_ids.py",
+    ROOT / "scripts" / "create_kanban_board.py",
+    ROOT / "scripts" / "check_bib_math_escapes.py",
+    ROOT / "scripts" / "compile_latex.py",
 ]
 
 PYTHON_SCRIPTS = [
@@ -29,6 +33,10 @@ PYTHON_SCRIPTS = [
     ROOT / "scripts" / "document_rag_search.py",
     ROOT / "scripts" / "document_rescan.py",
     ROOT / "scripts" / "normalize_paper_filename.py",
+    ROOT / "scripts" / "build_manifest_from_arxiv_ids.py",
+    ROOT / "scripts" / "create_kanban_board.py",
+    ROOT / "scripts" / "check_bib_math_escapes.py",
+    ROOT / "scripts" / "compile_latex.py",
 ]
 
 DEPENDENCIES = [

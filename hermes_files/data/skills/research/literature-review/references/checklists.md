@@ -1,6 +1,6 @@
 # Survey Paper Checklist
 
-This checklist is the default operating checklist for literature reviews and survey papers in the literature_review skill. Use it for every draft unless the user supplies a more specific venue checklist.
+This checklist is the default operating checklist for literature reviews and survey papers in the literature-review skill. Use it for every draft unless the user supplies a more specific venue checklist.
 
 ---
 

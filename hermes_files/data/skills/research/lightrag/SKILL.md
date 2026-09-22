@@ -65,7 +65,7 @@ For literature research, follow this pipeline:
 When importing a paper into LightRAG, follow this procedure exactly:
 
 1. Download the paper and validate that it is a real PDF.
-2. Run `lightrag_ingest.py` on the validated PDF with the terminal timeout set to 600 seconds.
+2. Invoke the Hermes terminal tool with `timeout=600` when running `lightrag_ingest.py` on the validated PDF. Do NOT add `--timeout 600` to the Python command; `lightrag_ingest.py` does not accept a `--timeout` argument.
 3. If ingestion succeeds or the script reports that a duplicate resolves to
    an already processed document, proceed to retrieval verification.
 4. If LightRAG reports a duplicate:
