@@ -10,7 +10,7 @@ if [ -z "$SLUG" ]; then
   exit 1
 fi
 
-SKILL_DIR="/opt/data/skills/research/literature_review"
+SKILL_DIR="/opt/data/skills/research/literature-review"
 ROOT="/opt/ai_files/$SLUG"
 echo "Project root: $ROOT"
 
