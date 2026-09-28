@@ -135,7 +135,7 @@ project/
 Phase 1 is one command. It creates the Canonical Project Layout, copies this skill's scripts and templates into the project, builds `.venv` with `uv` from the skill's pinned `requirements.txt`, and installs the LaTeX compiler. It is safe to rerun and never overwrites existing files.
 
 ```bash
-/opt/data/skills/research/literature_review/scripts/setup_project.sh <project-slug>
+/opt/data/skills/research/literature-review/scripts/setup_project.sh <project-slug>
 ```
 
 The project root is then `/opt/ai_files/<project-slug>`. Run every later script from that folder. Do not create the venv by hand, and do not use `pip` directly (it is not available in this container; `setup_project.sh` uses `uv`).
@@ -188,7 +188,7 @@ Never use `python3 -c "..."` one-liners or the `execute_code` tool for corpus/ma
 
 LaTeX is provided by Tectonic, installed by `setup_project.sh`. Do not install TeX Live. Compile from the project root with:
 
-`/opt/data/skills/research/literature_review/bin/tectonic writing/drafts/main.tex`
+`/opt/data/skills/research/literature-review/bin/tectonic writing/drafts/main.tex`
 
 The first compile downloads the LaTeX packages it needs and is slow; later compiles are fast.
 
@@ -313,7 +313,7 @@ On Docker installs, `write_file`/`patch` are hard-restricted to `HERMES_WRITE_SA
 Create the board with the script. Do not build cards by hand or with `kanban_create` unless a card is missing:
 
 ```bash
-/opt/data/skills/research/literature_review/scripts/create_board.sh <project-slug> <seed-arxiv-id>
+/opt/data/skills/research/literature-review/scripts/create_board.sh <project-slug> <seed-arxiv-id>
 ```
 
 It creates one board per project and 9 cards chained parent to child: Setup, Discover, HUMAN review, Download, Ingest, Outline, Draft, Bibliography, Compile and test. On this Kanban a parent means "must finish first," so the chain runs strictly in order. There is no umbrella parent card; an umbrella parent blocks every child until it is done.
@@ -322,7 +322,7 @@ Full details, the card table, and troubleshooting commands are in [references/ka
 
 Rules for any card created by hand:
 
-1. Skill names are folder paths: `research/literature_review`, `research/lightrag`. `research/literature-review` does not resolve and fails silently.
+1. Skill names are folder paths: `research/literature-review`, `research/lightrag`. `research/literature-review` does not resolve and fails silently.
 2. Never use `--triage`. It hands the card to a specifier that rewrites the body.
 3. Write a full body: project root, exact command, and what "done" means.
 4. Set `--parent` to the previous card so the chain order holds.

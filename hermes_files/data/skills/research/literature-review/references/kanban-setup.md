@@ -8,7 +8,7 @@ How to create, run, check, and fix the Kanban board for a literature review.
 2. Create the board:
 
 ```bash
-docker exec -u hermes hermes /opt/data/skills/research/literature_review/scripts/create_board.sh <project-slug> <seed-arxiv-id>
+docker exec -u hermes hermes /opt/data/skills/research/literature-review/scripts/create_board.sh <project-slug> <seed-arxiv-id>
 ```
 
 3. Card 1 starts on the next dispatcher pass. Watch progress:
@@ -22,7 +22,7 @@ docker exec -u hermes hermes hermes kanban --board <project-slug> list
 To test without running anything, prefix the assignee:
 
 ```bash
-docker exec -u hermes -e ASSIGNEE=human hermes /opt/data/skills/research/literature_review/scripts/create_board.sh <test-slug> <seed-arxiv-id>
+docker exec -u hermes -e ASSIGNEE=human hermes /opt/data/skills/research/literature-review/scripts/create_board.sh <test-slug> <seed-arxiv-id>
 ```
 
 Remove a test board with `hermes kanban boards rm <test-slug>`.
@@ -54,7 +54,7 @@ Remove a test board with `hermes kanban boards rm <test-slug>`.
 | 7. Bibliography | Writes `references.bib` from the manifest | Every `\cite` key matched |
 | 8. Compile and test | `tectonic`, `smoke_test.py` | `main.pdf` produced, smoke test passes |
 
-Every worker card uses assignee `default`, workspace `dir:/opt/ai_files/<slug>`, and skill `research/literature_review`. The Ingest card also loads `research/lightrag` and has a 12 hour runtime cap.
+Every worker card uses assignee `default`, workspace `dir:/opt/ai_files/<slug>`, and skill `research/literature-review`. The Ingest card also loads `research/lightrag` and has a 12 hour runtime cap.
 
 ## Human review gate
 
@@ -74,7 +74,7 @@ Do not use `--initial-status blocked` as a hold. Tested: the dispatcher still pi
 
 ## Rules for any card you create by hand
 
-- **Skill names are folder paths:** `research/literature_review`, `research/lightrag`. The name `research/literature-review` (category plus the hyphenated name that `skills list` shows) does not resolve, and the worker silently runs without the skill.
+- **Skill names are folder paths:** `research/literature-review`, `research/lightrag`. The name `research/literature-review` (category plus the hyphenated name that `skills list` shows) does not resolve, and the worker silently runs without the skill.
 - **Never use `--triage`.** Triage hands the card to a specifier model that rewrites or empties the body.
 - **Write a full body:** project root, the exact command, and what "done" means. One-line bodies were the main cause of confused workers.
 - **Assignee must be a real profile** (`default`), except the human gate. Unknown names sit in `ready` forever.
@@ -88,7 +88,7 @@ docker exec -u hermes hermes hermes kanban --board <slug> create "<title>" \
   --body "<full instructions>" \
   --assignee default \
   --workspace dir:/opt/ai_files/<slug> \
-  --skill research/literature_review \
+  --skill research/literature-review \
   --parent <previous-card-id> \
   --idempotency-key <slug>-<short-name>
 ```

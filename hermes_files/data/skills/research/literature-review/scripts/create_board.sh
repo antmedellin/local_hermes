@@ -16,9 +16,9 @@ fi
 
 ASSIGNEE="${ASSIGNEE:-default}"
 ROOT="/opt/ai_files/$SLUG"
-SKILL_DIR="/opt/data/skills/research/literature_review"
+SKILL_DIR="/opt/data/skills/research/literature-review"
 KB="hermes kanban --board $SLUG"
-COMMON="--assignee $ASSIGNEE --workspace dir:$ROOT --skill research/literature_review"
+COMMON="--assignee $ASSIGNEE --workspace dir:$ROOT --skill research/literature-review"
 
 if hermes kanban boards list | grep -q " $SLUG "; then
   echo "Board $SLUG already exists (cards already on it are kept, not duplicated)"

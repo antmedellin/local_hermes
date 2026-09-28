@@ -21,7 +21,14 @@ RUN python3 -m pip install -U 'mineru[core]>=3.4.0' --break-system-packages && \
     python3 -m pip cache purge
 
 # Download models and update the configuration file
-RUN /bin/bash -c "mineru-models-download -s huggingface -m all"
+
+
+# RUN /bin/bash -c "mineru-models-download -s huggingface -m all"
+
+RUN mineru-models-download \
+    --source huggingface \
+    --tier standard \
+    --vlm-engine vllm
 
 # Set the entry point to activate the virtual environment and run the command line tool
 ENTRYPOINT ["/bin/bash", "-c", "export MINERU_MODEL_SOURCE=local && exec \"$@\"", "--"]
