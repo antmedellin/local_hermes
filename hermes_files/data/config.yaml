@@ -124,7 +124,7 @@ updates:
   non_interactive_local_changes: stash
 computer_use:
   backend: cua
-_config_version: 42
+_config_version: 46
 session_reset:
   mode: none
   idle_minutes: 1440
@@ -136,10 +136,12 @@ platform_toolsets:
     - clarify
     - code_execution
     - computer_use
+    - connections
     - context_engine
     - cronjob
     - delegation
     - file
+    - kanban
     - memory
     - session_search
     - skills
@@ -147,8 +149,8 @@ platform_toolsets:
     - todo
     - vision
     - web
-    - kanban
   kanban:
+    - connections
     - kanban
   telegram:
     - hermes-telegram
@@ -187,6 +189,7 @@ known_builtin_toolsets:
     - clarify
     - code_execution
     - computer_use
+    - connections
     - context_engine
     - cronjob
     - delegation
@@ -208,7 +211,6 @@ known_builtin_toolsets:
     - vision
     - web
     - x_search
-    - yuanbao
 
 # ── Security ──────────────────────────────────────────────────────────
 # Secret redaction is ON by default — strings that look like API keys,
@@ -247,3 +249,4 @@ known_builtin_toolsets:
 # fallback_model:
 #   provider: openrouter
 #   model: anthropic/claude-sonnet-4
+    - yuanbao

@@ -58,4 +58,6 @@ git merge upstream/main
 verify working literature-review skill
 verify cron job 
 
-
+python3 -m venv myenvname
+source .venv/bin/activate
+pip install -r requirements.txt
