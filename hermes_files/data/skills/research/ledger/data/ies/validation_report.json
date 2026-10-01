@@ -1,0 +1,3593 @@
+{
+  "input_file": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/faculty_enriched.json",
+  "metadata": {
+    "institution": "University of Texas Rio Grande Valley",
+    "college": "College of Engineering and Computer Science",
+    "department": "Department of Informatics and Engineering Systems",
+    "department_url": "https://www.utrgv.edu/cecs/departments/ies/",
+    "faculty_url": "https://www.utrgv.edu/cecs/departments/ies/faculty/index.htm",
+    "faculty_count": 17,
+    "publication_count": 307,
+    "source": "UTRGV Digital Measures API",
+    "api_endpoint": "https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMuser?username=",
+    "generated_at": "2026-09-30T03:05:27Z"
+  },
+  "summary": {
+    "faculty_count": 17,
+    "publication_objects": 358,
+    "metadata_publication_count": 307,
+    "publication_count_mismatch": true,
+    "unique_doi_values": 43,
+    "doi_duplicate_groups": 5,
+    "title_year_duplicate_groups": 34,
+    "recoverable_dois": 7,
+    "bad_urls": 37,
+    "missing_abstracts": 235,
+    "missing_full_text": 278,
+    "faculty_with_no_publications": 6,
+    "faculty_missing_research": 14,
+    "total_authors": 1181,
+    "faculty_author_entries": 496,
+    "suspicious_faculty_author_entries": 0
+  },
+  "faculty_with_no_publications": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "faculty_missing_research": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "faculty_publication_counts": [
+    {
+      "name": "Edinbarough Immanuel Adaikalaraj",
+      "user_id": "1811220",
+      "publication_count": 114
+    },
+    {
+      "name": "Robert E Jones",
+      "user_id": "1450988",
+      "publication_count": 56
+    },
+    {
+      "name": "Hansheng Lei",
+      "user_id": "1811368",
+      "publication_count": 55
+    },
+    {
+      "name": "Mahmoud Khamees Quweider",
+      "user_id": "1811488",
+      "publication_count": 45
+    },
+    {
+      "name": "Liyu Zhang",
+      "user_id": "1811608",
+      "publication_count": 33
+    },
+    {
+      "name": "Erik Alfredo Chumacero",
+      "user_id": "2201382",
+      "publication_count": 23
+    },
+    {
+      "name": "Jesus A Gonzalez Rodriguez",
+      "user_id": "1962784",
+      "publication_count": 15
+    },
+    {
+      "name": "Bari M. Siddique",
+      "user_id": "1811539",
+      "publication_count": 7
+    },
+    {
+      "name": "Jorge Abel Castillo",
+      "user_id": "2392242",
+      "publication_count": 7
+    },
+    {
+      "name": "Domingo Molina",
+      "user_id": "1811423",
+      "publication_count": 2
+    },
+    {
+      "name": "Alexis Aaron De La Cruz",
+      "user_id": "2540137",
+      "publication_count": 1
+    },
+    {
+      "name": "Jose Francisco Poveda",
+      "user_id": "1811478",
+      "publication_count": 0
+    },
+    {
+      "name": "Lucas Dominic Hall",
+      "user_id": "2376088",
+      "publication_count": 0
+    },
+    {
+      "name": "Md Al Amin",
+      "user_id": "2710015",
+      "publication_count": 0
+    },
+    {
+      "name": "Reynaldo Anzaldua",
+      "user_id": "2530235",
+      "publication_count": 0
+    },
+    {
+      "name": "Ryan Lee Lechtenberg",
+      "user_id": "2705150",
+      "publication_count": 0
+    },
+    {
+      "name": "Yessenia Rodriguez",
+      "user_id": "2346702",
+      "publication_count": 0
+    }
+  ],
+  "publication_field_completeness": {
+    "title": {
+      "present": 358,
+      "missing": 0,
+      "percent_present": 100.0
+    },
+    "year": {
+      "present": 358,
+      "missing": 0,
+      "percent_present": 100.0
+    },
+    "type": {
+      "present": 357,
+      "missing": 1,
+      "percent_present": 99.7
+    },
+    "status": {
+      "present": 330,
+      "missing": 28,
+      "percent_present": 92.2
+    },
+    "refereed": {
+      "present": 169,
+      "missing": 189,
+      "percent_present": 47.2
+    },
+    "publisher": {
+      "present": 308,
+      "missing": 50,
+      "percent_present": 86.0
+    },
+    "volume": {
+      "present": 85,
+      "missing": 273,
+      "percent_present": 23.7
+    },
+    "issue": {
+      "present": 62,
+      "missing": 296,
+      "percent_present": 17.3
+    },
+    "pages": {
+      "present": 125,
+      "missing": 233,
+      "percent_present": 34.9
+    },
+    "url": {
+      "present": 99,
+      "missing": 259,
+      "percent_present": 27.7
+    },
+    "isbn_issn": {
+      "present": 57,
+      "missing": 301,
+      "percent_present": 15.9
+    },
+    "pmcid": {
+      "present": 3,
+      "missing": 355,
+      "percent_present": 0.8
+    },
+    "doi": {
+      "present": 50,
+      "missing": 308,
+      "percent_present": 14.0
+    },
+    "abstract": {
+      "present": 123,
+      "missing": 235,
+      "percent_present": 34.4
+    },
+    "full_text": {
+      "present": 80,
+      "missing": 278,
+      "percent_present": 22.3
+    },
+    "impact": {
+      "present": 13,
+      "missing": 345,
+      "percent_present": 3.6
+    },
+    "authors": {
+      "present": 358,
+      "missing": 0,
+      "percent_present": 100.0
+    }
+  },
+  "profile_field_completeness": {
+    "bio": {
+      "present": 9,
+      "missing": 8
+    },
+    "building": {
+      "present": 12,
+      "missing": 5
+    },
+    "campus": {
+      "present": 14,
+      "missing": 3
+    },
+    "email": {
+      "present": 17,
+      "missing": 0
+    },
+    "first_name": {
+      "present": 17,
+      "missing": 0
+    },
+    "full_name": {
+      "present": 17,
+      "missing": 0
+    },
+    "last_name": {
+      "present": 17,
+      "missing": 0
+    },
+    "middle_name": {
+      "present": 11,
+      "missing": 6
+    },
+    "phone": {
+      "present": 17,
+      "missing": 0
+    },
+    "photo": {
+      "present": 10,
+      "missing": 7
+    },
+    "prefix": {
+      "present": 11,
+      "missing": 6
+    },
+    "research_interests": {
+      "present": 3,
+      "missing": 14
+    },
+    "room": {
+      "present": 11,
+      "missing": 6
+    },
+    "structured_research_interests": {
+      "present": 14,
+      "missing": 3
+    },
+    "vita_available": {
+      "present": 10,
+      "missing": 7
+    }
+  },
+  "status_distribution": {
+    "Published": 289,
+    "In Preparation; Not Yet Submitted": 1,
+    "Submitted": 12,
+    "Under Contract": 3,
+    "Accepted": 17,
+    "Revising to Resubmit": 3,
+    "Working Paper": 1,
+    "Not Accepted": 4,
+    "UNKNOWN": 28
+  },
+  "publication_type_distribution": {
+    "Conference Proceeding": 231,
+    "Journal Article, Academic Journal": 73,
+    "Study Guide": 2,
+    "Journal Article, Public or Trade Journal": 8,
+    "Book, Chapter in Scholarly Book-New": 5,
+    "Other": 21,
+    "Book, Edited-New": 3,
+    "Book Review": 1,
+    "Book, Scholarly-New": 4,
+    "Monograph": 1,
+    "Book, Chapter in Non-Scholarly Book-New": 2,
+    "Newspaper": 1,
+    "Research Report": 5,
+    "UNKNOWN": 1
+  },
+  "recoverable_dois": [
+    {
+      "index": 12,
+      "title": "“Influence of entropy inclusion in multi-feature  fusion for optimizing multi-component fault detection of rotational machinery  under variable speed”",
+      "year": 2026,
+      "doi": "10.1088/1402-4896/add191",
+      "source_field": "url"
+    },
+    {
+      "index": 15,
+      "title": "Enhanced quadratic discriminant analysis with sensor signal fusion for speed-independent fault detection in rotating machines",
+      "year": 2023,
+      "doi": "10.1088/1361-6501/acf8e1",
+      "source_field": "url"
+    },
+    {
+      "index": 32,
+      "title": "“Characterization and Performance of Minimum Quantity Lubricants in Through-Tool Drilling”",
+      "year": 2020,
+      "doi": "10.26776/ijemm.05.04.2020.01",
+      "source_field": "url"
+    },
+    {
+      "index": 42,
+      "title": "A fuzzy optimization approach for software reliability estimation",
+      "year": 2022,
+      "doi": "10.1504/ijbsr.2019.098624",
+      "source_field": "url"
+    },
+    {
+      "index": 169,
+      "title": "Weak Mitoticity of Bounded Conjunctive and Disjunctive Autoreducible Sets",
+      "year": 2018,
+      "doi": "10.1007/978-3-319-94776-1_17",
+      "source_field": "url"
+    },
+    {
+      "index": 243,
+      "title": "Weak Mitoticity of Bounded Conjunctive and Disjunctive Autoreducible Sets",
+      "year": 2018,
+      "doi": "10.1007/978-3-319-94776-1_17",
+      "source_field": "url"
+    },
+    {
+      "index": 274,
+      "title": "Weak Mitoticity of Bounded Conjunctive and Disjunctive Autoreducible Sets",
+      "year": 2018,
+      "doi": "10.1007/978-3-319-94776-1_17",
+      "source_field": "url"
+    }
+  ],
+  "bad_urls": [
+    {
+      "index": 18,
+      "title": "“An Approach for Sub Selecting Variables that have Higher Influence on the Outcome in Developing Predictive Model using Staff Turnover”",
+      "url": "www.informaticsjournals.com/index.php/jmmf"
+    },
+    {
+      "index": 24,
+      "title": "Enhancing Engagement and Qualitative Output of Technical Projects Through Competing Team Assignments",
+      "url": "www.asee.org"
+    },
+    {
+      "index": 26,
+      "title": "State of Industry 5.0—Analysis and Identification of Current Research Trends.",
+      "url": "Appl. Syst. Innov. 2022, 5, 27. https://doi.org/10.3390/ asi5010027"
+    },
+    {
+      "index": 39,
+      "title": "Assistive technology based on IoT in building automation: a multidisciplinary engineering project",
+      "url": "One West University Blvd, SETB 1.354"
+    },
+    {
+      "index": 40,
+      "title": "Development of Senior Design & Internship Integrated University-Industry Collaborative Program to address the skills gap in Advanced Manufacturing",
+      "url": "One West University Blvd, SETB 1.354"
+    },
+    {
+      "index": 57,
+      "title": "“Collaborative technological development and innovation between UTRGV-ENGT, USA and ITM-CSE, Mexico: An Intelligent Closet Prototype”",
+      "url": ". https://peer.asee.org/29279"
+    },
+    {
+      "index": 164,
+      "title": "Mining Survey Data",
+      "url": "www.icsdis.org"
+    },
+    {
+      "index": 165,
+      "title": "Mining Survey Data",
+      "url": "www.icdis.org"
+    },
+    {
+      "index": 167,
+      "title": "An Accelerated Hierarchical Approach for Object Shape Extraction and Recognition",
+      "url": "www.icsdis.org"
+    },
+    {
+      "index": 170,
+      "title": "Mining Dependent Items",
+      "url": "www.icdis.org"
+    },
+    {
+      "index": 180,
+      "title": "Chapter Proposal: Adapting Graduate-Level Math and Computer Science Courses from Face-to-face to Online Delivery: Lessons Learned",
+      "url": "www.igi-global.com/publish/call-for-papers/call-details/749"
+    },
+    {
+      "index": 181,
+      "title": "Transitioning from F2F to DE: Lessons Learned from South Texas",
+      "url": "www.aace.org/"
+    },
+    {
+      "index": 183,
+      "title": "Transforming a computer science master program from traditional face-to-face delivery to online delivery--A closing phase project evaluation",
+      "url": "www.aect.org"
+    },
+    {
+      "index": 188,
+      "title": "A comparative study on the consistency of features in on-line signature verification",
+      "url": "//www.sciencedirect.com/science/article/pii/S0167865505001534"
+    },
+    {
+      "index": 208,
+      "title": "Development of Senior Design & Internship Integrated University-Industry Collaborative Program to address the skills gap in Advanced Manufacturing",
+      "url": "One West University Blvd, SETB 1.354"
+    },
+    {
+      "index": 237,
+      "title": "Mining Survey Data",
+      "url": "www.icsdis.org"
+    },
+    {
+      "index": 238,
+      "title": "Mining Survey Data",
+      "url": "www.icdis.org"
+    },
+    {
+      "index": 240,
+      "title": "An Accelerated Hierarchical Approach for Object Shape Extraction and Recognition",
+      "url": "www.icsdis.org"
+    },
+    {
+      "index": 247,
+      "title": "Chapter Proposal: Adapting Graduate-Level Math and Computer Science Courses from Face-to-face to Online Delivery: Lessons Learned",
+      "url": "www.igi-global.com/publish/call-for-papers/call-details/749"
+    },
+    {
+      "index": 248,
+      "title": "Transitioning from F2F to DE: Lessons Learned from South Texas",
+      "url": "www.aace.org/"
+    },
+    {
+      "index": 249,
+      "title": "Transforming a computer science master program from traditional face-to-face delivery to online delivery--A closing phase project evaluation",
+      "url": "www.aect.org"
+    },
+    {
+      "index": 250,
+      "title": "Separating NE from Some Nonuniform Nondeterministic Complexity Classes",
+      "url": "www.springerlink.com/content/1382-6905/"
+    },
+    {
+      "index": 251,
+      "title": "Proof System Representations of Degrees of Disjoint NP-pairs",
+      "url": "www.journals.elsevier.com/information-processing-letters/"
+    },
+    {
+      "index": 252,
+      "title": "Autoreducibility and Mitoticity",
+      "url": "www.sigact.org/SIGACT_News/"
+    },
+    {
+      "index": 253,
+      "title": "Separating NE from Some Nonuniform Nondeterministic Complexity Classes",
+      "url": "www.cse.buffalo.edu/cocoon2009/"
+    },
+    {
+      "index": 254,
+      "title": "The Informational Content of Canonical Disjoint NP-pairs",
+      "url": "www.worldscientific.com/worldscinet/ijfcs"
+    },
+    {
+      "index": 255,
+      "title": "Non-mitotic Sets",
+      "url": "www.journals.elsevier.com/theoretical-computer-science/"
+    },
+    {
+      "index": 256,
+      "title": "Splitting NP-complete Sets",
+      "url": "www.siam.org/journals/sicomp.php"
+    },
+    {
+      "index": 269,
+      "title": "Mining Survey Data",
+      "url": "www.icsdis.org"
+    },
+    {
+      "index": 270,
+      "title": "Mining Survey Data",
+      "url": "www.icdis.org"
+    },
+    {
+      "index": 272,
+      "title": "An Accelerated Hierarchical Approach for Object Shape Extraction and Recognition",
+      "url": "www.icsdis.org"
+    },
+    {
+      "index": 280,
+      "title": "Color Image Segmentation with an Entropy-based Cost Function",
+      "url": "IEEE.org"
+    },
+    {
+      "index": 281,
+      "title": "Women-centric Senior Projects for Females in the computational Sciences Fields",
+      "url": "ASEE.org"
+    },
+    {
+      "index": 282,
+      "title": "An expanded Histogram Approach for Multilevel Image Thresholding",
+      "url": "IEEE.org"
+    },
+    {
+      "index": 284,
+      "title": "Computational Data Mining for Feature Extraction in Health Informatics",
+      "url": "ASEE.org"
+    },
+    {
+      "index": 285,
+      "title": "Image Retrieval Based on Texture Subspace Orthogonal Projection with Wavelet Frames",
+      "url": "IEEE.org"
+    },
+    {
+      "index": 306,
+      "title": "Prognostics Models for Railroad Tapered Roller Bearings with Spall Defects on Inner or Outer Rings",
+      "url": "www.tandfonline.com/loi/utrb20"
+    }
+  ],
+  "missing_abstracts": [
+    {
+      "index": 1,
+      "title": "Internet Security and its Impact on Online Education",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 2,
+      "title": "E-Commerce Threats and Preventive Measures",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 3,
+      "title": "How to secure e-mail and instant message",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 4,
+      "title": "Building a Secure E-Commerce System",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 6,
+      "title": "Outcome of project called MCALL",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 7,
+      "title": "A Simple Algorithm for Arbitrary Polynomial",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 8,
+      "title": "Molina’s Quick notes for Word 6.0,",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 9,
+      "title": "Molina’s Quick notes for WordPerfect",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 13,
+      "title": "Rotational Machine Fault Diagnosis Using Artificial Intelligence (AI) Strategies for the Operational Challenges Under Variable Speed Condition: A Review",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 17,
+      "title": "Comparative Cutting Fluid Study on Optimum Grinding Parameters of Ti-6Al-4V Alloy Using Flood, Minimum Quantity Lubrication (MQL), and Nanofluid MQL (NMQL)",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 19,
+      "title": "Building relationships with stem faculty to improve student writing.",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 22,
+      "title": "A study of persuasive writing in stem fields as a function of student demographics",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 23,
+      "title": "Comparison of Undergraduate Student Writing in Engineering Disciplines at Campuses with Varying Demographics",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 24,
+      "title": "Enhancing Engagement and Qualitative Output of Technical Projects Through Competing Team Assignments",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 33,
+      "title": "TRANSFORMING TECHNOLOGIES FOR ADOPTING INDUSTRY 4.0.",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 34,
+      "title": "Pattern Recognition and Machine Learning for Augmented and Virtual Reality Applications",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 35,
+      "title": "Exploring Engineering",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 36,
+      "title": "Expanding Engineering and Technology Opportunities to Students in the Border Region Through International Collaboration",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 39,
+      "title": "Assistive technology based on IoT in building automation: a multidisciplinary engineering project",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 40,
+      "title": "Development of Senior Design & Internship Integrated University-Industry Collaborative Program to address the skills gap in Advanced Manufacturing",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 41,
+      "title": "Pattern Recognition and Machine Learning for Augmented and Virtual Reality Applications",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 43,
+      "title": "Recent Advances in Industrial Engineering and Management",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 45,
+      "title": "A fuzzy optimization approach for software reliability estimation",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 46,
+      "title": "Sustainable  Manufacturing",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 47,
+      "title": "CMM training to fill the skills gap in the advanced manufacturing industry",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 48,
+      "title": "Promoting International Preparedness in undergraduate engineering education",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 50,
+      "title": "Cross-border Higher Education between UTRGV-CECS-ENGT, USA and TecNM/IT Matamoros, Mexico through Capstone Projects",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 51,
+      "title": "Additive Manufacturing",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 52,
+      "title": "Designing software development processes to optimize multiple output performance characteristics",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 55,
+      "title": "Collaborative technological development and innovation between UTRGVENGT, USA and ITM-CSE, Mexico: An intelligent closet prototype",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 56,
+      "title": "Cross border collaborative learning through capstone engineering projects",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 57,
+      "title": "“Collaborative technological development and innovation between UTRGV-ENGT, USA and ITM-CSE, Mexico: An Intelligent Closet Prototype”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 58,
+      "title": "“Cross border collaborative learning through Capstone Engineering Projects”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 59,
+      "title": "Optimization of software development life cycle process to minimize the delivered defect density",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 60,
+      "title": "A Brief Review of Software Reliability Prediction Models",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 61,
+      "title": "A Quantitative Project Management Methodology for    Controlling Multiple Output Characteristics in Software Development Process",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 62,
+      "title": "\"Study of minimum quantity lubrication and how nozzle design and placement affects the grinding of aerospace materials”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 63,
+      "title": "Comparative study on optimum grinding parameters of Ti-6Al-4V titanium alloy using flood, minimum quantity lubrication (MQL), and MQL with Nano cutting fluid",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 64,
+      "title": "Recent Advances in Software Quality Management: A Review",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 65,
+      "title": "Grinding of Aerospace Alloys in MQL",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 66,
+      "title": "Developing Creative Engineers: A Challenge Based Instruction approach to Engineering and Technology Education”,",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 67,
+      "title": "Characterization of Micromist for Effective Minimum Quantity Lubrication",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 68,
+      "title": "Experimental Investigation of micromist for effective machining",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 69,
+      "title": "“Essential Competencies in Sustainable Manufacturing: A Benchmark for Technology Program Development”,",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 70,
+      "title": "Wind Power Mathematics and STEM”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 71,
+      "title": "“Characterization of Micromist for Effective Minimum Quantity Lubrication,”",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 72,
+      "title": "Effective product efficiency using advanced manufacturing techniques",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 73,
+      "title": "Enriching Engineering technology Curriculum through the Introduction of Nanotechnology",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 74,
+      "title": "Implementation of agile supply chain model in an electronic switches manufacturing company",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 75,
+      "title": "Web-based Control and Robotics Education",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 76,
+      "title": "WEB BASED AUTOMATED INSPECTION (AI) AND QUALITY MANAGEMENT (QM)",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 77,
+      "title": "Implementing the use of Statistical Analysis Tools in the Manufacturing Processes of automotive industry",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 78,
+      "title": "Product Centered Manufacturing Education",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 79,
+      "title": "Restructuring the US Manufacturing Education for Increased Global Competitiveness – A Perspective",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 80,
+      "title": "Web based control for Mechatronics laboratory Experiments",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 81,
+      "title": "Agile ITQFD and its financial viability: a pilot project approach",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 82,
+      "title": "MEMS Education for Technology Students",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 83,
+      "title": "Experiences with Design and Development pf a rapid product manufacturing technique in the batch production of miniature industrial components",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 84,
+      "title": "Future pf Microsystems Technology Education, Research and Outreach as applied to 21st century manufacturing",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 85,
+      "title": "Profit Optimization in Three Echelon Supply Chain revenue management through new heuristic optimizer",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 86,
+      "title": "A vision and robot based on-line inspection monitoring system for electronic manufacturing",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 87,
+      "title": "Paradigms for Environmentally Conscious Manufacturing",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 88,
+      "title": "Understanding and modeling the economics of ECM",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 89,
+      "title": "A vision and robot based on-line monitoring of defects in Electronics Manufacturing – A collaborative effort in capstone project",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 90,
+      "title": "A web-based approach to automated Inspection and quality control of manufactured parts",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 91,
+      "title": "A Feasibility Study for the Implementation of Non- Site Based Hands-On Curriculum for Engineering Technology Education",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 92,
+      "title": "The Minority Science Engineering Improvement Program A “Working in Teams to Enhance Pre-Engineering Curriculum Projects",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 93,
+      "title": "Development of an Intelligent Architecture for Web- Based Programming & Control of an Automated Manufacturing Cell",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 94,
+      "title": "Computer Based Manufacturing Cell Control Using Intelligent Sensing System",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 95,
+      "title": "Computer Based Manufacturing Cell Control Using Smart Distributed System",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 96,
+      "title": "CAD Based Recognition - a Neural Network Approach",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 97,
+      "title": "Enhancement of Quality and productivity by the implementation of Computer Vision Systems in a Light Engineering Industry",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 98,
+      "title": "Automated Visual Inspection System for the Inspection of Fragile Components in the FMS Environment",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 99,
+      "title": "Automated Visual Inspection System for the Inspection of Fragile Components",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 100,
+      "title": "Investigations on Experimental Automated Visual Inspection System for Industrial Application",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 101,
+      "title": "Automated Visual Inspection of Industrial Components: A CAD Based Approach",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 102,
+      "title": "Total Automated Visual Inspection System for Industrial Components",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 103,
+      "title": "Visual Identification of Industrial Components using Part Family Classification Coding System",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 104,
+      "title": "Automated Visual Inspection of Geometric Tolerance in Circular Components",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 105,
+      "title": "A Two Stage Camera Calibration for 3D Scene Analysis",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 106,
+      "title": "Closed-Form Solution for Inverse kinematics of a coplanar 5-axis articulated robot manipulator",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 107,
+      "title": "An Approach to Inspect Polyhedral objects using Trinocular vision system",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 108,
+      "title": "An approach for the Recognition of Industrial Components through the application of Computer Vision systems to Group Technology - Part Classification Arrangement",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 109,
+      "title": "Texture Analysis Based on Texture Spectrum Method",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 110,
+      "title": "Position tolerance verification using Computer Vision System",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 111,
+      "title": "Dimensional image reconstruction from the perspective view of a Polyhedron",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 112,
+      "title": "Precision Analysis of Computer Vision Systems in Soft gauging applications",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 113,
+      "title": "Geometric Analysis of Circular Features using Digital Vision System",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 114,
+      "title": "Some Applications of Machine Vision Inspection Systems in Industries",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 115,
+      "title": "Methodology to Detect the Position of an Image Segment within specified Interval in a vision envelope",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 116,
+      "title": "Robotic Vision Inspection System for Industrial Parts",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 117,
+      "title": "A comprehensive study on Flexible Manufacturing Systems",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 118,
+      "title": "Computer Vision in Inspection: A Status Report",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 119,
+      "title": "Design Considerations of Rotating Casting Pump",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 120,
+      "title": "A Vision Inspection System for Fragile components",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 121,
+      "title": "Expert System for process planning of lathe spindles",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 122,
+      "title": "Optimization of Dynamic Performance of Articulated Robots Considering Drive Train Compliance",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 123,
+      "title": "An implementation of Vision and Expert System Based inspection",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 126,
+      "title": "Automated Quality Control System for Product Dimensional and Surface Analysis–An Industry Case Study",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 127,
+      "title": "Product Digital Quality Inspection using Machine Vision Systems–A Categorical Review",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 128,
+      "title": "Validation of an Ankle-Hip Model of Balance on a Balance Board Via Kinematic Frequency-Content",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 129,
+      "title": "Effect of Ankle-Pivot Misalignment and Upward Ankle Vertical Displacement on Stability and Equilibrium Location for an Ankle-Hip Model of Balance on a Balance Board",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 130,
+      "title": "Effect of Disturbances and Sensorimotor Deficits on the Postural Robustness of an Ankle-Hip Model of Balance on a Balance Board",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 131,
+      "title": "Powered Ankle-Foot Prostheses: A Survey on Sensing Systems and Control Strategies",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 132,
+      "title": "Numerical Nonlinear Analysis for Dynamic Stability of an Ankle-Hip Model of Balance on a Balance Board",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 133,
+      "title": "Basin of Attraction and Limit Cycle Amplitude of an Ankle-Hip Model of Balance on a Balance Board",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 134,
+      "title": "Body-weight supported treadmill walking training improves functional walking and balance of stroke survivors in any post-stroke stage: A systematic review",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 135,
+      "title": "Advances in Powered Ankle-Foot Prostheses",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 136,
+      "title": "Human-inspired balance control of a humanoid on a rotating board",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 137,
+      "title": "Effect of sensory-motor latencies and active muscular stiffness on stability for an ankle-hip model of balance on a balance board",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 138,
+      "title": "Fall prevention therapies for individuals with stroke",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 139,
+      "title": "A review of human motion prediction in sit-to-stand and lifting tasks",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 140,
+      "title": "Velocity-sensorless tracking control and identification of switched reluctance motors",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 141,
+      "title": "Robust passivity-based control of switched-reluctance motors",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 142,
+      "title": "Exponential stabilization of switched-reluctance motors via speed-sensorless feedback",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 143,
+      "title": "Robust adaptive control of switched-reluctance motors without velocity measurements",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 144,
+      "title": "Speed-sensorless control of switched-reluctance motors with uncertain payload",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 145,
+      "title": "A novel PID-based control approach for switched-reluctance motors",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 146,
+      "title": "Numerical 3-D Conjugated Heat Transfer Simulation of a First Inter-Stage Internal Cooled Thermal Barrier Coated Gas Turbine Bucket",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 147,
+      "title": "Relative Pattern Recognition for Noisy Handwritten Numeral Recognition",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 148,
+      "title": "Speeding Up Multi-class SVM Evaluation by PCA and Feature Selection",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 149,
+      "title": "An Overview of Smart Glasses and Some Research Issues",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 151,
+      "title": "A Consortium Blockchain-Based Approach for Energy Sharing in Distribution Systems",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 156,
+      "title": "Early Integrating of Industry Certification Domains and Objectives into a Modern a Cybersecurity Degree Curriculum",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 163,
+      "title": "FCIA: Integrity Assurance of Outsourced Database with Fine-grained Modification Control Policy",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 165,
+      "title": "Mining Survey Data",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 167,
+      "title": "An Accelerated Hierarchical Approach for Object Shape Extraction and Recognition",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 170,
+      "title": "Mining Dependent Items",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 173,
+      "title": "Mining Multiple Regression Relations",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 174,
+      "title": "Underwater Multi-Spectral Photometric Stereo Reconstruction from a Single RGBD Image",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 175,
+      "title": "Improving OCR performance with background image elimination",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 176,
+      "title": "Circle-based tipping cascades in social networks",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 177,
+      "title": "Power grid defense against malicious cascading failure",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 178,
+      "title": "Mfwk-means: Minkowski metric fuzzy weighted k-means for high dimensional data clustering",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 179,
+      "title": "Special Sound Detection for emergency phones",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 182,
+      "title": "Locate potential support vectors for faster sequential minimal optimization",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 184,
+      "title": "Cluster analysis of simulated gravitational wave triggers using S-MEANS and constrained validation clustering",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 185,
+      "title": "A study on the dynamic time warping in kernel machines",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 186,
+      "title": "S-means: Similarity Driven Clustering and Its application in Gravitational-Wave Astronomy Data Mining",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 187,
+      "title": "Speeding up multi-class svm evaluation via principal component analysis and recursive feature elimination. J",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 189,
+      "title": "Half-Against-Half Multi-class Support Vector Machines",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 190,
+      "title": "Matching and retrieving sequential patterns using regression",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 191,
+      "title": "Matching and retrieving sequential patterns using regression, Web Intelligence and Agent Systems 3(4",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 192,
+      "title": "Mouse-based signature verification for secure internet transactions",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 193,
+      "title": "Sequential pattern classification without explicit feature extraction",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 194,
+      "title": "Similarity-driven sequence classification based on support vector machines",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 195,
+      "title": "Direct image matching by dynamic warping",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 196,
+      "title": "ER 2 : An intuitive similarity measure for on-line signature verification",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 197,
+      "title": "GRM: Generalized regression model for clustering linear sequences, The",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 198,
+      "title": "LCGMiner: Levelwise closed graph pattern mining from large databases",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 199,
+      "title": "Matching and Retrieving Sequential Patterns Under Regression",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 200,
+      "title": "Regression time warping for similarity measure of sequence",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 201,
+      "title": "Signature and lexicon pruning techniques",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 202,
+      "title": "Building relationships with stem faculty to improve student writing.",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 203,
+      "title": "A study of persuasive writing in stem fields as a function of student demographics",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 204,
+      "title": "Comparison of Undergraduate Student Writing in Engineering Disciplines at Campuses with Varying Demographics",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 207,
+      "title": "Expanding Engineering and Technology Opportunities to Students in the Border Region Through International Collaboration",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 208,
+      "title": "Development of Senior Design & Internship Integrated University-Industry Collaborative Program to address the skills gap in Advanced Manufacturing",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 209,
+      "title": "CMM training to fill the skills gap in the advanced manufacturing industry",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 210,
+      "title": "Promoting International Preparedness in undergraduate engineering education",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 211,
+      "title": "Engineered TiO2 and SiO2-TiO2 films on silica-coated glass for increased thin film durability under abrasive conditions",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 213,
+      "title": "The mechanical response to contact of Soda Lime Silica float glass and the effects of hydration and high temperature",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 214,
+      "title": "Method and system to form deletion windows on a glass substrate",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 215,
+      "title": "Evolution of the modulus and hardness of the tin and air sides of float glass as a function of hydration time",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 216,
+      "title": "Method and system for bending glass sheets with complex curvatures",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 227,
+      "title": "A Bridged Cybersecurity Curriculum with Embedded Stackable Credentials",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 228,
+      "title": "Early Integrating of Industry Certification Domains and Objectives into a Modern a Cybersecurity Degree Curriculum",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 261,
+      "title": "Early Integrating of Industry Certification Domains and Objectives into a Modern a Cybersecurity Degree Curriculum",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 268,
+      "title": "FCIA: Integrity Assurance of Outsourced Database with Fine-grained Modification Control Policy",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 270,
+      "title": "Mining Survey Data",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 272,
+      "title": "An Accelerated Hierarchical Approach for Object Shape Extraction and Recognition",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 279,
+      "title": "Spatial Entropy-based Cost Function for Gray and Color Image Segmentation with Dynamic Optimal Partitioning",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 280,
+      "title": "Color Image Segmentation with an Entropy-based Cost Function",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 281,
+      "title": "Women-centric Senior Projects for Females in the computational Sciences Fields",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 282,
+      "title": "An expanded Histogram Approach for Multilevel Image Thresholding",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 283,
+      "title": "Computational Data Mining for Feature Extraction in Health Informatics",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 284,
+      "title": "Computational Data Mining for Feature Extraction in Health Informatics",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 285,
+      "title": "Image Retrieval Based on Texture Subspace Orthogonal Projection with Wavelet Frames",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 287,
+      "title": "Educational Computer Science Fun Projects for Integrating Multidisciplinary Concepts of Mathematics, Science, and Engineering",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 288,
+      "title": "A New Method for Iris Recognition Using Gray-Level Concurrence Matrix",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 289,
+      "title": "A Robust and Accurate Segmentation of Iris Images Using Optimal Partitioning",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 290,
+      "title": "Designing and Implementing a Parallel Computing Curriculum Based on Parallel Clustering",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 291,
+      "title": "Integration of Medical Informatics into Computer Science Curriculum",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 293,
+      "title": "Integration of Educational Methodologies in the Computer Science Curriculum based on the Beowulf Curriculum Enrichment Integrated Lab (B-CEIL)",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 294,
+      "title": "Fostering Student Professional Perspectives through Virtual Mentoring: A retrospective analysis at the University of Texas - Brownsville",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 295,
+      "title": "Impact of the Virtual Plaza Mentorship Project at the University of Texas-Brownsville",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 297,
+      "title": "Peano Scanning based Classified Vector Quantizer",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 298,
+      "title": "Gradient-based Block Truncation Coding",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 299,
+      "title": "Classification and Codebook Design for a Vector Quantizer",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 300,
+      "title": "Local Thresholding Block Classification for Image Compression",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 301,
+      "title": "Implementation of a Flexible Manufacturing Cell Control and Inspection",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 302,
+      "title": "Effects of prolonged inactivity on railcar bearing performance",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 303,
+      "title": "Effect of extended bearing inactivity on lubricating grease characteristics and performance",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 304,
+      "title": "Effects of long-term inactivity on railcar bearing performance",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 308,
+      "title": "Defect Prognostic Models for Spall Growth in Railroad Bearing Rolling Elements",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 309,
+      "title": "Development of Prognostic Techniques for Surface Defect Growth in Railroad Bearing Rolling Elements",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 310,
+      "title": "Hysteresis Heating of Railroad Bearing Thermoplastic Elastomer Suspension Element",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 311,
+      "title": "Models for the Residual Life of Railroad Bearing Grease in Laboratory and Industry Applications",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 312,
+      "title": "PVC-OH Functionalized SWCNT Nanocomposites",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 313,
+      "title": "Spectroscopic Investigations on PVDF-MWCNTs Nanocomposites",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 314,
+      "title": "Heat Generation in the Railroad Bearing Thermoplastic Elastomer Suspension Element",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 315,
+      "title": "Temperature Profiles of Railroad Tapered Bearings with Deffective Inner and Outer Rings",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 316,
+      "title": "Developing Empirical Models of Railroad Bearing Grease",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 318,
+      "title": "On Structural Properties PVDF-Fe3O4 Composites",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 322,
+      "title": "Design of a Primary Steering Pad",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 323,
+      "title": "Microstructural, Viscoelastic, and Thermal Characterization of Production and Experimental Glass Reinforced Bearing Cages",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 324,
+      "title": "Thermal Effects on the Relaxation of Seal Case Rotor Interference Fi",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 325,
+      "title": "AC 2010-1726: Ann G. Neering: Interactive Chatbot to Motivate and Engage Engineering Students",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 326,
+      "title": "Oil Compatibility of RTP0299HX69130B",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 328,
+      "title": "Electrospun fibers from poly (methyl methacrylate)/vapor grown carbon nanofibers",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 329,
+      "title": "Modeling Nano Reinforced Polymers",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 330,
+      "title": "Thermal Performance of Aluminum-Foam CPU Heat Exchangers",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 332,
+      "title": "“The synergetic impact of the VaNTH ERC on the educational practices of the school of engineering and computer science at UTPA,”",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 334,
+      "title": "Electromagnetic Shielding in Nanofiber reinforced Liquid Crystal Polymers",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 335,
+      "title": "Nanofiber Toughened Polyethylene Composites",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 336,
+      "title": "Thermal and electrical analysis of vapor grown carbon nanofiber/ polyoxymethylene (VGCNF/POM) composites",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 337,
+      "title": "“Thermal and Electrical Analysis of Vapor Grown Carbon Nanofiber/Polyoxymethylene Composites\"",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 338,
+      "title": "“Nanofiber Toughened Polyethylene Composites”Carbon, 42",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 339,
+      "title": "\"Evaluation of Mechanical and Thermal Properties of Commonly-used Denture Base Resins\"",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 340,
+      "title": "“Thermal and Electrical Analysis of Vapor Grown Carbon Nanofiber/LCP Composites\"",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 341,
+      "title": "“Three-dimensional analysis of dual-arch impression trays”",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 342,
+      "title": "“Quantitative Determination of the Stability of Implant-Bone Interface Using Resonance Frequency Analysis”",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 343,
+      "title": "“A Close-up Look at an Implant Fracture: A Case Report”",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 345,
+      "title": "“Properties of Nanofiber Reinforced Polymer Composites with Intercalated Copper Particles”",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 346,
+      "title": "“The Accuracy of Soldering, Laser Welding, and Electric Discharge Machining in the Fabrication of Implant-Supported Bars,”",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 347,
+      "title": "“Development of a Process for Fabrication of Laminated Titanium Denture Bases,”",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 348,
+      "title": "“Development of Pattern Coatings for Precision Investment Casting of Titanium",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 349,
+      "title": "“Wet Process Printed Circuit Board Facility for Undergraduate Use”",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 350,
+      "title": "“Development of Tooling and Process for Polymer Infusion of Fibrous Ceramic Preforms”",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 351,
+      "title": "\"Fracture Behavior of Model Toughened Composites Under Mode I and Mode II Delaminations\"",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 353,
+      "title": "\"Toughening Mechanisms of an Advanced Particulate Rubber for Advanced Composites\"",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 354,
+      "title": "\"The Influence of Interfacial Shear Strength and Resin Toughness on the Damage Tolerance of Composites,\"",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 355,
+      "title": "\"Fracture Toughness Testing of Polyethylene Pipe Materials\"",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 356,
+      "title": "\"Failure Analysis of a Polyethylene Natural Gas Pipeline\"",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 357,
+      "title": "“The Effect of Pinch Clamping on Subsequent Service Life Time of Polyethylene Gas Pipe”",
+      "year": 2013,
+      "faculty": ""
+    }
+  ],
+  "missing_full_text": [
+    {
+      "index": 3,
+      "title": "How to secure e-mail and instant message",
+      "year": 2015
+    },
+    {
+      "index": 4,
+      "title": "Building a Secure E-Commerce System",
+      "year": 2015
+    },
+    {
+      "index": 5,
+      "title": "An NSF Pilot Project on Student Retention",
+      "year": 2017
+    },
+    {
+      "index": 6,
+      "title": "Outcome of project called MCALL",
+      "year": 2015
+    },
+    {
+      "index": 7,
+      "title": "A Simple Algorithm for Arbitrary Polynomial",
+      "year": 2015
+    },
+    {
+      "index": 8,
+      "title": "Molina’s Quick notes for Word 6.0,",
+      "year": 2015
+    },
+    {
+      "index": 9,
+      "title": "Molina’s Quick notes for WordPerfect",
+      "year": 2015
+    },
+    {
+      "index": 19,
+      "title": "Building relationships with stem faculty to improve student writing.",
+      "year": 2023
+    },
+    {
+      "index": 22,
+      "title": "A study of persuasive writing in stem fields as a function of student demographics",
+      "year": 2023
+    },
+    {
+      "index": 23,
+      "title": "Comparison of Undergraduate Student Writing in Engineering Disciplines at Campuses with Varying Demographics",
+      "year": 2022
+    },
+    {
+      "index": 24,
+      "title": "Enhancing Engagement and Qualitative Output of Technical Projects Through Competing Team Assignments",
+      "year": 2022
+    },
+    {
+      "index": 28,
+      "title": "Embedded Curriculum with Industry-recognized Certifications to Improve the Marketability of Engineering Technology Graduates",
+      "year": 2021
+    },
+    {
+      "index": 29,
+      "title": "Solar Energy Certificate for Engineering Technology Students",
+      "year": 2021
+    },
+    {
+      "index": 30,
+      "title": "A Review on Implementation of Multi Criteria Decision Making (MCDM) Approaches in Sustainable Supplier Selection",
+      "year": 2022
+    },
+    {
+      "index": 33,
+      "title": "TRANSFORMING TECHNOLOGIES FOR ADOPTING INDUSTRY 4.0.",
+      "year": 2020
+    },
+    {
+      "index": 34,
+      "title": "Pattern Recognition and Machine Learning for Augmented and Virtual Reality Applications",
+      "year": 2020
+    },
+    {
+      "index": 35,
+      "title": "Exploring Engineering",
+      "year": 2020
+    },
+    {
+      "index": 36,
+      "title": "Expanding Engineering and Technology Opportunities to Students in the Border Region Through International Collaboration",
+      "year": 2020
+    },
+    {
+      "index": 37,
+      "title": "Rapid manufacturing of Critical Industrial Parts: A Method based on Reverse Engineering, Rapid prototyping, and Coordinate Metrology",
+      "year": 2020
+    },
+    {
+      "index": 38,
+      "title": "Text Mining-based Qualitative Student Assessment of Interactive Simulation Learning Using SIMIO Tool – A Work in Progress",
+      "year": 2020
+    },
+    {
+      "index": 39,
+      "title": "Assistive technology based on IoT in building automation: a multidisciplinary engineering project",
+      "year": 2019
+    },
+    {
+      "index": 40,
+      "title": "Development of Senior Design & Internship Integrated University-Industry Collaborative Program to address the skills gap in Advanced Manufacturing",
+      "year": 2019
+    },
+    {
+      "index": 41,
+      "title": "Pattern Recognition and Machine Learning for Augmented and Virtual Reality Applications",
+      "year": 2019
+    },
+    {
+      "index": 43,
+      "title": "Recent Advances in Industrial Engineering and Management",
+      "year": 2019
+    },
+    {
+      "index": 44,
+      "title": "Supply Chain Network Modeling, Analysis and Performance Evaluation Using AI Tool with Industrial Case Studies",
+      "year": 2019
+    },
+    {
+      "index": 45,
+      "title": "A fuzzy optimization approach for software reliability estimation",
+      "year": 2019
+    },
+    {
+      "index": 46,
+      "title": "Sustainable  Manufacturing",
+      "year": 2017
+    },
+    {
+      "index": 47,
+      "title": "CMM training to fill the skills gap in the advanced manufacturing industry",
+      "year": 2018
+    },
+    {
+      "index": 48,
+      "title": "Promoting International Preparedness in undergraduate engineering education",
+      "year": 2018
+    },
+    {
+      "index": 49,
+      "title": "Cross-border collaboration in undergraduate engineering education through capstone projects",
+      "year": 2018
+    },
+    {
+      "index": 50,
+      "title": "Cross-border Higher Education between UTRGV-CECS-ENGT, USA and TecNM/IT Matamoros, Mexico through Capstone Projects",
+      "year": 2017
+    },
+    {
+      "index": 51,
+      "title": "Additive Manufacturing",
+      "year": 2017
+    },
+    {
+      "index": 52,
+      "title": "Designing software development processes to optimize multiple output performance characteristics",
+      "year": 2018
+    },
+    {
+      "index": 53,
+      "title": "Engineering Technology Capstone Projects: Microcomputer-Based Solutions",
+      "year": 2017
+    },
+    {
+      "index": 54,
+      "title": "Process Automation in Smart Environments: Intelligent Closet Prototype",
+      "year": 2017
+    },
+    {
+      "index": 55,
+      "title": "Collaborative technological development and innovation between UTRGVENGT, USA and ITM-CSE, Mexico: An intelligent closet prototype",
+      "year": 2018
+    },
+    {
+      "index": 56,
+      "title": "Cross border collaborative learning through capstone engineering projects",
+      "year": 2018
+    },
+    {
+      "index": 57,
+      "title": "“Collaborative technological development and innovation between UTRGV-ENGT, USA and ITM-CSE, Mexico: An Intelligent Closet Prototype”",
+      "year": 2017
+    },
+    {
+      "index": 58,
+      "title": "“Cross border collaborative learning through Capstone Engineering Projects”",
+      "year": 2017
+    },
+    {
+      "index": 59,
+      "title": "Optimization of software development life cycle process to minimize the delivered defect density",
+      "year": 2017
+    },
+    {
+      "index": 60,
+      "title": "A Brief Review of Software Reliability Prediction Models",
+      "year": 2018
+    },
+    {
+      "index": 61,
+      "title": "A Quantitative Project Management Methodology for    Controlling Multiple Output Characteristics in Software Development Process",
+      "year": 2017
+    },
+    {
+      "index": 62,
+      "title": "\"Study of minimum quantity lubrication and how nozzle design and placement affects the grinding of aerospace materials”",
+      "year": 2017
+    },
+    {
+      "index": 63,
+      "title": "Comparative study on optimum grinding parameters of Ti-6Al-4V titanium alloy using flood, minimum quantity lubrication (MQL), and MQL with Nano cutting fluid",
+      "year": 2017
+    },
+    {
+      "index": 64,
+      "title": "Recent Advances in Software Quality Management: A Review",
+      "year": 2017
+    },
+    {
+      "index": 65,
+      "title": "Grinding of Aerospace Alloys in MQL",
+      "year": 2017
+    },
+    {
+      "index": 66,
+      "title": "Developing Creative Engineers: A Challenge Based Instruction approach to Engineering and Technology Education”,",
+      "year": 2017
+    },
+    {
+      "index": 67,
+      "title": "Characterization of Micromist for Effective Minimum Quantity Lubrication",
+      "year": 2017
+    },
+    {
+      "index": 68,
+      "title": "Experimental Investigation of micromist for effective machining",
+      "year": 2017
+    },
+    {
+      "index": 69,
+      "title": "“Essential Competencies in Sustainable Manufacturing: A Benchmark for Technology Program Development”,",
+      "year": 2017
+    },
+    {
+      "index": 70,
+      "title": "Wind Power Mathematics and STEM”",
+      "year": 2017
+    },
+    {
+      "index": 71,
+      "title": "“Characterization of Micromist for Effective Minimum Quantity Lubrication,”",
+      "year": 2017
+    },
+    {
+      "index": 72,
+      "title": "Effective product efficiency using advanced manufacturing techniques",
+      "year": 2017
+    },
+    {
+      "index": 73,
+      "title": "Enriching Engineering technology Curriculum through the Introduction of Nanotechnology",
+      "year": 2015
+    },
+    {
+      "index": 74,
+      "title": "Implementation of agile supply chain model in an electronic switches manufacturing company",
+      "year": 2015
+    },
+    {
+      "index": 75,
+      "title": "Web-based Control and Robotics Education",
+      "year": 2015
+    },
+    {
+      "index": 76,
+      "title": "WEB BASED AUTOMATED INSPECTION (AI) AND QUALITY MANAGEMENT (QM)",
+      "year": 2017
+    },
+    {
+      "index": 77,
+      "title": "Implementing the use of Statistical Analysis Tools in the Manufacturing Processes of automotive industry",
+      "year": 2015
+    },
+    {
+      "index": 78,
+      "title": "Product Centered Manufacturing Education",
+      "year": 2015
+    },
+    {
+      "index": 79,
+      "title": "Restructuring the US Manufacturing Education for Increased Global Competitiveness – A Perspective",
+      "year": 2015
+    },
+    {
+      "index": 80,
+      "title": "Web based control for Mechatronics laboratory Experiments",
+      "year": 2015
+    },
+    {
+      "index": 81,
+      "title": "Agile ITQFD and its financial viability: a pilot project approach",
+      "year": 2015
+    },
+    {
+      "index": 82,
+      "title": "MEMS Education for Technology Students",
+      "year": 2015
+    },
+    {
+      "index": 83,
+      "title": "Experiences with Design and Development pf a rapid product manufacturing technique in the batch production of miniature industrial components",
+      "year": 2015
+    },
+    {
+      "index": 84,
+      "title": "Future pf Microsystems Technology Education, Research and Outreach as applied to 21st century manufacturing",
+      "year": 2015
+    },
+    {
+      "index": 85,
+      "title": "Profit Optimization in Three Echelon Supply Chain revenue management through new heuristic optimizer",
+      "year": 2015
+    },
+    {
+      "index": 86,
+      "title": "A vision and robot based on-line inspection monitoring system for electronic manufacturing",
+      "year": 2015
+    },
+    {
+      "index": 87,
+      "title": "Paradigms for Environmentally Conscious Manufacturing",
+      "year": 2015
+    },
+    {
+      "index": 88,
+      "title": "Understanding and modeling the economics of ECM",
+      "year": 2015
+    },
+    {
+      "index": 89,
+      "title": "A vision and robot based on-line monitoring of defects in Electronics Manufacturing – A collaborative effort in capstone project",
+      "year": 2015
+    },
+    {
+      "index": 90,
+      "title": "A web-based approach to automated Inspection and quality control of manufactured parts",
+      "year": 2015
+    },
+    {
+      "index": 91,
+      "title": "A Feasibility Study for the Implementation of Non- Site Based Hands-On Curriculum for Engineering Technology Education",
+      "year": 2015
+    },
+    {
+      "index": 92,
+      "title": "The Minority Science Engineering Improvement Program A “Working in Teams to Enhance Pre-Engineering Curriculum Projects",
+      "year": 2015
+    },
+    {
+      "index": 93,
+      "title": "Development of an Intelligent Architecture for Web- Based Programming & Control of an Automated Manufacturing Cell",
+      "year": 2015
+    },
+    {
+      "index": 94,
+      "title": "Computer Based Manufacturing Cell Control Using Intelligent Sensing System",
+      "year": 2015
+    },
+    {
+      "index": 95,
+      "title": "Computer Based Manufacturing Cell Control Using Smart Distributed System",
+      "year": 2015
+    },
+    {
+      "index": 96,
+      "title": "CAD Based Recognition - a Neural Network Approach",
+      "year": 2015
+    },
+    {
+      "index": 97,
+      "title": "Enhancement of Quality and productivity by the implementation of Computer Vision Systems in a Light Engineering Industry",
+      "year": 2015
+    },
+    {
+      "index": 98,
+      "title": "Automated Visual Inspection System for the Inspection of Fragile Components in the FMS Environment",
+      "year": 2015
+    },
+    {
+      "index": 99,
+      "title": "Automated Visual Inspection System for the Inspection of Fragile Components",
+      "year": 2015
+    },
+    {
+      "index": 100,
+      "title": "Investigations on Experimental Automated Visual Inspection System for Industrial Application",
+      "year": 2015
+    },
+    {
+      "index": 101,
+      "title": "Automated Visual Inspection of Industrial Components: A CAD Based Approach",
+      "year": 2015
+    },
+    {
+      "index": 102,
+      "title": "Total Automated Visual Inspection System for Industrial Components",
+      "year": 2015
+    },
+    {
+      "index": 103,
+      "title": "Visual Identification of Industrial Components using Part Family Classification Coding System",
+      "year": 2015
+    },
+    {
+      "index": 104,
+      "title": "Automated Visual Inspection of Geometric Tolerance in Circular Components",
+      "year": 2015
+    },
+    {
+      "index": 105,
+      "title": "A Two Stage Camera Calibration for 3D Scene Analysis",
+      "year": 2015
+    },
+    {
+      "index": 106,
+      "title": "Closed-Form Solution for Inverse kinematics of a coplanar 5-axis articulated robot manipulator",
+      "year": 2015
+    },
+    {
+      "index": 107,
+      "title": "An Approach to Inspect Polyhedral objects using Trinocular vision system",
+      "year": 2015
+    },
+    {
+      "index": 108,
+      "title": "An approach for the Recognition of Industrial Components through the application of Computer Vision systems to Group Technology - Part Classification Arrangement",
+      "year": 2015
+    },
+    {
+      "index": 109,
+      "title": "Texture Analysis Based on Texture Spectrum Method",
+      "year": 2015
+    },
+    {
+      "index": 110,
+      "title": "Position tolerance verification using Computer Vision System",
+      "year": 2015
+    },
+    {
+      "index": 111,
+      "title": "Dimensional image reconstruction from the perspective view of a Polyhedron",
+      "year": 2015
+    },
+    {
+      "index": 112,
+      "title": "Precision Analysis of Computer Vision Systems in Soft gauging applications",
+      "year": 2015
+    },
+    {
+      "index": 113,
+      "title": "Geometric Analysis of Circular Features using Digital Vision System",
+      "year": 2015
+    },
+    {
+      "index": 114,
+      "title": "Some Applications of Machine Vision Inspection Systems in Industries",
+      "year": 2015
+    },
+    {
+      "index": 115,
+      "title": "Methodology to Detect the Position of an Image Segment within specified Interval in a vision envelope",
+      "year": 2015
+    },
+    {
+      "index": 116,
+      "title": "Robotic Vision Inspection System for Industrial Parts",
+      "year": 2015
+    },
+    {
+      "index": 117,
+      "title": "A comprehensive study on Flexible Manufacturing Systems",
+      "year": 2015
+    },
+    {
+      "index": 118,
+      "title": "Computer Vision in Inspection: A Status Report",
+      "year": 2015
+    },
+    {
+      "index": 119,
+      "title": "Design Considerations of Rotating Casting Pump",
+      "year": 2015
+    },
+    {
+      "index": 120,
+      "title": "A Vision Inspection System for Fragile components",
+      "year": 2015
+    },
+    {
+      "index": 121,
+      "title": "Expert System for process planning of lathe spindles",
+      "year": 2015
+    },
+    {
+      "index": 122,
+      "title": "Optimization of Dynamic Performance of Articulated Robots Considering Drive Train Compliance",
+      "year": 2015
+    },
+    {
+      "index": 123,
+      "title": "An implementation of Vision and Expert System Based inspection",
+      "year": 2015
+    },
+    {
+      "index": 129,
+      "title": "Effect of Ankle-Pivot Misalignment and Upward Ankle Vertical Displacement on Stability and Equilibrium Location for an Ankle-Hip Model of Balance on a Balance Board",
+      "year": 2020
+    },
+    {
+      "index": 131,
+      "title": "Powered Ankle-Foot Prostheses: A Survey on Sensing Systems and Control Strategies",
+      "year": 2020
+    },
+    {
+      "index": 132,
+      "title": "Numerical Nonlinear Analysis for Dynamic Stability of an Ankle-Hip Model of Balance on a Balance Board",
+      "year": 2020
+    },
+    {
+      "index": 133,
+      "title": "Basin of Attraction and Limit Cycle Amplitude of an Ankle-Hip Model of Balance on a Balance Board",
+      "year": 2020
+    },
+    {
+      "index": 134,
+      "title": "Body-weight supported treadmill walking training improves functional walking and balance of stroke survivors in any post-stroke stage: A systematic review",
+      "year": 2020
+    },
+    {
+      "index": 135,
+      "title": "Advances in Powered Ankle-Foot Prostheses",
+      "year": 2020
+    },
+    {
+      "index": 147,
+      "title": "Relative Pattern Recognition for Noisy Handwritten Numeral Recognition",
+      "year": 2017
+    },
+    {
+      "index": 148,
+      "title": "Speeding Up Multi-class SVM Evaluation by PCA and Feature Selection",
+      "year": 2017
+    },
+    {
+      "index": 149,
+      "title": "An Overview of Smart Glasses and Some Research Issues",
+      "year": 2026
+    },
+    {
+      "index": 151,
+      "title": "A Consortium Blockchain-Based Approach for Energy Sharing in Distribution Systems",
+      "year": 2026
+    },
+    {
+      "index": 152,
+      "title": "A Deep Dive into FAT-32 Windows File System: A Digital Forensics Perspective",
+      "year": 2022
+    },
+    {
+      "index": 155,
+      "title": "Determining Critical Nodes in Optimal Cost Attacks on Networked Infrastructures",
+      "year": 2023
+    },
+    {
+      "index": 157,
+      "title": "C-PATR-IoT: A Hierarchical Classified Digital Forensics Framework for IoT",
+      "year": 2023
+    },
+    {
+      "index": 158,
+      "title": "Off-Loaded Enabling Technologies for Connected and Automated Vehicles: An Overview of the-State-of-the-Art",
+      "year": 2023
+    },
+    {
+      "index": 160,
+      "title": "The Majority Rule: A General Protection on Recommender System",
+      "year": 2020
+    },
+    {
+      "index": 161,
+      "title": "Weak Mitoticity of Bounded Disjunctive and Conjunctive Truth-table Autoreducible Sets",
+      "year": 2020
+    },
+    {
+      "index": 163,
+      "title": "FCIA: Integrity Assurance of Outsourced Database with Fine-grained Modification Control Policy",
+      "year": 2020
+    },
+    {
+      "index": 164,
+      "title": "Mining Survey Data",
+      "year": 2019
+    },
+    {
+      "index": 165,
+      "title": "Mining Survey Data",
+      "year": 2019
+    },
+    {
+      "index": 166,
+      "title": "A Holistic Approach for Enhancing Distributed Education with Multi-Campus Course Delivery Methods",
+      "year": 2019
+    },
+    {
+      "index": 167,
+      "title": "An Accelerated Hierarchical Approach for Object Shape Extraction and Recognition",
+      "year": 2019
+    },
+    {
+      "index": 170,
+      "title": "Mining Dependent Items",
+      "year": 2017
+    },
+    {
+      "index": 173,
+      "title": "Mining Multiple Regression Relations",
+      "year": 2017
+    },
+    {
+      "index": 174,
+      "title": "Underwater Multi-Spectral Photometric Stereo Reconstruction from a Single RGBD Image",
+      "year": 2017
+    },
+    {
+      "index": 175,
+      "title": "Improving OCR performance with background image elimination",
+      "year": 2017
+    },
+    {
+      "index": 176,
+      "title": "Circle-based tipping cascades in social networks",
+      "year": 2017
+    },
+    {
+      "index": 177,
+      "title": "Power grid defense against malicious cascading failure",
+      "year": 2017
+    },
+    {
+      "index": 178,
+      "title": "Mfwk-means: Minkowski metric fuzzy weighted k-means for high dimensional data clustering",
+      "year": 2017
+    },
+    {
+      "index": 179,
+      "title": "Special Sound Detection for emergency phones",
+      "year": 2017
+    },
+    {
+      "index": 180,
+      "title": "Chapter Proposal: Adapting Graduate-Level Math and Computer Science Courses from Face-to-face to Online Delivery: Lessons Learned",
+      "year": 2015
+    },
+    {
+      "index": 181,
+      "title": "Transitioning from F2F to DE: Lessons Learned from South Texas",
+      "year": 2015
+    },
+    {
+      "index": 182,
+      "title": "Locate potential support vectors for faster sequential minimal optimization",
+      "year": 2017
+    },
+    {
+      "index": 183,
+      "title": "Transforming a computer science master program from traditional face-to-face delivery to online delivery--A closing phase project evaluation",
+      "year": 2015
+    },
+    {
+      "index": 184,
+      "title": "Cluster analysis of simulated gravitational wave triggers using S-MEANS and constrained validation clustering",
+      "year": 2017
+    },
+    {
+      "index": 185,
+      "title": "A study on the dynamic time warping in kernel machines",
+      "year": 2017
+    },
+    {
+      "index": 186,
+      "title": "S-means: Similarity Driven Clustering and Its application in Gravitational-Wave Astronomy Data Mining",
+      "year": 2015
+    },
+    {
+      "index": 187,
+      "title": "Speeding up multi-class svm evaluation via principal component analysis and recursive feature elimination. J",
+      "year": 2017
+    },
+    {
+      "index": 188,
+      "title": "A comparative study on the consistency of features in on-line signature verification",
+      "year": 2017
+    },
+    {
+      "index": 189,
+      "title": "Half-Against-Half Multi-class Support Vector Machines",
+      "year": 2017
+    },
+    {
+      "index": 190,
+      "title": "Matching and retrieving sequential patterns using regression",
+      "year": 2017
+    },
+    {
+      "index": 191,
+      "title": "Matching and retrieving sequential patterns using regression, Web Intelligence and Agent Systems 3(4",
+      "year": 2017
+    },
+    {
+      "index": 192,
+      "title": "Mouse-based signature verification for secure internet transactions",
+      "year": 2017
+    },
+    {
+      "index": 193,
+      "title": "Sequential pattern classification without explicit feature extraction",
+      "year": 2017
+    },
+    {
+      "index": 194,
+      "title": "Similarity-driven sequence classification based on support vector machines",
+      "year": 2017
+    },
+    {
+      "index": 195,
+      "title": "Direct image matching by dynamic warping",
+      "year": 2017
+    },
+    {
+      "index": 196,
+      "title": "ER 2 : An intuitive similarity measure for on-line signature verification",
+      "year": 2017
+    },
+    {
+      "index": 197,
+      "title": "GRM: Generalized regression model for clustering linear sequences, The",
+      "year": 2017
+    },
+    {
+      "index": 198,
+      "title": "LCGMiner: Levelwise closed graph pattern mining from large databases",
+      "year": 2017
+    },
+    {
+      "index": 199,
+      "title": "Matching and Retrieving Sequential Patterns Under Regression",
+      "year": 2017
+    },
+    {
+      "index": 200,
+      "title": "Regression time warping for similarity measure of sequence",
+      "year": 2017
+    },
+    {
+      "index": 201,
+      "title": "Signature and lexicon pruning techniques",
+      "year": 2017
+    },
+    {
+      "index": 202,
+      "title": "Building relationships with stem faculty to improve student writing.",
+      "year": 2023
+    },
+    {
+      "index": 203,
+      "title": "A study of persuasive writing in stem fields as a function of student demographics",
+      "year": 2023
+    },
+    {
+      "index": 204,
+      "title": "Comparison of Undergraduate Student Writing in Engineering Disciplines at Campuses with Varying Demographics",
+      "year": 2022
+    },
+    {
+      "index": 205,
+      "title": "Embedded Curriculum with Industry-recognized Certifications to Improve the Marketability of Engineering Technology Graduates",
+      "year": 2021
+    },
+    {
+      "index": 206,
+      "title": "Solar Energy Certificate for Engineering Technology Students",
+      "year": 2021
+    },
+    {
+      "index": 207,
+      "title": "Expanding Engineering and Technology Opportunities to Students in the Border Region Through International Collaboration",
+      "year": 2020
+    },
+    {
+      "index": 208,
+      "title": "Development of Senior Design & Internship Integrated University-Industry Collaborative Program to address the skills gap in Advanced Manufacturing",
+      "year": 2019
+    },
+    {
+      "index": 209,
+      "title": "CMM training to fill the skills gap in the advanced manufacturing industry",
+      "year": 2018
+    },
+    {
+      "index": 210,
+      "title": "Promoting International Preparedness in undergraduate engineering education",
+      "year": 2018
+    },
+    {
+      "index": 211,
+      "title": "Engineered TiO2 and SiO2-TiO2 films on silica-coated glass for increased thin film durability under abrasive conditions",
+      "year": 2017
+    },
+    {
+      "index": 212,
+      "title": "Engineering Technology Capstone Projects: Microcomputer-Based Solutions",
+      "year": 2017
+    },
+    {
+      "index": 213,
+      "title": "The mechanical response to contact of Soda Lime Silica float glass and the effects of hydration and high temperature",
+      "year": 2017
+    },
+    {
+      "index": 214,
+      "title": "Method and system to form deletion windows on a glass substrate",
+      "year": 2017
+    },
+    {
+      "index": 215,
+      "title": "Evolution of the modulus and hardness of the tin and air sides of float glass as a function of hydration time",
+      "year": 2017
+    },
+    {
+      "index": 216,
+      "title": "Method and system for bending glass sheets with complex curvatures",
+      "year": 2017
+    },
+    {
+      "index": 217,
+      "title": "MedBlockSync: A blockchain Solution for Multi-Institutional Healthcare",
+      "year": 2025
+    },
+    {
+      "index": 219,
+      "title": "DPT Attack: Abusing Differential Privacy Triggers to Improve Backdoor Attacks in Federated Learning",
+      "year": 2025
+    },
+    {
+      "index": 222,
+      "title": "The TLB Mage: On How Modern TLB Designs Accelerate PTE-based Cache Side-channel Attacks",
+      "year": 2024
+    },
+    {
+      "index": 229,
+      "title": "C-PATR-IoT: A Hierarchical Classified Digital Forensics Framework for IoT",
+      "year": 2023
+    },
+    {
+      "index": 237,
+      "title": "Mining Survey Data",
+      "year": 2019
+    },
+    {
+      "index": 239,
+      "title": "A Holistic Approach for Enhancing Distributed Education with Multi-Campus Course Delivery Methods",
+      "year": 2019
+    },
+    {
+      "index": 241,
+      "title": "Text-based Classification of Questions on Q&A Forums",
+      "year": 2019
+    },
+    {
+      "index": 246,
+      "title": "Probabilistic Autoreductions",
+      "year": 2015
+    },
+    {
+      "index": 247,
+      "title": "Chapter Proposal: Adapting Graduate-Level Math and Computer Science Courses from Face-to-face to Online Delivery: Lessons Learned",
+      "year": 2015
+    },
+    {
+      "index": 248,
+      "title": "Transitioning from F2F to DE: Lessons Learned from South Texas",
+      "year": 2015
+    },
+    {
+      "index": 249,
+      "title": "Transforming a computer science master program from traditional face-to-face delivery to online delivery--A closing phase project evaluation",
+      "year": 2015
+    },
+    {
+      "index": 250,
+      "title": "Separating NE from Some Nonuniform Nondeterministic Complexity Classes",
+      "year": 2015
+    },
+    {
+      "index": 251,
+      "title": "Proof System Representations of Degrees of Disjoint NP-pairs",
+      "year": 2015
+    },
+    {
+      "index": 252,
+      "title": "Autoreducibility and Mitoticity",
+      "year": 2015
+    },
+    {
+      "index": 253,
+      "title": "Separating NE from Some Nonuniform Nondeterministic Complexity Classes",
+      "year": 2015
+    },
+    {
+      "index": 254,
+      "title": "The Informational Content of Canonical Disjoint NP-pairs",
+      "year": 2015
+    },
+    {
+      "index": 255,
+      "title": "Non-mitotic Sets",
+      "year": 2015
+    },
+    {
+      "index": 256,
+      "title": "Splitting NP-complete Sets",
+      "year": 2015
+    },
+    {
+      "index": 258,
+      "title": "A Deep Dive into FAT-32 Windows File System: A Digital Forensics Perspective",
+      "year": 2022
+    },
+    {
+      "index": 262,
+      "title": "C-PATR-IoT: A Hierarchical Classified Digital Forensics Framework for IoT",
+      "year": 2023
+    },
+    {
+      "index": 264,
+      "title": "The Majority Rule: A General Protection on Recommender System",
+      "year": 2020
+    },
+    {
+      "index": 265,
+      "title": "Weak Mitoticity of Bounded Disjunctive and Conjunctive Truth-table Autoreducible Sets",
+      "year": 2020
+    },
+    {
+      "index": 268,
+      "title": "FCIA: Integrity Assurance of Outsourced Database with Fine-grained Modification Control Policy",
+      "year": 2020
+    },
+    {
+      "index": 269,
+      "title": "Mining Survey Data",
+      "year": 2019
+    },
+    {
+      "index": 270,
+      "title": "Mining Survey Data",
+      "year": 2019
+    },
+    {
+      "index": 271,
+      "title": "A Holistic Approach for Enhancing Distributed Education with Multi-Campus Course Delivery Methods",
+      "year": 2019
+    },
+    {
+      "index": 272,
+      "title": "An Accelerated Hierarchical Approach for Object Shape Extraction and Recognition",
+      "year": 2019
+    },
+    {
+      "index": 277,
+      "title": "Visualization as Effective Instructional and Learning Tools in the Computer Science Curriculum",
+      "year": 2017
+    },
+    {
+      "index": 278,
+      "title": "Implementing a Challenge-Based Approach to Teaching Selected Courses in CS and Computational Sciences",
+      "year": 2017
+    },
+    {
+      "index": 279,
+      "title": "Spatial Entropy-based Cost Function for Gray and Color Image Segmentation with Dynamic Optimal Partitioning",
+      "year": 2017
+    },
+    {
+      "index": 280,
+      "title": "Color Image Segmentation with an Entropy-based Cost Function",
+      "year": 2017
+    },
+    {
+      "index": 281,
+      "title": "Women-centric Senior Projects for Females in the computational Sciences Fields",
+      "year": 2017
+    },
+    {
+      "index": 282,
+      "title": "An expanded Histogram Approach for Multilevel Image Thresholding",
+      "year": 2017
+    },
+    {
+      "index": 283,
+      "title": "Computational Data Mining for Feature Extraction in Health Informatics",
+      "year": 2015
+    },
+    {
+      "index": 284,
+      "title": "Computational Data Mining for Feature Extraction in Health Informatics",
+      "year": 2017
+    },
+    {
+      "index": 285,
+      "title": "Image Retrieval Based on Texture Subspace Orthogonal Projection with Wavelet Frames",
+      "year": 2017
+    },
+    {
+      "index": 286,
+      "title": "Design and Setup of a Networking and Distributed Processing Lab or Recruiting , Teaching, and Research",
+      "year": 2017
+    },
+    {
+      "index": 287,
+      "title": "Educational Computer Science Fun Projects for Integrating Multidisciplinary Concepts of Mathematics, Science, and Engineering",
+      "year": 2015
+    },
+    {
+      "index": 288,
+      "title": "A New Method for Iris Recognition Using Gray-Level Concurrence Matrix",
+      "year": 2015
+    },
+    {
+      "index": 289,
+      "title": "A Robust and Accurate Segmentation of Iris Images Using Optimal Partitioning",
+      "year": 2015
+    },
+    {
+      "index": 290,
+      "title": "Designing and Implementing a Parallel Computing Curriculum Based on Parallel Clustering",
+      "year": 2015
+    },
+    {
+      "index": 291,
+      "title": "Integration of Medical Informatics into Computer Science Curriculum",
+      "year": 2015
+    },
+    {
+      "index": 292,
+      "title": "Designing and Implementing a Parallel Computing Curriculum Based on Beowulf Clustering",
+      "year": 2017
+    },
+    {
+      "index": 293,
+      "title": "Integration of Educational Methodologies in the Computer Science Curriculum based on the Beowulf Curriculum Enrichment Integrated Lab (B-CEIL)",
+      "year": 2015
+    },
+    {
+      "index": 294,
+      "title": "Fostering Student Professional Perspectives through Virtual Mentoring: A retrospective analysis at the University of Texas - Brownsville",
+      "year": 2015
+    },
+    {
+      "index": 295,
+      "title": "Impact of the Virtual Plaza Mentorship Project at the University of Texas-Brownsville",
+      "year": 2015
+    },
+    {
+      "index": 296,
+      "title": "Implementation of Beowulf based Curriculum Enrichment Integrated Lab (B-CEIL)",
+      "year": 2017
+    },
+    {
+      "index": 297,
+      "title": "Peano Scanning based Classified Vector Quantizer",
+      "year": 2017
+    },
+    {
+      "index": 298,
+      "title": "Gradient-based Block Truncation Coding",
+      "year": 2017
+    },
+    {
+      "index": 299,
+      "title": "Classification and Codebook Design for a Vector Quantizer",
+      "year": 2017
+    },
+    {
+      "index": 300,
+      "title": "Local Thresholding Block Classification for Image Compression",
+      "year": 2017
+    },
+    {
+      "index": 301,
+      "title": "Implementation of a Flexible Manufacturing Cell Control and Inspection",
+      "year": 2017
+    },
+    {
+      "index": 302,
+      "title": "Effects of prolonged inactivity on railcar bearing performance",
+      "year": 2026
+    },
+    {
+      "index": 303,
+      "title": "Effect of extended bearing inactivity on lubricating grease characteristics and performance",
+      "year": 2026
+    },
+    {
+      "index": 304,
+      "title": "Effects of long-term inactivity on railcar bearing performance",
+      "year": 2026
+    },
+    {
+      "index": 305,
+      "title": "Conductive Polymer Pad for Use in Freight Railcar Bearing Adapters",
+      "year": 2021
+    },
+    {
+      "index": 306,
+      "title": "Prognostics Models for Railroad Tapered Roller Bearings with Spall Defects on Inner or Outer Rings",
+      "year": 2019
+    },
+    {
+      "index": 307,
+      "title": "Prototyping a Conductive Polymer Steering Pad for Rail Freight Service",
+      "year": 2019
+    },
+    {
+      "index": 308,
+      "title": "Defect Prognostic Models for Spall Growth in Railroad Bearing Rolling Elements",
+      "year": 2018
+    },
+    {
+      "index": 309,
+      "title": "Development of Prognostic Techniques for Surface Defect Growth in Railroad Bearing Rolling Elements",
+      "year": 2017
+    },
+    {
+      "index": 310,
+      "title": "Hysteresis Heating of Railroad Bearing Thermoplastic Elastomer Suspension Element",
+      "year": 2017
+    },
+    {
+      "index": 311,
+      "title": "Models for the Residual Life of Railroad Bearing Grease in Laboratory and Industry Applications",
+      "year": 2017
+    },
+    {
+      "index": 312,
+      "title": "PVC-OH Functionalized SWCNT Nanocomposites",
+      "year": 2017
+    },
+    {
+      "index": 313,
+      "title": "Spectroscopic Investigations on PVDF-MWCNTs Nanocomposites",
+      "year": 2017
+    },
+    {
+      "index": 314,
+      "title": "Heat Generation in the Railroad Bearing Thermoplastic Elastomer Suspension Element",
+      "year": 2017
+    },
+    {
+      "index": 315,
+      "title": "Temperature Profiles of Railroad Tapered Bearings with Deffective Inner and Outer Rings",
+      "year": 2017
+    },
+    {
+      "index": 316,
+      "title": "Developing Empirical Models of Railroad Bearing Grease",
+      "year": 2017
+    },
+    {
+      "index": 317,
+      "title": "Diﬀerential Scanning Calorimetry Investigations on Polyvinylidene Fluoride – Fe3O4 Nanocomposites",
+      "year": 2017
+    },
+    {
+      "index": 318,
+      "title": "On Structural Properties PVDF-Fe3O4 Composites",
+      "year": 2017
+    },
+    {
+      "index": 319,
+      "title": "pH Prediction for Saline Solutions in Various Syringes After EO Sterilization",
+      "year": 2017
+    },
+    {
+      "index": 320,
+      "title": "Modeling and optimization of the molten salt cleaning process",
+      "year": 2019
+    },
+    {
+      "index": 321,
+      "title": "Ann G. Neering: Interactive Chatbot to Motivate and Engage Engineering Students",
+      "year": 2014
+    },
+    {
+      "index": 322,
+      "title": "Design of a Primary Steering Pad",
+      "year": 2017
+    },
+    {
+      "index": 323,
+      "title": "Microstructural, Viscoelastic, and Thermal Characterization of Production and Experimental Glass Reinforced Bearing Cages",
+      "year": 2017
+    },
+    {
+      "index": 324,
+      "title": "Thermal Effects on the Relaxation of Seal Case Rotor Interference Fi",
+      "year": 2017
+    },
+    {
+      "index": 325,
+      "title": "AC 2010-1726: Ann G. Neering: Interactive Chatbot to Motivate and Engage Engineering Students",
+      "year": 2013
+    },
+    {
+      "index": 326,
+      "title": "Oil Compatibility of RTP0299HX69130B",
+      "year": 2017
+    },
+    {
+      "index": 327,
+      "title": "Fracture Toughness of Vapor Grown Carbon Nanofiber-Reinforced Polyethylene Composites",
+      "year": 2013
+    },
+    {
+      "index": 328,
+      "title": "Electrospun fibers from poly (methyl methacrylate)/vapor grown carbon nanofibers",
+      "year": 2017
+    },
+    {
+      "index": 329,
+      "title": "Modeling Nano Reinforced Polymers",
+      "year": 2013
+    },
+    {
+      "index": 330,
+      "title": "Thermal Performance of Aluminum-Foam CPU Heat Exchangers",
+      "year": 2013
+    },
+    {
+      "index": 331,
+      "title": "The Synergistic Impact of the VaNTH ERC on the Educational Practices of the School of Engineering and Computer Science at UTPA",
+      "year": 2013
+    },
+    {
+      "index": 332,
+      "title": "“The synergetic impact of the VaNTH ERC on the educational practices of the school of engineering and computer science at UTPA,”",
+      "year": 2013
+    },
+    {
+      "index": 333,
+      "title": "Electromagnetic Interference Shielding Effectiveness of Carbon Nanofiber/LCP Composites",
+      "year": 2014
+    },
+    {
+      "index": 334,
+      "title": "Electromagnetic Shielding in Nanofiber reinforced Liquid Crystal Polymers",
+      "year": 2014
+    },
+    {
+      "index": 335,
+      "title": "Nanofiber Toughened Polyethylene Composites",
+      "year": 2013
+    },
+    {
+      "index": 336,
+      "title": "Thermal and electrical analysis of vapor grown carbon nanofiber/ polyoxymethylene (VGCNF/POM) composites",
+      "year": 2019
+    },
+    {
+      "index": 337,
+      "title": "“Thermal and Electrical Analysis of Vapor Grown Carbon Nanofiber/Polyoxymethylene Composites\"",
+      "year": 2014
+    },
+    {
+      "index": 338,
+      "title": "“Nanofiber Toughened Polyethylene Composites”Carbon, 42",
+      "year": 2014
+    },
+    {
+      "index": 339,
+      "title": "\"Evaluation of Mechanical and Thermal Properties of Commonly-used Denture Base Resins\"",
+      "year": 2013
+    },
+    {
+      "index": 340,
+      "title": "“Thermal and Electrical Analysis of Vapor Grown Carbon Nanofiber/LCP Composites\"",
+      "year": 2014
+    },
+    {
+      "index": 341,
+      "title": "“Three-dimensional analysis of dual-arch impression trays”",
+      "year": 2013
+    },
+    {
+      "index": 342,
+      "title": "“Quantitative Determination of the Stability of Implant-Bone Interface Using Resonance Frequency Analysis”",
+      "year": 2014
+    },
+    {
+      "index": 343,
+      "title": "“A Close-up Look at an Implant Fracture: A Case Report”",
+      "year": 2013
+    },
+    {
+      "index": 344,
+      "title": "Custom Fabrication of reconstructive hard tissue frameworks",
+      "year": 2014
+    },
+    {
+      "index": 345,
+      "title": "“Properties of Nanofiber Reinforced Polymer Composites with Intercalated Copper Particles”",
+      "year": 2014
+    },
+    {
+      "index": 346,
+      "title": "“The Accuracy of Soldering, Laser Welding, and Electric Discharge Machining in the Fabrication of Implant-Supported Bars,”",
+      "year": 2013
+    },
+    {
+      "index": 347,
+      "title": "“Development of a Process for Fabrication of Laminated Titanium Denture Bases,”",
+      "year": 2013
+    },
+    {
+      "index": 348,
+      "title": "“Development of Pattern Coatings for Precision Investment Casting of Titanium",
+      "year": 2013
+    },
+    {
+      "index": 349,
+      "title": "“Wet Process Printed Circuit Board Facility for Undergraduate Use”",
+      "year": 2013
+    },
+    {
+      "index": 350,
+      "title": "“Development of Tooling and Process for Polymer Infusion of Fibrous Ceramic Preforms”",
+      "year": 2013
+    },
+    {
+      "index": 351,
+      "title": "\"Fracture Behavior of Model Toughened Composites Under Mode I and Mode II Delaminations\"",
+      "year": 2013
+    },
+    {
+      "index": 352,
+      "title": "\"Failure of a Polyethylene Natural Gas Pipeline\"",
+      "year": 2013
+    },
+    {
+      "index": 353,
+      "title": "\"Toughening Mechanisms of an Advanced Particulate Rubber for Advanced Composites\"",
+      "year": 2013
+    },
+    {
+      "index": 354,
+      "title": "\"The Influence of Interfacial Shear Strength and Resin Toughness on the Damage Tolerance of Composites,\"",
+      "year": 2013
+    },
+    {
+      "index": 355,
+      "title": "\"Fracture Toughness Testing of Polyethylene Pipe Materials\"",
+      "year": 2013
+    },
+    {
+      "index": 356,
+      "title": "\"Failure Analysis of a Polyethylene Natural Gas Pipeline\"",
+      "year": 2013
+    },
+    {
+      "index": 357,
+      "title": "“The Effect of Pinch Clamping on Subsequent Service Life Time of Polyethylene Gas Pipe”",
+      "year": 2013
+    }
+  ],
+  "duplicate_doi_groups": {
+    "10.1016/j.tcs.2020.04.005": [
+      161,
+      233,
+      265
+    ],
+    "10.1109/icdis.2019.00037": [
+      164,
+      237,
+      269
+    ],
+    "10.1007/978-3-319-94776-1_17": [
+      168,
+      169,
+      242,
+      243,
+      273,
+      274
+    ],
+    "10.1109/icdis.2018.00038": [
+      171,
+      244,
+      275
+    ],
+    "10.1109/icdis.2018.00021": [
+      172,
+      245,
+      276
+    ]
+  },
+  "duplicate_title_year_groups": {
+    "qtaas quality cloud teaching as a service an immersive framework for teaching cloud computing for cybersecurity majors|2024": [
+      0,
+      225,
+      259
+    ],
+    "building relationships with stem faculty to improve student writing|2023": [
+      19,
+      202
+    ],
+    "a study of persuasive writing in stem fields as a function of student demographics|2023": [
+      22,
+      203
+    ],
+    "comparison of undergraduate student writing in engineering disciplines at campuses with varying demographics|2022": [
+      23,
+      204
+    ],
+    "embedded curriculum with industry recognized certifications to improve the marketability of engineering technology graduates|2021": [
+      28,
+      205
+    ],
+    "solar energy certificate for engineering technology students|2021": [
+      29,
+      206
+    ],
+    "expanding engineering and technology opportunities to students in the border region through international collaboration|2020": [
+      36,
+      207
+    ],
+    "development of senior design internship integrated university industry collaborative program to address the skills gap in advanced manufacturing|2019": [
+      40,
+      208
+    ],
+    "cmm training to fill the skills gap in the advanced manufacturing industry|2018": [
+      47,
+      209
+    ],
+    "promoting international preparedness in undergraduate engineering education|2018": [
+      48,
+      210
+    ],
+    "engineering technology capstone projects microcomputer based solutions|2017": [
+      53,
+      212
+    ],
+    "characterization of micromist for effective minimum quantity lubrication|2017": [
+      67,
+      71
+    ],
+    "a deep dive into fat 32 windows file system a digital forensics perspective|2022": [
+      152,
+      258
+    ],
+    "splitting np complete sets infinitely|2023": [
+      154,
+      226,
+      260
+    ],
+    "early integrating of industry certification domains and objectives into a modern a cybersecurity degree curriculum|2024": [
+      156,
+      228,
+      261
+    ],
+    "c patr iot a hierarchical classified digital forensics framework for iot|2023": [
+      157,
+      229,
+      262
+    ],
+    "crafting a degree empowering students securing a nation the creation of a modern cyber security degree for the 21st century|2022": [
+      159,
+      230,
+      263
+    ],
+    "the majority rule a general protection on recommender system|2020": [
+      160,
+      232,
+      264
+    ],
+    "weak mitoticity of bounded disjunctive and conjunctive truth table autoreducible sets|2020": [
+      161,
+      233,
+      265
+    ],
+    "infusing raspberry pi in computer science curriculum for enhanced learning|2020": [
+      162,
+      235,
+      267
+    ],
+    "fcia integrity assurance of outsourced database with fine grained modification control policy|2020": [
+      163,
+      236,
+      268
+    ],
+    "mining survey data|2019": [
+      164,
+      165,
+      237,
+      238,
+      269,
+      270
+    ],
+    "a holistic approach for enhancing distributed education with multi campus course delivery methods|2019": [
+      166,
+      239,
+      271
+    ],
+    "an accelerated hierarchical approach for object shape extraction and recognition|2019": [
+      167,
+      240,
+      272
+    ],
+    "weak mitoticity of bounded disjunctive and conjunctive truth table autoreducible sets|2018": [
+      168,
+      242,
+      273
+    ],
+    "weak mitoticity of bounded conjunctive and disjunctive autoreducible sets|2018": [
+      169,
+      243,
+      274
+    ],
+    "managing big data in visual retrieval systems for dhs applications combining fourier descriptors and metric space indexing|2018": [
+      171,
+      244,
+      275
+    ],
+    "block level streaming based alternative approach for serving a large number of workstations securely and uniformly|2018": [
+      172,
+      245,
+      276
+    ],
+    "chapter proposal adapting graduate level math and computer science courses from face to face to online delivery lessons learned|2015": [
+      180,
+      247
+    ],
+    "transitioning from f2f to de lessons learned from south texas|2015": [
+      181,
+      248
+    ],
+    "transforming a computer science master program from traditional face to face delivery to online delivery a closing phase project evaluation|2015": [
+      183,
+      249
+    ],
+    "the weaving of machine learning and artificial intelligence into the fabric of cybersecurity curriculum from degree plans to capstone projects|2025": [
+      218,
+      224,
+      257
+    ],
+    "cybersecurity digital forensics and mobile computing building the pipeline of next generation university graduates through focused high school summer camps|2020": [
+      234,
+      266
+    ],
+    "separating ne from some nonuniform nondeterministic complexity classes|2015": [
+      250,
+      253
+    ]
+  },
+  "unknown_faculty_ids": {
+    "1811346": 54,
+    "2261876": 3,
+    "2200608": 7,
+    "1813010": 13,
+    "2200732": 11,
+    "1223080": 10,
+    "1451305": 3,
+    "1811599": 2,
+    "1811179": 2,
+    "1811557": 4,
+    "1811462": 4,
+    "1811433": 2,
+    "1811422": 2,
+    "1811319": 12,
+    "1451231": 1,
+    "1451295": 14,
+    "1391271": 5,
+    "1450869": 3,
+    "1450876": 10,
+    "1451175": 9,
+    "1450961": 2,
+    "1450771": 4,
+    "1662383": 1,
+    "1450770": 2,
+    "1451303": 1,
+    "1451022": 1,
+    "1450921": 3,
+    "1450786": 4,
+    "1451114": 3,
+    "1451041": 11,
+    "1451047": 1,
+    "1451002": 1,
+    "1450873": 2,
+    "1450711": 2,
+    "2109038": 1
+  },
+  "suspicious_faculty_author_entries": [],
+  "placeholder_records": {
+    "education": 41,
+    "previous_positions": 0,
+    "awards": 80
+  }
+}

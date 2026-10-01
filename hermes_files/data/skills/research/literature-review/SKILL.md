@@ -322,7 +322,11 @@ Full details, the card table, and troubleshooting commands are in [references/ka
 
 Rules for any card created by hand:
 
+<<<<<<< HEAD
 1. Skill names are folder paths: `research/literature-review`, `research/lightrag`. A wrong name fails silently and the worker runs without the skill, so copy these exactly.
+=======
+1. Skill names are folder paths: `research/literature-review`, `research/lightrag`. `research/literature-review` does not resolve and fails silently.
+>>>>>>> 43bb851938e274bef936f48a0f65f87b0f5c2f31
 2. Never use `--triage`. It hands the card to a specifier that rewrites the body.
 3. Write a full body: project root, exact command, and what "done" means.
 4. Set `--parent` to the previous card so the chain order holds.

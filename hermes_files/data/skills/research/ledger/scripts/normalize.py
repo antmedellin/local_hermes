@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 """
-Normalize UTRGV MAIE Digital Measures data.
+Normalize UTRGV Digital Measures data.
 
 INPUT:
-    data/maie_faculty_enriched.json
+    data/faculty_enriched.json
 
 OUTPUT:
-    data/maie_faculty_normalized.json
+    data/faculty_normalized.json
 
 This script is READ-ONLY with respect to the source data.
 It does NOT modify PostgreSQL or LightRAG.
@@ -39,8 +39,8 @@ LEDGER_DIR = SCRIPT_DIR.parent
 
 DATA_DIR = LEDGER_DIR / "data"
 
-INPUT_FILE = DATA_DIR / "maie_faculty_enriched.json"
-OUTPUT_FILE = DATA_DIR / "maie_faculty_normalized.json"
+INPUT_FILE = DATA_DIR / "faculty_enriched.json"
+OUTPUT_FILE = DATA_DIR / "faculty_normalized.json"
 
 
 # ------------------------------------------------------------
@@ -294,8 +294,8 @@ def normalize_author(author):
         "student_level": normalize_whitespace(
             author.get("student_level")
         ),
-        "is_maie_faculty": bool(
-            author.get("is_maie_faculty", False)
+        "is_faculty": bool(
+            author.get("is_faculty", False)
         ),
     }
 
@@ -787,7 +787,7 @@ def normalize_faculty_record(record):
 def main():
 
     print("=" * 70)
-    print("UTRGV MAIE DATA NORMALIZATION")
+    print("UTRGV DATA NORMALIZATION")
     print("=" * 70)
 
     print()
@@ -954,7 +954,7 @@ def main():
     ):
 
         publication_id = (
-            f"MAIE-PUB-{index:05d}"
+            f"UTRGV-PUB-{index:05d}"
         )
 
         key_to_publication_id[key] = publication_id
@@ -1013,7 +1013,7 @@ def main():
 
     suspicious_authorship = []
 
-    maie_faculty_ids = set(
+    faculty_ids = set(
         faculty_id_map.keys()
     )
 
@@ -1034,7 +1034,7 @@ def main():
 
             if (
                 faculty_id
-                and faculty_id in maie_faculty_ids
+                and faculty_id in faculty_ids
             ):
 
                 expected_name = faculty_id_map[

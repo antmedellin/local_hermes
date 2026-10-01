@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
 """
-MAIE Faculty Discovery
+Faculty Discovery
 
 Purpose:
     Retrieve the faculty/researcher records used by the official
-    UTRGV MAIE Faculty Directory.
+    UTRGV Faculty Directory.
 
 Source:
     UTRGV Digital Measures Faculty Directory API
@@ -14,13 +14,14 @@ This script is READ-ONLY with respect to PostgreSQL.
 It does not create or modify database records.
 
 Output:
-    ledger/data/maie_faculty.json
+    ledger/data/faculty.json
 """
 
 import json
 import urllib.request
 from pathlib import Path
-
+import yaml
+import argparse
 
 # ------------------------------------------------------------
 # Configuration
@@ -30,16 +31,16 @@ API_URL = (
     "https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMList"
 )
 
-TARGET_DEPARTMENT = (
-    "Department of Manufacturing and Industrial Engineering"
-)
 
-OUTPUT_FILE = (
-    Path(__file__).resolve().parents[1]
-    / "data"
-    / "maie_faculty.json"
-)
+def load_config(config_file):
+    """
+    Load department configuration from YAML.
+    """
 
+    with open(config_file, "r", encoding="utf-8") as f:
+        config = yaml.safe_load(f)
+
+    return config
 
 # ------------------------------------------------------------
 # Download the official faculty directory data
@@ -136,14 +137,14 @@ def build_name(pci):
 # Extract MAIE faculty
 # ------------------------------------------------------------
 
-def extract_maie_faculty(data):
+def extract_faculty(data, target_department):
     """
-    Extract everyone belonging to the MAIE department.
+    Extract everyone belonging to the specified department.
 
     We intentionally keep all records returned for the
     department, including lecturers and professors of practice.
 
-    The official MAIE Faculty Directory is our authority for
+    The official Faculty Directory is our authority for
     who belongs in this initial roster.
     """
 
@@ -169,7 +170,7 @@ def extract_maie_faculty(data):
         )
 
         # Exact department match.
-        if department != TARGET_DEPARTMENT:
+        if department != target_department:
             continue
 
         pci = record.get("PCI", {})
@@ -206,18 +207,18 @@ def extract_maie_faculty(data):
 # Save the roster
 # ------------------------------------------------------------
 
-def save_faculty(faculty):
+def save_faculty(faculty, output_file):    
     """
-    Save the MAIE faculty roster as formatted JSON.
+    Save the faculty roster as formatted JSON.
     """
 
-    OUTPUT_FILE.parent.mkdir(
+    output_file.parent.mkdir(
         parents=True,
         exist_ok=True
     )
 
     with open(
-        OUTPUT_FILE,
+        output_file,
         "w",
         encoding="utf-8"
     ) as file:
@@ -231,15 +232,44 @@ def save_faculty(faculty):
 
         file.write("\n")
 
+def parse_args():
 
+    parser = argparse.ArgumentParser(
+        description="Discover faculty from UTRGV Digital Measures"
+    )
+
+    parser.add_argument(
+        "--config",
+        required=True,
+        help="Path to department config.yaml"
+    )
+
+    return parser.parse_args()
 # ------------------------------------------------------------
 # Main
 # ------------------------------------------------------------
 
 def main():
+    args = parse_args()
+    
+    config = load_config(args.config)
+    
+    target_department = config["department_name"]
+    
+    output_directory = Path(
+        config["output_directory"]
+    )
+    
+    output_file = (
+        output_directory / "faculty.json"
+    )
+    
+    print(target_department, output_file, output_directory)
+
+
 
     print("=" * 60)
-    print("UTRGV MAIE FACULTY DISCOVERY")
+    print("UTRGV FACULTY DISCOVERY")
     print("=" * 60)
     print()
 
@@ -250,12 +280,15 @@ def main():
     # Download API data.
     data = fetch_faculty_data()
 
-    # Extract MAIE faculty.
-    faculty = extract_maie_faculty(data)
+    # Extract faculty.
+    faculty = extract_faculty(
+        data,
+        target_department
+    )
 
     print()
     print("=" * 60)
-    print("MAIE FACULTY FOUND")
+    print(" FACULTY FOUND")
     print("=" * 60)
     print()
 
@@ -277,7 +310,8 @@ def main():
         print()
 
     # Save JSON.
-    save_faculty(faculty)
+    save_faculty(faculty, output_file)
+    
 
     print("=" * 60)
     print(f"TOTAL FACULTY: {len(faculty)}")
@@ -285,7 +319,7 @@ def main():
     print()
 
     print("Saved to:")
-    print(OUTPUT_FILE)
+    print(output_file)
     print()
 
     print("READ-ONLY:")

@@ -74,7 +74,11 @@ Do not use `--initial-status blocked` as a hold. Tested: the dispatcher still pi
 
 ## Rules for any card you create by hand
 
+<<<<<<< HEAD
 - **Skill names are folder paths:** `research/literature-review`, `research/lightrag`. A wrong name does not error: the worker silently runs without the skill. Copy these exactly.
+=======
+- **Skill names are folder paths:** `research/literature-review`, `research/lightrag`. The name `research/literature-review` (category plus the hyphenated name that `skills list` shows) does not resolve, and the worker silently runs without the skill.
+>>>>>>> 43bb851938e274bef936f48a0f65f87b0f5c2f31
 - **Never use `--triage`.** Triage hands the card to a specifier model that rewrites or empties the body.
 - **Write a full body:** project root, the exact command, and what "done" means. One-line bodies were the main cause of confused workers.
 - **Assignee must be a real profile** (`default`), except the human gate. Unknown names sit in `ready` forever.

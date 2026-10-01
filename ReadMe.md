@@ -13,13 +13,7 @@ use hermes from terminal: docker exec -it hermes /bin/bash
 use hermes from browser: http://localhost:9119
 username for dashboard: admin, password: password
 
-
-added
-https://hermes-tutorials.dev/blog/kanban-multi-agent-workflows/
-https://hermes-agent.nousresearch.com/docs/user-guide/features/kanban
-
-
-mhc794@DW78894:~/test/local_hermes$ docker exec -it hermes 
+docker exec -it hermes 
 hermes kanban init
 hermes kanban list
 hermes gateway start
@@ -28,12 +22,10 @@ hermes gateway restart
 
 /learn the verified troubleshooting workflow from this session. Exclude secrets and temporary values. Include symptoms, diagnosis, fix, verification, and rollback.
 
-
 hermes doctor 
 hermes doctor --fix
 npx agent-browser doctor
 npm audit fix
-
 
 git remote add upstream https://github.com/NousResearch/hermes-agent.git
 git remote -v
@@ -58,4 +50,6 @@ git merge upstream/main
 verify working literature-review skill
 verify cron job 
 
-
+python3 -m venv myenvname
+source .venv/bin/activate
+pip install -r requirements.txt

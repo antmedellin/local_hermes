@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 
 """
-Enrich the MAIE faculty discovered from UTRGV's official Digital Measures API.
+Enrich the faculty discovered from UTRGV's official Digital Measures API.
 
 Input:
-    data/maie_faculty.json
+    data/faculty.json
 
 Outputs:
-    data/raw/maie/<username>.json
+    data/<dept>/raw/<username>.json
         Raw Digital Measures response for each faculty member.
 
-    data/maie_faculty_enriched.json
+    data/<dept>/faculty_enriched.json
         Normalized faculty + research + publication data.
 
 This script DOES NOT modify PostgreSQL.
@@ -24,20 +24,30 @@ import urllib.request
 import unicodedata
 from pathlib import Path
 
+import argparse
+import yaml
+
 
 # -------------------------------------------------------
 # Paths
 # -------------------------------------------------------
 
+# SCRIPT_DIR = Path(__file__).resolve().parent
+# LEDGER_DIR = SCRIPT_DIR.parent
+
+# DATA_DIR = LEDGER_DIR / "data"
+# FACULTY_FILE = DATA_DIR / "faculty.json"
+
+# RAW_DIR = DATA_DIR / "raw" / "maie"
+# OUTPUT_FILE = DATA_DIR / "faculty_enriched.json"
+
+
+# -------------------------------------------------------
+# Base paths
+# -------------------------------------------------------
+
 SCRIPT_DIR = Path(__file__).resolve().parent
 LEDGER_DIR = SCRIPT_DIR.parent
-
-DATA_DIR = LEDGER_DIR / "data"
-FACULTY_FILE = DATA_DIR / "maie_faculty.json"
-
-RAW_DIR = DATA_DIR / "raw" / "maie"
-OUTPUT_FILE = DATA_DIR / "maie_faculty_enriched.json"
-
 
 # -------------------------------------------------------
 # UTRGV API
@@ -48,6 +58,116 @@ API_DM_USER = (
     "GetDMuser?username="
 )
 
+# -------------------------------------------------------
+# Command-line configuration
+# -------------------------------------------------------
+
+def parse_args():
+    """Parse command-line arguments."""
+
+    parser = argparse.ArgumentParser(
+        description=(
+            "Enrich faculty records using the "
+            "UTRGV Digital Measures API."
+        )
+    )
+
+    parser.add_argument(
+        "--config",
+        required=True,
+        type=Path,
+        help="Path to the department config.yaml file.",
+    )
+
+    parser.add_argument(
+        "--refresh",
+        action="store_true",
+        help=(
+            "Ignore cached raw API responses and "
+            "download faculty profiles again."
+        ),
+    )
+
+    return parser.parse_args()
+
+
+def load_config(config_file):
+    """Load and validate a department YAML configuration."""
+
+    config_file = config_file.expanduser().resolve()
+
+    if not config_file.exists():
+        raise FileNotFoundError(
+            f"Configuration file not found:\n{config_file}"
+        )
+
+    if not config_file.is_file():
+        raise ValueError(
+            f"Configuration path is not a file:\n{config_file}"
+        )
+
+    with config_file.open(
+        "r",
+        encoding="utf-8",
+    ) as file:
+        config = yaml.safe_load(file)
+
+    if not isinstance(config, dict):
+        raise ValueError(
+            "The YAML configuration must contain a mapping."
+        )
+
+    required_fields = [
+        "institution",
+        "department_name",
+        "output_directory",
+    ]
+
+    missing_fields = [
+        field
+        for field in required_fields
+        if not config.get(field)
+    ]
+
+    if missing_fields:
+        raise ValueError(
+            "Missing required configuration fields: "
+            + ", ".join(missing_fields)
+        )
+
+    return config_file, config
+
+
+def resolve_output_directory(config_file, configured_path):
+    """
+    Resolve the configured output directory.
+
+    Paths are first interpreted relative to the current working
+    directory. If that location does not exist, the config file's
+    parent directory is used when the configured path points to the
+    same department directory.
+    """
+
+    output_directory = Path(configured_path).expanduser()
+
+    if output_directory.is_absolute():
+        return output_directory.resolve()
+
+    working_directory_path = (
+        Path.cwd() / output_directory
+    ).resolve()
+
+    if working_directory_path.exists():
+        return working_directory_path
+
+    # A config stored at ledger/data/ies/config.yaml normally means
+    # that ledger/data/ies is itself the department output directory.
+    config_parent = config_file.parent.resolve()
+
+    if config_parent.name == output_directory.name:
+        return config_parent
+
+    return working_directory_path
 
 # -------------------------------------------------------
 # Helper functions
@@ -807,40 +927,101 @@ def deduplicate_publications(publications):
 # -------------------------------------------------------
 # Main enrichment
 # -------------------------------------------------------
+# -------------------------------------------------------
+# Main enrichment
+# -------------------------------------------------------
 
 def main():
 
+    args = parse_args()
+
+    config_file, config = load_config(
+        args.config
+    )
+
+    institution = config["institution"]
+    department_name = config["department_name"]
+
+    college_name = config.get(
+        "college",
+        "College of Engineering and Computer Science",
+    )
+
+    output_directory = resolve_output_directory(
+        config_file,
+        config["output_directory"],
+    )
+
+    faculty_file = (
+        output_directory / "faculty.json"
+    )
+
+    raw_directory = (
+        output_directory / "raw"
+    )
+
+    output_file = (
+        output_directory / "faculty_enriched.json"
+    )
+
     print("=" * 60)
-    print("UTRGV MAIE FACULTY ENRICHMENT")
+    print("UTRGV FACULTY ENRICHMENT")
     print("=" * 60)
+    print()
+    print(f"Institution: {institution}")
+    print(f"Department:  {department_name}")
+    print(f"Config:      {config_file}")
+    print(f"Input:       {faculty_file}")
+    print(f"Raw data:    {raw_directory}")
+    print(f"Output:      {output_file}")
+    print()
 
     # ---------------------------------------------------
     # Load discovered faculty
     # ---------------------------------------------------
 
-    if not FACULTY_FILE.exists():
+    if not faculty_file.exists():
         raise FileNotFoundError(
-            f"Faculty file not found:\n{FACULTY_FILE}"
+            "Faculty file not found:\n"
+            f"{faculty_file}\n\n"
+            "Run discover_faculty.py first using the same "
+            "--config file."
         )
 
-    with FACULTY_FILE.open(
+    with faculty_file.open(
         "r",
         encoding="utf-8",
     ) as file:
         faculty_list = json.load(file)
 
+    if not isinstance(faculty_list, list):
+        raise ValueError(
+            "The faculty input file must contain a JSON list:\n"
+            f"{faculty_file}"
+        )
+
     print(
         f"Faculty discovered: {len(faculty_list)}"
     )
 
-    RAW_DIR.mkdir(
+    raw_directory.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    output_file.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
 
     enriched_faculty = []
-
     all_publications = []
+
+    faculty_ids = {
+        str(faculty.get("user_id"))
+        for faculty in faculty_list
+        if faculty.get("user_id") is not None
+    }
 
     # ---------------------------------------------------
     # Fetch each faculty profile
@@ -851,23 +1032,62 @@ def main():
         start=1,
     ):
 
-        username = faculty.get(
-            "username"
+        if not isinstance(faculty, dict):
+            print()
+            print(
+                f"[{index}/{len(faculty_list)}] "
+                "Invalid faculty record"
+            )
+
+            enriched_faculty.append({
+                "faculty": faculty,
+                "error": "Faculty record is not an object.",
+                "publications": [],
+                "statistics": {},
+            })
+
+            continue
+
+        username = clean_string(
+            faculty.get("username")
         )
 
-        name = faculty.get(
-            "name",
-            username,
+        name = (
+            clean_string(faculty.get("name"))
+            or username
+            or "Unknown faculty member"
         )
 
         print()
         print(
             f"[{index}/{len(faculty_list)}] "
-            f"{name} ({username})"
+            f"{name} ({username or 'no username'})"
         )
 
-        raw_file = RAW_DIR / (
-            username + ".json"
+        if not username:
+            error_message = (
+                "Faculty record does not contain a username."
+            )
+
+            print(f"  ERROR: {error_message}")
+
+            enriched_faculty.append({
+                "faculty": faculty,
+                "error": error_message,
+                "publications": [],
+                "statistics": {},
+            })
+
+            continue
+
+        safe_username = re.sub(
+            r"[^A-Za-z0-9._-]+",
+            "_",
+            username,
+        )
+
+        raw_file = raw_directory / (
+            safe_username + ".json"
         )
 
         try:
@@ -876,7 +1096,7 @@ def main():
             # Use cached raw data if available.
             # -------------------------------------------
 
-            if raw_file.exists():
+            if raw_file.exists() and not args.refresh:
 
                 print(
                     "  Using cached API response..."
@@ -890,9 +1110,15 @@ def main():
 
             else:
 
-                print(
-                    "  Downloading Digital Measures..."
-                )
+                if args.refresh and raw_file.exists():
+                    print(
+                        "  Refresh requested. "
+                        "Downloading Digital Measures..."
+                    )
+                else:
+                    print(
+                        "  Downloading Digital Measures..."
+                    )
 
                 api_data = fetch_faculty(
                     username
@@ -909,6 +1135,8 @@ def main():
                         ensure_ascii=False,
                     )
 
+                    file.write("\n")
+
                 # Be polite to the API.
                 time.sleep(0.5)
 
@@ -921,6 +1149,15 @@ def main():
                 .get("Data", {})
                 .get("Record", {})
             )
+
+            if isinstance(record, list):
+                if len(record) == 1:
+                    record = record[0]
+                else:
+                    raise ValueError(
+                        "Expected one Data.Record but received "
+                        f"{len(record)} records."
+                    )
 
             if not isinstance(
                 record,
@@ -958,10 +1195,8 @@ def main():
                 ):
                     continue
 
-                publication = (
-                    extract_publication(
-                        publication_record
-                    )
+                publication = extract_publication(
+                    publication_record
                 )
 
                 if publication:
@@ -969,34 +1204,25 @@ def main():
                         publication
                     )
 
-            publications = (
-                deduplicate_publications(
-                    raw_publications
-                )
+            publications = deduplicate_publications(
+                raw_publications
             )
 
-            # -------------------------------------------
-            # Add faculty IDs to publication authors
-            # -------------------------------------------
 
-            faculty_ids = {
-                str(f.get("user_id"))
-                for f in faculty_list
-                if f.get("user_id") is not None
-            }
+            # -------------------------------------------
+            # Mark authors belonging to this department
+            # -------------------------------------------
 
             for publication in publications:
 
-                for author in publication[
-                    "authors"
-                ]:
+                for author in publication["authors"]:
 
                     faculty_id = author.get(
                         "faculty_id"
                     )
 
                     author[
-                        "is_maie_faculty"
+                        "is_department_faculty"
                     ] = (
                         str(faculty_id)
                         in faculty_ids
@@ -1008,6 +1234,20 @@ def main():
             # Build enriched faculty record
             # -------------------------------------------
 
+            try:
+                relative_raw_file = raw_file.relative_to(
+                    LEDGER_DIR
+                )
+
+                raw_source = str(
+                    relative_raw_file
+                )
+
+            except ValueError:
+                raw_source = str(
+                    raw_file
+                )
+
             enriched_record = {
                 "faculty": {
                     **faculty,
@@ -1016,10 +1256,9 @@ def main():
 
                     "profile": profile,
 
-                    "education":
-                        extract_education(
-                            record
-                        ),
+                    "education": extract_education(
+                        record
+                    ),
 
                     "previous_positions":
                         extract_previous_positions(
@@ -1044,32 +1283,38 @@ def main():
                     "publications_with_abstract":
                         sum(
                             1
-                            for p in publications
-                            if p.get("abstract")
+                            for publication
+                            in publications
+                            if publication.get(
+                                "abstract"
+                            )
                         ),
 
                     "publications_with_doi":
                         sum(
                             1
-                            for p in publications
-                            if p.get("doi")
+                            for publication
+                            in publications
+                            if publication.get(
+                                "doi"
+                            )
                         ),
 
                     "publications_with_full_text":
                         sum(
                             1
-                            for p in publications
-                            if p.get("full_text")
+                            for publication
+                            in publications
+                            if publication.get(
+                                "full_text"
+                            )
                         ),
                 },
 
-                "raw_source": str(
-                    raw_file.relative_to(
-                        LEDGER_DIR
-                    )
-                ),
+                "raw_source": raw_source,
             }
-
+            
+            
             enriched_faculty.append(
                 enriched_record
             )
@@ -1093,21 +1338,24 @@ def main():
             )
 
             print(
-                f"  Research interests: "
+                "  Research interests: "
                 f"{'yes' if profile.get('research_interests') else 'no'}"
             )
 
-        except Exception as e:
-            print(f"  ERROR: {e}")
+        except Exception as error:
+            print(f"  ERROR: {error}")
+
             import traceback
             traceback.print_exc()
 
             enriched_faculty.append({
                 "faculty": faculty,
-                "error": str(e),
+                "error": str(error),
                 "publications": [],
                 "statistics": {},
+                "raw_source": str(raw_file),
             })
+
 
     # ---------------------------------------------------
     # Build global publication list
@@ -1125,15 +1373,15 @@ def main():
 
     output = {
         "metadata": {
-            "institution": "University of Texas Rio Grande Valley",
-            "college": (
-                "College of Engineering and "
-                "Computer Science"
-            ),
-            "department": (
-                "Department of Manufacturing "
-                "and Industrial Engineering"
-            ),
+            "institution": institution,
+            "college": college_name,
+            "department": department_name,
+
+            "department_url":
+                config.get("department_url"),
+
+            "faculty_url":
+                config.get("faculty_url"),
 
             "faculty_count":
                 len(enriched_faculty),
@@ -1141,20 +1389,20 @@ def main():
             "publication_count":
                 len(global_publications),
 
-            "source": (
-                "UTRGV Digital Measures API"
-            ),
+            "source":
+                "UTRGV Digital Measures API",
 
-            "api_endpoint": API_DM_USER,
+            "api_endpoint":
+                API_DM_USER,
 
-            "generated_at": time.strftime(
-                "%Y-%m-%dT%H:%M:%SZ",
-                time.gmtime(),
-            ),
+            "generated_at":
+                time.strftime(
+                    "%Y-%m-%dT%H:%M:%SZ",
+                    time.gmtime(),
+                ),
         },
 
         "faculty": enriched_faculty,
-
         "publications": global_publications,
     }
 
@@ -1162,7 +1410,10 @@ def main():
     # Write output
     # ---------------------------------------------------
 
-    with OUTPUT_FILE.open(
+    print()
+    print(f"Writing output to: {output_file}")
+
+    with output_file.open(
         "w",
         encoding="utf-8",
     ) as file:
@@ -1174,28 +1425,10 @@ def main():
             ensure_ascii=False,
         )
 
-    # ---------------------------------------------------
-    # Summary
-    # ---------------------------------------------------
+        file.write("\n")
 
-    successful = sum(
-        1
-        for f in enriched_faculty
-        if "error" not in f
-    )
-
-    failed = len(enriched_faculty) - successful
-
-    with_abstract = sum(
-        1
-        for p in global_publications
-        if p.get("abstract")
-    )
-
-    with_doi = sum(
-        1
-        for p in global_publications
-        if p.get("doi")
+    print(
+        f"Successfully wrote {output_file}"
     )
 
     print()
@@ -1204,39 +1437,13 @@ def main():
     print("=" * 60)
 
     print(
-        f"Faculty processed: {successful}/"
-        f"{len(enriched_faculty)}"
-    )
-
-    if failed:
-        print(
-            f"Faculty with errors: {failed}"
-        )
-
-    print(
-        f"Unique publications: "
-        f"{len(global_publications)}"
+        f"Faculty records: {len(enriched_faculty)}"
     )
 
     print(
-        f"Publications with abstracts: "
-        f"{with_abstract}"
+        f"Publications: {len(global_publications)}"
     )
 
-    print(
-        f"Publications with DOI: "
-        f"{with_doi}"
-    )
-
-    print()
-    print(
-        f"Raw API data:\n{RAW_DIR}"
-    )
-
-    print()
-    print(
-        f"Enriched dataset:\n{OUTPUT_FILE}"
-    )
 
 
 if __name__ == "__main__":
