@@ -107,6 +107,18 @@ The existing MAIE implementation can serve as the reference implementation.
 
 Before beginning a new department, verify that the local infrastructure is running.
 
+
+sudo apt install python3-venv
+cd local_hermes/hermes_files/data/skills/research/ledger
+python3 -m venv .venv
+source .venv/bin/activate
+which python
+#should say /home/<your acc>/local_hermes/.venv/bin/python
+pip install -r requirements.txt
+python -c "import psycopg2; print('psychopg2 OK')"
+# should return: "psycopg2 OK"
+
+
 From the repository:
 
 ```bash
@@ -366,6 +378,12 @@ The authoritative department roster should come from the department/institutiona
 
 # 8. Validate Faculty Discovery
 
+do the enrich faculty python file
+
+python ledger/scripts/enrich_faculty.py \
+    --config ledger/data/<dept>/config.yaml
+
+
 Before enrichment:
 
 ```bash
@@ -373,6 +391,9 @@ python ledger/scripts/validate.py \
     --stage faculty \
     --input ledger/data/<department_name>/faculty.json
 ```
+replace with 
+python ledger/scripts/validate.py     --config ledger/data/<dept>/config.yaml
+
 
 At minimum verify:
 
@@ -388,6 +409,7 @@ For MAIE, this validation established the 14-person faculty roster.
 ---
 
 # 9. Step 2 — Enrich Faculty
+already ran???????????
 
 Use:
 
