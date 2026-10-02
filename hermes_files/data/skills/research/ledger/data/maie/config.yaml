@@ -1,0 +1,18 @@
+institution: "University of Texas Rio Grande Valley"
+
+department_name: "Department of Manufacturing and Industrial Engineering"
+
+department_slug: "maie"
+
+department_url: "https://www.utrgv.edu/cecs/departments/maie/index.htm"
+
+faculty_url: "https://www.utrgv.edu/cecs/departments/maie/faculty/index.htm"
+
+output_directory: "hermes_files/data/skills/research/ledger/data/maie"
+
+sources:
+  faculty:
+    type: "digital_measures"
+    api_url: "https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMList"
+    profile_api_url: "https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMuser?username="
+    department_name: "Department of Manufacturing and Industrial Engineering"

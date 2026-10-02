@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Enrich the faculty discovered from UTRGV's official Digital Measures API.
+Enrich the faculty discovered from the configured faculty source.
 
 Input:
     data/faculty.json
@@ -50,15 +50,6 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 LEDGER_DIR = SCRIPT_DIR.parent
 
 # -------------------------------------------------------
-# UTRGV API
-# -------------------------------------------------------
-
-API_DM_USER = (
-    "https://webapps.utrgv.edu/aa/dm/api/DMUser/"
-    "GetDMuser?username="
-)
-
-# -------------------------------------------------------
 # Command-line configuration
 # -------------------------------------------------------
 
@@ -68,7 +59,7 @@ def parse_args():
     parser = argparse.ArgumentParser(
         description=(
             "Enrich faculty records using the "
-            "UTRGV Digital Measures API."
+            "Configured Digital Measures faculty API."
         )
     )
 
@@ -308,12 +299,12 @@ def safe_list(value):
 # API request
 # -------------------------------------------------------
 
-def fetch_faculty(username):
+def fetch_faculty(username, api_url):
     """Download one Digital Measures faculty profile."""
 
     encoded_username = urllib.parse.quote(username)
 
-    url = API_DM_USER + encoded_username
+    url = api_url + encoded_username
 
     request = urllib.request.Request(
         url,
@@ -548,7 +539,7 @@ def extract_authors(publication):
 
     FACULTY_NAME is especially useful because it contains
     the Digital Measures faculty user ID when the author
-    is a UTRGV faculty member.
+    is a faculty member.
     """
 
     authors = []
@@ -939,6 +930,16 @@ def main():
         args.config
     )
 
+    faculty_source = config["sources"]["faculty"]
+
+    if faculty_source["type"] != "digital_measures":
+        raise ValueError(
+            "enrich_faculty.py currently supports only "
+            "the 'digital_measures' faculty source."
+        )
+
+    profile_api_url = faculty_source["profile_api_url"]
+
     institution = config["institution"]
     department_name = config["department_name"]
 
@@ -965,7 +966,7 @@ def main():
     )
 
     print("=" * 60)
-    print("UTRGV FACULTY ENRICHMENT")
+    print("FACULTY ENRICHMENT")
     print("=" * 60)
     print()
     print(f"Institution: {institution}")
@@ -1390,10 +1391,10 @@ def main():
                 len(global_publications),
 
             "source":
-                "UTRGV Digital Measures API",
+                faculty_source["type"],
 
             "api_endpoint":
-                API_DM_USER,
+                profile_api_url,
 
             "generated_at":
                 time.strftime(

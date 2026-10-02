@@ -73,8 +73,7 @@ Windows users: skip step 2 entirely until native `ntn` ships — Path B works fi
 ### Raw API calls (shorthand for curl)
 ```bash
 ntn api v1/users                                  # GET
-# POST with inline body
-ntn api v1/pages parent[page_id]=abc123 \
+ntn api v1/pages parent[page_id]=abc123 \         # POST with inline body
   properties[title][0][text][content]="Notes"
 ntn api v1/pages/abc123 -X PATCH archived:=true   # PATCH; := is non-string (bool/num/null)
 ```

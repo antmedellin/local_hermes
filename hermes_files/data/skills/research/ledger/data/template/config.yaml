@@ -1,0 +1,16 @@
+institution: ""
+
+department_name: ""
+
+department_slug: ""
+
+department_url: ""
+
+faculty_url: ""
+
+output_directory: ""
+
+sources:
+  faculty:
+    type: ""
+    department_name: ""
