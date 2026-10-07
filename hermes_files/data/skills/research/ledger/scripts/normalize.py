@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Normalize UTRGV Digital Measures data.
+Normalize faculty and publication data
 
 INPUT:
     data/faculty_enriched.json
@@ -22,26 +22,87 @@ Goals:
     - Preserve missing values as null
     - Generate data-quality flags
 """
-
+import argparse
 import json
 import re
 import hashlib
 from pathlib import Path
 from collections import defaultdict
 
+import yaml
+
 
 # ------------------------------------------------------------
-# PATHS
+# CONFIGURATION
 # ------------------------------------------------------------
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 LEDGER_DIR = SCRIPT_DIR.parent
 
-DATA_DIR = LEDGER_DIR / "data"
 
-INPUT_FILE = DATA_DIR / "faculty_enriched.json"
-OUTPUT_FILE = DATA_DIR / "faculty_normalized.json"
+def parse_args():
+    """Parse command-line arguments."""
 
+    parser = argparse.ArgumentParser(
+        description="Normalize enriched faculty data."
+    )
+
+    parser.add_argument(
+        "--config",
+        required=True,
+        help="Path to the department configuration YAML file.",
+    )
+
+    return parser.parse_args()
+
+
+def load_config(config_file):
+    """Load and validate the department configuration."""
+
+    with config_file.open(
+        "r",
+        encoding="utf-8",
+    ) as file:
+        config = yaml.safe_load(file)
+
+    if not config:
+        raise ValueError(
+            f"Configuration file is empty: {config_file}"
+        )
+
+    required_fields = [
+        "institution",
+        "department_name",
+        "output_directory",
+    ]
+
+    for field in required_fields:
+        if field not in config:
+            raise ValueError(
+                f"Missing required configuration field: {field}"
+            )
+
+    return config
+
+def resolve_output_directory(
+    config_file,
+    configured_path,
+):
+    """
+    Resolve the department output directory.
+
+    Relative paths are resolved from the repository root.
+    Absolute paths are used directly.
+    """
+
+    output_directory = Path(configured_path)
+
+    if output_directory.is_absolute():
+        return output_directory
+
+    repository_root = LEDGER_DIR.parents[4]
+
+    return repository_root / output_directory
 
 # ------------------------------------------------------------
 # GENERAL HELPERS
@@ -90,7 +151,6 @@ def normalize_title(title):
     title = re.sub(r"\s+", " ", title)
 
     return title.strip()
-
 
 def normalize_name(name):
     """
@@ -786,20 +846,44 @@ def normalize_faculty_record(record):
 
 def main():
 
+    args = parse_args()
+
+    config_file = Path(args.config).resolve()
+
+    config = load_config(config_file)
+
+    output_directory = resolve_output_directory(
+        config_file,
+        config["output_directory"],
+    )
+
+    input_file = (
+        output_directory /
+        "faculty_enriched.json"
+    )
+
+    output_file = (
+        output_directory /
+        "faculty_normalized.json"
+    )
+
     print("=" * 70)
-    print("UTRGV DATA NORMALIZATION")
+    print("DATA NORMALIZATION")
     print("=" * 70)
 
     print()
-    print("Input:")
-    print(INPUT_FILE)
+    print("Institution:", config["institution"])
+    print("Department: ", config["department_name"])
+    print("Config:     ", config_file)
+    print("Input:      ", input_file)
+    print("Output:     ", output_file)
 
-    if not INPUT_FILE.exists():
+    if not input_file.exists():
         raise FileNotFoundError(
-            f"Input file does not exist: {INPUT_FILE}"
+            f"Input file does not exist: {input_file}"
         )
 
-    with INPUT_FILE.open(
+    with input_file.open(
         "r",
         encoding="utf-8",
     ) as f:
@@ -954,7 +1038,7 @@ def main():
     ):
 
         publication_id = (
-            f"UTRGV-PUB-{index:05d}"
+            f"PUB-{index:05d}"
         )
 
         key_to_publication_id[key] = publication_id
@@ -1209,7 +1293,7 @@ def main():
         ),
     }
 
-    with OUTPUT_FILE.open(
+    with output_file.open(
         "w",
         encoding="utf-8",
     ) as f:
@@ -1313,7 +1397,7 @@ def main():
 
     print()
     print("Output:")
-    print(OUTPUT_FILE)
+    print(output_file)
 
     print()
     print(
