@@ -4,17 +4,16 @@
 Faculty Discovery
 
 Purpose:
-    Retrieve the faculty/researcher records used by the official
-    UTRGV Faculty Directory.
+    Retrieve the faculty/researcher records ufor the conifgured dapartment
 
 Source:
-    UTRGV Digital Measures Faculty Directory API
+    configured faculty source, typically: UTRGV Digital Measures Faculty Directory API
 
 This script is READ-ONLY with respect to PostgreSQL.
 It does not create or modify database records.
 
 Output:
-    ledger/data/faculty.json
+    <conifgured department output directory> / faculty.json
 """
 
 import json
@@ -26,11 +25,6 @@ import argparse
 # ------------------------------------------------------------
 # Configuration
 # ------------------------------------------------------------
-
-API_URL = (
-    "https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMList"
-)
-
 
 def load_config(config_file):
     """
@@ -46,7 +40,7 @@ def load_config(config_file):
 # Download the official faculty directory data
 # ------------------------------------------------------------
 
-def fetch_faculty_data():
+def fetch_faculty_data(api_url):
     """
     Download the faculty directory data from UTRGV.
 
@@ -55,14 +49,14 @@ def fetch_faculty_data():
     """
 
     request = urllib.request.Request(
-        API_URL,
+        api_url,
         headers={
             "User-Agent": "Mozilla/5.0",
             "Accept": "application/json",
         },
     )
 
-    print("Downloading UTRGV faculty directory...")
+    print("Downloading faculty directory...")
 
     with urllib.request.urlopen(request, timeout=30) as response:
         raw_data = response.read().decode(
@@ -255,6 +249,16 @@ def main():
     config = load_config(args.config)
     
     target_department = config["department_name"]
+
+    faculty_source = config["sources"]["faculty"]
+
+    if faculty_source["type"] != "digital_measures":
+        raise ValueError(
+            "discover_faculty.py currently supports only "
+            "the 'digital_measures' faculty source."
+        )
+    
+    api_url = faculty_source["api_url"]
     
     output_directory = Path(
         config["output_directory"]
@@ -263,22 +267,22 @@ def main():
     output_file = (
         output_directory / "faculty.json"
     )
-    
-    print(target_department, output_file, output_directory)
-
-
 
     print("=" * 60)
     print("UTRGV FACULTY DISCOVERY")
     print("=" * 60)
     print()
 
+    print("Department:")
+    print(target_department)
+    print()
+
     print("Source:")
-    print(API_URL)
+    print(api_url)
     print()
 
     # Download API data.
-    data = fetch_faculty_data()
+    data = fetch_faculty_data(api_url)
 
     # Extract faculty.
     faculty = extract_faculty(
@@ -293,7 +297,6 @@ def main():
     print()
 
     for number, person in enumerate(faculty, start=1):
-
         print(
             f"{number:2}. "
             f"{person['name']}"
