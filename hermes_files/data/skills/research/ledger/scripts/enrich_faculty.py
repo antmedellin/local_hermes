@@ -1122,7 +1122,7 @@ def main():
                     )
 
                 api_data = fetch_faculty(
-                    username
+                    username, profile_api_url
                 )
 
                 with raw_file.open(
