@@ -1,22 +1,111 @@
 #!/usr/bin/env python3
 
+import argparse
 import json
 from pathlib import Path
 from collections import defaultdict, deque
-
+import yaml
 
 # ============================================================
-# PATHS
+# CONFIGURATION
 # ============================================================
 
-BASE = Path(
-    "hermes_files/data/skills/research/ledger/data"
+SCRIPT_DIR = Path(__file__).resolve().parent
+LEDGER_DIR = SCRIPT_DIR.parent
+
+
+def parse_args():
+    """Parse command-line arguments."""
+
+    parser = argparse.ArgumentParser(
+        description=(
+            "Build an import-ready reconciled research "
+            "ledger dataset."
+        )
+    )
+
+    parser.add_argument(
+        "--config",
+        required=True,
+        help="Path to the department configuration YAML file.",
+    )
+
+    return parser.parse_args()
+
+
+def load_config(config_file):
+    """Load and validate the department configuration."""
+
+    with open(config_file, "r", encoding="utf-8") as f:
+        config = yaml.safe_load(f)
+
+    required_fields = [
+        "institution",
+        "department_name",
+        "output_directory",
+    ]
+
+    for field in required_fields:
+
+        if field not in config:
+
+            raise ValueError(
+                f"Missing required configuration field: {field}"
+            )
+
+    return config
+
+
+def resolve_output_directory(
+    config_file,
+    configured_path,
+):
+    """
+    Resolve the configured department output directory.
+
+    Relative paths are resolved from the repository root.
+    Absolute paths are used unchanged.
+    """
+
+    output_directory = Path(configured_path)
+
+    if output_directory.is_absolute():
+        return output_directory
+
+    repository_root = LEDGER_DIR.parents[4]
+
+    return repository_root / output_directory
+
+# ============================================================
+# LOAD CONFIGURATION
+# ============================================================
+
+args = parse_args()
+
+config_file = Path(args.config).resolve()
+
+config = load_config(config_file)
+
+output_directory = resolve_output_directory(
+    config_file,
+    config["output_directory"],
 )
 
-NORMALIZED_PATH = BASE / "maie_faculty_normalized.json"
-RECONCILIATION_PATH = BASE / "maie_authorship_reconciliation.json"
-OUTPUT_PATH = BASE / "maie_faculty_reconciled.json"
+# ============================================================
+# INPUT / OUTPUT PATHS
+# ============================================================
 
+NORMALIZED_PATH = (
+    output_directory / "faculty_normalized.json"
+)
+
+RECONCILIATION_PATH = (
+    output_directory / "authorship_reconciliation.json"
+)
+
+OUTPUT_PATH = (
+    output_directory / "faculty_reconciled.json"
+)
 
 # ============================================================
 # LOAD INPUT FILES
@@ -245,11 +334,11 @@ reconciled_faculty = normalized.get("faculty", [])
 
 output = {
     "metadata": {
-        "source": "maie_faculty_normalized.json",
+        "source": "faculty_normalized.json",
         "authorship_reconciliation_source":
-            "maie_authorship_reconciliation.json",
+            "authorship_reconciliation.json",
         "description":
-            "Import-ready MAIE research ledger layer combining "
+            "Import-ready research ledger layer combining "
             "normalized publication data with explicit authorship "
             "reconciliation decisions.",
         "database_imported": False,
@@ -291,7 +380,7 @@ with OUTPUT_PATH.open("w", encoding="utf-8") as f:
 
 print()
 print("=" * 80)
-print("MAIE FINAL RECONCILED DATASET")
+print("FINAL RECONCILED DATASET")
 print("=" * 80)
 print()
 
