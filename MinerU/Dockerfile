@@ -1,13 +1,18 @@
-# Use the official vllm image for gpu with Volta、Turing、Ampere、Ada Lovelace、Hopper、Blackwell architecture (7.0 <= Compute Capability <= 12.1)
-# The default base image uses vLLM 0.21.0 with CUDA 13.0. For CUDA 12.9 environments, switch to the commented cu129 image below.
-# Compute Capability version query (https://developer.nvidia.com/cuda-gpus)
-# support x86_64 architecture and ARM(AArch64) architecture
-FROM vllm/vllm-openai:v0.21.0
+# Use the official vllm image for GPU with Volta, Turing, Ampere,
+# Ada Lovelace, Hopper, and Blackwell architectures
+# (7.0 <= Compute Capability <= 12.1)
+#
+# Default: vLLM 0.21.0 with CUDA 13.0
+# For CUDA 12.9, use:
 # FROM vllm/vllm-openai:v0.21.0-cu129
+#
+# Supports x86_64 and ARM/AArch64.
 
-# Install libgl for opencv support & Noto fonts for Chinese characters
+FROM vllm/vllm-openai:v0.21.0
+
+# Install libgl for OpenCV support and Noto fonts for Chinese characters
 RUN apt-get update && \
-    apt-get install -y \
+    apt-get install -y --no-install-recommends \
         fonts-noto-core \
         fonts-noto-cjk \
         fontconfig \
@@ -16,19 +21,27 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install mineru latest
-RUN python3 -m pip install -U 'mineru[core]>=3.4.0' --break-system-packages && \
+# Install MinerU
+RUN python3 -m pip install -U \
+        'mineru[core]>=3.4.0' \
+        --break-system-packages && \
     python3 -m pip cache purge
 
-# Download models and update the configuration file
-
-
-# RUN /bin/bash -c "mineru-models-download -s huggingface -m all"
-
-RUN mineru-models-download \
-    --source huggingface \
+# Download MinerU models from Hugging Face.
+#
+# MinerU 4.x no longer supports:
+#   mineru-models-download -m all
+#
+# The current model download workflow uses mineru-kit.
+RUN mineru-kit models download \
     --tier standard \
-    --vlm-engine vllm
+    --small-backend torch \
+    --vlm-engine vllm \
+    -s huggingface
 
-# Set the entry point to activate the virtual environment and run the command line tool
-ENTRYPOINT ["/bin/bash", "-c", "export MINERU_MODEL_SOURCE=local && exec \"$@\"", "--"]
+# Use locally downloaded models at runtime.
+ENV MINERU_MODEL_SOURCE=local
+
+# Set the entry point to activate the local model configuration
+# and run the requested command.
+ENTRYPOINT ["/bin/bash", "-c", "exec \"$@\"", "--"]

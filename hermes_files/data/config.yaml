@@ -31,6 +31,7 @@ browser:
   inactivity_timeout: 120
   extension_control:
     enabled: false
+  cloud_provider: local
 tool_loop_guardrails:
   warnings_enabled: true
   hard_stop_enabled: false
@@ -78,8 +79,7 @@ display:
 dashboard:
   basic_auth:
     username: admin
-    password_hash: 
-      scrypt$16384$8$1$aTHeAY6juWcw6FgNuZFzrA==$x4Za/B9IdV3k5Htwcu7iulRfHIqjFQEFILbVwiNvDDI=
+    password_hash: scrypt$16384$8$1$aTHeAY6juWcw6FgNuZFzrA==$x4Za/B9IdV3k5Htwcu7iulRfHIqjFQEFILbVwiNvDDI=
     secret: AK7YFsyE3o5lsSEzl1t1MpsBwJG+qLNT1G8FGvQeabg=
 stt:
   enabled: true
@@ -190,7 +190,6 @@ known_builtin_toolsets:
     - clarify
     - code_execution
     - computer_use
-    - connections
     - context_engine
     - cronjob
     - delegation
@@ -212,6 +211,7 @@ known_builtin_toolsets:
     - vision
     - web
     - x_search
+    - yuanbao
 
 # ── Security ──────────────────────────────────────────────────────────
 # Secret redaction is ON by default — strings that look like API keys,
@@ -250,4 +250,3 @@ known_builtin_toolsets:
 # fallback_model:
 #   provider: openrouter
 #   model: anthropic/claude-sonnet-4
-    - yuanbao

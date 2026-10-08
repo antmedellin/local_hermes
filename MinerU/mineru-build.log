@@ -1,0 +1,429 @@
+ Image mineru-mineru-api Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 554B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.36kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/vllm/vllm-openai:v0.21.0
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/4] FROM docker.io/vllm/vllm-openai:v0.21.0@sha256:a230095847e93bd4df9888b33dab956fa9504537b828a23657d2b26fed57b5c9
+#5 resolve docker.io/vllm/vllm-openai:v0.21.0@sha256:a230095847e93bd4df9888b33dab956fa9504537b828a23657d2b26fed57b5c9 0.0s done
+#5 CACHED
+
+#6 [2/4] RUN apt-get update &&     apt-get install -y         fonts-noto-core         fonts-noto-cjk         fontconfig         libgl1 &&     fc-cache -fv &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 0.278 Get:1 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64  InRelease [1578 B]
+#6 0.329 Get:2 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64  Packages [3061 kB]
+#6 0.448 Get:3 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+#6 0.489 Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+#6 0.650 Get:5 https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu jammy InRelease [18.1 kB]
+#6 0.937 Get:6 https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu jammy/main amd64 Packages [49.0 kB]
+#6 1.133 Get:7 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [84.6 kB]
+#6 1.157 Get:8 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+#6 1.316 Get:9 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+#6 1.330 Get:10 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1323 kB]
+#6 1.482 Get:11 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+#6 1.600 Get:12 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+#6 1.915 Get:13 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [4420 kB]
+#6 3.308 Get:14 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [7907 kB]
+#6 7.088 Get:15 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+#6 7.102 Get:16 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+#6 7.954 Get:17 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [4757 kB]
+#6 10.60 Get:18 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1624 kB]
+#6 11.12 Get:19 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [104 kB]
+#6 11.16 Get:20 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [8243 kB]
+#6 14.14 Get:21 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [82.9 kB]
+#6 14.17 Get:22 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [35.6 kB]
+#6 14.34 Fetched 52.1 MB in 14s (3680 kB/s)
+#6 14.34 Reading package lists...
+#6 14.99 Reading package lists...
+#6 15.65 Building dependency tree...
+#6 15.82 Reading state information...
+#6 15.94 fontconfig is already the newest version (2.13.1-4.2ubuntu5).
+#6 15.94 fontconfig set to manually installed.
+#6 15.94 libgl1 is already the newest version (1.4.0-1).
+#6 15.94 Suggested packages:
+#6 15.94   fonts-noto-cjk-extra
+#6 15.95 The following NEW packages will be installed:
+#6 15.96   fonts-noto-cjk fonts-noto-core
+#6 16.22 0 upgraded, 2 newly installed, 0 to remove and 118 not upgraded.
+#6 16.22 Need to get 73.4 MB of archives.
+#6 16.22 After this operation, 137 MB of additional disk space will be used.
+#6 16.22 Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 fonts-noto-cjk all 1:20220127+repack1-1 [61.2 MB]
+#6 22.91 Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 fonts-noto-core all 20201225-1build1 [12.2 MB]
+#6 24.04 debconf: delaying package configuration, since apt-utils is not installed
+#6 24.06 Fetched 73.4 MB in 8s (9190 kB/s)
+#6 24.10 Selecting previously unselected package fonts-noto-cjk.
+#6 24.10 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22644 files and directories currently installed.)
+#6 24.11 Preparing to unpack .../fonts-noto-cjk_1%3a20220127+repack1-1_all.deb ...
+#6 24.12 Unpacking fonts-noto-cjk (1:20220127+repack1-1) ...
+#6 24.55 Selecting previously unselected package fonts-noto-core.
+#6 24.56 Preparing to unpack .../fonts-noto-core_20201225-1build1_all.deb ...
+#6 24.56 Unpacking fonts-noto-core (20201225-1build1) ...
+#6 25.14 Setting up fonts-noto-cjk (1:20220127+repack1-1) ...
+#6 25.17 Setting up fonts-noto-core (20201225-1build1) ...
+#6 25.20 Processing triggers for fontconfig (2.13.1-4.2ubuntu5) ...
+#6 25.29 /usr/share/fonts: caching, new cache contents: 0 fonts, 2 dirs
+#6 25.29 /usr/share/fonts/opentype: caching, new cache contents: 0 fonts, 1 dirs
+#6 25.29 /usr/share/fonts/opentype/noto: caching, new cache contents: 30 fonts, 0 dirs
+#6 25.31 /usr/share/fonts/truetype: caching, new cache contents: 0 fonts, 2 dirs
+#6 25.31 /usr/share/fonts/truetype/dejavu: caching, new cache contents: 6 fonts, 0 dirs
+#6 25.31 /usr/share/fonts/truetype/noto: caching, new cache contents: 268 fonts, 0 dirs
+#6 25.33 /usr/local/share/fonts: caching, new cache contents: 0 fonts, 0 dirs
+#6 25.33 /root/.local/share/fonts: skipping, no such directory
+#6 25.33 /root/.fonts: skipping, no such directory
+#6 25.33 /usr/share/fonts/opentype: skipping, looped directory detected
+#6 25.33 /usr/share/fonts/truetype: skipping, looped directory detected
+#6 25.33 /usr/share/fonts/opentype/noto: skipping, looped directory detected
+#6 25.33 /usr/share/fonts/truetype/dejavu: skipping, looped directory detected
+#6 25.33 /usr/share/fonts/truetype/noto: skipping, looped directory detected
+#6 27.33 /var/cache/fontconfig: cleaning cache directory
+#6 27.33 /root/.cache/fontconfig: not cleaning non-existent cache directory
+#6 27.33 /root/.fontconfig: not cleaning non-existent cache directory
+#6 27.33 fc-cache: succeeded
+#6 DONE 27.4s
+
+#7 [3/4] RUN python3 -m pip install -U 'mineru[core]>=3.4.0' --break-system-packages &&     python3 -m pip cache purge
+#7 0.706 Collecting mineru>=3.4.0 (from mineru[core]>=3.4.0)
+#7 0.858   Downloading mineru-4.0.10-py3-none-any.whl.metadata (59 kB)
+#7 0.947 Collecting docvortex<1,>=0.5.4 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 0.973   Downloading docvortex-0.5.11-cp310-abi3-manylinux_2_28_x86_64.whl.metadata (10 kB)
+#7 1.108 Collecting gradio<7,>=6.8 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 1.136   Downloading gradio-6.29.1-py3-none-any.whl.metadata (16 kB)
+#7 1.197 Collecting mineru-vl-utils<3,>=2.0.5 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 1.224   Downloading mineru_vl_utils-2.0.5-py3-none-any.whl.metadata (17 kB)
+#7 1.277 Collecting mineru-llama-cpp<1,>=0.1.2 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 1.304   Downloading mineru_llama_cpp-0.1.2-cp312-cp312-manylinux_2_34_x86_64.whl.metadata (304 bytes)
+#7 1.316 Requirement already satisfied: click>=8.1.7 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (8.3.3)
+#7 1.316 Requirement already satisfied: loguru>=0.7.2 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (0.7.3)
+#7 1.316 Requirement already satisfied: numpy>=1.21.6 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (2.2.6)
+#7 1.316 Requirement already satisfied: tqdm>=4.67.1 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (4.67.3)
+#7 1.316 Requirement already satisfied: requests in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (2.34.2)
+#7 1.317 Requirement already satisfied: httpx in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (0.28.1)
+#7 1.317 Requirement already satisfied: pillow>=11.0.0 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (12.2.0)
+#7 1.393 Collecting pypdfium2<6,>=5.10.1 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 1.421   Downloading pypdfium2-5.14.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+#7 1.438 Requirement already satisfied: PyYAML<7,>=6.0.1 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (6.0.3)
+#7 1.438 Requirement already satisfied: packaging in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (26.2)
+#7 1.438 Requirement already satisfied: modelscope>=1.26.0 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (1.36.3)
+#7 1.438 Requirement already satisfied: huggingface-hub>=0.32.4 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub[hf_xet]>=0.32.4->mineru>=3.4.0->mineru[core]>=3.4.0) (1.14.0)
+#7 1.438 Requirement already satisfied: filelock>=3.0.0 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (3.29.0)
+#7 1.487 Collecting json-repair>=0.46.2 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 1.514   Downloading json_repair-0.63.5-py3-none-any.whl.metadata (20 kB)
+#7 1.592 Collecting opencv-python>=4.11.0.86 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 1.620   Downloading opencv_python-5.0.0.93-cp37-abi3-manylinux_2_28_x86_64.whl.metadata (19 kB)
+#7 1.631 Requirement already satisfied: openai<3,>=1.70.0 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (2.36.0)
+#7 1.674 Collecting beautifulsoup4<5,>=4.13.5 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 1.702   Downloading beautifulsoup4-4.15.0-py3-none-any.whl.metadata (3.8 kB)
+#7 1.752 Collecting tinycss2<2,>=1.5.1 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 1.781   Downloading tinycss2-1.5.1-py3-none-any.whl.metadata (3.0 kB)
+#7 1.828 Collecting aiosqlite<1,>=0.20.0 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 1.857   Downloading aiosqlite-0.22.1-py3-none-any.whl.metadata (4.3 kB)
+#7 1.868 Requirement already satisfied: watchfiles<2,>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (1.1.1)
+#7 1.869 Requirement already satisfied: fastapi in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (0.136.1)
+#7 1.869 Requirement already satisfied: python-multipart in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (0.0.28)
+#7 1.869 Requirement already satisfied: uvicorn in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (0.47.0)
+#7 1.869 Requirement already satisfied: pydantic<3,>=2.12.5 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (2.13.4)
+#7 1.869 Requirement already satisfied: typing_extensions>=4.0.0 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (4.15.0)
+#7 1.870 Requirement already satisfied: typer>=0.9.0 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (0.25.1)
+#7 1.870 Requirement already satisfied: rich>=13.0.0 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (15.0.0)
+#7 1.912 Collecting jieba>=0.42.1 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 1.944   Downloading jieba-0.42.1.tar.gz (19.2 MB)
+#7 3.647      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.2/19.2 MB 11.5 MB/s  0:00:01
+#7 3.920   Installing build dependencies: started
+#7 4.807   Installing build dependencies: finished with status 'done'
+#7 4.807   Getting requirements to build wheel: started
+#7 4.963   Getting requirements to build wheel: finished with status 'done'
+#7 4.964   Preparing metadata (pyproject.toml): started
+#7 5.053   Preparing metadata (pyproject.toml): finished with status 'done'
+#7 5.122 Collecting onnxruntime>=1.20.1 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 5.154   Downloading onnxruntime-1.30.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (5.7 kB)
+#7 5.211 Collecting ftfy<7,>=6.3.1 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 5.239   Downloading ftfy-6.3.1-py3-none-any.whl.metadata (7.3 kB)
+#7 5.328 Collecting shapely<3,>=2.0.7 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 5.359   Downloading shapely-2.2.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (6.7 kB)
+#7 5.424 Collecting pyclipper<2,>=1.3.0 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 5.454   Downloading pyclipper-1.4.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (8.6 kB)
+#7 5.465 Requirement already satisfied: tokenizers<0.24,>=0.22.0 in /usr/local/lib/python3.12/dist-packages (from mineru>=3.4.0->mineru[core]>=3.4.0) (0.22.2)
+#7 5.506 Collecting soupsieve>=1.6.1 (from beautifulsoup4<5,>=4.13.5->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 5.536   Downloading soupsieve-2.10-py3-none-any.whl.metadata (4.4 kB)
+#7 5.594 Collecting pypdf>=5.6.0 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 5.624   Downloading pypdf-6.19.0-py3-none-any.whl.metadata (7.5 kB)
+#7 5.677 Collecting metafile-render<1.0.0,>=0.3.0 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 5.708   Downloading metafile_render-0.3.0-py3-none-any.whl.metadata (12 kB)
+#7 5.837 Collecting fonttools<5,>=4 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 5.869   Downloading fonttools-4.66.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (130 kB)
+#7 6.065 Collecting lxml<7,>=4 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 6.097   Downloading lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+#7 6.164 Collecting nh3<0.4,>=0.3.6 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 6.195   Downloading nh3-0.3.7-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.0 kB)
+#7 6.249 Collecting python-docx<2,>=1.2.0 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 6.280   Downloading python_docx-1.2.0-py3-none-any.whl.metadata (2.0 kB)
+#7 6.332 Collecting pypptx-with-oxml<2,>=1.0.3 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 6.364   Downloading pypptx_with_oxml-1.0.3-py3-none-any.whl.metadata (3.8 kB)
+#7 6.422 Collecting mammoth<2,>=1.11.0 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 6.458   Downloading mammoth-1.13.0-py2.py3-none-any.whl.metadata (26 kB)
+#7 6.518 Collecting openpyxl<4,>=3.1.5 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 6.550   Downloading openpyxl-3.1.5-py2.py3-none-any.whl.metadata (2.5 kB)
+#7 6.603 Collecting olefile<1,>=0.47 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 6.634   Downloading olefile-0.47-py2.py3-none-any.whl.metadata (9.7 kB)
+#7 6.690 Collecting pylatexenc<3,>=2.10 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 6.722   Downloading pylatexenc-2.11-py2.py3-none-any.whl.metadata (3.9 kB)
+#7 6.784 Collecting latex2mathml<4,>=3.81.0 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 6.817   Downloading latex2mathml-3.81.1-py3-none-any.whl.metadata (15 kB)
+#7 6.868 Collecting mathml2omml==0.0.2 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 6.899   Downloading mathml2omml-0.0.2-py3-none-any.whl.metadata (1.3 kB)
+#7 6.992 Collecting resvg_py<0.6,>=0.5.0 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 7.024   Downloading resvg_py-0.5.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.9 kB)
+#7 7.123 Collecting reportlab[accel] (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 7.155   Downloading reportlab-5.0.1-py3-none-any.whl.metadata (1.6 kB)
+#7 7.210 Collecting ziamath<0.14,>=0.13 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 7.242   Downloading ziamath-0.13-py3-none-any.whl.metadata (1.9 kB)
+#7 7.292 Collecting magika<1.1.0,>=0.6.2 (from docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 7.323   Downloading magika-1.0.3-py3-none-manylinux_2_28_x86_64.whl.metadata (10 kB)
+#7 7.377 Collecting wcwidth (from ftfy<7,>=6.3.1->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 7.411   Downloading wcwidth-0.9.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (23 kB)
+#7 7.424 Requirement already satisfied: anyio<5.0,>=3.0 in /usr/local/lib/python3.12/dist-packages (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0) (4.13.0)
+#7 7.467 Collecting brotli>=1.1.0 (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 7.489   Downloading brotli-1.2.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.1 kB)
+#7 7.538 Collecting gradio-client==2.7.2 (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 7.561   Downloading gradio_client-2.7.2-py3-none-any.whl.metadata (7.1 kB)
+#7 7.602 Collecting groovy~=0.1 (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 7.627   Downloading groovy-0.1.2-py3-none-any.whl.metadata (6.1 kB)
+#7 7.672 Collecting hf-gradio<1.0,>=0.4.1 (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 7.692   Downloading hf_gradio-0.4.1-py3-none-any.whl.metadata (428 bytes)
+#7 7.751 Collecting huggingface-hub>=0.32.4 (from huggingface-hub[hf_xet]>=0.32.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 7.776   Downloading huggingface_hub-2.1.1-py3-none-any.whl.metadata (16 kB)
+#7 7.791 Requirement already satisfied: jinja2<4.0 in /usr/local/lib/python3.12/dist-packages (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0) (3.1.6)
+#7 7.791 Requirement already satisfied: markupsafe<4.0,>=2.0 in /usr/local/lib/python3.12/dist-packages (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0) (3.0.3)
+#7 7.963 Collecting orjson~=3.0 (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 7.990   Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (42 kB)
+#7 8.092 Collecting pandas<4.0,>=1.0 (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 8.116   Downloading pandas-3.0.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+#7 8.173 Collecting pydub<1.0 (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 8.194   Downloading pydub-0.25.1-py2.py3-none-any.whl.metadata (1.4 kB)
+#7 8.249 Collecting pytz>=2017.2 (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 8.271   Downloading pytz-2026.5-py2.py3-none-any.whl.metadata (22 kB)
+#7 8.314 Collecting safehttpx<0.2.0,>=0.1.7 (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 8.338   Downloading safehttpx-0.1.7-py3-none-any.whl.metadata (4.2 kB)
+#7 8.380 Collecting semantic-version~=2.0 (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 8.402   Downloading semantic_version-2.10.0-py2.py3-none-any.whl.metadata (9.7 kB)
+#7 8.454 Collecting starlette<2.0,>=1.0.1 (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 8.475   Downloading starlette-1.7.0-py3-none-any.whl.metadata (6.6 kB)
+#7 8.518 Collecting tomlkit<0.15.0,>=0.12.0 (from gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 8.539   Downloading tomlkit-0.14.0-py3-none-any.whl.metadata (2.8 kB)
+#7 8.549 Requirement already satisfied: fsspec in /usr/local/lib/python3.12/dist-packages (from gradio-client==2.7.2->gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0) (2026.4.0)
+#7 8.550 Requirement already satisfied: idna>=2.8 in /usr/local/lib/python3.12/dist-packages (from anyio<5.0,>=3.0->gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0) (3.15)
+#7 8.552 Requirement already satisfied: typing-inspection>=0.4.2 in /usr/local/lib/python3.12/dist-packages (from fastapi->mineru>=3.4.0->mineru[core]>=3.4.0) (0.4.2)
+#7 8.552 Requirement already satisfied: annotated-doc>=0.0.2 in /usr/local/lib/python3.12/dist-packages (from fastapi->mineru>=3.4.0->mineru[core]>=3.4.0) (0.0.4)
+#7 8.555 Requirement already satisfied: certifi in /usr/local/lib/python3.12/dist-packages (from httpx->mineru>=3.4.0->mineru[core]>=3.4.0) (2026.4.22)
+#7 8.555 Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.12/dist-packages (from httpx->mineru>=3.4.0->mineru[core]>=3.4.0) (1.0.9)
+#7 8.556 Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.12/dist-packages (from httpcore==1.*->httpx->mineru>=3.4.0->mineru[core]>=3.4.0) (0.16.0)
+#7 8.591 Collecting click>=8.1.7 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 8.612   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+#7 8.671 Collecting hf-xet<2.0.0,>=1.6.0 (from huggingface-hub>=0.32.4->huggingface-hub[hf_xet]>=0.32.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 8.693   Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+#7 8.737 Collecting httpx2<3,>=2.0.0 (from huggingface-hub>=0.32.4->huggingface-hub[hf_xet]>=0.32.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 8.758   Downloading httpx2-2.13.1-py3-none-any.whl.metadata (9.8 kB)
+#7 8.802 Collecting httpcore2==2.13.1 (from httpx2<3,>=2.0.0->huggingface-hub>=0.32.4->huggingface-hub[hf_xet]>=0.32.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 8.825   Downloading httpcore2-2.13.1-py3-none-any.whl.metadata (26 kB)
+#7 8.870 Collecting idna>=2.8 (from anyio<5.0,>=3.0->gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 8.891   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#7 8.934 Collecting truststore>=0.10 (from httpx2<3,>=2.0.0->huggingface-hub>=0.32.4->huggingface-hub[hf_xet]>=0.32.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 8.955   Downloading truststore-0.10.4-py3-none-any.whl.metadata (4.4 kB)
+#7 9.005 Collecting cobble<0.2,>=0.1.3 (from mammoth<2,>=1.11.0->docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 9.026   Downloading cobble-0.1.4-py3-none-any.whl.metadata (2.7 kB)
+#7 9.075 Collecting httpx-retries (from mineru-vl-utils<3,>=2.0.5->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 9.096   Downloading httpx_retries-0.6.0-py3-none-any.whl.metadata (5.1 kB)
+#7 9.108 Requirement already satisfied: aiofiles in /usr/local/lib/python3.12/dist-packages (from mineru-vl-utils<3,>=2.0.5->mineru>=3.4.0->mineru[core]>=3.4.0) (25.1.0)
+#7 9.112 Requirement already satisfied: distro<2,>=1.7.0 in /usr/local/lib/python3.12/dist-packages (from openai<3,>=1.70.0->mineru>=3.4.0->mineru[core]>=3.4.0) (1.9.0)
+#7 9.112 Requirement already satisfied: jiter<1,>=0.10.0 in /usr/local/lib/python3.12/dist-packages (from openai<3,>=1.70.0->mineru>=3.4.0->mineru[core]>=3.4.0) (0.14.0)
+#7 9.112 Requirement already satisfied: sniffio in /usr/local/lib/python3.12/dist-packages (from openai<3,>=1.70.0->mineru>=3.4.0->mineru[core]>=3.4.0) (1.3.1)
+#7 9.148 Collecting et-xmlfile (from openpyxl<4,>=3.1.5->docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 9.168   Downloading et_xmlfile-2.0.0-py3-none-any.whl.metadata (2.7 kB)
+#7 9.180 Requirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.12/dist-packages (from pandas<4.0,>=1.0->gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0) (2.9.0.post0)
+#7 9.182 Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.12/dist-packages (from pydantic<3,>=2.12.5->mineru>=3.4.0->mineru[core]>=3.4.0) (0.7.0)
+#7 9.183 Requirement already satisfied: pydantic-core==2.46.4 in /usr/local/lib/python3.12/dist-packages (from pydantic<3,>=2.12.5->mineru>=3.4.0->mineru[core]>=3.4.0) (2.46.4)
+#7 9.227 Collecting XlsxWriter>=0.5.7 (from pypptx-with-oxml<2,>=1.0.3->docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 9.249   Downloading xlsxwriter-3.2.9-py3-none-any.whl.metadata (2.7 kB)
+#7 9.300 Collecting webencodings>=0.4 (from tinycss2<2,>=1.5.1->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 9.322   Downloading webencodings-0.6.1-py3-none-any.whl.metadata (3.4 kB)
+#7 9.335 Collecting huggingface-hub>=0.32.4 (from huggingface-hub[hf_xet]>=0.32.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 9.358   Downloading huggingface_hub-1.33.0-py3-none-any.whl.metadata (16 kB)
+#7 9.372 Requirement already satisfied: shellingham>=1.3.0 in /usr/local/lib/python3.12/dist-packages (from typer>=0.9.0->mineru>=3.4.0->mineru[core]>=3.4.0) (1.5.4)
+#7 9.407 Collecting ziafont>=0.10 (from ziamath<0.14,>=0.13->docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 9.430   Downloading ziafont-0.11-py3-none-any.whl.metadata (1.9 kB)
+#7 9.447 INFO: pip is looking at multiple versions of huggingface-hub[hf-xet] to determine which version is compatible with other requirements. This could take a while.
+#7 9.449 Collecting huggingface-hub[hf_xet]>=0.32.4 (from mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 9.472   Downloading huggingface_hub-2.0.0-py3-none-any.whl.metadata (16 kB)
+#7 9.491 WARNING: mineru 4.0.10 does not provide the extra 'core'
+#7 9.494 Requirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (from modelscope>=1.26.0->mineru>=3.4.0->mineru[core]>=3.4.0) (80.10.2)
+#7 9.494 Requirement already satisfied: urllib3>=1.26 in /usr/local/lib/python3.12/dist-packages (from modelscope>=1.26.0->mineru>=3.4.0->mineru[core]>=3.4.0) (2.7.0)
+#7 9.538 Collecting flatbuffers (from onnxruntime>=1.20.1->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 9.560   Downloading flatbuffers-25.12.19-py2.py3-none-any.whl.metadata (1.0 kB)
+#7 9.572 Requirement already satisfied: protobuf>=4.25.8 in /usr/local/lib/python3.12/dist-packages (from onnxruntime>=1.20.1->mineru>=3.4.0->mineru[core]>=3.4.0) (6.33.6)
+#7 9.575 Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.12/dist-packages (from python-dateutil>=2.8.2->pandas<4.0,>=1.0->gradio<7,>=6.8->mineru>=3.4.0->mineru[core]>=3.4.0) (1.17.0)
+#7 9.576 Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.12/dist-packages (from requests->mineru>=3.4.0->mineru[core]>=3.4.0) (3.4.7)
+#7 9.580 Requirement already satisfied: markdown-it-py>=2.2.0 in /usr/local/lib/python3.12/dist-packages (from rich>=13.0.0->mineru>=3.4.0->mineru[core]>=3.4.0) (4.2.0)
+#7 9.580 Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /usr/local/lib/python3.12/dist-packages (from rich>=13.0.0->mineru>=3.4.0->mineru[core]>=3.4.0) (2.20.0)
+#7 9.582 Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.12/dist-packages (from markdown-it-py>=2.2.0->rich>=13.0.0->mineru>=3.4.0->mineru[core]>=3.4.0) (0.1.2)
+#7 9.625 Collecting rl_accel<1.1,>=0.9.0 (from reportlab[accel]->docvortex<1,>=0.5.4->mineru>=3.4.0->mineru[core]>=3.4.0)
+#7 9.648   Downloading rl_accel-0.9.1-cp37-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.2 kB)
+#7 9.687 Downloading mineru-4.0.10-py3-none-any.whl (3.7 MB)
+#7 10.05    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 10.0 MB/s  0:00:00
+#7 10.07 Downloading aiosqlite-0.22.1-py3-none-any.whl (17 kB)
+#7 10.11 Downloading beautifulsoup4-4.15.0-py3-none-any.whl (109 kB)
+#7 10.15 Downloading docvortex-0.5.11-cp310-abi3-manylinux_2_28_x86_64.whl (5.1 MB)
+#7 10.62    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.1/5.1 MB 10.8 MB/s  0:00:00
+#7 10.64 Downloading mathml2omml-0.0.2-py3-none-any.whl (23 kB)
+#7 10.67 Downloading fonttools-4.66.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+#7 11.14    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 11.5 MB/s  0:00:00
+#7 11.17 Downloading ftfy-6.3.1-py3-none-any.whl (44 kB)
+#7 11.20 Downloading gradio-6.29.1-py3-none-any.whl (31.4 MB)
+#7 13.90    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 31.4/31.4 MB 11.7 MB/s  0:00:02
+#7 13.92 Downloading gradio_client-2.7.2-py3-none-any.whl (64 kB)
+#7 13.96 Downloading groovy-0.1.2-py3-none-any.whl (14 kB)
+#7 13.98 Downloading hf_gradio-0.4.1-py3-none-any.whl (4.5 kB)
+#7 14.01 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#7 14.06 Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
+#7 14.43    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 11.4 MB/s  0:00:00
+#7 14.45 Downloading latex2mathml-3.81.1-py3-none-any.whl (79 kB)
+#7 14.49 Downloading lxml-6.1.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+#7 14.94    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 11.5 MB/s  0:00:00
+#7 14.97 Downloading magika-1.0.3-py3-none-manylinux_2_28_x86_64.whl (16.2 MB)
+#7 16.37    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.2/16.2 MB 11.6 MB/s  0:00:01
+#7 16.39 Downloading mammoth-1.13.0-py2.py3-none-any.whl (55 kB)
+#7 16.42 Downloading cobble-0.1.4-py3-none-any.whl (4.0 kB)
+#7 16.45 Downloading metafile_render-0.3.0-py3-none-any.whl (108 kB)
+#7 16.50 Downloading mineru_llama_cpp-0.1.2-cp312-cp312-manylinux_2_34_x86_64.whl (22.5 MB)
+#7 18.47    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 22.5/22.5 MB 11.4 MB/s  0:00:01
+#7 18.49 Downloading mineru_vl_utils-2.0.5-py3-none-any.whl (108 kB)
+#7 18.54 Downloading nh3-0.3.7-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (832 kB)
+#7 18.63    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 832.2/832.2 kB 8.5 MB/s  0:00:00
+#7 18.65 Downloading olefile-0.47-py2.py3-none-any.whl (114 kB)
+#7 18.69 Downloading openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+#7 18.75 Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)
+#7 18.80 Downloading pandas-3.0.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.8 MB)
+#7 19.76    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.8/10.8 MB 11.2 MB/s  0:00:00
+#7 19.79 Downloading pyclipper-1.4.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (978 kB)
+#7 19.88    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 978.2/978.2 kB 10.1 MB/s  0:00:00
+#7 19.90 Downloading pydub-0.25.1-py2.py3-none-any.whl (32 kB)
+#7 19.94 Downloading pylatexenc-2.11-py2.py3-none-any.whl (137 kB)
+#7 19.98 Downloading pypdfium2-5.14.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.8 MB)
+#7 20.32    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 11.1 MB/s  0:00:00
+#7 20.34 Downloading pypptx_with_oxml-1.0.3-py3-none-any.whl (493 kB)
+#7 20.42 Downloading python_docx-1.2.0-py3-none-any.whl (252 kB)
+#7 20.48 Downloading resvg_py-0.5.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.4 MB)
+#7 20.61    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 10.6 MB/s  0:00:00
+#7 20.63 Downloading safehttpx-0.1.7-py3-none-any.whl (9.0 kB)
+#7 20.67 Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+#7 20.70 Downloading shapely-2.2.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (2.3 MB)
+#7 20.91    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 10.7 MB/s  0:00:00
+#7 20.94 Downloading starlette-1.7.0-py3-none-any.whl (78 kB)
+#7 20.97 Downloading tinycss2-1.5.1-py3-none-any.whl (28 kB)
+#7 21.01 Downloading huggingface_hub-1.33.0-py3-none-any.whl (846 kB)
+#7 21.09    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 846.4/846.4 kB 10.2 MB/s  0:00:00
+#7 21.11 Downloading tomlkit-0.14.0-py3-none-any.whl (39 kB)
+#7 21.15 Downloading ziamath-0.13-py3-none-any.whl (856 kB)
+#7 21.24    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 856.4/856.4 kB 9.5 MB/s  0:00:00
+#7 21.26 Downloading brotli-1.2.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+#7 21.39    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 10.7 MB/s  0:00:00
+#7 21.41 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#7 21.45 Downloading json_repair-0.63.5-py3-none-any.whl (51 kB)
+#7 21.49 Downloading onnxruntime-1.30.0-cp312-cp312-manylinux_2_28_x86_64.whl (23.6 MB)
+#7 23.52    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.6/23.6 MB 11.6 MB/s  0:00:02
+#7 23.54 Downloading opencv_python-5.0.0.93-cp37-abi3-manylinux_2_28_x86_64.whl (73.8 MB)
+#7 29.85    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.8/73.8 MB 11.7 MB/s  0:00:06
+#7 29.87 Downloading pypdf-6.19.0-py3-none-any.whl (395 kB)
+#7 29.94 Downloading pytz-2026.5-py2.py3-none-any.whl (506 kB)
+#7 30.01 Downloading soupsieve-2.10-py3-none-any.whl (38 kB)
+#7 30.05 Downloading webencodings-0.6.1-py3-none-any.whl (8.7 kB)
+#7 30.08 Downloading xlsxwriter-3.2.9-py3-none-any.whl (175 kB)
+#7 30.13 Downloading ziafont-0.11-py3-none-any.whl (420 kB)
+#7 30.20 Downloading et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+#7 30.23 Downloading flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+#7 30.26 Downloading httpx_retries-0.6.0-py3-none-any.whl (11 kB)
+#7 30.30 Downloading reportlab-5.0.1-py3-none-any.whl (2.0 MB)
+#7 30.50    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 10.7 MB/s  0:00:00
+#7 30.53 Downloading rl_accel-0.9.1-cp37-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (56 kB)
+#7 30.56 Downloading wcwidth-0.9.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (769 kB)
+#7 30.64    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 769.8/769.8 kB 9.3 MB/s  0:00:00
+#7 30.74 Building wheels for collected packages: jieba
+#7 30.74   Building wheel for jieba (pyproject.toml): started
+#7 31.77   Building wheel for jieba (pyproject.toml): finished with status 'done'
+#7 31.77   Created wheel for jieba: filename=jieba-0.42.1-py3-none-any.whl size=19314509 sha256=d02ac2a55d5b65ab0677d280fb961bb00f37491446382d1b25c53e09f50ae56c
+#7 31.77   Stored in directory: /root/.cache/pip/wheels/08/a1/a3/5c8ac52cc2f5782ffffc34c95c57c8e5ecb3063dc69541ee7c
+#7 31.77 Successfully built jieba
+#7 31.91 Installing collected packages: pytz, pylatexenc, pydub, jieba, flatbuffers, brotli, ziafont, XlsxWriter, webencodings, wcwidth, tomlkit, soupsieve, shapely, semantic-version, rl_accel, resvg_py, reportlab, pypdfium2, pypdf, pyclipper, orjson, opencv-python, onnxruntime, olefile, nh3, mineru-llama-cpp, mathml2omml, lxml, latex2mathml, json-repair, idna, hf-xet, groovy, fonttools, et-xmlfile, cobble, click, aiosqlite, ziamath, tinycss2, python-docx, pypptx-with-oxml, pandas, openpyxl, metafile-render, mammoth, magika, ftfy, beautifulsoup4, starlette, docvortex, safehttpx, huggingface-hub, httpx-retries, mineru-vl-utils, gradio-client, hf-gradio, gradio, mineru
+#7 35.33   Attempting uninstall: idna
+#7 35.33     Found existing installation: idna 3.15
+#7 35.34     Uninstalling idna-3.15:
+#7 35.34       Successfully uninstalled idna-3.15
+#7 35.37   Attempting uninstall: hf-xet
+#7 35.37     Found existing installation: hf-xet 1.5.0
+#7 35.37     Uninstalling hf-xet-1.5.0:
+#7 35.38       Successfully uninstalled hf-xet-1.5.0
+#7 35.89   Attempting uninstall: click
+#7 35.90     Found existing installation: click 8.3.3
+#7 35.90     Uninstalling click-8.3.3:
+#7 35.90       Successfully uninstalled click-8.3.3
+#7 38.55   Attempting uninstall: starlette
+#7 38.55     Found existing installation: starlette 0.52.1
+#7 38.55     Uninstalling starlette-0.52.1:
+#7 38.56       Successfully uninstalled starlette-0.52.1
+#7 39.21   Attempting uninstall: huggingface-hub
+#7 39.21     Found existing installation: huggingface_hub 1.14.0
+#7 39.21     Uninstalling huggingface_hub-1.14.0:
+#7 39.25       Successfully uninstalled huggingface_hub-1.14.0
+#7 40.45 
+#7 40.45 ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+#7 40.45 prometheus-fastapi-instrumentator 7.1.0 requires starlette<1.0.0,>=0.30.0, but you have starlette 1.7.0 which is incompatible.
+#7 40.46 Successfully installed XlsxWriter-3.2.9 aiosqlite-0.22.1 beautifulsoup4-4.15.0 brotli-1.2.0 click-8.5.0 cobble-0.1.4 docvortex-0.5.11 et-xmlfile-2.0.0 flatbuffers-25.12.19 fonttools-4.66.1 ftfy-6.3.1 gradio-6.29.1 gradio-client-2.7.2 groovy-0.1.2 hf-gradio-0.4.1 hf-xet-1.7.0 httpx-retries-0.6.0 huggingface-hub-1.33.0 idna-3.20 jieba-0.42.1 json-repair-0.63.5 latex2mathml-3.81.1 lxml-6.1.3 magika-1.0.3 mammoth-1.13.0 mathml2omml-0.0.2 metafile-render-0.3.0 mineru-4.0.10 mineru-llama-cpp-0.1.2 mineru-vl-utils-2.0.5 nh3-0.3.7 olefile-0.47 onnxruntime-1.30.0 opencv-python-5.0.0.93 openpyxl-3.1.5 orjson-3.13.0 pandas-3.0.6 pyclipper-1.4.0 pydub-0.25.1 pylatexenc-2.11 pypdf-6.19.0 pypdfium2-5.14.0 pypptx-with-oxml-1.0.3 python-docx-1.2.0 pytz-2026.5 reportlab-5.0.1 resvg_py-0.5.0 rl_accel-0.9.1 safehttpx-0.1.7 semantic-version-2.10.0 shapely-2.2.0 soupsieve-2.10 starlette-1.7.0 tinycss2-1.5.1 tomlkit-0.14.0 wcwidth-0.9.2 webencodings-0.6.1 ziafont-0.11 ziamath-0.13
+#7 40.46 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#7 40.46 
+#7 40.46 [notice] A new release of pip is available: 26.1.1 -> 26.2.1
+#7 40.46 [notice] To update, run: python3 -m pip install --upgrade pip
+#7 40.72 Files removed: 387 (293.0 MB)
+#7 40.72 Directories removed: 5
+#7 DONE 41.1s
+
+#8 [4/4] RUN /bin/bash -c "mineru-models-download -s huggingface -m all"
+#8 0.982 Usage: mineru-models-download [OPTIONS] [REPO]
+#8 0.982 Try 'mineru-models-download --help' for help.
+#8 0.983 ╭─ Error ──────────────────────────────────────────────────────────────────────╮
+#8 0.983 │ No such option '-m'.                                                         │
+#8 0.983 ╰──────────────────────────────────────────────────────────────────────────────╯
+#8 ERROR: process "/bin/sh -c /bin/bash -c \"mineru-models-download -s huggingface -m all\"" did not complete successfully: exit code: 2
+------
+ > [4/4] RUN /bin/bash -c "mineru-models-download -s huggingface -m all":
+0.982 Usage: mineru-models-download [OPTIONS] [REPO]
+0.982 Try 'mineru-models-download --help' for help.
+0.983 ╭─ Error ──────────────────────────────────────────────────────────────────────╮
+0.983 │ No such option '-m'.                                                         │
+0.983 ╰──────────────────────────────────────────────────────────────────────────────╯
+------
+Dockerfile:26
+
+--------------------
+
+  24 |     
+
+  25 |     
+
+  26 | >>> RUN /bin/bash -c "mineru-models-download -s huggingface -m all"
+
+  27 |     
+
+  28 |     # RUN mineru-models-download \
+
+--------------------
+
+failed to solve: process "/bin/sh -c /bin/bash -c \"mineru-models-download -s huggingface -m all\"" did not complete successfully: exit code: 2
+
