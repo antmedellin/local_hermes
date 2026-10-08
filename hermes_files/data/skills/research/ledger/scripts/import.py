@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Import the reconciled UTRGV MAIE research ledger into PostgreSQL.
+Import a reconciled department research ledger into PostgreSQL.
 
 IMPORTANT:
 - This script performs real database writes.
@@ -11,26 +11,23 @@ IMPORTANT:
 - The entire import runs inside one PostgreSQL transaction.
 - If anything fails, the transaction is rolled back.
 
-Expected import state from the successful dry run:
-
-    Departments       : 1
-    Professors        : 14
-    Canonical papers  : 454
-    Authorships       : 433
+The department-specific paths, metadata, source information, and
+validation expectations come from the department config.yaml file.
 
 No topics, documents, or ingestion runs are created here.
 Those are later pipeline stages.
 """
 
+import argparse
 import json
 import os
 import re
-import sys
 import unicodedata
 from collections import defaultdict, deque
 from pathlib import Path
 
 import psycopg2
+import yaml
 
 
 # ---------------------------------------------------------------------------
@@ -38,10 +35,125 @@ import psycopg2
 # ---------------------------------------------------------------------------
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-DATA_DIR = SCRIPT_DIR.parent / "data"
+LEDGER_DIR = SCRIPT_DIR.parent
 
-RECONCILED_PATH = DATA_DIR / "maie_faculty_reconciled.json"
-RECONCILIATION_PATH = DATA_DIR / "maie_authorship_reconciliation.json"
+
+# ---------------------------------------------------------------------------
+# Command-line arguments
+# ---------------------------------------------------------------------------
+
+def parse_args():
+    """Parse command-line arguments."""
+
+    parser = argparse.ArgumentParser(
+        description="Import a reconciled department research ledger into PostgreSQL."
+    )
+
+    parser.add_argument(
+        "--config",
+        required=True,
+        help="Path to the department configuration YAML file.",
+    )
+
+    return parser.parse_args()
+
+
+def load_config(config_file):
+    """
+    Load and validate the department configuration.
+
+    The config contains department-specific information such as:
+        - institution
+        - department name
+        - department URL
+        - output directory
+        - source information
+        - expected validation counts
+    """
+
+    with config_file.open("r", encoding="utf-8") as handle:
+        config = yaml.safe_load(handle)
+
+    required_fields = [
+        "institution",
+        "department_name",
+        "department_url",
+        "output_directory",
+        "sources",
+        "validation",
+    ]
+
+    for field in required_fields:
+        if field not in config:
+            raise ValueError(
+                f"Missing required configuration field: {field}"
+            )
+
+    if "faculty" not in config["sources"]:
+        raise ValueError(
+            "Missing required configuration section: sources.faculty"
+        )
+
+    return config
+
+
+def resolve_output_directory(config_file, configured_path):
+    """
+    Resolve the configured output directory.
+
+    Relative paths are interpreted relative to the repository root.
+    Absolute paths are used unchanged.
+    """
+
+    output_directory = Path(configured_path)
+
+    if output_directory.is_absolute():
+        return output_directory
+
+    repository_root = LEDGER_DIR.parents[4]
+
+    return repository_root / output_directory
+
+
+# ---------------------------------------------------------------------------
+# Configuration
+# ---------------------------------------------------------------------------
+
+args = parse_args()
+
+CONFIG_FILE = Path(args.config).resolve()
+CONFIG = load_config(CONFIG_FILE)
+
+INSTITUTION = CONFIG["institution"]
+DEPARTMENT_NAME = CONFIG["department_name"]
+DEPARTMENT_URL = CONFIG["department_url"]
+
+OUTPUT_DIRECTORY = resolve_output_directory(
+    CONFIG_FILE,
+    CONFIG["output_directory"],
+)
+
+RECONCILED_PATH = OUTPUT_DIRECTORY / "faculty_reconciled.json"
+RECONCILIATION_PATH = OUTPUT_DIRECTORY / "authorship_reconciliation.json"
+
+FACULTY_SOURCE = CONFIG["sources"]["faculty"]
+SOURCE_NAME = FACULTY_SOURCE.get(
+    "source_name",
+    FACULTY_SOURCE.get("type", "Unknown source"),
+)
+
+VALIDATION = CONFIG["validation"]
+
+
+# ---------------------------------------------------------------------------
+# PostgreSQL configuration
+# ---------------------------------------------------------------------------
+
+DB_HOST = os.getenv("POSTGRES_HOST", "localhost")
+DB_PORT = os.getenv("POSTGRES_PORT", "5432")
+DB_NAME = os.getenv("POSTGRES_DB", "rag")
+DB_USER = os.getenv("POSTGRES_USER", "rag")
+DB_PASSWORD = os.getenv("POSTGRES_PASSWORD", "rag")
 
 
 # ---------------------------------------------------------------------------
@@ -160,7 +272,7 @@ def safe_int(value):
 
 def build_faculty_indexes(faculty_records):
     """
-    Build lookup indexes for current MAIE faculty.
+    Build lookup indexes for current department faculty.
 
     The reconciled faculty records are already flattened, for example:
 
@@ -195,7 +307,7 @@ def build_faculty_indexes(faculty_records):
     return by_id, by_name
 
 
-def classify_current_maie(
+def classify_current_department(
     author,
     faculty_by_id,
     faculty_by_name,
@@ -445,7 +557,7 @@ def connect_database():
 
 
 def get_or_create_department(cursor):
-    """Create or retrieve the MAIE department."""
+    """Create or retrieve the configured department."""
 
     cursor.execute(
         """
@@ -465,9 +577,9 @@ def get_or_create_department(cursor):
         RETURNING department_id
         """,
         (
-            "University of Texas Rio Grande Valley",
-            "Department of Manufacturing and Industrial Engineering",
-            "https://www.utrgv.edu/cecs/departments/maie/faculty/index.htm",
+            INSTITUTION,
+            DEPARTMENT_NAME,
+            DEPARTMENT_URL,
         ),
     )
 
@@ -475,7 +587,7 @@ def get_or_create_department(cursor):
 
 
 def upsert_professor(cursor, faculty, department_id):
-    """Insert or update one current MAIE professor."""
+    """Insert or update one current department professor."""
 
     name = faculty.get("name") or faculty.get("full_name")
 
@@ -655,7 +767,7 @@ def upsert_professor(cursor, faculty, department_id):
             first_name,
             middle_name,
             last_name,
-            "University of Texas Rio Grande Valley",
+            INSTITUTION,
             department_id,
             academic_title,
             profile_url,
@@ -771,7 +883,7 @@ def upsert_paper(cursor, publication):
             None, #keywords
             None, #research_topics
             None, #citation count
-            "UTRGV Digital Measures",
+            SOURCE_NAME,
             None, #source_url
         ),
     )
@@ -816,7 +928,7 @@ def insert_authorship(
             professor_id,
             paper_id,
             safe_int(author.get("position")),
-            author.get("author_namr_original"),
+            author.get("author_name_original"),
             None,
         ),
     )
@@ -862,7 +974,7 @@ def verify_database(cursor):
     return results
 
 
-def print_verification(results):
+def print_verification(results, expected):
     """Print post-import verification."""
 
     print()
@@ -875,13 +987,9 @@ def print_verification(results):
 
     print()
     print("Expected:")
-    print("departments             : 1")
-    print("professors              : 14")
-    print("papers                  : 454")
-    print("authorships             : 433")
-    print("topics                  : 0")
-    print("documents               : 0")
-    print("ingestion_runs          : 0")
+
+    for key, value in expected.items():
+        print(f"{key:25}: {value}")
 
 
 # ---------------------------------------------------------------------------

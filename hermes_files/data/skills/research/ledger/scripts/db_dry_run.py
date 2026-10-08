@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 """
-MAIE DATABASE IMPORT DRY RUN
+DATABASE IMPORT DRY RUN
 
-Read-only validation of the reconciled MAIE dataset against PostgreSQL.
+Read-only validation of a reconciled department dataset against PostgreSQL.
 
 No INSERT/UPDATE/DELETE/ALTER statements are executed.
 
@@ -11,37 +11,101 @@ The script:
 1. Canonicalizes publications by (title, year).
 2. Reads the reconciliation decisions already produced by the
    authorship-reconciliation pipeline.
-3. Counts only reconciliation decisions that map to current MAIE faculty.
+3. Counts only reconciliation decisions that map to current department faculty.
 4. Collapses duplicate professor/paper relationships to satisfy the
    research.authorships primary key.
 5. Verifies the PostgreSQL schema and current DB state.
 """
 
+import argparse
 import json
-import os
 import sys
 from collections import defaultdict
+from pathlib import Path
 
 import psycopg2
+import yaml
 
 
-REPO_ROOT = os.path.expanduser("~/local_hermes")
+SCRIPT_DIR = Path(__file__).resolve().parent
+LEDGER_DIR = SCRIPT_DIR.parent
 
-DATA_DIR = os.path.join(
-    REPO_ROOT,
-    "hermes_files/data/skills/research/ledger/data",
+
+# ---------------------------------------------------------------------------
+# Configuration
+# ---------------------------------------------------------------------------
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Run a read-only database import validation."
+    )
+
+    parser.add_argument(
+        "--config",
+        required=True,
+        help="Path to the department configuration YAML file.",
+    )
+
+    return parser.parse_args()
+
+
+def load_config(config_file):
+    with open(config_file, "r", encoding="utf-8") as f:
+        config = yaml.safe_load(f)
+
+    required_fields = [
+        "institution",
+        "department_name",
+        "output_directory",
+    ]
+
+    for field in required_fields:
+        if field not in config:
+            raise ValueError(
+                f"Missing required configuration field: {field}"
+            )
+
+    return config
+
+
+def resolve_output_directory(config_file, configured_path):
+    output_directory = Path(configured_path)
+
+    if output_directory.is_absolute():
+        return output_directory
+
+    repository_root = LEDGER_DIR.parents[4]
+
+    return repository_root / output_directory
+
+
+args = parse_args()
+
+CONFIG_FILE = Path(args.config).resolve()
+CONFIG = load_config(CONFIG_FILE)
+
+OUTPUT_DIRECTORY = resolve_output_directory(
+    CONFIG_FILE,
+    CONFIG["output_directory"],
 )
 
-SOURCE_PATH = os.path.join(
-    DATA_DIR,
-    "maie_faculty_reconciled.json",
+INSTITUTION = CONFIG["institution"]
+DEPARTMENT_NAME = CONFIG["department_name"]
+
+VALIDATION_CONFIG = CONFIG.get("validation", {})
+
+SOURCE_PATH = OUTPUT_DIRECTORY / "faculty_reconciled.json"
+
+RECONCILIATION_PATH = (
+    OUTPUT_DIRECTORY / "authorship_reconciliation.json"
 )
 
-RECONCILIATION_PATH = os.path.join(
-    DATA_DIR,
-    "maie_authorship_reconciliation.json",
-)
 
+# PostgreSQL configuration is infrastructure-level configuration rather
+# than department-specific configuration, so it remains here for now.
+#
+# We can move this to environment variables later without changing the
+# department onboarding configuration.
 DB_CONFIG = {
     "host": "localhost",
     "port": 5432,
@@ -63,7 +127,7 @@ def normalize_key(value):
 
 
 def load_json(path):
-    if not os.path.exists(path):
+    if not path.exists():
         raise FileNotFoundError(path)
 
     with open(path, "r", encoding="utf-8") as f:
@@ -92,7 +156,7 @@ def canonicalize_publications(publications):
     """
     Canonical database identity:
 
-        (title, publication_year)
+        (title, year)
 
     Multiple normalized source publications with the same key become
     one database paper while all source publication IDs remain visible.
@@ -183,14 +247,18 @@ def get_reconciliation_decisions(reconciliation):
 
     raise ValueError(
         "Could not locate reconciliation decisions in "
-        "maie_authorship_reconciliation.json"
+        "authorship_reconciliation.json"
     )
 
 
-def classify_current_maie(decision, faculty_by_id, faculty_by_name):
+def classify_current_department(
+    decision,
+    faculty_by_id,
+    faculty_by_name,
+):
     """
     Determine whether a reconciliation decision is safe to import into
-    the current MAIE professor-paper ledger.
+    the current department professor-paper ledger.
 
     IMPORTANT:
     Historical ID mismatches and moderate-review records are NOT imported
@@ -215,6 +283,7 @@ def classify_current_maie(decision, faculty_by_id, faculty_by_name):
     mapped_id = decision.get("mapped_faculty_id")
 
     if mapped_id:
+
         faculty = faculty_by_id.get(str(mapped_id))
 
         if faculty:
@@ -223,6 +292,7 @@ def classify_current_maie(decision, faculty_by_id, faculty_by_name):
     mapped_name = decision.get("mapped_faculty_name")
 
     if mapped_name:
+
         faculty = faculty_by_name.get(
             normalize_key(mapped_name)
         )
@@ -236,6 +306,7 @@ def classify_current_maie(decision, faculty_by_id, faculty_by_name):
     original_id = decision.get("faculty_id_original")
 
     if original_id:
+
         faculty = faculty_by_id.get(str(original_id))
 
         if faculty:
@@ -243,9 +314,11 @@ def classify_current_maie(decision, faculty_by_id, faculty_by_name):
 
     # NAME_WITHOUT_DM_ID may be resolved through the mapped name.
     if classification == "NAME_WITHOUT_DM_ID":
+
         original_name = decision.get("author_name_original")
 
         if original_name:
+
             faculty = faculty_by_name.get(
                 normalize_key(original_name)
             )
@@ -254,6 +327,7 @@ def classify_current_maie(decision, faculty_by_id, faculty_by_name):
                 return faculty
 
     return None
+
 
 def build_source_publication_map(publications):
 
@@ -264,6 +338,7 @@ def build_source_publication_map(publications):
         publication_id = pub.get("publication_id")
 
         if publication_id:
+
             mapping[publication_id] = (
                 normalize_key(pub.get("title")),
                 pub.get("year"),
@@ -290,11 +365,11 @@ def build_canonical_authorships(
 
     relationships = {}
 
-    current_maie_occurrences = []
+    current_department_occurrences = []
 
     for decision in decisions:
 
-        faculty = classify_current_maie(
+        faculty = classify_current_department(
             decision,
             faculty_by_id,
             faculty_by_name,
@@ -335,7 +410,7 @@ def build_canonical_authorships(
             "classification": decision.get("classification"),
         }
 
-        current_maie_occurrences.append(occurrence)
+        current_department_occurrences.append(occurrence)
 
         relationship_key = (
             str(professor_id),
@@ -355,7 +430,7 @@ def build_canonical_authorships(
             "source_occurrences"
         ].append(occurrence)
 
-    return relationships, current_maie_occurrences
+    return relationships, current_department_occurrences
 
 
 def verify_schema(conn):
@@ -439,8 +514,8 @@ def find_existing_records(
               AND department_name = %s
             """,
             (
-                "UTRGV",
-                "Department of Manufacturing and Industrial Engineering",
+                INSTITUTION,
+                DEPARTMENT_NAME,
             ),
         )
 
@@ -456,7 +531,7 @@ def find_existing_records(
                   AND full_name = %s
                 """,
                 (
-                    "UTRGV",
+                    INSTITUTION,
                     faculty.get("name"),
                 ),
             )
@@ -495,8 +570,10 @@ def main():
 
     print()
     print("=" * 80)
-    print("MAIE DATABASE IMPORT DRY RUN")
+    print("DATABASE IMPORT DRY RUN")
     print("=" * 80)
+    print(f"Department: {DEPARTMENT_NAME}")
+    print(f"Institution: {INSTITUTION}")
 
     # -----------------------------------------------------------------------
     # Load artifacts
@@ -504,9 +581,11 @@ def main():
 
     print()
     print("Loading reconciled source...")
+
     source = load_json(SOURCE_PATH)
 
     print("Loading authorship reconciliation...")
+
     reconciliation = load_json(RECONCILIATION_PATH)
 
     faculty_records = get_faculty(source)
@@ -561,7 +640,7 @@ def main():
         build_source_publication_map(publications)
     )
 
-    canonical_authorships, current_maie_occurrences = (
+    canonical_authorships, current_department_occurrences = (
         build_canonical_authorships(
             decisions,
             faculty_by_id,
@@ -660,18 +739,18 @@ def main():
         )
 
         print(
-            f"Source MAIE author entries  : "
-            f"{len(current_maie_occurrences)}"
+            f"Source department author entries: "
+            f"{len(current_department_occurrences)}"
         )
 
         print(
-            f"Canonical MAIE authorships  : "
+            f"Canonical department authorships: "
             f"{len(canonical_authorships)}"
         )
 
         print(
             f"Collapsed duplicate links  : "
-            f"{len(current_maie_occurrences) - len(canonical_authorships)}"
+            f"{len(current_department_occurrences) - len(canonical_authorships)}"
         )
 
         # -------------------------------------------------------------------
@@ -684,16 +763,19 @@ def main():
         print("-" * 80)
 
         print("Departments                 : 1")
+
         print(
             f"Professors                  : "
             f"{len(faculty_records)}"
         )
+
         print(
             f"Papers                      : "
             f"{len(canonical_papers)}"
         )
+
         print(
-            f"MAIE authorship relationships: "
+            f"Department authorship relationships: "
             f"{len(canonical_authorships)}"
         )
 
@@ -882,25 +964,46 @@ def main():
                 + ", ".join(sorted(schema_errors))
             )
 
-        if len(faculty_records) != 14:
+        expected_faculty_count = VALIDATION_CONFIG.get(
+            "expected_faculty_count"
+        )
+
+        if (
+            expected_faculty_count is not None
+            and len(faculty_records) != expected_faculty_count
+        ):
 
             errors.append(
-                f"Expected 14 faculty records; found "
-                f"{len(faculty_records)}."
+                f"Expected {expected_faculty_count} faculty records; "
+                f"found {len(faculty_records)}."
             )
 
-        if len(publications) != 455:
+        expected_publication_count = VALIDATION_CONFIG.get(
+            "expected_publication_count"
+        )
+
+        if (
+            expected_publication_count is not None
+            and len(publications) != expected_publication_count
+        ):
 
             errors.append(
-                f"Expected 455 publications; found "
-                f"{len(publications)}."
+                f"Expected {expected_publication_count} publications; "
+                f"found {len(publications)}."
             )
 
-        if len(unique_dm_ids) != 459:
+        expected_unique_dm_record_count = VALIDATION_CONFIG.get(
+            "expected_unique_dm_record_count"
+        )
+
+        if (
+            expected_unique_dm_record_count is not None
+            and len(unique_dm_ids) != expected_unique_dm_record_count
+        ):
 
             errors.append(
-                f"Expected 459 unique DM record IDs; found "
-                f"{len(unique_dm_ids)}."
+                f"Expected {expected_unique_dm_record_count} unique "
+                f"DM record IDs; found {len(unique_dm_ids)}."
             )
 
         # We expect the already validated reconciliation to have one
@@ -913,11 +1016,11 @@ def main():
                 f"{len(decisions)} vs {author_occurrences}."
             )
 
-        if not current_maie_occurrences:
+        if not current_department_occurrences:
 
             errors.append(
-                "No current-MAIE authorship relationships were recovered "
-                "from the reconciliation decisions."
+                "No current-department authorship relationships were "
+                "recovered from the reconciliation decisions."
             )
 
         # The expected counts are derived from the reconciliation
@@ -932,20 +1035,23 @@ def main():
             "NAME_WITHOUT_DM_ID",
         }
 
-        expected_source_maie = sum(
+        expected_source_department = sum(
             1
             for decision in decisions
             if decision.get("classification")
             in allowed_classifications
         )
 
-        if len(current_maie_occurrences) != expected_source_maie:
+        if (
+            len(current_department_occurrences)
+            != expected_source_department
+        ):
 
             errors.append(
-                "Prospective MAIE occurrence count does not match the "
-                "allowed reconciliation classifications: "
-                f"{len(current_maie_occurrences)} vs "
-                f"{expected_source_maie}."
+                "Prospective department occurrence count does not "
+                "match the allowed reconciliation classifications: "
+                f"{len(current_department_occurrences)} vs "
+                f"{expected_source_department}."
             )
 
         expected_canonical_relationships = len(
@@ -955,7 +1061,8 @@ def main():
         if expected_canonical_relationships <= 0:
 
             errors.append(
-                "No canonical MAIE authorship relationships were produced."
+                "No canonical department authorship relationships "
+                "were produced."
             )
 
         # -------------------------------------------------------------------
@@ -978,12 +1085,12 @@ def main():
         )
 
         print(
-            f"Source MAIE author occurrences     : "
-            f"{len(current_maie_occurrences)}"
+            f"Source department author occurrences: "
+            f"{len(current_department_occurrences)}"
         )
 
         print(
-            f"Canonical authorship relationships : "
+            f"Canonical department authorship relationships: "
             f"{len(canonical_authorships)}"
         )
 
@@ -1010,6 +1117,7 @@ def main():
             print("-" * 80)
 
             for warning in warnings:
+
                 print(
                     f"WARNING: {warning}"
                 )
@@ -1022,6 +1130,7 @@ def main():
             print("-" * 80)
 
             for error in errors:
+
                 print(
                     f"ERROR: {error}"
                 )
@@ -1060,7 +1169,6 @@ def main():
     finally:
 
         conn.close()
-
 
 if __name__ == "__main__":
     main()
