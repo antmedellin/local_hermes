@@ -288,26 +288,6 @@ for faculty in faculty_records:
     faculty_by_id[faculty_id] = faculty
     faculty_by_normalized_name[normalize_name(faculty_name)] = faculty
 
-# Match by first and last name when the source has no faculty ID.
-# Keep every candidate so ambiguous matches are never silently selected.
-faculty_by_first_last = {}
-
-for faculty in faculty_records:
-    faculty_id = str(
-        faculty.get("user_id")
-        or faculty.get("dm_user_id")
-        or ""
-    ).strip()
-
-    faculty_name = faculty.get("name", "").strip()
-
-    if not faculty_id or not faculty_name:
-        continue
-
-    key = first_last_key(faculty_name)
-
-    if key[0] and key[1]:
-        faculty_by_first_last.setdefault(key, []).append(faculty)
 
 current_faculty_ids = set(faculty_by_id)
 
@@ -328,7 +308,6 @@ summary = {
     "faculty_id_entries": 0,
     "EXACT": 0,
     "NAME_VARIANT": 0,
-    "NAME_VARIANT_WITHOUT_DM_ID": 0,
     "INITIAL_VARIANT": 0,
     "MODERATE_REVIEW": 0,
     "HIGH_SIMILARITY": 0,
@@ -411,17 +390,16 @@ for publication in publications:
         # Case 1: no faculty ID.
         # ----------------------------------------------------
 
-
         if not faculty_id_original:
 
             normalized_author = normalize_name(author_name)
 
-            # First, preserve the existing exact-name matching behavior.
             direct_faculty = faculty_by_normalized_name.get(
                 normalized_author
             )
 
             if direct_faculty:
+
                 decision["mapped_faculty_id"] = str(
                     direct_faculty.get("user_id")
                     or direct_faculty.get("dm_user_id")
@@ -440,81 +418,13 @@ for publication in publications:
                 )
 
             else:
-                # Try first/last matching, but only accept a unique
-                # candidate whose faculty ID is associated with this
-                # publication in the normalized source data.
-                key = first_last_key(author_name)
-                candidates = faculty_by_first_last.get(key, [])
 
-                publication_faculty_ids = {
-                    str(value).strip()
-                    for value in (publication.get("faculty_ids") or [])
-                    if value is not None and str(value).strip()
-                }
-
-                supported_candidates = []
-
-                for candidate in candidates:
-                    candidate_id = str(
-                        candidate.get("user_id")
-                        or candidate.get("dm_user_id")
-                        or ""
-                    ).strip()
-
-                    if (
-                        candidate_id
-                        and candidate_id in publication_faculty_ids
-                    ):
-                        supported_candidates.append(candidate)
-
-                if len(supported_candidates) == 1:
-                    candidate = supported_candidates[0]
-
-                    candidate_id = str(
-                        candidate.get("user_id")
-                        or candidate.get("dm_user_id")
-                    ).strip()
-
-                    candidate_name = candidate.get("name", "").strip()
-
-                    decision["mapped_faculty_id"] = candidate_id
-                    decision["mapped_faculty_name"] = candidate_name
-                    decision["classification"] = (
-                        "NAME_VARIANT_WITHOUT_DM_ID"
-                    )
-                    decision["confidence"] = "REVIEW"
-                    decision["evidence"] = (
-                        f"Source author '{author_name}' has no faculty ID. "
-                        f"First and last names uniquely match current "
-                        f"faculty member '{candidate_name}' (ID "
-                        f"{candidate_id}), and that ID is associated "
-                        f"with this publication in the normalized source. "
-                        f"Review recommended before treating the match "
-                        f"as confirmed."
-                    )
-
-                else:
-                    decision["classification"] = "EXTERNAL"
-                    decision["confidence"] = "NONE"
-
-                    if len(supported_candidates) > 1:
-                        decision["evidence"] = (
-                            "Multiple current faculty candidates match "
-                            "the author's first and last names and are "
-                            "associated with this publication. Manual "
-                            "review is required."
-                        )
-                    elif candidates:
-                        decision["evidence"] = (
-                            "First/last-name candidate(s) exist, but "
-                            "none has a matching faculty ID in this "
-                            "publication's normalized faculty metadata."
-                        )
-                    else:
-                        decision["evidence"] = (
-                            "No current faculty ID or supported "
-                            "first/last-name match was found."
-                        )
+                decision["classification"] = "EXTERNAL"
+                decision["confidence"] = "NONE"
+                decision["evidence"] = (
+                    "No current faculty ID or direct current "
+                    "faculty-name match."
+                )
 
             summary[decision["classification"]] = (
                 summary.get(decision["classification"], 0) + 1
