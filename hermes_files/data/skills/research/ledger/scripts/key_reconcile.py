@@ -1,5 +1,6 @@
 import argparse
 import json
+import sys
 from pathlib import Path
 from collections import defaultdict
 import yaml
@@ -551,3 +552,7 @@ else:
         f"WARNING: {len(truly_missing)} raw identity "
         f"group(s) could not be reconciled."
     )
+
+#exit status for orchestration
+if reconciled_total != len(raw_groups):
+    sys.exit(1)
