@@ -443,108 +443,6 @@ def update_database(connection, papers, documents, track_id):
 
     connection.commit()
 
-def recover_first_batch(connection, papers):
-    """
-    Recover the first batch that was successfully processed by
-    LightRAG before the polling bug was fixed.
-
-    This batch was already verified manually using:
-        insert_20260922_165838_c0a1425b
-
-    Returns the remaining papers that still need ingestion.
-    """
-
-    recovery_track_id = "insert_20260922_165838_c0a1425b"
-
-    recovery_sources = {
-        "maie-paper-000002",
-        "maie-paper-000003",
-        "maie-paper-000004",
-        "maie-paper-000005",
-        "maie-paper-000006",
-        "maie-paper-000014",
-        "maie-paper-000023",
-        "maie-paper-000048",
-        "maie-paper-000050",
-        "maie-paper-000067",
-    }
-
-    print()
-    print("=" * 70)
-    print("RECOVERING PREVIOUSLY PROCESSED BATCH")
-    print("=" * 70)
-    print(f"Track ID: {recovery_track_id}")
-
-    documents = get_json(
-        f"{STATUS_URL}/{recovery_track_id}"
-    ).get("documents", [])
-
-    status_by_source = {
-        document.get("file_path"):
-            document.get("status")
-        for document in documents
-    }
-
-    processed_sources = {
-        source
-        for source in recovery_sources
-        if status_by_source.get(source) == "processed"
-    }
-
-    print(
-        f"Verified processed: "
-        f"{len(processed_sources)}/{len(recovery_sources)}"
-    )
-
-    if processed_sources != recovery_sources:
-        missing = recovery_sources - processed_sources
-
-        raise RuntimeError(
-            "Recovery verification failed. "
-            f"These documents are not confirmed processed: "
-            f"{sorted(missing)}"
-        )
-
-    # Find the corresponding paper records.
-    recovered_papers = [
-        paper
-        for paper in papers
-        if paper["file_source"] in processed_sources
-    ]
-
-    if len(recovered_papers) != len(recovery_sources):
-        raise RuntimeError(
-            "Recovery verification failed: "
-            "could not match all recovered LightRAG "
-            "documents to PostgreSQL papers."
-        )
-
-    # Update PostgreSQL only after LightRAG verification.
-    update_database(
-        connection,
-        recovered_papers,
-        documents,
-        recovery_track_id,
-    )
-
-    print(
-        f"PostgreSQL updated for "
-        f"{len(recovered_papers)} recovered papers."
-    )
-
-    remaining_papers = [
-        paper
-        for paper in papers
-        if paper["file_source"] not in processed_sources
-    ]
-
-    print(
-        f"Remaining papers to ingest: "
-        f"{len(remaining_papers)}"
-    )
-
-    return remaining_papers, len(recovered_papers)
-
 # ---------------------------------------------------------------------------
 # Main workflow
 # ---------------------------------------------------------------------------
@@ -572,20 +470,9 @@ def main():
             print("No papers with abstracts were found.")
             return 1
 
-        # Keep the original number so the final verification still
-        # expects all papers, even after the recovered batch is removed
-        # from the list of papers that still need ingestion.
+        # All papers will be ingested from the beginning because the
+        # current LightRAG instance has no documents.
         total_expected = len(papers)
-
-        # ---------------------------------------------------------------
-        # Recover the first batch that was successfully processed by
-        # LightRAG before the polling logic was fixed.
-        # ---------------------------------------------------------------
-
-        papers, recovered_count = recover_first_batch(
-            connection,
-            papers,
-        )
 
         # ---------------------------------------------------------------
         # Show what remains to be ingested.
@@ -604,7 +491,7 @@ def main():
         # Process remaining batches.
         # ---------------------------------------------------------------
 
-        total_processed = recovered_count
+        total_processed = 0
 
         for start in range(0, len(papers), BATCH_SIZE):
 
