@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Import the reconciled UTRGV MAIE research ledger into PostgreSQL.
+Import a reconciled department research ledger into PostgreSQL.
 
 IMPORTANT:
 - This script performs real database writes.
@@ -11,26 +11,23 @@ IMPORTANT:
 - The entire import runs inside one PostgreSQL transaction.
 - If anything fails, the transaction is rolled back.
 
-Expected import state from the successful dry run:
-
-    Departments       : 1
-    Professors        : 14
-    Canonical papers  : 454
-    Authorships       : 433
+The department-specific paths, metadata, source information, and
+validation expectations come from the department config.yaml file.
 
 No topics, documents, or ingestion runs are created here.
 Those are later pipeline stages.
 """
 
+import argparse
 import json
 import os
 import re
-import sys
 import unicodedata
 from collections import defaultdict, deque
 from pathlib import Path
 
 import psycopg2
+import yaml
 
 
 # ---------------------------------------------------------------------------
@@ -38,10 +35,125 @@ import psycopg2
 # ---------------------------------------------------------------------------
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-DATA_DIR = SCRIPT_DIR.parent / "data"
+LEDGER_DIR = SCRIPT_DIR.parent
 
-RECONCILED_PATH = DATA_DIR / "maie_faculty_reconciled.json"
-RECONCILIATION_PATH = DATA_DIR / "maie_authorship_reconciliation.json"
+
+# ---------------------------------------------------------------------------
+# Command-line arguments
+# ---------------------------------------------------------------------------
+
+def parse_args():
+    """Parse command-line arguments."""
+
+    parser = argparse.ArgumentParser(
+        description="Import a reconciled department research ledger into PostgreSQL."
+    )
+
+    parser.add_argument(
+        "--config",
+        required=True,
+        help="Path to the department configuration YAML file.",
+    )
+
+    return parser.parse_args()
+
+
+def load_config(config_file):
+    """
+    Load and validate the department configuration.
+
+    The config contains department-specific information such as:
+        - institution
+        - department name
+        - department URL
+        - output directory
+        - source information
+        - expected validation counts
+    """
+
+    with config_file.open("r", encoding="utf-8") as handle:
+        config = yaml.safe_load(handle)
+
+    required_fields = [
+        "institution",
+        "department_name",
+        "department_url",
+        "output_directory",
+        "sources",
+        "validation",
+    ]
+
+    for field in required_fields:
+        if field not in config:
+            raise ValueError(
+                f"Missing required configuration field: {field}"
+            )
+
+    if "faculty" not in config["sources"]:
+        raise ValueError(
+            "Missing required configuration section: sources.faculty"
+        )
+
+    return config
+
+
+def resolve_output_directory(config_file, configured_path):
+    """
+    Resolve the configured output directory.
+
+    Relative paths are interpreted relative to the repository root.
+    Absolute paths are used unchanged.
+    """
+
+    output_directory = Path(configured_path)
+
+    if output_directory.is_absolute():
+        return output_directory
+
+    repository_root = LEDGER_DIR.parents[4]
+
+    return repository_root / output_directory
+
+
+# ---------------------------------------------------------------------------
+# Configuration
+# ---------------------------------------------------------------------------
+
+args = parse_args()
+
+CONFIG_FILE = Path(args.config).resolve()
+CONFIG = load_config(CONFIG_FILE)
+
+INSTITUTION = CONFIG["institution"]
+DEPARTMENT_NAME = CONFIG["department_name"]
+DEPARTMENT_URL = CONFIG["department_url"]
+
+OUTPUT_DIRECTORY = resolve_output_directory(
+    CONFIG_FILE,
+    CONFIG["output_directory"],
+)
+
+RECONCILED_PATH = OUTPUT_DIRECTORY / "faculty_reconciled.json"
+RECONCILIATION_PATH = OUTPUT_DIRECTORY / "authorship_reconciliation.json"
+
+FACULTY_SOURCE = CONFIG["sources"]["faculty"]
+SOURCE_NAME = FACULTY_SOURCE.get(
+    "source_name",
+    FACULTY_SOURCE.get("type", "Unknown source"),
+)
+
+VALIDATION = CONFIG["validation"]
+
+
+# ---------------------------------------------------------------------------
+# PostgreSQL configuration
+# ---------------------------------------------------------------------------
+
+DB_HOST = os.getenv("POSTGRES_HOST", "localhost")
+DB_PORT = os.getenv("POSTGRES_PORT", "5432")
+DB_NAME = os.getenv("POSTGRES_DB", "rag")
+DB_USER = os.getenv("POSTGRES_USER", "rag")
+DB_PASSWORD = os.getenv("POSTGRES_PASSWORD", "rag")
 
 
 # ---------------------------------------------------------------------------
@@ -64,6 +176,7 @@ ALLOWED_CLASSIFICATIONS = {
     "NAME_VARIANT",
     "INITIAL_VARIANT",
     "NAME_WITHOUT_DM_ID",
+    # "NAME_VARIANT_WITHOUT_DM_ID",
 }
 
 
@@ -160,7 +273,7 @@ def safe_int(value):
 
 def build_faculty_indexes(faculty_records):
     """
-    Build lookup indexes for current MAIE faculty.
+    Build lookup indexes for current department faculty.
 
     The reconciled faculty records are already flattened, for example:
 
@@ -195,7 +308,7 @@ def build_faculty_indexes(faculty_records):
     return by_id, by_name
 
 
-def classify_current_maie(
+def classify_current_department(
     author,
     faculty_by_id,
     faculty_by_name,
@@ -445,7 +558,7 @@ def connect_database():
 
 
 def get_or_create_department(cursor):
-    """Create or retrieve the MAIE department."""
+    """Create or retrieve the configured department."""
 
     cursor.execute(
         """
@@ -465,9 +578,9 @@ def get_or_create_department(cursor):
         RETURNING department_id
         """,
         (
-            "University of Texas Rio Grande Valley",
-            "Department of Manufacturing and Industrial Engineering",
-            "https://www.utrgv.edu/cecs/departments/maie/faculty/index.htm",
+            INSTITUTION,
+            DEPARTMENT_NAME,
+            DEPARTMENT_URL,
         ),
     )
 
@@ -475,7 +588,7 @@ def get_or_create_department(cursor):
 
 
 def upsert_professor(cursor, faculty, department_id):
-    """Insert or update one current MAIE professor."""
+    """Insert or update one current department professor."""
 
     name = faculty.get("name") or faculty.get("full_name")
 
@@ -655,7 +768,7 @@ def upsert_professor(cursor, faculty, department_id):
             first_name,
             middle_name,
             last_name,
-            "University of Texas Rio Grande Valley",
+            INSTITUTION,
             department_id,
             academic_title,
             profile_url,
@@ -771,7 +884,7 @@ def upsert_paper(cursor, publication):
             None, #keywords
             None, #research_topics
             None, #citation count
-            "UTRGV Digital Measures",
+            SOURCE_NAME,
             None, #source_url
         ),
     )
@@ -816,72 +929,154 @@ def insert_authorship(
             professor_id,
             paper_id,
             safe_int(author.get("position")),
-            author.get("author_namr_original"),
+            author.get("author_name_original"),
             None,
         ),
     )
 
+def verify_expected_authorships(
+    cursor,
+    department_id,
+    expected_authorship_pairs,
+):
+    """Verify that every expected department authorship exists."""
+
+    cursor.execute(
+        """
+        SELECT a.professor_id, a.paper_id
+        FROM research.authorships a
+        JOIN research.professors p
+          ON p.professor_id = a.professor_id
+        WHERE p.department_id = %s
+        """,
+        (department_id,),
+    )
+
+    actual_authorship_pairs = {
+        (row[0], row[1])
+        for row in cursor.fetchall()
+    }
+
+    missing = expected_authorship_pairs - actual_authorship_pairs
+    # unexpected = actual_authorship_pairs - expected_authorship_pairs
+
+    if missing:
+        raise RuntimeError(
+            "Authorship relationship verification failed.\n"
+            f"Missing relationships: {len(missing)}\n"
+            # f"Unexpected relationships: {len(unexpected)}"
+        )
+
+    print("Expected authorship relationships: PASS")
+    print(f"Verified relationships           : {len(actual_authorship_pairs)}")
+
+def get_global_counts(cursor):
+    """Return row counts for the research ledger tables."""
+
+    global_counts = {}
+
+    for table in (
+        "departments",
+        "professors",
+        "papers",
+        "authorships",
+        "topics",
+        "documents",
+        "ingestion_runs",
+    ):
+        cursor.execute(f"SELECT COUNT(*) FROM research.{table}")
+        global_counts[table] = cursor.fetchone()[0]
+
+    return global_counts
 
 # ---------------------------------------------------------------------------
 # Verification
 # ---------------------------------------------------------------------------
 
-def verify_database(cursor):
-    """Verify the final database counts."""
 
-    queries = {
-        "departments": """
-            SELECT COUNT(*) FROM research.departments
+def verify_database(cursor):
+    """Verify the configured department and global ledger counts."""
+
+    cursor.execute(
+        """
+        SELECT department_id
+        FROM research.departments
+        WHERE institution = %s
+          AND department_name = %s
         """,
-        "professors": """
-            SELECT COUNT(*) FROM research.professors
+        (INSTITUTION, DEPARTMENT_NAME),
+    )
+    department_row = cursor.fetchone()
+
+    if department_row is None:
+        raise RuntimeError(
+            f"Configured department was not found: {DEPARTMENT_NAME}"
+        )
+
+    department_id = department_row[0]
+
+    cursor.execute(
+        """
+        SELECT COUNT(*)
+        FROM research.professors
+        WHERE department_id = %s
         """,
-        "papers": """
-            SELECT COUNT(*) FROM research.papers
+        (department_id,),
+    )
+    department_professors = cursor.fetchone()[0]
+
+    cursor.execute(
+        """
+        SELECT COUNT(*)
+        FROM research.authorships a
+        JOIN research.professors p
+          ON p.professor_id = a.professor_id
+        WHERE p.department_id = %s
         """,
-        "authorships": """
-            SELECT COUNT(*) FROM research.authorships
-        """,
-        "topics": """
-            SELECT COUNT(*) FROM research.topics
-        """,
-        "documents": """
-            SELECT COUNT(*) FROM research.documents
-        """,
-        "ingestion_runs": """
-            SELECT COUNT(*) FROM research.ingestion_runs
-        """,
+        (department_id,),
+    )
+    department_authorships = cursor.fetchone()[0]
+
+    # Global counts are diagnostic; they are not department-specific.
+    global_counts = get_global_counts(cursor)
+
+    return {
+        "department_id": department_id,
+        "department_professors": department_professors,
+        "department_authorships": department_authorships,
+        "global_counts": global_counts,
     }
 
-    results = {}
 
-    for name, query in queries.items():
-        cursor.execute(query)
-        results[name] = cursor.fetchone()[0]
-
-    return results
-
-
-def print_verification(results):
-    """Print post-import verification."""
+def print_verification(results, expected):
+    """Print department-specific and global verification counts."""
 
     print()
     print("=" * 80)
     print("POST-IMPORT DATABASE VERIFICATION")
     print("=" * 80)
 
-    for key, value in results.items():
-        print(f"{key:25}: {value}")
+    print(f"Department ID             : {results['department_id']}")
+    print(
+        f"Department professors     : "
+        f"{results['department_professors']}"
+    )
+    print(
+        f"Department authorships    : "
+        f"{results['department_authorships']}"
+    )
 
     print()
-    print("Expected:")
-    print("departments             : 1")
-    print("professors              : 14")
-    print("papers                  : 454")
-    print("authorships             : 433")
-    print("topics                  : 0")
-    print("documents               : 0")
-    print("ingestion_runs          : 0")
+    print("Expected department counts:")
+
+    for key, value in expected.items():
+        print(f"{key:28}: {value}")
+
+    print()
+    print("Global database counts:")
+
+    for key, value in results["global_counts"].items():
+        print(f"{key:28}: {value}")
 
 
 # ---------------------------------------------------------------------------
@@ -891,7 +1086,7 @@ def print_verification(results):
 def main():
 
     print("=" * 80)
-    print("MAIE DATABASE IMPORT")
+    print("DATABASE IMPORT")
     print("=" * 80)
 
     print()
@@ -918,11 +1113,12 @@ def main():
     # ---------------------------------------------------------------
     # Validate reconciliation coverage before touching PostgreSQL.
     # ---------------------------------------------------------------
-
-    if len(decisions) != 1624:
+    expected_decisions = VALIDATION["expected_reconciliation_decision_count"]
+    if len(decisions) != expected_decisions:
         raise RuntimeError(
             "Unexpected reconciliation decision count: "
-            f"{len(decisions)}"
+            f"{len(decisions)} "
+            f"(expected {expected_decisions})"
         )
 
     # ---------------------------------------------------------------
@@ -932,11 +1128,12 @@ def main():
     faculty_by_id, faculty_by_name = build_faculty_indexes(
         faculty_records
     )
+    expected_faculty_count = VALIDATION["expected_faculty_count"]
 
-    if len(faculty_by_id) != 14:
+    if len(faculty_by_id) != expected_faculty_count:
         raise RuntimeError(
-            "Expected 14 current MAIE faculty IDs, got "
-            f"{len(faculty_by_id)}"
+            f"Expected {expected_faculty_count} current department faculty IDs, "
+            f"got {len(faculty_by_id)}"
         )
 
     # ---------------------------------------------------------------
@@ -949,19 +1146,22 @@ def main():
         duplicate_groups,
     ) = build_canonical_publications(publications)
 
-    if len(canonical_publications) != 454:
+    expected_canonical_papers = VALIDATION["expected_canonical_publication_count"]
+    if len(canonical_publications) != expected_canonical_papers:
         raise RuntimeError(
-            "Expected 454 canonical papers, got "
-            f"{len(canonical_publications)}"
+            f"Expected {expected_canonical_papers} canonical papers, "
+            f"got {len(canonical_publications)}"
         )
 
-    if len(duplicate_groups) != 1:
+    expected_merge_groups = VALIDATION["expected_publication_merge_group_count"]
+
+    if len(duplicate_groups) != expected_merge_groups:
         raise RuntimeError(
-            "Expected exactly one publication merge group, got "
-            f"{len(duplicate_groups)}"
+            f"Expected {expected_merge_groups} publication merge group, "
+            f"got {len(duplicate_groups)}"
         )
 
-    current_maie_occurrences = []
+    current_department_occurrences = []
 
     for publication in publications:
 
@@ -979,7 +1179,7 @@ def main():
 
         for author in publication.get("authors", []):
 
-            faculty = classify_current_maie(
+            faculty = classify_current_department(
                 author,
                 faculty_by_id,
                 faculty_by_name,
@@ -988,16 +1188,17 @@ def main():
             if faculty is None:
                 continue
 
-            current_maie_occurrences.append({
+            current_department_occurrences.append({
                 "publication": canonical_publication,
                 "faculty": faculty,
                 "author": author,
             })
+    expected_department_occurrences = VALIDATION["expected_department_author_occurrence_count"]
 
-    if len(current_maie_occurrences) != 436:
+    if len(current_department_occurrences) != expected_department_occurrences:
         raise RuntimeError(
-            "Expected 436 safe MAIE author occurrences, got "
-            f"{len(current_maie_occurrences)}"
+            f"Expected {expected_department_occurrences} safe department "
+            f"author occurrences, got {len(current_department_occurrences)}"
         )
 
     # ---------------------------------------------------------------
@@ -1006,7 +1207,7 @@ def main():
 
     canonical_authorships = {}
 
-    for occurrence in current_maie_occurrences:
+    for occurrence in current_department_occurrences:
 
         faculty = occurrence["faculty"]
         publication = occurrence["publication"]
@@ -1018,7 +1219,7 @@ def main():
 
         if not faculty_key:
             raise RuntimeError(
-                "Current MAIE faculty has no Digital Measures ID: "
+                "Current department faculty has no Digital Measures ID: "
                 f"{faculty.get('name')}"
             )
 
@@ -1037,10 +1238,12 @@ def main():
             occurrence,
         )
 
-    if len(canonical_authorships) != 433:
+    expected_canonical_authorships = VALIDATION["expected_canonical_authorship_count"]
+
+    if len(canonical_authorships) != expected_canonical_authorships:
         raise RuntimeError(
-            "Expected 433 canonical authorships, got "
-            f"{len(canonical_authorships)}"
+            f"Expected {expected_canonical_authorships} canonical "
+            f"authorships, got {len(canonical_authorships)}"
         )
 
     print()
@@ -1049,7 +1252,7 @@ def main():
     print("-" * 80)
 
     print(f"Canonical papers       : {len(canonical_publications)}")
-    print(f"Safe MAIE occurrences  : {len(current_maie_occurrences)}")
+    print(f"Safe department occurrences  : {len(current_department_occurrences)}")
     print(f"Canonical authorships  : {len(canonical_authorships)}")
 
     # ---------------------------------------------------------------
@@ -1063,7 +1266,8 @@ def main():
         # psycopg2 starts a transaction automatically after the first
         # database operation.
         cursor = connection.cursor()
-
+        #capture the starting state for post-import comparison
+        baseline_counts = get_global_counts(cursor)
         print()
         print("-" * 80)
         print("IMPORTING")
@@ -1100,7 +1304,7 @@ def main():
 
             professor_ids[str(faculty_id)] = professor_id
 
-        print("Professors imported     : 14")
+        print(f"Professors imported     : {len(professor_ids)}")
 
         # -----------------------------------------------------------
         # Papers
@@ -1125,7 +1329,31 @@ def main():
         print(
             f"Papers imported        : {len(paper_ids)}"
         )
+        
+        expected_authorship_pairs = set()
 
+        for occurrence in canonical_authorships.values():
+            faculty = occurrence["faculty"]
+            publication = occurrence["publication"]
+
+            faculty_id = str(
+                first_nonempty(
+                    faculty.get("user_id"),
+                    faculty.get("dm_user_id"),
+                )
+            )
+
+            paper_key = (
+                publication.get("title"),
+                parse_year(publication.get("year")),
+            )
+
+            expected_authorship_pairs.add(
+                (
+                    professor_ids[faculty_id],
+                    paper_ids[paper_key],
+                )
+            )
         # -----------------------------------------------------------
         # Authorships
         # -----------------------------------------------------------
@@ -1163,29 +1391,58 @@ def main():
             f"{len(canonical_authorships)}"
         )
 
+        
         # -----------------------------------------------------------
         # Verify BEFORE COMMIT.
         # -----------------------------------------------------------
 
         results = verify_database(cursor)
 
-        print_verification(results)
+        verify_expected_authorships(
+            cursor,
+            department_id,
+            expected_authorship_pairs,
+        )
 
         expected = {
-            "departments": 1,
-            "professors": 14,
-            "papers": 454,
-            "authorships": 433,
-            "topics": 0,
-            "documents": 0,
-            "ingestion_runs": 0,
+            "department_professors": (
+                VALIDATION["expected_faculty_count"]
+            ),
+            "department_authorships": (
+                VALIDATION["expected_canonical_authorship_count"]
+            ),
         }
 
-        if results != expected:
+        print_verification(results, expected)
+
+        actual_department_counts = {
+            "department_professors": results["department_professors"],
+            "department_authorships": results["department_authorships"],
+        }
+
+        if actual_department_counts != expected:
             raise RuntimeError(
-                "Post-import verification failed.\n"
+                "Post-import department verification failed.\n"
                 f"Expected: {expected}\n"
-                f"Actual:   {results}"
+                f"Actual:   {actual_department_counts}"
+            )
+
+        # This import should not create unrelated ledger records.
+        unchanged_tables = ("topics", "documents", "ingestion_runs")
+
+        changed_tables = {
+            table: {
+                "before": baseline_counts[table],
+                "after": results["global_counts"][table],
+            }
+            for table in unchanged_tables
+            if baseline_counts[table] != results["global_counts"][table]
+        }
+
+        if changed_tables:
+            raise RuntimeError(
+                "Unexpected changes to unrelated ledger tables:\n"
+                f"{changed_tables}"
             )
 
         # -----------------------------------------------------------
@@ -1199,18 +1456,18 @@ def main():
         print("IMPORT RESULT: PASS")
         print("=" * 80)
         print()
-        print("The MAIE research ledger was committed successfully.")
+        print(
+            f"The {DEPARTMENT_NAME} research ledger "
+            "was committed successfully."
+        )
         print()
         print("Database now contains:")
-        print("  1 department")
-        print("  14 professors")
-        print("  454 canonical papers")
-        print("  433 canonical MAIE authorship relationships")
+        print(f"  {results['department_professors']} department professors")
+        print(f"  {results['department_authorships']} department authorships")
         print()
         print("No topics, documents, or ingestion runs were created.")
 
     except Exception:
-
         print()
         print("=" * 80)
         print("IMPORT FAILED")
@@ -1225,7 +1482,6 @@ def main():
         raise
 
     finally:
-
         connection.close()
 
 

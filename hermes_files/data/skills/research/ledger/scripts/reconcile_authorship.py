@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Reconcile MAIE Digital Measures authorship records.
+Reconcile faculty authorship records.
 
 IMPORTANT:
 - This script is READ-ONLY with respect to the source JSON.
@@ -13,15 +13,15 @@ IMPORTANT:
 Classification:
 
 EXACT
-    Faculty ID points to a current MAIE faculty member and the author name
+    Faculty ID points to a current faculty member and the author name
     exactly matches the current faculty name.
 
 NAME_VARIANT
-    Faculty ID points to a current MAIE faculty member and the author's
+    Faculty ID points to a current faculty member and the author's
     first/last name matches despite middle-name/title formatting differences.
 
 INITIAL_VARIANT
-    Faculty ID points to a current MAIE faculty member and the name is
+    Faculty ID points to a current faculty member and the name is
     represented primarily through initials.
 
 MODERATE_REVIEW
@@ -29,32 +29,101 @@ MODERATE_REVIEW
     enough for automatic mapping.
 
 HISTORICAL_ID_MISMATCH
-    A Digital Measures faculty ID points to a current MAIE faculty member,
+    A Digital Measures faculty ID points to a current faculty member,
     but the author name is clearly someone else.
 
 HISTORICAL_ID_SWAP_RECOVERED
-    A suspicious historical ID/name pairing exists, BUT the current MAIE
+    A suspicious historical ID/name pairing exists, BUT the current
     faculty member's name also appears elsewhere in the same publication's
     author list. This is strong evidence of an ID/name swap.
 
 EXTERNAL
-    Author has no MAIE faculty ID and does not match a current MAIE faculty
+    Author has no faculty ID and does not match a current faculty
     member.
 
 """
-
+import argparse
 import json
 import re
 import unicodedata
 from pathlib import Path
 from difflib import SequenceMatcher
+import yaml
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+LEDGER_DIR = SCRIPT_DIR.parent
 
 
-BASE = Path(__file__).resolve().parents[1]
-DATA_DIR = BASE / "data"
+def parse_args():
+    """Parse command-line arguments."""
 
-INPUT_FILE = DATA_DIR / "maie_faculty_normalized.json"
-OUTPUT_FILE = DATA_DIR / "maie_authorship_reconciliation.json"
+    parser = argparse.ArgumentParser(
+        description="Reconcile faculty authorship records."
+    )
+
+    parser.add_argument(
+        "--config",
+        required=True,
+        help="Path to the department configuration YAML file.",
+    )
+
+    return parser.parse_args()
+
+
+def load_config(config_file):
+    """Load and validate the department configuration."""
+
+    with open(config_file, "r", encoding="utf-8") as f:
+        config = yaml.safe_load(f)
+
+    required_fields = [
+        "institution",
+        "department_name",
+        "output_directory",
+    ]
+
+    for field in required_fields:
+        if field not in config:
+            raise ValueError(
+                f"Missing required configuration field: {field}"
+            )
+
+    return config
+
+
+def resolve_output_directory(config_file, configured_path):
+    """
+    Resolve the configured output directory.
+
+    Relative paths are interpreted from the repository root.
+    Absolute paths are used unchanged.
+    """
+
+    output_directory = Path(configured_path)
+
+    if output_directory.is_absolute():
+        return output_directory
+
+    repository_root = LEDGER_DIR.parents[4]
+
+    return repository_root / output_directory
+
+
+args = parse_args()
+
+config_file = Path(args.config).resolve()
+
+config = load_config(config_file)
+
+output_directory = resolve_output_directory(
+    config_file,
+    config["output_directory"],
+)
+
+
+INPUT_FILE = output_directory / "faculty_normalized.json"
+
+OUTPUT_FILE = output_directory / "authorship_reconciliation.json"
 
 
 # ------------------------------------------------------------
@@ -127,7 +196,7 @@ def initials(name):
 
 def classify_name(author_name, faculty_name):
     """
-    Compare an author name with a current MAIE faculty name.
+    Compare an author name with a current faculty name.
 
     Returns:
         category, similarity
@@ -177,7 +246,7 @@ def classify_name(author_name, faculty_name):
 # ------------------------------------------------------------
 
 print("=" * 70)
-print("MAIE AUTHORSHIP RECONCILIATION")
+print("AUTHORSHIP RECONCILIATION")
 print("=" * 70)
 
 print(f"Input : {INPUT_FILE}")
@@ -197,7 +266,7 @@ print(f"Publications         : {len(publications)}")
 
 
 # ------------------------------------------------------------
-# Current MAIE faculty lookup
+# Current faculty lookup
 # ------------------------------------------------------------
 
 faculty_by_id = {}
@@ -219,11 +288,31 @@ for faculty in faculty_records:
     faculty_by_id[faculty_id] = faculty
     faculty_by_normalized_name[normalize_name(faculty_name)] = faculty
 
+# Match by first and last name when the source has no faculty ID.
+# Keep every candidate so ambiguous matches are never silently selected.
+faculty_by_first_last = {}
+
+for faculty in faculty_records:
+    faculty_id = str(
+        faculty.get("user_id")
+        or faculty.get("dm_user_id")
+        or ""
+    ).strip()
+
+    faculty_name = faculty.get("name", "").strip()
+
+    if not faculty_id or not faculty_name:
+        continue
+
+    key = first_last_key(faculty_name)
+
+    if key[0] and key[1]:
+        faculty_by_first_last.setdefault(key, []).append(faculty)
 
 current_faculty_ids = set(faculty_by_id)
 
 
-print(f"Current MAIE IDs    : {len(current_faculty_ids)}")
+print(f"Current IDs    : {len(current_faculty_ids)}")
 print()
 
 
@@ -239,6 +328,7 @@ summary = {
     "faculty_id_entries": 0,
     "EXACT": 0,
     "NAME_VARIANT": 0,
+    "NAME_VARIANT_WITHOUT_DM_ID": 0,
     "INITIAL_VARIANT": 0,
     "MODERATE_REVIEW": 0,
     "HIGH_SIMILARITY": 0,
@@ -321,16 +411,17 @@ for publication in publications:
         # Case 1: no faculty ID.
         # ----------------------------------------------------
 
+
         if not faculty_id_original:
 
             normalized_author = normalize_name(author_name)
 
+            # First, preserve the existing exact-name matching behavior.
             direct_faculty = faculty_by_normalized_name.get(
                 normalized_author
             )
 
             if direct_faculty:
-
                 decision["mapped_faculty_id"] = str(
                     direct_faculty.get("user_id")
                     or direct_faculty.get("dm_user_id")
@@ -343,19 +434,87 @@ for publication in publications:
                 decision["classification"] = "NAME_WITHOUT_DM_ID"
                 decision["confidence"] = "HIGH"
                 decision["evidence"] = (
-                    "Author name directly matches a current MAIE "
+                    "Author name directly matches a current "
                     "faculty member, but Digital Measures supplied "
                     "no faculty ID."
                 )
 
             else:
+                # Try first/last matching, but only accept a unique
+                # candidate whose faculty ID is associated with this
+                # publication in the normalized source data.
+                key = first_last_key(author_name)
+                candidates = faculty_by_first_last.get(key, [])
 
-                decision["classification"] = "EXTERNAL"
-                decision["confidence"] = "NONE"
-                decision["evidence"] = (
-                    "No current MAIE faculty ID or direct current "
-                    "faculty-name match."
-                )
+                publication_faculty_ids = {
+                    str(value).strip()
+                    for value in (publication.get("faculty_ids") or [])
+                    if value is not None and str(value).strip()
+                }
+
+                supported_candidates = []
+
+                for candidate in candidates:
+                    candidate_id = str(
+                        candidate.get("user_id")
+                        or candidate.get("dm_user_id")
+                        or ""
+                    ).strip()
+
+                    if (
+                        candidate_id
+                        and candidate_id in publication_faculty_ids
+                    ):
+                        supported_candidates.append(candidate)
+
+                if len(supported_candidates) == 1:
+                    candidate = supported_candidates[0]
+
+                    candidate_id = str(
+                        candidate.get("user_id")
+                        or candidate.get("dm_user_id")
+                    ).strip()
+
+                    candidate_name = candidate.get("name", "").strip()
+
+                    decision["mapped_faculty_id"] = candidate_id
+                    decision["mapped_faculty_name"] = candidate_name
+                    decision["classification"] = (
+                        "NAME_VARIANT_WITHOUT_DM_ID"
+                    )
+                    decision["confidence"] = "REVIEW"
+                    decision["evidence"] = (
+                        f"Source author '{author_name}' has no faculty ID. "
+                        f"First and last names uniquely match current "
+                        f"faculty member '{candidate_name}' (ID "
+                        f"{candidate_id}), and that ID is associated "
+                        f"with this publication in the normalized source. "
+                        f"Review recommended before treating the match "
+                        f"as confirmed."
+                    )
+
+                else:
+                    decision["classification"] = "EXTERNAL"
+                    decision["confidence"] = "NONE"
+
+                    if len(supported_candidates) > 1:
+                        decision["evidence"] = (
+                            "Multiple current faculty candidates match "
+                            "the author's first and last names and are "
+                            "associated with this publication. Manual "
+                            "review is required."
+                        )
+                    elif candidates:
+                        decision["evidence"] = (
+                            "First/last-name candidate(s) exist, but "
+                            "none has a matching faculty ID in this "
+                            "publication's normalized faculty metadata."
+                        )
+                    else:
+                        decision["evidence"] = (
+                            "No current faculty ID or supported "
+                            "first/last-name match was found."
+                        )
 
             summary[decision["classification"]] = (
                 summary.get(decision["classification"], 0) + 1
@@ -366,7 +525,7 @@ for publication in publications:
             continue
 
         # ----------------------------------------------------
-        # Case 2: faculty ID belongs to current MAIE faculty.
+        # Case 2: faculty ID belongs to current faculty.
         # ----------------------------------------------------
 
         if faculty_id_original in current_faculty_ids:
@@ -401,7 +560,7 @@ for publication in publications:
                     decision["confidence"] = "HIGH"
                     decision["evidence"] = (
                         "Digital Measures faculty ID and author name "
-                        "both match the current MAIE faculty record."
+                        "both match the current faculty record."
                     )
 
                 elif category in {
@@ -501,14 +660,14 @@ for publication in publications:
             continue
 
         # ----------------------------------------------------
-        # Case 3: faculty ID exists but is NOT a current MAIE ID.
+        # Case 3: faculty ID exists but is NOT a current ID.
         # ----------------------------------------------------
 
         decision["classification"] = "EXTERNAL"
         decision["confidence"] = "NONE"
         decision["evidence"] = (
             "Digital Measures faculty ID does not belong to the "
-            "current MAIE faculty roster."
+            "current faculty roster."
         )
 
         summary["EXTERNAL"] += 1
@@ -592,6 +751,7 @@ for key in [
     "author_entries",
     "faculty_id_entries",
     "EXACT",
+    "NAME_WITHOUT_DM_ID",
     "NAME_VARIANT",
     "INITIAL_VARIANT",
     "HIGH_SIMILARITY",

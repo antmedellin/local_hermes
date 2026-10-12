@@ -1,18 +1,85 @@
+import argparse
 import json
 from pathlib import Path
 from collections import defaultdict
+import yaml
+
+# -------------------------------------------------------
+# Configuration
+# -------------------------------------------------------
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+LEDGER_DIR = SCRIPT_DIR.parent
+
+
+def parse_args():
+    """Parse command-line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Reconcile enriched and normalized faculty publications."
+    )
+
+    parser.add_argument(
+        "--config",
+        required=True,
+        help="Path to the department configuration YAML file.",
+    )
+
+    return parser.parse_args()
+
+
+def load_config(config_file):
+    """Load and validate the department configuration."""
+    with open(config_file, "r", encoding="utf-8") as f:
+        config = yaml.safe_load(f)
+
+    required_fields = [
+        "institution",
+        "department_name",
+        "output_directory",
+    ]
+
+    for field in required_fields:
+        if field not in config:
+            raise ValueError(
+                f"Missing required configuration field: {field}"
+            )
+
+    return config
+
+
+def resolve_output_directory(config_file, configured_path):
+    """
+    Resolve the configured output directory.
+
+    Relative paths are interpreted from the repository root.
+    Absolute paths are used unchanged.
+    """
+    output_directory = Path(configured_path)
+
+    if output_directory.is_absolute():
+        return output_directory
+
+    repository_root = LEDGER_DIR.parents[4]
+
+    return repository_root / output_directory
 
 
 # -------------------------------------------------------
-# Paths
+# Load configuration
 # -------------------------------------------------------
 
-BASE_DIR = Path(__file__).resolve().parents[1]
-DATA_DIR = BASE_DIR / "data"
+args = parse_args()
 
-RAW_FILE = DATA_DIR / "maie_faculty_enriched.json"
-NORMALIZED_FILE = DATA_DIR / "maie_faculty_normalized.json"
+config_file = Path(args.config).resolve()
+config = load_config(config_file)
 
+output_directory = resolve_output_directory(
+    config_file,
+    config["output_directory"],
+)
+
+RAW_FILE = output_directory / "faculty_enriched.json"
+NORMALIZED_FILE = output_directory / "faculty_normalized.json"
 
 # -------------------------------------------------------
 # Helpers
