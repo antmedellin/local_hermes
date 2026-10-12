@@ -132,6 +132,9 @@ session_reset:
   at_hour: 4
 group_sessions_per_user: true
 platform_toolsets:
+  api_server:
+    - hermes-api-server
+    - computer_use
   cli:
     - browser
     - clarify
