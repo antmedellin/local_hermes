@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # p5.js Skill — Local Development Server
 # Serves the current directory over HTTP for loading local assets (fonts, images)
 #

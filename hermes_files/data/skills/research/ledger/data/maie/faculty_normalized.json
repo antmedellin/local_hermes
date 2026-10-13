@@ -9,7 +9,7 @@
     "normalized_unique_publications": 457,
     "source": "digital_measures",
     "api_endpoint": "https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMuser?username=",
-    "generated_at": "2026-10-07T13:30:04Z"
+    "generated_at": "2026-10-13T15:14:16Z"
   },
   "quality_summary": {
     "duplicate_doi_records": 13,
