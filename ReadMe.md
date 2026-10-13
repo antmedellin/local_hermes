@@ -10,6 +10,7 @@ to build containers: docker compose build
 to start: docker compose up -d 
 to stop: docker compose stop
 use hermes from terminal: docker exec -it hermes /bin/bash
+docker exec -it -u 1000:1000 hermes /bin/bash
 use hermes from browser: http://localhost:9119
 username for dashboard: admin, password: password
 
@@ -53,3 +54,7 @@ verify cron job
 python3 -m venv myenvname
 source .venv/bin/activate
 pip install -r requirements.txt
+
+
+vnc location
+http://127.0.0.1:6080/vnc.html
