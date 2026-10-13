@@ -48,6 +48,18 @@ services:
     gpus: all
     labels:
       autoheal: "true"
+  browser-gui:
+    build:
+      context: ./browser-gui
+    container_name: hermes-browser-gui
+    restart: unless-stopped
+    networks:
+      - backend
+    ports:
+      - "127.0.0.1:6080:6080"
+    volumes:
+      - browser_gui_runtime:/run/user/1000
+    shm_size: "4gb"
    
 
   ollama-init:
@@ -69,4 +81,5 @@ services:
 
 volumes:
   ollama_storage:
+  browser_gui_runtime:
 
