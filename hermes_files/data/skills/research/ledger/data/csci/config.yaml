@@ -1,0 +1,21 @@
+institution: "University of Texas Rio Grande Valley"
+
+department_name: "Department of Computer Science"
+
+department_slug: "csci"
+
+department_url: "https://www.utrgv.edu/cecs/departments/csci/index.htm"
+
+faculty_url: "https://www.utrgv.edu/cecs/departments/csci/faculty/index.htm"
+
+output_directory: "hermes_files/data/skills/research/ledger/data/csci"
+
+sources:
+  faculty:
+    type: "digital_measures"
+    source_name: "UTRGV Digital Measures"
+    api_url: "https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMList"
+    profile_api_url: "https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMuser?username="
+    department_name: "Department of Computer Science"
+
+validation: {}

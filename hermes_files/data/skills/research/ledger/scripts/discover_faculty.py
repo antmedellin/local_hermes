@@ -262,7 +262,16 @@ def main():
     
     output_directory = Path(
         config["output_directory"]
-    )
+    ).expanduser()
+
+    # Resolve relative output paths from the repository root.
+    if not output_directory.is_absolute():
+        script_directory = Path(__file__).resolve().parent
+        repository_root = script_directory.parents[5]
+        output_directory = repository_root / output_directory
+
+    output_directory = output_directory.resolve()
+    output_directory.mkdir(parents=True, exist_ok=True)
     
     output_file = (
         output_directory / "faculty.json"
