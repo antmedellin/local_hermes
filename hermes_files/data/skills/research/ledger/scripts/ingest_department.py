@@ -41,6 +41,14 @@ def parse_args():
         help="Show the plan and validate configuration without running pipeline stages.",
     )
     parser.add_argument(
+        "--prepare-only",
+        action="store_true",
+        help=(
+            "Run local preparation and validation stages only; "
+            "skip database checks and database/LightRAG writes."
+        ),
+    )
+    parser.add_argument(
         "--refresh",
         action="store_true",
         help="Pass --refresh to enrich_faculty.py.",
@@ -88,10 +96,17 @@ def load_config(config_path):
     if not config.get("department_url") or not config.get("faculty_url"):
         raise ValueError("department_url and faculty_url must be configured.")
 
-    if not config.get("validation"):
+    if "validation" not in config:
         raise ValueError(
-            "Missing validation expectations. Configure validation before ingestion."
+            "Missing validation configuration. Add 'validation: {}' "
+            "for preparation-only workflows."
         )
+
+    if not isinstance(config["validation"], dict):
+        raise ValueError(
+            "The validation configuration must be a YAML mapping."
+        )
+
     return config
 
 def resolve_output_directory(config, config_path):
@@ -122,7 +137,21 @@ def build_stages(args, config_path, output_dir, department_slug):
     python = sys.executable
     stages = []
 
-    for name, script_name, artifacts in PREPARATION_STAGES:
+    if args.prepare_only and (
+        args.allow_db_write or args.allow_lightrag_write
+    ):
+        raise ValueError(
+            "--prepare-only cannot be combined with database or LightRAG writes."
+        )
+
+    preparation_stages = PREPARATION_STAGES
+    if args.prepare_only:
+        preparation_stages = [
+            stage for stage in PREPARATION_STAGES
+            if stage[1] != "db_dry_run.py"
+        ]
+
+    for name, script_name, artifacts in preparation_stages:
         command = [python, str(SCRIPT_DIR / script_name), "--config", str(config_path)]
 
         if script_name == "enrich_faculty.py" and args.refresh:
@@ -199,7 +228,12 @@ def main():
     print(f"Slug       : {config['department_slug']}")
     print(f"Config     : {config_path}")
     print(f"Output     : {output_dir}")
-    print(f"Mode       : {'PLAN ONLY' if args.plan else 'EXECUTION'}")
+    mode = (
+        "PLAN ONLY" if args.plan
+        else "PREPARATION ONLY" if args.prepare_only
+        else "EXECUTION"
+    )
+    print(f"Mode       : {mode}")
     print(f"DB writes  : {'ENABLED' if args.allow_db_write else 'DISABLED'}")
     print(f"LightRAG   : {'ENABLED' if args.allow_lightrag_write else 'DISABLED'}")
     print()

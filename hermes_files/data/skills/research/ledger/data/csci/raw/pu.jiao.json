@@ -1,0 +1,121 @@
+{
+  "?xml": {
+    "@version": "1.0",
+    "@encoding": "UTF-8"
+  },
+  "Data": {
+    "@xmlns": "http://www.digitalmeasures.com/schema/data",
+    "@xmlns:dmd": "http://www.digitalmeasures.com/schema/data-metadata",
+    "@dmd:date": "2026-10-13",
+    "Record": {
+      "@userId": "2697949",
+      "@username": "pu.jiao",
+      "@dmd:surveyId": "18607091",
+      "dmd:IndexEntry": [
+        {
+          "@indexKey": "COLLEGE",
+          "@entryKey": "College of Engineering and Computer Science",
+          "@text": "College of Engineering and Computer Science"
+        },
+        {
+          "@indexKey": "DEPARTMENT",
+          "@entryKey": "Department of Computer Science",
+          "@text": "Department of Computer Science"
+        },
+        {
+          "@indexKey": "RANK",
+          "@entryKey": "Assistant Professor",
+          "@text": "Assistant Professor"
+        }
+      ],
+      "PCI": {
+        "@id": "385882368000",
+        "@dmd:originalSource": "IMPORT",
+        "@dmd:created": "2026-07-10T06:05:09",
+        "@dmd:lastModifiedSource": "IMPORT",
+        "@dmd:lastModified": "2026-07-10T06:05:08",
+        "FNAME": "Pu",
+        "MNAME": null,
+        "LNAME": "Jiao",
+        "EMAIL": "pu.jiao@utrgv.edu"
+      },
+      "EDUCATION": {
+        "@id": "392821725184",
+        "@dmd:originalSource": "MANUAL",
+        "@dmd:created": "2026-09-02T15:52:02",
+        "@dmd:lastModifiedSource": "MANUAL",
+        "@dmd:lastModified": "2026-09-02T15:52:02",
+        "@dmd:startDate": "2026-05-01",
+        "@dmd:endDate": "2026-05-31",
+        "DEG": "PhD",
+        "DEGOTHER": null,
+        "SCHOOL": "University of Kentucky",
+        "LOCATION": "Lexington, Kentucky",
+        "MAJOR": "Computer Science",
+        "SUPPAREA": null,
+        "DISSTITLE": null,
+        "DISTINCTION": null,
+        "HIGHEST": "Yes",
+        "INCLUDE": "Yes",
+        "TRANSCRIPT": "pu.jiao/education/Jiao Pu PhD Official Transcript-1.pdf",
+        "DTM_EXPCOMP": null,
+        "DTY_EXPCOMP": null,
+        "EXPCOMP_START": "",
+        "EXPCOMP_END": "",
+        "DTM_COMP": "May",
+        "YR_COMP": "2026",
+        "COMP_START": "2026-05-01",
+        "COMP_END": "2026-05-31",
+        "VERIFIED": null,
+        "DTM_VERIFIED": null,
+        "DTD_VERIFIED": null,
+        "DTY_VERIFIED": null,
+        "VERIFIED_START": "",
+        "VERIFIED_END": "",
+        "VERIFIED_NOTES": null,
+        "EDUCATION_ADVISOR": {
+          "@id": "392821725185",
+          "FNAME": null,
+          "MNAME": null,
+          "LNAME": null
+        }
+      },
+      "SCHTEACH": {
+        "@id": "385882437632",
+        "@dmd:originalSource": "IMPORT",
+        "@dmd:created": "2026-07-10T06:05:31",
+        "@dmd:lastModifiedSource": "IMPORT",
+        "@dmd:lastModified": "2026-09-15T06:05:22",
+        "@dmd:startDate": "2026-09-01",
+        "@dmd:endDate": "2026-12-31",
+        "@dmd:primaryKey": "Fall|2026|44732|Lecture",
+        "TYT_TERM": "Fall",
+        "TYY_TERM": "2026",
+        "TERM_START": "2026-09-01",
+        "TERM_END": "2026-12-31",
+        "CLASS_TERM": "202710",
+        "TITLE": "Systems Programming",
+        "COURSEID": "44732",
+        "COURSEPRE": "CSCI",
+        "COURSENUM": "3334",
+        "SECTION": "03",
+        "EK_COURSE_CODE": "44732.202710",
+        "ENROLL": "11",
+        "CHOURS": "3",
+        "DIVISION": "Upper",
+        "LEVEL": "Undergraduate",
+        "INST_METHOD": "Lecture",
+        "DELIVERY_MODE": "Traditional",
+        "CAMPUS": "ED",
+        "STEARNA": "0",
+        "STEARNB": "0",
+        "STEARNC": "0",
+        "STEARND": "0",
+        "STEARNF": "0",
+        "STEARNI": "0",
+        "STEARNP": "0",
+        "STEARNW": "0"
+      }
+    }
+  }
+}

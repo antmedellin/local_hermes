@@ -53,7 +53,7 @@ def parse_args():
     parser.add_argument(
         "--allow-lightrag-write",
         action="store_true",
-        help="Explicitly allow the LightRAG ingestion stage (not yet implemented).",
+        help="Explicitly allow LightRAG abstract ingestion after PostgreSQL import.",
     )
     parser.add_argument(
         "--allow-overwrite",
@@ -118,7 +118,7 @@ def artifact_is_valid(path):
     except (OSError, json.JSONDecodeError) as exc:
         return False, f"invalid JSON: {exc}"
 
-def build_stages(args, config_path, output_dir):
+def build_stages(args, config_path, output_dir, department_slug):
     python = sys.executable
     stages = []
 
@@ -146,13 +146,36 @@ def build_stages(args, config_path, output_dir):
             "write_stage": True,
         })
 
-    if args.allow_lightrag_write:
-        # The existing abstract ingester is MAIE-specific and its behavior
-        # is not yet safe for general department-wide orchestration.
+    if args.allow_lightrag_write and not args.allow_db_write:
         raise ValueError(
-            "LightRAG ingestion is not wired into this orchestrator yet. "
-            "Inspect and refactor maie_abstract_ingest.py before enabling it."
+            "--allow-lightrag-write requires --allow-db-write so the "
+            "PostgreSQL import completes before LightRAG ingestion."
         )
+
+    if args.allow_lightrag_write:
+        if department_slug != "maie":
+            raise ValueError(
+                "The current LightRAG worker is MAIE-specific. "
+                "Use it only with department_slug: maie."
+            )
+
+        lightrag_script = (
+            REPO_ROOT
+            / "hermes_files/data/skills/research/lightrag/scripts/"
+              "maie_abstract_ingest.py"
+        )
+
+        if not lightrag_script.is_file():
+            raise FileNotFoundError(
+                f"LightRAG ingestion script not found: {lightrag_script}"
+            )
+
+        stages.append({
+            "name": "Ingest abstracts into LightRAG",
+            "command": [python, str(lightrag_script)],
+            "artifacts": [],
+            "write_stage": True,
+        })
 
     return stages
 
@@ -167,7 +190,7 @@ def main():
     try:
         config = load_config(config_path)
         output_dir = resolve_output_directory(config, config_path)
-        stages = build_stages(args, config_path, output_dir)
+        stages = build_stages(args, config_path, output_dir, config['department_slug'])
     except Exception as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 2
@@ -178,7 +201,7 @@ def main():
     print(f"Output     : {output_dir}")
     print(f"Mode       : {'PLAN ONLY' if args.plan else 'EXECUTION'}")
     print(f"DB writes  : {'ENABLED' if args.allow_db_write else 'DISABLED'}")
-    print(f"LightRAG   : {'REQUESTED' if args.allow_lightrag_write else 'DISABLED'}")
+    print(f"LightRAG   : {'ENABLED' if args.allow_lightrag_write else 'DISABLED'}")
     print()
 
     if args.plan:

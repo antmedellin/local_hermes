@@ -1,0 +1,261 @@
+[
+  {
+    "name": "Alfredo Ramos",
+    "rank": "Lecturer I",
+    "department": "Department of Computer Science",
+    "username": "alfredo.ramos02",
+    "user_id": "2184274"
+  },
+  {
+    "name": "Andres Figueroa",
+    "rank": "Full Professor",
+    "department": "Department of Computer Science",
+    "username": "andres.figueroa",
+    "user_id": "1451040"
+  },
+  {
+    "name": "Austin Luchsinger",
+    "rank": "Assistant Professor",
+    "department": "Department of Computer Science",
+    "username": "austin.luchsinger",
+    "user_id": "2526906"
+  },
+  {
+    "name": "Bin Fu",
+    "rank": "Full Professor",
+    "department": "Department of Computer Science",
+    "username": "bin.fu",
+    "user_id": "1450875"
+  },
+  {
+    "name": "Carlos Andres Pena-Caballero",
+    "rank": "Lecturer III",
+    "department": "Department of Computer Science",
+    "username": "carlos.penacaballero01",
+    "user_id": "2139412"
+  },
+  {
+    "name": "Carlos Janones Figueira",
+    "rank": "Part-Time Lecturer",
+    "department": "Department of Computer Science",
+    "username": "carlos.janonesfigueira01",
+    "user_id": "2592160"
+  },
+  {
+    "name": "David Egle",
+    "rank": "Part-Time Lecturer",
+    "department": "Department of Computer Science",
+    "username": "david.egle",
+    "user_id": "1450830"
+  },
+  {
+    "name": "David Torres",
+    "rank": "Staff Teaching Part-Time",
+    "department": "Department of Computer Science",
+    "username": "david.torres",
+    "user_id": "2201393"
+  },
+  {
+    "name": "Divya Bajaj",
+    "rank": "Lecturer I",
+    "department": "Department of Computer Science",
+    "username": "divya.bajaj",
+    "user_id": "2377620"
+  },
+  {
+    "name": "Dongchul Kim",
+    "rank": "Full Professor",
+    "department": "Department of Computer Science",
+    "username": "dongchul.kim",
+    "user_id": "1662367"
+  },
+  {
+    "name": "Emmett R Tomai",
+    "rank": "Full Professor",
+    "department": "Department of Computer Science",
+    "username": "emmett.tomai",
+    "user_id": "1451305"
+  },
+  {
+    "name": "Eric Michael Martinez",
+    "rank": "Staff Teaching Part-Time",
+    "department": "Department of Computer Science",
+    "username": "eric.m.martinez02",
+    "user_id": "1962782"
+  },
+  {
+    "name": "Erik Marcelle Enriquez",
+    "rank": "Assistant Professor of Practice",
+    "department": "Department of Computer Science",
+    "username": "erik.enriquez01",
+    "user_id": "2124037"
+  },
+  {
+    "name": "Gustavo G Dietrich",
+    "rank": "Senior Lecturer",
+    "department": "Department of Computer Science",
+    "username": "gustavo.dietrich",
+    "user_id": "1450819"
+  },
+  {
+    "name": "Haoteng Tang",
+    "rank": "Assistant Professor",
+    "department": "Department of Computer Science",
+    "username": "haoteng.tang",
+    "user_id": "2447484"
+  },
+  {
+    "name": "Jennifer Ashley Pedraza",
+    "rank": "Part-Time Lecturer",
+    "department": "Department of Computer Science",
+    "username": "jennifer.pedraza02",
+    "user_id": "2639377"
+  },
+  {
+    "name": "Jonatan Reyes",
+    "rank": "Assistant Professor of Practice",
+    "department": "Department of Computer Science",
+    "username": "jonatan.reyes01",
+    "user_id": "2530233"
+  },
+  {
+    "name": "Jose Ruben Espinoza",
+    "rank": "Part-Time Lecturer",
+    "department": "Department of Computer Science",
+    "username": "jose.r.espinoza01",
+    "user_id": "2639376"
+  },
+  {
+    "name": "Joselito Antonio Guardado",
+    "rank": "Lecturer I",
+    "department": "Department of Computer Science",
+    "username": "joselito.guardado01",
+    "user_id": "2462722"
+  },
+  {
+    "name": "Juan Garza",
+    "rank": "Part-Time Lecturer",
+    "department": "Department of Computer Science",
+    "username": "juan.l.garza01",
+    "user_id": "1987338"
+  },
+  {
+    "name": "Li Zhang",
+    "rank": "Assistant Professor",
+    "department": "Department of Computer Science",
+    "username": "li.zhang",
+    "user_id": "2447483"
+  },
+  {
+    "name": "Marzieh Ayati",
+    "rank": "Associate Professor",
+    "department": "Department of Computer Science",
+    "username": "marzieh.ayati",
+    "user_id": "2109032"
+  },
+  {
+    "name": "Michael Lion Aguillon",
+    "rank": "Part-Time Lecturer",
+    "department": "Department of Computer Science",
+    "username": "michael.aguillon01",
+    "user_id": "2462718"
+  },
+  {
+    "name": "Pedro Fonseca",
+    "rank": "Lecturer I",
+    "department": "Department of Computer Science",
+    "username": "pedro.fonseca01",
+    "user_id": "2462729"
+  },
+  {
+    "name": "Pengfei Gu",
+    "rank": "Assistant Professor",
+    "department": "Department of Computer Science",
+    "username": "pengfei.gu01",
+    "user_id": "2526905"
+  },
+  {
+    "name": "Pu Jiao",
+    "rank": "Assistant Professor",
+    "department": "Department of Computer Science",
+    "username": "pu.jiao",
+    "user_id": "2697949"
+  },
+  {
+    "name": "Qi Lu",
+    "rank": "Assistant Professor",
+    "department": "Department of Computer Science",
+    "username": "qi.lu",
+    "user_id": "2370676"
+  },
+  {
+    "name": "Rene Barrera",
+    "rank": "Part-Time Lecturer",
+    "department": "Department of Computer Science",
+    "username": "rene.barrera02",
+    "user_id": "2503095"
+  },
+  {
+    "name": "Robert T Schweller",
+    "rank": "Full Professor",
+    "department": "Department of Computer Science",
+    "username": "robert.schweller",
+    "user_id": "1451258"
+  },
+  {
+    "name": "Roberto Damian Jimenez",
+    "rank": "Staff Teaching Part-Time",
+    "department": "Department of Computer Science",
+    "username": "roberto.jimenez01",
+    "user_id": "2201392"
+  },
+  {
+    "name": "Ryan Knobel",
+    "rank": "Part-Time Lecturer",
+    "department": "Department of Computer Science",
+    "username": "ryan.knobel01",
+    "user_id": "2710016"
+  },
+  {
+    "name": "Satzhan Sitmukhambetov",
+    "rank": "Lecturer I",
+    "department": "Department of Computer Science",
+    "username": "satzhan.sitmukhambetov01",
+    "user_id": "1811544"
+  },
+  {
+    "name": "Sergei Chuprov",
+    "rank": "Assistant Professor",
+    "department": "Department of Computer Science",
+    "username": "sergei.chuprov",
+    "user_id": "2526913"
+  },
+  {
+    "name": "Sonya Crystal Cirlos",
+    "rank": "Part-Time Lecturer",
+    "department": "Department of Computer Science",
+    "username": "sonya.cirlos01",
+    "user_id": "2380561"
+  },
+  {
+    "name": "Timothy Wylie",
+    "rank": "Full Professor",
+    "department": "Department of Computer Science",
+    "username": "timothy.wylie",
+    "user_id": "1662366"
+  },
+  {
+    "name": "Yifeng Gao",
+    "rank": "Assistant Professor",
+    "department": "Department of Computer Science",
+    "username": "yifeng.gao",
+    "user_id": "2318262"
+  },
+  {
+    "name": "Zhixiang Chen",
+    "rank": "Full Professor",
+    "department": "Department of Computer Science",
+    "username": "zhixiang.chen",
+    "user_id": "1450769"
+  }
+]
