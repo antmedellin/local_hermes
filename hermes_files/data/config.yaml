@@ -3,6 +3,9 @@ model:
   provider: custom
   base_url: http://ollama:11434/v1
 toolsets:
+  - hermes-cli
+  - computer-use
+  - browser
   - kanban
 database:
   journal_mode: wal
@@ -15,6 +18,7 @@ agent:
   personalities: {}
 terminal:
   backend: local
+  docker_image: nousresearch/hermes-sandbox:desktop
   cwd: .
   timeout: 180
   home_mode: auto
@@ -26,7 +30,11 @@ terminal:
   lifetime_seconds: 300
 web:
   backend: firecrawl
+bot_desktop:
+  placement: auto
+  auto_start: true
 browser:
+  headed: true
   backend: 'off'
   inactivity_timeout: 120
   extension_control:
@@ -119,13 +127,16 @@ onboarding:
 telemetry:
   shared_metrics:
     enabled: false
+    send: false
+    offer_version: 2
 updates:
   pre_update_backup: false
   backup_keep: 5
   non_interactive_local_changes: stash
 computer_use:
+  permission_mode: standard
   backend: cua
-_config_version: 46
+_config_version: 50
 session_reset:
   mode: none
   idle_minutes: 1440
@@ -176,6 +187,7 @@ platform_toolsets:
     - hermes-teams
   google_chat:
     - hermes-google_chat
+
 custom_providers:
   - name: Gemma4_12b
     base_url: http://ollama:11434/v1
@@ -186,7 +198,14 @@ custom_providers:
 known_plugin_toolsets:
   cli:
     - a2a
+    - homeassistant
     - spotify
+  kanban:
+    - homeassistant
+  acp:
+    - homeassistant
+  webhook:
+    - homeassistant
 known_builtin_toolsets:
   cli:
     - browser
@@ -253,3 +272,11 @@ known_builtin_toolsets:
 # fallback_model:
 #   provider: openrouter
 #   model: anthropic/claude-sonnet-4
+_left_core_scoped:
+  - homeassistant
+plugins:
+  enabled:
+    - homeassistant
+  disabled: []
+_left_core_installed:
+  - homeassistant
