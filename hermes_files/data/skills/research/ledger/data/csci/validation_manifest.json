@@ -1,0 +1,140 @@
+{
+  "manifest_version": 1,
+  "status": "pending_review",
+  "department_name": "Department of Computer Science",
+  "generated_at_utc": "2026-10-14T14:56:47.739812+00:00",
+  "artifacts": {
+    "faculty_reconciled.json": "a42edd81ba4ce061765e762440fad3ac1734e9480e2ae27bc9100663d53a9b68",
+    "authorship_reconciliation.json": "6b09458cc5060f9a63e17d159107647cb0a25f6c2f09b2b327450efa3b208c63"
+  },
+  "counts": {
+    "expected_faculty_count": 37,
+    "expected_publication_count": 700,
+    "expected_unique_dm_record_count": 730,
+    "expected_reconciliation_decision_count": 2830,
+    "expected_canonical_publication_count": 690,
+    "expected_publication_merge_group_count": 10,
+    "expected_department_author_occurrence_count": 882,
+    "expected_canonical_authorship_count": 850,
+    "dry_run_decision_occurrence_count": 882,
+    "dry_run_canonical_authorship_count": 850,
+    "classification_counts": {
+      "EXACT": 714,
+      "EXTERNAL": 1934,
+      "HISTORICAL_ID_MISMATCH": 10,
+      "HISTORICAL_ID_SWAP_RECOVERED": 4,
+      "INITIAL_VARIANT": 22,
+      "NAME_VARIANT": 105,
+      "NAME_WITHOUT_DM_ID": 41
+    },
+    "source_author_occurrence_count": 2830,
+    "source_publication_duplicate_groups": [
+      {
+        "key": [
+          "uniform robot relocation is hard in only two directions even without obstacles",
+          2025
+        ],
+        "publication_ids": [
+          "PUB-00023",
+          "PUB-00372"
+        ]
+      },
+      {
+        "key": [
+          "reachability in restricted chemical reaction networks",
+          2023
+        ],
+        "publication_ids": [
+          "PUB-00029",
+          "PUB-00036"
+        ]
+      },
+      {
+        "key": [
+          "computing threshold circuits with bimolecular void reactions in step chemical reaction networks",
+          2025
+        ],
+        "publication_ids": [
+          "PUB-00030",
+          "PUB-00032"
+        ]
+      },
+      {
+        "key": [
+          "concentration independent random number generation in tile self assembly",
+          2017
+        ],
+        "publication_ids": [
+          "PUB-00057",
+          "PUB-00059"
+        ]
+      },
+      {
+        "key": [
+          "flipping tiles concentration independent coin flips in tile self assembly",
+          2017
+        ],
+        "publication_ids": [
+          "PUB-00062",
+          "PUB-00063"
+        ]
+      },
+      {
+        "key": [
+          "optimal staged self assembly of general shapes",
+          2017
+        ],
+        "publication_ids": [
+          "PUB-00264",
+          "PUB-00266"
+        ]
+      },
+      {
+        "key": [
+          "covert computation in self assembled circuits",
+          2019
+        ],
+        "publication_ids": [
+          "PUB-00404",
+          "PUB-00406"
+        ]
+      },
+      {
+        "key": [
+          "full tilt universal constructors for general shapes with uniform external forces",
+          2019
+        ],
+        "publication_ids": [
+          "PUB-00407",
+          "PUB-00409"
+        ]
+      },
+      {
+        "key": [
+          "self assembly of shapes at constant scale using repulsive forces",
+          2017
+        ],
+        "publication_ids": [
+          "PUB-00412",
+          "PUB-00413"
+        ]
+      },
+      {
+        "key": [
+          "verification in staged tile self assembly",
+          2017
+        ],
+        "publication_ids": [
+          "PUB-00414",
+          "PUB-00415"
+        ]
+      }
+    ]
+  },
+  "approval": null,
+  "notes": [
+    "Generated counts are not approved import expectations.",
+    "Review the occurrence-count comparison before approving.",
+    "Publication identity remains normalized title plus parsed year."
+  ]
+}

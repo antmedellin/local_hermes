@@ -94,20 +94,24 @@ python -m pdb path/to/script.py arg1 arg2
 
 ## Recipe 3: Debug a pytest test
 
-Use `terminal` and the canonical runner for noninteractive diagnostics:
+The hermes test runner and pytest both support this:
 
 ```bash
+# Drop to pdb on failure (or on any raised exception):
+scripts/run_tests.sh tests/path/to/test_file.py::test_name --pdb
+
+# Drop to pdb at the START of the test:
+scripts/run_tests.sh tests/path/to/test_file.py::test_name --trace
+
 # Show locals in tracebacks without pdb:
 scripts/run_tests.sh tests/path/to/test_file.py --showlocals --tb=long
 ```
 
-`scripts/run_tests.sh` captures each file in a separate subprocess, so `--pdb`
-or `--trace` cannot provide an interactive prompt there. For an interactive
-debugger only, use the independent development/test interpreter prepared in
-Recipe 5 (never a production generation):
+Note: `scripts/run_tests.sh` runs each test file in a captured subprocess via `run_tests_parallel.py` (no xdist), so interactive pdb does NOT work under the wrapper. Run pytest directly for `--pdb`:
 
 ```bash
-.venv/bin/python -m pytest tests/foo_test.py::test_bar --pdb
+source .venv/bin/activate
+python -m pytest tests/foo_test.py::test_bar --pdb
 ```
 
 This bypasses the hermetic-env guarantees — fine for debugging, but re-run under the wrapper to confirm before pushing.
@@ -144,27 +148,10 @@ For long-lived processes: Hermes gateway, tui_gateway, a daemon, a process that'
 
 ### Setup
 
-For Hermes, use a separate development checkout and data home, not a live
-production generation. Follow the
-[PM developer workflow](https://hermes-agent.nousresearch.com/docs/reference/package-management#developer-workflow)
-and activate that checkout — PowerShell: `. .\activate.ps1`. The declared `dev`
-extra includes debugpy, which PM activation does not sync (`all` excludes it).
-Through `terminal`, build a fresh, caller-owned debug/test environment with the
-prepared checkout's Python:
-
 ```bash
-source ./activate
-python -m pm.build_env --source . --out .venv --group dev --group test
-.venv/bin/python -c "import debugpy; print(debugpy.__file__)"
+source <hermes-agent-repo>/.venv/bin/activate
+pip install debugpy
 ```
-
-The output must not already exist. Stop its processes and intentionally remove
-only that disposable environment before rebuilding. Keep the same isolated
-`HERMES_HOME` for the debug target. `.venv/bin/python` is this explicitly built
-debug environment, not a guessed application venv, and the patterns below run
-through it. Do not add debugpy to a running production environment; reproduce
-there only with an already-prepared debug target or arrange a restart in the
-development environment.
 
 ### Pattern A: Source-edit — process waits for debugger at launch
 
@@ -183,13 +170,13 @@ Start the process; it blocks on `wait_for_client()`.
 ### Pattern B: No source edit — launch with `-m debugpy`
 
 ```bash
-.venv/bin/python -m debugpy --listen 127.0.0.1:5678 --wait-for-client your_script.py arg1
+python -m debugpy --listen 127.0.0.1:5678 --wait-for-client your_script.py arg1
 ```
 
 Equivalent for module entry:
 
 ```bash
-.venv/bin/python -m debugpy --listen 127.0.0.1:5678 --wait-for-client -m your.module
+python -m debugpy --listen 127.0.0.1:5678 --wait-for-client -m your.module
 ```
 
 ### Pattern C: Attach to an already-running process
@@ -197,7 +184,7 @@ Equivalent for module entry:
 Needs the PID and debugpy preinstalled in the target's environment:
 
 ```bash
-.venv/bin/python -m debugpy --listen 127.0.0.1:5678 --pid <pid>
+python -m debugpy --listen 127.0.0.1:5678 --pid <pid>
 # debugpy injects itself into the process. Then attach a client as below.
 ```
 
@@ -266,12 +253,9 @@ This is fine for one-off automation but painful as an interactive UX.
 
 **Option 3: Ditch DAP, use `remote-pdb`** — usually what you actually want from a terminal agent:
 
-For an independently owned Python project, declare `remote-pdb` in that
-project's development dependencies and prepare its debug environment through
-the project's package manager. This is not a Hermes SDK install recipe. For
-Hermes, prefer the declared debugpy dependency; the remote-pdb examples below
-require a separately declared, freshly built debug environment, never an
-in-place pip install into the selected application generation.
+```bash
+pip install remote-pdb
+```
 
 In your code:
 ```python
@@ -293,8 +277,7 @@ nc 127.0.0.1 4444
 See Recipe 3. The wrapper captures subprocess output, so run pytest directly for interactive pdb.
 
 ### `run_agent.py` / CLI — one-shot
-In the prepared debug checkout, add `breakpoint()` near the suspect line, then
-run `python hermes`. Control returns to your terminal at the pause point.
+Easiest: add `breakpoint()` near the suspect line, then run `hermes` normally. Control returns to your terminal at the pause point.
 
 ### `tui_gateway` subprocess (spawned by `hermes --tui`)
 The gateway runs as a child of the Node TUI. Options:
@@ -306,7 +289,7 @@ import debugpy
 debugpy.listen(("127.0.0.1", 5678))
 debugpy.wait_for_client()
 ```
-Start `python hermes --tui` from the prepared debug checkout. The TUI will appear frozen (its backend is waiting). Attach a client; execution resumes when you `continue`. Check the child's interpreter and imports before assuming it inherited the debug environment.
+Start `hermes --tui`. The TUI will appear frozen (its backend is waiting). Attach a client; execution resumes when you `continue`.
 
 **B. Use `remote-pdb` at a specific handler:**
 ```python
@@ -346,7 +329,7 @@ Long-lived. Use `remote-pdb` at a handler, or `debugpy` with `--wait-for-client`
 
 ## Verification Checklist
 
-- [ ] In the independently built debug environment, confirm: `.venv/bin/python -c "import debugpy; print(debugpy.__version__); print(debugpy.__file__)"`
+- [ ] After `pip install debugpy`, confirm: `python -c "import debugpy; print(debugpy.__version__)"`
 - [ ] For remote debug, confirm the port is actually listening: `ss -tlnp | grep 5678`
 - [ ] First breakpoint actually hits (if it doesn't, you likely have `PYTHONBREAKPOINT=0`, you're under a parallel/capturing runner, or execution finished before attach)
 - [ ] `where` / `w` shows the expected call stack
@@ -370,9 +353,9 @@ breakpoint()
 **"This test passes in isolation but fails in the suite."**
 ```bash
 scripts/run_tests.sh tests/the_test.py   # confirm it fails under the isolated runner first
-# For interactive debugging, or if it only fails WITH other tests, use the
-# independent development/test interpreter prepared in Recipe 5:
-.venv/bin/python -m pytest tests/ -x --pdb
+# For interactive debugging, or if it only fails WITH other tests:
+source .venv/bin/activate
+python -m pytest tests/ -x --pdb
 # Now it pdb-traps at the exact failing test after state accumulated.
 ```
 

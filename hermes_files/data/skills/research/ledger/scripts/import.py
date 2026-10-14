@@ -22,6 +22,7 @@ import argparse
 import json
 import os
 import re
+import hashlib
 import unicodedata
 from collections import defaultdict, deque
 from pathlib import Path
@@ -142,8 +143,101 @@ SOURCE_NAME = FACULTY_SOURCE.get(
     FACULTY_SOURCE.get("type", "Unknown source"),
 )
 
-VALIDATION = CONFIG["validation"]
+def sha256_file(path):
+    """Return the SHA-256 hash of a file."""
+    digest = hashlib.sha256()
 
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+
+    return digest.hexdigest()
+
+
+def load_approved_validation_manifest(
+    manifest_path,
+    reconciled_path,
+    reconciliation_path,
+):
+    """Load an approved manifest and verify its source artifacts."""
+
+    if not manifest_path.is_file():
+        raise RuntimeError(
+            f"Validation manifest not found: {manifest_path}"
+        )
+
+    manifest = load_json(manifest_path)
+
+    if manifest.get("manifest_version") != 1:
+        raise RuntimeError("Unsupported validation manifest version.")
+
+    if manifest.get("status") != "approved":
+        raise RuntimeError(
+            "Validation manifest is not approved. "
+            f"Current status: {manifest.get('status')!r}. "
+            "Review and explicitly approve it before importing."
+        )
+
+    approval = manifest.get("approval")
+    if not isinstance(approval, dict):
+        raise RuntimeError(
+            "Approved manifest must contain an approval record."
+        )
+
+    if not approval.get("reviewer") or not approval.get("approved_at_utc"):
+        raise RuntimeError(
+            "Approval must include reviewer and approved_at_utc."
+        )
+
+    artifacts = manifest.get("artifacts")
+    if not isinstance(artifacts, dict):
+        raise RuntimeError("Manifest artifacts must be an object.")
+
+    expected_artifacts = {
+        reconciled_path.name: reconciled_path,
+        reconciliation_path.name: reconciliation_path,
+    }
+
+    for filename, source_path in expected_artifacts.items():
+        expected_hash = artifacts.get(filename)
+
+        if not isinstance(expected_hash, str) or not expected_hash:
+            raise RuntimeError(
+                f"Manifest is missing the hash for {filename}."
+            )
+
+        actual_hash = sha256_file(source_path)
+
+        if actual_hash != expected_hash:
+            raise RuntimeError(
+                f"Validation manifest is stale: {filename} has changed. "
+                "Regenerate and review the manifest."
+            )
+
+    counts = manifest.get("counts")
+    if not isinstance(counts, dict):
+        raise RuntimeError("Manifest counts must be an object.")
+
+    required_counts = {
+        "expected_faculty_count",
+        "expected_publication_count",
+        "expected_unique_dm_record_count",
+        "expected_reconciliation_decision_count",
+        "expected_canonical_publication_count",
+        "expected_publication_merge_group_count",
+        "expected_department_author_occurrence_count",
+        "expected_canonical_authorship_count",
+    }
+
+    for key in required_counts:
+        value = counts.get(key)
+
+        if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+            raise RuntimeError(
+                f"Manifest count {key!r} must be a nonnegative integer."
+            )
+
+    return counts
 
 # ---------------------------------------------------------------------------
 # PostgreSQL configuration
@@ -212,6 +306,19 @@ def load_json(path):
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
 
+if CONFIG.get("validation_manifest"):
+    configured_manifest = Path(CONFIG["validation_manifest"])
+
+    if not configured_manifest.is_absolute():
+        configured_manifest = OUTPUT_DIRECTORY / configured_manifest
+
+    VALIDATION = load_approved_validation_manifest(
+        configured_manifest,
+        RECONCILED_PATH,
+        RECONCILIATION_PATH,
+    )
+else:
+    VALIDATION = CONFIG["validation"]
 
 def first_nonempty(*values):
     """Return the first non-empty value."""
@@ -1105,6 +1212,30 @@ def main():
     publications = reconciled["publications"]
 
     decisions = reconciliation["decisions"]
+    expected_publications = VALIDATION.get("expected_publication_count")
+    if expected_publications is not None:
+        if len(publications) != expected_publications:
+            raise RuntimeError(
+                f"Expected {expected_publications} source publications, "
+                f"got {len(publications)}"
+            )
+
+    expected_unique_dm_ids = VALIDATION.get(
+        "expected_unique_dm_record_count"
+    )
+    if expected_unique_dm_ids is not None:
+        unique_dm_ids = {
+            str(dm_id)
+            for publication in publications
+            for dm_id in publication.get("dm_record_ids", [])
+            if dm_id is not None
+        }
+
+        if len(unique_dm_ids) != expected_unique_dm_ids:
+            raise RuntimeError(
+                f"Expected {expected_unique_dm_ids} unique DM record IDs, "
+                f"got {len(unique_dm_ids)}"
+            )
 
     print(f"Faculty records       : {len(faculty_records)}")
     print(f"Publications          : {len(publications)}")
@@ -1329,7 +1460,7 @@ def main():
         print(
             f"Papers imported        : {len(paper_ids)}"
         )
-        
+
         expected_authorship_pairs = set()
 
         for occurrence in canonical_authorships.values():
@@ -1391,7 +1522,7 @@ def main():
             f"{len(canonical_authorships)}"
         )
 
-        
+
         # -----------------------------------------------------------
         # Verify BEFORE COMMIT.
         # -----------------------------------------------------------
