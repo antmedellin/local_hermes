@@ -1,0 +1,85 @@
+name: local-hermes
+
+include:
+  - ./firecrawl/docker-compose.yaml
+  - ./hermes-agent/docker-compose.windows.yml
+  - ./LightRAG/docker-compose-full.yml
+  - ./MinerU/docker-compose.yml
+
+x-ollama: &service-ollama
+  image: ollama/ollama:latest
+  container_name: ollama
+  networks:
+    - backend
+  restart: unless-stopped
+  ports:
+    - "11434:11434"
+  volumes:
+    - ./ollama_storage:/root/.ollama
+  environment:
+    - OLLAMA_KEEP_ALIVE=24H
+    - OLLAMA_CONTEXT_LENGTH=100000
+  healthcheck:
+    test: ["CMD-SHELL", "[ $(ollama list | wc -l) -gt 1 ]" ]
+    interval: 10s
+    timeout: 10s
+    retries: 10
+    start_period: 60s
+
+x-init-ollama: &init-ollama
+  image: ollama/ollama:latest
+  container_name: ollama-pull
+  networks:
+    - backend
+  volumes:
+    - ./ollama_storage:/root/.ollama
+  environment:
+    - OLLAMA_HOST=ollama:11434
+    - OLLAMA_CONTEXT_LENGTH=100000
+
+  entrypoint: /bin/sh
+  command:
+    - "-c"
+    - "sleep 10; ollama pull nomic-embed-text; ollama pull qwen3.5:9b; ollama pull llama3.2:3b; ollama pull gemma4:12b; ollama pull qwen3-embedding:8b;"
+
+services:
+  ollama:
+    <<: *service-ollama
+    gpus: all
+    labels:
+      autoheal: "true"
+  browser-gui:
+    build:
+      context: ./browser-gui
+    container_name: hermes-browser-gui
+    restart: unless-stopped
+    networks:
+      - backend
+    ports:
+      - "127.0.0.1:6080:6080"
+    volumes:
+      - browser_gui_runtime:/run/user/1000
+    shm_size: "4gb"
+   
+
+  ollama-init:
+    <<: *init-ollama
+    gpus: all
+      
+  autoheal:
+    image: willfarrell/autoheal:latest
+    container_name: autoheal
+    restart: unless-stopped
+    networks:
+      - backend
+    environment:
+      AUTOHEAL_CONTAINER_LABEL: all
+      AUTOHEAL_INTERVAL: 30
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+
+volumes:
+  ollama_storage:
+  browser_gui_runtime:
+
