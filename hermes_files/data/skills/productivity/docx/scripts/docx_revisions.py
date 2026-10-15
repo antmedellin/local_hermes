@@ -47,7 +47,8 @@ INS, DEL = q("ins"), q("del")
 def _iter_revision_elements(doc):
     """Yield every w:ins / w:del element across body, headers, footers."""
     for root in iter_part_roots(doc):
-        yield from root.iter(INS, DEL)
+        for el in root.iter(INS, DEL):
+            yield el
 
 
 def _rev_text(el) -> str:

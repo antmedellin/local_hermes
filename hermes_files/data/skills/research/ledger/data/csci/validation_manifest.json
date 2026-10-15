@@ -1,6 +1,6 @@
 {
   "manifest_version": 1,
-  "status": "pending_review",
+  "status": "approved",
   "department_name": "Department of Computer Science",
   "generated_at_utc": "2026-10-14T14:56:47.739812+00:00",
   "artifacts": {
@@ -131,7 +131,11 @@
       }
     ]
   },
-  "approval": null,
+  "approval": {
+    "reviewer": "Isabella Morgan",
+    "approved_at_utc": "2026-10-15T16:53:00.894765+00:00",
+    "review_note": "Approved for the CSCI PostgreSQL ledger import after reviewing the dry-run counts, author reconciliation classifications, publication merge groups, existing paper matches, and artifact hashes."
+  },
   "notes": [
     "Generated counts are not approved import expectations.",
     "Review the occurrence-count comparison before approving.",

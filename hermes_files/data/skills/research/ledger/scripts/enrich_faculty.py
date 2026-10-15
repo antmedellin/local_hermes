@@ -222,13 +222,32 @@ def normalize_doi(value):
 
     return value.lower()
 
-
 def parse_year(record):
     """
-    Try to determine the publication year from the available
-    Digital Measures date fields.
+    Determine the publication year using explicit Digital Measures
+    publication-year and date fields.
+
+    Do not scan the entire record, because unrelated metadata such
+    as a DOI can contain a misleading year.
     """
 
+    # Prefer the explicit Digital Measures publication year.
+    value = record.get("DTY_PUB")
+
+    if value not in (None, ""):
+        match = re.search(r"\b(?:19|20)\d{2}\b", str(value))
+        if match:
+            return int(match.group(0))
+
+    # Fall back to the publication start date.
+    value = record.get("PUB_START")
+
+    if value not in (None, ""):
+        match = re.search(r"\b(?:19|20)\d{2}\b", str(value))
+        if match:
+            return int(match.group(0))
+
+    # Check other explicitly named date/year fields.
     possible_fields = [
         "PUBLICATION_DATE",
         "DATE_PUBLISHED",
@@ -243,26 +262,13 @@ def parse_year(record):
     for field in possible_fields:
         value = record.get(field)
 
-        if value:
-            match = re.search(r"\b(19|20)\d{2}\b", str(value))
-
+        if value not in (None, ""):
+            match = re.search(r"\b(?:19|20)\d{2}\b", str(value))
             if match:
                 return int(match.group(0))
 
-    # Fall back to scanning the whole record for a 4-digit year.
-    text = json.dumps(record, ensure_ascii=False)
-
-    years = re.findall(r"\b(19|20)\d{2}\b", text)
-
-    if years:
-        # The regex above captures only the prefix.
-        full_years = re.findall(r"\b(?:19|20)\d{2}\b", text)
-
-        if full_years:
-            return int(full_years[0])
-
+    # Leave the year unknown if no reliable date is available.
     return None
-
 
 def get_index_entry(record, key):
     """Extract a Digital Measures index entry."""
@@ -720,7 +726,6 @@ STATUS_PRIORITY = {
     "not yet submitted": 1,
 }
 
-
 def publication_key(publication):
     """
     Create a stable deduplication key.
@@ -728,7 +733,11 @@ def publication_key(publication):
     DOI is preferred.
 
     If DOI is missing:
-        normalized title + year
+        normalized title + year, when the year is known.
+
+    If both DOI and year are missing:
+        use the source record ID to avoid merging undated records
+        solely because their titles match.
     """
 
     doi = publication.get("doi")
@@ -736,15 +745,19 @@ def publication_key(publication):
     if doi:
         return "doi:" + doi
 
-    title = publication.get(
-        "normalized_title",
-        "",
-    )
-
+    title = publication.get("normalized_title", "")
     year = publication.get("year")
 
-    return f"title:{title}|year:{year}"
+    if year is not None:
+        return f"title:{title}|year:{year}"
 
+    record_id = publication.get("dm_record_id")
+
+    if record_id:
+        return f"record:{record_id}"
+
+    # Do not merge records whose identity cannot be established safely.
+    return f"unkeyed:{id(publication)}"
 
 def status_score(status):
     """Return a ranking for publication status."""
