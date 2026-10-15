@@ -31,27 +31,20 @@ echo `os.environ` inside an `execute_code` block to confirm `SYSTEMROOT` is set.
 
 ### Testing on Windows
 
-Prepare the checkout through PM first. With its Python 3.14, build an independent
-test environment at a fresh path:
-
-```powershell
-python -m pm.build_env --source . --out .venv --group dev --group test
-```
-
-The output must not exist. Before regeneration, stop its processes and explicitly
-remove only that disposable environment. Do not install into the application
-payload or modify a selected dependency generation.
-
-Run the canonical runner through Git Bash:
+`scripts/run_tests.sh` is POSIX-only (expects `.venv/bin/activate`); the
+Hermes-installed `venv/Scripts/` has no pip/pytest (stripped for size).
+Install pytest into a system Python and run directly (the repo no longer
+uses pytest-xdist; the canonical runner does per-file subprocess isolation,
+which the POSIX-only wrapper handles):
 
 ```bash
-scripts/run_tests.sh tests/foo/test_bar.py -v --tb=short
+"/c/Program Files/Python311/python" -m pip install --user pytest pyyaml
+export PYTHONPATH="$(pwd)"
+"/c/Program Files/Python311/python" -m pytest tests/foo/test_bar.py -v --tb=short
 ```
 
-The runner discovers `.venv/Scripts/python.exe`, clears credentials and
-`PYTHONPATH`, and isolates each test file. For an external test environment,
-set `HERMES_PYTHON` to its Python executable. PM shell activation alone does
-not supply pytest after the runner clears `PYTHONPATH`.
+(POSIX-only tests need skip guards — see the cross-platform guard list in
+`references/contributor-guide.md`.)
 
 ### Path / Filesystem
 
