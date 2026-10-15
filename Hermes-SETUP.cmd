@@ -83,6 +83,9 @@ function Get-Distros {
 }
 
 # Runs a bash command inside the distro and shows its output live. Returns the exit code.
+# Output goes through PowerShell (so it is shown and logged), which means Linux tools do NOT see a
+# real console. That is why every docker compose call uses "--progress plain": its animated
+# progress display needs a real console and fails with "failed to get console" otherwise.
 # Use single quotes inside $Command (never double quotes).
 function Invoke-Linux {
     param([Parameter(Mandatory)][string]$Command, [switch]$AsRoot, [switch]$AllowFail)
@@ -238,7 +241,7 @@ Ok 'Ubuntu can reach Docker'
 
 # 5. Containers are up --------------------------------------------------------------
 Info 'Starting Hermes containers (already-running ones are left alone)'
-Linux "cd ~/$Repo && docker compose up -d" | Out-Host
+Linux "cd ~/$Repo && export BUILDKIT_PROGRESS=plain; docker compose --progress plain up -d" | Out-Host
 if ($LASTEXITCODE -ne 0) { Fail 'Could not start the Hermes containers (see the messages above).' }
 foreach ($c in 'ollama', 'hermes', 'hermes-dashboard') {
     $st = Get-ContainerState $c
@@ -507,18 +510,18 @@ try {
 
     # 10 --------------------------------------------------------------
     Step 10 "docker compose pull"
-    if ((Invoke-Linux "cd ~/$RepoFolder && docker compose pull --ignore-pull-failures" -AllowFail) -ne 0) {
+    if ((Invoke-Linux "cd ~/$RepoFolder && export BUILDKIT_PROGRESS=plain; docker compose --progress plain pull --ignore-pull-failures" -AllowFail) -ne 0) {
         Warn "Some images did not pull (normal for locally built services). Continuing."
     } else { Ok "Images pulled" }
 
     # 11 --------------------------------------------------------------
     Step 11 "docker compose build"
-    Invoke-Linux "cd ~/$RepoFolder && docker compose build" | Out-Null
+    Invoke-Linux "cd ~/$RepoFolder && export BUILDKIT_PROGRESS=plain; docker compose --progress plain build" | Out-Null
     Ok "Images built"
 
     # 12 --------------------------------------------------------------
     Step 12 "docker compose up -d"
-    Invoke-Linux "cd ~/$RepoFolder && docker compose up -d" | Out-Null
+    Invoke-Linux "cd ~/$RepoFolder && export BUILDKIT_PROGRESS=plain; docker compose --progress plain up -d" | Out-Null
     Ok "Containers started"
 
     # 13 --------------------------------------------------------------
