@@ -198,6 +198,13 @@ function Get-ContainerState([string]$name) {
     return "$s".Trim()
 }
 function Show-Containers { Linux "cd ~/$Repo && docker compose ps -a" | Out-Host }
+# docker logs writes to stderr; turn it into plain text and strip terminal color/cursor codes
+function Get-Logs([string]$name, [int]$lines, [string]$Since = '') {
+    $args2 = @('logs', '--tail', "$lines")
+    if ($Since) { $args2 += @('--since', $Since) }
+    $txt = (& $DockerCli @args2 $name 2>&1 | ForEach-Object { "$_" }) -join "`n"
+    return ($txt -replace '\x1b\[[0-9;?]*[A-Za-z]', '')
+}
 
 Write-Host "Starting Local Hermes for $LinuxUser" -ForegroundColor Cyan
 
@@ -241,6 +248,8 @@ Ok 'Ubuntu can reach Docker'
 
 # 5. Containers are up --------------------------------------------------------------
 Info 'Starting Hermes containers (already-running ones are left alone)'
+# Volumes/networks marked "external" in the compose files must exist first (Docker never creates them).
+Linux "cd ~/$Repo && docker compose config --format json | jq -r '.volumes // {} | to_entries[] | select(.value.external) | .value.name // .key' | xargs -r -n1 docker volume create; docker compose config --format json | jq -r '.networks // {} | to_entries[] | select(.value.external) | .value.name // .key' | xargs -r -n1 docker network create 2>/dev/null; true" | Out-Null
 Linux "cd ~/$Repo && export BUILDKIT_PROGRESS=plain; docker compose --progress plain up -d" | Out-Host
 if ($LASTEXITCODE -ne 0) { Fail 'Could not start the Hermes containers (see the messages above).' }
 foreach ($c in 'ollama', 'hermes', 'hermes-dashboard') {
@@ -264,33 +273,56 @@ function Get-MissingModels {
     return @($Models | Where-Object { ($have -notcontains $_) -and ($have -notcontains "$($_):latest") })
 }
 
+$pausedAutoheal = $false
 $missing = Get-MissingModels
 if ($missing.Count -gt 0) {
     Info "Downloading AI models: $($missing -join ', ')"
     Info 'The first time on a profile this can take 10 to 60 minutes. Leave this window open.'
-    $start = Get-Date
-    $deadline = $start.AddMinutes($ModelTimeoutMin)
-    $restarted = $false
-    while ($missing.Count -gt 0) {
-        if ((Get-Date) -gt $deadline) { Fail "Models still not downloaded after $ModelTimeoutMin minutes: $($missing -join ', '). Check the network, then double-click the Hermes shortcut (the download resumes)." }
-        if ((Get-ContainerState 'ollama-pull') -ne 'running') {
-            # The downloader stopped but models are still missing: start it once more, then give up.
-            if ($restarted) {
-                & $DockerCli logs --tail 20 ollama-pull 2>&1 | Out-Host
-                Fail 'The model download stopped before finishing (see above). Check the network and free disk space, then double-click the Hermes shortcut.'
-            }
-            Info 'Restarting the model downloader'
-            & $DockerCli start ollama-pull *> $null
-            $restarted = $true
-        }
-        $tail = & $DockerCli logs --tail 3 ollama-pull 2>&1 | Out-String
-        $pcts = [regex]::Matches($tail, '(\d{1,3})%')
-        $pct  = if ($pcts.Count -gt 0) { ", current file $($pcts[$pcts.Count - 1].Value)" } else { '' }
-        $mins = [int]((Get-Date) - $start).TotalMinutes
-        Info "Still downloading ($mins min so far$pct). Waiting for: $($missing -join ', ')"
-        Start-Sleep -Seconds 30
-        $missing = Get-MissingModels
+    Info 'If the network drops, the download restarts by itself and continues where it stopped.'
+    # Pause autoheal while downloading. Ollama's healthcheck only passes once a model exists, so on a
+    # fresh profile autoheal sees Ollama as "unhealthy" and restarts it every few minutes, which kills
+    # the download (shows as "Error: EOF" / "could not connect to ollama server"). Restarted below.
+    if ((Get-ContainerState 'autoheal') -eq 'running') {
+        Info 'Pausing autoheal during the download (it would restart Ollama before any model exists)'
+        & $DockerCli stop autoheal *> $null
+        $pausedAutoheal = $true
     }
+    $start       = Get-Date
+    $deadline    = $start.AddMinutes($ModelTimeoutMin)
+    $restarts    = 0
+    $maxRestarts = 30
+    while ($missing.Count -gt 0) {
+        if ((Get-Date) -gt $deadline) { Fail "Models still not downloaded after $ModelTimeoutMin minutes: $($missing -join ', '). Check the network, then double-click the Hermes shortcut (the download continues where it stopped)." }
+        $log = Get-Logs 'ollama-pull' 5 -Since '45s'
+        $err = ([regex]::Matches($log, 'Error:[^\r\n]*') | Select-Object -Last 1).Value
+        if ((Get-ContainerState 'ollama-pull') -ne 'running') {
+            # Downloader stopped (usually a network drop, "unexpected EOF") but models are still
+            # missing. Ollama keeps the partial files, so restarting it resumes the download.
+            if ($restarts -ge $maxRestarts) {
+                Fail "The model download keeps stopping ($restarts restarts). Last error: $err. Check the network and free disk space, then double-click the Hermes shortcut (it continues where it stopped)."
+            }
+            $restarts++
+            $why = if ($err) { " ($err)" } else { '' }
+            Warn "Download interrupted$why. Restarting it, attempt $restarts of $maxRestarts."
+            & $DockerCli start ollama-pull *> $null
+            Start-Sleep -Seconds 15
+        }
+        # progress text from ollama, e.g. "1.9 GB/4.7 GB   10 MB/s"
+        $prog = [regex]::Matches($log, '(\d+(?:\.\d+)?\s*[KMG]B/\d+(?:\.\d+)?\s*[KMG]B)(?:\s+(\d+(?:\.\d+)?\s*[KMG]B/s))?')
+        $p = ''
+        if ($prog.Count -gt 0) {
+            $last = $prog[$prog.Count - 1]
+            $p = ", current file $($last.Groups[1].Value)"
+            if ($last.Groups[2].Success) { $p += " at $($last.Groups[2].Value)" }
+        }
+        $mins = [int]((Get-Date) - $start).TotalMinutes
+        Info "Still downloading ($mins min so far$p). Waiting for: $($missing -join ', ')"
+        Start-Sleep -Seconds 30
+        $before = $missing.Count
+        $missing = Get-MissingModels
+        if ($missing.Count -lt $before) { $restarts = 0 }   # a model finished: real progress, reset retries
+    }
+    if ($pausedAutoheal) { & $DockerCli start autoheal *> $null; Info 'autoheal resumed' }
 }
 Ok "Models downloaded: $($Models -join ', ')"
 
@@ -332,7 +364,7 @@ while ((Get-Date) -lt $deadline) {
 }
 if (-not $ready) {
     Show-Containers
-    & $DockerCli logs --tail 20 hermes-dashboard 2>&1 | Out-Host
+    Get-Logs 'hermes-dashboard' 20 | Out-Host
     Fail "The dashboard did not respond within $DashboardTimeoutSec seconds (see above)."
 }
 Ok 'Dashboard is responding'
@@ -434,8 +466,8 @@ try {
 
     # 5 ---------------------------------------------------------------
     Step 5 "apt install gedit htop"
-    Invoke-Linux -AsRoot "export DEBIAN_FRONTEND=noninteractive; apt-get install -y gedit htop git ca-certificates" | Out-Null
-    Ok "gedit, htop, git installed"
+    Invoke-Linux -AsRoot "export DEBIAN_FRONTEND=noninteractive; apt-get install -y gedit htop git jq ca-certificates" | Out-Null
+    Ok "gedit, htop, git, jq installed"
 
     # 6 ---------------------------------------------------------------
     Step 6 "git clone local_hermes"
@@ -521,6 +553,9 @@ try {
 
     # 12 --------------------------------------------------------------
     Step 12 "docker compose up -d"
+    # Volumes/networks marked "external" in the compose files (e.g. local-hermes_browser_gui_runtime
+    # in hermes-agent) must already exist; Docker never creates them. Create any that are missing.
+    Invoke-Linux "cd ~/$RepoFolder && docker compose config --format json | jq -r '.volumes // {} | to_entries[] | select(.value.external) | .value.name // .key' | xargs -r -n1 docker volume create; docker compose config --format json | jq -r '.networks // {} | to_entries[] | select(.value.external) | .value.name // .key' | xargs -r -n1 docker network create 2>/dev/null; true" -AllowFail | Out-Null
     Invoke-Linux "cd ~/$RepoFolder && export BUILDKIT_PROGRESS=plain; docker compose --progress plain up -d" | Out-Null
     Ok "Containers started"
 
@@ -563,7 +598,13 @@ try {
     $env:HERMES_LAUNCHER = $launcherPath
     & powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create([IO.File]::ReadAllText(`$env:HERMES_LAUNCHER))) -ModelTimeoutMin $ModelTimeoutMin -DashboardTimeoutSec 300 -NoPause"
     if ($LASTEXITCODE -ne 0) {
-        throw "Hermes did not pass the startup checks (see the red message above). Fix that, then double-click the Hermes shortcut. Setup does not need to run again."
+        # The checks run in a separate PowerShell process, so copy their output into this window and log.
+        $checkLog = Join-Path $launcherDir "start-hermes.log"
+        if (Test-Path $checkLog) {
+            Write-Host "`n----- last lines of $checkLog -----" -ForegroundColor Yellow
+            Get-Content $checkLog -Tail 40 | Out-Host
+        }
+        throw "Hermes did not pass the startup checks (details above; full log: $checkLog). Fix that, then double-click the Hermes shortcut. Setup does not need to run again."
     }
 
     Write-Host "`nSetup complete." -ForegroundColor Green
