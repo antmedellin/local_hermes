@@ -1,0 +1,125 @@
+{
+  "run_id": "20261014T141307Z",
+  "started_at": "2026-10-14T14:13:07.339659+00:00",
+  "department": "Department of Computer Science",
+  "department_slug": "csci",
+  "config": "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/csci/config.yaml",
+  "output_directory": "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/csci",
+  "stages": [
+    {
+      "name": "Discover faculty",
+      "command": [
+        "/home/mep635/local_hermes/.venv/bin/python",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/scripts/discover_faculty.py",
+        "--config",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/csci/config.yaml"
+      ],
+      "started_at": "2026-10-14T14:13:07.339726+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.45,
+      "finished_at": "2026-10-14T14:13:07.789795+00:00"
+    },
+    {
+      "name": "Enrich faculty",
+      "command": [
+        "/home/mep635/local_hermes/.venv/bin/python",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/scripts/enrich_faculty.py",
+        "--config",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/csci/config.yaml"
+      ],
+      "started_at": "2026-10-14T14:13:07.790103+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.19,
+      "finished_at": "2026-10-14T14:13:07.984711+00:00"
+    },
+    {
+      "name": "Normalize faculty and publications",
+      "command": [
+        "/home/mep635/local_hermes/.venv/bin/python",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/scripts/normalize.py",
+        "--config",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/csci/config.yaml"
+      ],
+      "started_at": "2026-10-14T14:13:08.006253+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.11,
+      "finished_at": "2026-10-14T14:13:08.116972+00:00"
+    },
+    {
+      "name": "Reconcile record keys",
+      "command": [
+        "/home/mep635/local_hermes/.venv/bin/python",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/scripts/key_reconcile.py",
+        "--config",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/csci/config.yaml"
+      ],
+      "started_at": "2026-10-14T14:13:08.127165+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.08,
+      "finished_at": "2026-10-14T14:13:08.206152+00:00"
+    },
+    {
+      "name": "Reconcile faculty records",
+      "command": [
+        "/home/mep635/local_hermes/.venv/bin/python",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/scripts/reconcile.py",
+        "--config",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/csci/config.yaml"
+      ],
+      "started_at": "2026-10-14T14:13:08.206365+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.08,
+      "finished_at": "2026-10-14T14:13:08.281394+00:00"
+    },
+    {
+      "name": "Reconcile authorship",
+      "command": [
+        "/home/mep635/local_hermes/.venv/bin/python",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/scripts/reconcile_authorship.py",
+        "--config",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/csci/config.yaml"
+      ],
+      "started_at": "2026-10-14T14:13:08.281640+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.08,
+      "finished_at": "2026-10-14T14:13:08.365346+00:00"
+    },
+    {
+      "name": "Build reconciled ledger",
+      "command": [
+        "/home/mep635/local_hermes/.venv/bin/python",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/scripts/build_reconciled.py",
+        "--config",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/csci/config.yaml"
+      ],
+      "started_at": "2026-10-14T14:13:08.369652+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.1,
+      "finished_at": "2026-10-14T14:13:08.464824+00:00"
+    },
+    {
+      "name": "Validate artifacts",
+      "command": [
+        "/home/mep635/local_hermes/.venv/bin/python",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/scripts/validate.py",
+        "--config",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/csci/config.yaml"
+      ],
+      "started_at": "2026-10-14T14:13:08.475654+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.07,
+      "finished_at": "2026-10-14T14:13:08.546652+00:00"
+    }
+  ],
+  "status": "succeeded",
+  "finished_at": "2026-10-14T14:13:08.547755+00:00",
+  "duration_seconds": 1.21
+}

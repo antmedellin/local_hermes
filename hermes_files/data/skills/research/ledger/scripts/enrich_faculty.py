@@ -815,25 +815,25 @@ def merge_publication(existing, new):
 
     canonical["sources"] = sources
 
-    # Preserve all DM record IDs.
-    ids = canonical.get(
-        "dm_record_ids",
-        [],
-    )
+    # Preserve all distinct DM record IDs in sorted order.
+    ids = set()
 
-    if canonical.get("dm_record_id"):
-        ids.append(
-            canonical["dm_record_id"]
-        )
+    for record in (canonical, secondary):
+        record_ids = record.get("dm_record_ids", [])
 
-    if secondary.get("dm_record_id"):
-        ids.append(
-            secondary["dm_record_id"]
-        )
+        if isinstance(record_ids, list):
+            ids.update(
+                str(value).strip()
+                for value in record_ids
+                if value is not None and str(value).strip()
+            )
 
-    canonical["dm_record_ids"] = sorted(
-        set(ids)
-    )
+        record_id = record.get("dm_record_id")
+
+        if record_id is not None and str(record_id).strip():
+            ids.add(str(record_id).strip())
+
+    canonical["dm_record_ids"] = sorted(ids)
 
     # Merge authors by faculty ID/name.
     merged_authors = {}

@@ -19,3 +19,5 @@ sources:
     department_name: "Department of Computer Science"
 
 validation: {}
+
+validation_manifest: validation_manifest.json

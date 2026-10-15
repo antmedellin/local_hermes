@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # p5.js Skill — Dependency Verification
 # Run: bash skills/creative/p5js/scripts/setup.sh
 
