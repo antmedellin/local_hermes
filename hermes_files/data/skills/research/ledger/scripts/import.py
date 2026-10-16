@@ -481,13 +481,11 @@ def classify_current_department(
 # Publication canonicalization
 # ---------------------------------------------------------------------------
 
+
 def publication_key(publication):
     """
-    PostgreSQL research.papers uses:
-
-        UNIQUE(title, publication_year)
-
-    Therefore canonicalization is based on normalized title + year.
+    Canonicalize publications by title and year.
+    Preserve non-Latin titles when ASCII normalization returns empty.
     """
 
     title = (
@@ -497,12 +495,15 @@ def publication_key(publication):
     ).strip()
 
     year = parse_year(publication.get("year"))
+    normalized_title = normalize_key(title)
 
-    return (
-        normalize_key(title),
-        year,
-    )
+    if title and not normalized_title:
+        normalized_title = unicodedata.normalize(
+            "NFKC", title
+        ).casefold()
+        normalized_title = " ".join(normalized_title.split())
 
+    return (normalized_title, year)
 
 def build_canonical_publications(publications):
     """
