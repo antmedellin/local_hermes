@@ -136,7 +136,7 @@ updates:
 computer_use:
   permission_mode: standard
   backend: cua
-_config_version: 50
+_config_version: 51
 session_reset:
   mode: none
   idle_minutes: 1440
