@@ -609,7 +609,7 @@ try {
 
     Write-Host "`nSetup complete." -ForegroundColor Green
     Write-Host "  Next time  : double-click 'Hermes' on your desktop"
-    Write-Host "  Dashboard  : $DashboardUrl   (sign in: $DashboardUser / $DashboardPassword)"
+    Write-Host "  Dashboard  : $DashboardUrl   (sign in: username: $DashboardUser password: $DashboardPassword)"
     Write-Host "  Browser VNC: http://127.0.0.1:6080/vnc.html"
     Write-Host "  Repo       : \\wsl$\$DistroName\home\$LinuxUser\$RepoFolder"
     Write-Host "  Shell      : wsl -d $DistroName   then   docker exec -it -u 1000:1000 hermes /bin/bash"
