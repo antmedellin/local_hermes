@@ -548,7 +548,7 @@ try {
 
     # 11 --------------------------------------------------------------
     Step 11 "docker compose build"
-    Invoke-Linux "cd ~/$RepoFolder && export BUILDKIT_PROGRESS=plain; docker compose --progress plain build" | Out-Null
+    Invoke-Linux "cd ~/$RepoFolder && git submodule foreach --recursive git fetch && git submodule update --init --recursive --remote && export BUILDKIT_PROGRESS=plain; docker compose --progress plain build --no-cache" | Out-Null
     Ok "Images built"
 
     # 12 --------------------------------------------------------------
