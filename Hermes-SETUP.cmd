@@ -475,8 +475,8 @@ try {
     Ok "Repo at /home/$LinuxUser/$RepoFolder"
 
     # 7 ---------------------------------------------------------------
-    Step 7 "git submodule update --init --recursive"
-    Invoke-Linux "cd ~/$RepoFolder && git submodule update --init --recursive && mkdir -p ollama_storage" | Out-Null
+    Step 7 "git submodule update --init --recursive --remote"
+    Invoke-Linux "cd ~/$RepoFolder && git submodule update --init --recursive --remote && mkdir -p ollama_storage" | Out-Null
     Ok "Submodules pulled, ollama_storage folder created"
 
     # 8 ---------------------------------------------------------------
