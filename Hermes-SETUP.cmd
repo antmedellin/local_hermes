@@ -18,7 +18,7 @@ exit /b %errorlevel%
       4.  apt update / upgrade
       5.  apt install gedit htop git
       6.  git clone local_hermes
-      7.  git submodule update --init --recursive
+      7.  git submodule update --init --recursive --remote
       8.  Verify Docker Desktop is installed and running
       9.  Turn on Docker Desktop WSL integration for Ubuntu
       10. docker compose pull
