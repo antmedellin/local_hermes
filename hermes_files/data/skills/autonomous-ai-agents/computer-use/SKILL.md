@@ -214,17 +214,9 @@ Use the host's idiomatic modifier:
 When in doubt, capture and look for menu hints, or ask the user which
 shortcut to use.
 
-## Background rules (the whole point)
+*   **Windows/WSL/Linux Window Discovery**: In some environments (notably WSL or SSH sessions), the `computer_use` tool may fail to discover a window for interaction (e.g., Chromium) even if it is visible in screenshots. This is because the tool cannot 'latch' onto the window in a non-interactive or mismatched display context. If window discovery returns empty lines but the app is visible on screen, the tool cannot perform `type` or `click` actions for that window. Inform the user that their specific environment prevents the tool from controlling that specific window.
 
-1. **Never `raise_window=True`** unless the user explicitly asked you
-   to bring a window to front. Input routing works without raising.
-2. **Scope captures to an app** (`app="Chrome"`) — less noisy, fewer
-   elements, doesn't leak other windows the user has open.
-3. **Don't switch virtual desktops / Spaces.** cua-driver drives
-   elements on any virtual desktop / Space regardless of which one is
-   visible.
-4. **The user can be on the same machine.** They might be typing in
-   another window. Don't grab focus. Don't pop modals to the front.
+**Diagnostic Fix**: If window discovery fails, run `hermes computer-use doctor` to verify, and check the logs for status on X11/Wayland reachability.
 
 ## Drag & drop
 

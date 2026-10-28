@@ -1,0 +1,6 @@
+services:
+  browser-gui:
+    pid: "service:gateway"
+    depends_on:
+      gateway:
+        condition: service_started

@@ -20,7 +20,7 @@ x-ollama: &service-ollama
     - OLLAMA_KEEP_ALIVE=24H
     - OLLAMA_CONTEXT_LENGTH=100000
   healthcheck:
-    test: ["CMD-SHELL", "[ $(ollama list | wc -l) -gt 1 ]" ]
+    test: ["CMD-SHELL", "[ $(ollama list | wc -l) -gt 1 ]"]
     interval: 10s
     timeout: 10s
     retries: 10
@@ -36,7 +36,6 @@ x-init-ollama: &init-ollama
   environment:
     - OLLAMA_HOST=ollama:11434
     - OLLAMA_CONTEXT_LENGTH=100000
-
   entrypoint: /bin/sh
   command:
     - "-c"
@@ -48,11 +47,13 @@ services:
     gpus: all
     labels:
       autoheal: "true"
+
   browser-gui:
     build:
       context: ./browser-gui
     container_name: hermes-browser-gui
     restart: unless-stopped
+    pid: "service:gateway"
     networks:
       - backend
     ports:
@@ -60,12 +61,11 @@ services:
     volumes:
       - browser_gui_runtime:/run/user/1000
     shm_size: "4gb"
-   
 
   ollama-init:
     <<: *init-ollama
     gpus: all
-      
+
   autoheal:
     image: willfarrell/autoheal:latest
     container_name: autoheal
@@ -78,8 +78,6 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-
 volumes:
   ollama_storage:
   browser_gui_runtime:
-

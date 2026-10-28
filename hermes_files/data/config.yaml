@@ -32,7 +32,7 @@ web:
   backend: firecrawl
 bot_desktop:
   placement: auto
-  auto_start: true
+  auto_start: false
 browser:
   headed: true
   backend: 'off'
@@ -280,3 +280,12 @@ plugins:
   disabled: []
 _left_core_installed:
   - homeassistant
+command_allowlist:
+  - cua:bring_to_front:background
+  - cua:click:background
+  - cua:click:foreground
+  - cua:focus_app:background
+  - cua:key:background
+  - cua:key:foreground
+  - cua:type:background
+  - cua:type:foreground
