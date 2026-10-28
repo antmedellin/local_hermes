@@ -66,3 +66,4 @@ http://127.0.0.1:6080/vnc.html
 RESET SKILLS:
 docker exec -it -u 1000:1000 hermes /bin/bash
 hermes skills reset [skillname] --restore --yes
+docker compose up -d --remove-orphans gateway
