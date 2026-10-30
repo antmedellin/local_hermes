@@ -64,6 +64,16 @@ def parse_args():
         help="Explicitly allow LightRAG abstract ingestion after PostgreSQL import.",
     )
     parser.add_argument(
+        "--lightrag-only",
+        action="store_true",
+        help="Run only LightRAG ingestion; skip preparation and PostgreSQL import.",
+    )
+    parser.add_argument(
+        "--department-id",
+        type=int,
+        help="Department ID for LightRAG-only ingestion.",
+    )
+    parser.add_argument(
         "--allow-overwrite",
         action="store_true",
         help="Allow preparation stages to overwrite existing expected artifacts.",
@@ -145,7 +155,22 @@ def build_stages(args, config_path, output_dir, department_slug):
         )
 
     preparation_stages = PREPARATION_STAGES
-    if args.prepare_only:
+    if args.lightrag_only:
+        if args.prepare_only or args.allow_db_write:
+            raise ValueError(
+                "--lightrag-only cannot be combined with --prepare-only "
+                "or --allow-db-write."
+            )
+        if not args.allow_lightrag_write:
+            raise ValueError(
+                "--lightrag-only requires --allow-lightrag-write."
+            )
+        if args.department_id is None:
+            raise ValueError(
+                "--lightrag-only requires --department-id."
+            )
+        preparation_stages = []
+    elif args.prepare_only:
         preparation_stages = [
             stage for stage in PREPARATION_STAGES
             if stage[1] != "db_dry_run.py"
@@ -175,19 +200,13 @@ def build_stages(args, config_path, output_dir, department_slug):
             "write_stage": True,
         })
 
-    if args.allow_lightrag_write and not args.allow_db_write:
+    if (args.allow_lightrag_write and not args.allow_db_write and not args.lightrag_only):
         raise ValueError(
             "--allow-lightrag-write requires --allow-db-write so the "
             "PostgreSQL import completes before LightRAG ingestion."
         )
 
     if args.allow_lightrag_write:
-        if department_slug != "maie":
-            raise ValueError(
-                "The current LightRAG worker is MAIE-specific. "
-                "Use it only with department_slug: maie."
-            )
-
         lightrag_script = (
             REPO_ROOT
             / "hermes_files/data/skills/research/lightrag/scripts/"
@@ -199,9 +218,21 @@ def build_stages(args, config_path, output_dir, department_slug):
                 f"LightRAG ingestion script not found: {lightrag_script}"
             )
 
+        department_id = args.department_id
+        if department_id is None:
+            department_id = 1 if department_slug == "maie" else None
+
+        if department_id is None:
+            raise ValueError(
+                "Specify --department-id for non-MAIE LightRAG ingestion."
+            )
+
         stages.append({
             "name": "Ingest abstracts into LightRAG",
-            "command": [python, str(lightrag_script)],
+            "command": [
+                python, str(lightrag_script),
+                "--department-id", str(department_id),
+            ],
             "artifacts": [],
             "write_stage": True,
         })

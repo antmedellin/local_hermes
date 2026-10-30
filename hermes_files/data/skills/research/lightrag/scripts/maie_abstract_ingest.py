@@ -16,6 +16,7 @@ Workflow:
 7. Update research.papers with LightRAG status information.
 """
 
+import argparse
 import json
 import sys
 import time
@@ -52,6 +53,9 @@ POLL_SECONDS = 5
 # Maximum time to wait for one batch.
 MAX_WAIT_SECONDS = 900
 
+# Set from the selected department ID in main().
+department_slug = 'maie'
+
 
 # ---------------------------------------------------------------------------
 # PostgreSQL
@@ -62,7 +66,7 @@ def get_connection():
     return psycopg2.connect(**DB_CONFIG)
 
 
-def load_abstract_papers(connection):
+def load_abstract_papers(connection, department_id):
     """
     Load every canonical paper that has a non-empty abstract.
 
@@ -96,6 +100,14 @@ def load_abstract_papers(connection):
             ON pr.professor_id = a.professor_id
         WHERE p.abstract IS NOT NULL
           AND TRIM(p.abstract) <> ''
+          AND EXISTS (
+              SELECT 1
+              FROM research.authorships a2
+              JOIN research.professors pr2
+                ON pr2.professor_id = a2.professor_id
+              WHERE a2.paper_id = p.paper_id
+                AND pr2.department_id = %s
+          )
         GROUP BY
             p.paper_id,
             p.title,
@@ -106,7 +118,7 @@ def load_abstract_papers(connection):
     """
 
     with connection.cursor() as cursor:
-        cursor.execute(sql)
+        cursor.execute(sql, (department_id,))
         rows = cursor.fetchall()
 
     papers = []
@@ -121,7 +133,7 @@ def load_abstract_papers(connection):
             "doi": doi,
             "abstract": abstract,
             "authors": authors,
-            "file_source": f"maie-paper-{paper_id:06d}",
+            "file_source": f"{department_slug}-paper-{paper_id:06d}",
         })
 
     return papers
@@ -398,7 +410,7 @@ def poll_batch(track_id, expected_sources):
 # PostgreSQL status update
 # ---------------------------------------------------------------------------
 
-def update_database(connection, papers, documents, track_id):
+def update_database(connection, papers, documents, track_id, department_id):
     """
     Update each paper only after its corresponding LightRAG document
     has actually reached a verified terminal state.
@@ -415,7 +427,15 @@ def update_database(connection, papers, documents, track_id):
             lightrag_track_id = %s,
             lightrag_status = %s,
             updated_at = NOW()
-        WHERE paper_id = %s;
+        WHERE paper_id = %s
+          AND EXISTS (
+              SELECT 1
+              FROM research.authorships a
+              JOIN research.professors pr
+                ON pr.professor_id = a.professor_id
+              WHERE a.paper_id = research.papers.paper_id
+                AND pr.department_id = %s
+          );
     """
 
     with connection.cursor() as cursor:
@@ -438,6 +458,7 @@ def update_database(connection, papers, documents, track_id):
                     track_id,
                     db_status,
                     paper["paper_id"],
+                    department_id,
                 ),
             )
 
@@ -448,9 +469,21 @@ def update_database(connection, papers, documents, track_id):
 # ---------------------------------------------------------------------------
 
 def main():
+    global department_slug
+
+    parser = argparse.ArgumentParser(
+        description="Ingest one department's paper abstracts into LightRAG."
+    )
+    parser.add_argument("--department-id", type=int, default=1)
+    args = parser.parse_args()
+
+    department_id = args.department_id
+    department_slug = {1: "maie", 2: "ies"}.get(department_id)
+    if department_slug is None:
+        parser.error("Supported department IDs are 1 (maie) and 2 (ies).")
 
     print("=" * 70)
-    print("MAIE ABSTRACT → LIGHTRAG INGESTION")
+    print(f"{department_slug.upper()} ABSTRACT → LIGHTRAG INGESTION")
     print("=" * 70)
 
     connection = get_connection()
@@ -461,7 +494,7 @@ def main():
         # Load canonical records from PostgreSQL.
         # ---------------------------------------------------------------
 
-        papers = load_abstract_papers(connection)
+        papers = load_abstract_papers(connection, department_id)
 
         print()
         print(f"Papers with abstracts: {len(papers)}")
@@ -582,6 +615,7 @@ def main():
                 batch,
                 documents,
                 track_id,
+                department_id,
             )
 
             total_processed += len(processed)

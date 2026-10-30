@@ -1,0 +1,19 @@
+institution: University of Texas Rio Grande Valley
+department_name: Department of Informatics and Engineering Systems
+department_slug: ies
+department_url: https://www.utrgv.edu/cecs/departments/ies/
+faculty_url: https://www.utrgv.edu/cecs/departments/ies/faculty/index.htm
+output_directory: /home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/ies/master_test_20261030
+sources:
+  faculty:
+    type: digital_measures
+    source_name: UTRGV Digital Measures
+    api_url: https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMList
+    profile_api_url: https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMuser?username=
+    department_name: Department of Informatics and Engineering Systems
+  publications:
+  - digital_measures
+  - orcid
+  - crossref
+validation: {}
+validation_manifest: validation_manifest.json

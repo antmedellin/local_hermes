@@ -1,0 +1,22 @@
+{
+  "run_id": "20261030T184737Z",
+  "started_at": "2026-10-30T18:47:37.629842+00:00",
+  "department": "Department of Informatics and Engineering Systems",
+  "department_slug": "ies",
+  "config": "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml",
+  "output_directory": "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/ies",
+  "stages": [
+    {
+      "name": "Ingest abstracts into LightRAG",
+      "command": [
+        "/home/mep635/local_hermes/.venv/bin/python",
+        "/home/mep635/local_hermes/hermes_files/data/skills/research/lightrag/scripts/maie_abstract_ingest.py",
+        "--department-id",
+        "2"
+      ],
+      "started_at": "2026-10-30T18:47:37.629875+00:00",
+      "status": "running"
+    }
+  ],
+  "status": "running"
+}

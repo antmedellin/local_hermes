@@ -1,0 +1,23 @@
+{
+  "manifest_version": 1,
+  "status": "approved",
+  "approval": {
+    "reviewer": "Isabella Morgan",
+    "approved_at_utc": "2026-10-30T17:05:14.067945+00:00"
+  },
+  "artifacts": {
+    "faculty_reconciled.json": "2a0da4213e29e882d575dc9fad403dc5e4a94a4061d1d92af7decfbe29010aba",
+    "authorship_reconciliation.json": "882b39cebfe06bcec7932aad121c6b662a78abe3e6856cd0ff5edb9bc31ae51e"
+  },
+  "counts": {
+    "expected_faculty_count": 17,
+    "expected_publication_count": 305,
+    "expected_unique_dm_record_count": 313,
+    "expected_reconciliation_decision_count": 960,
+    "expected_canonical_publication_count": 303,
+    "expected_publication_merge_group_count": 2,
+    "expected_department_author_occurrence_count": 274,
+    "expected_canonical_authorship_count": 262
+  },
+  "created_at_utc": "2026-10-30T16:59:41.295847+00:00"
+}
