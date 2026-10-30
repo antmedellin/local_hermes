@@ -1,0 +1,19 @@
+institution: "University of Texas Rio Grande Valley"
+
+department_name: "Department of Informatics and Engineering Systems"
+
+department_url: "https://www.utrgv.edu/cecs/departments/ies/"
+
+faculty_url: "https://www.utrgv.edu/cecs/departments/ies/faculty/index.htm"
+
+output_directory: "./ledger/data/ies"
+
+sources:
+  faculty:
+    - official_department_page
+    - digital_measures
+
+  publications:
+    - digital_measures
+    - orcid
+    - crossref

@@ -1,12 +1,12 @@
 institution: "University of Texas Rio Grande Valley"
 
 department_name: "Department of Informatics and Engineering Systems"
+department_slug: "ies"
 
 department_url: "https://www.utrgv.edu/cecs/departments/ies/"
-
 faculty_url: "https://www.utrgv.edu/cecs/departments/ies/faculty/index.htm"
 
-output_directory: "./ledger/data/ies"
+output_directory: "hermes_files/data/skills/research/ledger/data/ies"
 
 sources:
   faculty:
@@ -17,3 +17,5 @@ sources:
     - digital_measures
     - orcid
     - crossref
+
+validation: {}

@@ -1,0 +1,80 @@
+{
+  "?xml": {
+    "@version": "1.0",
+    "@encoding": "UTF-8"
+  },
+  "Data": {
+    "@xmlns": "http://www.digitalmeasures.com/schema/data",
+    "@xmlns:dmd": "http://www.digitalmeasures.com/schema/data-metadata",
+    "@dmd:date": "2026-09-29",
+    "Record": {
+      "@userId": "2710015",
+      "@username": "md.alamin",
+      "@dmd:surveyId": "18619203",
+      "dmd:IndexEntry": [
+        {
+          "@indexKey": "COLLEGE",
+          "@entryKey": "College of Engineering and Computer Science",
+          "@text": "College of Engineering and Computer Science"
+        },
+        {
+          "@indexKey": "DEPARTMENT",
+          "@entryKey": "Department of Informatics and Engineering Systems",
+          "@text": "Department of Informatics and Engineering Systems"
+        },
+        {
+          "@indexKey": "RANK",
+          "@entryKey": "Assistant Professor",
+          "@text": "Assistant Professor"
+        }
+      ],
+      "PCI": {
+        "@id": "392560594944",
+        "@dmd:originalSource": "IMPORT",
+        "@dmd:created": "2026-09-01T11:59:07",
+        "@dmd:lastModifiedSource": "IMPORT",
+        "@dmd:lastModified": "2026-09-01T11:59:04",
+        "FNAME": "Md",
+        "MNAME": null,
+        "LNAME": "Al Amin",
+        "EMAIL": "md.alamin@utrgv.edu"
+      },
+      "SCHTEACH": {
+        "@id": "392561481728",
+        "@dmd:originalSource": "IMPORT",
+        "@dmd:created": "2026-09-01T12:00:33",
+        "@dmd:lastModifiedSource": "IMPORT",
+        "@dmd:lastModified": "2026-09-01T12:00:32",
+        "@dmd:startDate": "2026-09-01",
+        "@dmd:endDate": "2026-12-31",
+        "@dmd:primaryKey": "Fall|2026|44331|Lecture",
+        "TYT_TERM": "Fall",
+        "TYY_TERM": "2026",
+        "TERM_START": "2026-09-01",
+        "TERM_END": "2026-12-31",
+        "CLASS_TERM": "202710",
+        "TITLE": "Digital Forensics",
+        "COURSEID": "44331",
+        "COURSEPRE": "CYBI",
+        "COURSENUM": "4319",
+        "SECTION": "01",
+        "EK_COURSE_CODE": "44331.202710",
+        "ENROLL": "40",
+        "CHOURS": "3",
+        "DIVISION": "Upper",
+        "LEVEL": "Undergraduate",
+        "INST_METHOD": "Lecture",
+        "DELIVERY_MODE": "Hybrid (Part Classroom/Part On-Line)",
+        "CAMPUS": "BRW",
+        "STEARNA": "0",
+        "STEARNB": "0",
+        "STEARNC": "0",
+        "STEARND": "0",
+        "STEARNF": "0",
+        "STEARNI": "0",
+        "STEARNP": "0",
+        "STEARNW": "0"
+      }
+    }
+  }
+}
