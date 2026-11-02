@@ -34,7 +34,7 @@ import urllib.request
 import urllib.error
 
 
-LIGHTRAG_URL = "http://local-hermes-lightrag-1:9621"
+LIGHTRAG_URL = "http://localhost:9621"
 
 UPLOAD_URL = f"{LIGHTRAG_URL}/documents/upload"
 
@@ -242,6 +242,65 @@ def get_document(doc_id):
         return None
 
     return None
+
+def get_all_documents():
+    """
+    Retrieve every document currently stored in LightRAG.
+
+    This function is read-only. It does not submit documents
+    or modify PostgreSQL records.
+    """
+
+    url = f"{LIGHTRAG_URL}/documents/paginated"
+
+    page = 1
+    page_size = 10
+
+    all_documents = []
+
+    while True:
+
+        payload = json.dumps(
+            {
+                "page": page,
+                "page_size": page_size,
+                "sort_field": "created_at",
+                "sort_direction": "desc",
+            }
+        ).encode("utf-8")
+
+        request = urllib.request.Request(
+            url,
+            data=payload,
+            method="POST",
+            headers={
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+        )
+
+        with urllib.request.urlopen(request, timeout=30) as response:
+
+            response_body = response.read().decode("utf-8")
+            data = json.loads(response_body)
+
+        documents = data.get("documents", [])
+        pagination = data.get("pagination", {})
+
+        all_documents.extend(documents)
+
+        print(
+            f"Retrieved page {page} of "
+            f"{pagination.get('total_pages', '?')}: "
+            f"{len(documents)} documents"
+        )
+
+        if not pagination.get("has_next", False):
+            break
+
+        page += 1
+
+    return all_documents
 
 def duplicate_resolves_to_processed(document):
     """
@@ -513,6 +572,62 @@ def main():
         sys.exit(1)
 
 
+
 if __name__ == "__main__":
 
-    main()
+    documents = get_all_documents()
+
+    print("\n=== LIGHTRAG INVENTORY ===")
+
+    print(f"Total documents: {len(documents)}")
+
+    department_counts = {
+        "maie": 0,
+        "ies": 0,
+        "csci": 0,
+        "other": 0,
+    }
+
+    source_identifiers = []
+
+    for document in documents:
+
+        source = document.get("file_path", "")
+        status = document.get("status", "unknown")
+        track_id = document.get("track_id", "")
+
+        source_identifiers.append(source)
+
+        if source.startswith("maie-paper-"):
+            department_counts["maie"] += 1
+
+        elif source.startswith("ies-paper-"):
+            department_counts["ies"] += 1
+
+        elif source.startswith("csci-paper-"):
+            department_counts["csci"] += 1
+
+        else:
+            department_counts["other"] += 1
+
+        print(f"{source} | {status} | {track_id}")
+
+    print("\n=== DEPARTMENT COUNTS ===")
+
+    for department, count in department_counts.items():
+        print(f"{department.upper()}: {count}")
+
+    print("\n=== DUPLICATE SOURCE IDENTIFIERS ===")
+
+    duplicates = [
+        source
+        for source in set(source_identifiers)
+        if source_identifiers.count(source) > 1
+    ]
+
+    if duplicates:
+        for source in duplicates:
+            print(source)
+    else:
+        print("No duplicate source identifiers found.")
+

@@ -187,6 +187,146 @@ def build_document(paper):
 # LightRAG HTTP helpers
 # ---------------------------------------------------------------------------
 
+def get_all_documents():
+    """
+    Retrieve every document currently stored in LightRAG.
+
+    This is a read-only operation. It does not submit or modify documents.
+    """
+
+    url = f"{LIGHTRAG_URL}/documents/paginated"
+
+    page = 1
+    page_size = 10
+    all_documents = []
+
+    while True:
+
+        payload = {
+            "page": page,
+            "page_size": page_size,
+            "sort_field": "created_at",
+            "sort_direction": "desc",
+        }
+
+        response = post_json(url, payload)
+
+        documents = response.get("documents", [])
+        pagination = response.get("pagination", {})
+
+        if not isinstance(documents, list):
+            raise RuntimeError(
+                "LightRAG inventory returned an invalid documents list."
+            )
+
+        all_documents.extend(documents)
+
+        total_pages = pagination.get("total_pages")
+
+        print(
+            f"Inventory page {page}/{total_pages}: "
+            f"{len(documents)} documents"
+        )
+
+        if pagination.get("has_next") is False:
+            break
+
+        if not pagination:
+            raise RuntimeError(
+                "LightRAG inventory did not return pagination metadata."
+            )
+
+        if total_pages is None or page >= total_pages:
+            raise RuntimeError(
+                "LightRAG pagination metadata is inconsistent."
+            )
+
+        page += 1
+
+    # Verify that we retrieved the expected number of documents.
+    total_count = pagination.get("total_count")
+
+    if total_count is not None and len(all_documents) != total_count:
+        raise RuntimeError(
+            f"Incomplete LightRAG inventory: "
+            f"expected {total_count}, retrieved {len(all_documents)}."
+        )
+
+    return all_documents
+
+
+def classify_existing_documents(documents, papers):
+    """
+    Compare PostgreSQL source identifiers against LightRAG.
+
+    Returns:
+        missing: Documents not found in LightRAG.
+        processed: Documents already processed.
+        pending: Documents still processing.
+        failed: Documents that previously failed.
+    """
+
+    existing_by_source = {}
+
+    for document in documents:
+
+        source = document.get("file_path")
+
+        if not source:
+            continue
+
+        if source in existing_by_source:
+            raise RuntimeError(
+                f"Duplicate LightRAG source identifier: {source}"
+            )
+
+        existing_by_source[source] = document
+
+    missing = []
+    processed = []
+    pending = []
+    failed = []
+
+    pending_statuses = {
+        "pending",
+        "queued",
+        "processing",
+        "analyzing",
+    }
+
+    failed_statuses = {
+        "failed",
+        "failure",
+        "error",
+    }
+
+    for paper in papers:
+
+        source = paper["file_source"]
+        document = existing_by_source.get(source)
+
+        if document is None:
+            missing.append(paper)
+            continue
+
+        status = (document.get("status") or "").lower()
+
+        if status == "processed":
+            processed.append(paper)
+
+        elif status in pending_statuses:
+            pending.append((paper, status))
+
+        elif status in failed_statuses:
+            failed.append((paper, status))
+
+        else:
+            raise RuntimeError(
+                f"Unrecognized LightRAG status for {source}: {status}"
+            )
+
+    return missing, processed, pending, failed
+
 def post_json(url, payload):
     """POST JSON and return the decoded JSON response."""
 
@@ -475,12 +615,24 @@ def main():
         description="Ingest one department's paper abstracts into LightRAG."
     )
     parser.add_argument("--department-id", type=int, default=1)
+    parser.add_argument(
+    "--dry-run",
+    action="store_true",
+    help="Inspect records without submitting documents or updating PostgreSQL."
+    )
     args = parser.parse_args()
 
     department_id = args.department_id
-    department_slug = {1: "maie", 2: "ies"}.get(department_id)
+    department_slug = {
+        1: "maie",
+        2: "ies",
+        3: "csci",
+    }.get(department_id)
+
     if department_slug is None:
-        parser.error("Supported department IDs are 1 (maie) and 2 (ies).")
+        parser.error(
+            "Supported department IDs are 1 (maie), 2 (ies), and 3 (csci)."
+        )
 
     print("=" * 70)
     print(f"{department_slug.upper()} ABSTRACT → LIGHTRAG INGESTION")
@@ -503,47 +655,121 @@ def main():
             print("No papers with abstracts were found.")
             return 1
 
-        # All papers will be ingested from the beginning because the
-        # current LightRAG instance has no documents.
-        total_expected = len(papers)
 
         # ---------------------------------------------------------------
-        # Show what remains to be ingested.
+        # Inventory existing LightRAG documents.
         # ---------------------------------------------------------------
 
         print()
-        print("First few remaining documents:")
+        print("Inspecting existing LightRAG documents...")
 
-        for paper in papers[:5]:
+        existing_documents = get_all_documents()
+
+        print()
+        print(f"Existing LightRAG documents: {len(existing_documents)}")
+
+        # ---------------------------------------------------------------
+        # Compare PostgreSQL records against LightRAG.
+        # ---------------------------------------------------------------
+
+        missing, processed, pending, failed = (
+            classify_existing_documents(
+                existing_documents,
+                papers,
+            )
+        )
+
+        print()
+        print("=" * 70)
+        print("INGESTION INVENTORY")
+        print("=" * 70)
+
+        print(f"PostgreSQL papers : {len(papers)}")
+        print(f"Already processed : {len(processed)}")
+        print(f"Missing           : {len(missing)}")
+        print(f"Pending           : {len(pending)}")
+        print(f"Previously failed : {len(failed)}")
+
+        # ---------------------------------------------------------------
+        # Report pending and failed records.
+        # Never silently resubmit them.
+        # ---------------------------------------------------------------
+
+        if pending:
+
+            print()
+            print("DOCUMENTS STILL PROCESSING:")
+
+            for paper, status in pending:
+                print(f"  {paper['file_source']} | {status}")
+
+        if failed:
+
+            print()
+            print("DOCUMENTS REQUIRING REVIEW:")
+
+            for paper, status in failed:
+                print(f"  {paper['file_source']} | {status}")
+
+        if pending or failed:
+
+            raise RuntimeError(
+                "Existing CSCI documents require review. "
+                "No new documents were submitted."
+            )
+
+        # ---------------------------------------------------------------
+        # Display the missing records.
+        # ---------------------------------------------------------------
+
+        print()
+        print("DOCUMENTS ELIGIBLE FOR INGESTION:")
+
+        for paper in missing:
             print(
                 f"  {paper['file_source']} | "
                 f"{paper['title']}"
             )
 
         # ---------------------------------------------------------------
-        # Process remaining batches.
+        # Dry-run mode: stop before any write operation.
+        # ---------------------------------------------------------------
+
+        if args.dry_run:
+
+            print()
+            print("=" * 70)
+            print("DRY RUN COMPLETE")
+            print("=" * 70)
+
+            print(f"Department       : {department_slug.upper()}")
+            print(f"Already processed: {len(processed)}")
+            print(f"Would submit     : {len(missing)}")
+
+            print()
+            print("No LightRAG documents were submitted.")
+            print("PostgreSQL was not modified.")
+
+            return 0
+
+        # ---------------------------------------------------------------
+        # Process only missing records.
         # ---------------------------------------------------------------
 
         total_processed = 0
 
-        for start in range(0, len(papers), BATCH_SIZE):
+        for start in range(0, len(missing), BATCH_SIZE):
 
-            batch = papers[
-                start:start + BATCH_SIZE
-            ]
+            batch = missing[start:start + BATCH_SIZE]
 
             print()
             print("-" * 70)
             print(
-                f"Processing papers "
+                f"Processing missing papers "
                 f"{start + 1}-{start + len(batch)} "
-                f"of {len(papers)} remaining"
+                f"of {len(missing)}"
             )
             print("-" * 70)
-
-            # -----------------------------------------------------------
-            # Submit this batch to LightRAG.
-            # -----------------------------------------------------------
 
             track_id = submit_batch(batch)
 
@@ -552,32 +778,23 @@ def main():
                 for paper in batch
             ]
 
-            # -----------------------------------------------------------
-            # Poll until LightRAG finishes processing the batch.
-            # -----------------------------------------------------------
-
             documents = poll_batch(
                 track_id,
                 expected_sources,
             )
 
-            # -----------------------------------------------------------
-            # Verify this batch before updating PostgreSQL.
-            # -----------------------------------------------------------
-
             status_by_source = {
-                document.get("file_path"):
-                    document.get("status")
+                document.get("file_path"): document.get("status")
                 for document in documents
             }
 
-            processed = [
+            processed_sources = [
                 source
                 for source in expected_sources
                 if status_by_source.get(source) == "processed"
             ]
 
-            failed = [
+            failed_sources = [
                 source
                 for source in expected_sources
                 if status_by_source.get(source) != "processed"
@@ -586,47 +803,36 @@ def main():
             print()
             print(
                 f"Batch verification: "
-                f"{len(processed)}/{len(expected_sources)} processed"
+                f"{len(processed_sources)}/{len(expected_sources)} processed"
             )
 
-            if failed:
+            if failed_sources:
 
                 print()
-                print("FAILED DOCUMENTS:")
+                print("DOCUMENTS NOT VERIFIED:")
 
-                for source in failed:
+                for source in failed_sources:
                     print(
                         f"  {source} -> "
-                        f"{status_by_source.get(source)}"
+                        f"{status_by_source.get(source, 'missing')}"
                     )
 
                 raise RuntimeError(
                     "Batch verification failed. "
-                    "PostgreSQL was NOT updated for this batch."
+                    "No PostgreSQL status fields were modified."
                 )
 
-            # -----------------------------------------------------------
-            # Only update PostgreSQL after the entire batch has been
-            # verified as processed by LightRAG.
-            # -----------------------------------------------------------
+            # IMPORTANT:
+            # Do not call update_database() here.
+            #
+            # research.papers.lightrag_status and
+            # research.papers.lightrag_track_id are global paper fields.
+            # Updating them for CSCI could overwrite MAIE or IES data.
 
-            update_database(
-                connection,
-                batch,
-                documents,
-                track_id,
-                department_id,
-            )
-
-            total_processed += len(processed)
-
-            print(
-                f"PostgreSQL updated for "
-                f"{len(processed)} papers."
-            )
+            total_processed += len(processed_sources)
 
         # ---------------------------------------------------------------
-        # Final verification.
+        # Final result.
         # ---------------------------------------------------------------
 
         print()
@@ -634,16 +840,19 @@ def main():
         print("FINAL RESULT")
         print("=" * 70)
 
-        print(f"Expected papers : {total_expected}")
-        print(f"Processed       : {total_processed}")
+        print(f"Already processed : {len(processed)}")
+        print(f"Newly processed   : {total_processed}")
+        print(f"Total CSCI papers : {len(papers)}")
 
-        if total_processed != total_expected:
+        if total_processed != len(missing):
 
             print("INGESTION RESULT: FAIL")
 
             return 1
 
         print("INGESTION RESULT: PASS")
+
+        print("PostgreSQL global LightRAG status fields were left unchanged.")
 
         return 0
 
