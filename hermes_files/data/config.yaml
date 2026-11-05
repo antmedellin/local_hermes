@@ -1,12 +1,15 @@
 model:
   default: gemma4:12b
-  provider: custom
+  provider: custom:gemma4_12b
   base_url: http://ollama:11434/v1
+  api_mode: chat_completions
+  supports_vision: true
 toolsets:
   - hermes-cli
   - computer-use
   - browser
   - kanban
+  - vision
 database:
   journal_mode: wal
 runtime:

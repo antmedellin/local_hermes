@@ -7,3 +7,5 @@ The python-docx library is available only via the terminal tool; it is not avail
 The memory tool requires the 'action' parameter ('add', 'replace', or 'remove') to be explicitly specified for single-operation updates to ensure correct parsing.
 §
 Use uv to install dependencies when no virtual environment is active.
+§
+User prefers using xdotool via terminal for browser navigation in WSL to avoid navigation failures.

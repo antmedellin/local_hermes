@@ -34,7 +34,65 @@ driver-side error mentioning `snapshot_id`, `element_token`, or "no reviewed
 risk classification", you (or a stale description) called the raw driver
 vocabulary — go back to the actions below.
 
-## The canonical workflow
+## Linux Docker desktop: browser-gui:99
+
+Target the Linux X desktop at browser-gui:99, not the Windows host desktop.
+
+### Capture and inspect
+
+1. Capture the full native desktop using:
+
+   DISPLAY=browser-gui:99 python3 -c 'from PIL import ImageGrab; ImageGrab.grab(xdisplay="browser-gui:99").save("/tmp/desktop-before.png")'
+
+2. Read the actual PNG dimensions.
+3. Inspect the exact PNG through vision_analyze.
+4. Use a different filename for each subsequent capture.
+5. Opening an image with eog or listing its filename does not constitute inspection.
+
+### Locate text targets
+
+- Run Tesseract on the same screenshot:
+  tesseract /tmp/desktop-before.png stdout -l eng tsv
+- Use vision_analyze to identify the intended target and surrounding context.
+- Use Tesseract's individual word boxes to measure its position.
+- For multiword targets, combine only adjacent words belonging to the target.
+- Do not use the center of an entire OCR line: it can combine unrelated text from separate columns.
+- Disambiguate repeated text using the screenshot.
+- If OCR misses the target or the match is ambiguous, stop and report it. Do not guess coordinates.
+
+### Calculate
+
+- Calculate the bounding-box center using Python:
+  x = (left + right) // 2
+  y = (top + bottom) // 2
+- These are native desktop pixels. Do not add window offsets.
+- Do not assume Gemma4 returns normalized coordinates.
+- Discard coordinates after scrolling, navigation, resizing, or layout changes.
+
+### Click
+
+  DISPLAY=browser-gui:99 xdotool mousemove --sync X Y
+  DISPLAY=browser-gui:99 xdotool click 1
+
+### Address-bar navigation
+
+  DISPLAY=browser-gui:99 xdotool key --clearmodifiers alt+d
+  DISPLAY=browser-gui:99 xdotool type --clearmodifiers --delay 150 'URL'
+  DISPLAY=browser-gui:99 xdotool key --clearmodifiers Return
+
+Keep shell commands separate. Never include command text inside the string being typed.
+
+### Verification
+
+- Perform one meaningful action, capture a fresh PNG, and analyze it before continuing.
+- Exit code 0 and ok:true do not prove the intended action succeeded.
+- Verify the actual destination and page content.
+- Stop after two attempts without visible progress.
+- Do not invent URLs, citations, or explanations for failures.
+
+
+
+
 
 **Step 1 — Capture first.** Almost every task starts with:
 
@@ -198,21 +256,19 @@ own schemas document the current contract. Reserve `computer_use` for browser
 *chrome* (the address bar, permission prompts, extension popups, native
 dialogs) and anything else on screen that isn't page content.
 
-### Key shortcuts vary per platform
+## Browser Navigation (Address Bar)
+For navigating to a new URL via the browser's address bar, use a coordinate-based click to force focus before sending input. Hotkeys like `Ctrl+L` are often ignored by the browser's internal state unless the UI focus is explicitly established via a mouse click.
 
-Use the host's idiomatic modifier:
+**Procedure:**
+1. **Capture** to find the address bar bounds.
+2. **Click** the center of the address bar using `coordinate=[x, y]`.
+3. **Select All:** Send `key(keys="ctrl+a")`.
+4. **Input:** Send `type(text="<url>")`.
+5. **Execute:** Send `key(keys="enter")`.
+6. **Verify:** Re-capture to confirm the new page loaded.
 
-| Common action | macOS | Windows / Linux |
-|---|---|---|
-| Save | `cmd+s` | `ctrl+s` |
-| New tab | `cmd+t` | `ctrl+t` |
-| Close tab / window | `cmd+w` | `ctrl+w` |
-| Copy / paste | `cmd+c` / `cmd+v` | `ctrl+c` / `ctrl+v` |
-| Address bar | `cmd+l` | `ctrl+l` |
-| App switcher | `cmd+tab` | `alt+tab` |
-
-When in doubt, capture and look for menu hints, or ask the user which
-shortcut to use.
+**Pitfall:**
+- **Do not rely on `key(keys="ctrl+l")` alone.** Chromium and other browsers may reject synthetic hotkeys for navigation if the window focus is handled by the OS but the UI element focus is not. Always use a `click` action with `coordinate` to anchor the focus.
 
 *   **Windows/WSL/Linux Window Discovery**: In some environments (notably WSL or SSH sessions), the `computer_use` tool may fail to discover a window for interaction (e.g., Chromium) even if it is visible in screenshots. This is because the tool cannot 'latch' onto the window in a non-interactive or mismatched display context. If window discovery returns empty lines but the app is visible on screen, the tool cannot perform `type` or `click` actions for that window. Inform the user that their specific environment prevents the tool from controlling that specific window.
 

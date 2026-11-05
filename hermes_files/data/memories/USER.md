@@ -8,3 +8,5 @@ Task Preferences:
 - Actions must be executed immediately (do not describe intentions).
 - Fail fast on multi-step sequences; if one step fails, stop and report.
 - Summaries should be concise (1-3 sentences) with clear handoffs.
+§
+User is a researcher/student at UTRGV in the Manufacturing and Industrial Engineering (MAIE) department.
