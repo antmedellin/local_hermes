@@ -627,11 +627,13 @@ def main():
         1: "maie",
         2: "ies",
         3: "csci",
+        4: "cive",
     }.get(department_id)
 
     if department_slug is None:
         parser.error(
-            "Supported department IDs are 1 (maie), 2 (ies), and 3 (csci)."
+            "Supported department IDs are 1 (maie), 2 (ies), "
+            "3 (csci), and 4 (cive)."
         )
 
     print("=" * 70)
@@ -714,8 +716,8 @@ def main():
         if pending or failed:
 
             raise RuntimeError(
-                "Existing CSCI documents require review. "
-                "No new documents were submitted."
+                f"Existing {department_slug.upper()} documents "
+                "require review. No new documents were submitted."
             )
 
         # ---------------------------------------------------------------
@@ -827,7 +829,7 @@ def main():
             #
             # research.papers.lightrag_status and
             # research.papers.lightrag_track_id are global paper fields.
-            # Updating them for CSCI could overwrite MAIE or IES data.
+            # Updating them for another department could overwrite data.
 
             total_processed += len(processed_sources)
 
@@ -842,7 +844,7 @@ def main():
 
         print(f"Already processed : {len(processed)}")
         print(f"Newly processed   : {total_processed}")
-        print(f"Total CSCI papers : {len(papers)}")
+        print(f"Total {department_slug.upper()} papers : {len(papers)}")
 
         if total_processed != len(missing):
 

@@ -19,6 +19,8 @@ The script:
 
 import argparse
 import json
+import re
+import unicodedata
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -126,6 +128,62 @@ def normalize_key(value):
     return " ".join(str(value).strip().split()).casefold()
 
 
+
+def normalize_publication_title(value):
+    """Match the importer's publication-title normalization."""
+
+    if value is None:
+        return ""
+
+    value = str(value)
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(
+        char for char in value
+        if not unicodedata.combining(char)
+    )
+
+    value = value.lower().strip()
+    value = re.sub(r"[“”\"'`]", "", value)
+    value = re.sub(r"[^a-z0-9]+", " ", value)
+
+    normalized = " ".join(value.split())
+
+    if not normalized:
+        normalized = unicodedata.normalize(
+            "NFKC", str(value)
+        ).casefold()
+        normalized = " ".join(normalized.split())
+
+    return normalized
+
+
+def parse_publication_year(value):
+    """Match the importer's publication-year parsing."""
+
+    if value in (None, ""):
+        return None
+
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def publication_key(publication):
+    """Return the same canonical identity key as the importer."""
+
+    title = (
+        publication.get("title")
+        or publication.get("normalized_title")
+        or ""
+    ).strip()
+
+    return (
+        normalize_publication_title(title),
+        parse_publication_year(publication.get("year")),
+    )
+
+
 def load_json(path):
     if not path.exists():
         raise FileNotFoundError(path)
@@ -166,10 +224,7 @@ def canonicalize_publications(publications):
 
     for pub in publications:
 
-        key = (
-            normalize_key(pub.get("title")),
-            pub.get("year"),
-        )
+        key = publication_key(pub)
 
         groups[key].append(pub)
 
@@ -339,10 +394,7 @@ def build_source_publication_map(publications):
 
         if publication_id:
 
-            mapping[publication_id] = (
-                normalize_key(pub.get("title")),
-                pub.get("year"),
-            )
+            mapping[publication_id] = publication_key(pub)
 
     return mapping
 

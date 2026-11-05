@@ -1,0 +1,22 @@
+{
+  "manifest_version": 1,
+  "status": "approved",
+  "approval": {
+    "reviewer": "User-approved via ChatGPT conversation",
+    "approved_at_utc": "2026-11-03T17:56:01.016680+00:00"
+  },
+  "artifacts": {
+    "faculty_reconciled.json": "c4f87d24bcbd516389b4d62b53f1a6820ff278eb6fc48fef7892f828ec5b4097",
+    "authorship_reconciliation.json": "5e15b6f23c9f8c04974eb535bb18ef7339954db553351489e0207b928411bf79"
+  },
+  "counts": {
+    "expected_faculty_count": 22,
+    "expected_publication_count": 359,
+    "expected_unique_dm_record_count": 362,
+    "expected_reconciliation_decision_count": 1508,
+    "expected_canonical_publication_count": 358,
+    "expected_publication_merge_group_count": 1,
+    "expected_department_author_occurrence_count": 384,
+    "expected_canonical_authorship_count": 379
+  }
+}

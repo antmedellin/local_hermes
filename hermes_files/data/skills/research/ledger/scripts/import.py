@@ -777,6 +777,44 @@ def upsert_professor(cursor, faculty, department_id):
         profile.get("source_url"),
     )
 
+    # -----------------------------------------------------------
+    # Prevent moving an existing professor between departments.
+    # -----------------------------------------------------------
+
+    cursor.execute(
+        """
+        SELECT
+            p.professor_id,
+            p.department_id,
+            d.department_name
+        FROM research.professors p
+        LEFT JOIN research.departments d
+            ON d.department_id = p.department_id
+        WHERE p.institution = %s
+          AND LOWER(TRIM(p.full_name)) = LOWER(TRIM(%s))
+        """,
+        (INSTITUTION, name),
+    )
+
+    existing_professor = cursor.fetchone()
+
+    if existing_professor:
+        existing_professor_id, existing_department_id, existing_department_name = (
+            existing_professor
+        )
+
+        if existing_department_id != department_id:
+            raise RuntimeError(
+                "Professor department conflict detected. "
+                "Import aborted to prevent reassignment.\n"
+                f"Professor: {name}\n"
+                f"Professor ID: {existing_professor_id}\n"
+                f"Existing department: {existing_department_name} "
+                f"(ID: {existing_department_id})\n"
+                f"Target department: {DEPARTMENT_NAME} "
+                f"(ID: {department_id})"
+            )
+
     cursor.execute(
         """
         INSERT INTO research.professors (

@@ -15,8 +15,13 @@
         "2"
       ],
       "started_at": "2026-10-30T18:47:37.629875+00:00",
-      "status": "running"
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 1723.02,
+      "finished_at": "2026-10-30T19:16:20.654076+00:00"
     }
   ],
-  "status": "running"
+  "status": "succeeded",
+  "finished_at": "2026-10-30T19:16:20.654469+00:00",
+  "duration_seconds": 1723.02
 }
