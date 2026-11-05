@@ -355,7 +355,10 @@ def normalize_author(author):
             author.get("student_level")
         ),
         "is_faculty": bool(
-            author.get("is_faculty", False)
+            author.get(
+                "is_department_faculty",
+                author.get("is_faculty", False)
+            )
         ),
     }
 

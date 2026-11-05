@@ -1,0 +1,18 @@
+institution: "University of Texas Rio Grande Valley"
+
+department_name: "Department of Electrical and Computer Engineering"
+
+department_slug: "ece"
+
+department_url: "https://www.utrgv.edu/cecs/departments/ece/index.htm"
+
+faculty_url: "https://www.utrgv.edu/cecs/departments/ece/faculty/index.htm"
+
+output_directory: "hermes_files/data/skills/research/ledger/data/ece"
+
+sources:
+  faculty:
+    type: "digital_measures"
+    source_name: "UTRGV Digital Measures"
+    department_name: "Department of Electrical and Computer Engineering"
+validation: {}

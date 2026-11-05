@@ -38,10 +38,7 @@ bot_desktop:
   auto_start: false
 browser:
   headed: true
-  backend: 'off'
   inactivity_timeout: 120
-  extension_control:
-    enabled: false
   cloud_provider: local
 tool_loop_guardrails:
   warnings_enabled: true
@@ -139,7 +136,7 @@ updates:
 computer_use:
   permission_mode: standard
   backend: cua
-_config_version: 51
+_config_version: 52
 session_reset:
   mode: none
   idle_minutes: 1440
