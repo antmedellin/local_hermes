@@ -242,6 +242,40 @@ def classify_name(author_name, faculty_name):
 
 
 # ------------------------------------------------------------
+CURATED_NAME_VARIANTS = {
+    ("1450774", "yul chu"): (
+        "Manually reviewed historical Digital Measures name "
+        "variant. Raw records repeatedly associate 'Yul Chu' "
+        "with this faculty ID. Original name and ID are preserved."
+    ),
+    ("1451005", "kumar sanjeev"): (
+        "Manually reviewed historical Digital Measures name-order "
+        "variant. Raw records associate 'Kumar Sanjeev' with this "
+        "faculty ID. Original name and ID are preserved."
+    ),
+    ("1478888", "yoonsu choi"): (
+        "Manually reviewed historical Digital Measures name "
+        "variant. Raw records associate 'Yoonsu Choi' with this "
+        "faculty ID. Original name and ID are preserved."
+    ),
+    ("1450774", "yul yul chu"): (
+        "Manually reviewed historical Digital Measures name "
+        "variant. Source profile mark.chu (faculty ID 1450774) "
+        "contains 'Yul Yul Chu' and a second record for the same "
+        "publication title with 'Yul Chu', both carrying faculty "
+        "ID 1450774. The repeated first name is treated as a "
+        "source-name variant. Original name and ID are preserved."
+    ),
+    ("1450774", "y chu"): (
+    "Manually reviewed historical Digital Measures abbreviated "
+    "name variant. The 2006 source record appears in mark.chu "
+    "with faculty ID 1450774. The same profile repeatedly "
+    "associates Yul Chu with ID 1450774, and other records "
+    "identify the author as Mark Yul Chu. Original name and "
+    "ID are preserved."
+    ),
+}
+
 # Load data
 # ------------------------------------------------------------
 
@@ -637,23 +671,42 @@ for publication in publications:
 
             else:
 
-                decision["classification"] = category
-
-                if category == "MODERATE_REVIEW":
-                    decision["confidence"] = "REVIEW"
-
-                else:
-                    decision["confidence"] = "LOW"
-
-                decision["evidence"] = (
-                    f"Digital Measures ID {faculty_id_original} "
-                    f"currently belongs to {current_faculty_name}, "
-                    f"but the recorded author name is "
-                    f"'{author_name}'. No matching current faculty "
-                    f"name was found elsewhere in this publication."
+                # Apply only exact, manually reviewed historical
+                # variants. The ID-swap safeguard above always
+                # takes priority.
+                curated_evidence = CURATED_NAME_VARIANTS.get(
+                    (
+                        faculty_id_original,
+                        normalize_name(author_name),
+                    )
                 )
 
-                summary[category] += 1
+                if curated_evidence:
+                    decision["mapped_faculty_id"] = faculty_id_original
+                    decision["mapped_faculty_name"] = current_faculty_name
+                    decision["classification"] = "NAME_VARIANT"
+                    decision["confidence"] = "HIGH"
+                    decision["evidence"] = curated_evidence
+
+                    summary["NAME_VARIANT"] += 1
+
+                else:
+                    decision["classification"] = category
+
+                    if category == "MODERATE_REVIEW":
+                        decision["confidence"] = "REVIEW"
+                    else:
+                        decision["confidence"] = "LOW"
+
+                    decision["evidence"] = (
+                        f"Digital Measures ID {faculty_id_original} "
+                        f"currently belongs to {current_faculty_name}, "
+                        f"but the recorded author name is "
+                        f"'{author_name}'. No matching current faculty "
+                        f"name was found elsewhere in this publication."
+                    )
+
+                    summary[category] += 1
 
             decisions.append(decision)
 
