@@ -34,3 +34,4 @@ hermes_files/data/skills/.usage.json
 !hermes_files/data/cron/
 !hermes_files/data/cron/jobs.json
 hermes_files/data/skills/research/literature-review/bin/
+vllm_storage/

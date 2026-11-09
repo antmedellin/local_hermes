@@ -1,3 +1,4 @@
+
 name: local-hermes
 
 include:
@@ -6,47 +7,51 @@ include:
   - ./LightRAG/docker-compose-full.yml
   - ./MinerU/docker-compose.yml
 
-x-ollama: &service-ollama
-  image: ollama/ollama:latest
-  container_name: ollama
-  networks:
-    - backend
+x-vllm: &service-vllm
+  image: vllm/vllm-openai:v0.33.0
+  container_name: vllm
   restart: unless-stopped
-  ports:
-    - "11434:11434"
-  volumes:
-    - ./ollama_storage:/root/.ollama
-  environment:
-    - OLLAMA_KEEP_ALIVE=24H
-    - OLLAMA_CONTEXT_LENGTH=100000
-  healthcheck:
-    test: ["CMD-SHELL", "[ $(ollama list | wc -l) -gt 1 ]"]
-    interval: 10s
-    timeout: 10s
-    retries: 10
-    start_period: 60s
 
-x-init-ollama: &init-ollama
-  image: ollama/ollama:latest
-  container_name: ollama-pull
   networks:
     - backend
+
+  ports:
+    - "127.0.0.1:18000:8000"
+
   volumes:
-    - ./ollama_storage:/root/.ollama
-  environment:
-    - OLLAMA_HOST=ollama:11434
-    - OLLAMA_CONTEXT_LENGTH=100000
-  entrypoint: /bin/sh
+    - ./vllm_storage/huggingface:/root/.cache/huggingface
+
+  gpus: all
+  ipc: host
+
   command:
-    - "-c"
-    - "sleep 10; ollama pull gemma4:12b; ollama pull qwen3-embedding:8b;"
+    - google/gemma-4-12B-it-qat-w4a16-ct
+    - --served-model-name
+    - gemma4-12b
+    - --max-model-len
+    - "65536"
+    - --max-num-seqs
+    - "1"
+    - --max-num-batched-tokens
+    - "4096"
+    - --gpu-memory-utilization
+    - "0.85"
+    - --kv-cache-dtype
+    - fp8
+    - --enforce-eager
+    - --limit-mm-per-prompt
+    - '{"image":0,"audio":0}'
+    - --enable-auto-tool-choice
+    - --tool-call-parser
+    - gemma4
+    - --reasoning-parser
+    - gemma4
+    - --chat-template
+    - examples/tool_chat_template_gemma4.jinja
 
 services:
-  ollama:
-    <<: *service-ollama
-    gpus: all
-    labels:
-      autoheal: "true"
+  vllm:
+    <<: *service-vllm
 
   browser-gui:
     build:
@@ -54,30 +59,32 @@ services:
     container_name: hermes-browser-gui
     restart: unless-stopped
     pid: "service:gateway"
+
     networks:
       - backend
+
     ports:
       - "127.0.0.1:6080:6080"
+
     volumes:
       - browser_gui_runtime:/run/user/1000
-    shm_size: "4gb"
 
-  ollama-init:
-    <<: *init-ollama
-    gpus: all
+    shm_size: "4gb"
 
   autoheal:
     image: willfarrell/autoheal:latest
     container_name: autoheal
     restart: unless-stopped
+
     networks:
       - backend
+
     environment:
       AUTOHEAL_CONTAINER_LABEL: all
       AUTOHEAL_INTERVAL: 30
+
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
 volumes:
-  ollama_storage:
   browser_gui_runtime:
