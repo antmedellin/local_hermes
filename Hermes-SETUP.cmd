@@ -16,16 +16,19 @@ exit /b %errorlevel%
       2.  Set WSL2 memory (55 GB) and swap (8 GB) in %USERPROFILE%\.wslconfig
       3.  Create the Ubuntu distro and a Linux user (password = "password")
       4.  apt update / upgrade
-      5.  apt install gedit htop git
+      5.  apt install gedit htop git jq
       6.  git clone local_hermes
       7.  git submodule update --init --recursive --remote
       8.  Verify Docker Desktop is installed and running
       9.  Turn on Docker Desktop WSL integration for Ubuntu
       10. docker compose pull
       11. docker compose build
-      12. docker compose up -d
+      12. docker compose up -d --remove-orphans (also removes the old separate hermes-dashboard container)
       13. Create the "Hermes" desktop shortcut
       14. Verify Hermes (containers, AI models downloaded and responding, dashboard, login) and open it
+
+    The dashboard runs INSIDE the 'hermes' container (HERMES_DASHBOARD=1 in
+    hermes-agent/docker-compose.windows.yml). There is no separate hermes-dashboard container anymore.
 
     No admin rights needed. WSL and Docker Desktop must already be installed on the PC.
     Safe to re-run: every step checks what is already done and skips it.
@@ -33,7 +36,7 @@ exit /b %errorlevel%
     The Linux username is the Windows username in lowercase.
 
 HOW TO USE
-    Double-click Setup-LocalHermes.cmd. That is it: this one file is the whole setup.
+    Double-click Hermes-SETUP.cmd. That is it: this one file is the whole setup.
     Each person runs it while signed in to their own Windows profile.
     Afterwards, use the "Hermes" desktop shortcut after each sign-in.
     To change settings, edit the default values in the param() block below.
@@ -153,7 +156,7 @@ function Stop-DockerDesktop {
 # step 14 of this setup, so the same checks run every time Hermes is opened.
 # Literal text: the __NAME__ placeholders are filled in at step 13.
 $LauncherTemplate = @'
-# Start-Hermes: created by Setup-LocalHermes.cmd
+# Start-Hermes: created by Hermes-SETUP.cmd
 # Checks that Docker, this user's Hermes containers and AI models are running and that the
 # dashboard login works, then opens the dashboard. Every failed check stops with a message.
 param([int]$ModelTimeoutMin = 60, [int]$DashboardTimeoutSec = 180, [switch]$NoPause)
@@ -250,13 +253,30 @@ Ok 'Ubuntu can reach Docker'
 Info 'Starting Hermes containers (already-running ones are left alone)'
 # Volumes/networks marked "external" in the compose files must exist first (Docker never creates them).
 Linux "cd ~/$Repo && docker compose config --format json | jq -r '.volumes // {} | to_entries[] | select(.value.external) | .value.name // .key' | xargs -r -n1 docker volume create; docker compose config --format json | jq -r '.networks // {} | to_entries[] | select(.value.external) | .value.name // .key' | xargs -r -n1 docker network create 2>/dev/null; true" | Out-Null
-Linux "cd ~/$Repo && export BUILDKIT_PROGRESS=plain; docker compose --progress plain up -d" | Out-Host
+# The dashboard used to be its own container (hermes-dashboard). It now runs inside 'hermes'.
+# A leftover old one would hold port 9119 and stop 'hermes' from starting, so remove it first.
+& $DockerCli rm -f hermes-dashboard *> $null
+Linux "cd ~/$Repo && export BUILDKIT_PROGRESS=plain; docker compose --progress plain up -d --remove-orphans" | Out-Host
 if ($LASTEXITCODE -ne 0) { Fail 'Could not start the Hermes containers (see the messages above).' }
-foreach ($c in 'ollama', 'hermes', 'hermes-dashboard') {
+foreach ($c in 'ollama', 'hermes') {
     $st = Get-ContainerState $c
     if ($st -ne 'running') { Show-Containers; Fail "Container '$c' is not running (state: $st). See the list above." }
 }
-Ok 'Containers are running (ollama, hermes, hermes-dashboard)'
+Ok 'Containers are running (ollama, hermes with the dashboard inside it)'
+
+# Every other service (LightRAG, MinerU, Firecrawl, browser-gui, ...) only gets a warning, so one
+# broken add-on does not block the dashboard. One-shot jobs that finished cleanly (Exited (0)) are fine.
+$project = ((Linux "cd ~/$Repo && docker compose config --format json | jq -r .name") -join '').Trim()
+if ($project) {
+    $rows = & $DockerCli ps -a --filter "label=com.docker.compose.project=$project" --format '{{.Names}}|{{.State}}|{{.Status}}' 2>$null
+    foreach ($row in $rows) {
+        $name, $state, $status = "$row".Split('|', 3)
+        if ($name -in 'ollama', 'hermes', 'ollama-pull') { continue }   # checked above / handled in step 6
+        if ($state -eq 'running') { continue }
+        if ($state -eq 'exited' -and $status -match 'Exited \(0\)') { continue }
+        Warn "Container '$name' is not running ($status). Hermes still opens, but features that use it may fail."
+    }
+}
 
 # 6. AI models are fully downloaded -------------------------------------------------
 $compose = (Linux "cat ~/$Repo/docker-compose.yml") -join "`n"
@@ -364,8 +384,8 @@ while ((Get-Date) -lt $deadline) {
 }
 if (-not $ready) {
     Show-Containers
-    Get-Logs 'hermes-dashboard' 20 | Out-Host
-    Fail "The dashboard did not respond within $DashboardTimeoutSec seconds (see above)."
+    Get-Logs 'hermes' 30 | Out-Host
+    Fail "The dashboard did not respond within $DashboardTimeoutSec seconds (see above). It runs inside the 'hermes' container, so check that HERMES_DASHBOARD=1 is set in hermes-agent/docker-compose.windows.yml."
 }
 Ok 'Dashboard is responding'
 
@@ -465,7 +485,7 @@ try {
     Ok "Packages up to date"
 
     # 5 ---------------------------------------------------------------
-    Step 5 "apt install gedit htop"
+    Step 5 "apt install gedit htop git jq"
     Invoke-Linux -AsRoot "export DEBIAN_FRONTEND=noninteractive; apt-get install -y gedit htop git jq ca-certificates" | Out-Null
     Ok "gedit, htop, git, jq installed"
 
@@ -552,12 +572,15 @@ try {
     Ok "Images built"
 
     # 12 --------------------------------------------------------------
-    Step 12 "docker compose up -d"
+    Step 12 "docker compose up -d --remove-orphans"
     # Volumes/networks marked "external" in the compose files (e.g. local-hermes_browser_gui_runtime
     # in hermes-agent) must already exist; Docker never creates them. Create any that are missing.
     Invoke-Linux "cd ~/$RepoFolder && docker compose config --format json | jq -r '.volumes // {} | to_entries[] | select(.value.external) | .value.name // .key' | xargs -r -n1 docker volume create; docker compose config --format json | jq -r '.networks // {} | to_entries[] | select(.value.external) | .value.name // .key' | xargs -r -n1 docker network create 2>/dev/null; true" -AllowFail | Out-Null
-    Invoke-Linux "cd ~/$RepoFolder && export BUILDKIT_PROGRESS=plain; docker compose --progress plain up -d" | Out-Null
-    Ok "Containers started"
+    # PCs set up before Oct 28 2026 have a separate hermes-dashboard container holding port 9119.
+    # The dashboard now runs inside 'hermes', so remove the old one before starting.
+    & $DockerCli rm -f hermes-dashboard *> $null
+    Invoke-Linux "cd ~/$RepoFolder && export BUILDKIT_PROGRESS=plain; docker compose --progress plain up -d --remove-orphans" | Out-Null
+    Ok "Containers started (dashboard runs inside the hermes container)"
 
     # 13 --------------------------------------------------------------
     Step 13 "Creating the Hermes desktop shortcut"
@@ -610,6 +633,7 @@ try {
     Write-Host "`nSetup complete." -ForegroundColor Green
     Write-Host "  Next time  : double-click 'Hermes' on your desktop"
     Write-Host "  Dashboard  : $DashboardUrl   (sign in: username: $DashboardUser password: $DashboardPassword)"
+    Write-Host "               runs inside the hermes container (no separate dashboard container)"
     Write-Host "  Browser VNC: http://127.0.0.1:6080/vnc.html"
     Write-Host "  Repo       : \\wsl$\$DistroName\home\$LinuxUser\$RepoFolder"
     Write-Host "  Shell      : wsl -d $DistroName   then   docker exec -it -u 1000:1000 hermes /bin/bash"
