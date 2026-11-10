@@ -9,12 +9,12 @@
     "author_entries": 2099,
     "faculty_id_entries": 743,
     "EXACT": 659,
-    "NAME_VARIANT": 10,
+    "NAME_VARIANT": 59,
     "NAME_VARIANT_WITHOUT_DM_ID": 0,
     "INITIAL_VARIANT": 0,
-    "MODERATE_REVIEW": 47,
+    "MODERATE_REVIEW": 0,
     "HIGH_SIMILARITY": 1,
-    "HISTORICAL_ID_MISMATCH": 10,
+    "HISTORICAL_ID_MISMATCH": 8,
     "HISTORICAL_ID_SWAP_RECOVERED": 16,
     "EXTERNAL": 1345,
     "UNKNOWN": 0,
@@ -284,19 +284,6 @@
       "evidence": "Digital Measures ID 2109038 currently belongs to Laura Elena Benitez, but the recorded author name is 'Laura Espinoza'. No matching current faculty name was found elsewhere in this publication."
     },
     {
-      "publication_id": "PUB-00270",
-      "title": "An Effective Model for Computer System Building Projects in Computer Engineering and Computer Science",
-      "year": 2023,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
       "publication_id": "PUB-00272",
       "title": "GSM Based Smart-Home Automation Using Arduino",
       "year": null,
@@ -308,45 +295,6 @@
       "classification": "HISTORICAL_ID_MISMATCH",
       "confidence": "LOW",
       "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Pranjol S. Gupta'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00273",
-      "title": "Multi-core Processor Learning using a Simulator and Pin Tools",
-      "year": null,
-      "position": 1,
-      "author_name_original": "Yul Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00274",
-      "title": "Embedded Systems Learning using current technical platforms",
-      "year": 2019,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00275",
-      "title": "Multi-core Processor Learning using a Simulator and Pin Tools",
-      "year": 2019,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00276",
@@ -362,84 +310,6 @@
       "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Rano Mal'. No matching current faculty name was found elsewhere in this publication."
     },
     {
-      "publication_id": "PUB-00277",
-      "title": "A SIMPLE TOOL TO DESIGN AND EVALUATE MULTI-CORE/GPU CACHE SCHEMES",
-      "year": 2017,
-      "position": 2,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00278",
-      "title": "A FLEXIBLE MULTI-CORE FUNCTIONAL CACHE SIMULATOR (FM-SIM)",
-      "year": 2017,
-      "position": 2,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00279",
-      "title": "Buffer-controlled cache for low-power multicore systems",
-      "year": 2016,
-      "position": 2,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00280",
-      "title": "Accuracy Enhanced Distributed Sparse Matrix Solver with Block-Based Pivoting for Large Linear Systems",
-      "year": 2015,
-      "position": 2,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00281",
-      "title": "Dual-access way-prediction cache for embedded systems",
-      "year": 2014,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00283",
-      "title": "A Study for a Low-Power Way Predictor for Embedded Data Caches",
-      "year": 2013,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
       "publication_id": "PUB-00284",
       "title": "Block-based sparse matrix solver using a partial pivoting",
       "year": 2013,
@@ -451,513 +321,6 @@
       "classification": "HISTORICAL_ID_MISMATCH",
       "confidence": "LOW",
       "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Esteban Torres'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00284",
-      "title": "Block-based sparse matrix solver using a partial pivoting",
-      "year": 2013,
-      "position": 2,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00285",
-      "title": "A Buffered Dual-Access-Mode Scheme Designed for Low-Power Highly-Associative Caches",
-      "year": 2013,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00286",
-      "title": "A parallel simulator for network terminal packet buffer",
-      "year": 2012,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00286",
-      "title": "A parallel simulator for network terminal packet buffer",
-      "year": 2012,
-      "position": 5,
-      "author_name_original": "Kumar Sanjeev",
-      "faculty_id_original": "1451005",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "HISTORICAL_ID_MISMATCH",
-      "confidence": "LOW",
-      "evidence": "Digital Measures ID 1451005 currently belongs to Sanjeev Kumar, but the recorded author name is 'Kumar Sanjeev'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00287",
-      "title": "Hybrid Scheme for low-power set associative caches",
-      "year": 2012,
-      "position": 2,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00288",
-      "title": "Dynamic end-to-end QoS support for video over the Internet",
-      "year": 2011,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00292",
-      "title": "An Efficient Networking Management for a Protocol Processor",
-      "year": 2009,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00293",
-      "title": "A Study on Maintenance Reliability Allocation of Urban Transit Brake System using Hybrid Neuro-Genetic Technique",
-      "year": 2007,
-      "position": 4,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00294",
-      "title": "The Integrated Control Model for the Freeway Corridors based on Multi-Agent Approach I: Simulation System & Modeling for Optimization",
-      "year": 2007,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00295",
-      "title": "Modeling of Trace- and Block-Based Caches",
-      "year": 2007,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00296",
-      "title": "Packet Buffer Management for a High- Speed Network Interface Card",
-      "year": 2007,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00297",
-      "title": "FSM-based DRAM Power Management with Early Resynchronization",
-      "year": 2007,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00298",
-      "title": "Utilizing Block Size Variability to Enhance Instruction Fetch Rate",
-      "year": 2007,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00299",
-      "title": "A Class Project for Low-Power Cache Memory Architecture",
-      "year": 2006,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00300",
-      "title": "A Low-Power Cache Scheme of Embedded Computing",
-      "year": 2006,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00301",
-      "title": "An Overview of Telematics: A System Architecture Approach",
-      "year": 2006,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00302",
-      "title": "The Integrated Control Model for the Freeway Corridors based on Multi-Agent Approach II: Optimization using Neural Network and Simulated Annealing Method",
-      "year": 2006,
-      "position": 4,
-      "author_name_original": "Y. Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "HISTORICAL_ID_MISMATCH",
-      "confidence": "LOW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Y. Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00303",
-      "title": "A Simple Project Paradigm for Teaching Computer Architecture",
-      "year": 2006,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00304",
-      "title": "A Case for Dual-Mapping One-Way Caches",
-      "year": 2006,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00305",
-      "title": "Approaches to Improve Performance for History-Based Branch Predictors",
-      "year": 2005,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00306",
-      "title": "Improved Instruction Fetching with a New Block-Based Cache Scheme",
-      "year": 2005,
-      "position": 2,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00307",
-      "title": "A Simple Project for Instruction Set Architecture",
-      "year": 2005,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00308",
-      "title": "A Study for Packet Buffer Algorithms for the Protocol Processor",
-      "year": 2005,
-      "position": 2,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00309",
-      "title": "A Study for a Dynamic Target-Prefetching Scheme",
-      "year": 2005,
-      "position": 2,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00310",
-      "title": "An Enhanced Dynamic Packet Buffer management",
-      "year": 2005,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00311",
-      "title": "A Replacement Policy to Save Energy for Data Cache",
-      "year": 2005,
-      "position": 3,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00312",
-      "title": "On Achieving Efficiency and Fairness in Video Transportation",
-      "year": 2005,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00313",
-      "title": "A Study for Branch Predictors to Alleviate the Aliasing Problem",
-      "year": 2005,
-      "position": 3,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00314",
-      "title": "An Energy-Efficient Replacement Policy for Data Cache",
-      "year": 2005,
-      "position": 3,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00315",
-      "title": "Energy savings for data caches: ELRU-SEQ replacement policy",
-      "year": 2005,
-      "position": 3,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00317",
-      "title": "Reducing Indirect Mispredictions of Two-Stage Branch Predictors",
-      "year": 2002,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00318",
-      "title": "An Efficient Indirect Branch Predictor",
-      "year": 2001,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00319",
-      "title": "A New Instruction Cache Scheme for Object-Oriented Languages",
-      "year": 2001,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00320",
-      "title": "The 2-way Thrashing-Avoidance Cache (TAC): An Efficient Instruction Cache Scheme for Object-Oriented Languages",
-      "year": 2000,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00321",
-      "title": "The GoStay Predictor: One-Bit Associated Predictor for Reducing Indirect Branch Mispredictions",
-      "year": 2000,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00323",
-      "title": "Parallel Sparse-Matrix Solution for Direct Circuit Simulation on a Transputer Array",
-      "year": 1997,
-      "position": 2,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00324",
-      "title": "Parallelization of Solve in Direct Circuit Simulation on a Transputer Array",
-      "year": 1996,
-      "position": 1,
-      "author_name_original": "Yul Chu",
-      "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00451",
-      "title": "Electrical Properties of Conductive Concrete Containing Graphite",
-      "year": 2021,
-      "position": 2,
-      "author_name_original": "Yoonsu Choi",
-      "faculty_id_original": "1478888",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1478888 currently belongs to Paul Yoonsu Choi, but the recorded author name is 'Yoonsu Choi'. No matching current faculty name was found elsewhere in this publication."
-    },
-    {
-      "publication_id": "PUB-00453",
-      "title": "An Open Source Python App for Sleep Data Analysis",
-      "year": 2020,
-      "position": 2,
-      "author_name_original": "Yoonsu Choi",
-      "faculty_id_original": "1478888",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1478888 currently belongs to Paul Yoonsu Choi, but the recorded author name is 'Yoonsu Choi'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00562",
@@ -10887,11 +10250,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00270",
@@ -10965,11 +10328,11 @@
       "position": 1,
       "author_name_original": "Yul Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Source profile mark.chu (faculty ID 1450774) contains 'Yul Yul Chu' and a second record for the same publication title with 'Yul Chu', both carrying faculty ID 1450774. The repeated first name is treated as a source-name variant. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00274",
@@ -10978,11 +10341,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00274",
@@ -11004,11 +10367,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00276",
@@ -11056,11 +10419,11 @@
       "position": 2,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00278",
@@ -11082,11 +10445,11 @@
       "position": 2,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00279",
@@ -11108,11 +10471,11 @@
       "position": 2,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00280",
@@ -11134,11 +10497,11 @@
       "position": 2,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00280",
@@ -11160,11 +10523,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00281",
@@ -11225,11 +10588,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00284",
@@ -11251,11 +10614,11 @@
       "position": 2,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00285",
@@ -11264,11 +10627,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00285",
@@ -11290,11 +10653,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00286",
@@ -11342,11 +10705,11 @@
       "position": 5,
       "author_name_original": "Kumar Sanjeev",
       "faculty_id_original": "1451005",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "HISTORICAL_ID_MISMATCH",
-      "confidence": "LOW",
-      "evidence": "Digital Measures ID 1451005 currently belongs to Sanjeev Kumar, but the recorded author name is 'Kumar Sanjeev'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1451005",
+      "mapped_faculty_name": "Sanjeev Kumar",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name-order variant. Raw records associate 'Kumar Sanjeev' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00286",
@@ -11381,11 +10744,11 @@
       "position": 2,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00288",
@@ -11394,11 +10757,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00288",
@@ -11602,11 +10965,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00292",
@@ -11667,11 +11030,11 @@
       "position": 4,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00293",
@@ -11693,11 +11056,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00294",
@@ -11758,11 +11121,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00295",
@@ -11784,11 +11147,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00296",
@@ -11823,11 +11186,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00297",
@@ -11849,11 +11212,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00298",
@@ -11875,11 +11238,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00300",
@@ -11888,11 +11251,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00300",
@@ -11927,11 +11290,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00301",
@@ -12018,11 +11381,11 @@
       "position": 4,
       "author_name_original": "Y. Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "HISTORICAL_ID_MISMATCH",
-      "confidence": "LOW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Y. Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures abbreviated name variant. The 2006 source record appears in mark.chu with faculty ID 1450774. The same profile repeatedly associates Yul Chu with ID 1450774, and other records identify the author as Mark Yul Chu. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00302",
@@ -12044,11 +11407,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00304",
@@ -12057,11 +11420,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00304",
@@ -12083,11 +11446,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00305",
@@ -12135,11 +11498,11 @@
       "position": 2,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00307",
@@ -12148,11 +11511,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00308",
@@ -12174,11 +11537,11 @@
       "position": 2,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00309",
@@ -12200,11 +11563,11 @@
       "position": 2,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00310",
@@ -12213,11 +11576,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00310",
@@ -12265,11 +11628,11 @@
       "position": 3,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00312",
@@ -12278,11 +11641,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00312",
@@ -12330,11 +11693,11 @@
       "position": 3,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00314",
@@ -12369,11 +11732,11 @@
       "position": 3,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00315",
@@ -12408,11 +11771,11 @@
       "position": 3,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00316",
@@ -12434,11 +11797,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00317",
@@ -12460,11 +11823,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00318",
@@ -12486,11 +11849,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00319",
@@ -12512,11 +11875,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00320",
@@ -12538,11 +11901,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00321",
@@ -12603,11 +11966,11 @@
       "position": 2,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00323",
@@ -12629,11 +11992,11 @@
       "position": 1,
       "author_name_original": "Yul Chu",
       "faculty_id_original": "1450774",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1450774 currently belongs to Mark Yul Chu, but the recorded author name is 'Yul Chu'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1450774",
+      "mapped_faculty_name": "Mark Yul Chu",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records repeatedly associate 'Yul Chu' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00324",
@@ -16698,11 +16061,11 @@
       "position": 2,
       "author_name_original": "Yoonsu Choi",
       "faculty_id_original": "1478888",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1478888 currently belongs to Paul Yoonsu Choi, but the recorded author name is 'Yoonsu Choi'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1478888",
+      "mapped_faculty_name": "Paul Yoonsu Choi",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records associate 'Yoonsu Choi' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00451",
@@ -16802,11 +16165,11 @@
       "position": 2,
       "author_name_original": "Yoonsu Choi",
       "faculty_id_original": "1478888",
-      "mapped_faculty_id": null,
-      "mapped_faculty_name": null,
-      "classification": "MODERATE_REVIEW",
-      "confidence": "REVIEW",
-      "evidence": "Digital Measures ID 1478888 currently belongs to Paul Yoonsu Choi, but the recorded author name is 'Yoonsu Choi'. No matching current faculty name was found elsewhere in this publication."
+      "mapped_faculty_id": "1478888",
+      "mapped_faculty_name": "Paul Yoonsu Choi",
+      "classification": "NAME_VARIANT",
+      "confidence": "HIGH",
+      "evidence": "Manually reviewed historical Digital Measures name variant. Raw records associate 'Yoonsu Choi' with this faculty ID. Original name and ID are preserved."
     },
     {
       "publication_id": "PUB-00454",
