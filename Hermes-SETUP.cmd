@@ -169,8 +169,7 @@ $DashUser  = '__DASHUSER__'
 $DashPass  = '__DASHPASS__'
 $DockerExe = '__DOCKEREXE__'
 $DockerCli = '__DOCKERCLI__'
-$OllamaUrl = 'http://localhost:11434'
-$DefaultModels = @('gemma4:12b', 'qwen3-embedding:8b')   # used only if docker-compose.yml cannot be read
+$VllmModel = 'gemma4-12b'
 
 $ErrorActionPreference = 'Continue'        # native tools are checked with $LASTEXITCODE
 $ProgressPreference    = 'SilentlyContinue' # hides the web-request progress bar (it slows PowerShell 5.1 a lot)
@@ -207,6 +206,49 @@ function Get-Logs([string]$name, [int]$lines, [string]$Since = '') {
     if ($Since) { $args2 += @('--since', $Since) }
     $txt = (& $DockerCli @args2 $name 2>&1 | ForEach-Object { "$_" }) -join "`n"
     return ($txt -replace '\x1b\[[0-9;?]*[A-Za-z]', '')
+}
+
+function Invoke-VllmApi {
+    param(
+        [string]$Path,
+        [object]$Body = $null,
+        [int]$TimeoutSec = 15
+    )
+
+    $python = @"
+import json, sys, urllib.request
+p = json.load(sys.stdin)
+body = p.get('body')
+data = None if body is None else json.dumps(body).encode('utf-8')
+request = urllib.request.Request(
+    'http://vllm:8000' + p['path'],
+    data=data,
+    headers={
+        'Authorization': 'Bearer local',
+        'Content-Type': 'application/json'
+    }
+)
+opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+with opener.open(request, timeout=p['timeout']) as response:
+    print(response.read().decode('utf-8'))
+"@
+
+    $inputJson = @{
+        path = $Path
+        body = $Body
+        timeout = $TimeoutSec
+    } | ConvertTo-Json -Depth 10 -Compress
+
+    $output = $inputJson |
+        & $DockerCli exec -i hermes python3 -c $python 2>&1
+    $exitCode = $LASTEXITCODE
+    $text = ($output | ForEach-Object { "$_" }) -join "`n"
+
+    if ($exitCode -ne 0) {
+        throw "vLLM API request failed: $text"
+    }
+
+    return ($text | ConvertFrom-Json -ErrorAction Stop)
 }
 
 Write-Host "Starting Local Hermes for $LinuxUser" -ForegroundColor Cyan
@@ -257,12 +299,17 @@ Linux "cd ~/$Repo && docker compose config --format json | jq -r '.volumes // {}
 # A leftover old one would hold port 9119 and stop 'hermes' from starting, so remove it first.
 & $DockerCli rm -f hermes-dashboard *> $null
 Linux "cd ~/$Repo && export BUILDKIT_PROGRESS=plain; docker compose --progress plain up -d --remove-orphans" | Out-Host
-if ($LASTEXITCODE -ne 0) { Fail 'Could not start the Hermes containers (see the messages above).' }
-foreach ($c in 'ollama', 'hermes') {
-    $st = Get-ContainerState $c
-    if ($st -ne 'running') { Show-Containers; Fail "Container '$c' is not running (state: $st). See the list above." }
+if ($LASTEXITCODE -ne 0) {
+    Fail 'Could not start the Hermes containers.'
 }
-Ok 'Containers are running (ollama, hermes with the dashboard inside it)'
+foreach ($c in 'vllm', 'hermes') {
+    $st = Get-ContainerState $c
+    if ($st -ne 'running') {
+        Show-Containers
+        Fail "Container '$c' is not running (state: $st)."
+    }
+}
+Ok 'Containers are running (vllm and hermes)'
 
 # Every other service (LightRAG, MinerU, Firecrawl, browser-gui, ...) only gets a warning, so one
 # broken add-on does not block the dashboard. One-shot jobs that finished cleanly (Exited (0)) are fine.
@@ -271,108 +318,72 @@ if ($project) {
     $rows = & $DockerCli ps -a --filter "label=com.docker.compose.project=$project" --format '{{.Names}}|{{.State}}|{{.Status}}' 2>$null
     foreach ($row in $rows) {
         $name, $state, $status = "$row".Split('|', 3)
-        if ($name -in 'ollama', 'hermes', 'ollama-pull') { continue }   # checked above / handled in step 6
+        if ($name -in 'vllm', 'hermes') { continue }
         if ($state -eq 'running') { continue }
         if ($state -eq 'exited' -and $status -match 'Exited \(0\)') { continue }
         Warn "Container '$name' is not running ($status). Hermes still opens, but features that use it may fail."
     }
 }
 
-# 6. AI models are fully downloaded -------------------------------------------------
-$compose = (Linux "cat ~/$Repo/docker-compose.yml") -join "`n"
-$Models = @([regex]::Matches($compose, 'ollama pull\s+([A-Za-z0-9._:/-]+)') | ForEach-Object { $_.Groups[1].Value } | Select-Object -Unique)
-if ($Models.Count -eq 0) { $Models = $DefaultModels }
+# 6. Wait for vLLM to download/load the model ------------------------
+Info "Waiting for vLLM model $VllmModel"
+$deadline = (Get-Date).AddMinutes($ModelTimeoutMin)
+$ready = $false
 
-$api = $false
-for ($i = 0; $i -lt 36; $i++) { if ((Get-HttpCode "$OllamaUrl/api/version") -eq 200) { $api = $true; break }; Start-Sleep -Seconds 5 }
-if (-not $api) { Show-Containers; Fail "Ollama is not answering at $OllamaUrl." }
-
-function Get-MissingModels {
-    try   { $have = @((Invoke-RestMethod -Uri "$OllamaUrl/api/tags" -TimeoutSec 10).models | ForEach-Object { $_.name }) }
-    catch { $have = @() }
-    return @($Models | Where-Object { ($have -notcontains $_) -and ($have -notcontains "$($_):latest") })
-}
-
-$pausedAutoheal = $false
-$missing = Get-MissingModels
-if ($missing.Count -gt 0) {
-    Info "Downloading AI models: $($missing -join ', ')"
-    Info 'The first time on a profile this can take 10 to 60 minutes. Leave this window open.'
-    Info 'If the network drops, the download restarts by itself and continues where it stopped.'
-    # Pause autoheal while downloading. Ollama's healthcheck only passes once a model exists, so on a
-    # fresh profile autoheal sees Ollama as "unhealthy" and restarts it every few minutes, which kills
-    # the download (shows as "Error: EOF" / "could not connect to ollama server"). Restarted below.
-    if ((Get-ContainerState 'autoheal') -eq 'running') {
-        Info 'Pausing autoheal during the download (it would restart Ollama before any model exists)'
-        & $DockerCli stop autoheal *> $null
-        $pausedAutoheal = $true
+while ((Get-Date) -lt $deadline) {
+    $state = Get-ContainerState 'vllm'
+    if ($state -ne 'running') {
+        Get-Logs 'vllm' 60 | Out-Host
+        Fail "vLLM is not running (state: $state)."
     }
-    $start       = Get-Date
-    $deadline    = $start.AddMinutes($ModelTimeoutMin)
-    $restarts    = 0
-    $maxRestarts = 30
-    while ($missing.Count -gt 0) {
-        if ((Get-Date) -gt $deadline) { Fail "Models still not downloaded after $ModelTimeoutMin minutes: $($missing -join ', '). Check the network, then double-click the Hermes shortcut (the download continues where it stopped)." }
-        $log = Get-Logs 'ollama-pull' 5 -Since '45s'
-        $err = ([regex]::Matches($log, 'Error:[^\r\n]*') | Select-Object -Last 1).Value
-        if ((Get-ContainerState 'ollama-pull') -ne 'running') {
-            # Downloader stopped (usually a network drop, "unexpected EOF") but models are still
-            # missing. Ollama keeps the partial files, so restarting it resumes the download.
-            if ($restarts -ge $maxRestarts) {
-                Fail "The model download keeps stopping ($restarts restarts). Last error: $err. Check the network and free disk space, then double-click the Hermes shortcut (it continues where it stopped)."
-            }
-            $restarts++
-            $why = if ($err) { " ($err)" } else { '' }
-            Warn "Download interrupted$why. Restarting it, attempt $restarts of $maxRestarts."
-            & $DockerCli start ollama-pull *> $null
-            Start-Sleep -Seconds 15
-        }
-        # progress text from ollama, e.g. "1.9 GB/4.7 GB   10 MB/s"
-        $prog = [regex]::Matches($log, '(\d+(?:\.\d+)?\s*[KMG]B/\d+(?:\.\d+)?\s*[KMG]B)(?:\s+(\d+(?:\.\d+)?\s*[KMG]B/s))?')
-        $p = ''
-        if ($prog.Count -gt 0) {
-            $last = $prog[$prog.Count - 1]
-            $p = ", current file $($last.Groups[1].Value)"
-            if ($last.Groups[2].Success) { $p += " at $($last.Groups[2].Value)" }
-        }
-        $mins = [int]((Get-Date) - $start).TotalMinutes
-        Info "Still downloading ($mins min so far$p). Waiting for: $($missing -join ', ')"
-        Start-Sleep -Seconds 30
-        $before = $missing.Count
-        $missing = Get-MissingModels
-        if ($missing.Count -lt $before) { $restarts = 0 }   # a model finished: real progress, reset retries
-    }
-    if ($pausedAutoheal) { & $DockerCli start autoheal *> $null; Info 'autoheal resumed' }
-}
-Ok "Models downloaded: $($Models -join ', ')"
 
-# 7. AI models load and respond -----------------------------------------------------
-# Embedding models first, chat model last, so the chat model is the one left loaded.
-Info 'Loading the models to check they actually answer (can take a few minutes)'
-foreach ($m in @($Models | Where-Object { $_ -match 'embed' })) {
     try {
-        $body = @{ model = $m; input = 'warm up' } | ConvertTo-Json
-        $r = Invoke-RestMethod -Method Post -Uri "$OllamaUrl/api/embed" -ContentType 'application/json' -Body $body -TimeoutSec 600
-        if (-not $r.embeddings) { throw 'empty response' }
-        Ok "$m answers"
-    } catch { Fail "Model $m did not answer: $($_.Exception.Message)" }
+            $catalog = Invoke-VllmApi -Path '/v1/models'
+
+        if (@($catalog.data.id) -contains $VllmModel) {
+            $ready = $true
+            break
+        }
+    } catch {
+        #  Warn "vLLM readiness check failed: $($_.Exception.Message)"
+    }
+
+    Info 'vLLM is initializing; waiting...'
+    Start-Sleep -Seconds 10
 }
-foreach ($m in @($Models | Where-Object { $_ -notmatch 'embed' })) {
-    try {
-        $body = @{ model = $m; prompt = 'Reply with OK.'; stream = $false; options = @{ num_predict = 5 } } | ConvertTo-Json
-        $r = Invoke-RestMethod -Method Post -Uri "$OllamaUrl/api/generate" -ContentType 'application/json' -Body $body -TimeoutSec 900
-        if ($null -eq $r.response) { throw 'empty response' }
-        Ok "$m answers"
-    } catch { Fail "Model $m did not answer: $($_.Exception.Message)" }
+
+if (-not $ready) {
+    Get-Logs 'vllm' 60 | Out-Host
+    Fail "vLLM did not serve $VllmModel within $ModelTimeoutMin minutes."
 }
+Ok "vLLM serves $VllmModel"
+
+# 7. Verify generation ----------------------------------------------
+Info 'Checking vLLM generation'
 try {
-    foreach ($p in (Invoke-RestMethod -Uri "$OllamaUrl/api/ps" -TimeoutSec 10).models) {
-        $size = [double]$p.size; $vram = [double]$p.size_vram
-        if ($vram -le 0)        { Warn "$($p.name) is running on the CPU, not the GPU. It will be very slow. Check the NVIDIA driver." }
-        elseif ($vram -lt $size) { Warn "$($p.name) is $([int](100 * $vram / $size))% on the GPU, the rest on the CPU. Answers will be slower." }
-        else                    { Ok "$($p.name) is loaded on the GPU" }
+    $body = @{
+        model = $VllmModel
+        messages = @(
+            @{ role = 'user'; content = 'Reply with OK.' }
+        )
+        max_tokens = 128
+        stream = $false
+    } 
+
+    $result = Invoke-VllmApi `
+        -Path '/v1/chat/completions' `
+        -Body $body `
+        -TimeoutSec 300
+
+    if (@($result.choices).Count -eq 0) {
+        throw 'No completion choices returned'
     }
-} catch { }   # informational only
+    Ok 'vLLM generation request succeeded'
+} catch {
+    Get-Logs 'vllm' 40 | Out-Host
+    Fail "vLLM generation failed: $($_.Exception.Message)"
+}
+
 
 # 8. Dashboard answers --------------------------------------------------------------
 Info "Waiting for the dashboard at $Url"
@@ -496,8 +507,8 @@ try {
 
     # 7 ---------------------------------------------------------------
     Step 7 "git submodule update --init --recursive --remote"
-    Invoke-Linux "cd ~/$RepoFolder && git submodule update --init --recursive --remote && mkdir -p ollama_storage" | Out-Null
-    Ok "Submodules pulled, ollama_storage folder created"
+    Invoke-Linux "cd ~/$RepoFolder && git submodule update --init --recursive --remote && mkdir -p vllm_storage/huggingface" | Out-Null
+    Ok "Submodules pulled, vLLM cache folder created"
 
     # 8 ---------------------------------------------------------------
     Step 8 "Verifying Docker Desktop"
@@ -515,8 +526,9 @@ try {
         if (-not $inDockerUsers) { throw "Docker did not start. Ask IT to add you to docker-users:  net localgroup docker-users `"$env:USERDOMAIN\$env:USERNAME`" /add   then sign out and back in, and run setup again." }
         throw "Docker did not start within $DockerTimeoutSec s. Open Docker Desktop, accept any prompt or read its error, then run setup again."
     }
+
     if (-not (Get-Command nvidia-smi -ErrorAction SilentlyContinue)) {
-        Warn "nvidia-smi not found. Ollama uses 'gpus: all' and will fail without an NVIDIA GPU and driver."
+    Warn "nvidia-smi not found. This vLLM configuration requires an NVIDIA GPU and a compatible driver."
     }
     Ok "Docker Desktop is installed and running"
 

@@ -1,9 +1,28 @@
+# model:
+#   default: gemma4:12b
+#   provider: custom:gemma4_12b
+#   base_url: http://ollama:11434/v1
+#   api_mode: chat_completions
+#   supports_vision: true
+
 model:
-  default: gemma4:12b
-  provider: custom:gemma4_12b
-  base_url: http://ollama:11434/v1
+  default: gemma4-12b
+  provider: custom:vllm_server
+  base_url: http://vllm:8000/v1
+  api_key: local
   api_mode: chat_completions
+  context_length: 100000
   supports_vision: true
+custom_providers:
+  - name: vllm_server
+    base_url: http://vllm:8000/v1
+    api_key: local
+    api_mode: chat_completions
+    model: gemma4-12b
+
+    models:
+      gemma4-12b: {}
+    models_discovered: true
 toolsets:
   - hermes-cli
   - computer-use
@@ -188,13 +207,13 @@ platform_toolsets:
   google_chat:
     - hermes-google_chat
 
-custom_providers:
-  - name: Gemma4_12b
-    base_url: http://ollama:11434/v1
-    model: gemma4:12b
-    models:
-      gemma4:12b:
-        context_length: 100000
+# custom_providers:
+#   - name: Gemma4_12b
+#     base_url: http://ollama:11434/v1
+#     model: gemma4:12b
+#     models:
+#       gemma4:12b:
+#         context_length: 100000
 known_plugin_toolsets:
   cli:
     - a2a

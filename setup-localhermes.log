@@ -1,0 +1,96 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261110192013
+Username: utrgv\mhc794
+RunAs User: utrgv\mhc794
+Configuration Name: 
+Machine: DW78896 (Microsoft Windows NT 10.0.26200.0)
+Host Application: powershell.exe -NoProfile -ExecutionPolicy Bypass -Command & ([scriptblock]::Create([IO.File]::ReadAllText($env:HERMES_SETUP_FILE))) 
+Process ID: 25292
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Local Hermes setup  |  distro: Ubuntu  |  user: mhc794
+
+[1/14] Verifying WSL2
+  OK   WSL2 is installed
+
+[2/14] Setting WSL2 memory (55 GB) and swap (8 GB)
+**********************
+Windows PowerShell transcript start
+Start time: 20261110194907
+Username: utrgv\mhc794
+RunAs User: utrgv\mhc794
+Configuration Name: 
+Machine: DW78896 (Microsoft Windows NT 10.0.26200.0)
+Host Application: powershell.exe -NoProfile -ExecutionPolicy Bypass -Command & ([scriptblock]::Create([IO.File]::ReadAllText($env:HERMES_SETUP_FILE))) 
+Process ID: 3300
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Local Hermes setup  |  distro: Ubuntu  |  user: mhc794
+
+[1/14] Verifying WSL2
+  OK   WSL2 is installed
+
+[2/14] Setting WSL2 memory (55 GB) and swap (8 GB)
+**********************
+Windows PowerShell transcript start
+Start time: 20261110200731
+Username: utrgv\mhc794
+RunAs User: utrgv\mhc794
+Configuration Name: 
+Machine: DW78896 (Microsoft Windows NT 10.0.26200.0)
+Host Application: powershell.exe -NoProfile -ExecutionPolicy Bypass -Command & ([scriptblock]::Create([IO.File]::ReadAllText($env:HERMES_SETUP_FILE))) 
+Process ID: 19836
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Local Hermes setup  |  distro: Ubuntu  |  user: mhc794
+
+[1/14] Verifying WSL2
+  OK   WSL2 is installed
+
+[2/14] Setting WSL2 memory (55 GB) and swap (8 GB)
+**********************
+Windows PowerShell transcript start
+Start time: 20261110205716
+Username: utrgv\mhc794
+RunAs User: utrgv\mhc794
+Configuration Name: 
+Machine: DW78896 (Microsoft Windows NT 10.0.26200.0)
+Host Application: powershell.exe -NoProfile -ExecutionPolicy Bypass -Command & ([scriptblock]::Create([IO.File]::ReadAllText($env:HERMES_SETUP_FILE))) 
+Process ID: 31936
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Local Hermes setup  |  distro: Ubuntu  |  user: mhc794
+
+[1/14] Verifying WSL2
+  OK   WSL2 is installed
+
+[2/14] Setting WSL2 memory (55 GB) and swap (8 GB)
