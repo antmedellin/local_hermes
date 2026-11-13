@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source_file": "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/cive/faculty_normalized.json",
+    "source_file": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/faculty_normalized.json",
     "purpose": "Authorship reconciliation before PostgreSQL ledger import",
     "read_only": true
   },
@@ -9,10 +9,10 @@
     "author_entries": 1508,
     "faculty_id_entries": 382,
     "EXACT": 331,
-    "NAME_VARIANT": 36,
+    "NAME_VARIANT": 0,
     "NAME_VARIANT_WITHOUT_DM_ID": 0,
     "INITIAL_VARIANT": 11,
-    "MODERATE_REVIEW": 0,
+    "MODERATE_REVIEW": 36,
     "HIGH_SIMILARITY": 3,
     "HISTORICAL_ID_MISMATCH": 0,
     "HISTORICAL_ID_SWAP_RECOVERED": 1,
@@ -35,7 +35,476 @@
       "evidence": "Digital Measures ID 2201383 currently belongs to Fatemeh Nazari, but the ID is attached to 'AmirReza Mamdoohi'. The current faculty name 'Fatemeh Nazari' also appears separately in this publication's author list. Preserve the original pairing and map the separate name-matching author instead."
     }
   ],
-  "unresolved_reviews": [],
+  "unresolved_reviews": [
+    {
+      "publication_id": "PUB-00288",
+      "title": "Analytical Method for Predicting Lateral Facing Deflections of Geosynthetic-Reinforced Soil Abutment Walls",
+      "year": null,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00289",
+      "title": "Combined Effects of Corrosion and Migration of Fines on Stability of Mechanically Stabilized Earth Walls",
+      "year": null,
+      "position": 2,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00290",
+      "title": "Effect of Spread Footing Loads on Stability of Geosynthetic-Reinforced Retaining Walls",
+      "year": null,
+      "position": 2,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00291",
+      "title": "Evaluation of Compaction-induced Stress in Geosynthetic Reinforced soil Walls using Numerical and Analytical Methods",
+      "year": null,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00292",
+      "title": "Mechanical Responses of Soil Geosynthetic Composite (SGC) Mass under Failure loads",
+      "year": 2022,
+      "position": 3,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00293",
+      "title": "Predicting Tensile Strength for Pre-Stressed Driven Piles",
+      "year": 2022,
+      "position": 2,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00302",
+      "title": "Experimental and theoretical studies on the ultimate bearing capacity of geogrid-reinforced sand",
+      "year": 2019,
+      "position": 3,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00303",
+      "title": "Investigating shear behavior of cohesionless soils with the variation of particle sizes using Discrete Element Method",
+      "year": null,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00304",
+      "title": "Numerical Simulation Analysis of Stress-Deformation Behavior of Soil and Geosynthetic Composite Mass: A Case Study",
+      "year": 2019,
+      "position": 3,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00305",
+      "title": "Using ash and disposal from thermal power plants to build geosynthetic-reinforced ash and disposal ponds",
+      "year": 2019,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00306",
+      "title": "\"Numerical simulation of compaction-induced stress for the analysis of GRS walls under working conditions\"",
+      "year": 2018,
+      "position": 3,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00307",
+      "title": "Behavior of Geosynthetic-Reinforced Soil (GRS) Mass under Working Conditions Considering Compaction-Induced Stresses",
+      "year": 2018,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00308",
+      "title": "Lateral Earth Pressure and Movement of Geosynthetic Reinforced Soil Walls",
+      "year": 2017,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00309",
+      "title": "Behavior of reinforced soil walls",
+      "year": 2016,
+      "position": 2,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00310",
+      "title": "Axial capacity of non-welded steel-PHC composite pile based on pile load tests",
+      "year": 2015,
+      "position": 3,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00311",
+      "title": "Codes and standards for geotechnical engineering in Vietnam",
+      "year": 2015,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00312",
+      "title": "Damaged buildings caused by large settlement and differential settlement in Vietnam",
+      "year": 2015,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00313",
+      "title": "Investigation and assessment of using glass-fiber-reinforced pipes for water supply and drainage in Vietnam and recommendations for controlling GFR pipe quality",
+      "year": 2015,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00314",
+      "title": "Load-Carrying Capacity and Required Reinforcement Strength of Closely Spaced Soil-Geosynthetic Composites",
+      "year": 2015,
+      "position": 2,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00315",
+      "title": "Investigation and assessment of Song-Da water supply pipelines",
+      "year": 2014,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00316",
+      "title": "Suppression of soil dilation–a reinforcing mechanism of soil-heosynthetic composites",
+      "year": 2014,
+      "position": 4,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00317",
+      "title": "A reinforcing mechanism of soil-geosynthetic composites for retaining walls and bridge abutments",
+      "year": 2013,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00318",
+      "title": "Composite behavior of geosynthetic-reinforced soil mass",
+      "year": 2013,
+      "position": 2,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00319",
+      "title": "Load-carrying capacity and required reinforcement strength of closely-spaced soil-geosynthetic composites",
+      "year": 2013,
+      "position": 2,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00320",
+      "title": "Measures for Soil Improvement in Vietnam Petro-Gas Projects",
+      "year": 2013,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00321",
+      "title": "Planning Vietnam regulations and standards for soil investigations and survey up to the Year of 2030",
+      "year": 2013,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00322",
+      "title": "Study on the in-situ pile load test and bearing capacity characteristics of steel piles with wings installed in soil cement column",
+      "year": 2013,
+      "position": 3,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00323",
+      "title": "A generic Soil-geosynthetic composite test",
+      "year": 2012,
+      "position": 3,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00324",
+      "title": "Behavior of geosynthetic-reinforced soil mass for walls and bridge abutments",
+      "year": 2012,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00325",
+      "title": "Large settlement and differential settlement of apartments in Hanoi and recommendations for preventive measures",
+      "year": 2011,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00326",
+      "title": "Required minimum reinforcement stiffness and strength in a geosynthetic-reinforced soil (GRS) wall",
+      "year": 2011,
+      "position": 2,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00327",
+      "title": "An analytical model for calculating lateral movement of a geosynthetic-reinforced soil (GRS) wall with modular block facing",
+      "year": 2010,
+      "position": 2,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00328",
+      "title": "An analytical model for evaluation of compaction-induced stresses in geosynthetic-reinforced soil (GRS) mass",
+      "year": 2010,
+      "position": 2,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00329",
+      "title": "Geosynthetic reinforced soil composite",
+      "year": 2009,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00330",
+      "title": "Investigating composite behavior of geosynthetic-reinforced soil (GRS) mass",
+      "year": 2009,
+      "position": 1,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    },
+    {
+      "publication_id": "PUB-00331",
+      "title": "Allowable bearing pressure of bridge sills on GRS abutments with flexible facing.\" Journal of Geotechnical and Geoenvironmental Engineering",
+      "year": 2006,
+      "position": 3,
+      "author_name_original": "Quyet Thang Pham",
+      "faculty_id_original": "1962367",
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
+    }
+  ],
   "decisions": [
     {
       "publication_id": "PUB-00001",
@@ -16736,11 +17205,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00288",
@@ -16788,11 +17257,11 @@
       "position": 2,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00289",
@@ -16853,11 +17322,11 @@
       "position": 2,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00290",
@@ -16905,11 +17374,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00292",
@@ -16944,11 +17413,11 @@
       "position": 3,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00293",
@@ -16970,11 +17439,11 @@
       "position": 2,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00293",
@@ -17334,11 +17803,11 @@
       "position": 3,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00303",
@@ -17347,11 +17816,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00303",
@@ -17412,11 +17881,11 @@
       "position": 3,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00305",
@@ -17425,11 +17894,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00305",
@@ -17477,11 +17946,11 @@
       "position": 3,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00307",
@@ -17490,11 +17959,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00307",
@@ -17542,11 +18011,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00309",
@@ -17568,11 +18037,11 @@
       "position": 2,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00310",
@@ -17607,11 +18076,11 @@
       "position": 3,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00310",
@@ -17633,11 +18102,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00311",
@@ -17672,11 +18141,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00312",
@@ -17711,11 +18180,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00313",
@@ -17750,11 +18219,11 @@
       "position": 2,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00315",
@@ -17763,11 +18232,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00315",
@@ -17828,11 +18297,11 @@
       "position": 4,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00316",
@@ -17854,11 +18323,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00318",
@@ -17880,11 +18349,11 @@
       "position": 2,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00318",
@@ -17919,11 +18388,11 @@
       "position": 2,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00320",
@@ -17932,11 +18401,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00320",
@@ -17971,11 +18440,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00321",
@@ -18049,11 +18518,11 @@
       "position": 3,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00322",
@@ -18101,11 +18570,11 @@
       "position": 3,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00323",
@@ -18140,11 +18609,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00325",
@@ -18153,11 +18622,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00325",
@@ -18218,11 +18687,11 @@
       "position": 2,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00326",
@@ -18257,11 +18726,11 @@
       "position": 2,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00328",
@@ -18283,11 +18752,11 @@
       "position": 2,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00329",
@@ -18296,11 +18765,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00330",
@@ -18309,11 +18778,11 @@
       "position": 1,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00331",
@@ -18348,11 +18817,11 @@
       "position": 3,
       "author_name_original": "Quyet Thang Pham",
       "faculty_id_original": "1962367",
-      "mapped_faculty_id": "1962367",
-      "mapped_faculty_name": "Thang Pham",
-      "classification": "NAME_VARIANT",
-      "confidence": "HIGH",
-      "evidence": "Approved manual reconciliation. The original author name 'Quyet Thang Pham' is associated with Digital Measures ID 1962367, which identifies the current CIVE faculty member Thang Pham. The enriched Digital Measures publication records repeatedly associate both name forms with this same ID. Original author name and faculty ID are preserved."
+      "mapped_faculty_id": null,
+      "mapped_faculty_name": null,
+      "classification": "MODERATE_REVIEW",
+      "confidence": "REVIEW",
+      "evidence": "Digital Measures ID 1962367 currently belongs to Thang Pham, but the recorded author name is 'Quyet Thang Pham'. No matching current faculty name was found elsewhere in this publication."
     },
     {
       "publication_id": "PUB-00332",

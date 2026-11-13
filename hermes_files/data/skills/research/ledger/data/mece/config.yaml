@@ -1,0 +1,15 @@
+institution: University of Texas Rio Grande Valley
+department_name: Department of Mechanical Engineering
+department_slug: mece
+department_url: https://www.utrgv.edu/cecs/departments/mece/
+faculty_url: https://www.utrgv.edu/cecs/departments/mece/faculty/index.htm
+output_directory: hermes_files/data/skills/research/ledger/data/mece
+sources:
+  faculty:
+    type: digital_measures
+    source_name: UTRGV Digital Measures
+    api_url: https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMList
+    profile_api_url: https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMuser?username=
+    department_name: Department of Mechanical Engineering
+validation: {}
+validation_manifest: validation_manifest.json

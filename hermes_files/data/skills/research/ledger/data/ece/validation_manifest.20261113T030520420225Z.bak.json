@@ -1,0 +1,65 @@
+{
+  "manifest_version": 1,
+  "status": "approved",
+  "department_name": "Department of Electrical and Computer Engineering",
+  "generated_at_utc": "2026-11-13T03:01:58.441761+00:00",
+  "artifacts": {
+    "faculty_reconciled.json": "434e151bbdbb8b927197d2b9cf6055cb0c3c4c509a805043dfcc64fcd216e684",
+    "authorship_reconciliation.json": "7ff595effa7aef69f279e1239f221b28f74c81dba023d33cbc3f8125bcd29ee2"
+  },
+  "counts": {
+    "expected_faculty_count": 24,
+    "expected_publication_count": 713,
+    "expected_unique_dm_record_count": 717,
+    "expected_reconciliation_decision_count": 2099,
+    "expected_canonical_publication_count": 711,
+    "expected_publication_merge_group_count": 2,
+    "expected_department_author_occurrence_count": 729,
+    "expected_canonical_authorship_count": 725,
+    "dry_run_decision_occurrence_count": 729,
+    "dry_run_canonical_authorship_count": 725,
+    "classification_counts": {
+      "EXACT": 659,
+      "EXTERNAL": 1345,
+      "HIGH_SIMILARITY": 1,
+      "HISTORICAL_ID_MISMATCH": 8,
+      "HISTORICAL_ID_SWAP_RECOVERED": 16,
+      "NAME_VARIANT": 59,
+      "NAME_WITHOUT_DM_ID": 11
+    },
+    "source_author_occurrence_count": 2099,
+    "source_publication_duplicate_groups": [
+      {
+        "key": [
+          "analyzing computational components of standard block encryption schemes",
+          2022
+        ],
+        "publication_ids": [
+          "PUB-00112",
+          "PUB-00535"
+        ]
+      },
+      {
+        "key": [
+          "evaluation of centos performance under iot based ddos security attacks",
+          2021
+        ],
+        "publication_ids": [
+          "PUB-00536",
+          "PUB-00539"
+        ]
+      }
+    ]
+  },
+  "approval": {
+    "reviewer": "mhc794",
+    "approved_at_utc": "2026-11-13T03:01:58.443492+00:00",
+    "method": "auto_approve_cli",
+    "auto_approved": true,
+    "requested_by_user": true
+  },
+  "notes": [
+    "Approved automatically by explicit --auto-approve request.",
+    "Publication identity remains normalized title plus parsed year."
+  ]
+}

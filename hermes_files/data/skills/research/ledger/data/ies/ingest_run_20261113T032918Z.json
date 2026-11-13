@@ -1,0 +1,189 @@
+{
+  "run_id": "20261113T032918Z",
+  "started_at": "2026-11-13T03:29:18.149614+00:00",
+  "department": "Department of Informatics and Engineering Systems",
+  "department_slug": "ies",
+  "config": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml",
+  "output_directory": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies",
+  "allow_count_mismatch": true,
+  "auto_approve_requested_by_user": true,
+  "stages": [
+    {
+      "name": "Discover faculty",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/discover_faculty.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml"
+      ],
+      "started_at": "2026-11-13T03:29:18.149635+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.33,
+      "finished_at": "2026-11-13T03:29:18.476177+00:00"
+    },
+    {
+      "name": "Enrich faculty",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/enrich_faculty.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml"
+      ],
+      "started_at": "2026-11-13T03:29:18.476478+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.16,
+      "finished_at": "2026-11-13T03:29:18.641171+00:00"
+    },
+    {
+      "name": "Normalize faculty and publications",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/normalize.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml"
+      ],
+      "started_at": "2026-11-13T03:29:18.649778+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.07,
+      "finished_at": "2026-11-13T03:29:18.723204+00:00"
+    },
+    {
+      "name": "Reconcile record keys",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/key_reconcile.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml"
+      ],
+      "started_at": "2026-11-13T03:29:18.727349+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.05,
+      "finished_at": "2026-11-13T03:29:18.776972+00:00"
+    },
+    {
+      "name": "Reconcile faculty records",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/reconcile.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml"
+      ],
+      "started_at": "2026-11-13T03:29:18.777185+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.05,
+      "finished_at": "2026-11-13T03:29:18.826393+00:00"
+    },
+    {
+      "name": "Reconcile authorship",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/reconcile_authorship.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml"
+      ],
+      "started_at": "2026-11-13T03:29:18.826618+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.05,
+      "finished_at": "2026-11-13T03:29:18.878803+00:00"
+    },
+    {
+      "name": "Build reconciled ledger",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/build_reconciled.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml"
+      ],
+      "started_at": "2026-11-13T03:29:18.880796+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.06,
+      "finished_at": "2026-11-13T03:29:18.939144+00:00"
+    },
+    {
+      "name": "Validate artifacts",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/validate.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml"
+      ],
+      "started_at": "2026-11-13T03:29:18.943084+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.05,
+      "finished_at": "2026-11-13T03:29:18.994369+00:00"
+    },
+    {
+      "name": "Validate database import (read-only)",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/db_dry_run.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml",
+        "--allow-count-mismatch"
+      ],
+      "started_at": "2026-11-13T03:29:18.994945+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.11,
+      "finished_at": "2026-11-13T03:29:19.108347+00:00"
+    },
+    {
+      "name": "Generate and auto-approve validation manifest",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/validation_manifest.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml",
+        "--write",
+        "--auto-approve"
+      ],
+      "started_at": "2026-11-13T03:29:19.108633+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.05,
+      "finished_at": "2026-11-13T03:29:19.153710+00:00"
+    },
+    {
+      "name": "Import reconciled ledger into PostgreSQL",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/import.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml",
+        "--allow-count-mismatch"
+      ],
+      "started_at": "2026-11-13T03:29:19.153992+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.19,
+      "finished_at": "2026-11-13T03:29:19.348651+00:00"
+    },
+    {
+      "name": "Ingest abstracts into LightRAG",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/lightrag/scripts/maie_abstract_ingest.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml",
+        "--department-id",
+        "17"
+      ],
+      "started_at": "2026-11-13T03:29:19.362900+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 4167.95,
+      "finished_at": "2026-11-13T04:38:47.315247+00:00"
+    }
+  ],
+  "status": "succeeded",
+  "finished_at": "2026-11-13T04:38:47.316104+00:00",
+  "duration_seconds": 4169.17
+}

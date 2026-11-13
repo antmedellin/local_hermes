@@ -1,5 +1,5 @@
 {
-  "input_file": "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/ece/faculty_enriched.json",
+  "input_file": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ece/faculty_enriched.json",
   "metadata": {
     "institution": "University of Texas Rio Grande Valley",
     "college": "College of Engineering and Computer Science",
@@ -10,7 +10,7 @@
     "publication_count": 714,
     "source": "digital_measures",
     "api_endpoint": "https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMuser?username=",
-    "generated_at": "2026-11-05T16:07:03Z"
+    "generated_at": "2026-11-13T05:04:02Z"
   },
   "summary": {
     "faculty_count": 24,
@@ -25,23 +25,39 @@
     "missing_abstracts": 663,
     "missing_full_text": 707,
     "faculty_with_no_publications": 5,
-    "faculty_missing_research": 4,
+    "faculty_missing_research": 20,
     "total_authors": 2170,
     "faculty_author_entries": 777,
-    "suspicious_faculty_author_entries": 43
+    "suspicious_faculty_author_entries": 0
   },
   "faculty_with_no_publications": [
-    "Andres Medina",
-    "Anna Gegenava",
-    "Lei Cheng",
-    "Luis Castanuela",
-    "Orune Aminul"
+    "",
+    "",
+    "",
+    "",
+    ""
   ],
   "faculty_missing_research": [
-    "Anna Gegenava",
-    "Luis Castanuela",
-    "Orune Aminul",
-    "Yunsoo Park"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
   ],
   "faculty_publication_counts": [
     {
@@ -8199,309 +8215,7 @@
     "2027934": 1,
     "2625251": 1
   },
-  "suspicious_faculty_author_entries": [
-    {
-      "publication_index": 2,
-      "publication_title": "Sonochemically synthesized ZnO nanowires (NWs)-based sensor for non-invasive glucose detection in sweat",
-      "author_name": "G.M.M Hossain",
-      "faculty_id": "2449252",
-      "current_faculty_name": "Fahmida Alam"
-    },
-    {
-      "publication_index": 4,
-      "publication_title": "Laser engraved graphene-based ink-modified flexible electrochemical L-lactate sensor",
-      "author_name": "GM Mehedi Hossain",
-      "faculty_id": "2449252",
-      "current_faculty_name": "Fahmida Alam"
-    },
-    {
-      "publication_index": 114,
-      "publication_title": "Sonochemically synthesized ZnO nanowires (NWs)-based sensor for non-invasive glucose detection in sweat",
-      "author_name": "G.M.M Hossain",
-      "faculty_id": "2449252",
-      "current_faculty_name": "Fahmida Alam"
-    },
-    {
-      "publication_index": 115,
-      "publication_title": "ZnO Nanowires for Biosensing Applications,\" in Carbon Nanotubes - Recent Advances, Perspectives and Applications",
-      "author_name": "G.M.M Hossain",
-      "faculty_id": "2449252",
-      "current_faculty_name": "Fahmida Alam"
-    },
-    {
-      "publication_index": 116,
-      "publication_title": "Laser engraved graphene-based ink-modified flexible electrochemical L-lactate sensor",
-      "author_name": "GM Mehedi Hossain",
-      "faculty_id": "2449252",
-      "current_faculty_name": "Fahmida Alam"
-    },
-    {
-      "publication_index": 117,
-      "publication_title": "Co-Author",
-      "author_name": "3.\tAhmed Hasnain Jalal",
-      "faculty_id": "2449252",
-      "current_faculty_name": "Fahmida Alam"
-    },
-    {
-      "publication_index": 119,
-      "publication_title": "Corresponding Author",
-      "author_name": "GM Mehedi Hossain",
-      "faculty_id": "2449252",
-      "current_faculty_name": "Fahmida Alam"
-    },
-    {
-      "publication_index": 124,
-      "publication_title": "Investigation of the Effect and Contribution of Process Parameters by Taguchi and Anova Analysis on the Surface and Morphological Properties of Rf Magnetron Sputtered Sio2 Over Si Substrate",
-      "author_name": "Hasina F Huq",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 125,
-      "publication_title": "Simple, Cost-Effective Fabrication and Flow Dynamics Analysis of a Passive Microfluidic Mixer Using 3d Printing and Soft Lithography Methods",
-      "author_name": "Nazmul Islam",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 126,
-      "publication_title": "Preparation and Characterization of DC Magnetron Sputtered Thin Films of Titanium, Silver, Gold and Their Compound",
-      "author_name": "Hasina Huq",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 127,
-      "publication_title": "Micro flow direction analysis using gold sputtered planar V-shaped electrode pattern",
-      "author_name": "Nazmul Islam",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 128,
-      "publication_title": "Experimental and Numerical analysis of fluid flow through a micromixer with the presence of electric field",
-      "author_name": "Nazmul Islam",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 131,
-      "publication_title": "Sk Ali Hossain peyal, Jesus Valladares, Ahmed Touhami, Hasina F. Huq, ‘Comparison of Two Synthesis Methods to Deposit Silicon Nitride (Si3N4) thin films. 62nd SVC Annual Technical Conference, California, April 27 - May 2, 2019",
-      "author_name": "Hasina Huq",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 132,
-      "publication_title": "Sk Ali Hossain peyal, Jesus Valladares, Javier Ortega, Hasina F. Huq’Silicon Nitride (Si3N4) Thin films for Hip-Joint Replacement’62nd SVC Annual Technical Conference, California, April 27 - May 2, 2019",
-      "author_name": "Hasina Huq",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 142,
-      "publication_title": "Characteristics of AlGaN/GaN HEMTs for Detection of MIG",
-      "author_name": "Hasina F. Huq",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 148,
-      "publication_title": "Engaging K-12 Teachers in Engineering Through a Professional Development Program: Implementation Strategies, Results and Lessons Learned",
-      "author_name": "Hasina Huq",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 152,
-      "publication_title": "Electrical Properties of PVDF Based Nanocomposites",
-      "author_name": "Hasina F Huq",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 158,
-      "publication_title": "Developing engineering content for K-12 STEM classrooms by providing a hands-on engineering design experience for teachers: a case study",
-      "author_name": "Hasina Huq",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 167,
-      "publication_title": "Research experience for K-12 STEM teachers: characterization of electrospun carbon nanofibers (ECNF)",
-      "author_name": "Hasina Huq",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 271,
-      "publication_title": "Simple device for electromagnetic interference shielding effectiveness measurement",
-      "author_name": "Laura Espinoza",
-      "faculty_id": "2109038",
-      "current_faculty_name": "Laura Elena Benitez"
-    },
-    {
-      "publication_index": 277,
-      "publication_title": "A Node-RED-based MIPS-32 Processor Simulator",
-      "author_name": "Mark Chu",
-      "faculty_id": "1450774",
-      "current_faculty_name": "Mark Yul Chu"
-    },
-    {
-      "publication_index": 278,
-      "publication_title": "GSM Based Smart-Home Automation Using Arduino",
-      "author_name": "Pranjol S. Gupta",
-      "faculty_id": "1450774",
-      "current_faculty_name": "Mark Yul Chu"
-    },
-    {
-      "publication_index": 279,
-      "publication_title": "Multi-core Processor Learning using a Simulator and Pin Tools",
-      "author_name": "Yul Yul Chu",
-      "faculty_id": "1450774",
-      "current_faculty_name": "Mark Yul Chu"
-    },
-    {
-      "publication_index": 282,
-      "publication_title": "A direct implementation for a multi-core cache architecture",
-      "author_name": "Rano Mal",
-      "faculty_id": "1450774",
-      "current_faculty_name": "Mark Yul Chu"
-    },
-    {
-      "publication_index": 290,
-      "publication_title": "Block-based sparse matrix solver using a partial pivoting",
-      "author_name": "Esteban Torres",
-      "faculty_id": "1450774",
-      "current_faculty_name": "Mark Yul Chu"
-    },
-    {
-      "publication_index": 292,
-      "publication_title": "A parallel simulator for network terminal packet buffer",
-      "author_name": "Kumar Sanjeev",
-      "faculty_id": "1451005",
-      "current_faculty_name": "Sanjeev Kumar"
-    },
-    {
-      "publication_index": 308,
-      "publication_title": "The Integrated Control Model for the Freeway Corridors based on Multi-Agent Approach II: Optimization using Neural Network and Simulated Annealing Method",
-      "author_name": "Y. Chu",
-      "faculty_id": "1450774",
-      "current_faculty_name": "Mark Yul Chu"
-    },
-    {
-      "publication_index": 341,
-      "publication_title": "Engaging K-12 Teachers in Engineering Through a Professional Development Program: Implementation Strategies, Results and Lessons Learned",
-      "author_name": "Hasina Huq",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 342,
-      "publication_title": "Developing engineering content for K-12 STEM classrooms by providing a hands-on engineering design experience for teachers: a case study",
-      "author_name": "Hasina Huq",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 347,
-      "publication_title": "Research experience for K-12 STEM teachers: characterization of electrospun carbon nanofibers (ECNF)",
-      "author_name": "Hasina Huq",
-      "faculty_id": "1450970",
-      "current_faculty_name": "Hasina Fahmida Huq"
-    },
-    {
-      "publication_index": 553,
-      "publication_title": "Can routers provide sufficient protection against Cyber Security attacks? (Published in Journal of Information Security)",
-      "author_name": "David Leal",
-      "faculty_id": "1451005",
-      "current_faculty_name": "Sanjeev Kumar"
-    },
-    {
-      "publication_index": 554,
-      "publication_title": "Improved Mix Column Computation of Cryptographic AES (Published July 2019 ICDIS Conf. Proceedings)",
-      "author_name": "Aaron Barrera",
-      "faculty_id": "1451005",
-      "current_faculty_name": "Sanjeev Kumar"
-    },
-    {
-      "publication_index": 557,
-      "publication_title": "A Quick Survey on Cloud Computing and associated Security, Mobility and IoT issues",
-      "author_name": "Michael Perez",
-      "faculty_id": "1451005",
-      "current_faculty_name": "Sanjeev Kumar"
-    },
-    {
-      "publication_index": 559,
-      "publication_title": "Do ICMP Security Attacks Have Same Impact on Servers?",
-      "author_name": "Ganesh Gunnam",
-      "faculty_id": "1451005",
-      "current_faculty_name": "Sanjeev Kumar"
-    },
-    {
-      "publication_index": 563,
-      "publication_title": "A parallel simulator for network terminal packet buffer",
-      "author_name": "Kumar Sanjeev",
-      "faculty_id": "1451005",
-      "current_faculty_name": "Sanjeev Kumar"
-    },
-    {
-      "publication_index": 564,
-      "publication_title": "UTPA Solar System Efficiency",
-      "author_name": "Leonel Aguilera",
-      "faculty_id": "1451005",
-      "current_faculty_name": "Sanjeev Kumar"
-    },
-    {
-      "publication_index": 571,
-      "publication_title": "Commissioning a 5 KW PV Array for Electrical Engineeing University Curriculum, ASEE Conference, June 2011",
-      "author_name": "Jaime Ramos",
-      "faculty_id": "1451005",
-      "current_faculty_name": "Sanjeev Kumar"
-    },
-    {
-      "publication_index": 576,
-      "publication_title": "Evaluation of a Security Vulnerability in Apple’s Leopard Operating System",
-      "author_name": "Sirisha Surisetty",
-      "faculty_id": "1451005",
-      "current_faculty_name": "Sanjeev Kumar"
-    },
-    {
-      "publication_index": 577,
-      "publication_title": "Is McAfee SecurityCenter/Firewall Software Providing Complete Security for your Computer?",
-      "author_name": "Sirisha Surisetty",
-      "faculty_id": "1451005",
-      "current_faculty_name": "Sanjeev Kumar"
-    },
-    {
-      "publication_index": 578,
-      "publication_title": "Performance of Windows XP, Windows Vista and Apple’s Leopard Systems Under a DDoS Attack",
-      "author_name": "Raj Gade",
-      "faculty_id": "1451005",
-      "current_faculty_name": "Sanjeev Kumar"
-    },
-    {
-      "publication_index": 590,
-      "publication_title": "On Design of Internet Routers/Switches Deploying Parallel Memory Modules",
-      "author_name": "Alvaro Munoz",
-      "faculty_id": "1451005",
-      "current_faculty_name": "Sanjeev Kumar"
-    },
-    {
-      "publication_index": 591,
-      "publication_title": "Throughput Measurements of a Cisco-2600 Router",
-      "author_name": "Hugo Robles",
-      "faculty_id": "1451005",
-      "current_faculty_name": "Sanjeev Kumar"
-    },
-    {
-      "publication_index": 617,
-      "publication_title": "Learning to Detect Pedestrian Flow in Traffic Intersections from Synthetic Data",
-      "author_name": "Jingru Zhang",
-      "faculty_id": "1451003",
-      "current_faculty_name": "Weidong Kuang"
-    }
-  ],
+  "suspicious_faculty_author_entries": [],
   "placeholder_records": {
     "education": 57,
     "previous_positions": 0,

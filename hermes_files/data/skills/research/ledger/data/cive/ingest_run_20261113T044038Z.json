@@ -1,0 +1,173 @@
+{
+  "run_id": "20261113T044038Z",
+  "started_at": "2026-11-13T04:40:38.447780+00:00",
+  "department": "Department of Civil Engineering",
+  "department_slug": "cive",
+  "config": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml",
+  "output_directory": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive",
+  "allow_count_mismatch": true,
+  "auto_approve_requested_by_user": true,
+  "stages": [
+    {
+      "name": "Discover faculty",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/discover_faculty.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml"
+      ],
+      "started_at": "2026-11-13T04:40:38.447802+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.42,
+      "finished_at": "2026-11-13T04:40:38.867980+00:00"
+    },
+    {
+      "name": "Enrich faculty",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/enrich_faculty.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml"
+      ],
+      "started_at": "2026-11-13T04:40:38.868320+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.1,
+      "finished_at": "2026-11-13T04:40:38.969928+00:00"
+    },
+    {
+      "name": "Normalize faculty and publications",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/normalize.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml"
+      ],
+      "started_at": "2026-11-13T04:40:38.980636+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.08,
+      "finished_at": "2026-11-13T04:40:39.058245+00:00"
+    },
+    {
+      "name": "Reconcile record keys",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/key_reconcile.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml"
+      ],
+      "started_at": "2026-11-13T04:40:39.064054+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.05,
+      "finished_at": "2026-11-13T04:40:39.118591+00:00"
+    },
+    {
+      "name": "Reconcile faculty records",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/reconcile.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml"
+      ],
+      "started_at": "2026-11-13T04:40:39.118829+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.05,
+      "finished_at": "2026-11-13T04:40:39.172441+00:00"
+    },
+    {
+      "name": "Reconcile authorship",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/reconcile_authorship.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml"
+      ],
+      "started_at": "2026-11-13T04:40:39.172698+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.05,
+      "finished_at": "2026-11-13T04:40:39.226925+00:00"
+    },
+    {
+      "name": "Build reconciled ledger",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/build_reconciled.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml"
+      ],
+      "started_at": "2026-11-13T04:40:39.229616+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.06,
+      "finished_at": "2026-11-13T04:40:39.294063+00:00"
+    },
+    {
+      "name": "Validate artifacts",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/validate.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml"
+      ],
+      "started_at": "2026-11-13T04:40:39.300241+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.05,
+      "finished_at": "2026-11-13T04:40:39.353525+00:00"
+    },
+    {
+      "name": "Validate database import (read-only)",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/db_dry_run.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml",
+        "--allow-count-mismatch"
+      ],
+      "started_at": "2026-11-13T04:40:39.354161+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.13,
+      "finished_at": "2026-11-13T04:40:39.489127+00:00"
+    },
+    {
+      "name": "Generate and auto-approve validation manifest",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/validation_manifest.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml",
+        "--write",
+        "--auto-approve"
+      ],
+      "started_at": "2026-11-13T04:40:39.489386+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.05,
+      "finished_at": "2026-11-13T04:40:39.539193+00:00"
+    },
+    {
+      "name": "Import reconciled ledger into PostgreSQL",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/import.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml",
+        "--allow-count-mismatch"
+      ],
+      "started_at": "2026-11-13T04:40:39.539436+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.22,
+      "finished_at": "2026-11-13T04:40:39.755749+00:00"
+    }
+  ],
+  "status": "succeeded",
+  "finished_at": "2026-11-13T04:40:39.755966+00:00",
+  "duration_seconds": 1.31
+}

@@ -3,6 +3,7 @@
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 import time
@@ -35,6 +36,23 @@ def parse_args():
         description="Orchestrate a department research-ledger ingestion."
     )
     parser.add_argument("--config", required=True, help="Department config.yaml")
+    parser.add_argument(
+        "--auto-approve",
+        action="store_true",
+        help=(
+            "Generate and record user-requested auto-approval of a fresh validation "
+            "manifest immediately before PostgreSQL import. Requires --allow-db-write."
+        ),
+    )
+    parser.add_argument(
+        "--allow-count-mismatch",
+        action="store_true",
+        help=(
+            "Pass --allow-count-mismatch to database dry-run and import stages. "
+            "Other integrity checks remain enforced; database writes still "
+            "require --allow-db-write."
+        ),
+    )
     parser.add_argument(
         "--plan",
         action="store_true",
@@ -71,7 +89,7 @@ def parse_args():
     parser.add_argument(
         "--department-id",
         type=int,
-        help="Department ID for LightRAG-only ingestion.",
+        help="Override the department ID for LightRAG; otherwise look it up by config identity.",
     )
     parser.add_argument(
         "--allow-overwrite",
@@ -143,9 +161,44 @@ def artifact_is_valid(path):
     except (OSError, json.JSONDecodeError) as exc:
         return False, f"invalid JSON: {exc}"
 
+
+def lookup_department_id(config):
+    """Resolve after import, when a newly imported department exists in PostgreSQL."""
+    import psycopg2
+
+    connection = psycopg2.connect(
+        host=os.getenv("POSTGRES_HOST", "localhost"),
+        port=os.getenv("POSTGRES_PORT", "5432"),
+        dbname=os.getenv("POSTGRES_DB", "rag"),
+        user=os.getenv("POSTGRES_USER", "rag"),
+        password=os.getenv("POSTGRES_PASSWORD", "rag"),
+        connect_timeout=15,
+    )
+    try:
+        connection.set_session(readonly=True)
+        with connection.cursor() as cursor:
+            cursor.execute(
+                "SELECT department_id FROM research.departments "
+                "WHERE institution = %s AND department_name = %s",
+                (config["institution"], config["department_name"]),
+            )
+            rows = cursor.fetchall()
+        if len(rows) != 1:
+            raise ValueError(
+                "Expected one PostgreSQL department for "
+                f"{config['department_name']!r}; found {len(rows)}. "
+                "Import the ledger first or specify --department-id."
+            )
+        return rows[0][0]
+    finally:
+        connection.close()
+
 def build_stages(args, config_path, output_dir, department_slug):
     python = sys.executable
     stages = []
+
+    if args.auto_approve and not args.allow_db_write:
+        raise ValueError("--auto-approve requires --allow-db-write.")
 
     if args.prepare_only and (
         args.allow_db_write or args.allow_lightrag_write
@@ -165,10 +218,6 @@ def build_stages(args, config_path, output_dir, department_slug):
             raise ValueError(
                 "--lightrag-only requires --allow-lightrag-write."
             )
-        if args.department_id is None:
-            raise ValueError(
-                "--lightrag-only requires --department-id."
-            )
         preparation_stages = []
     elif args.prepare_only:
         preparation_stages = [
@@ -182,6 +231,9 @@ def build_stages(args, config_path, output_dir, department_slug):
         if script_name == "enrich_faculty.py" and args.refresh:
             command.append("--refresh")
 
+        if script_name == "db_dry_run.py" and args.allow_count_mismatch:
+            command.append("--allow-count-mismatch")
+
         stages.append({
             "name": name,
             "command": command,
@@ -190,12 +242,29 @@ def build_stages(args, config_path, output_dir, department_slug):
         })
 
     if args.allow_db_write:
+        if args.auto_approve:
+            stages.append({
+                "name": "Generate and auto-approve validation manifest",
+                "command": [
+                    python, str(SCRIPT_DIR / "validation_manifest.py"),
+                    "--config", str(config_path), "--write", "--auto-approve",
+                ],
+                "artifacts": [output_dir / "validation_manifest.json"],
+                # The manifest writer preserves the previous file as a backup.
+                "allow_existing_artifacts": True,
+                "write_stage": True,
+            })
+
+        import_command = [
+            python, str(SCRIPT_DIR / "import.py"),
+            "--config", str(config_path),
+        ]
+        if args.allow_count_mismatch:
+            import_command.append("--allow-count-mismatch")
+
         stages.append({
             "name": "Import reconciled ledger into PostgreSQL",
-            "command": [
-                python, str(SCRIPT_DIR / "import.py"),
-                "--config", str(config_path),
-            ],
+            "command": import_command,
             "artifacts": [],
             "write_stage": True,
         })
@@ -219,20 +288,18 @@ def build_stages(args, config_path, output_dir, department_slug):
             )
 
         department_id = args.department_id
-        if department_id is None:
-            department_id = 1 if department_slug == "maie" else None
-
-        if department_id is None:
-            raise ValueError(
-                "Specify --department-id for non-MAIE LightRAG ingestion."
-            )
 
         stages.append({
             "name": "Ingest abstracts into LightRAG",
             "command": [
                 python, str(lightrag_script),
-                "--department-id", str(department_id),
+                "--config", str(config_path),
+                "--department-id", (
+                    str(department_id) if department_id is not None
+                    else "<lookup-after-import>"
+                ),
             ],
+            "resolve_department_id": department_id is None,
             "artifacts": [],
             "write_stage": True,
         })
@@ -267,6 +334,8 @@ def main():
     print(f"Mode       : {mode}")
     print(f"DB writes  : {'ENABLED' if args.allow_db_write else 'DISABLED'}")
     print(f"LightRAG   : {'ENABLED' if args.allow_lightrag_write else 'DISABLED'}")
+    print(f"Count mismatches: {'WARN ONLY' if args.allow_count_mismatch else 'FAIL'}")
+    print(f"Auto-approve: {'ENABLED (user requested)' if args.auto_approve else 'DISABLED'}")
     print()
 
     if args.plan:
@@ -290,6 +359,8 @@ def main():
         "department_slug": config["department_slug"],
         "config": str(config_path),
         "output_directory": str(output_dir),
+        "allow_count_mismatch": args.allow_count_mismatch,
+        "auto_approve_requested_by_user": args.auto_approve,
         "stages": [],
         "status": "running",
     }
@@ -303,11 +374,19 @@ def main():
     try:
         for stage in stages:
             print(f"\n===== {stage['name']} =====")
-            command = stage["command"]
+            command = list(stage["command"])
+            if stage.get("resolve_department_id"):
+                department_id = lookup_department_id(config)
+                command[command.index("--department-id") + 1] = str(department_id)
+                print(f"Resolved department ID: {department_id}", flush=True)
 
             if stage["name"] != "Import reconciled ledger into PostgreSQL":
                 for artifact in stage["artifacts"]:
-                    if artifact.exists() and not args.allow_overwrite:
+                    if (
+                        artifact.exists()
+                        and not args.allow_overwrite
+                        and not stage.get("allow_existing_artifacts", False)
+                    ):
                         raise RuntimeError(
                             f"Refusing to overwrite existing artifact: {artifact}\n"
                             "Use --allow-overwrite only after reviewing existing data."

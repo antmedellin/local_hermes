@@ -1,0 +1,233 @@
+[
+  {
+    "name": "Ala Rafat Qubbaj",
+    "rank": "Full Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "ala.qubbaj",
+    "user_id": "1223080"
+  },
+  {
+    "name": "Alfirio Trejo",
+    "rank": "Lecturer I",
+    "department": "Department of Mechanical Engineering",
+    "username": "alfirio.trejo01",
+    "user_id": "2634283"
+  },
+  {
+    "name": "Arturo Alejandro Fuentes",
+    "rank": "Full Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "arturo.fuentes",
+    "user_id": "1450876"
+  },
+  {
+    "name": "Constantine Mohammad Tarawneh",
+    "rank": "Full Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "constantine.tarawneh",
+    "user_id": "1451295"
+  },
+  {
+    "name": "Dumitru Caruntu",
+    "rank": "Full Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "dumitru.caruntu",
+    "user_id": "1450754"
+  },
+  {
+    "name": "Eleazar Marquez",
+    "rank": "Assistant Professor of Practice",
+    "department": "Department of Mechanical Engineering",
+    "username": "eleazar.marquez01",
+    "user_id": "2318259"
+  },
+  {
+    "name": "Gregory A Potter",
+    "rank": "Lecturer III",
+    "department": "Department of Mechanical Engineering",
+    "username": "gregory.potter",
+    "user_id": "1451161"
+  },
+  {
+    "name": "Gyu Leem",
+    "rank": "Associate Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "gyu.leem",
+    "user_id": "2654041"
+  },
+  {
+    "name": "Horacio Vasquez",
+    "rank": "Full Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "horacio.vasquez",
+    "user_id": "1451316"
+  },
+  {
+    "name": "Isaac Manohar Choutapalli",
+    "rank": "Full Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "isaac.palli",
+    "user_id": "1450772"
+  },
+  {
+    "name": "Jacob Nathaniel Bensen",
+    "rank": "Lecturer II",
+    "department": "Department of Mechanical Engineering",
+    "username": "jacob.bensen01",
+    "user_id": "2201389"
+  },
+  {
+    "name": "Javier Alonzo Ortega",
+    "rank": "Associate Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "javier.ortega",
+    "user_id": "1587302"
+  },
+  {
+    "name": "Jazmin Ley",
+    "rank": "Assistant Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "jazmin.ley",
+    "user_id": "1819805"
+  },
+  {
+    "name": "Jesus Sanchez",
+    "rank": "Lecturer III",
+    "department": "Department of Mechanical Engineering",
+    "username": "jose.j.sanchez01",
+    "user_id": "1962357"
+  },
+  {
+    "name": "Jose Jaime Taha Tijerina",
+    "rank": "Associate Professor of Practice",
+    "department": "Department of Mechanical Engineering",
+    "username": "jose.taha",
+    "user_id": "2261876"
+  },
+  {
+    "name": "Julia I Menchaca",
+    "rank": "Staff Teaching Part-Time",
+    "department": "Department of Mechanical Engineering",
+    "username": "julia.salas01",
+    "user_id": "2705661"
+  },
+  {
+    "name": "Junghsen Lieh",
+    "rank": "Full Professor of Practice",
+    "department": "Department of Mechanical Engineering",
+    "username": "junghsen.lieh",
+    "user_id": "2697253"
+  },
+  {
+    "name": "Lawrence Cano",
+    "rank": "Lecturer III",
+    "department": "Department of Mechanical Engineering",
+    "username": "lawrence.cano",
+    "user_id": "1819807"
+  },
+  {
+    "name": "Marcos Rene Villarreal",
+    "rank": "Lecturer III",
+    "department": "Department of Mechanical Engineering",
+    "username": "marcos.villarreal02",
+    "user_id": "1819806"
+  },
+  {
+    "name": "Mataz Yehia Alcoutlabi",
+    "rank": "Full Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "mataz.alcoutlabi",
+    "user_id": "1587300"
+  },
+  {
+    "name": "Maysam Pournik",
+    "rank": "Associate Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "maysam.pournik",
+    "user_id": "2032759"
+  },
+  {
+    "name": "Misael Eduardo Martinez",
+    "rank": "Lecturer II",
+    "department": "Department of Mechanical Engineering",
+    "username": "misael.e.martinez01",
+    "user_id": "2201390"
+  },
+  {
+    "name": "Mohammad Refatul Islam",
+    "rank": "Assistant Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "mohammad.islam",
+    "user_id": "2449253"
+  },
+  {
+    "name": "Nadim Zgheib",
+    "rank": "Assistant Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "nadim.zgheib",
+    "user_id": "2370674"
+  },
+  {
+    "name": "Noe Vargas Hernandez",
+    "rank": "Associate Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "noe.vargas",
+    "user_id": "1950282"
+  },
+  {
+    "name": "Novonil Sen",
+    "rank": "Assistant Professor of Practice",
+    "department": "Department of Mechanical Engineering",
+    "username": "novonil.sen",
+    "user_id": "2633543"
+  },
+  {
+    "name": "Robert Arthur Freeman",
+    "rank": "Dean",
+    "department": "Department of Mechanical Engineering",
+    "username": "robert.freeman",
+    "user_id": "1450873"
+  },
+  {
+    "name": "Rogelio Benitez",
+    "rank": "Associate Professor of Practice",
+    "department": "Department of Mechanical Engineering",
+    "username": "rogelio.benitez",
+    "user_id": "1950294"
+  },
+  {
+    "name": "Samantha Jean Ramirez",
+    "rank": "Senior Lecturer",
+    "department": "Department of Mechanical Engineering",
+    "username": "samantha.ramirez",
+    "user_id": "1451175"
+  },
+  {
+    "name": "Sergio Miguel Martinez",
+    "rank": "Staff Teaching Part-Time",
+    "department": "Department of Mechanical Engineering",
+    "username": "sergio.martinez12",
+    "user_id": "2545010"
+  },
+  {
+    "name": "Victoria Maria Padilla Gainza",
+    "rank": "Assistant Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "victoria.padilla",
+    "user_id": "2445981"
+  },
+  {
+    "name": "Weiguang Yang",
+    "rank": "Assistant Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "weiguang.yang",
+    "user_id": "2526912"
+  },
+  {
+    "name": "Yingchen Yang",
+    "rank": "Full Professor",
+    "department": "Department of Mechanical Engineering",
+    "username": "yingchen.yang",
+    "user_id": "1811597"
+  }
+]

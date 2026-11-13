@@ -1,0 +1,138 @@
+{
+  "manifest_version": 1,
+  "status": "approved",
+  "department_name": "Department of Mechanical Engineering",
+  "generated_at_utc": "2026-11-13T05:37:31.199805+00:00",
+  "artifacts": {
+    "faculty_reconciled.json": "30f42cc9ea82c1d58fea14c22737b7a4d0f8412aedbb530ed6686c953807895f",
+    "authorship_reconciliation.json": "79244c90c7a9bcdcf25424d2aba88cc7e9beb0f207ec631cbe8c7e44184031d7"
+  },
+  "counts": {
+    "expected_faculty_count": 33,
+    "expected_publication_count": 1061,
+    "expected_unique_dm_record_count": 1073,
+    "expected_reconciliation_decision_count": 4172,
+    "expected_canonical_publication_count": 1052,
+    "expected_publication_merge_group_count": 9,
+    "expected_department_author_occurrence_count": 1177,
+    "expected_canonical_authorship_count": 1162,
+    "dry_run_decision_occurrence_count": 1177,
+    "dry_run_canonical_authorship_count": 1162,
+    "classification_counts": {
+      "EXACT": 916,
+      "EXTERNAL": 2938,
+      "HIGH_SIMILARITY": 12,
+      "HISTORICAL_ID_MISMATCH": 23,
+      "HISTORICAL_ID_SWAP_RECOVERED": 4,
+      "INITIAL_VARIANT": 11,
+      "MODERATE_REVIEW": 10,
+      "NAME_VARIANT": 245,
+      "NAME_VARIANT_WITHOUT_DM_ID": 8,
+      "NAME_WITHOUT_DM_ID": 5
+    },
+    "source_author_occurrence_count": 4172,
+    "source_publication_duplicate_groups": [
+      {
+        "key": [
+          "on nonlinear rotating polymeric jets during forcespinning process",
+          2018
+        ],
+        "publication_ids": [
+          "PUB-00024",
+          "PUB-00025"
+        ]
+      },
+      {
+        "key": [
+          "erbium and praseodymium doped lithium tantalate electronic structure and metal oxygen bonding analyses",
+          2025
+        ],
+        "publication_ids": [
+          "PUB-00141",
+          "PUB-00142"
+        ]
+      },
+      {
+        "key": [
+          "thermoelectric energy harvesting for wireless onboard rail condition monitoring",
+          2023
+        ],
+        "publication_ids": [
+          "PUB-00155",
+          "PUB-00160"
+        ]
+      },
+      {
+        "key": [
+          "defect detection in freight railcar tapered roller bearings using vibration techniques",
+          2021
+        ],
+        "publication_ids": [
+          "PUB-00165",
+          "PUB-00166"
+        ]
+      },
+      {
+        "key": [
+          "tailoring the viscosity of water and ethylene glycol based tio2 nanofluids",
+          2020
+        ],
+        "publication_ids": [
+          "PUB-00492",
+          "PUB-01019"
+        ]
+      },
+      {
+        "key": [
+          "centrifugally spun tio2 c composite fibers prepared from tis2 pan precursor fibers as binder free anodes for libs",
+          2021
+        ],
+        "publication_ids": [
+          "PUB-00700",
+          "PUB-00703"
+        ]
+      },
+      {
+        "key": [
+          "mos2 and moo2 loaded carbon microfibers as anode materials for lithium ion and sodium ion batteries",
+          null
+        ],
+        "publication_ids": [
+          "PUB-00726",
+          "PUB-00728"
+        ]
+      },
+      {
+        "key": [
+          "numerical simulation of wave energy converter with hydrofoil blades under various wave conditions",
+          2019
+        ],
+        "publication_ids": [
+          "PUB-01022",
+          "PUB-01023"
+        ]
+      },
+      {
+        "key": [
+          "trail following of turbulent wake using artificial lateral line",
+          2007
+        ],
+        "publication_ids": [
+          "PUB-01042",
+          "PUB-01045"
+        ]
+      }
+    ]
+  },
+  "approval": {
+    "reviewer": "mhc794",
+    "approved_at_utc": "2026-11-13T05:37:31.202287+00:00",
+    "method": "auto_approve_cli",
+    "auto_approved": true,
+    "requested_by_user": true
+  },
+  "notes": [
+    "Approved automatically by explicit --auto-approve request.",
+    "Publication identity remains normalized title plus parsed year."
+  ]
+}

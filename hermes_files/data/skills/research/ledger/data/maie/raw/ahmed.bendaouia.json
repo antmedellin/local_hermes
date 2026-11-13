@@ -1,0 +1,44 @@
+{
+  "?xml": {
+    "@version": "1.0",
+    "@encoding": "UTF-8"
+  },
+  "Data": {
+    "@xmlns": "http://www.digitalmeasures.com/schema/data",
+    "@xmlns:dmd": "http://www.digitalmeasures.com/schema/data-metadata",
+    "@dmd:date": "2026-11-12",
+    "Record": {
+      "@userId": "2730266",
+      "@username": "ahmed.bendaouia",
+      "@dmd:surveyId": "18638782",
+      "dmd:IndexEntry": [
+        {
+          "@indexKey": "COLLEGE",
+          "@entryKey": "College of Engineering and Computer Science",
+          "@text": "College of Engineering and Computer Science"
+        },
+        {
+          "@indexKey": "DEPARTMENT",
+          "@entryKey": "Department of Manufacturing and Industrial Engineering",
+          "@text": "Department of Manufacturing and Industrial Engineering"
+        },
+        {
+          "@indexKey": "RANK",
+          "@entryKey": "Assistant Professor of Research",
+          "@text": "Assistant Professor of Research"
+        }
+      ],
+      "PCI": {
+        "@id": "400324530176",
+        "@dmd:originalSource": "IMPORT",
+        "@dmd:created": "2026-11-03T13:31:14",
+        "@dmd:lastModifiedSource": "IMPORT",
+        "@dmd:lastModified": "2026-11-03T13:31:15",
+        "FNAME": "Ahmed",
+        "MNAME": null,
+        "LNAME": "Ben Daouia",
+        "EMAIL": "ahmed.bendaouia@utrgv.edu"
+      }
+    }
+  }
+}

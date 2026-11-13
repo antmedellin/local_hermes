@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Ingest MAIE paper abstracts from PostgreSQL into LightRAG.
+Ingest one department's paper abstracts from PostgreSQL into LightRAG.
 
 PostgreSQL is the authoritative source.
 LightRAG is the semantic search / knowledge-graph layer.
@@ -13,11 +13,14 @@ Workflow:
 4. Submit documents to LightRAG in batches.
 5. Poll each LightRAG track until processing finishes.
 6. Verify every expected document reached "processed".
-7. Update research.papers with LightRAG status information.
+7. Leave global PostgreSQL LightRAG status fields unchanged.
 """
 
 import argparse
 import json
+import os
+from pathlib import Path
+import re
 import sys
 import time
 import urllib.error
@@ -31,11 +34,11 @@ import psycopg2
 # ---------------------------------------------------------------------------
 
 DB_CONFIG = {
-    "host": "localhost",
-    "port": 5432,
-    "dbname": "rag",
-    "user": "rag",
-    "password": "rag",
+    "host": os.getenv("POSTGRES_HOST", "localhost"),
+    "port": os.getenv("POSTGRES_PORT", "5432"),
+    "dbname": os.getenv("POSTGRES_DB", "rag"),
+    "user": os.getenv("POSTGRES_USER", "rag"),
+    "password": os.getenv("POSTGRES_PASSWORD", "rag"),
 }
 
 # From the host, LightRAG is exposed on localhost:9621.
@@ -53,9 +56,8 @@ POLL_SECONDS = 5
 # Maximum time to wait for one batch.
 MAX_WAIT_SECONDS = 900
 
-# Set from the selected department ID in main().
-department_slug = 'maie'
-
+PENDING_STATUSES = {"pending", "queued", "parsing", "processing", "analyzing"}
+FAILED_STATUSES = {"failed", "failure", "error"}
 
 # ---------------------------------------------------------------------------
 # PostgreSQL
@@ -66,7 +68,56 @@ def get_connection():
     return psycopg2.connect(**DB_CONFIG)
 
 
-def load_abstract_papers(connection, department_id):
+def resolve_department(connection, department_id, config_path=None, slug_override=None):
+    """Verify the database identity and obtain a stable slug from ledger config."""
+    with connection.cursor() as cursor:
+        cursor.execute(
+            "SELECT institution, department_name FROM research.departments "
+            "WHERE department_id = %s",
+            (department_id,),
+        )
+        row = cursor.fetchone()
+    if row is None:
+        raise ValueError(f"Department ID {department_id} does not exist in PostgreSQL.")
+    institution, department_name = row
+    config = None
+    if config_path:
+        paths = [Path(config_path).expanduser().resolve()]
+    elif not slug_override:
+        data_dir = Path(__file__).resolve().parents[2] / "ledger/data"
+        paths = sorted(p for p in data_dir.glob("*/config.yaml")
+                       if p.parent.name not in ("raw", "template"))
+    else:
+        paths = []
+    if paths:
+        import yaml
+        matches = []
+        for path in paths:
+            with path.open("r", encoding="utf-8") as handle:
+                candidate = yaml.safe_load(handle)
+            if not isinstance(candidate, dict):
+                if config_path:
+                    raise ValueError(f"Configuration must be a mapping: {path}")
+                continue
+            if (candidate.get("institution"), candidate.get("department_name")) == row:
+                matches.append(candidate)
+        if len(matches) != 1:
+            raise ValueError(
+                f"Expected one config matching database department {department_id} "
+                f"({department_name}); found {len(matches)}. Pass its --config path."
+            )
+        config = matches[0]
+    slug = slug_override or (config or {}).get("department_slug")
+    if config and slug_override and slug_override != config.get("department_slug"):
+        raise ValueError("--department-slug does not match the department config.")
+    if not isinstance(slug, str) or not re.fullmatch(r"[a-z0-9]+(?:[-_][a-z0-9]+)*", slug):
+        raise ValueError(
+            "Provide a valid department_slug through --config or --department-slug."
+        )
+    return institution, department_name, slug
+
+
+def load_abstract_papers(connection, department_id, department_slug):
     """
     Load every canonical paper that has a non-empty abstract.
 
@@ -255,6 +306,56 @@ def get_all_documents():
     return all_documents
 
 
+def duplicate_original_id(document):
+    """Trust explicit content-hash duplicate metadata, not an error-message guess."""
+    metadata = document.get("metadata") or {}
+    if (metadata.get("is_duplicate") is True
+            and metadata.get("duplicate_kind") == "content_hash"):
+        return metadata.get("original_doc_id")
+    return None
+
+
+def effective_document_status(document, by_id, seen=None):
+    """A duplicate is covered only when its original is verifiably processed."""
+    original_id = duplicate_original_id(document)
+    if not original_id:
+        return (document.get("status") or "").lower(), None
+    seen = set() if seen is None else set(seen)
+    if original_id in seen:
+        raise RuntimeError(f"Cycle in LightRAG duplicate references: {original_id}")
+    seen.add(original_id)
+    original = by_id.get(original_id)
+    if original is None:
+        # Wait for inventory to expose the original; never assume it succeeded.
+        return "pending", original_id
+    status, root_id = effective_document_status(original, by_id, seen)
+    return status, root_id or original_id
+
+
+def documents_by_source(documents, by_id=None):
+    """Coalesce repeated duplicate markers without accepting ambiguous real docs."""
+    by_id = by_id if by_id is not None else {
+        doc["id"]: doc for doc in documents if doc.get("id")
+    }
+    by_source = {}
+    for document in documents:
+        source = document.get("file_path")
+        if not source:
+            continue
+        previous = by_source.get(source)
+        if previous is not None:
+            previous_root = duplicate_original_id(previous) or previous.get("id")
+            current_root = duplicate_original_id(document) or document.get("id")
+            if (not (duplicate_original_id(previous) or duplicate_original_id(document))
+                    or previous_root != current_root):
+                raise RuntimeError(f"Ambiguous LightRAG source identifier: {source}")
+            # Same source and same original: prefer the real document if present.
+            if not duplicate_original_id(previous):
+                continue
+        by_source[source] = document
+    return by_source
+
+
 def classify_existing_documents(documents, papers):
     """
     Compare PostgreSQL source identifiers against LightRAG.
@@ -266,39 +367,13 @@ def classify_existing_documents(documents, papers):
         failed: Documents that previously failed.
     """
 
-    existing_by_source = {}
-
-    for document in documents:
-
-        source = document.get("file_path")
-
-        if not source:
-            continue
-
-        if source in existing_by_source:
-            raise RuntimeError(
-                f"Duplicate LightRAG source identifier: {source}"
-            )
-
-        existing_by_source[source] = document
+    by_id = {doc["id"]: doc for doc in documents if doc.get("id")}
+    existing_by_source = documents_by_source(documents, by_id)
 
     missing = []
     processed = []
     pending = []
     failed = []
-
-    pending_statuses = {
-        "pending",
-        "queued",
-        "processing",
-        "analyzing",
-    }
-
-    failed_statuses = {
-        "failed",
-        "failure",
-        "error",
-    }
 
     for paper in papers:
 
@@ -309,15 +384,17 @@ def classify_existing_documents(documents, papers):
             missing.append(paper)
             continue
 
-        status = (document.get("status") or "").lower()
+        status, original_id = effective_document_status(document, by_id)
 
         if status == "processed":
             processed.append(paper)
+            if original_id:
+                print(f"Shared content verified: {source} -> {original_id} (processed)")
 
-        elif status in pending_statuses:
+        elif status in PENDING_STATUSES:
             pending.append((paper, status))
 
-        elif status in failed_statuses:
+        elif status in FAILED_STATUSES:
             failed.append((paper, status))
 
         else:
@@ -440,111 +517,64 @@ def submit_batch(papers):
 # Polling / verification
 # ---------------------------------------------------------------------------
 
-def poll_batch(track_id, expected_sources):
+def poll_batch(track_id, expected_sources, known_documents=None):
+    """Drain a batch to terminal states, resolving verified duplicate originals.
+
+    Returned copies use effective statuses for verification. LightRAG records
+    themselves are never rewritten or deleted.
     """
-    Poll LightRAG until every expected source reaches a terminal state.
-
-    Intermediate states such as "analyzing" and "processing" are NOT
-    considered failures or missing documents.
-
-    Returns the final document records.
-    """
-
     status_url = f"{STATUS_URL}/{track_id}"
-
-    started = time.time()
-
+    started = time.monotonic()
     expected_sources = set(expected_sources)
-
+    known_by_id = {doc["id"]: doc for doc in (known_documents or []) if doc.get("id")}
+    announced = set()
     while True:
-
-        result = get_json(status_url)
-
-        documents = result.get("documents", [])
-
-        status_by_source = {
-            document.get("file_path"): document.get("status")
-            for document in documents
-            if document.get("file_path")
-        }
-
-        processed = sum(
-            1
-            for source in expected_sources
-            if status_by_source.get(source) == "processed"
-        )
-
-        failed = sum(
-            1
-            for source in expected_sources
-            if status_by_source.get(source) in (
-                "failed",
-                "failure",
-                "error",
-            )
-        )
-
-        # These are normal LightRAG intermediate states.
-        pending = sum(
-            1
-            for source in expected_sources
-            if status_by_source.get(source) in (
-                "analyzing",
-                "processing",
-                "pending",
-                "queued",
-            )
-        )
-
-        # A source is missing only if LightRAG does not report it at all.
-        missing = sum(
-            1
-            for source in expected_sources
-            if source not in status_by_source
-        )
-
-        print(
-            f"\rStatus: processed={processed}/"
-            f"{len(expected_sources)}, "
-            f"pending={pending}, "
-            f"failed={failed}, "
-            f"missing={missing}",
-            end="",
-            flush=True,
-        )
-
-        # Success: every expected document was processed.
-        if processed == len(expected_sources):
-
+        documents = get_json(status_url).get("documents", [])
+        if not isinstance(documents, list):
+            raise RuntimeError("Track response documents must be a list.")
+        known_by_id.update({doc["id"]: doc for doc in documents if doc.get("id")})
+        # Refresh originals that are absent or still pending; a failed duplicate
+        # marker alone must not be treated as either success or a real failure.
+        if any(duplicate_original_id(doc) and
+               effective_document_status(doc, known_by_id)[0] in PENDING_STATUSES
+               for doc in documents):
+            inventory = get_all_documents()
+            known_by_id.update({doc["id"]: doc for doc in inventory if doc.get("id")})
+        by_source = documents_by_source(documents, known_by_id)
+        resolved = []
+        for source, document in by_source.items():
+            status, original_id = effective_document_status(document, known_by_id)
+            result = dict(document, status=status)
+            if original_id:
+                result["resolved_original_doc_id"] = original_id
+                original = known_by_id.get(original_id, {})
+                if status in FAILED_STATUSES:
+                    result["error_msg"] = original.get("error_msg") or document.get("error_msg")
+                if status == "processed" and source not in announced:
+                    print(f"\nShared content verified: {source} -> {original_id} (processed)")
+                    announced.add(source)
+            resolved.append(result)
+        status_by_source = {doc["file_path"]: doc["status"] for doc in resolved}
+        processed = sum(status_by_source.get(src) == "processed" for src in expected_sources)
+        failed = sum(status_by_source.get(src) in FAILED_STATUSES for src in expected_sources)
+        pending = sum(status_by_source.get(src) in PENDING_STATUSES for src in expected_sources)
+        missing = sum(src not in status_by_source for src in expected_sources)
+        print(f"\rStatus: processed={processed}/{len(expected_sources)}, "
+              f"pending={pending}, failed={failed}, missing={missing}",
+              end="", flush=True)
+        # Wait for remaining documents even if another document has failed.
+        if processed + failed == len(expected_sources):
             print()
-
-            return documents
-
-        # Failure: a document explicitly reached a failure state.
-        if failed > 0:
-
+            return resolved
+        if time.monotonic() - started > MAX_WAIT_SECONDS:
             print()
-
-            return documents
-
-        # Missing documents are NOT immediately treated as terminal.
-        # LightRAG may briefly return an incomplete track while the
-        # background pipeline is starting.
-        #
-        # We therefore continue polling until MAX_WAIT_SECONDS.
-        if time.time() - started > MAX_WAIT_SECONDS:
-
-            print()
-
             raise TimeoutError(
                 f"Timed out waiting for LightRAG track {track_id}. "
-                f"processed={processed}, "
-                f"pending={pending}, "
-                f"failed={failed}, "
-                f"missing={missing}"
+                f"processed={processed}, pending={pending}, failed={failed}, "
+                f"missing={missing}. Background work may still be active."
             )
-
         time.sleep(POLL_SECONDS)
+
 
 # ---------------------------------------------------------------------------
 # PostgreSQL status update
@@ -609,12 +639,12 @@ def update_database(connection, papers, documents, track_id, department_id):
 # ---------------------------------------------------------------------------
 
 def main():
-    global department_slug
-
     parser = argparse.ArgumentParser(
         description="Ingest one department's paper abstracts into LightRAG."
     )
     parser.add_argument("--department-id", type=int, default=1)
+    parser.add_argument("--config", help="Ledger department config.yaml; verified against the database ID.")
+    parser.add_argument("--department-slug", help="Stable slug when no ledger config is available.")
     parser.add_argument(
     "--dry-run",
     action="store_true",
@@ -623,39 +653,33 @@ def main():
     args = parser.parse_args()
 
     department_id = args.department_id
-    department_slug = {
-        1: "maie",
-        2: "ies",
-        3: "csci",
-        4: "cive",
-    }.get(department_id)
-
-    if department_slug is None:
-        parser.error(
-            "Supported department IDs are 1 (maie), 2 (ies), "
-            "3 (csci), and 4 (cive)."
-        )
-
-    print("=" * 70)
-    print(f"{department_slug.upper()} ABSTRACT → LIGHTRAG INGESTION")
-    print("=" * 70)
+    if department_id <= 0:
+        parser.error("--department-id must be positive.")
 
     connection = get_connection()
 
     try:
+        institution, department_name, department_slug = resolve_department(
+            connection, department_id, args.config, args.department_slug,
+        )
+        print("=" * 70)
+        print(f"{department_slug.upper()} ABSTRACT → LIGHTRAG INGESTION")
+        print("=" * 70)
+        print(f"Department: {department_name} (ID {department_id})")
+        print(f"Institution: {institution}")
 
         # ---------------------------------------------------------------
         # Load canonical records from PostgreSQL.
         # ---------------------------------------------------------------
 
-        papers = load_abstract_papers(connection, department_id)
+        papers = load_abstract_papers(connection, department_id, department_slug)
 
         print()
         print(f"Papers with abstracts: {len(papers)}")
 
         if not papers:
             print("No papers with abstracts were found.")
-            return 1
+            return 0
 
 
         # ---------------------------------------------------------------
@@ -666,6 +690,21 @@ def main():
         print("Inspecting existing LightRAG documents...")
 
         existing_documents = get_all_documents()
+
+        if not args.dry_run:
+            wait_started = time.monotonic()
+            while True:
+                _, _, pending_existing, _ = classify_existing_documents(existing_documents, papers)
+                if not pending_existing:
+                    break
+                if time.monotonic() - wait_started > MAX_WAIT_SECONDS:
+                    raise TimeoutError(
+                        "Existing LightRAG documents are still processing or their "
+                        "duplicate originals are unavailable. No new texts were submitted."
+                    )
+                print(f"Waiting for {len(pending_existing)} existing documents; no resubmission.", flush=True)
+                time.sleep(POLL_SECONDS)
+                existing_documents = get_all_documents()
 
         print()
         print(f"Existing LightRAG documents: {len(existing_documents)}")
@@ -712,6 +751,9 @@ def main():
 
             for paper, status in failed:
                 print(f"  {paper['file_source']} | {status}")
+                by_source = documents_by_source(existing_documents)
+                document = by_source[paper["file_source"]]
+                print(f"    {document.get('error_msg') or 'No error details returned.'}")
 
         if pending or failed:
 
@@ -783,6 +825,7 @@ def main():
             documents = poll_batch(
                 track_id,
                 expected_sources,
+                known_documents=existing_documents,
             )
 
             status_by_source = {
@@ -818,6 +861,8 @@ def main():
                         f"  {source} -> "
                         f"{status_by_source.get(source, 'missing')}"
                     )
+                    details = next((doc for doc in documents if doc.get("file_path") == source), {})
+                    print(f"    {details.get('error_msg') or 'No error details returned.'}")
 
                 raise RuntimeError(
                     "Batch verification failed. "

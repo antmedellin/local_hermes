@@ -9,7 +9,7 @@
     "normalized_unique_publications": 359,
     "source": "digital_measures",
     "api_endpoint": "https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMuser?username=",
-    "generated_at": "2026-11-03T16:02:09Z"
+    "generated_at": "2026-11-13T04:49:42Z"
   },
   "quality_summary": {
     "duplicate_doi_records": 8,
@@ -1481,7 +1481,7 @@
           "faculty_id": "1493859",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -1558,7 +1558,7 @@
           "faculty_id": "2700076",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -1707,7 +1707,7 @@
           "faculty_id": "2700076",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -1808,7 +1808,7 @@
           "faculty_id": "2700076",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -1969,7 +1969,7 @@
           "faculty_id": "2700076",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -2094,7 +2094,7 @@
           "faculty_id": "2700076",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -2195,7 +2195,7 @@
           "faculty_id": "2700076",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -2308,7 +2308,7 @@
           "faculty_id": "2700076",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -2469,7 +2469,7 @@
           "faculty_id": "2700076",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -2582,7 +2582,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -2594,7 +2594,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -2606,7 +2606,7 @@
           "faculty_id": "2448585",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -2618,7 +2618,7 @@
           "faculty_id": "2201383",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -2734,7 +2734,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -2859,7 +2859,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -2996,7 +2996,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -3020,7 +3020,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -3154,7 +3154,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -3280,7 +3280,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -3292,7 +3292,7 @@
           "faculty_id": "1951118",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -3399,7 +3399,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -3513,7 +3513,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -3525,7 +3525,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -3585,7 +3585,7 @@
           "faculty_id": "2448585",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -3704,7 +3704,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -3817,7 +3817,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -3918,7 +3918,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -3954,7 +3954,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 6,
@@ -4065,7 +4065,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -4166,7 +4166,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -4255,7 +4255,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -4267,7 +4267,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -4303,7 +4303,7 @@
           "faculty_id": "1951118",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -4422,7 +4422,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -4559,7 +4559,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 7,
@@ -4697,7 +4697,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 6,
@@ -4810,7 +4810,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -4846,7 +4846,7 @@
           "faculty_id": "1951118",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 6,
@@ -4957,7 +4957,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -5005,7 +5005,7 @@
           "faculty_id": "1951118",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -5127,7 +5127,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -5276,7 +5276,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -5365,7 +5365,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -5466,7 +5466,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -5579,7 +5579,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -5728,7 +5728,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -5913,7 +5913,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -6002,7 +6002,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -6014,7 +6014,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -6124,7 +6124,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -6225,7 +6225,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -6470,7 +6470,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 8,
@@ -6583,7 +6583,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -6697,7 +6697,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -6835,7 +6835,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -6997,7 +6997,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -7147,7 +7147,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -7296,7 +7296,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 6,
@@ -7422,7 +7422,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -7560,7 +7560,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 6,
@@ -7662,7 +7662,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -7836,7 +7836,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -8010,7 +8010,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -8124,7 +8124,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -8346,7 +8346,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 6,
@@ -8448,7 +8448,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -8562,7 +8562,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -8676,7 +8676,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -8814,7 +8814,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 6,
@@ -8952,7 +8952,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -9102,7 +9102,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -9204,7 +9204,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -9318,7 +9318,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -9420,7 +9420,7 @@
           "faculty_id": "1662388",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -9600,7 +9600,7 @@
           "faculty_id": "2201383",
           "institution": "University of Illinois at Chicago",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -9701,7 +9701,7 @@
           "faculty_id": "2201383",
           "institution": "University of Illinois at Chicago",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -9802,7 +9802,7 @@
           "faculty_id": "2201383",
           "institution": "University of Illinois at Chicago",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -9850,7 +9850,7 @@
           "faculty_id": "2201384",
           "institution": "University of Illinois at Chicago",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -9937,7 +9937,7 @@
           "faculty_id": "2201383",
           "institution": "University of Illinois at Chicago",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -10038,7 +10038,7 @@
           "faculty_id": "2201383",
           "institution": "University of Illinois at Chicago",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -10098,7 +10098,7 @@
           "faculty_id": "2201384",
           "institution": "University of Illinois at Chicago",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -10185,7 +10185,7 @@
           "faculty_id": "2201383",
           "institution": "Tarbiat Modares University",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -10287,7 +10287,7 @@
           "faculty_id": "2201383",
           "institution": "Tarbiat Modares University",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -10400,7 +10400,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -10513,7 +10513,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -10603,7 +10603,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -10753,7 +10753,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -10855,7 +10855,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -10945,7 +10945,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -10993,7 +10993,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 6,
@@ -11104,7 +11104,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -11194,7 +11194,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -11284,7 +11284,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -11434,7 +11434,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -11596,7 +11596,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -11722,7 +11722,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -11800,7 +11800,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -11902,7 +11902,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -12088,7 +12088,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 6,
@@ -12202,7 +12202,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -12340,7 +12340,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -12478,7 +12478,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -12580,7 +12580,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -12682,7 +12682,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -12832,7 +12832,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -12934,7 +12934,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -13012,7 +13012,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -13162,7 +13162,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -13264,7 +13264,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -13390,7 +13390,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -13504,7 +13504,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -13594,7 +13594,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -13684,7 +13684,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -13858,7 +13858,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -13948,7 +13948,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -14062,7 +14062,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -14200,7 +14200,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -14338,7 +14338,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -14464,7 +14464,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -14626,7 +14626,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -14704,7 +14704,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -14806,7 +14806,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -14956,7 +14956,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -15046,7 +15046,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -15172,7 +15172,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -15286,7 +15286,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -15400,7 +15400,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -15526,7 +15526,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -15616,7 +15616,7 @@
           "faculty_id": "2391024",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -15706,7 +15706,7 @@
           "faculty_id": "1951118",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -15718,7 +15718,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -15840,7 +15840,7 @@
           "faculty_id": "1951118",
           "institution": "UTRGV",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -15930,7 +15930,7 @@
           "faculty_id": "1951118",
           "institution": "UTRGV",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -16008,7 +16008,7 @@
           "faculty_id": "1951118",
           "institution": "UTRGV",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -16085,7 +16085,7 @@
           "faculty_id": "1951118",
           "institution": "UTRGV",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -16163,7 +16163,7 @@
           "faculty_id": "1951118",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -16252,7 +16252,7 @@
           "faculty_id": "1951118",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -16330,7 +16330,7 @@
           "faculty_id": "1951118",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -16443,7 +16443,7 @@
           "faculty_id": "1951118",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -16569,7 +16569,7 @@
           "faculty_id": "1951118",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 6,
@@ -16658,7 +16658,7 @@
           "faculty_id": "1951118",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -16783,7 +16783,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -16872,7 +16872,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -16986,7 +16986,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -17075,7 +17075,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -17212,7 +17212,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -17349,7 +17349,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 6,
@@ -17475,7 +17475,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -17564,7 +17564,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -17677,7 +17677,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -17827,7 +17827,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 8,
@@ -17917,7 +17917,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -18055,7 +18055,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -18132,7 +18132,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -18234,7 +18234,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -18348,7 +18348,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -18426,7 +18426,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -18516,7 +18516,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -18642,7 +18642,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -18732,7 +18732,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -18846,7 +18846,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -18960,7 +18960,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -19062,7 +19062,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -19188,7 +19188,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -19278,7 +19278,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -19404,7 +19404,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -19518,7 +19518,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -19620,7 +19620,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -19746,7 +19746,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -19860,7 +19860,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -19974,7 +19974,7 @@
           "faculty_id": "1450963",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -20148,7 +20148,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 7,
@@ -20298,7 +20298,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 7,
@@ -20448,7 +20448,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -20538,7 +20538,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -20723,7 +20723,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -20884,7 +20884,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -21033,7 +21033,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 8,
@@ -21230,7 +21230,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -21307,7 +21307,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -21456,7 +21456,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -21629,7 +21629,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 6,
@@ -21742,7 +21742,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -21855,7 +21855,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -22052,7 +22052,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -22189,7 +22189,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 7,
@@ -22302,7 +22302,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -22511,7 +22511,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -22588,7 +22588,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -22737,7 +22737,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 7,
@@ -22963,7 +22963,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -23052,7 +23052,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -23261,7 +23261,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -23350,7 +23350,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -23487,7 +23487,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -23588,7 +23588,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -23773,7 +23773,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 8,
@@ -23898,7 +23898,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -24071,7 +24071,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -24160,7 +24160,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -24321,7 +24321,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -24434,7 +24434,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -24583,7 +24583,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -24804,7 +24804,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -24881,7 +24881,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -25018,7 +25018,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -25119,7 +25119,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -25244,7 +25244,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -25417,7 +25417,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -25566,7 +25566,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -25703,7 +25703,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -25828,7 +25828,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -25929,7 +25929,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -26066,7 +26066,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -26191,7 +26191,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -26316,7 +26316,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -26441,7 +26441,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -26578,7 +26578,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -26668,7 +26668,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -26769,7 +26769,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -26870,7 +26870,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -26995,7 +26995,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -27132,7 +27132,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -27245,7 +27245,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -27359,7 +27359,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -27473,7 +27473,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -27611,7 +27611,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -27785,7 +27785,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -27898,7 +27898,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -28023,7 +28023,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -28173,7 +28173,7 @@
           "faculty_id": "2639364",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -28298,7 +28298,7 @@
           "faculty_id": "2201384",
           "institution": "University of Illinois at Chicago",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -28423,7 +28423,7 @@
           "faculty_id": "2201384",
           "institution": "University of Illinois at Chicago",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -28500,7 +28500,7 @@
           "faculty_id": "2201384",
           "institution": "University of Illinois at Chicago",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -28625,7 +28625,7 @@
           "faculty_id": "2201384",
           "institution": "University of Illinois at Chicago",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -28738,7 +28738,7 @@
           "faculty_id": "2201384",
           "institution": "University of Illinois at Chicago",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -28815,7 +28815,7 @@
           "faculty_id": "2201384",
           "institution": "University of Illinois at Chicago",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -28940,7 +28940,7 @@
           "faculty_id": "2201384",
           "institution": "Tarbiat Modares University",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -29042,7 +29042,7 @@
           "faculty_id": "2201384",
           "institution": "Tarbiat Modares University",
           "student_level": "Graduate",
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -29179,7 +29179,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 7,
@@ -29305,7 +29305,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -29442,7 +29442,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -29568,7 +29568,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -29694,7 +29694,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -29796,7 +29796,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -29897,7 +29897,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -29986,7 +29986,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -30063,7 +30063,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -30177,7 +30177,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -30279,7 +30279,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -30357,7 +30357,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -30471,7 +30471,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -30584,7 +30584,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -30662,7 +30662,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -30763,7 +30763,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -30913,7 +30913,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -31003,7 +31003,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -31093,7 +31093,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -31182,7 +31182,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -31272,7 +31272,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -31362,7 +31362,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -31451,7 +31451,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -31541,7 +31541,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -31631,7 +31631,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -31721,7 +31721,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -31810,7 +31810,7 @@
           "faculty_id": "2318261",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -31911,7 +31911,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -32001,7 +32001,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -32103,7 +32103,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -32193,7 +32193,7 @@
           "faculty_id": "2318261",
           "institution": "University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -32283,7 +32283,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -32373,7 +32373,7 @@
           "faculty_id": "2318261",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -32463,7 +32463,7 @@
           "faculty_id": "2109040",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -32636,7 +32636,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -32726,7 +32726,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -32888,7 +32888,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -33014,7 +33014,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -33092,7 +33092,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -33206,7 +33206,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -33296,7 +33296,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -33410,7 +33410,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -33524,7 +33524,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -33602,7 +33602,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -33728,7 +33728,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -33806,7 +33806,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -33920,7 +33920,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -34034,7 +34034,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -34124,7 +34124,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -34226,7 +34226,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -34328,7 +34328,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -34430,7 +34430,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -34544,7 +34544,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -34784,7 +34784,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -34898,7 +34898,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -35012,7 +35012,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -35138,7 +35138,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -35264,7 +35264,7 @@
           "faculty_id": "2109040",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -35492,7 +35492,7 @@
           "faculty_id": "2324726",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -35666,7 +35666,7 @@
           "faculty_id": "2324726",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 7,
@@ -35755,7 +35755,7 @@
           "faculty_id": "2324726",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -35832,7 +35832,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -35844,7 +35844,7 @@
           "faculty_id": "2324726",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -35856,7 +35856,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -35951,7 +35951,7 @@
           "faculty_id": "2324726",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -35963,7 +35963,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -35987,7 +35987,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -36094,7 +36094,7 @@
           "faculty_id": "2324726",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -36106,7 +36106,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -36130,7 +36130,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -36237,7 +36237,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -36338,7 +36338,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -36428,7 +36428,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -36440,7 +36440,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -36551,7 +36551,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -36587,7 +36587,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -36686,7 +36686,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -36788,7 +36788,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -36866,7 +36866,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -36890,7 +36890,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -37001,7 +37001,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -37078,7 +37078,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -37192,7 +37192,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -37281,7 +37281,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -37383,7 +37383,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -37460,7 +37460,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -37484,7 +37484,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -37594,7 +37594,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -37672,7 +37672,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -37786,7 +37786,7 @@
           "faculty_id": "1962367",
           "institution": "University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -37863,7 +37863,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -37977,7 +37977,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -38067,7 +38067,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -38169,7 +38169,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -38259,7 +38259,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -38361,7 +38361,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -38463,7 +38463,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -38565,7 +38565,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -38643,7 +38643,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -38769,7 +38769,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -38859,7 +38859,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -38949,7 +38949,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -39051,7 +39051,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -39129,7 +39129,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -39231,7 +39231,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -39369,7 +39369,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -39483,7 +39483,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -39585,7 +39585,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -39663,7 +39663,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -39789,7 +39789,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -39891,7 +39891,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -39981,7 +39981,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -40059,7 +40059,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -40137,7 +40137,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -40239,7 +40239,7 @@
           "faculty_id": "1962367",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -40329,7 +40329,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -40502,7 +40502,7 @@
           "faculty_id": "1478906",
           "institution": "UTRGV",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 9,
@@ -40591,7 +40591,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -40693,7 +40693,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -40783,7 +40783,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -40872,7 +40872,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -40961,7 +40961,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -41062,7 +41062,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -41151,7 +41151,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -41265,7 +41265,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -41355,7 +41355,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -41433,7 +41433,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         }
       ],
       "dates": {
@@ -41511,7 +41511,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -41600,7 +41600,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -41689,7 +41689,7 @@
           "faculty_id": "1478906",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -41827,7 +41827,7 @@
           "faculty_id": "2639363",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 6,
@@ -41964,7 +41964,7 @@
           "faculty_id": "2639363",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,
@@ -42126,7 +42126,7 @@
           "faculty_id": "2639363",
           "institution": "The University of Texas Rio Grande Valley",
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 6,
@@ -42216,7 +42216,7 @@
           "faculty_id": "2639363",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -42329,7 +42329,7 @@
           "faculty_id": "2639363",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -42490,7 +42490,7 @@
           "faculty_id": "2639363",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -42579,7 +42579,7 @@
           "faculty_id": "2639363",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -42668,7 +42668,7 @@
           "faculty_id": "2639363",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -42757,7 +42757,7 @@
           "faculty_id": "2639363",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -42858,7 +42858,7 @@
           "faculty_id": "2639363",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 3,
@@ -42971,7 +42971,7 @@
           "faculty_id": "2639363",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 2,
@@ -43096,7 +43096,7 @@
           "faculty_id": "2639363",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 4,
@@ -43233,7 +43233,7 @@
           "faculty_id": "2639363",
           "institution": null,
           "student_level": null,
-          "is_faculty": false
+          "is_faculty": true
         },
         {
           "position": 5,

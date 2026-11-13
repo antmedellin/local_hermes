@@ -1,0 +1,54 @@
+{
+  "manifest_version": 1,
+  "status": "approved",
+  "department_name": "Department of Manufacturing and Industrial Engineering",
+  "generated_at_utc": "2026-10-30T00:51:42.918339+00:00",
+  "artifacts": {
+    "faculty_reconciled.json": "5f7be1285379f1e0fb28c98bc47904c2dc41ea96fea3389f63e334738538c1bd",
+    "authorship_reconciliation.json": "a54c85bb971be0e0e24092b1fcb461d6531a45d54bc9eef1f0cae6a61ce3146b"
+  },
+  "counts": {
+    "expected_faculty_count": 14,
+    "expected_publication_count": 457,
+    "expected_unique_dm_record_count": 461,
+    "expected_reconciliation_decision_count": 1634,
+    "expected_canonical_publication_count": 456,
+    "expected_publication_merge_group_count": 1,
+    "expected_department_author_occurrence_count": 438,
+    "expected_canonical_authorship_count": 435,
+    "dry_run_decision_occurrence_count": 438,
+    "dry_run_canonical_authorship_count": 435,
+    "classification_counts": {
+      "EXACT": 321,
+      "EXTERNAL": 1094,
+      "HISTORICAL_ID_MISMATCH": 53,
+      "INITIAL_VARIANT": 42,
+      "MODERATE_REVIEW": 4,
+      "NAME_VARIANT": 72,
+      "NAME_VARIANT_WITHOUT_DM_ID": 45,
+      "NAME_WITHOUT_DM_ID": 3
+    },
+    "source_author_occurrence_count": 1634,
+    "source_publication_duplicate_groups": [
+      {
+        "key": [
+          "study of processing variables on the electrical resistivity of conductive adhesives",
+          2013
+        ],
+        "publication_ids": [
+          "PUB-00205",
+          "PUB-00206"
+        ]
+      }
+    ]
+  },
+  "approval": {
+    "reviewer": "Isabella",
+    "approved_at_utc": "2026-10-30T02:01:08.451700+00:00"
+  },
+  "notes": [
+    "Generated counts are not approved import expectations.",
+    "Review the occurrence-count comparison before approving.",
+    "Publication identity remains normalized title plus parsed year."
+  ]
+}

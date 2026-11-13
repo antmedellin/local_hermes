@@ -48,6 +48,15 @@ def parse_args():
         help="Path to the department configuration YAML file.",
     )
 
+    parser.add_argument(
+        "--allow-count-mismatch",
+        action="store_true",
+        help=(
+            "Warn instead of failing on expected dataset count mismatches. "
+            "Schema and reconciliation integrity checks remain enforced."
+        ),
+    )
+
     return parser.parse_args()
 
 
@@ -627,6 +636,9 @@ def main():
     print(f"Department: {DEPARTMENT_NAME}")
     print(f"Institution: {INSTITUTION}")
 
+    if args.allow_count_mismatch:
+        print("WARNING: Expected dataset count mismatches are allowed.")
+
     # -----------------------------------------------------------------------
     # Load artifacts
     # -----------------------------------------------------------------------
@@ -1008,6 +1020,7 @@ def main():
 
         errors = []
         warnings = []
+        count_issues = warnings if args.allow_count_mismatch else errors
 
         if schema_errors:
 
@@ -1025,7 +1038,7 @@ def main():
             and len(faculty_records) != expected_faculty_count
         ):
 
-            errors.append(
+            count_issues.append(
                 f"Expected {expected_faculty_count} faculty records; "
                 f"found {len(faculty_records)}."
             )
@@ -1039,7 +1052,7 @@ def main():
             and len(publications) != expected_publication_count
         ):
 
-            errors.append(
+            count_issues.append(
                 f"Expected {expected_publication_count} publications; "
                 f"found {len(publications)}."
             )
@@ -1053,7 +1066,7 @@ def main():
             and len(unique_dm_ids) != expected_unique_dm_record_count
         ):
 
-            errors.append(
+            count_issues.append(
                 f"Expected {expected_unique_dm_record_count} unique "
                 f"DM record IDs; found {len(unique_dm_ids)}."
             )

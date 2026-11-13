@@ -1,0 +1,55 @@
+{
+  "manifest_version": 1,
+  "status": "approved",
+  "department_name": "Department of Civil Engineering",
+  "generated_at_utc": "2026-11-13T04:40:39.531057+00:00",
+  "artifacts": {
+    "faculty_reconciled.json": "ae46b9cc894bfd1c8a5d28eb4e55592c5fa5a3fbe0076db4fbcbe172596de3b6",
+    "authorship_reconciliation.json": "995f1e8f1364c8cf0dca6c3fdbaf9fb14f88bfb3d7fcfc73c858047703b8d1bb"
+  },
+  "counts": {
+    "expected_faculty_count": 22,
+    "expected_publication_count": 359,
+    "expected_unique_dm_record_count": 362,
+    "expected_reconciliation_decision_count": 1508,
+    "expected_canonical_publication_count": 358,
+    "expected_publication_merge_group_count": 1,
+    "expected_department_author_occurrence_count": 348,
+    "expected_canonical_authorship_count": 343,
+    "dry_run_decision_occurrence_count": 348,
+    "dry_run_canonical_authorship_count": 343,
+    "classification_counts": {
+      "EXACT": 331,
+      "EXTERNAL": 1120,
+      "HIGH_SIMILARITY": 3,
+      "HISTORICAL_ID_SWAP_RECOVERED": 1,
+      "INITIAL_VARIANT": 11,
+      "MODERATE_REVIEW": 36,
+      "NAME_WITHOUT_DM_ID": 6
+    },
+    "source_author_occurrence_count": 1508,
+    "source_publication_duplicate_groups": [
+      {
+        "key": [
+          "evaluation of arsenic sorption performance using dendritic anatase and polycrystalline rutile nano tio2 for environmental applications",
+          2020
+        ],
+        "publication_ids": [
+          "PUB-00027",
+          "PUB-00028"
+        ]
+      }
+    ]
+  },
+  "approval": {
+    "reviewer": "mhc794",
+    "approved_at_utc": "2026-11-13T04:40:39.532249+00:00",
+    "method": "auto_approve_cli",
+    "auto_approved": true,
+    "requested_by_user": true
+  },
+  "notes": [
+    "Approved automatically by explicit --auto-approve request.",
+    "Publication identity remains normalized title plus parsed year."
+  ]
+}

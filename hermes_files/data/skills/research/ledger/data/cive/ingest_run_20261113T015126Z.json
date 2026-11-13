@@ -1,0 +1,30 @@
+{
+  "run_id": "20261113T015126Z",
+  "started_at": "2026-11-13T01:51:26.671609+00:00",
+  "department": "Department of Civil Engineering",
+  "department_slug": "cive",
+  "config": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml",
+  "output_directory": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive",
+  "allow_count_mismatch": false,
+  "auto_approve_requested_by_user": false,
+  "stages": [
+    {
+      "name": "Ingest abstracts into LightRAG",
+      "command": [
+        "/usr/bin/python3",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/lightrag/scripts/maie_abstract_ingest.py",
+        "--department-id",
+        "6"
+      ],
+      "started_at": "2026-11-13T01:51:26.671698+00:00",
+      "status": "failed",
+      "return_code": 1,
+      "duration_seconds": 0.06,
+      "finished_at": "2026-11-13T01:51:26.734910+00:00"
+    }
+  ],
+  "status": "failed",
+  "error": "Stage 'Ingest abstracts into LightRAG' exited with code 1.",
+  "finished_at": "2026-11-13T01:51:26.734958+00:00",
+  "duration_seconds": 0.06
+}

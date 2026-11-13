@@ -1,0 +1,155 @@
+{
+  "manifest_version": 1,
+  "status": "approved",
+  "department_name": "Department of Computer Science",
+  "generated_at_utc": "2026-11-13T04:40:41.345717+00:00",
+  "artifacts": {
+    "faculty_reconciled.json": "58d6674a93d41a1bca38f4834b29f050e108563179f6e9de8a9e6ab9674825f4",
+    "authorship_reconciliation.json": "2b310ac13a0ce471134e6e57fdd770cc77221f2051af83729ae83f7baddbe87d"
+  },
+  "counts": {
+    "expected_faculty_count": 37,
+    "expected_publication_count": 680,
+    "expected_unique_dm_record_count": 717,
+    "expected_reconciliation_decision_count": 2784,
+    "expected_canonical_publication_count": 669,
+    "expected_publication_merge_group_count": 11,
+    "expected_department_author_occurrence_count": 870,
+    "expected_canonical_authorship_count": 833,
+    "dry_run_decision_occurrence_count": 870,
+    "dry_run_canonical_authorship_count": 833,
+    "classification_counts": {
+      "EXACT": 698,
+      "EXTERNAL": 1900,
+      "HISTORICAL_ID_MISMATCH": 10,
+      "HISTORICAL_ID_SWAP_RECOVERED": 4,
+      "INITIAL_VARIANT": 23,
+      "NAME_VARIANT": 109,
+      "NAME_WITHOUT_DM_ID": 40
+    },
+    "source_author_occurrence_count": 2784,
+    "source_publication_duplicate_groups": [
+      {
+        "key": [
+          "uniform robot relocation is hard in only two directions even without obstacles",
+          2024
+        ],
+        "publication_ids": [
+          "PUB-00024",
+          "PUB-00369"
+        ]
+      },
+      {
+        "key": [
+          "computing threshold circuits with bimolecular void reactions in step chemical reaction networks",
+          2024
+        ],
+        "publication_ids": [
+          "PUB-00031",
+          "PUB-00033"
+        ]
+      },
+      {
+        "key": [
+          "flipping tiles concentration independent coin flips in tile self assembly",
+          2015
+        ],
+        "publication_ids": [
+          "PUB-00061",
+          "PUB-00062"
+        ]
+      },
+      {
+        "key": [
+          "on the complexity of rocchio s similarity based relevance feedback algorithm",
+          2007
+        ],
+        "publication_ids": [
+          "PUB-00123",
+          "PUB-00124"
+        ]
+      },
+      {
+        "key": [
+          "a quadratic lower bound for rocchio s similarity based relevance feedback algorithm",
+          2005
+        ],
+        "publication_ids": [
+          "PUB-00137",
+          "PUB-00140"
+        ]
+      },
+      {
+        "key": [
+          "deciphering the role of ion channels in early defense signaling against herbivorous insects",
+          2021
+        ],
+        "publication_ids": [
+          "PUB-00312",
+          "PUB-00313"
+        ]
+      },
+      {
+        "key": [
+          "covert computation in self assembled circuits",
+          2019
+        ],
+        "publication_ids": [
+          "PUB-00402",
+          "PUB-00404"
+        ]
+      },
+      {
+        "key": [
+          "full tilt universal constructors for general shapes with uniform external forces",
+          2019
+        ],
+        "publication_ids": [
+          "PUB-00405",
+          "PUB-00407"
+        ]
+      },
+      {
+        "key": [
+          "self assembly of shapes at constant scale using repulsive forces",
+          2017
+        ],
+        "publication_ids": [
+          "PUB-00410",
+          "PUB-00411"
+        ]
+      },
+      {
+        "key": [
+          "verification in staged tile self assembly",
+          2017
+        ],
+        "publication_ids": [
+          "PUB-00412",
+          "PUB-00413"
+        ]
+      },
+      {
+        "key": [
+          "some formal analysis of rocchio s similarity based relevance feedback algorithm",
+          2002
+        ],
+        "publication_ids": [
+          "PUB-00601",
+          "PUB-00604"
+        ]
+      }
+    ]
+  },
+  "approval": {
+    "reviewer": "mhc794",
+    "approved_at_utc": "2026-11-13T04:40:41.347594+00:00",
+    "method": "auto_approve_cli",
+    "auto_approved": true,
+    "requested_by_user": true
+  },
+  "notes": [
+    "Approved automatically by explicit --auto-approve request.",
+    "Publication identity remains normalized title plus parsed year."
+  ]
+}

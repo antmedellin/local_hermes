@@ -1,0 +1,76 @@
+{
+  "manifest_version": 1,
+  "status": "approved",
+  "department_name": "Department of Manufacturing and Industrial Engineering",
+  "generated_at_utc": "2026-11-12T22:46:31.756312+00:00",
+  "artifacts": {
+    "faculty_reconciled.json": "58d7300de2533cc8f10f825c1af2e1b2de02535940f35506437f3ab158f8b065",
+    "authorship_reconciliation.json": "100a34a0cd8694b9b4e9b32031cd0a6b4bee01de23690fa276439a7f68d6f224"
+  },
+  "counts": {
+    "expected_faculty_count": 15,
+    "expected_publication_count": 453,
+    "expected_unique_dm_record_count": 465,
+    "expected_reconciliation_decision_count": 1633,
+    "expected_canonical_publication_count": 450,
+    "expected_publication_merge_group_count": 3,
+    "expected_department_author_occurrence_count": 433,
+    "expected_canonical_authorship_count": 425,
+    "dry_run_decision_occurrence_count": 433,
+    "dry_run_canonical_authorship_count": 425,
+    "classification_counts": {
+      "EXACT": 315,
+      "EXTERNAL": 1094,
+      "HISTORICAL_ID_MISMATCH": 56,
+      "INITIAL_VARIANT": 42,
+      "MODERATE_REVIEW": 4,
+      "NAME_VARIANT": 73,
+      "NAME_VARIANT_WITHOUT_DM_ID": 46,
+      "NAME_WITHOUT_DM_ID": 3
+    },
+    "source_author_occurrence_count": 1633,
+    "source_publication_duplicate_groups": [
+      {
+        "key": [
+          "investigations into internal surface finishing of titanium grade 2 pipe with extended magnetic tool",
+          2018
+        ],
+        "publication_ids": [
+          "PUB-00109",
+          "PUB-00111"
+        ]
+      },
+      {
+        "key": [
+          "an experimental investigation of temperatures during conventional and cbn grinding",
+          2007
+        ],
+        "publication_ids": [
+          "PUB-00155",
+          "PUB-00156"
+        ]
+      },
+      {
+        "key": [
+          "study of processing variables on the electrical resistivity of conductive adhesives",
+          2009
+        ],
+        "publication_ids": [
+          "PUB-00212",
+          "PUB-00213"
+        ]
+      }
+    ]
+  },
+  "approval": {
+    "reviewer": "mhc794",
+    "approved_at_utc": "2026-11-12T22:46:31.757612+00:00",
+    "method": "auto_approve_cli",
+    "auto_approved": true,
+    "requested_by_user": true
+  },
+  "notes": [
+    "Approved automatically by explicit --auto-approve request.",
+    "Publication identity remains normalized title plus parsed year."
+  ]
+}

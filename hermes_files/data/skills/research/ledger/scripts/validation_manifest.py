@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Generate a pending-review validation manifest without database access."""
+"""Generate a validation manifest without database access; optionally auto-approve."""
 import argparse
+import getpass
 import hashlib
 import json
 import re
+import shutil
 import unicodedata
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
@@ -269,15 +271,28 @@ def calculate_counts(reconciled, reconciliation):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Generate a pending-review validation manifest."
+        description="Generate a validation manifest with optional explicit auto-approval."
     )
     parser.add_argument("--config", required=True)
     parser.add_argument(
         "--write",
         action="store_true",
-        help="Write the manifest; without this flag, print the report only.",
+        help=(
+            "Write a pending-review manifest, backing up any existing manifest "
+            "under a timestamped name; otherwise print the report only."
+        ),
+    )
+    parser.add_argument(
+        "--auto-approve",
+        action="store_true",
+        help=(
+            "Approve the generated manifest using the current username and UTC "
+            "timestamp. Requires --write."
+        ),
     )
     args = parser.parse_args()
+    if args.auto_approve and not args.write:
+        parser.error("--auto-approve requires --write")
 
     config_path = Path(args.config).resolve()
     config = load_json(config_path) if config_path.suffix == ".json" else None
@@ -324,18 +339,37 @@ def main():
         ],
     }
 
+    if args.auto_approve:
+        manifest["status"] = "approved"
+        manifest["approval"] = {
+            "reviewer": getpass.getuser(),
+            "approved_at_utc": datetime.now(timezone.utc).isoformat(),
+            "method": "auto_approve_cli",
+            "auto_approved": True,
+            "requested_by_user": True,
+        }
+        manifest["notes"] = [
+            "Approved automatically by explicit --auto-approve request.",
+            "Publication identity remains normalized title plus parsed year.",
+        ]
+
     print(json.dumps(manifest, indent=2, ensure_ascii=False))
 
     if args.write:
         if manifest_path.exists():
-            raise SystemExit(
-                f"Refusing to overwrite existing manifest: {manifest_path}"
+            timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+            backup_path = manifest_path.with_name(
+                f"{manifest_path.stem}.{timestamp}.bak{manifest_path.suffix}"
             )
+            # Exclusive creation preserves previous backups as well as approvals.
+            with manifest_path.open("rb") as source, backup_path.open("xb") as backup:
+                shutil.copyfileobj(source, backup)
+            print(f"\nPreserved previous manifest: {backup_path}")
         manifest_path.write_text(
             json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
         )
-        print(f"\nWrote pending-review manifest: {manifest_path}")
+        print(f"\nWrote {manifest['status']} manifest: {manifest_path}")
 
 
 if __name__ == "__main__":

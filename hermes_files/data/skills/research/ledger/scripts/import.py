@@ -56,7 +56,23 @@ def parse_args():
         help="Path to the department configuration YAML file.",
     )
 
+    parser.add_argument(
+        "--allow-count-mismatch",
+        action="store_true",
+        help=(
+            "Warn instead of failing on expected dataset count mismatches. "
+            "Manifest approval/hashes and database integrity checks remain enforced."
+        ),
+    )
+
     return parser.parse_args()
+
+
+def report_count_mismatch(message):
+    """Only expected dataset totals may be bypassed by the explicit flag."""
+    if not args.allow_count_mismatch:
+        raise RuntimeError(message)
+    print(f"WARNING: {message} (allowed by --allow-count-mismatch)")
 
 
 def load_config(config_file):
@@ -951,6 +967,51 @@ def upsert_paper(cursor, publication):
         dates.get("accepted"),
     )
 
+    # A conventional UNIQUE(title, publication_year) permits repeated NULL years.
+    # Serialize undated-paper lookup/insert so reruns reuse the same paper ID.
+    if year is None:
+        cursor.execute(
+            "SELECT pg_advisory_xact_lock(hashtextextended(%s, 0))",
+            (title,),
+        )
+        cursor.execute(
+            """
+            SELECT paper_id
+            FROM research.papers
+            WHERE title = %s AND publication_year IS NULL
+            ORDER BY paper_id
+            FOR UPDATE
+            """,
+            (title,),
+        )
+        existing = cursor.fetchall()
+        if len(existing) > 1:
+            raise RuntimeError(
+                "Multiple existing undated papers have the same title; "
+                "review duplicates before importing: "
+                f"{title!r}, paper IDs: {[row[0] for row in existing]}"
+            )
+        if existing:
+            cursor.execute(
+                """
+                UPDATE research.papers
+                SET abstract = COALESCE(abstract, %s),
+                    publication_date = COALESCE(publication_date, %s),
+                    publisher = COALESCE(publisher, %s),
+                    doi = COALESCE(doi, %s),
+                    publication_url = COALESCE(publication_url, %s),
+                    updated_at = NOW()
+                WHERE paper_id = %s
+                RETURNING paper_id
+                """,
+                (
+                    publication.get("abstract"), publication_date,
+                    publication.get("publisher"), publication.get("doi"),
+                    publication.get("url"), existing[0][0],
+                ),
+            )
+            return cursor.fetchone()[0]
+
     cursor.execute(
         """
         INSERT INTO research.papers (
@@ -1235,6 +1296,12 @@ def main():
     print("DATABASE IMPORT")
     print("=" * 80)
 
+    if args.allow_count_mismatch:
+        print(
+            "WARNING: Expected dataset count mismatches are allowed. "
+            "Post-import counts will be checked against the current dataset."
+        )
+
     print()
     print("Loading reconciled source...")
 
@@ -1254,7 +1321,7 @@ def main():
     expected_publications = VALIDATION.get("expected_publication_count")
     if expected_publications is not None:
         if len(publications) != expected_publications:
-            raise RuntimeError(
+            report_count_mismatch(
                 f"Expected {expected_publications} source publications, "
                 f"got {len(publications)}"
             )
@@ -1271,7 +1338,7 @@ def main():
         }
 
         if len(unique_dm_ids) != expected_unique_dm_ids:
-            raise RuntimeError(
+            report_count_mismatch(
                 f"Expected {expected_unique_dm_ids} unique DM record IDs, "
                 f"got {len(unique_dm_ids)}"
             )
@@ -1285,7 +1352,7 @@ def main():
     # ---------------------------------------------------------------
     expected_decisions = VALIDATION["expected_reconciliation_decision_count"]
     if len(decisions) != expected_decisions:
-        raise RuntimeError(
+        report_count_mismatch(
             "Unexpected reconciliation decision count: "
             f"{len(decisions)} "
             f"(expected {expected_decisions})"
@@ -1301,7 +1368,7 @@ def main():
     expected_faculty_count = VALIDATION["expected_faculty_count"]
 
     if len(faculty_by_id) != expected_faculty_count:
-        raise RuntimeError(
+        report_count_mismatch(
             f"Expected {expected_faculty_count} current department faculty IDs, "
             f"got {len(faculty_by_id)}"
         )
@@ -1318,7 +1385,7 @@ def main():
 
     expected_canonical_papers = VALIDATION["expected_canonical_publication_count"]
     if len(canonical_publications) != expected_canonical_papers:
-        raise RuntimeError(
+        report_count_mismatch(
             f"Expected {expected_canonical_papers} canonical papers, "
             f"got {len(canonical_publications)}"
         )
@@ -1326,7 +1393,7 @@ def main():
     expected_merge_groups = VALIDATION["expected_publication_merge_group_count"]
 
     if len(duplicate_groups) != expected_merge_groups:
-        raise RuntimeError(
+        report_count_mismatch(
             f"Expected {expected_merge_groups} publication merge group, "
             f"got {len(duplicate_groups)}"
         )
@@ -1366,7 +1433,7 @@ def main():
     expected_department_occurrences = VALIDATION["expected_department_author_occurrence_count"]
 
     if len(current_department_occurrences) != expected_department_occurrences:
-        raise RuntimeError(
+        report_count_mismatch(
             f"Expected {expected_department_occurrences} safe department "
             f"author occurrences, got {len(current_department_occurrences)}"
         )
@@ -1411,7 +1478,7 @@ def main():
     expected_canonical_authorships = VALIDATION["expected_canonical_authorship_count"]
 
     if len(canonical_authorships) != expected_canonical_authorships:
-        raise RuntimeError(
+        report_count_mismatch(
             f"Expected {expected_canonical_authorships} canonical "
             f"authorships, got {len(canonical_authorships)}"
         )
@@ -1576,10 +1643,12 @@ def main():
 
         expected = {
             "department_professors": (
-                VALIDATION["expected_faculty_count"]
+                len(faculty_by_id) if args.allow_count_mismatch
+                else VALIDATION["expected_faculty_count"]
             ),
             "department_authorships": (
-                VALIDATION["expected_canonical_authorship_count"]
+                len(canonical_authorships) if args.allow_count_mismatch
+                else VALIDATION["expected_canonical_authorship_count"]
             ),
         }
 

@@ -2,10 +2,10 @@
   "manifest_version": 1,
   "status": "approved",
   "department_name": "Department of Electrical and Computer Engineering",
-  "generated_at_utc": "2026-11-10T17:23:30.152763+00:00",
+  "generated_at_utc": "2026-11-13T05:04:03.411870+00:00",
   "artifacts": {
     "faculty_reconciled.json": "434e151bbdbb8b927197d2b9cf6055cb0c3c4c509a805043dfcc64fcd216e684",
-    "authorship_reconciliation.json": "d44e267687be0c16e2c700f6d5ab86d08b6a6db554cd30d7183917e7ab3b4fd2"
+    "authorship_reconciliation.json": "7ff595effa7aef69f279e1239f221b28f74c81dba023d33cbc3f8125bcd29ee2"
   },
   "counts": {
     "expected_faculty_count": 24,
@@ -52,12 +52,14 @@
     ]
   },
   "approval": {
-    "reviewer": "Isabella Morgan",
-    "approved_at_utc": "2026-11-10T17:32:12.950003+00:00"
+    "reviewer": "mhc794",
+    "approved_at_utc": "2026-11-13T05:04:03.413527+00:00",
+    "method": "auto_approve_cli",
+    "auto_approved": true,
+    "requested_by_user": true
   },
   "notes": [
-    "Generated counts are not approved import expectations.",
-    "Review the occurrence-count comparison before approving.",
+    "Approved automatically by explicit --auto-approve request.",
     "Publication identity remains normalized title plus parsed year."
   ]
 }

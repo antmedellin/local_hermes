@@ -1,0 +1,4214 @@
+{
+  "input_file": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/faculty_enriched.json",
+  "metadata": {
+    "institution": "University of Texas Rio Grande Valley",
+    "college": "College of Engineering and Computer Science",
+    "department": "Department of Civil Engineering",
+    "department_url": "https://www.utrgv.edu/cecs/departments/cive/index.htm",
+    "faculty_url": "https://www.utrgv.edu/cecs/departments/cive/faculty/index.htm",
+    "faculty_count": 22,
+    "publication_count": 360,
+    "source": "digital_measures",
+    "api_endpoint": "https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMuser?username=",
+    "generated_at": "2026-11-13T04:49:42Z"
+  },
+  "summary": {
+    "faculty_count": 22,
+    "publication_objects": 386,
+    "metadata_publication_count": 360,
+    "publication_count_mismatch": true,
+    "unique_doi_values": 129,
+    "doi_duplicate_groups": 6,
+    "title_year_duplicate_groups": 12,
+    "recoverable_dois": 8,
+    "bad_urls": 19,
+    "missing_abstracts": 315,
+    "missing_full_text": 340,
+    "faculty_with_no_publications": 6,
+    "faculty_missing_research": 22,
+    "total_authors": 1635,
+    "faculty_author_entries": 448,
+    "suspicious_faculty_author_entries": 0
+  },
+  "faculty_with_no_publications": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "faculty_missing_research": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "faculty_publication_counts": [
+    {
+      "name": "Li Ai",
+      "user_id": "2639364",
+      "publication_count": 61
+    },
+    {
+      "name": "Chu-Lin Cheng",
+      "user_id": "1662388",
+      "publication_count": 53
+    },
+    {
+      "name": "Gasser Ali",
+      "user_id": "2391024",
+      "publication_count": 45
+    },
+    {
+      "name": "Thang Pham",
+      "user_id": "1962367",
+      "publication_count": 44
+    },
+    {
+      "name": "Jungseok Ho",
+      "user_id": "1450963",
+      "publication_count": 35
+    },
+    {
+      "name": "Mohsen Amjadian",
+      "user_id": "2318261",
+      "publication_count": 34
+    },
+    {
+      "name": "Philip Park",
+      "user_id": "2109040",
+      "publication_count": 29
+    },
+    {
+      "name": "Thanh Thuy Vu",
+      "user_id": "1478906",
+      "publication_count": 22
+    },
+    {
+      "name": "Jong Min Kim",
+      "user_id": "1951118",
+      "publication_count": 15
+    },
+    {
+      "name": "Yoojun Kim",
+      "user_id": "2639363",
+      "publication_count": 13
+    },
+    {
+      "name": "Mohamadhossein Noruzoliaee",
+      "user_id": "2201384",
+      "publication_count": 10
+    },
+    {
+      "name": "Bozhou Zhuang",
+      "user_id": "2700076",
+      "publication_count": 8
+    },
+    {
+      "name": "Fatemeh Nazari",
+      "user_id": "2201383",
+      "publication_count": 8
+    },
+    {
+      "name": "Seyed Mustapha Rahmaninezhad",
+      "user_id": "2324726",
+      "publication_count": 6
+    },
+    {
+      "name": "Jinwoo An",
+      "user_id": "2448585",
+      "publication_count": 2
+    },
+    {
+      "name": "Alejandro Sanchez",
+      "user_id": "1493859",
+      "publication_count": 1
+    },
+    {
+      "name": "Heriberto Cavazos",
+      "user_id": "2375090",
+      "publication_count": 0
+    },
+    {
+      "name": "Juan Bosquez",
+      "user_id": "1994341",
+      "publication_count": 0
+    },
+    {
+      "name": "Linh Thai Duong",
+      "user_id": "2701006",
+      "publication_count": 0
+    },
+    {
+      "name": "Omar Al-Qudah",
+      "user_id": "2231642",
+      "publication_count": 0
+    },
+    {
+      "name": "Syed Zohaib Hassan",
+      "user_id": "2698448",
+      "publication_count": 0
+    },
+    {
+      "name": "Uma Malik",
+      "user_id": "2526915",
+      "publication_count": 0
+    }
+  ],
+  "publication_field_completeness": {
+    "title": {
+      "present": 386,
+      "missing": 0,
+      "percent_present": 100.0
+    },
+    "year": {
+      "present": 347,
+      "missing": 39,
+      "percent_present": 89.9
+    },
+    "type": {
+      "present": 386,
+      "missing": 0,
+      "percent_present": 100.0
+    },
+    "status": {
+      "present": 385,
+      "missing": 1,
+      "percent_present": 99.7
+    },
+    "refereed": {
+      "present": 180,
+      "missing": 206,
+      "percent_present": 46.6
+    },
+    "publisher": {
+      "present": 330,
+      "missing": 56,
+      "percent_present": 85.5
+    },
+    "volume": {
+      "present": 200,
+      "missing": 186,
+      "percent_present": 51.8
+    },
+    "issue": {
+      "present": 132,
+      "missing": 254,
+      "percent_present": 34.2
+    },
+    "pages": {
+      "present": 197,
+      "missing": 189,
+      "percent_present": 51.0
+    },
+    "url": {
+      "present": 108,
+      "missing": 278,
+      "percent_present": 28.0
+    },
+    "isbn_issn": {
+      "present": 70,
+      "missing": 316,
+      "percent_present": 18.1
+    },
+    "pmcid": {
+      "present": 1,
+      "missing": 385,
+      "percent_present": 0.3
+    },
+    "doi": {
+      "present": 131,
+      "missing": 255,
+      "percent_present": 33.9
+    },
+    "abstract": {
+      "present": 71,
+      "missing": 315,
+      "percent_present": 18.4
+    },
+    "full_text": {
+      "present": 46,
+      "missing": 340,
+      "percent_present": 11.9
+    },
+    "impact": {
+      "present": 26,
+      "missing": 360,
+      "percent_present": 6.7
+    },
+    "authors": {
+      "present": 386,
+      "missing": 0,
+      "percent_present": 100.0
+    }
+  },
+  "profile_field_completeness": {
+    "bio": {
+      "present": 16,
+      "missing": 6
+    },
+    "building": {
+      "present": 17,
+      "missing": 5
+    },
+    "campus": {
+      "present": 19,
+      "missing": 3
+    },
+    "email": {
+      "present": 22,
+      "missing": 0
+    },
+    "first_name": {
+      "present": 22,
+      "missing": 0
+    },
+    "full_name": {
+      "present": 22,
+      "missing": 0
+    },
+    "last_name": {
+      "present": 22,
+      "missing": 0
+    },
+    "middle_name": {
+      "present": 2,
+      "missing": 20
+    },
+    "phone": {
+      "present": 22,
+      "missing": 0
+    },
+    "photo": {
+      "present": 14,
+      "missing": 8
+    },
+    "prefix": {
+      "present": 18,
+      "missing": 4
+    },
+    "research_interests": {
+      "present": 0,
+      "missing": 22
+    },
+    "room": {
+      "present": 16,
+      "missing": 6
+    },
+    "structured_research_interests": {
+      "present": 20,
+      "missing": 2
+    },
+    "vita_available": {
+      "present": 18,
+      "missing": 4
+    }
+  },
+  "status_distribution": {
+    "Published": 347,
+    "Submitted": 9,
+    "In Preparation; Not Yet Submitted": 8,
+    "Accepted": 17,
+    "Not Accepted": 2,
+    "Revising to Resubmit": 2,
+    "UNKNOWN": 1
+  },
+  "publication_type_distribution": {
+    "Journal Article, Academic Journal": 258,
+    "Technical Report": 14,
+    "Conference Proceeding": 102,
+    "Other": 7,
+    "Book, Scholarly-New": 2,
+    "Research Grant Report": 1,
+    "Book, Chapter in Textbook-Revised": 1,
+    "Journal Article, Public or Trade Journal": 1
+  },
+  "recoverable_dois": [
+    {
+      "index": 136,
+      "title": "Geospatial analysis of impact on evacuation routes and urban areas in south Texas due to flood events",
+      "year": 2022,
+      "doi": "10.3934/urs.2023002",
+      "source_field": "url"
+    },
+    {
+      "index": 139,
+      "title": "Automation and coupling of models for coastal flood forecasting in South Texas",
+      "year": null,
+      "doi": "10.1142/s2345737622500014",
+      "source_field": "url"
+    },
+    {
+      "index": 186,
+      "title": "Fostering community belonging through STEAM education: Board game design in a university art appreciation course",
+      "year": 2025,
+      "doi": "10.36922/ac.4437",
+      "source_field": "url"
+    },
+    {
+      "index": 253,
+      "title": "Planar Arrangement of Permanent Magnets in Design of a Magneto-Solid Damper by Finite Element Method",
+      "year": 2020,
+      "doi": "10.1177/1045389x20905968",
+      "source_field": "url"
+    },
+    {
+      "index": 257,
+      "title": "Feasibility study of using a semiactive electromagnetic friction damper for seismic response control of horizontally curved bridges",
+      "year": 2019,
+      "doi": "10.1002/stc.2333",
+      "source_field": "url"
+    },
+    {
+      "index": 260,
+      "title": "Dynamic characteristics of horizontally curved bridges",
+      "year": 2017,
+      "doi": "10.1177/1077546317726637",
+      "source_field": "url"
+    },
+    {
+      "index": 264,
+      "title": "Rigid-body motion of horizontally curved bridges subjected to earthquake-induced pounding",
+      "year": 2016,
+      "doi": "10.1061/(asce)be.1943-5592.0000962",
+      "source_field": "url"
+    },
+    {
+      "index": 265,
+      "title": "Analytical study of the coupled motions of decks in skew bridges with the deck–abutment collision",
+      "year": 2016,
+      "doi": "10.1177/1077546316659781",
+      "source_field": "url"
+    }
+  ],
+  "bad_urls": [
+    {
+      "index": 63,
+      "title": "Simultaneous estimation of battery electric vehicle adoption with endogenous willingness to pay",
+      "url": "www.sciencedirect.com/science/article/pii/S2590116819300086"
+    },
+    {
+      "index": 64,
+      "title": "Modeling electric vehicle adoption considering a latent travel pattern construct and charging infrastructure",
+      "url": "www.sciencedirect.com/science/article/pii/S1361920918311866"
+    },
+    {
+      "index": 65,
+      "title": "Shared versus private mobility: Modeling public interest in autonomous vehicles accounting for latent attitudes",
+      "url": "www.sciencedirect.com/science/article/pii/S0968090X18302201"
+    },
+    {
+      "index": 66,
+      "title": "Dynamic household vehicle decision modeling with consideration of electric vehicles",
+      "url": "journals.sagepub.com/doi/abs/10.1177/0361198118796925"
+    },
+    {
+      "index": 67,
+      "title": "Optimal facility-specific inspection and maintenance decisions under measurement uncertainty: Unifying framework",
+      "url": "ascelibrary.org/doi/abs/10.1061/%28ASCE%29IS.1943-555X.0000402"
+    },
+    {
+      "index": 127,
+      "title": "VS destruction and its impact on VOSC generation under thermophilic and mesophilic anaerobic digestion conditions",
+      "url": "www.researchpublish.com"
+    },
+    {
+      "index": 129,
+      "title": "Lead in Drinking Water at a South Texas University",
+      "url": "www.researchpublish.com/"
+    },
+    {
+      "index": 144,
+      "title": "Sand and pumice filter amended with activated carbon and biochar for phosphorus retention",
+      "url": "ijaer.in/more2019.php?id=31"
+    },
+    {
+      "index": 228,
+      "title": "Airfield Infrastructure Management Using Network-Level Optimization and Stochastic Duration Modeling",
+      "url": "www.mdpi.com/2412-3811/4/1/2"
+    },
+    {
+      "index": 229,
+      "title": "Ecosystem and Transportation Infrastructure Resilience in the Great Lakes",
+      "url": "www.tandfonline.com/doi/full/10.1080/00139157.2018.1495508"
+    },
+    {
+      "index": 230,
+      "title": "Roads in transition: Integrated modeling of a manufacturer-traveler-infrastructure system in a mixed autonomous/human driving environment",
+      "url": "www.sciencedirect.com/science/article/pii/S0968090X18303590"
+    },
+    {
+      "index": 231,
+      "title": "Shared versus private mobility: Modeling public interest in autonomous vehicles accounting for latent attitudes",
+      "url": "www.sciencedirect.com/science/article/pii/S0968090X18302201"
+    },
+    {
+      "index": 232,
+      "title": "Optimal facility-specific inspection and maintenance decisions under measurement uncertainty: Unifying framework",
+      "url": "ascelibrary.org/doi/abs/10.1061/%28ASCE%29IS.1943-555X.0000402"
+    },
+    {
+      "index": 233,
+      "title": "Iterative update of route choice proportions in OD estimation",
+      "url": "www.icevirtuallibrary.com/doi/abs/10.1680/jtran.12.00071"
+    },
+    {
+      "index": 234,
+      "title": "The demand and supply of trans-oceanic sea routes: the case of East Asia-US east coast container trade",
+      "url": "www.inderscience.com/info/inarticle.php?artid=79797"
+    },
+    {
+      "index": 235,
+      "title": "Airport partial and full privatization in a multi-airport region: Focus on pricing and capacity",
+      "url": "www.sciencedirect.com/science/article/pii/S1366554515000459"
+    },
+    {
+      "index": 236,
+      "title": "An investigation of human factors impact on Tehran urban crash severity",
+      "url": "www.jtle.net/uploadfile/2014/0428/20140428032338230.pdf"
+    },
+    {
+      "index": 237,
+      "title": "A model for predicting schoolchildren accidents in the vicinity of rural roads based on geometric design and traffic conditions",
+      "url": "www.ijte.ir/article_2628_1.html"
+    },
+    {
+      "index": 338,
+      "title": "Load-carrying capacity and required reinforcement strength of closely-spaced soil-geosynthetic composites",
+      "url": "ascelibrary.org/doi/full/10.1061/%28ASCE%29GT.1943-5606.0000885"
+    }
+  ],
+  "missing_abstracts": [
+    {
+      "index": 0,
+      "title": "Social media sites use intensity and job burnout among the U.S. and Thai employees",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 2,
+      "title": "Inverse structural design with generative and probabilistic autoencoders and diffusion models",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 3,
+      "title": "Non-destructive evaluation and machine learning methods for inspection of spent nuclear fuel canisters: A state-of-the-art review",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 4,
+      "title": "Machine learning for design, optimization and assessment of steel-concrete composite structures: A review",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 5,
+      "title": "Damage detection and localization in sealed spent nuclear fuel dry storage canisters using multi-task machine learning classifiers",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 6,
+      "title": "Machine learning-aided damage identification of mock-up spent nuclear fuel assemblies in a sealed dry storage canister",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 7,
+      "title": "Development and experimental verification of an active noise cancellation (ANC) method for non-invasive sensing",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 8,
+      "title": "Shear mechanism of Rubber-Sleeved Stud (RSS) connectors in the steel-concrete interface of cable-pylon composite anchorage",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 9,
+      "title": "A Machine Learning Approach for Water Quality Assessment in the Lower Rio Grande Valley Watershed",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 10,
+      "title": "Potentials of flood-managed aquifer recharge: Enhancing regional water quality and water supply through modified infiltration basins.",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 11,
+      "title": "Low Methane Emissions from Nutrient-Rich Former River Channels in a Hydrologically Managed Dryland Delta",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 12,
+      "title": "Applications of Machine Learning in Enhancing Evaporation Estimation for Small Reservoirs: A Case Study in Semi-Arid South Texas",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 14,
+      "title": "Aqueous lead removal using biochar-pumice filter derived from avocado seed, aspen bedding and palm tree frond",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 17,
+      "title": "Quality Assurance Project Plan (QAPP) for Biochar Filter Socks for Stormwater Management in the US-Mexico Border",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 18,
+      "title": "Effects of Biochar Production Methods and Biomass Types on Lead Removal from Aqueous Solution",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 19,
+      "title": "Groundwater Vulnerability Assessment of Shallow Aquifer in the South Texas Sand Sheet using a GIS-Based DRASTIC Model",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 20,
+      "title": "Effects of Upscaled Capillary-Saturation Function Parameters on Reactive Transport and Trapping Storage in Geological Carbon Sequestrations",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 21,
+      "title": "Influence of hydraulic properties of soil layers of LID in groundwater recharge and storage",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 22,
+      "title": "Performance and efficiency Evaluation of stormwater management LIDs using PCSWMM: Numerical modeling and sensitivity analysis",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 23,
+      "title": "Biogeographic controls of Prosopis glandulosa and Quercus virginiana on the South Texas Sand Sheet, which is the real Phreatophyte",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 24,
+      "title": "Compost and biochar to promote soil biological activities under sweet potatoes cultivation in a subtropical semi-arid region.",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 25,
+      "title": "Compost and Biochar to Promote Soil Biological Activities under Sweet Potatoes Cultivation in a Subtropical Semiarid Region",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 26,
+      "title": "Evaluation of arsenic sorption performance using dendritic anatase and polycrystalline rutile nano-TiO2 for environmental applications.",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 27,
+      "title": "Evaluation of  arsenic sorption performance using dendritic anatase and polycrystalline rutile nano-TiO2 for environmental applications",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 28,
+      "title": "Lead removal from aqueous solutions using biochars derived from corn stover, orange peel and pistachio shell",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 29,
+      "title": "Effect of Land Use Change for Bioenergy Production on Feedstock Cost and Water Quality",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 30,
+      "title": "Groundwater Vulnerability of South Texas Sand Sheet and Its Connection to Lower Laguna Madre (tentative)",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 31,
+      "title": "Impact of the capillary pressure-saturation pore size distribution parameters on geologic carbon sequestration estimates",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 32,
+      "title": "Upscaling Capillary Pressure – Saturation Parameters at Different Pressure Reference Elevations",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 33,
+      "title": "Adsorptive and kinetic characterization of aqueous zinc removal by biochars",
+      "year": 2016,
+      "faculty": ""
+    },
+    {
+      "index": 34,
+      "title": "Capillary pressure–saturation relationships for gas shales measured using a water activity meter",
+      "year": 2016,
+      "faculty": ""
+    },
+    {
+      "index": 35,
+      "title": "Watershed Modeling and Sediment Yield Prediction of the Los Olmos Creek Watershed in South Texas",
+      "year": 2016,
+      "faculty": ""
+    },
+    {
+      "index": 36,
+      "title": "Evaluation of TrueCell program for estimating point capillary pressure—saturation parameters for Flint sand",
+      "year": 2016,
+      "faculty": ""
+    },
+    {
+      "index": 37,
+      "title": "Rapid imbibition of water in fractures within unsaturated sedimentary rock",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 38,
+      "title": "A numerical study on fractal dimensions of a current streamlines in two-dimensional and three-dimensional pore fractal models of porous media",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 39,
+      "title": "Generalized Modeling of Spontaneous Imbibition Based on Hagen–Poiseuille Flow in Tortuous Capillaries with Variably Shaped Apertures",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 40,
+      "title": "Multiple pixel-scale soil water retention curves quantified by neutron radiography",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 41,
+      "title": "Neutron imaging of hydrogen-rich fluids in geomaterials and engineered porous media: A review",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 42,
+      "title": "Diffusivity and sorptivity of Berea sandstone determined using neutron radiography",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 43,
+      "title": "Forward Prediction of Height-Averaged Capillary Pressure–Saturation Parameters Using the BC-vG Upscaler",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 44,
+      "title": "Neutron imaging reveals internal plant water dynamics",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 45,
+      "title": "Reply to: Comment on ‘neutron imaging reveals internal plant water dynamics’",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 46,
+      "title": "Roots Revealed-Neutron imaging insight of spatial distribution, morphology, growth and function",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 47,
+      "title": "Sensitivity of injection costs to input petrophysical parameters in numerical geologic carbon sequestration models",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 48,
+      "title": "SIMULATION OF COUPLED SURFACE-SUBSURFACE HYDROLOGIC AND TERRESTRIAL ECOSYSTEM PROCESSES USING PFLOTRAN AND CLM",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 49,
+      "title": "Water calibration measurements for neutron radiography: application to water content quantification in porous media",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 50,
+      "title": "Average soil water retention curves measured by neutron radiography",
+      "year": 2012,
+      "faculty": ""
+    },
+    {
+      "index": 51,
+      "title": "Neutron imaging of root water uptake, transport and hydraulic redistribution",
+      "year": 2012,
+      "faculty": ""
+    },
+    {
+      "index": 52,
+      "title": "Permeation of gasoline through DI pipe gaskets in water mains.",
+      "year": 2012,
+      "faculty": ""
+    },
+    {
+      "index": 53,
+      "title": "Effects of Average and Point Capillary Pressure-Saturation Function Parameters on Multiphase Flow Simulations",
+      "year": 2011,
+      "faculty": ""
+    },
+    {
+      "index": 54,
+      "title": "Neutron Imaging and Applications: A Reference for the Imaging Community",
+      "year": 2011,
+      "faculty": ""
+    },
+    {
+      "index": 55,
+      "title": "Neutron Imaging Reveals Internal Plant Hydraulic Dynamics",
+      "year": 2011,
+      "faculty": ""
+    },
+    {
+      "index": 56,
+      "title": "Permeation of Petroleum-Based Hydrocarbons through PVC Pipe Joints with Rieber Gasket Systems",
+      "year": 2011,
+      "faculty": ""
+    },
+    {
+      "index": 57,
+      "title": "Hysteresis of Soil Point Water Retention Functions Determined by Neutron Radiography",
+      "year": 2010,
+      "faculty": ""
+    },
+    {
+      "index": 58,
+      "title": "Microscopic visualization technique to predict the permeation of organic solvents through PVC pipes in water distribution systems",
+      "year": 2010,
+      "faculty": ""
+    },
+    {
+      "index": 59,
+      "title": "Permeation of BTEX Compounds through HDPE Pipes under Simulated Field Conditions (PDF)",
+      "year": 2010,
+      "faculty": ""
+    },
+    {
+      "index": 60,
+      "title": "Permeation of organic compounds through ductile iron pipe gaskets",
+      "year": 2009,
+      "faculty": ""
+    },
+    {
+      "index": 61,
+      "title": "Impact of hydrocarbons on PE/PVC pipes and pipe gaskets",
+      "year": 2008,
+      "faculty": ""
+    },
+    {
+      "index": 62,
+      "title": "A Machine Learning Approach for Water Quality Assessment in the Lower Rio Grande Valley Watershed",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 70,
+      "title": "Network-level risks of extreme temperature weather on rail infrastructure: a graph-based probability-impact risk assessment framework",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 71,
+      "title": "Traffic Tracking at Grade Crossings using AI",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 72,
+      "title": "Detecting hazards at rail grade crossings using computer vision and AI",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 73,
+      "title": "Estimating highway rehabilitation projects using machine learning",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 74,
+      "title": "Evaluating the impact of extreme temperature events on the US rail network",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 75,
+      "title": "Experimental study on damage detection of civil structures using digital image correlation (DIC) method",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 76,
+      "title": "AI-Based Hazard Detection for Railway Crossings",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 77,
+      "title": "Distributed Solar Generation: Current Knowledge and Future Trends",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 78,
+      "title": "Forecasting Future Research Trends in the Construction Engineering and Management Domain Using Machine Learning and Social Network Analysis",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 79,
+      "title": "Grade Crossing Monitoring Using Deep Learning",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 80,
+      "title": "Identifying and Exploring Construction PM Evolution and Research Directions",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 81,
+      "title": "The construction-related project management evolution and its future research directions",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 82,
+      "title": "Agent-Based Modeling for Understanding Incentives Associated with Distributed Solar Generation",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 83,
+      "title": "Construction management and economics 40th anniversary: Investigating knowledge structure and evolution of research trends",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 84,
+      "title": "Graduate recruitment offers: ethical and professional considerations for engineering graduate students and faculty members",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 85,
+      "title": "Predicting High-Impact Research in the Construction Engineering and Management Domain Using Computational Machine Learning",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 86,
+      "title": "Reducing the vulnerability of electric power infrastructure against natural disasters by promoting distributed generation",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 87,
+      "title": "Blockchain technology in the construction industry: mapping current research trends using social network analysis and clustering",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 88,
+      "title": "Managing construction projects impacted by the COVID-19 pandemic: a contractual perspective",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 89,
+      "title": "Policies and incentives for promoting distributed solar generation: Impact on electric power infrastructure",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 90,
+      "title": "Postaward construction and contract management of engineering, procurement, and construction hydropower projects: Two case studies from Uganda",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 91,
+      "title": "Promoting Distributed Energy Deployment and Diffusion for Sustainable Civil Infrastructure Using Multi-Agent Based Modeling and Quantitative Analytics",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 92,
+      "title": "Studying dynamic pricing in electrical power markets with distributed generation: Agent-based modeling and reinforcement-learning approach",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 93,
+      "title": "Using machine learning to identify the most critical factors affecting maintenance of tunnels",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 94,
+      "title": "Contractual guidelines for substantial completion under national design-build standard forms of contract",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 95,
+      "title": "Dynamic Pricing in Electric Power Markets Affected by Distributed Energy Generation Using Agent-Based Modeling",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 96,
+      "title": "Evaluating deterioration of tunnels using computational machine learning algorithms",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 97,
+      "title": "Improving the Reliability of Electric Power Infrastructure Using Distributed Solar Generation: An Agent-Based Modeling Approach",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 98,
+      "title": "Joint venture agreements for construction and professional services: Comparative contractual analysis and guidelines",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 99,
+      "title": "Role of transactional blockchain in facilitating procurement in international construction projects",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 100,
+      "title": "A system dynamics approach for study of population growth and the residential housing market in the US",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 101,
+      "title": "Analyzing Citation Metrics in Civil Engineering with Focus on Construction Engineering and Management",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 102,
+      "title": "Back-to-back relationship under standard subcontract agreements: Comparative study",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 103,
+      "title": "Contractual guidelines for management of infrastructure transportation projects",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 104,
+      "title": "Deck, superstructure, and substructure deterioration prediction for bridges using deep artificial neural networks",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 105,
+      "title": "Preliminary attempt toward better understanding the impact of distributed energy generation: An agent-based computational economics approach",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 106,
+      "title": "Relationship between electric-power sector development and socioeconomic parameters: Statistical analysis approach",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 107,
+      "title": "Relationship between Stocks of Construction Companies and the Gross Domestic Product in the US",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 108,
+      "title": "Simulating der adoption in wholesale power markets using agent based computational economics",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 109,
+      "title": "Studying the relationship between stock prices of publicly traded US construction companies and gross domestic product: Preliminary step toward construction--economy nexus",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 110,
+      "title": "Understanding the sub-contractual relationship for proper management of construction projects",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 111,
+      "title": "Analytic overview of citation metrics in the civil engineering domain with focus on construction engineering and management specialty area and its subdisciplines",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 112,
+      "title": "Artificial Neural Network Model for Bridge Deterioration and Assessment",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 113,
+      "title": "Cash flow optimization for construction engineering portfolios",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 114,
+      "title": "Cash flow optimization for construction portfolios",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 115,
+      "title": "A Machine Learning Approach for Water Quality Assessment in the Lower Rio Grande Valley Watershed",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 117,
+      "title": "Aqueous lead removal using biochar-pumice filter derived from avocado seed, aspen bedding and palm tree frond",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 118,
+      "title": "Electrochemical Precipitation",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 119,
+      "title": "Performance and efficiency Evaluation of stormwater management LIDs using PCSWMM: Numerical modeling and sensitivity analysis",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 120,
+      "title": "Campus carbon footprint study at a South Texas University",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 121,
+      "title": "Evaluation of arsenic sorption performance using dendritic anatase and polycrystalline rutile nano-TiO2 for environmental applications.",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 122,
+      "title": "Evaluation of  arsenic sorption performance using dendritic anatase and polycrystalline rutile nano-TiO2 for environmental applications",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 132,
+      "title": "A Machine Learning Approach for Water Quality Assessment in the Lower Rio Grande Valley Watershed",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 133,
+      "title": "Applications of Machine Learning in Enhancing Evaporation Estimation for Small Reservoirs: A Case Study in Semi-Arid South Texas",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 134,
+      "title": "Urban Soil Compaction Remediation by Shallow Tillage and Compost in Hydroseeded Lawn",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 137,
+      "title": "Groundwater Vulnerability Assessment of Shallow Aquifer in the South Texas Sand Sheet using a GIS-Based DRASTIC Model",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 138,
+      "title": "Storm Surge Flood Maps Development for the Lower Laguna Madre Coastal Emergency Management",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 140,
+      "title": "Performance and efficiency Evaluation of stormwater management LIDs using PCSWMM: Numerical modeling and sensitivity analysis",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 143,
+      "title": "Transforming urban compacted land into Infiltration field at UTRGV campus",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 144,
+      "title": "Sand and pumice filter amended with activated carbon and biochar for phosphorus retention",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 145,
+      "title": "Laguna Madre Estuary Program Environmental Strategic Plan - Final Report",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 146,
+      "title": "Development of Hurricane Storm Surge Model to Predict Coastal Highway Inundation for South Texas",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 147,
+      "title": "Nitrate Leaching from Sand and Pumice Geomedia Amended with Pyrogenic Carbon Materials",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 149,
+      "title": "Watershed Modeling and Sediment Yield Prediction of the Los Olmos Creek Watershed in South Texas",
+      "year": 2016,
+      "faculty": ""
+    },
+    {
+      "index": 150,
+      "title": "Hydrodynamic Modeling Study of Fish Exclusion System for River Diversion",
+      "year": 2011,
+      "faculty": ""
+    },
+    {
+      "index": 151,
+      "title": "Multiphase Modeling Study for Storm Water Solids Treatment in Experimental Storm Water Settling Chamber",
+      "year": 2011,
+      "faculty": ""
+    },
+    {
+      "index": 152,
+      "title": "Discrete Phase Modeling Study for Particle Motion in Storm Water Retention",
+      "year": 2011,
+      "faculty": ""
+    },
+    {
+      "index": 153,
+      "title": "An Experimental Study of Freshwater Pumping Affecting Saltwater Intrusion in Coastal Aquifer",
+      "year": 2011,
+      "faculty": ""
+    },
+    {
+      "index": 154,
+      "title": "Stormwater Solid Transport Modeling for Stromwater Best Management Practices",
+      "year": 2011,
+      "faculty": ""
+    },
+    {
+      "index": 155,
+      "title": "Case Study: Movable Bed Model Scaling for Bed Load Sediment Exclusion at Intake Structure on Rio Grande",
+      "year": 2010,
+      "faculty": ""
+    },
+    {
+      "index": 156,
+      "title": "Experimental Study of Freshwater Discharge and Saltwater Intrusion Control in Coastal Aquifer",
+      "year": 2010,
+      "faculty": ""
+    },
+    {
+      "index": 157,
+      "title": "Flood Debris Filtering Structure for Urban Storm Water Best Management Practices",
+      "year": 2010,
+      "faculty": ""
+    },
+    {
+      "index": 158,
+      "title": "Experimental Study to Parameterize Salt-Wedge Formations in Coastal Aquifer",
+      "year": 2009,
+      "faculty": ""
+    },
+    {
+      "index": 159,
+      "title": "Lateral Outflow from Supercritical Channel",
+      "year": 2009,
+      "faculty": ""
+    },
+    {
+      "index": 160,
+      "title": "Saltwedge Dynamics of Porous Media Tank Experiment",
+      "year": 2009,
+      "faculty": ""
+    },
+    {
+      "index": 161,
+      "title": "Numerical Modeling Study for Flow Pattern Changes Induced by Single Groyne",
+      "year": 2007,
+      "faculty": ""
+    },
+    {
+      "index": 162,
+      "title": "Storm Water Best Management Practice: Development of Debris Filtering Structure for Supercritical Flow",
+      "year": 2007,
+      "faculty": ""
+    },
+    {
+      "index": 163,
+      "title": "Gate Operation Numerical Modeling Study for Rio Grande Diversion Structure at Albuquerque, New Mexico",
+      "year": 2006,
+      "faculty": ""
+    },
+    {
+      "index": 164,
+      "title": "Hydraulic Modeling Study for Rio Grande Diversion Structure at Albuquerque",
+      "year": 2006,
+      "faculty": ""
+    },
+    {
+      "index": 165,
+      "title": "Numerical Modeling Study for Fish Screen of River Intake Channel",
+      "year": 2006,
+      "faculty": ""
+    },
+    {
+      "index": 166,
+      "title": "Rio Grande Diversion Structure Hydraulic Impacts Numerical Modeling Study",
+      "year": 2006,
+      "faculty": ""
+    },
+    {
+      "index": 167,
+      "title": "Laser-excited downconversion nanoparticle sensing for crack characterization in infrastructure monitoring",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 168,
+      "title": "Quantitative vibration-based prognostics of railcar bearing using encoder-decoder LSTM",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 169,
+      "title": "Ultrasonic Shear-Wave Inversion for Characterizing Corrosion-Induced Rebar–Concrete Interfacial Debonding",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 170,
+      "title": "AI-driven detection of failure modes in thermoplastic composites using acoustic emission techniques",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 171,
+      "title": "Hybrid Deep Learning Model for Accurate Settlement Forecasting of Metro Tracks under Canal Diversion Engineering",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 172,
+      "title": "A Novel Optuna-VMD-ML Framework for Enhanced Settlement Prediction of Buildings Around Foundation Pits",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 173,
+      "title": "Explainable machine learning and life cycle assessment for sustainable design of fiber-reinforced asphalt concrete",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 174,
+      "title": "Online Evaluation of Crack Development in Fracturing Pumps Using an Improved MLP Network",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 175,
+      "title": "Evaluating the Impact of Aggregate Size and Reinforcement on Alkali-Silica Reaction in Concrete through Nondestructive Testing Techniques",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 176,
+      "title": "Acoustic Emission Data Analysis of Compression after Impact Tests for Composite Materials",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 177,
+      "title": "Deep Learning-Based Structural Displacement Identification and Quantification under Target Feature Loss",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 178,
+      "title": "Enhancing multi-objective prediction of settlement around foundation pit using explainable machine learning",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 179,
+      "title": "Acoustic emission sensing for assessing compressive strain in impacted thermoplastic composites",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 180,
+      "title": "Virtual-to-real mapping: an AE missing signal generation and assisted localization method for defects in CFRP plates",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 181,
+      "title": "An anchor-free selective state space framework for real-time tunnel structure health monitoring",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 183,
+      "title": "Research on node-improved energy dissipation wear model for fretting fatigue prediction in railway press-fit shaft",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 184,
+      "title": "Advances in Digital Twin Technology in Industry: A Review of Applications, Challenges, and Standardization",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 185,
+      "title": "Lithium slag-ground granulated blast furnace slag based geopolymer: Efflorescence mechanism analysis",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 186,
+      "title": "Fostering community belonging through STEAM education: Board game design in a university art appreciation course",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 187,
+      "title": "Energy-efficient multimodal mobility networks in transportation digital twins: Strategies and optimization",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 188,
+      "title": "Evaluation of impact energy in composites using acoustic emission sensing technique",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 189,
+      "title": "Hybrid learning architecture for high-speed railroad scene parsing and potential safety hazard evaluation of UAV images",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 190,
+      "title": "An automated load determination approach for concrete girder bridges through acoustic emission",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 191,
+      "title": "Compression after impact (CAI) test simulation for composite materials in ABAQUS",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 192,
+      "title": "Guest Editorial",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 193,
+      "title": "Metal surface crack depth laser acoustic emission detection method based on multivariate feature adaptive extraction and cross-modal interaction fusion",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 194,
+      "title": "Enhancing the rehabilitation of timber piles using fiber reinforced polymer: An acoustic emission analysis under compressive stress",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 195,
+      "title": "Stability analysis of moored floating offshore seamarks",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 196,
+      "title": "Acoustic emission monitoring and automated characterization of low-velocity impacts on composite components",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 197,
+      "title": "Condition assessment of prestressed concrete channel bridge girders using acoustic emission and data-driven methods",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 198,
+      "title": "Full-scale experimental investigation of prestressed concrete bridge girders strengthened with aluminium channels",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 199,
+      "title": "Effects of modified multi-walled carbon nanotubes and PVA fibers on mechanical properties and microstructure of lithium slag base geopolymer",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 200,
+      "title": "MFC-PINN: A method to improve the accuracy and robustness of acoustic emission source planar localization",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 201,
+      "title": "Assisting Load Rating Testing of Precast Reinforced Concrete Bridge Slab through Digital Twins and Field Monitoring Data",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 202,
+      "title": "Immersed force analysis of fish surface with carangiform locomotion",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 203,
+      "title": "Structural health monitoring of stainless-steel nuclear fuel storage canister using acoustic emission",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 204,
+      "title": "ASSESSING IMPACT-RELATED DAMAGE IN URBAN AIR MOBILITY WITH ACOUSTIC EMISSION SENSING",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 205,
+      "title": "Study on stage characteristics of hydraulic concrete fracture under uniaxial compression using acoustic emission",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 206,
+      "title": "Cost-effective methods for flexural strengthening of one-way RC precast flat slab bridges in South Carolina",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 207,
+      "title": "Exploiting machine learning for controlled synthesis of carbon dots-based corrosion inhibitors",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 208,
+      "title": "A transfer learning approach for acoustic emission zonal localization on steel plate-like structure using numerical simulation and unsupervised domain adaptation",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 209,
+      "title": "Acoustic Emission-Based Detection of Impacts on Thermoplastic Aircraft Control Surfaces: A Preliminary Study",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 210,
+      "title": "Localizing damage on stainless steel structures using acoustic emission signals and weighted ensemble regression-based convolutional neural network",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 211,
+      "title": "Automated crack detection and crack depth prediction for reinforced concrete structures using deep learning",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 212,
+      "title": "Determination of vehicle loads on bridges by acoustic emission and an improved ensemble artificial neural network",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 213,
+      "title": "Identifying the Energy of Low-velocity Impacts on Composite Components Using Acoustic Emission",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 214,
+      "title": "Implementation of data-driven approaches for condition assessment of structures and analyzing complex data",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 215,
+      "title": "Developing a heterogeneous ensemble learning framework to evaluate Alkali-silica reaction damage in concrete using acoustic emission signals",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 216,
+      "title": "Evaluation of ASR in concrete using acoustic emission and deep learning",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 217,
+      "title": "Detection of impact on aircraft composite structure using machine learning techniques",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 218,
+      "title": "Source localization on large-scale canisters for used nuclear fuel storage using optimal number of acoustic emission sensors",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 219,
+      "title": "Implementation of Information Entropy, b -Value, and Regression Analyses for Temporal Evaluation of Acoustic Emission Data Recorded during ASR Cracking",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 220,
+      "title": "A Smart Impact Detection System for Thermoplastic Aircraft Components based on Acoustic Emission and AdaBoost Algorithm",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 221,
+      "title": "An Autonomous Bridge Load Rating Framework Using Digital Twin",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 222,
+      "title": "ASSESSMENT OF IMPACT DAMAGE LEVEL FOR COMPOSITE AIRCRAFT COMPONENTS USING ACOUSTIC EMISSION",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 223,
+      "title": "Detection and Evaluation of Impact Damage on Aircraft Control Surface Using Acoustic Emission and Convolution Neural Network",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 224,
+      "title": "Temporal Evaluation of ASR Cracking in Concrete Specimens Using Acoustic Emission",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 225,
+      "title": "Data-Driven Source Localization of Impact on Aircraft Control Surfaces",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 226,
+      "title": "A minimally intrusive impact detection system for aircraft moveable using random forest",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 227,
+      "title": "Acoustic emission technique to identify stress corrosion cracking damage",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 229,
+      "title": "Ecosystem and Transportation Infrastructure Resilience in the Great Lakes",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 238,
+      "title": "Non-Contact Vibration-Based Damage Detection of Civil Structures Using a Cost-Effective Autonomous UAV",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 239,
+      "title": "Tunable vibro-impact coupling in a dual-beam energy harvester for broadband power generation: design, modeling, and experimental validation",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 240,
+      "title": "Harvesting electrical energy from vibration of railway track using an electromagnetic energy harvester with circular Halbach array",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 241,
+      "title": "Design, modeling, and testing of a periodic mechanical metamaterial with localized energy absorption for attenuation of Lamb wave",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 242,
+      "title": "Experimental study on damage detection of civil structures using digital image correlation (DIC) method",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 243,
+      "title": "Non-contact energy harvester for rural grade crossings",
+      "year": 2025,
+      "faculty": ""
+    },
+    {
+      "index": 244,
+      "title": "Machine learning technique for damage detection of rails on steel railroad bridges subjected to moving train load",
+      "year": 2023,
+      "faculty": ""
+    },
+    {
+      "index": 257,
+      "title": "Feasibility study of using a semiactive electromagnetic friction damper for seismic response control of horizontally curved bridges",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 273,
+      "title": "Electrochemical Precipitation",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 275,
+      "title": "Effects of thermally modified asphalt concrete on pavement temperature",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 276,
+      "title": "Fiber reinforced concrete for improved performance of transportation infrastructure",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 277,
+      "title": "Structural Design and Lifecycle Assessment of Heated Pavement Using Conductive Asphalt",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 278,
+      "title": "Electrical and mechanical properties of asphaltic composites containing carbon based fillers",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 279,
+      "title": "Pull-out behavior of straight steel fibers from asphalt binder",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 280,
+      "title": "Mixed mode brittle fracture analysis of high strength cement mortar using strain-based criteria",
+      "year": 2016,
+      "faculty": ""
+    },
+    {
+      "index": 281,
+      "title": "Modified maximum tangential stress criterion for fracture behavior of zirconia/veneer interfaces",
+      "year": 2016,
+      "faculty": ""
+    },
+    {
+      "index": 282,
+      "title": "Strain-based criteria for mixed-mode fracture of polycrystalline graphite",
+      "year": 2016,
+      "faculty": ""
+    },
+    {
+      "index": 283,
+      "title": "Controlling thermal properties of asphalt concrete and their effects on pavement surface temperature",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 284,
+      "title": "Cracking resistance of fiber reinforced asphalt concrete at- 20 C",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 285,
+      "title": "The role of T-stress on kinking angle of interface cracks",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 286,
+      "title": "Controlling conductivity of asphalt concrete with graphite",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 287,
+      "title": "Optimization of thermoelectric system for pavement energy harvesting",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 288,
+      "title": "Characteristics and applications of high-performance fiber reinforced asphalt concrete",
+      "year": 2012,
+      "faculty": ""
+    },
+    {
+      "index": 289,
+      "title": "A Study on Analysis Method of Asphalt Plug Joint using FEM",
+      "year": 2011,
+      "faculty": ""
+    },
+    {
+      "index": 290,
+      "title": "Acoustic emission diagnosis system and wireless monitoring for damage assessment of concrete structures",
+      "year": 2011,
+      "faculty": ""
+    },
+    {
+      "index": 291,
+      "title": "Uniaxial nonlinear viscoelastic constitutive model for asphalt concrete",
+      "year": 2011,
+      "faculty": ""
+    },
+    {
+      "index": 292,
+      "title": "Behavior of bridge asphalt plug joints under thermal and traffic loads",
+      "year": 2010,
+      "faculty": ""
+    },
+    {
+      "index": 293,
+      "title": "Improved geometric design of bridge asphalt plug joints",
+      "year": 2010,
+      "faculty": ""
+    },
+    {
+      "index": 294,
+      "title": "Evaluation for behavior of asphalt plug joint with using a FEM analysis",
+      "year": 2008,
+      "faculty": ""
+    },
+    {
+      "index": 295,
+      "title": "Assessment of crack activity by acoustic emission in concrete structures",
+      "year": 2006,
+      "faculty": ""
+    },
+    {
+      "index": 296,
+      "title": "Application of micro-ESPI technique for measurement of micro-tensile properties",
+      "year": 2004,
+      "faculty": ""
+    },
+    {
+      "index": 297,
+      "title": "Measurement Technology of Micro/Nano-scale Mechanical Properties",
+      "year": 2004,
+      "faculty": ""
+    },
+    {
+      "index": 298,
+      "title": "Assessment of the integrity of concrete bridge structures by acoustic emission technique",
+      "year": 2002,
+      "faculty": ""
+    },
+    {
+      "index": 299,
+      "title": "AE characteristic for monitoring of fatigue crack in steel bridge members",
+      "year": 2000,
+      "faculty": ""
+    },
+    {
+      "index": 300,
+      "title": "Study on the Fatigue Crack Behavior by the Stress Intensity Factor and AE Parameters",
+      "year": 2000,
+      "faculty": ""
+    },
+    {
+      "index": 301,
+      "title": "Temperature effect on rail anchor longitudinal resistance",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 302,
+      "title": "Development of Rail Anchor Testing Through Literature Review of CWR Buckling Resistance Evaluation",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 303,
+      "title": "Effects of Spray-on Lining Rehabilitation on Behavior of Buried Corroded Metal Pipes Subjected to Surface Loading",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 304,
+      "title": "Analytical Method for Predicting Lateral Facing Deflections of Geosynthetic-Reinforced Soil Abutment Walls",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 305,
+      "title": "Combined Effects of Corrosion and Migration of Fines on Stability of Mechanically Stabilized Earth Walls",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 306,
+      "title": "Effect of Spread Footing Loads on Stability of Geosynthetic-Reinforced Retaining Walls",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 307,
+      "title": "Evaluation of Compaction-induced Stress in Geosynthetic Reinforced soil Walls using Numerical and Analytical Methods",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 308,
+      "title": "Mechanical Responses of Soil Geosynthetic Composite (SGC) Mass under Failure loads",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 309,
+      "title": "Predicting Tensile Strength for Pre-Stressed Driven Piles",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 310,
+      "title": "Analytical Method for Predicting Lateral Facing Deflections of Geosynthetic-Reinforced Soil Abutment Walls",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 311,
+      "title": "Combined Effects of Corrosion and Migration of Fines on Stability of Mechanically Stabilized Earth Walls",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 312,
+      "title": "Effect of Spread Footing Loads on Stability of Geosynthetic-Reinforced Retaining Walls",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 313,
+      "title": "Investigating Horizontal Movement of Pile Groups Under Adjacent Construction Loads and Foundation Excavation - A Case Study",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 314,
+      "title": "Several Problems Related to Tensile Stress during the Construction of Prestressed Reinforced Concrete Piles",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 315,
+      "title": "Numerical simulation of compaction load on stress deformation behavior of soil geosynthetic composite mass",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 316,
+      "title": "Modeling Triaxial Testing with Flexible Membrane to Investigate Effects of Particle Size on Strength and Strain Properties of Cohesionless Soil",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 317,
+      "title": "Impacts of Compaction Load and Procedure on Stress-Deformation Behaviors of a Soil Geosynthetic Composite (SGC) Mass: A case study",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 318,
+      "title": "Lateral Movement of Pile Group due to Excavation and Construction Loads",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 319,
+      "title": "The Search for Internal Stability in Reinforced Soil",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 320,
+      "title": "Discrete-Element Modeling of The Effectiveness of Using GeogridAs Reinforcement in The Aggregate Base",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 321,
+      "title": "Experimental and theoretical studies on the ultimate bearing capacity of geogrid-reinforced sand",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 323,
+      "title": "Numerical Simulation Analysis of Stress-Deformation Behavior of Soil and Geosynthetic Composite Mass: A Case Study",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 325,
+      "title": "\"Numerical simulation of compaction-induced stress for the analysis of GRS walls under working conditions\"",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 327,
+      "title": "Lateral Earth Pressure and Movement of Geosynthetic Reinforced Soil Walls",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 328,
+      "title": "Behavior of reinforced soil walls",
+      "year": 2016,
+      "faculty": ""
+    },
+    {
+      "index": 329,
+      "title": "Axial capacity of non-welded steel-PHC composite pile based on pile load tests",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 330,
+      "title": "Codes and standards for geotechnical engineering in Vietnam",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 331,
+      "title": "Damaged buildings caused by large settlement and differential settlement in Vietnam",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 332,
+      "title": "Investigation and assessment of using glass-fiber-reinforced pipes for water supply and drainage in Vietnam and recommendations for controlling GFR pipe quality",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 333,
+      "title": "Load-Carrying Capacity and Required Reinforcement Strength of Closely Spaced Soil-Geosynthetic Composites",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 334,
+      "title": "Investigation and assessment of Song-Da water supply pipelines",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 335,
+      "title": "Suppression of soil dilation–a reinforcing mechanism of soil-heosynthetic composites",
+      "year": 2014,
+      "faculty": ""
+    },
+    {
+      "index": 336,
+      "title": "A reinforcing mechanism of soil-geosynthetic composites for retaining walls and bridge abutments",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 337,
+      "title": "Composite behavior of geosynthetic-reinforced soil mass",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 338,
+      "title": "Load-carrying capacity and required reinforcement strength of closely-spaced soil-geosynthetic composites",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 339,
+      "title": "Measures for Soil Improvement in Vietnam Petro-Gas Projects",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 340,
+      "title": "Planning Vietnam regulations and standards for soil investigations and survey up to the Year of 2030",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 341,
+      "title": "Study on the in-situ pile load test and bearing capacity characteristics of steel piles with wings installed in soil cement column",
+      "year": 2013,
+      "faculty": ""
+    },
+    {
+      "index": 342,
+      "title": "A generic Soil-geosynthetic composite test",
+      "year": 2012,
+      "faculty": ""
+    },
+    {
+      "index": 343,
+      "title": "Behavior of geosynthetic-reinforced soil mass for walls and bridge abutments",
+      "year": 2012,
+      "faculty": ""
+    },
+    {
+      "index": 344,
+      "title": "Large settlement and differential settlement of apartments in Hanoi and recommendations for preventive measures",
+      "year": 2011,
+      "faculty": ""
+    },
+    {
+      "index": 345,
+      "title": "Required minimum reinforcement stiffness and strength in a geosynthetic-reinforced soil (GRS) wall",
+      "year": 2011,
+      "faculty": ""
+    },
+    {
+      "index": 346,
+      "title": "An analytical model for calculating lateral movement of a geosynthetic-reinforced soil (GRS) wall with modular block facing",
+      "year": 2010,
+      "faculty": ""
+    },
+    {
+      "index": 347,
+      "title": "An analytical model for evaluation of compaction-induced stresses in geosynthetic-reinforced soil (GRS) mass",
+      "year": 2010,
+      "faculty": ""
+    },
+    {
+      "index": 348,
+      "title": "Geosynthetic reinforced soil composite",
+      "year": 2009,
+      "faculty": ""
+    },
+    {
+      "index": 349,
+      "title": "Investigating composite behavior of geosynthetic-reinforced soil (GRS) mass",
+      "year": 2009,
+      "faculty": ""
+    },
+    {
+      "index": 350,
+      "title": "Allowable bearing pressure of bridge sills on GRS abutments with flexible facing.\" Journal of Geotechnical and Geoenvironmental Engineering",
+      "year": 2006,
+      "faculty": ""
+    },
+    {
+      "index": 353,
+      "title": "Predicting Tensile Strength for Pre-Stressed Driven Piles",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 354,
+      "title": "Analytical Method for Predicting Lateral Facing Deflections of Geosynthetic-Reinforced Soil Abutment Walls",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 355,
+      "title": "Combined Effects of Corrosion and Migration of Fines on Stability of Mechanically Stabilized Earth Walls",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 356,
+      "title": "Effect of Spread Footing Loads on Stability of Geosynthetic-Reinforced Retaining Walls",
+      "year": null,
+      "faculty": ""
+    },
+    {
+      "index": 357,
+      "title": "Investigating Horizontal Movement of Pile Groups Under Adjacent Construction Loads and Foundation Excavation - A Case Study",
+      "year": 2022,
+      "faculty": ""
+    },
+    {
+      "index": 358,
+      "title": "Modeling Triaxial Testing with Flexible Membrane to Investigate Effects of Particle Size on Strength and Strain Properties of Cohesionless Soil",
+      "year": 2021,
+      "faculty": ""
+    },
+    {
+      "index": 359,
+      "title": "Development of load transfer characteristics of drilled shafts in shales for use  in Load and Resistance Factor Design",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 361,
+      "title": "A prediction of energy piles' long-term operation using a couples thermo-hydro-geomechanical model",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 362,
+      "title": "Modeling and simulating load transfer of drilled shafts",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 363,
+      "title": "Resistance Factors for Side Friction and End Bearing Drilled Shafts",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 364,
+      "title": "Incorporating sources of uncertainties in probabilistic analysis for deep foundation design using Monte Carlo simulation",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 365,
+      "title": "Load transfer of drilled shafts: Modeling and simulating for probability analysis",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 366,
+      "title": "Developing load transfer models for drilled shafts",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 367,
+      "title": "Geothermal energy for bridge deicing: Horizontal ground heat exchangers within bridge abutment",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 368,
+      "title": "Horizontal energy foundation for residential buildings in cooling dominated area",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 369,
+      "title": "Load and resistance factor design of deep foundations: service limit state",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 370,
+      "title": "Service Limit State Design for Individual Drilled Shafts in Shales",
+      "year": 2017,
+      "faculty": ""
+    },
+    {
+      "index": 371,
+      "title": "Service limit state design procedure for drilled shafts in shales using t-z method",
+      "year": 2015,
+      "faculty": ""
+    },
+    {
+      "index": 372,
+      "title": "Use of geotextile at the levee's base to increase levee stability",
+      "year": 2002,
+      "faculty": ""
+    },
+    {
+      "index": 373,
+      "title": "EEG-based assessment of mental fatigue during exoskeleton-assisted construction postures: A GAN-Augmented Approach",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 374,
+      "title": "A Temporal fusion transformer framework for understanding multimodal stress cues in micromobility systems",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 375,
+      "title": "Collaborative intelligence in construction: exploring human-AI interaction for superintendents",
+      "year": 2026,
+      "faculty": ""
+    },
+    {
+      "index": 376,
+      "title": "Spatio-temporal heat risk analysis in construction: Digital twin-enabled monitoring",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 377,
+      "title": "A multimodal analysis of environmental stress experienced by older adults during outdoor walking trips: Implications for designing new intelligent technologies to enhance walkability in low-income Latino communities",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 378,
+      "title": "From public forecasts to occupational heat safety management: Evaluating the effectiveness of the national weather service's operational heat risk forecasts",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 379,
+      "title": "Heat Stress Monitoring in Construction for Risk-Informed Decision-Making",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 380,
+      "title": "Digital Twin-Based Heat Stress Monitoring System in Construction",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 381,
+      "title": "Revealing the impact of heat radiation on construction: A microclimate simulation utilizing meteorological data and geometric modeling",
+      "year": 2024,
+      "faculty": ""
+    },
+    {
+      "index": 382,
+      "title": "A study on the external stone cladding system in production and installation stages: The case of Hong Kong",
+      "year": 2020,
+      "faculty": ""
+    },
+    {
+      "index": 383,
+      "title": "Development of construction duration prediction model for project planning phase of mixed-use buildings",
+      "year": 2019,
+      "faculty": ""
+    },
+    {
+      "index": 384,
+      "title": "Development of an approximate construction duration prediction model during the project planning phase for general office building",
+      "year": 2018,
+      "faculty": ""
+    },
+    {
+      "index": 385,
+      "title": "Performance evaluation and life cycle cost analysis model of a gondola-type exterior wall painting robot",
+      "year": 2017,
+      "faculty": ""
+    }
+  ],
+  "missing_full_text": [
+    {
+      "index": 1,
+      "title": "Acoustic sensing and autoencoder approach for abnormal gas detection in a spent nuclear fuel canister mock-up",
+      "year": 2026
+    },
+    {
+      "index": 2,
+      "title": "Inverse structural design with generative and probabilistic autoencoders and diffusion models",
+      "year": 2025
+    },
+    {
+      "index": 3,
+      "title": "Non-destructive evaluation and machine learning methods for inspection of spent nuclear fuel canisters: A state-of-the-art review",
+      "year": 2025
+    },
+    {
+      "index": 4,
+      "title": "Machine learning for design, optimization and assessment of steel-concrete composite structures: A review",
+      "year": 2025
+    },
+    {
+      "index": 5,
+      "title": "Damage detection and localization in sealed spent nuclear fuel dry storage canisters using multi-task machine learning classifiers",
+      "year": 2024
+    },
+    {
+      "index": 6,
+      "title": "Machine learning-aided damage identification of mock-up spent nuclear fuel assemblies in a sealed dry storage canister",
+      "year": 2024
+    },
+    {
+      "index": 7,
+      "title": "Development and experimental verification of an active noise cancellation (ANC) method for non-invasive sensing",
+      "year": 2023
+    },
+    {
+      "index": 8,
+      "title": "Shear mechanism of Rubber-Sleeved Stud (RSS) connectors in the steel-concrete interface of cable-pylon composite anchorage",
+      "year": 2020
+    },
+    {
+      "index": 9,
+      "title": "A Machine Learning Approach for Water Quality Assessment in the Lower Rio Grande Valley Watershed",
+      "year": 2026
+    },
+    {
+      "index": 10,
+      "title": "Potentials of flood-managed aquifer recharge: Enhancing regional water quality and water supply through modified infiltration basins.",
+      "year": null
+    },
+    {
+      "index": 11,
+      "title": "Low Methane Emissions from Nutrient-Rich Former River Channels in a Hydrologically Managed Dryland Delta",
+      "year": 2026
+    },
+    {
+      "index": 12,
+      "title": "Applications of Machine Learning in Enhancing Evaporation Estimation for Small Reservoirs: A Case Study in Semi-Arid South Texas",
+      "year": 2026
+    },
+    {
+      "index": 20,
+      "title": "Effects of Upscaled Capillary-Saturation Function Parameters on Reactive Transport and Trapping Storage in Geological Carbon Sequestrations",
+      "year": null
+    },
+    {
+      "index": 21,
+      "title": "Influence of hydraulic properties of soil layers of LID in groundwater recharge and storage",
+      "year": null
+    },
+    {
+      "index": 22,
+      "title": "Performance and efficiency Evaluation of stormwater management LIDs using PCSWMM: Numerical modeling and sensitivity analysis",
+      "year": null
+    },
+    {
+      "index": 23,
+      "title": "Biogeographic controls of Prosopis glandulosa and Quercus virginiana on the South Texas Sand Sheet, which is the real Phreatophyte",
+      "year": null
+    },
+    {
+      "index": 24,
+      "title": "Compost and biochar to promote soil biological activities under sweet potatoes cultivation in a subtropical semi-arid region.",
+      "year": 2020
+    },
+    {
+      "index": 27,
+      "title": "Evaluation of  arsenic sorption performance using dendritic anatase and polycrystalline rutile nano-TiO2 for environmental applications",
+      "year": 2020
+    },
+    {
+      "index": 29,
+      "title": "Effect of Land Use Change for Bioenergy Production on Feedstock Cost and Water Quality",
+      "year": 2018
+    },
+    {
+      "index": 30,
+      "title": "Groundwater Vulnerability of South Texas Sand Sheet and Its Connection to Lower Laguna Madre (tentative)",
+      "year": null
+    },
+    {
+      "index": 31,
+      "title": "Impact of the capillary pressure-saturation pore size distribution parameters on geologic carbon sequestration estimates",
+      "year": 2017
+    },
+    {
+      "index": 32,
+      "title": "Upscaling Capillary Pressure – Saturation Parameters at Different Pressure Reference Elevations",
+      "year": 2017
+    },
+    {
+      "index": 34,
+      "title": "Capillary pressure–saturation relationships for gas shales measured using a water activity meter",
+      "year": 2016
+    },
+    {
+      "index": 35,
+      "title": "Watershed Modeling and Sediment Yield Prediction of the Los Olmos Creek Watershed in South Texas",
+      "year": 2016
+    },
+    {
+      "index": 36,
+      "title": "Evaluation of TrueCell program for estimating point capillary pressure—saturation parameters for Flint sand",
+      "year": 2016
+    },
+    {
+      "index": 37,
+      "title": "Rapid imbibition of water in fractures within unsaturated sedimentary rock",
+      "year": 2015
+    },
+    {
+      "index": 38,
+      "title": "A numerical study on fractal dimensions of a current streamlines in two-dimensional and three-dimensional pore fractal models of porous media",
+      "year": 2015
+    },
+    {
+      "index": 39,
+      "title": "Generalized Modeling of Spontaneous Imbibition Based on Hagen–Poiseuille Flow in Tortuous Capillaries with Variably Shaped Apertures",
+      "year": 2014
+    },
+    {
+      "index": 40,
+      "title": "Multiple pixel-scale soil water retention curves quantified by neutron radiography",
+      "year": 2014
+    },
+    {
+      "index": 41,
+      "title": "Neutron imaging of hydrogen-rich fluids in geomaterials and engineered porous media: A review",
+      "year": 2014
+    },
+    {
+      "index": 42,
+      "title": "Diffusivity and sorptivity of Berea sandstone determined using neutron radiography",
+      "year": 2013
+    },
+    {
+      "index": 43,
+      "title": "Forward Prediction of Height-Averaged Capillary Pressure–Saturation Parameters Using the BC-vG Upscaler",
+      "year": 2013
+    },
+    {
+      "index": 44,
+      "title": "Neutron imaging reveals internal plant water dynamics",
+      "year": 2013
+    },
+    {
+      "index": 45,
+      "title": "Reply to: Comment on ‘neutron imaging reveals internal plant water dynamics’",
+      "year": 2013
+    },
+    {
+      "index": 46,
+      "title": "Roots Revealed-Neutron imaging insight of spatial distribution, morphology, growth and function",
+      "year": 2013
+    },
+    {
+      "index": 47,
+      "title": "Sensitivity of injection costs to input petrophysical parameters in numerical geologic carbon sequestration models",
+      "year": 2013
+    },
+    {
+      "index": 48,
+      "title": "SIMULATION OF COUPLED SURFACE-SUBSURFACE HYDROLOGIC AND TERRESTRIAL ECOSYSTEM PROCESSES USING PFLOTRAN AND CLM",
+      "year": 2013
+    },
+    {
+      "index": 49,
+      "title": "Water calibration measurements for neutron radiography: application to water content quantification in porous media",
+      "year": 2013
+    },
+    {
+      "index": 50,
+      "title": "Average soil water retention curves measured by neutron radiography",
+      "year": 2012
+    },
+    {
+      "index": 51,
+      "title": "Neutron imaging of root water uptake, transport and hydraulic redistribution",
+      "year": 2012
+    },
+    {
+      "index": 52,
+      "title": "Permeation of gasoline through DI pipe gaskets in water mains.",
+      "year": 2012
+    },
+    {
+      "index": 53,
+      "title": "Effects of Average and Point Capillary Pressure-Saturation Function Parameters on Multiphase Flow Simulations",
+      "year": 2011
+    },
+    {
+      "index": 54,
+      "title": "Neutron Imaging and Applications: A Reference for the Imaging Community",
+      "year": 2011
+    },
+    {
+      "index": 55,
+      "title": "Neutron Imaging Reveals Internal Plant Hydraulic Dynamics",
+      "year": 2011
+    },
+    {
+      "index": 56,
+      "title": "Permeation of Petroleum-Based Hydrocarbons through PVC Pipe Joints with Rieber Gasket Systems",
+      "year": 2011
+    },
+    {
+      "index": 57,
+      "title": "Hysteresis of Soil Point Water Retention Functions Determined by Neutron Radiography",
+      "year": 2010
+    },
+    {
+      "index": 58,
+      "title": "Microscopic visualization technique to predict the permeation of organic solvents through PVC pipes in water distribution systems",
+      "year": 2010
+    },
+    {
+      "index": 59,
+      "title": "Permeation of BTEX Compounds through HDPE Pipes under Simulated Field Conditions (PDF)",
+      "year": 2010
+    },
+    {
+      "index": 60,
+      "title": "Permeation of organic compounds through ductile iron pipe gaskets",
+      "year": 2009
+    },
+    {
+      "index": 61,
+      "title": "Impact of hydrocarbons on PE/PVC pipes and pipe gaskets",
+      "year": 2008
+    },
+    {
+      "index": 62,
+      "title": "A Machine Learning Approach for Water Quality Assessment in the Lower Rio Grande Valley Watershed",
+      "year": 2026
+    },
+    {
+      "index": 63,
+      "title": "Simultaneous estimation of battery electric vehicle adoption with endogenous willingness to pay",
+      "year": 2019
+    },
+    {
+      "index": 64,
+      "title": "Modeling electric vehicle adoption considering a latent travel pattern construct and charging infrastructure",
+      "year": 2019
+    },
+    {
+      "index": 65,
+      "title": "Shared versus private mobility: Modeling public interest in autonomous vehicles accounting for latent attitudes",
+      "year": 2018
+    },
+    {
+      "index": 66,
+      "title": "Dynamic household vehicle decision modeling with consideration of electric vehicles",
+      "year": 2018
+    },
+    {
+      "index": 67,
+      "title": "Optimal facility-specific inspection and maintenance decisions under measurement uncertainty: Unifying framework",
+      "year": 2017
+    },
+    {
+      "index": 68,
+      "title": "A direct demand model of departure time and mode for intercity passenger trips",
+      "year": 2016
+    },
+    {
+      "index": 69,
+      "title": "An investigation of human factors impact on Tehran urban crash severity",
+      "year": null
+    },
+    {
+      "index": 70,
+      "title": "Network-level risks of extreme temperature weather on rail infrastructure: a graph-based probability-impact risk assessment framework",
+      "year": null
+    },
+    {
+      "index": 71,
+      "title": "Traffic Tracking at Grade Crossings using AI",
+      "year": 2026
+    },
+    {
+      "index": 72,
+      "title": "Detecting hazards at rail grade crossings using computer vision and AI",
+      "year": 2026
+    },
+    {
+      "index": 73,
+      "title": "Estimating highway rehabilitation projects using machine learning",
+      "year": 2026
+    },
+    {
+      "index": 74,
+      "title": "Evaluating the impact of extreme temperature events on the US rail network",
+      "year": 2026
+    },
+    {
+      "index": 75,
+      "title": "Experimental study on damage detection of civil structures using digital image correlation (DIC) method",
+      "year": 2026
+    },
+    {
+      "index": 76,
+      "title": "AI-Based Hazard Detection for Railway Crossings",
+      "year": 2024
+    },
+    {
+      "index": 77,
+      "title": "Distributed Solar Generation: Current Knowledge and Future Trends",
+      "year": 2024
+    },
+    {
+      "index": 78,
+      "title": "Forecasting Future Research Trends in the Construction Engineering and Management Domain Using Machine Learning and Social Network Analysis",
+      "year": 2024
+    },
+    {
+      "index": 79,
+      "title": "Grade Crossing Monitoring Using Deep Learning",
+      "year": 2024
+    },
+    {
+      "index": 80,
+      "title": "Identifying and Exploring Construction PM Evolution and Research Directions",
+      "year": 2024
+    },
+    {
+      "index": 81,
+      "title": "The construction-related project management evolution and its future research directions",
+      "year": 2024
+    },
+    {
+      "index": 82,
+      "title": "Agent-Based Modeling for Understanding Incentives Associated with Distributed Solar Generation",
+      "year": 2023
+    },
+    {
+      "index": 83,
+      "title": "Construction management and economics 40th anniversary: Investigating knowledge structure and evolution of research trends",
+      "year": 2023
+    },
+    {
+      "index": 84,
+      "title": "Graduate recruitment offers: ethical and professional considerations for engineering graduate students and faculty members",
+      "year": 2023
+    },
+    {
+      "index": 85,
+      "title": "Predicting High-Impact Research in the Construction Engineering and Management Domain Using Computational Machine Learning",
+      "year": 2023
+    },
+    {
+      "index": 86,
+      "title": "Reducing the vulnerability of electric power infrastructure against natural disasters by promoting distributed generation",
+      "year": 2023
+    },
+    {
+      "index": 87,
+      "title": "Blockchain technology in the construction industry: mapping current research trends using social network analysis and clustering",
+      "year": 2022
+    },
+    {
+      "index": 88,
+      "title": "Managing construction projects impacted by the COVID-19 pandemic: a contractual perspective",
+      "year": 2022
+    },
+    {
+      "index": 89,
+      "title": "Policies and incentives for promoting distributed solar generation: Impact on electric power infrastructure",
+      "year": 2022
+    },
+    {
+      "index": 90,
+      "title": "Postaward construction and contract management of engineering, procurement, and construction hydropower projects: Two case studies from Uganda",
+      "year": 2022
+    },
+    {
+      "index": 91,
+      "title": "Promoting Distributed Energy Deployment and Diffusion for Sustainable Civil Infrastructure Using Multi-Agent Based Modeling and Quantitative Analytics",
+      "year": 2022
+    },
+    {
+      "index": 92,
+      "title": "Studying dynamic pricing in electrical power markets with distributed generation: Agent-based modeling and reinforcement-learning approach",
+      "year": 2022
+    },
+    {
+      "index": 93,
+      "title": "Using machine learning to identify the most critical factors affecting maintenance of tunnels",
+      "year": 2022
+    },
+    {
+      "index": 94,
+      "title": "Contractual guidelines for substantial completion under national design-build standard forms of contract",
+      "year": 2021
+    },
+    {
+      "index": 95,
+      "title": "Dynamic Pricing in Electric Power Markets Affected by Distributed Energy Generation Using Agent-Based Modeling",
+      "year": 2021
+    },
+    {
+      "index": 96,
+      "title": "Evaluating deterioration of tunnels using computational machine learning algorithms",
+      "year": 2021
+    },
+    {
+      "index": 97,
+      "title": "Improving the Reliability of Electric Power Infrastructure Using Distributed Solar Generation: An Agent-Based Modeling Approach",
+      "year": 2021
+    },
+    {
+      "index": 98,
+      "title": "Joint venture agreements for construction and professional services: Comparative contractual analysis and guidelines",
+      "year": 2021
+    },
+    {
+      "index": 99,
+      "title": "Role of transactional blockchain in facilitating procurement in international construction projects",
+      "year": 2021
+    },
+    {
+      "index": 100,
+      "title": "A system dynamics approach for study of population growth and the residential housing market in the US",
+      "year": 2020
+    },
+    {
+      "index": 101,
+      "title": "Analyzing Citation Metrics in Civil Engineering with Focus on Construction Engineering and Management",
+      "year": 2020
+    },
+    {
+      "index": 102,
+      "title": "Back-to-back relationship under standard subcontract agreements: Comparative study",
+      "year": 2020
+    },
+    {
+      "index": 103,
+      "title": "Contractual guidelines for management of infrastructure transportation projects",
+      "year": 2020
+    },
+    {
+      "index": 104,
+      "title": "Deck, superstructure, and substructure deterioration prediction for bridges using deep artificial neural networks",
+      "year": 2020
+    },
+    {
+      "index": 105,
+      "title": "Preliminary attempt toward better understanding the impact of distributed energy generation: An agent-based computational economics approach",
+      "year": 2020
+    },
+    {
+      "index": 106,
+      "title": "Relationship between electric-power sector development and socioeconomic parameters: Statistical analysis approach",
+      "year": 2020
+    },
+    {
+      "index": 107,
+      "title": "Relationship between Stocks of Construction Companies and the Gross Domestic Product in the US",
+      "year": 2020
+    },
+    {
+      "index": 108,
+      "title": "Simulating der adoption in wholesale power markets using agent based computational economics",
+      "year": 2020
+    },
+    {
+      "index": 109,
+      "title": "Studying the relationship between stock prices of publicly traded US construction companies and gross domestic product: Preliminary step toward construction--economy nexus",
+      "year": 2020
+    },
+    {
+      "index": 110,
+      "title": "Understanding the sub-contractual relationship for proper management of construction projects",
+      "year": 2020
+    },
+    {
+      "index": 111,
+      "title": "Analytic overview of citation metrics in the civil engineering domain with focus on construction engineering and management specialty area and its subdisciplines",
+      "year": 2019
+    },
+    {
+      "index": 112,
+      "title": "Artificial Neural Network Model for Bridge Deterioration and Assessment",
+      "year": 2019
+    },
+    {
+      "index": 113,
+      "title": "Cash flow optimization for construction engineering portfolios",
+      "year": 2017
+    },
+    {
+      "index": 114,
+      "title": "Cash flow optimization for construction portfolios",
+      "year": 2017
+    },
+    {
+      "index": 115,
+      "title": "A Machine Learning Approach for Water Quality Assessment in the Lower Rio Grande Valley Watershed",
+      "year": 2026
+    },
+    {
+      "index": 118,
+      "title": "Electrochemical Precipitation",
+      "year": null
+    },
+    {
+      "index": 119,
+      "title": "Performance and efficiency Evaluation of stormwater management LIDs using PCSWMM: Numerical modeling and sensitivity analysis",
+      "year": null
+    },
+    {
+      "index": 122,
+      "title": "Evaluation of  arsenic sorption performance using dendritic anatase and polycrystalline rutile nano-TiO2 for environmental applications",
+      "year": 2020
+    },
+    {
+      "index": 132,
+      "title": "A Machine Learning Approach for Water Quality Assessment in the Lower Rio Grande Valley Watershed",
+      "year": 2026
+    },
+    {
+      "index": 133,
+      "title": "Applications of Machine Learning in Enhancing Evaporation Estimation for Small Reservoirs: A Case Study in Semi-Arid South Texas",
+      "year": 2026
+    },
+    {
+      "index": 135,
+      "title": "Machine-Learning-Based Model for Hurricane Storm Surge Forecasting in the Lower Laguna Madre",
+      "year": 2023
+    },
+    {
+      "index": 138,
+      "title": "Storm Surge Flood Maps Development for the Lower Laguna Madre Coastal Emergency Management",
+      "year": null
+    },
+    {
+      "index": 139,
+      "title": "Automation and coupling of models for coastal flood forecasting in South Texas",
+      "year": null
+    },
+    {
+      "index": 140,
+      "title": "Performance and efficiency Evaluation of stormwater management LIDs using PCSWMM: Numerical modeling and sensitivity analysis",
+      "year": null
+    },
+    {
+      "index": 141,
+      "title": "Real-Time Road Hazard Information System",
+      "year": 2020
+    },
+    {
+      "index": 142,
+      "title": "South Texas coastal area storm surge model development and improvement",
+      "year": 2020
+    },
+    {
+      "index": 145,
+      "title": "Laguna Madre Estuary Program Environmental Strategic Plan - Final Report",
+      "year": 2018
+    },
+    {
+      "index": 149,
+      "title": "Watershed Modeling and Sediment Yield Prediction of the Los Olmos Creek Watershed in South Texas",
+      "year": 2016
+    },
+    {
+      "index": 150,
+      "title": "Hydrodynamic Modeling Study of Fish Exclusion System for River Diversion",
+      "year": 2011
+    },
+    {
+      "index": 151,
+      "title": "Multiphase Modeling Study for Storm Water Solids Treatment in Experimental Storm Water Settling Chamber",
+      "year": 2011
+    },
+    {
+      "index": 152,
+      "title": "Discrete Phase Modeling Study for Particle Motion in Storm Water Retention",
+      "year": 2011
+    },
+    {
+      "index": 153,
+      "title": "An Experimental Study of Freshwater Pumping Affecting Saltwater Intrusion in Coastal Aquifer",
+      "year": 2011
+    },
+    {
+      "index": 154,
+      "title": "Stormwater Solid Transport Modeling for Stromwater Best Management Practices",
+      "year": 2011
+    },
+    {
+      "index": 155,
+      "title": "Case Study: Movable Bed Model Scaling for Bed Load Sediment Exclusion at Intake Structure on Rio Grande",
+      "year": 2010
+    },
+    {
+      "index": 156,
+      "title": "Experimental Study of Freshwater Discharge and Saltwater Intrusion Control in Coastal Aquifer",
+      "year": 2010
+    },
+    {
+      "index": 157,
+      "title": "Flood Debris Filtering Structure for Urban Storm Water Best Management Practices",
+      "year": 2010
+    },
+    {
+      "index": 158,
+      "title": "Experimental Study to Parameterize Salt-Wedge Formations in Coastal Aquifer",
+      "year": 2009
+    },
+    {
+      "index": 159,
+      "title": "Lateral Outflow from Supercritical Channel",
+      "year": 2009
+    },
+    {
+      "index": 160,
+      "title": "Saltwedge Dynamics of Porous Media Tank Experiment",
+      "year": 2009
+    },
+    {
+      "index": 161,
+      "title": "Numerical Modeling Study for Flow Pattern Changes Induced by Single Groyne",
+      "year": 2007
+    },
+    {
+      "index": 162,
+      "title": "Storm Water Best Management Practice: Development of Debris Filtering Structure for Supercritical Flow",
+      "year": 2007
+    },
+    {
+      "index": 163,
+      "title": "Gate Operation Numerical Modeling Study for Rio Grande Diversion Structure at Albuquerque, New Mexico",
+      "year": 2006
+    },
+    {
+      "index": 164,
+      "title": "Hydraulic Modeling Study for Rio Grande Diversion Structure at Albuquerque",
+      "year": 2006
+    },
+    {
+      "index": 165,
+      "title": "Numerical Modeling Study for Fish Screen of River Intake Channel",
+      "year": 2006
+    },
+    {
+      "index": 166,
+      "title": "Rio Grande Diversion Structure Hydraulic Impacts Numerical Modeling Study",
+      "year": 2006
+    },
+    {
+      "index": 167,
+      "title": "Laser-excited downconversion nanoparticle sensing for crack characterization in infrastructure monitoring",
+      "year": 2026
+    },
+    {
+      "index": 168,
+      "title": "Quantitative vibration-based prognostics of railcar bearing using encoder-decoder LSTM",
+      "year": 2026
+    },
+    {
+      "index": 169,
+      "title": "Ultrasonic Shear-Wave Inversion for Characterizing Corrosion-Induced Rebar–Concrete Interfacial Debonding",
+      "year": 2026
+    },
+    {
+      "index": 170,
+      "title": "AI-driven detection of failure modes in thermoplastic composites using acoustic emission techniques",
+      "year": 2026
+    },
+    {
+      "index": 171,
+      "title": "Hybrid Deep Learning Model for Accurate Settlement Forecasting of Metro Tracks under Canal Diversion Engineering",
+      "year": 2026
+    },
+    {
+      "index": 172,
+      "title": "A Novel Optuna-VMD-ML Framework for Enhanced Settlement Prediction of Buildings Around Foundation Pits",
+      "year": 2026
+    },
+    {
+      "index": 173,
+      "title": "Explainable machine learning and life cycle assessment for sustainable design of fiber-reinforced asphalt concrete",
+      "year": 2026
+    },
+    {
+      "index": 174,
+      "title": "Online Evaluation of Crack Development in Fracturing Pumps Using an Improved MLP Network",
+      "year": 2026
+    },
+    {
+      "index": 175,
+      "title": "Evaluating the Impact of Aggregate Size and Reinforcement on Alkali-Silica Reaction in Concrete through Nondestructive Testing Techniques",
+      "year": 2025
+    },
+    {
+      "index": 176,
+      "title": "Acoustic Emission Data Analysis of Compression after Impact Tests for Composite Materials",
+      "year": 2025
+    },
+    {
+      "index": 177,
+      "title": "Deep Learning-Based Structural Displacement Identification and Quantification under Target Feature Loss",
+      "year": 2025
+    },
+    {
+      "index": 178,
+      "title": "Enhancing multi-objective prediction of settlement around foundation pit using explainable machine learning",
+      "year": 2025
+    },
+    {
+      "index": 179,
+      "title": "Acoustic emission sensing for assessing compressive strain in impacted thermoplastic composites",
+      "year": 2025
+    },
+    {
+      "index": 180,
+      "title": "Virtual-to-real mapping: an AE missing signal generation and assisted localization method for defects in CFRP plates",
+      "year": 2025
+    },
+    {
+      "index": 181,
+      "title": "An anchor-free selective state space framework for real-time tunnel structure health monitoring",
+      "year": 2025
+    },
+    {
+      "index": 182,
+      "title": "Experimental and Simulation of Compression after Impact (CAI) Tests for Thermoplastic Composite Materials",
+      "year": 2025
+    },
+    {
+      "index": 183,
+      "title": "Research on node-improved energy dissipation wear model for fretting fatigue prediction in railway press-fit shaft",
+      "year": 2025
+    },
+    {
+      "index": 184,
+      "title": "Advances in Digital Twin Technology in Industry: A Review of Applications, Challenges, and Standardization",
+      "year": 2025
+    },
+    {
+      "index": 185,
+      "title": "Lithium slag-ground granulated blast furnace slag based geopolymer: Efflorescence mechanism analysis",
+      "year": 2025
+    },
+    {
+      "index": 186,
+      "title": "Fostering community belonging through STEAM education: Board game design in a university art appreciation course",
+      "year": 2025
+    },
+    {
+      "index": 187,
+      "title": "Energy-efficient multimodal mobility networks in transportation digital twins: Strategies and optimization",
+      "year": 2025
+    },
+    {
+      "index": 188,
+      "title": "Evaluation of impact energy in composites using acoustic emission sensing technique",
+      "year": 2025
+    },
+    {
+      "index": 189,
+      "title": "Hybrid learning architecture for high-speed railroad scene parsing and potential safety hazard evaluation of UAV images",
+      "year": 2025
+    },
+    {
+      "index": 190,
+      "title": "An automated load determination approach for concrete girder bridges through acoustic emission",
+      "year": 2025
+    },
+    {
+      "index": 191,
+      "title": "Compression after impact (CAI) test simulation for composite materials in ABAQUS",
+      "year": 2025
+    },
+    {
+      "index": 192,
+      "title": "Guest Editorial",
+      "year": 2025
+    },
+    {
+      "index": 193,
+      "title": "Metal surface crack depth laser acoustic emission detection method based on multivariate feature adaptive extraction and cross-modal interaction fusion",
+      "year": 2025
+    },
+    {
+      "index": 194,
+      "title": "Enhancing the rehabilitation of timber piles using fiber reinforced polymer: An acoustic emission analysis under compressive stress",
+      "year": 2024
+    },
+    {
+      "index": 195,
+      "title": "Stability analysis of moored floating offshore seamarks",
+      "year": 2024
+    },
+    {
+      "index": 196,
+      "title": "Acoustic emission monitoring and automated characterization of low-velocity impacts on composite components",
+      "year": 2024
+    },
+    {
+      "index": 197,
+      "title": "Condition assessment of prestressed concrete channel bridge girders using acoustic emission and data-driven methods",
+      "year": 2024
+    },
+    {
+      "index": 198,
+      "title": "Full-scale experimental investigation of prestressed concrete bridge girders strengthened with aluminium channels",
+      "year": 2024
+    },
+    {
+      "index": 199,
+      "title": "Effects of modified multi-walled carbon nanotubes and PVA fibers on mechanical properties and microstructure of lithium slag base geopolymer",
+      "year": 2024
+    },
+    {
+      "index": 200,
+      "title": "MFC-PINN: A method to improve the accuracy and robustness of acoustic emission source planar localization",
+      "year": 2024
+    },
+    {
+      "index": 201,
+      "title": "Assisting Load Rating Testing of Precast Reinforced Concrete Bridge Slab through Digital Twins and Field Monitoring Data",
+      "year": 2024
+    },
+    {
+      "index": 202,
+      "title": "Immersed force analysis of fish surface with carangiform locomotion",
+      "year": 2024
+    },
+    {
+      "index": 203,
+      "title": "Structural health monitoring of stainless-steel nuclear fuel storage canister using acoustic emission",
+      "year": 2024
+    },
+    {
+      "index": 204,
+      "title": "ASSESSING IMPACT-RELATED DAMAGE IN URBAN AIR MOBILITY WITH ACOUSTIC EMISSION SENSING",
+      "year": 2024
+    },
+    {
+      "index": 205,
+      "title": "Study on stage characteristics of hydraulic concrete fracture under uniaxial compression using acoustic emission",
+      "year": 2024
+    },
+    {
+      "index": 206,
+      "title": "Cost-effective methods for flexural strengthening of one-way RC precast flat slab bridges in South Carolina",
+      "year": 2023
+    },
+    {
+      "index": 207,
+      "title": "Exploiting machine learning for controlled synthesis of carbon dots-based corrosion inhibitors",
+      "year": 2023
+    },
+    {
+      "index": 208,
+      "title": "A transfer learning approach for acoustic emission zonal localization on steel plate-like structure using numerical simulation and unsupervised domain adaptation",
+      "year": 2023
+    },
+    {
+      "index": 209,
+      "title": "Acoustic Emission-Based Detection of Impacts on Thermoplastic Aircraft Control Surfaces: A Preliminary Study",
+      "year": 2023
+    },
+    {
+      "index": 210,
+      "title": "Localizing damage on stainless steel structures using acoustic emission signals and weighted ensemble regression-based convolutional neural network",
+      "year": 2023
+    },
+    {
+      "index": 211,
+      "title": "Automated crack detection and crack depth prediction for reinforced concrete structures using deep learning",
+      "year": 2023
+    },
+    {
+      "index": 212,
+      "title": "Determination of vehicle loads on bridges by acoustic emission and an improved ensemble artificial neural network",
+      "year": 2023
+    },
+    {
+      "index": 213,
+      "title": "Identifying the Energy of Low-velocity Impacts on Composite Components Using Acoustic Emission",
+      "year": 2023
+    },
+    {
+      "index": 214,
+      "title": "Implementation of data-driven approaches for condition assessment of structures and analyzing complex data",
+      "year": 2022
+    },
+    {
+      "index": 215,
+      "title": "Developing a heterogeneous ensemble learning framework to evaluate Alkali-silica reaction damage in concrete using acoustic emission signals",
+      "year": 2022
+    },
+    {
+      "index": 216,
+      "title": "Evaluation of ASR in concrete using acoustic emission and deep learning",
+      "year": 2021
+    },
+    {
+      "index": 217,
+      "title": "Detection of impact on aircraft composite structure using machine learning techniques",
+      "year": 2021
+    },
+    {
+      "index": 218,
+      "title": "Source localization on large-scale canisters for used nuclear fuel storage using optimal number of acoustic emission sensors",
+      "year": 2021
+    },
+    {
+      "index": 219,
+      "title": "Implementation of Information Entropy, b -Value, and Regression Analyses for Temporal Evaluation of Acoustic Emission Data Recorded during ASR Cracking",
+      "year": 2021
+    },
+    {
+      "index": 220,
+      "title": "A Smart Impact Detection System for Thermoplastic Aircraft Components based on Acoustic Emission and AdaBoost Algorithm",
+      "year": 2021
+    },
+    {
+      "index": 221,
+      "title": "An Autonomous Bridge Load Rating Framework Using Digital Twin",
+      "year": 2021
+    },
+    {
+      "index": 222,
+      "title": "ASSESSMENT OF IMPACT DAMAGE LEVEL FOR COMPOSITE AIRCRAFT COMPONENTS USING ACOUSTIC EMISSION",
+      "year": 2021
+    },
+    {
+      "index": 223,
+      "title": "Detection and Evaluation of Impact Damage on Aircraft Control Surface Using Acoustic Emission and Convolution Neural Network",
+      "year": 2021
+    },
+    {
+      "index": 224,
+      "title": "Temporal Evaluation of ASR Cracking in Concrete Specimens Using Acoustic Emission",
+      "year": 2020
+    },
+    {
+      "index": 225,
+      "title": "Data-Driven Source Localization of Impact on Aircraft Control Surfaces",
+      "year": 2020
+    },
+    {
+      "index": 226,
+      "title": "A minimally intrusive impact detection system for aircraft moveable using random forest",
+      "year": 2020
+    },
+    {
+      "index": 227,
+      "title": "Acoustic emission technique to identify stress corrosion cracking damage",
+      "year": 2020
+    },
+    {
+      "index": 228,
+      "title": "Airfield Infrastructure Management Using Network-Level Optimization and Stochastic Duration Modeling",
+      "year": 2019
+    },
+    {
+      "index": 229,
+      "title": "Ecosystem and Transportation Infrastructure Resilience in the Great Lakes",
+      "year": 2018
+    },
+    {
+      "index": 230,
+      "title": "Roads in transition: Integrated modeling of a manufacturer-traveler-infrastructure system in a mixed autonomous/human driving environment",
+      "year": 2018
+    },
+    {
+      "index": 231,
+      "title": "Shared versus private mobility: Modeling public interest in autonomous vehicles accounting for latent attitudes",
+      "year": 2018
+    },
+    {
+      "index": 232,
+      "title": "Optimal facility-specific inspection and maintenance decisions under measurement uncertainty: Unifying framework",
+      "year": 2017
+    },
+    {
+      "index": 233,
+      "title": "Iterative update of route choice proportions in OD estimation",
+      "year": 2016
+    },
+    {
+      "index": 234,
+      "title": "The demand and supply of trans-oceanic sea routes: the case of East Asia-US east coast container trade",
+      "year": 2016
+    },
+    {
+      "index": 235,
+      "title": "Airport partial and full privatization in a multi-airport region: Focus on pricing and capacity",
+      "year": 2015
+    },
+    {
+      "index": 236,
+      "title": "An investigation of human factors impact on Tehran urban crash severity",
+      "year": 2014
+    },
+    {
+      "index": 237,
+      "title": "A model for predicting schoolchildren accidents in the vicinity of rural roads based on geometric design and traffic conditions",
+      "year": 2013
+    },
+    {
+      "index": 238,
+      "title": "Non-Contact Vibration-Based Damage Detection of Civil Structures Using a Cost-Effective Autonomous UAV",
+      "year": 2026
+    },
+    {
+      "index": 239,
+      "title": "Tunable vibro-impact coupling in a dual-beam energy harvester for broadband power generation: design, modeling, and experimental validation",
+      "year": null
+    },
+    {
+      "index": 240,
+      "title": "Harvesting electrical energy from vibration of railway track using an electromagnetic energy harvester with circular Halbach array",
+      "year": 2026
+    },
+    {
+      "index": 241,
+      "title": "Design, modeling, and testing of a periodic mechanical metamaterial with localized energy absorption for attenuation of Lamb wave",
+      "year": 2026
+    },
+    {
+      "index": 242,
+      "title": "Experimental study on damage detection of civil structures using digital image correlation (DIC) method",
+      "year": 2026
+    },
+    {
+      "index": 243,
+      "title": "Non-contact energy harvester for rural grade crossings",
+      "year": 2025
+    },
+    {
+      "index": 244,
+      "title": "Machine learning technique for damage detection of rails on steel railroad bridges subjected to moving train load",
+      "year": 2023
+    },
+    {
+      "index": 245,
+      "title": "Vibration Control using Frictional Tuned Mass Dampers with Stick-Slip Motion",
+      "year": null
+    },
+    {
+      "index": 246,
+      "title": "Damage Detection in an Open-Deck Steel Truss Railroad Bridge under the Train Load using Hilbert-Huang Transform",
+      "year": null
+    },
+    {
+      "index": 247,
+      "title": "Passive Control of an Electromagnetic Friction Damper for Displacement Reduction of Multi-Story Base-Isolated Buildings",
+      "year": 2022
+    },
+    {
+      "index": 248,
+      "title": "Development of an Analytical Method for Design of Electromagnetic Energy Harvesters with Planar Magnetic Arrays",
+      "year": 2022
+    },
+    {
+      "index": 249,
+      "title": "A Study on the Use of an Energy-Regenerative Tuned Mass Damper for Vibration Control and Monitoring of Base-Isolated Buildings",
+      "year": 2022
+    },
+    {
+      "index": 250,
+      "title": "Experimental Testing and Validation of the Dynamic Model of a Magneto-Solid Damper for Vibration Control",
+      "year": 2022
+    },
+    {
+      "index": 251,
+      "title": "Energy Harvesting for Self-Powered Sensors for Smart Transportation Infrastructures",
+      "year": null
+    },
+    {
+      "index": 252,
+      "title": "Seismic component devices",
+      "year": 2022
+    },
+    {
+      "index": 253,
+      "title": "Planar Arrangement of Permanent Magnets in Design of a Magneto-Solid Damper by Finite Element Method",
+      "year": 2020
+    },
+    {
+      "index": 254,
+      "title": "Experimental evaluation of unmanned aerial system for measuring bridge movement",
+      "year": 2020
+    },
+    {
+      "index": 255,
+      "title": "Post-hazard engineering assessment of highway structures using remote sensing technologies",
+      "year": 2019
+    },
+    {
+      "index": 256,
+      "title": "Seismic response control of multi-story base-isolated buildings using a smart electromagnetic friction damper with smooth hysteretic behavior",
+      "year": 2019
+    },
+    {
+      "index": 257,
+      "title": "Feasibility study of using a semiactive electromagnetic friction damper for seismic response control of horizontally curved bridges",
+      "year": 2019
+    },
+    {
+      "index": 258,
+      "title": "Semi-Active Control of the Torsional Response of Horizontally Curved Bridges",
+      "year": 2018
+    },
+    {
+      "index": 259,
+      "title": "Modeling, design, and testing of a proof-of-concept prototype damper with friction and eddy current damping effects",
+      "year": 2018
+    },
+    {
+      "index": 260,
+      "title": "Dynamic characteristics of horizontally curved bridges",
+      "year": 2017
+    },
+    {
+      "index": 261,
+      "title": "Vibration control using a variable coil-based friction damper",
+      "year": 2017
+    },
+    {
+      "index": 262,
+      "title": "A passive electromagnetic eddy current friction damper (PEMECFD): Theoretical and analytical modeling",
+      "year": 2017
+    },
+    {
+      "index": 263,
+      "title": "Torsional response of horizontally curved bridges subjected to earthquake-induced pounding",
+      "year": 2017
+    },
+    {
+      "index": 264,
+      "title": "Rigid-body motion of horizontally curved bridges subjected to earthquake-induced pounding",
+      "year": 2016
+    },
+    {
+      "index": 265,
+      "title": "Analytical study of the coupled motions of decks in skew bridges with the deck–abutment collision",
+      "year": 2016
+    },
+    {
+      "index": 266,
+      "title": "Analytical modeling of a simple passive electromagnetic eddy current friction damper",
+      "year": 2016
+    },
+    {
+      "index": 267,
+      "title": "Influence of seismic pounding on dynamic response of skewed highway bridges",
+      "year": 2012
+    },
+    {
+      "index": 268,
+      "title": "Investigation of the seismic pounding effect on torsional response of highway bridges",
+      "year": 2011
+    },
+    {
+      "index": 269,
+      "title": "An approximate method for dynamic analysis of skewed highway bridges with continuous rigid deck",
+      "year": 2010
+    },
+    {
+      "index": 270,
+      "title": "An approximate method for dynamic analysis of highway skewed bridges with continuous deck",
+      "year": 2010
+    },
+    {
+      "index": 271,
+      "title": "The effect of direction of orthogonal horizontal components of earthquake on the nonlinear response of skewed bridges",
+      "year": 2009
+    },
+    {
+      "index": 273,
+      "title": "Electrochemical Precipitation",
+      "year": null
+    },
+    {
+      "index": 275,
+      "title": "Effects of thermally modified asphalt concrete on pavement temperature",
+      "year": 2019
+    },
+    {
+      "index": 276,
+      "title": "Fiber reinforced concrete for improved performance of transportation infrastructure",
+      "year": 2018
+    },
+    {
+      "index": 277,
+      "title": "Structural Design and Lifecycle Assessment of Heated Pavement Using Conductive Asphalt",
+      "year": 2018
+    },
+    {
+      "index": 278,
+      "title": "Electrical and mechanical properties of asphaltic composites containing carbon based fillers",
+      "year": 2017
+    },
+    {
+      "index": 279,
+      "title": "Pull-out behavior of straight steel fibers from asphalt binder",
+      "year": 2017
+    },
+    {
+      "index": 280,
+      "title": "Mixed mode brittle fracture analysis of high strength cement mortar using strain-based criteria",
+      "year": 2016
+    },
+    {
+      "index": 281,
+      "title": "Modified maximum tangential stress criterion for fracture behavior of zirconia/veneer interfaces",
+      "year": 2016
+    },
+    {
+      "index": 282,
+      "title": "Strain-based criteria for mixed-mode fracture of polycrystalline graphite",
+      "year": 2016
+    },
+    {
+      "index": 283,
+      "title": "Controlling thermal properties of asphalt concrete and their effects on pavement surface temperature",
+      "year": 2015
+    },
+    {
+      "index": 284,
+      "title": "Cracking resistance of fiber reinforced asphalt concrete at- 20 C",
+      "year": 2015
+    },
+    {
+      "index": 285,
+      "title": "The role of T-stress on kinking angle of interface cracks",
+      "year": 2015
+    },
+    {
+      "index": 286,
+      "title": "Controlling conductivity of asphalt concrete with graphite",
+      "year": 2014
+    },
+    {
+      "index": 287,
+      "title": "Optimization of thermoelectric system for pavement energy harvesting",
+      "year": 2014
+    },
+    {
+      "index": 288,
+      "title": "Characteristics and applications of high-performance fiber reinforced asphalt concrete",
+      "year": 2012
+    },
+    {
+      "index": 289,
+      "title": "A Study on Analysis Method of Asphalt Plug Joint using FEM",
+      "year": 2011
+    },
+    {
+      "index": 290,
+      "title": "Acoustic emission diagnosis system and wireless monitoring for damage assessment of concrete structures",
+      "year": 2011
+    },
+    {
+      "index": 291,
+      "title": "Uniaxial nonlinear viscoelastic constitutive model for asphalt concrete",
+      "year": 2011
+    },
+    {
+      "index": 292,
+      "title": "Behavior of bridge asphalt plug joints under thermal and traffic loads",
+      "year": 2010
+    },
+    {
+      "index": 293,
+      "title": "Improved geometric design of bridge asphalt plug joints",
+      "year": 2010
+    },
+    {
+      "index": 294,
+      "title": "Evaluation for behavior of asphalt plug joint with using a FEM analysis",
+      "year": 2008
+    },
+    {
+      "index": 295,
+      "title": "Assessment of crack activity by acoustic emission in concrete structures",
+      "year": 2006
+    },
+    {
+      "index": 296,
+      "title": "Application of micro-ESPI technique for measurement of micro-tensile properties",
+      "year": 2004
+    },
+    {
+      "index": 297,
+      "title": "Measurement Technology of Micro/Nano-scale Mechanical Properties",
+      "year": 2004
+    },
+    {
+      "index": 298,
+      "title": "Assessment of the integrity of concrete bridge structures by acoustic emission technique",
+      "year": 2002
+    },
+    {
+      "index": 299,
+      "title": "AE characteristic for monitoring of fatigue crack in steel bridge members",
+      "year": 2000
+    },
+    {
+      "index": 300,
+      "title": "Study on the Fatigue Crack Behavior by the Stress Intensity Factor and AE Parameters",
+      "year": 2000
+    },
+    {
+      "index": 301,
+      "title": "Temperature effect on rail anchor longitudinal resistance",
+      "year": 2026
+    },
+    {
+      "index": 302,
+      "title": "Development of Rail Anchor Testing Through Literature Review of CWR Buckling Resistance Evaluation",
+      "year": 2024
+    },
+    {
+      "index": 304,
+      "title": "Analytical Method for Predicting Lateral Facing Deflections of Geosynthetic-Reinforced Soil Abutment Walls",
+      "year": null
+    },
+    {
+      "index": 305,
+      "title": "Combined Effects of Corrosion and Migration of Fines on Stability of Mechanically Stabilized Earth Walls",
+      "year": null
+    },
+    {
+      "index": 306,
+      "title": "Effect of Spread Footing Loads on Stability of Geosynthetic-Reinforced Retaining Walls",
+      "year": null
+    },
+    {
+      "index": 307,
+      "title": "Evaluation of Compaction-induced Stress in Geosynthetic Reinforced soil Walls using Numerical and Analytical Methods",
+      "year": null
+    },
+    {
+      "index": 308,
+      "title": "Mechanical Responses of Soil Geosynthetic Composite (SGC) Mass under Failure loads",
+      "year": 2022
+    },
+    {
+      "index": 309,
+      "title": "Predicting Tensile Strength for Pre-Stressed Driven Piles",
+      "year": 2022
+    },
+    {
+      "index": 310,
+      "title": "Analytical Method for Predicting Lateral Facing Deflections of Geosynthetic-Reinforced Soil Abutment Walls",
+      "year": null
+    },
+    {
+      "index": 311,
+      "title": "Combined Effects of Corrosion and Migration of Fines on Stability of Mechanically Stabilized Earth Walls",
+      "year": null
+    },
+    {
+      "index": 312,
+      "title": "Effect of Spread Footing Loads on Stability of Geosynthetic-Reinforced Retaining Walls",
+      "year": null
+    },
+    {
+      "index": 313,
+      "title": "Investigating Horizontal Movement of Pile Groups Under Adjacent Construction Loads and Foundation Excavation - A Case Study",
+      "year": 2022
+    },
+    {
+      "index": 314,
+      "title": "Several Problems Related to Tensile Stress during the Construction of Prestressed Reinforced Concrete Piles",
+      "year": 2021
+    },
+    {
+      "index": 319,
+      "title": "The Search for Internal Stability in Reinforced Soil",
+      "year": 2020
+    },
+    {
+      "index": 321,
+      "title": "Experimental and theoretical studies on the ultimate bearing capacity of geogrid-reinforced sand",
+      "year": 2019
+    },
+    {
+      "index": 322,
+      "title": "Investigating shear behavior of cohesionless soils with the variation of particle sizes using Discrete Element Method",
+      "year": null
+    },
+    {
+      "index": 323,
+      "title": "Numerical Simulation Analysis of Stress-Deformation Behavior of Soil and Geosynthetic Composite Mass: A Case Study",
+      "year": 2019
+    },
+    {
+      "index": 324,
+      "title": "Using ash and disposal from thermal power plants to build geosynthetic-reinforced ash and disposal ponds",
+      "year": 2019
+    },
+    {
+      "index": 328,
+      "title": "Behavior of reinforced soil walls",
+      "year": 2016
+    },
+    {
+      "index": 329,
+      "title": "Axial capacity of non-welded steel-PHC composite pile based on pile load tests",
+      "year": 2015
+    },
+    {
+      "index": 330,
+      "title": "Codes and standards for geotechnical engineering in Vietnam",
+      "year": 2015
+    },
+    {
+      "index": 331,
+      "title": "Damaged buildings caused by large settlement and differential settlement in Vietnam",
+      "year": 2015
+    },
+    {
+      "index": 332,
+      "title": "Investigation and assessment of using glass-fiber-reinforced pipes for water supply and drainage in Vietnam and recommendations for controlling GFR pipe quality",
+      "year": 2015
+    },
+    {
+      "index": 333,
+      "title": "Load-Carrying Capacity and Required Reinforcement Strength of Closely Spaced Soil-Geosynthetic Composites",
+      "year": 2015
+    },
+    {
+      "index": 334,
+      "title": "Investigation and assessment of Song-Da water supply pipelines",
+      "year": 2014
+    },
+    {
+      "index": 335,
+      "title": "Suppression of soil dilation–a reinforcing mechanism of soil-heosynthetic composites",
+      "year": 2014
+    },
+    {
+      "index": 336,
+      "title": "A reinforcing mechanism of soil-geosynthetic composites for retaining walls and bridge abutments",
+      "year": 2013
+    },
+    {
+      "index": 338,
+      "title": "Load-carrying capacity and required reinforcement strength of closely-spaced soil-geosynthetic composites",
+      "year": 2013
+    },
+    {
+      "index": 339,
+      "title": "Measures for Soil Improvement in Vietnam Petro-Gas Projects",
+      "year": 2013
+    },
+    {
+      "index": 340,
+      "title": "Planning Vietnam regulations and standards for soil investigations and survey up to the Year of 2030",
+      "year": 2013
+    },
+    {
+      "index": 341,
+      "title": "Study on the in-situ pile load test and bearing capacity characteristics of steel piles with wings installed in soil cement column",
+      "year": 2013
+    },
+    {
+      "index": 342,
+      "title": "A generic Soil-geosynthetic composite test",
+      "year": 2012
+    },
+    {
+      "index": 343,
+      "title": "Behavior of geosynthetic-reinforced soil mass for walls and bridge abutments",
+      "year": 2012
+    },
+    {
+      "index": 344,
+      "title": "Large settlement and differential settlement of apartments in Hanoi and recommendations for preventive measures",
+      "year": 2011
+    },
+    {
+      "index": 345,
+      "title": "Required minimum reinforcement stiffness and strength in a geosynthetic-reinforced soil (GRS) wall",
+      "year": 2011
+    },
+    {
+      "index": 346,
+      "title": "An analytical model for calculating lateral movement of a geosynthetic-reinforced soil (GRS) wall with modular block facing",
+      "year": 2010
+    },
+    {
+      "index": 347,
+      "title": "An analytical model for evaluation of compaction-induced stresses in geosynthetic-reinforced soil (GRS) mass",
+      "year": 2010
+    },
+    {
+      "index": 348,
+      "title": "Geosynthetic reinforced soil composite",
+      "year": 2009
+    },
+    {
+      "index": 349,
+      "title": "Investigating composite behavior of geosynthetic-reinforced soil (GRS) mass",
+      "year": 2009
+    },
+    {
+      "index": 350,
+      "title": "Allowable bearing pressure of bridge sills on GRS abutments with flexible facing.\" Journal of Geotechnical and Geoenvironmental Engineering",
+      "year": 2006
+    },
+    {
+      "index": 351,
+      "title": "The Creation and Evaluation of an Engineering Student Leadership Academy",
+      "year": 2025
+    },
+    {
+      "index": 352,
+      "title": "NSF EEC: Establishing UTRGV's Center for Broadening Participation in Engineering: Engage, Educate, Enrich",
+      "year": null
+    },
+    {
+      "index": 353,
+      "title": "Predicting Tensile Strength for Pre-Stressed Driven Piles",
+      "year": 2022
+    },
+    {
+      "index": 354,
+      "title": "Analytical Method for Predicting Lateral Facing Deflections of Geosynthetic-Reinforced Soil Abutment Walls",
+      "year": null
+    },
+    {
+      "index": 355,
+      "title": "Combined Effects of Corrosion and Migration of Fines on Stability of Mechanically Stabilized Earth Walls",
+      "year": null
+    },
+    {
+      "index": 356,
+      "title": "Effect of Spread Footing Loads on Stability of Geosynthetic-Reinforced Retaining Walls",
+      "year": null
+    },
+    {
+      "index": 357,
+      "title": "Investigating Horizontal Movement of Pile Groups Under Adjacent Construction Loads and Foundation Excavation - A Case Study",
+      "year": 2022
+    },
+    {
+      "index": 359,
+      "title": "Development of load transfer characteristics of drilled shafts in shales for use  in Load and Resistance Factor Design",
+      "year": 2019
+    },
+    {
+      "index": 360,
+      "title": "Investigating shear behavior of cohesionless soils with the variation of particle sizes using Discrete Element Method",
+      "year": null
+    },
+    {
+      "index": 361,
+      "title": "A prediction of energy piles' long-term operation using a couples thermo-hydro-geomechanical model",
+      "year": 2018
+    },
+    {
+      "index": 362,
+      "title": "Modeling and simulating load transfer of drilled shafts",
+      "year": 2018
+    },
+    {
+      "index": 363,
+      "title": "Resistance Factors for Side Friction and End Bearing Drilled Shafts",
+      "year": 2018
+    },
+    {
+      "index": 364,
+      "title": "Incorporating sources of uncertainties in probabilistic analysis for deep foundation design using Monte Carlo simulation",
+      "year": 2018
+    },
+    {
+      "index": 365,
+      "title": "Load transfer of drilled shafts: Modeling and simulating for probability analysis",
+      "year": 2018
+    },
+    {
+      "index": 366,
+      "title": "Developing load transfer models for drilled shafts",
+      "year": 2018
+    },
+    {
+      "index": 367,
+      "title": "Geothermal energy for bridge deicing: Horizontal ground heat exchangers within bridge abutment",
+      "year": 2017
+    },
+    {
+      "index": 368,
+      "title": "Horizontal energy foundation for residential buildings in cooling dominated area",
+      "year": 2017
+    },
+    {
+      "index": 369,
+      "title": "Load and resistance factor design of deep foundations: service limit state",
+      "year": 2017
+    },
+    {
+      "index": 370,
+      "title": "Service Limit State Design for Individual Drilled Shafts in Shales",
+      "year": 2017
+    },
+    {
+      "index": 371,
+      "title": "Service limit state design procedure for drilled shafts in shales using t-z method",
+      "year": 2015
+    },
+    {
+      "index": 372,
+      "title": "Use of geotextile at the levee's base to increase levee stability",
+      "year": 2002
+    },
+    {
+      "index": 373,
+      "title": "EEG-based assessment of mental fatigue during exoskeleton-assisted construction postures: A GAN-Augmented Approach",
+      "year": 2026
+    },
+    {
+      "index": 374,
+      "title": "A Temporal fusion transformer framework for understanding multimodal stress cues in micromobility systems",
+      "year": 2026
+    },
+    {
+      "index": 375,
+      "title": "Collaborative intelligence in construction: exploring human-AI interaction for superintendents",
+      "year": 2026
+    },
+    {
+      "index": 376,
+      "title": "Spatio-temporal heat risk analysis in construction: Digital twin-enabled monitoring",
+      "year": 2024
+    },
+    {
+      "index": 377,
+      "title": "A multimodal analysis of environmental stress experienced by older adults during outdoor walking trips: Implications for designing new intelligent technologies to enhance walkability in low-income Latino communities",
+      "year": 2024
+    },
+    {
+      "index": 378,
+      "title": "From public forecasts to occupational heat safety management: Evaluating the effectiveness of the national weather service's operational heat risk forecasts",
+      "year": 2024
+    },
+    {
+      "index": 379,
+      "title": "Heat Stress Monitoring in Construction for Risk-Informed Decision-Making",
+      "year": 2024
+    },
+    {
+      "index": 380,
+      "title": "Digital Twin-Based Heat Stress Monitoring System in Construction",
+      "year": 2024
+    },
+    {
+      "index": 381,
+      "title": "Revealing the impact of heat radiation on construction: A microclimate simulation utilizing meteorological data and geometric modeling",
+      "year": 2024
+    },
+    {
+      "index": 382,
+      "title": "A study on the external stone cladding system in production and installation stages: The case of Hong Kong",
+      "year": 2020
+    },
+    {
+      "index": 383,
+      "title": "Development of construction duration prediction model for project planning phase of mixed-use buildings",
+      "year": 2019
+    },
+    {
+      "index": 384,
+      "title": "Development of an approximate construction duration prediction model during the project planning phase for general office building",
+      "year": 2018
+    },
+    {
+      "index": 385,
+      "title": "Performance evaluation and life cycle cost analysis model of a gondola-type exterior wall painting robot",
+      "year": 2017
+    }
+  ],
+  "duplicate_doi_groups": {
+    "10.3390/w18151812": [
+      9,
+      62,
+      115,
+      132
+    ],
+    "10.1007/s40808-026-02773-0": [
+      12,
+      133
+    ],
+    "10.1007/s13762-020-02963-y": [
+      27,
+      122
+    ],
+    "10.15436/jeses.1.3.4": [
+      35,
+      149
+    ],
+    "10.1016/j.trc.2018.11.005": [
+      65,
+      231
+    ],
+    "10.1061/(asce)is.1943-555x.0000402": [
+      67,
+      232
+    ]
+  },
+  "duplicate_title_year_groups": {
+    "a machine learning approach for water quality assessment in the lower rio grande valley watershed|2026": [
+      9,
+      62,
+      115,
+      132
+    ],
+    "applications of machine learning in enhancing evaporation estimation for small reservoirs a case study in semi arid south texas|2026": [
+      12,
+      133
+    ],
+    "aqueous lead removal using biochar pumice filter derived from avocado seed aspen bedding and palm tree frond|2025": [
+      14,
+      117
+    ],
+    "groundwater vulnerability assessment of shallow aquifer in the south texas sand sheet using a gis based drastic model|2022": [
+      19,
+      137
+    ],
+    "evaluation of arsenic sorption performance using dendritic anatase and polycrystalline rutile nano tio2 for environmental applications|2020": [
+      26,
+      27,
+      121,
+      122
+    ],
+    "watershed modeling and sediment yield prediction of the los olmos creek watershed in south texas|2016": [
+      35,
+      149
+    ],
+    "shared versus private mobility modeling public interest in autonomous vehicles accounting for latent attitudes|2018": [
+      65,
+      231
+    ],
+    "optimal facility specific inspection and maintenance decisions under measurement uncertainty unifying framework|2017": [
+      67,
+      232
+    ],
+    "experimental study on damage detection of civil structures using digital image correlation dic method|2026": [
+      75,
+      242
+    ],
+    "predicting tensile strength for pre stressed driven piles|2022": [
+      309,
+      353
+    ],
+    "investigating horizontal movement of pile groups under adjacent construction loads and foundation excavation a case study|2022": [
+      313,
+      357
+    ],
+    "modeling triaxial testing with flexible membrane to investigate effects of particle size on strength and strain properties of cohesionless soil|2021": [
+      316,
+      358
+    ]
+  },
+  "unknown_faculty_ids": {
+    "2109046": 1,
+    "2369377": 2,
+    "2453211": 2,
+    "1811126": 3,
+    "1662386": 23,
+    "2032691": 6,
+    "1451138": 9,
+    "1450918": 3,
+    "2032892": 5,
+    "1451051": 2,
+    "1811567": 1,
+    "1451295": 18,
+    "2370676": 3,
+    "2032759": 1,
+    "1662367": 4,
+    "2139412": 1,
+    "1450810": 1,
+    "2526914": 3,
+    "2545010": 1,
+    "2619687": 1,
+    "1450869": 2,
+    "1450876": 2,
+    "2446407": 1,
+    "2317506": 1,
+    "1223080": 1,
+    "2109038": 1,
+    "1950282": 1,
+    "1811321": 1,
+    "1962780": 1,
+    "1478887": 1
+  },
+  "suspicious_faculty_author_entries": [],
+  "placeholder_records": {
+    "education": 48,
+    "previous_positions": 0,
+    "awards": 65
+  }
+}

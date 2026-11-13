@@ -1,0 +1,30 @@
+{
+  "run_id": "20261113T014743Z",
+  "started_at": "2026-11-13T01:47:43.075759+00:00",
+  "department": "Department of Informatics and Engineering Systems",
+  "department_slug": "ies",
+  "config": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml",
+  "output_directory": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies",
+  "allow_count_mismatch": true,
+  "auto_approve_requested_by_user": true,
+  "stages": [
+    {
+      "name": "Discover faculty",
+      "command": [
+        "/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/discover_faculty.py",
+        "--config",
+        "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml"
+      ],
+      "started_at": "2026-11-13T01:47:43.075847+00:00",
+      "status": "failed",
+      "return_code": 1,
+      "duration_seconds": 0.05,
+      "finished_at": "2026-11-13T01:47:43.124052+00:00"
+    }
+  ],
+  "status": "failed",
+  "error": "Stage 'Discover faculty' exited with code 1.",
+  "finished_at": "2026-11-13T01:47:43.124105+00:00",
+  "duration_seconds": 0.05
+}

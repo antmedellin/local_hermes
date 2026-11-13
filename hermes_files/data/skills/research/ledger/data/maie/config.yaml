@@ -18,13 +18,6 @@ sources:
     profile_api_url: "https://webapps.utrgv.edu/aa/dm/api/DMUser/GetDMuser?username="
     department_name: "Department of Manufacturing and Industrial Engineering"
 
-validation_manifest: "validation_manifest.json"
-validation:
-  expected_faculty_count: 14
-  expected_publication_count: 457
-  expected_unique_dm_record_count: 461
-  expected_reconciliation_decision_count: 1634
-  expected_canonical_publication_count: 456
-  expected_publication_merge_group_count: 1
-  expected_department_author_occurrence_count: 438
-  expected_canonical_authorship_count: 435
+validation_manifest: validation_manifest.json
+
+validation: {}

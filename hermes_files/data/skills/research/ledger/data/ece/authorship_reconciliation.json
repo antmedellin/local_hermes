@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source_file": "/home/mep635/local_hermes/hermes_files/data/skills/research/ledger/data/ece/faculty_normalized.json",
+    "source_file": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ece/faculty_normalized.json",
     "purpose": "Authorship reconciliation before PostgreSQL ledger import",
     "read_only": true
   },

@@ -1,0 +1,57 @@
+{
+  "started_at": "2026-11-13T01:47:37.941335+00:00",
+  "plan_only": false,
+  "departments": [
+    {
+      "folder": "cive",
+      "config": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml",
+      "status": "failed",
+      "stage": "lightrag",
+      "started_at": "2026-11-13T01:47:37.941437+00:00",
+      "department_id": 6,
+      "error": "Command '['/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python', '/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/ingest_department.py', '--config', '/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/cive/config.yaml', '--lightrag-only', '--allow-lightrag-write', '--department-id', '6']' returned non-zero exit status 1.",
+      "finished_at": "2026-11-13T01:47:39.476400+00:00"
+    },
+    {
+      "folder": "csci",
+      "config": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/csci/config.yaml",
+      "status": "failed",
+      "stage": "lightrag",
+      "started_at": "2026-11-13T01:47:39.476531+00:00",
+      "department_id": 7,
+      "error": "Command '['/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python', '/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/ingest_department.py', '--config', '/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/csci/config.yaml', '--lightrag-only', '--allow-lightrag-write', '--department-id', '7']' returned non-zero exit status 1.",
+      "finished_at": "2026-11-13T01:47:41.341744+00:00"
+    },
+    {
+      "folder": "ece",
+      "config": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ece/config.yaml",
+      "status": "failed",
+      "stage": "lightrag",
+      "started_at": "2026-11-13T01:47:41.341920+00:00",
+      "department_id": 8,
+      "error": "Command '['/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python', '/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/ingest_department.py', '--config', '/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ece/config.yaml', '--lightrag-only', '--allow-lightrag-write', '--department-id', '8']' returned non-zero exit status 1.",
+      "finished_at": "2026-11-13T01:47:43.042048+00:00"
+    },
+    {
+      "folder": "ies",
+      "config": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml",
+      "status": "failed",
+      "stage": "ledger",
+      "started_at": "2026-11-13T01:47:43.042225+00:00",
+      "error": "Command '['/home/mhc794/local_hermes/hermes_files/ai_files/.venv/bin/python', '/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/scripts/ingest_department.py', '--config', '/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/ies/config.yaml', '--allow-count-mismatch', '--allow-db-write', '--allow-overwrite', '--auto-approve']' returned non-zero exit status 1.",
+      "finished_at": "2026-11-13T01:47:43.130136+00:00"
+    },
+    {
+      "folder": "maie",
+      "config": "/home/mhc794/local_hermes/hermes_files/data/skills/research/ledger/data/maie/config.yaml",
+      "status": "succeeded",
+      "stage": "lightrag",
+      "started_at": "2026-11-13T01:47:43.130310+00:00",
+      "department_id": 1,
+      "finished_at": "2026-11-13T01:47:44.571604+00:00"
+    }
+  ],
+  "status": "failed",
+  "finished_at": "2026-11-13T01:47:44.571748+00:00",
+  "not_run": []
+}

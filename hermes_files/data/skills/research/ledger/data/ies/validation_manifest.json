@@ -1,0 +1,67 @@
+{
+  "manifest_version": 1,
+  "status": "approved",
+  "department_name": "Department of Informatics and Engineering Systems",
+  "generated_at_utc": "2026-11-13T05:35:01.515567+00:00",
+  "artifacts": {
+    "faculty_reconciled.json": "2a0da4213e29e882d575dc9fad403dc5e4a94a4061d1d92af7decfbe29010aba",
+    "authorship_reconciliation.json": "6dc0297c4a4aab9fb4051ce91d7208a7433483fe782d530342bc07761259e8cf"
+  },
+  "counts": {
+    "expected_faculty_count": 17,
+    "expected_publication_count": 305,
+    "expected_unique_dm_record_count": 313,
+    "expected_reconciliation_decision_count": 960,
+    "expected_canonical_publication_count": 303,
+    "expected_publication_merge_group_count": 2,
+    "expected_department_author_occurrence_count": 274,
+    "expected_canonical_authorship_count": 262,
+    "dry_run_decision_occurrence_count": 274,
+    "dry_run_canonical_authorship_count": 262,
+    "classification_counts": {
+      "EXACT": 220,
+      "EXTERNAL": 586,
+      "HIGH_SIMILARITY": 2,
+      "HISTORICAL_ID_MISMATCH": 88,
+      "HISTORICAL_ID_SWAP_RECOVERED": 1,
+      "MODERATE_REVIEW": 4,
+      "NAME_VARIANT": 45,
+      "NAME_VARIANT_WITHOUT_DM_ID": 5,
+      "NAME_WITHOUT_DM_ID": 9
+    },
+    "source_author_occurrence_count": 960,
+    "source_publication_duplicate_groups": [
+      {
+        "key": [
+          "enhanced quadratic discriminant analysis with sensor signal fusion for speed independent fault detection in rotating machines",
+          2023
+        ],
+        "publication_ids": [
+          "PUB-00016",
+          "PUB-00017"
+        ]
+      },
+      {
+        "key": [
+          "mining survey data",
+          2019
+        ],
+        "publication_ids": [
+          "PUB-00162",
+          "PUB-00163"
+        ]
+      }
+    ]
+  },
+  "approval": {
+    "reviewer": "mhc794",
+    "approved_at_utc": "2026-11-13T05:35:01.516477+00:00",
+    "method": "auto_approve_cli",
+    "auto_approved": true,
+    "requested_by_user": true
+  },
+  "notes": [
+    "Approved automatically by explicit --auto-approve request.",
+    "Publication identity remains normalized title plus parsed year."
+  ]
+}
