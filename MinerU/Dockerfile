@@ -21,9 +21,9 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install MinerU
-RUN python3 -m pip install -U \
-        'mineru[core]>=3.4.0' \
+# Install pinned MinerU version
+RUN python3 -m pip install \
+        'mineru[core]==4.2.2' \
         --break-system-packages && \
     python3 -m pip cache purge
 
