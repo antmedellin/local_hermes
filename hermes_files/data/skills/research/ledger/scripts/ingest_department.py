@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 """Safely orchestrate department research-ledger ingestion."""
 
@@ -276,6 +277,36 @@ def build_stages(args, config_path, output_dir, department_slug):
         )
 
     if args.allow_lightrag_write:
+        department_id = args.department_id
+
+        # Synchronize faculty PERSON nodes before abstract ingestion.
+        faculty_script = (
+            REPO_ROOT
+            / "hermes_files/data/skills/research/lightrag/scripts/"
+              "sync_faculty_nodes.py"
+        )
+
+        if not faculty_script.is_file():
+            raise FileNotFoundError(
+                f"Faculty sync script not found: {faculty_script}"
+            )
+
+        stages.append({
+            "name": "Synchronize faculty PERSON nodes",
+            "command": [
+                python, str(faculty_script),
+                "--config", str(config_path),
+                "--department-id", (
+                    str(department_id) if department_id is not None
+                    else "<lookup-after-import>"
+                ),
+                "--apply",
+            ],
+            "resolve_department_id": department_id is None,
+            "artifacts": [],
+            "write_stage": True,
+        })
+
         lightrag_script = (
             REPO_ROOT
             / "hermes_files/data/skills/research/lightrag/scripts/"
@@ -286,8 +317,6 @@ def build_stages(args, config_path, output_dir, department_slug):
             raise FileNotFoundError(
                 f"LightRAG ingestion script not found: {lightrag_script}"
             )
-
-        department_id = args.department_id
 
         stages.append({
             "name": "Ingest abstracts into LightRAG",

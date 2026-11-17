@@ -1,0 +1,48 @@
+{
+  "run_id": "20261117T163149Z",
+  "started_at": "2026-11-17T16:31:49.355104+00:00",
+  "department": "Department of Manufacturing and Industrial Engineering",
+  "department_slug": "maie",
+  "config": "/home/pfa176/local_hermes/hermes_files/data/skills/research/ledger/data/maie/config.yaml",
+  "output_directory": "/home/pfa176/local_hermes/hermes_files/data/skills/research/ledger/data/maie",
+  "allow_count_mismatch": false,
+  "auto_approve_requested_by_user": false,
+  "stages": [
+    {
+      "name": "Synchronize faculty PERSON nodes",
+      "command": [
+        "/home/pfa176/local_hermes/.venv-ledger/bin/python",
+        "/home/pfa176/local_hermes/hermes_files/data/skills/research/lightrag/scripts/sync_faculty_nodes.py",
+        "--config",
+        "/home/pfa176/local_hermes/hermes_files/data/skills/research/ledger/data/maie/config.yaml",
+        "--department-id",
+        "1",
+        "--apply"
+      ],
+      "started_at": "2026-11-17T16:31:49.355154+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 0.21,
+      "finished_at": "2026-11-17T16:31:49.563007+00:00"
+    },
+    {
+      "name": "Ingest abstracts into LightRAG",
+      "command": [
+        "/home/pfa176/local_hermes/.venv-ledger/bin/python",
+        "/home/pfa176/local_hermes/hermes_files/data/skills/research/lightrag/scripts/maie_abstract_ingest.py",
+        "--config",
+        "/home/pfa176/local_hermes/hermes_files/data/skills/research/ledger/data/maie/config.yaml",
+        "--department-id",
+        "1"
+      ],
+      "started_at": "2026-11-17T16:31:49.563248+00:00",
+      "status": "succeeded",
+      "return_code": 0,
+      "duration_seconds": 4569.92,
+      "finished_at": "2026-11-17T17:47:59.484886+00:00"
+    }
+  ],
+  "status": "succeeded",
+  "finished_at": "2026-11-17T17:47:59.487717+00:00",
+  "duration_seconds": 4570.13
+}
