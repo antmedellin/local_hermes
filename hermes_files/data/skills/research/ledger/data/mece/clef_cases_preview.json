@@ -1,0 +1,2388 @@
+{
+  "metadata": {
+    "department": "MECE",
+    "engine": "Clef-Flash",
+    "mode": "SHADOW_EVALUATION",
+    "generated_by": "clef_policy.py",
+    "source_hashes": {
+      "authorship_reconciliation.json": "79244c90c7a9bcdcf25424d2aba88cc7e9beb0f207ec631cbe8c7e44184031d7",
+      "faculty_normalized.json": "5a1b106424f611ce1037f52f38ee115eb6e010c62513376ec420695c18b5e6b1"
+    },
+    "eligible_classifications": [
+      "HIGH_SIMILARITY",
+      "INITIAL_VARIANT",
+      "MODERATE_REVIEW",
+      "NAME_VARIANT_WITHOUT_DM_ID"
+    ],
+    "excluded_classifications": [
+      "HISTORICAL_ID_MISMATCH",
+      "HISTORICAL_ID_SWAP_RECOVERED"
+    ],
+    "database_imported": false,
+    "approved_reconciliation_modified": false
+  },
+  "summary": {
+    "total_cases": 41,
+    "cases_by_classification": {
+      "HIGH_SIMILARITY": 12,
+      "INITIAL_VARIANT": 11,
+      "MODERATE_REVIEW": 10,
+      "NAME_VARIANT_WITHOUT_DM_ID": 8
+    },
+    "cases_with_warnings": 8
+  },
+  "cases": [
+    {
+      "case_id": "MECE-00034-PUB-00007-P1",
+      "source_decision_index": 34,
+      "source_occurrence": {
+        "publication_id": "PUB-00007",
+        "position": 1,
+        "author_name_original": "Dumitru I. Caruntu",
+        "faculty_id_original": null
+      },
+      "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Dumitru I. Caruntu",
+          "source_faculty_id": null
+        },
+        "proposed_candidate": {
+          "faculty_id": "1450754",
+          "name": "Dumitru Caruntu",
+          "rank": "Full Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": "1450754",
+          "mapped_faculty_name": "Dumitru Caruntu",
+          "evidence": "Source author 'Dumitru I. Caruntu' has no faculty ID. First and last names uniquely match current faculty member 'Dumitru Caruntu' (ID 1450754), and that ID is associated with this publication in the normalized source. Review recommended before treating the match as confirmed."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00007",
+          "title": "Effects of Combined Fatigue and Asymmetric Loading on Knee Kinematics During Walking Gait",
+          "year": 2026
+        },
+        "normalized_author_occurrence": {
+          "name": "Dumitru I. Caruntu",
+          "faculty_id": null,
+          "is_faculty": false
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [
+        "NO_DIRECT_SOURCE_AUTHOR_FACULTY_ID",
+        "PUBLICATION_LEVEL_FACULTY_ASSOCIATION_IS_NOT_INDEPENDENT"
+      ],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-00038-PUB-00008-P1",
+      "source_decision_index": 38,
+      "source_occurrence": {
+        "publication_id": "PUB-00008",
+        "position": 1,
+        "author_name_original": "Dumitru I. Caruntu",
+        "faculty_id_original": null
+      },
+      "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Dumitru I. Caruntu",
+          "source_faculty_id": null
+        },
+        "proposed_candidate": {
+          "faculty_id": "1450754",
+          "name": "Dumitru Caruntu",
+          "rank": "Full Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": "1450754",
+          "mapped_faculty_name": "Dumitru Caruntu",
+          "evidence": "Source author 'Dumitru I. Caruntu' has no faculty ID. First and last names uniquely match current faculty member 'Dumitru Caruntu' (ID 1450754), and that ID is associated with this publication in the normalized source. Review recommended before treating the match as confirmed."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00008",
+          "title": "Gait Deviation Index for Assessing Kinematic Adaptations to Speed Variations in Human Walking",
+          "year": 2025
+        },
+        "normalized_author_occurrence": {
+          "name": "Dumitru I. Caruntu",
+          "faculty_id": null,
+          "is_faculty": false
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [
+        "NO_DIRECT_SOURCE_AUTHOR_FACULTY_ID",
+        "PUBLICATION_LEVEL_FACULTY_ASSOCIATION_IS_NOT_INDEPENDENT"
+      ],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-00238-PUB-00057-P1",
+      "source_decision_index": 238,
+      "source_occurrence": {
+        "publication_id": "PUB-00057",
+        "position": 1,
+        "author_name_original": "Samantha J Salinas",
+        "faculty_id_original": "1451175"
+      },
+      "classification": "MODERATE_REVIEW",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Samantha J Salinas",
+          "source_faculty_id": "1451175"
+        },
+        "proposed_candidate": null,
+        "deterministic_reconciliation": {
+          "classification": "MODERATE_REVIEW",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": null,
+          "mapped_faculty_name": null,
+          "evidence": "Digital Measures ID 1451175 currently belongs to Samantha Jean Ramirez, but the recorded author name is 'Samantha J Salinas'. No matching current faculty name was found elsewhere in this publication."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00057",
+          "title": "Design of a Primary Steering Pad",
+          "year": null
+        },
+        "normalized_author_occurrence": {
+          "name": "Samantha J Salinas",
+          "faculty_id": "1451175",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-01621-PUB-00500-P1",
+      "source_decision_index": 1621,
+      "source_occurrence": {
+        "publication_id": "PUB-00500",
+        "position": 1,
+        "author_name_original": "Horacio Vazquez",
+        "faculty_id_original": "1451316"
+      },
+      "classification": "HIGH_SIMILARITY",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Horacio Vazquez",
+          "source_faculty_id": "1451316"
+        },
+        "proposed_candidate": {
+          "faculty_id": "1451316",
+          "name": "Horacio Vasquez",
+          "rank": "Full Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "HIGH_SIMILARITY",
+          "confidence": "MEDIUM",
+          "mapped_faculty_id": "1451316",
+          "mapped_faculty_name": "Horacio Vasquez",
+          "evidence": "Faculty ID matches and name similarity is high."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00500",
+          "title": "Simple device for electromagnetic interference shielding effectiveness measurement",
+          "year": 2009
+        },
+        "normalized_author_occurrence": {
+          "name": "Horacio Vazquez",
+          "faculty_id": "1451316",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-01880-PUB-00573-P1",
+      "source_decision_index": 1880,
+      "source_occurrence": {
+        "publication_id": "PUB-00573",
+        "position": 1,
+        "author_name_original": "Javier Alonso Ortega Sáenz",
+        "faculty_id_original": "1587302"
+      },
+      "classification": "MODERATE_REVIEW",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Javier Alonso Ortega Sáenz",
+          "source_faculty_id": "1587302"
+        },
+        "proposed_candidate": null,
+        "deterministic_reconciliation": {
+          "classification": "MODERATE_REVIEW",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": null,
+          "mapped_faculty_name": null,
+          "evidence": "Digital Measures ID 1587302 currently belongs to Javier Alonzo Ortega, but the recorded author name is 'Javier Alonso Ortega Sáenz'. No matching current faculty name was found elsewhere in this publication."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00573",
+          "title": "Estudio biotribológico de implantes de cadera metal-metal modificados superficialmente",
+          "year": 2013
+        },
+        "normalized_author_occurrence": {
+          "name": "Javier Alonso Ortega Sáenz",
+          "faculty_id": "1587302",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-01900-PUB-00578-P1",
+      "source_decision_index": 1900,
+      "source_occurrence": {
+        "publication_id": "PUB-00578",
+        "position": 1,
+        "author_name_original": "J Ortega",
+        "faculty_id_original": "1587302"
+      },
+      "classification": "INITIAL_VARIANT",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "J Ortega",
+          "source_faculty_id": "1587302"
+        },
+        "proposed_candidate": {
+          "faculty_id": "1587302",
+          "name": "Javier Alonzo Ortega",
+          "rank": "Associate Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "INITIAL_VARIANT",
+          "confidence": "HIGH",
+          "mapped_faculty_id": "1587302",
+          "mapped_faculty_name": "Javier Alonzo Ortega",
+          "evidence": "Digital Measures faculty ID matches the current faculty record and the author name is a documented naming/initial variant."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00578",
+          "title": "Comparison of wear processes of biomaterials used in hip joint implants",
+          "year": 2008
+        },
+        "normalized_author_occurrence": {
+          "name": "J Ortega",
+          "faculty_id": "1587302",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-01905-PUB-00579-P1",
+      "source_decision_index": 1905,
+      "source_occurrence": {
+        "publication_id": "PUB-00579",
+        "position": 1,
+        "author_name_original": "JA Ortega",
+        "faculty_id_original": "1587302"
+      },
+      "classification": "INITIAL_VARIANT",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "JA Ortega",
+          "source_faculty_id": "1587302"
+        },
+        "proposed_candidate": {
+          "faculty_id": "1587302",
+          "name": "Javier Alonzo Ortega",
+          "rank": "Associate Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "INITIAL_VARIANT",
+          "confidence": "HIGH",
+          "mapped_faculty_id": "1587302",
+          "mapped_faculty_name": "Javier Alonzo Ortega",
+          "evidence": "Digital Measures faculty ID matches the current faculty record and the author name is a documented naming/initial variant."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00579",
+          "title": "Development of a hip wear simulation rig including micro-separation”",
+          "year": 2007
+        },
+        "normalized_author_occurrence": {
+          "name": "JA Ortega",
+          "faculty_id": "1587302",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-02034-PUB-00599-P10",
+      "source_decision_index": 2034,
+      "source_occurrence": {
+        "publication_id": "PUB-00599",
+        "position": 10,
+        "author_name_original": "Victoria Maria Padilla",
+        "faculty_id_original": "2445981"
+      },
+      "classification": "HIGH_SIMILARITY",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 9,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Victoria Maria Padilla",
+          "source_faculty_id": "2445981"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2445981",
+          "name": "Victoria Maria Padilla Gainza",
+          "rank": "Assistant Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "HIGH_SIMILARITY",
+          "confidence": "MEDIUM",
+          "mapped_faculty_id": "2445981",
+          "mapped_faculty_name": "Victoria Maria Padilla Gainza",
+          "evidence": "Faculty ID matches and name similarity is high."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00599",
+          "title": "Thermal Transport and Rheological Properties of Hybrid Nanofluids Based on Vegetable Lubricants",
+          "year": 2023
+        },
+        "normalized_author_occurrence": {
+          "name": "Victoria Maria Padilla",
+          "faculty_id": "2445981",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-02044-PUB-00602-P3",
+      "source_decision_index": 2044,
+      "source_occurrence": {
+        "publication_id": "PUB-00602",
+        "position": 3,
+        "author_name_original": "Victoria Maria Padilla",
+        "faculty_id_original": "2445981"
+      },
+      "classification": "HIGH_SIMILARITY",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 2,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Victoria Maria Padilla",
+          "source_faculty_id": "2445981"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2445981",
+          "name": "Victoria Maria Padilla Gainza",
+          "rank": "Assistant Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "HIGH_SIMILARITY",
+          "confidence": "MEDIUM",
+          "mapped_faculty_id": "2445981",
+          "mapped_faculty_name": "Victoria Maria Padilla Gainza",
+          "evidence": "Faculty ID matches and name similarity is high."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00602",
+          "title": "Study on thermal transport behavior of magnesium oxide (MgO) nanostructures as lubricant additives in vegetable oils",
+          "year": 2023
+        },
+        "normalized_author_occurrence": {
+          "name": "Victoria Maria Padilla",
+          "faculty_id": "2445981",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-02071-PUB-00607-P1",
+      "source_decision_index": 2071,
+      "source_occurrence": {
+        "publication_id": "PUB-00607",
+        "position": 1,
+        "author_name_original": "Jose Jaime Taha",
+        "faculty_id_original": "2261876"
+      },
+      "classification": "MODERATE_REVIEW",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Jose Jaime Taha",
+          "source_faculty_id": "2261876"
+        },
+        "proposed_candidate": null,
+        "deterministic_reconciliation": {
+          "classification": "MODERATE_REVIEW",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": null,
+          "mapped_faculty_name": null,
+          "evidence": "Digital Measures ID 2261876 currently belongs to Jose Jaime Taha Tijerina, but the recorded author name is 'Jose Jaime Taha'. No matching current faculty name was found elsewhere in this publication."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00607",
+          "title": "Carbon Nanotori Reinforced Lubricants in Plastic Deformation Processes",
+          "year": 2022
+        },
+        "normalized_author_occurrence": {
+          "name": "Jose Jaime Taha",
+          "faculty_id": "2261876",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-02512-PUB-00675-P6",
+      "source_decision_index": 2512,
+      "source_occurrence": {
+        "publication_id": "PUB-00675",
+        "position": 6,
+        "author_name_original": "Victoria Maria Padilla",
+        "faculty_id_original": "2445981"
+      },
+      "classification": "HIGH_SIMILARITY",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 5,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Victoria Maria Padilla",
+          "source_faculty_id": "2445981"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2445981",
+          "name": "Victoria Maria Padilla Gainza",
+          "rank": "Assistant Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "HIGH_SIMILARITY",
+          "confidence": "MEDIUM",
+          "mapped_faculty_id": "2445981",
+          "mapped_faculty_name": "Victoria Maria Padilla Gainza",
+          "evidence": "Faculty ID matches and name similarity is high."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00675",
+          "title": "Synthesis and Characterization of Titanium and Vanadium Nitride–Carbon Composites",
+          "year": 2024
+        },
+        "normalized_author_occurrence": {
+          "name": "Victoria Maria Padilla",
+          "faculty_id": "2445981",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-02525-PUB-00677-P7",
+      "source_decision_index": 2525,
+      "source_occurrence": {
+        "publication_id": "PUB-00677",
+        "position": 7,
+        "author_name_original": "Victoria Maria Padilla",
+        "faculty_id_original": "2445981"
+      },
+      "classification": "HIGH_SIMILARITY",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 6,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Victoria Maria Padilla",
+          "source_faculty_id": "2445981"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2445981",
+          "name": "Victoria Maria Padilla Gainza",
+          "rank": "Assistant Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "HIGH_SIMILARITY",
+          "confidence": "MEDIUM",
+          "mapped_faculty_id": "2445981",
+          "mapped_faculty_name": "Victoria Maria Padilla Gainza",
+          "evidence": "Faculty ID matches and name similarity is high."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00677",
+          "title": "Synthesis and Characterization of Vanadium Nitride/Carbon Nanocomposites",
+          "year": 2024
+        },
+        "normalized_author_occurrence": {
+          "name": "Victoria Maria Padilla",
+          "faculty_id": "2445981",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-02534-PUB-00678-P7",
+      "source_decision_index": 2534,
+      "source_occurrence": {
+        "publication_id": "PUB-00678",
+        "position": 7,
+        "author_name_original": "Victoria Maria Padilla",
+        "faculty_id_original": "2445981"
+      },
+      "classification": "HIGH_SIMILARITY",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 6,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Victoria Maria Padilla",
+          "source_faculty_id": "2445981"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2445981",
+          "name": "Victoria Maria Padilla Gainza",
+          "rank": "Assistant Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "HIGH_SIMILARITY",
+          "confidence": "MEDIUM",
+          "mapped_faculty_id": "2445981",
+          "mapped_faculty_name": "Victoria Maria Padilla Gainza",
+          "evidence": "Faculty ID matches and name similarity is high."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00678",
+          "title": "Synthesis and Characterization of Titanium Nitride–Carbon Composites and Their Use in Lithium-Ion Batteries",
+          "year": 2024
+        },
+        "normalized_author_occurrence": {
+          "name": "Victoria Maria Padilla",
+          "faculty_id": "2445981",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-02759-PUB-00721-P3",
+      "source_decision_index": 2759,
+      "source_occurrence": {
+        "publication_id": "PUB-00721",
+        "position": 3,
+        "author_name_original": "Mataz Alcoutlabi",
+        "faculty_id_original": null
+      },
+      "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 2,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Mataz Alcoutlabi",
+          "source_faculty_id": null
+        },
+        "proposed_candidate": {
+          "faculty_id": "1587300",
+          "name": "Mataz Yehia Alcoutlabi",
+          "rank": "Full Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": "1587300",
+          "mapped_faculty_name": "Mataz Yehia Alcoutlabi",
+          "evidence": "Source author 'Mataz Alcoutlabi' has no faculty ID. First and last names uniquely match current faculty member 'Mataz Yehia Alcoutlabi' (ID 1587300), and that ID is associated with this publication in the normalized source. Review recommended before treating the match as confirmed."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00721",
+          "title": "SPECTROSCOPIC INVESTIGATIONS ON PS – PVDF BLENDS",
+          "year": 2019
+        },
+        "normalized_author_occurrence": {
+          "name": "Mataz Alcoutlabi",
+          "faculty_id": null,
+          "is_faculty": false
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [
+        "NO_DIRECT_SOURCE_AUTHOR_FACULTY_ID",
+        "PUBLICATION_LEVEL_FACULTY_ASSOCIATION_IS_NOT_INDEPENDENT"
+      ],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-02783-PUB-00724-P6",
+      "source_decision_index": 2783,
+      "source_occurrence": {
+        "publication_id": "PUB-00724",
+        "position": 6,
+        "author_name_original": "Mataz Alcoutlabi",
+        "faculty_id_original": null
+      },
+      "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 5,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Mataz Alcoutlabi",
+          "source_faculty_id": null
+        },
+        "proposed_candidate": {
+          "faculty_id": "1587300",
+          "name": "Mataz Yehia Alcoutlabi",
+          "rank": "Full Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": "1587300",
+          "mapped_faculty_name": "Mataz Yehia Alcoutlabi",
+          "evidence": "Source author 'Mataz Alcoutlabi' has no faculty ID. First and last names uniquely match current faculty member 'Mataz Yehia Alcoutlabi' (ID 1587300), and that ID is associated with this publication in the normalized source. Review recommended before treating the match as confirmed."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00724",
+          "title": "High-Throughput Production With Improved Functionalityand Graphitization of Carbon Fine Fibers Developedfrom Sodium Chloride-Polyacrylonitrile Precursors",
+          "year": 2018
+        },
+        "normalized_author_occurrence": {
+          "name": "Mataz Alcoutlabi",
+          "faculty_id": null,
+          "is_faculty": false
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [
+        "NO_DIRECT_SOURCE_AUTHOR_FACULTY_ID",
+        "PUBLICATION_LEVEL_FACULTY_ASSOCIATION_IS_NOT_INDEPENDENT"
+      ],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-02788-PUB-00725-P4",
+      "source_decision_index": 2788,
+      "source_occurrence": {
+        "publication_id": "PUB-00725",
+        "position": 4,
+        "author_name_original": "Mataz Alcoutlabi",
+        "faculty_id_original": null
+      },
+      "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 3,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Mataz Alcoutlabi",
+          "source_faculty_id": null
+        },
+        "proposed_candidate": {
+          "faculty_id": "1587300",
+          "name": "Mataz Yehia Alcoutlabi",
+          "rank": "Full Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": "1587300",
+          "mapped_faculty_name": "Mataz Yehia Alcoutlabi",
+          "evidence": "Source author 'Mataz Alcoutlabi' has no faculty ID. First and last names uniquely match current faculty member 'Mataz Yehia Alcoutlabi' (ID 1587300), and that ID is associated with this publication in the normalized source. Review recommended before treating the match as confirmed."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00725",
+          "title": "Production of carbon fibers through Forcespinning® for use as anode materials in sodium ion batteries",
+          "year": 2018
+        },
+        "normalized_author_occurrence": {
+          "name": "Mataz Alcoutlabi",
+          "faculty_id": null,
+          "is_faculty": false
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [
+        "NO_DIRECT_SOURCE_AUTHOR_FACULTY_ID",
+        "PUBLICATION_LEVEL_FACULTY_ASSOCIATION_IS_NOT_INDEPENDENT"
+      ],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-02811-PUB-00730-P5",
+      "source_decision_index": 2811,
+      "source_occurrence": {
+        "publication_id": "PUB-00730",
+        "position": 5,
+        "author_name_original": "Mataz Alcoutlabi",
+        "faculty_id_original": null
+      },
+      "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 4,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Mataz Alcoutlabi",
+          "source_faculty_id": null
+        },
+        "proposed_candidate": {
+          "faculty_id": "1587300",
+          "name": "Mataz Yehia Alcoutlabi",
+          "rank": "Full Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": "1587300",
+          "mapped_faculty_name": "Mataz Yehia Alcoutlabi",
+          "evidence": "Source author 'Mataz Alcoutlabi' has no faculty ID. First and last names uniquely match current faculty member 'Mataz Yehia Alcoutlabi' (ID 1587300), and that ID is associated with this publication in the normalized source. Review recommended before treating the match as confirmed."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00730",
+          "title": "The use of Fe 3 O 4 /Carbon composite fibers as anode materials in lithium ion batteries",
+          "year": 2018
+        },
+        "normalized_author_occurrence": {
+          "name": "Mataz Alcoutlabi",
+          "faculty_id": null,
+          "is_faculty": false
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [
+        "NO_DIRECT_SOURCE_AUTHOR_FACULTY_ID",
+        "PUBLICATION_LEVEL_FACULTY_ASSOCIATION_IS_NOT_INDEPENDENT"
+      ],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-02817-PUB-00732-P2",
+      "source_decision_index": 2817,
+      "source_occurrence": {
+        "publication_id": "PUB-00732",
+        "position": 2,
+        "author_name_original": "Mataz Alcoutlabi",
+        "faculty_id_original": null
+      },
+      "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 1,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Mataz Alcoutlabi",
+          "source_faculty_id": null
+        },
+        "proposed_candidate": {
+          "faculty_id": "1587300",
+          "name": "Mataz Yehia Alcoutlabi",
+          "rank": "Full Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": "1587300",
+          "mapped_faculty_name": "Mataz Yehia Alcoutlabi",
+          "evidence": "Source author 'Mataz Alcoutlabi' has no faculty ID. First and last names uniquely match current faculty member 'Mataz Yehia Alcoutlabi' (ID 1587300), and that ID is associated with this publication in the normalized source. Review recommended before treating the match as confirmed."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00732",
+          "title": "Optical and X-ray induced luminescence from Eu3+ doped La2Zr2O7 nanoparticles",
+          "year": 2017
+        },
+        "normalized_author_occurrence": {
+          "name": "Mataz Alcoutlabi",
+          "faculty_id": null,
+          "is_faculty": false
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [
+        "NO_DIRECT_SOURCE_AUTHOR_FACULTY_ID",
+        "PUBLICATION_LEVEL_FACULTY_ASSOCIATION_IS_NOT_INDEPENDENT"
+      ],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-02864-PUB-00739-P9",
+      "source_decision_index": 2864,
+      "source_occurrence": {
+        "publication_id": "PUB-00739",
+        "position": 9,
+        "author_name_original": "Mataz Alcoutlabi",
+        "faculty_id_original": null
+      },
+      "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 8,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Mataz Alcoutlabi",
+          "source_faculty_id": null
+        },
+        "proposed_candidate": {
+          "faculty_id": "1587300",
+          "name": "Mataz Yehia Alcoutlabi",
+          "rank": "Full Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "NAME_VARIANT_WITHOUT_DM_ID",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": "1587300",
+          "mapped_faculty_name": "Mataz Yehia Alcoutlabi",
+          "evidence": "Source author 'Mataz Alcoutlabi' has no faculty ID. First and last names uniquely match current faculty member 'Mataz Yehia Alcoutlabi' (ID 1587300), and that ID is associated with this publication in the normalized source. Review recommended before treating the match as confirmed."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00739",
+          "title": "Effect of Polymer Concentration, Rotational Speed, and Solvent Mixture on Fiber Formation Using Forcespinning((R))",
+          "year": 2016
+        },
+        "normalized_author_occurrence": {
+          "name": "Mataz Alcoutlabi",
+          "faculty_id": null,
+          "is_faculty": false
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [
+        "NO_DIRECT_SOURCE_AUTHOR_FACULTY_ID",
+        "PUBLICATION_LEVEL_FACULTY_ASSOCIATION_IS_NOT_INDEPENDENT"
+      ],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03389-PUB-00861-P1",
+      "source_decision_index": 3389,
+      "source_occurrence": {
+        "publication_id": "PUB-00861",
+        "position": 1,
+        "author_name_original": "Noe Vargas",
+        "faculty_id_original": "1950282"
+      },
+      "classification": "MODERATE_REVIEW",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Noe Vargas",
+          "source_faculty_id": "1950282"
+        },
+        "proposed_candidate": null,
+        "deterministic_reconciliation": {
+          "classification": "MODERATE_REVIEW",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": null,
+          "mapped_faculty_name": null,
+          "evidence": "Digital Measures ID 1950282 currently belongs to Noe Vargas Hernandez, but the recorded author name is 'Noe Vargas'. No matching current faculty name was found elsewhere in this publication."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00861",
+          "title": "Session Proposal",
+          "year": null
+        },
+        "normalized_author_occurrence": {
+          "name": "Noe Vargas",
+          "faculty_id": "1950282",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03398-PUB-00864-P1",
+      "source_decision_index": 3398,
+      "source_occurrence": {
+        "publication_id": "PUB-00864",
+        "position": 1,
+        "author_name_original": "Noe Vargas",
+        "faculty_id_original": "1950282"
+      },
+      "classification": "MODERATE_REVIEW",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Noe Vargas",
+          "source_faculty_id": "1950282"
+        },
+        "proposed_candidate": null,
+        "deterministic_reconciliation": {
+          "classification": "MODERATE_REVIEW",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": null,
+          "mapped_faculty_name": null,
+          "evidence": "Digital Measures ID 1950282 currently belongs to Noe Vargas Hernandez, but the recorded author name is 'Noe Vargas'. No matching current faculty name was found elsewhere in this publication."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00864",
+          "title": "Elephant in the Dark: Best Practices in Collaboration Between Design Engineering and Business Modeling Courses",
+          "year": null
+        },
+        "normalized_author_occurrence": {
+          "name": "Noe Vargas",
+          "faculty_id": "1950282",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03615-PUB-00929-P3",
+      "source_decision_index": 3615,
+      "source_occurrence": {
+        "publication_id": "PUB-00929",
+        "position": 3,
+        "author_name_original": "N. Sen",
+        "faculty_id_original": "2633543"
+      },
+      "classification": "INITIAL_VARIANT",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 2,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "N. Sen",
+          "source_faculty_id": "2633543"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2633543",
+          "name": "Novonil Sen",
+          "rank": "Assistant Professor of Practice",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "INITIAL_VARIANT",
+          "confidence": "HIGH",
+          "mapped_faculty_id": "2633543",
+          "mapped_faculty_name": "Novonil Sen",
+          "evidence": "Digital Measures faculty ID matches the current faculty record and the author name is a documented naming/initial variant."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00929",
+          "title": "A note on performance assessment of signal energy-based acoustic source localization in a carbon fiber-reinforced polymer plate",
+          "year": 2023
+        },
+        "normalized_author_occurrence": {
+          "name": "N. Sen",
+          "faculty_id": "2633543",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03617-PUB-00930-P1",
+      "source_decision_index": 3617,
+      "source_occurrence": {
+        "publication_id": "PUB-00930",
+        "position": 1,
+        "author_name_original": "N. Sen",
+        "faculty_id_original": "2633543"
+      },
+      "classification": "INITIAL_VARIANT",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "N. Sen",
+          "source_faculty_id": "2633543"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2633543",
+          "name": "Novonil Sen",
+          "rank": "Assistant Professor of Practice",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "INITIAL_VARIANT",
+          "confidence": "HIGH",
+          "mapped_faculty_id": "2633543",
+          "mapped_faculty_name": "Novonil Sen",
+          "evidence": "Digital Measures faculty ID matches the current faculty record and the author name is a documented naming/initial variant."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00930",
+          "title": "On propagation of material property uncertainty through signal energy-based acoustic source localization in an orthotropic plate",
+          "year": 2023
+        },
+        "normalized_author_occurrence": {
+          "name": "N. Sen",
+          "faculty_id": "2633543",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03618-PUB-00931-P1",
+      "source_decision_index": 3618,
+      "source_occurrence": {
+        "publication_id": "PUB-00931",
+        "position": 1,
+        "author_name_original": "N. Sen",
+        "faculty_id_original": "2633543"
+      },
+      "classification": "INITIAL_VARIANT",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "N. Sen",
+          "source_faculty_id": "2633543"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2633543",
+          "name": "Novonil Sen",
+          "rank": "Assistant Professor of Practice",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "INITIAL_VARIANT",
+          "confidence": "HIGH",
+          "mapped_faculty_id": "2633543",
+          "mapped_faculty_name": "Novonil Sen",
+          "evidence": "Digital Measures faculty ID matches the current faculty record and the author name is a documented naming/initial variant."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00931",
+          "title": "A new signal energy-based approach to acoustic source localization in orthotropic plates: A numerical study",
+          "year": 2022
+        },
+        "normalized_author_occurrence": {
+          "name": "N. Sen",
+          "faculty_id": "2633543",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03620-PUB-00932-P1",
+      "source_decision_index": 3620,
+      "source_occurrence": {
+        "publication_id": "PUB-00932",
+        "position": 1,
+        "author_name_original": "N. Sen",
+        "faculty_id_original": "2633543"
+      },
+      "classification": "INITIAL_VARIANT",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "N. Sen",
+          "source_faculty_id": "2633543"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2633543",
+          "name": "Novonil Sen",
+          "rank": "Assistant Professor of Practice",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "INITIAL_VARIANT",
+          "confidence": "HIGH",
+          "mapped_faculty_id": "2633543",
+          "mapped_faculty_name": "Novonil Sen",
+          "evidence": "Digital Measures faculty ID matches the current faculty record and the author name is a documented naming/initial variant."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00932",
+          "title": "A note on the effect of material uncertainty on acoustic source localization error in anisotropic plates",
+          "year": 2021
+        },
+        "normalized_author_occurrence": {
+          "name": "N. Sen",
+          "faculty_id": "2633543",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03623-PUB-00933-P1",
+      "source_decision_index": 3623,
+      "source_occurrence": {
+        "publication_id": "PUB-00933",
+        "position": 1,
+        "author_name_original": "N. Sen",
+        "faculty_id_original": "2633543"
+      },
+      "classification": "INITIAL_VARIANT",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "N. Sen",
+          "source_faculty_id": "2633543"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2633543",
+          "name": "Novonil Sen",
+          "rank": "Assistant Professor of Practice",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "INITIAL_VARIANT",
+          "confidence": "HIGH",
+          "mapped_faculty_id": "2633543",
+          "mapped_faculty_name": "Novonil Sen",
+          "evidence": "Digital Measures faculty ID matches the current faculty record and the author name is a documented naming/initial variant."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00933",
+          "title": "Square-shaped sensor clusters for acoustic source localization in anisotropic plates by wave front shape-based approach",
+          "year": 2021
+        },
+        "normalized_author_occurrence": {
+          "name": "N. Sen",
+          "faculty_id": "2633543",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03628-PUB-00934-P1",
+      "source_decision_index": 3628,
+      "source_occurrence": {
+        "publication_id": "PUB-00934",
+        "position": 1,
+        "author_name_original": "N. Sen",
+        "faculty_id_original": "2633543"
+      },
+      "classification": "INITIAL_VARIANT",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "N. Sen",
+          "source_faculty_id": "2633543"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2633543",
+          "name": "Novonil Sen",
+          "rank": "Assistant Professor of Practice",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "INITIAL_VARIANT",
+          "confidence": "HIGH",
+          "mapped_faculty_id": "2633543",
+          "mapped_faculty_name": "Novonil Sen",
+          "evidence": "Digital Measures faculty ID matches the current faculty record and the author name is a documented naming/initial variant."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00934",
+          "title": "Acoustic source localization in anisotropic plates without knowing their material properties: an experimental investigation",
+          "year": 2019
+        },
+        "normalized_author_occurrence": {
+          "name": "N. Sen",
+          "faculty_id": "2633543",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03633-PUB-00935-P1",
+      "source_decision_index": 3633,
+      "source_occurrence": {
+        "publication_id": "PUB-00935",
+        "position": 1,
+        "author_name_original": "N. Sen",
+        "faculty_id_original": "2633543"
+      },
+      "classification": "INITIAL_VARIANT",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "N. Sen",
+          "source_faculty_id": "2633543"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2633543",
+          "name": "Novonil Sen",
+          "rank": "Assistant Professor of Practice",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "INITIAL_VARIANT",
+          "confidence": "HIGH",
+          "mapped_faculty_id": "2633543",
+          "mapped_faculty_name": "Novonil Sen",
+          "evidence": "Digital Measures faculty ID matches the current faculty record and the author name is a documented naming/initial variant."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00935",
+          "title": "Acoustic source localization in a highly anisotropic plate with unknown orientation of its axes of symmetry and material properties with numerical verification",
+          "year": 2019
+        },
+        "normalized_author_occurrence": {
+          "name": "N. Sen",
+          "faculty_id": "2633543",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03635-PUB-00936-P1",
+      "source_decision_index": 3635,
+      "source_occurrence": {
+        "publication_id": "PUB-00936",
+        "position": 1,
+        "author_name_original": "N. Sen",
+        "faculty_id_original": "2633543"
+      },
+      "classification": "INITIAL_VARIANT",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "N. Sen",
+          "source_faculty_id": "2633543"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2633543",
+          "name": "Novonil Sen",
+          "rank": "Assistant Professor of Practice",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "INITIAL_VARIANT",
+          "confidence": "HIGH",
+          "mapped_faculty_id": "2633543",
+          "mapped_faculty_name": "Novonil Sen",
+          "evidence": "Digital Measures faculty ID matches the current faculty record and the author name is a documented naming/initial variant."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00936",
+          "title": "On estimation of seismic damage from ductility and hysteretic energy demands in equivalent oscillators using linear response",
+          "year": 2018
+        },
+        "normalized_author_occurrence": {
+          "name": "N. Sen",
+          "faculty_id": "2633543",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03637-PUB-00937-P1",
+      "source_decision_index": 3637,
+      "source_occurrence": {
+        "publication_id": "PUB-00937",
+        "position": 1,
+        "author_name_original": "N. Sen",
+        "faculty_id_original": "2633543"
+      },
+      "classification": "INITIAL_VARIANT",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "N. Sen",
+          "source_faculty_id": "2633543"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2633543",
+          "name": "Novonil Sen",
+          "rank": "Assistant Professor of Practice",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "INITIAL_VARIANT",
+          "confidence": "HIGH",
+          "mapped_faculty_id": "2633543",
+          "mapped_faculty_name": "Novonil Sen",
+          "evidence": "Digital Measures faculty ID matches the current faculty record and the author name is a documented naming/initial variant."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00937",
+          "title": "A new wave front shape-based approach for acoustic source localization in an anisotropic plate without knowing its material properties",
+          "year": 2018
+        },
+        "normalized_author_occurrence": {
+          "name": "N. Sen",
+          "faculty_id": "2633543",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03840-PUB-00997-P1",
+      "source_decision_index": 3840,
+      "source_occurrence": {
+        "publication_id": "PUB-00997",
+        "position": 1,
+        "author_name_original": "Samantha J Salinas",
+        "faculty_id_original": "1451175"
+      },
+      "classification": "MODERATE_REVIEW",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Samantha J Salinas",
+          "source_faculty_id": "1451175"
+        },
+        "proposed_candidate": null,
+        "deterministic_reconciliation": {
+          "classification": "MODERATE_REVIEW",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": null,
+          "mapped_faculty_name": null,
+          "evidence": "Digital Measures ID 1451175 currently belongs to Samantha Jean Ramirez, but the recorded author name is 'Samantha J Salinas'. No matching current faculty name was found elsewhere in this publication."
+        },
+        "publication_context": {
+          "publication_id": "PUB-00997",
+          "title": "Diﬀerential Scanning Calorimetry Investigations on Polyvinylidene Fluoride – Fe3O4 Nanocomposites",
+          "year": 2015
+        },
+        "normalized_author_occurrence": {
+          "name": "Samantha J Salinas",
+          "faculty_id": "1451175",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03853-PUB-01001-P1",
+      "source_decision_index": 3853,
+      "source_occurrence": {
+        "publication_id": "PUB-01001",
+        "position": 1,
+        "author_name_original": "Samantha J Salinas",
+        "faculty_id_original": "1451175"
+      },
+      "classification": "MODERATE_REVIEW",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Samantha J Salinas",
+          "source_faculty_id": "1451175"
+        },
+        "proposed_candidate": null,
+        "deterministic_reconciliation": {
+          "classification": "MODERATE_REVIEW",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": null,
+          "mapped_faculty_name": null,
+          "evidence": "Digital Measures ID 1451175 currently belongs to Samantha Jean Ramirez, but the recorded author name is 'Samantha J Salinas'. No matching current faculty name was found elsewhere in this publication."
+        },
+        "publication_context": {
+          "publication_id": "PUB-01001",
+          "title": "Analysis and Design of an Anisotropic Compliant Suspension Component",
+          "year": 2011
+        },
+        "normalized_author_occurrence": {
+          "name": "Samantha J Salinas",
+          "faculty_id": "1451175",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03854-PUB-01002-P1",
+      "source_decision_index": 3854,
+      "source_occurrence": {
+        "publication_id": "PUB-01002",
+        "position": 1,
+        "author_name_original": "Samantha J Salinas",
+        "faculty_id_original": "1451175"
+      },
+      "classification": "MODERATE_REVIEW",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Samantha J Salinas",
+          "source_faculty_id": "1451175"
+        },
+        "proposed_candidate": null,
+        "deterministic_reconciliation": {
+          "classification": "MODERATE_REVIEW",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": null,
+          "mapped_faculty_name": null,
+          "evidence": "Digital Measures ID 1451175 currently belongs to Samantha Jean Ramirez, but the recorded author name is 'Samantha J Salinas'. No matching current faculty name was found elsewhere in this publication."
+        },
+        "publication_context": {
+          "publication_id": "PUB-01002",
+          "title": "Microstructural, Viscoelastic, and Thermal Characterization of Production and Experimental Glass Reinforced Bearing Cages",
+          "year": null
+        },
+        "normalized_author_occurrence": {
+          "name": "Samantha J Salinas",
+          "faculty_id": "1451175",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03858-PUB-01003-P2",
+      "source_decision_index": 3858,
+      "source_occurrence": {
+        "publication_id": "PUB-01003",
+        "position": 2,
+        "author_name_original": "Samantha J Salinas",
+        "faculty_id_original": "1451175"
+      },
+      "classification": "MODERATE_REVIEW",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 1,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Samantha J Salinas",
+          "source_faculty_id": "1451175"
+        },
+        "proposed_candidate": null,
+        "deterministic_reconciliation": {
+          "classification": "MODERATE_REVIEW",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": null,
+          "mapped_faculty_name": null,
+          "evidence": "Digital Measures ID 1451175 currently belongs to Samantha Jean Ramirez, but the recorded author name is 'Samantha J Salinas'. No matching current faculty name was found elsewhere in this publication."
+        },
+        "publication_context": {
+          "publication_id": "PUB-01003",
+          "title": "Thermal Effects on the Relaxation of Seal Case Rotor Interference Fi",
+          "year": null
+        },
+        "normalized_author_occurrence": {
+          "name": "Samantha J Salinas",
+          "faculty_id": "1451175",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03860-PUB-01004-P1",
+      "source_decision_index": 3860,
+      "source_occurrence": {
+        "publication_id": "PUB-01004",
+        "position": 1,
+        "author_name_original": "Samantha J Salinas",
+        "faculty_id_original": "1451175"
+      },
+      "classification": "MODERATE_REVIEW",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 0,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Samantha J Salinas",
+          "source_faculty_id": "1451175"
+        },
+        "proposed_candidate": null,
+        "deterministic_reconciliation": {
+          "classification": "MODERATE_REVIEW",
+          "confidence": "REVIEW",
+          "mapped_faculty_id": null,
+          "mapped_faculty_name": null,
+          "evidence": "Digital Measures ID 1451175 currently belongs to Samantha Jean Ramirez, but the recorded author name is 'Samantha J Salinas'. No matching current faculty name was found elsewhere in this publication."
+        },
+        "publication_context": {
+          "publication_id": "PUB-01004",
+          "title": "Oil Compatibility of RTP0299HX69130B",
+          "year": null
+        },
+        "normalized_author_occurrence": {
+          "name": "Samantha J Salinas",
+          "faculty_id": "1451175",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03873-PUB-01006-P4",
+      "source_decision_index": 3873,
+      "source_occurrence": {
+        "publication_id": "PUB-01006",
+        "position": 4,
+        "author_name_original": "Victoria Maria Padilla",
+        "faculty_id_original": "2445981"
+      },
+      "classification": "HIGH_SIMILARITY",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 3,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Victoria Maria Padilla",
+          "source_faculty_id": "2445981"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2445981",
+          "name": "Victoria Maria Padilla Gainza",
+          "rank": "Assistant Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "HIGH_SIMILARITY",
+          "confidence": "MEDIUM",
+          "mapped_faculty_id": "2445981",
+          "mapped_faculty_name": "Victoria Maria Padilla Gainza",
+          "evidence": "Faculty ID matches and name similarity is high."
+        },
+        "publication_context": {
+          "publication_id": "PUB-01006",
+          "title": "Oxymatrine Loaded Cross-Linked PVA Nanofibrous Scaffold: Design and Characterization and Anticancer Properties",
+          "year": 2023
+        },
+        "normalized_author_occurrence": {
+          "name": "Victoria Maria Padilla",
+          "faculty_id": "2445981",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03883-PUB-01007-P5",
+      "source_decision_index": 3883,
+      "source_occurrence": {
+        "publication_id": "PUB-01007",
+        "position": 5,
+        "author_name_original": "Victoria Maria Padilla",
+        "faculty_id_original": "2445981"
+      },
+      "classification": "HIGH_SIMILARITY",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 4,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Victoria Maria Padilla",
+          "source_faculty_id": "2445981"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2445981",
+          "name": "Victoria Maria Padilla Gainza",
+          "rank": "Assistant Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "HIGH_SIMILARITY",
+          "confidence": "MEDIUM",
+          "mapped_faculty_id": "2445981",
+          "mapped_faculty_name": "Victoria Maria Padilla Gainza",
+          "evidence": "Faculty ID matches and name similarity is high."
+        },
+        "publication_context": {
+          "publication_id": "PUB-01007",
+          "title": "The effect of polymer concentrations of fiber-forming solutions and rotational velocities on the production yield percentage of pullulan-based fibers obtained by the Forcespinning® technology",
+          "year": null
+        },
+        "normalized_author_occurrence": {
+          "name": "Victoria Maria Padilla",
+          "faculty_id": "2445981",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03888-PUB-01008-P4",
+      "source_decision_index": 3888,
+      "source_occurrence": {
+        "publication_id": "PUB-01008",
+        "position": 4,
+        "author_name_original": "Victoria Maria Padilla",
+        "faculty_id_original": "2445981"
+      },
+      "classification": "HIGH_SIMILARITY",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 3,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Victoria Maria Padilla",
+          "source_faculty_id": "2445981"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2445981",
+          "name": "Victoria Maria Padilla Gainza",
+          "rank": "Assistant Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "HIGH_SIMILARITY",
+          "confidence": "MEDIUM",
+          "mapped_faculty_id": "2445981",
+          "mapped_faculty_name": "Victoria Maria Padilla Gainza",
+          "evidence": "Faculty ID matches and name similarity is high."
+        },
+        "publication_context": {
+          "publication_id": "PUB-01008",
+          "title": "Photocatalytic degradation of methylene blue using PMMA/TiO2 nanoparticles composite fibers obtained through centrifugal spinning",
+          "year": 2023
+        },
+        "normalized_author_occurrence": {
+          "name": "Victoria Maria Padilla",
+          "faculty_id": "2445981",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03892-PUB-01009-P3",
+      "source_decision_index": 3892,
+      "source_occurrence": {
+        "publication_id": "PUB-01009",
+        "position": 3,
+        "author_name_original": "Victoria Maria Padilla",
+        "faculty_id_original": "2445981"
+      },
+      "classification": "HIGH_SIMILARITY",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 2,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Victoria Maria Padilla",
+          "source_faculty_id": "2445981"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2445981",
+          "name": "Victoria Maria Padilla Gainza",
+          "rank": "Assistant Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "HIGH_SIMILARITY",
+          "confidence": "MEDIUM",
+          "mapped_faculty_id": "2445981",
+          "mapped_faculty_name": "Victoria Maria Padilla Gainza",
+          "evidence": "Faculty ID matches and name similarity is high."
+        },
+        "publication_context": {
+          "publication_id": "PUB-01009",
+          "title": "Development of pullulan/chitosan/salvianolic acid ternary fibrous membranes and their potential for chemotherapeutic applications",
+          "year": 2023
+        },
+        "normalized_author_occurrence": {
+          "name": "Victoria Maria Padilla",
+          "faculty_id": "2445981",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03901-PUB-01010-P2",
+      "source_decision_index": 3901,
+      "source_occurrence": {
+        "publication_id": "PUB-01010",
+        "position": 2,
+        "author_name_original": "Victoria Maria Padilla",
+        "faculty_id_original": "2445981"
+      },
+      "classification": "HIGH_SIMILARITY",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 1,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Victoria Maria Padilla",
+          "source_faculty_id": "2445981"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2445981",
+          "name": "Victoria Maria Padilla Gainza",
+          "rank": "Assistant Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "HIGH_SIMILARITY",
+          "confidence": "MEDIUM",
+          "mapped_faculty_id": "2445981",
+          "mapped_faculty_name": "Victoria Maria Padilla Gainza",
+          "evidence": "Faculty ID matches and name similarity is high."
+        },
+        "publication_context": {
+          "publication_id": "PUB-01010",
+          "title": "Processing-structure–property relationships of oleanolic acid loaded PLGA fiber membranes",
+          "year": 2023
+        },
+        "normalized_author_occurrence": {
+          "name": "Victoria Maria Padilla",
+          "faculty_id": "2445981",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    },
+    {
+      "case_id": "MECE-03906-PUB-01011-P2",
+      "source_decision_index": 3906,
+      "source_occurrence": {
+        "publication_id": "PUB-01011",
+        "position": 2,
+        "author_name_original": "Victoria Maria Padilla",
+        "faculty_id_original": "2445981"
+      },
+      "classification": "HIGH_SIMILARITY",
+      "policy_status": "ELIGIBLE_FOR_SHADOW_EVALUATION",
+      "normalized_author_index": 1,
+      "occurrence_match_method": "EXACT",
+      "evidence": {
+        "source_author": {
+          "name": "Victoria Maria Padilla",
+          "source_faculty_id": "2445981"
+        },
+        "proposed_candidate": {
+          "faculty_id": "2445981",
+          "name": "Victoria Maria Padilla Gainza",
+          "rank": "Assistant Professor",
+          "department": "Department of Mechanical Engineering"
+        },
+        "deterministic_reconciliation": {
+          "classification": "HIGH_SIMILARITY",
+          "confidence": "MEDIUM",
+          "mapped_faculty_id": "2445981",
+          "mapped_faculty_name": "Victoria Maria Padilla Gainza",
+          "evidence": "Faculty ID matches and name similarity is high."
+        },
+        "publication_context": {
+          "publication_id": "PUB-01011",
+          "title": "Electromagnetic interference shielding effectiveness of compression molded carbon nanofiber-reinforced polyvinylidene difluoride film",
+          "year": 2023
+        },
+        "normalized_author_occurrence": {
+          "name": "Victoria Maria Padilla",
+          "faculty_id": "2445981",
+          "is_faculty": true
+        },
+        "evidence_provenance": {
+          "source_system": "UTRGV Digital Measures",
+          "faculty_roster": "Digital Measures-derived normalized faculty data",
+          "publication_author": "Digital Measures-derived normalized publication data",
+          "publication_faculty_association": "Derived from normalized source records; not independent corroboration",
+          "independent_external_verification": false,
+          "warning": "Multiple fields originating from Digital Measures must not be counted as independent evidence."
+        }
+      },
+      "warnings": [],
+      "clef_evaluation": {
+        "status": "PENDING",
+        "choice": null,
+        "confidence": null,
+        "probabilities": null
+      }
+    }
+  ]
+}
