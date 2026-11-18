@@ -848,6 +848,15 @@ def main():
         help="Optional maximum number of cases to evaluate",
     )
 
+    parser.add_argument(
+        "--input-preview",
+        default=None,
+        help=(
+            "Optional alternate case preview. "
+            "Must be inside the department Round 2 validation directory."
+        ),
+    )
+
     args = parser.parse_args()
 
     if args.timeout <= 0:
@@ -865,7 +874,35 @@ def main():
 
     protected_paths = get_protected_paths(department_dir)
 
-    preview_path = protected_paths["case_preview"]
+    original_preview_path = protected_paths["case_preview"]
+
+    if args.input_preview is None:
+        preview_path = original_preview_path
+    else:
+        supplied_path = Path(args.input_preview)
+
+        if not supplied_path.is_absolute():
+            repository_root = Path(__file__).resolve().parents[6]
+            supplied_path = repository_root / supplied_path
+
+        preview_path = supplied_path.resolve()
+
+        allowed_directory = (
+            department_dir / "clef_validation" / "round2"
+        ).resolve()
+
+        try:
+            preview_path.relative_to(allowed_directory)
+        except ValueError:
+            parser.error(
+                "--input-preview must point to a file inside: "
+                f"{allowed_directory}"
+            )
+
+        if not preview_path.is_file():
+            raise FileNotFoundError(
+                f"Alternate input preview not found: {preview_path}"
+            )
 
     print("=" * 70)
     print("CLEF SHADOW EVALUATION")
@@ -877,21 +914,28 @@ def main():
 
     print("\n[1/7] Loading case preview...")
 
+    initial_hashes = calculate_source_hashes(
+        protected_paths
+    )
+
+    evaluation_preview_hash = sha256_file(preview_path)
+
+    initial_hashes["evaluation_input_preview"] = (
+        evaluation_preview_hash
+    )
+
     preview = load_json(preview_path)
 
     cases = validate_cases(preview)
 
     print(f"Cases available: {len(cases)}")
+    print(f"Selected preview: {preview_path}")
 
     # --------------------------------------------------------
-    # Capture source hashes
+    # Verify source provenance
     # --------------------------------------------------------
 
     print("\n[2/7] Verifying source provenance...")
-
-    initial_hashes = calculate_source_hashes(
-        protected_paths
-    )
 
     verify_preview_provenance(
         preview,
@@ -948,6 +992,12 @@ def main():
         "timeout_seconds": args.timeout,
 
         "selected_case_count": len(cases),
+
+        "evaluation_input_preview": str(preview_path),
+
+        "evaluation_input_preview_sha256": (
+            evaluation_preview_hash
+        ),
 
         "source_hashes": initial_hashes,
 
@@ -1047,6 +1097,10 @@ def main():
 
     final_hashes = calculate_source_hashes(
         protected_paths
+    )
+
+    final_hashes["evaluation_input_preview"] = (
+        sha256_file(preview_path)
     )
 
     source_files_unchanged = (
